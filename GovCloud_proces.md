@@ -24,3 +24,19 @@ Sign up as Service Consumer
 Agreement with service owner, data responsible, SIT
 Firewall?
 Licensing?
+
+
+princip:
+
+
+# Allow extras!
+Validere den del af dokumentet der er aftalt, men gem extra felter. Og tillad dem at blive udstillet. Men tydeliggør hvad der er aftalt.
+
+# Multiple represantation
+Gem data i et 'godt nok' format. Tillad services at skabe nye representationer (full index).Query First.
+
+# Typed queues
+known schema in platform registry
+
+# Schema evolution
+Semantic versioning of schemas and apis

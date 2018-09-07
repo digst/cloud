@@ -461,10 +461,21 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 - distributed configuration
 - OAuth
 
+SSL termination
+
+Consider ClientMaxRate
+
+Act as circuit braker
+
+Operated by Cloud Platform Team
+
+
+Sandboxes outside.
+
+Test inside but seperate gateway?
 
 
 #### Application fabric
-
 
 | Design decision |
 | --- |
@@ -473,6 +484,14 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 - Kubernetes is the core technology.
 - Selfservice and automation is build on top in future versions.
 
+
+Service layers: data, business, frontend
+
+Relation to gateway
+
+Compute Ressource Quota
+
+Application consist of a few controllers with pods with images. 
 
 #### Data fabric
 
