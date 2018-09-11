@@ -1,42 +1,73 @@
 # Initial Architecture <br> Government Cloud <br> Statens IT
 
-This document is an initial architectur for a project aiming at establishing the first version of a new development and operations model at Statens IT (SIT, eng. Danish Agency for governmental IT Services) based on cloud technologies and supporting agile development. The architecture describes which decisions that has been made and why, for each element in the reference model (link). Starting with the most salient for the first known applications (DMI, Myndighedsfortegnelse)
+This document is an initial architectur for a project aiming at establishing the first version of a new development and operations model at Statens IT based on cloud technologies and supporting agile development. The architecture describes which decisions that has been made and why, for each element in the reference model. Starting with the most salient for the first known applications (DMI, Myndighedsfortegnelse)
 
-| Date | Version | Usages
-| --- | --- | ---
-| **20180903**| **0.1** | Used for first workshop
-| *20180927?*| 1.0 | Support for decision in ??
 
+| Date    | Version  | Usages
+|-------- |--------- | --------------------------------------------------------
+| 20180903|      0.1 | Used for first workshop 20180906
+| **201809?**| **0.2** | Updated with input from DMI and SIT
+| *20180927?*| 1.0 | Support for go-decision 20181003
 
 ## Introduction
-[Project setup...]
+GovCloud ideas has been around for years, and in the spring of 2018 the planets alligned in a way that allowed a small group of people to conceptualize the idea. Digitaliseringsstyrelsen initiated a coolaboration between the Danish Meteorological Institute and Statens IT that lead to this architecture.
 
-The purpose of SIT is to provide better, safer, and more cost-efficient it operation and service to the Danish Government. SIT has focus on accessibility, stability, efficiency and information security in four main areas of operation: PCs for state employees, it infrastructure, standardisation of generic administrative it and standarised vendor contracts.  Currently SIT services 12 of 19 ministeries with around 17.000 employees at 250 physical locations, and is scheduled to expand to more ministeries for a total of 35.000 employes. Ministery of Defense, The Police and The Tax Authorities will then be the only areas with seperate it operations.
+The purpose of Statens IT (SIT, eng. [Danish Agency for Governmental IT Services](https://statens-it.dk/english/)) is to provide better, safer, and more cost-efficient it operation and service to the Danish Government. SIT has focus on accessibility, stability, efficiency and information security in four main areas of operation: personal computers for state employees, it infrastructure, standardisation of generic administrative it and standarised vendor contracts.  Currently SIT services 12 of 19 ministeries with around 17.000 employees at 250 physical locations, and is scheduled to expand to more ministeries for a total of 35.000 employes. Ministery of Defense, The Police and The Tax Authorities will then be the only areas with seperate it operations.
 
-Digitaliseringsstyrelsen (DIGST, eng. Agency for Digitisation) was established in 2011 with joint public funding. [...]
->Digitaliseringsstyrelsens opgave er at udforme og implementere digitaliseringsinitiativer og it-politik på tværs af den offentlige sektor. Digitaliseringsstyrelsen understøtter effektiviteten i den offentlige sektor via leverancer til borgere, private virksomheder og offentlige myndigheder i relation til fællesoffentlig digitalisering og it-løsninger.
-
->Digitaliseringsstyrelsen implementerer i den forbindelse en række fællesoffentlige projekter. Hertil kommer opgaver vedrørende it-politik samt it-sikkerhed, ligesom Digitaliseringsstyrelsen er sekretariat for Statens It-projektråd og udvikler og vedligeholder den statslige it-projektmodel.
+Digitaliseringsstyrelsen (DIGST, eng. [Agency for Digitisation](https://en.digst.dk/)) was established in 2011 with joint public funding. Its purpose is to create and implement initiatives and policy regarding the digitalisation of the public sector. DIGST supports public sector efficency by providing digital services to citizens, businesses and government organisations. DIGST implements joint public projects and is host for The Danish Council for IT projects and the government it project model.
 
 DIGST and SIT are both part of the Ministery of Finance and employes about 250 people each.
 
 The Digital Strategy 2016-2020 is a joint public strategy for all levels of governement: state, regional and local. Among the many initiatives in strategy to be supported by this architecture are *8.1 Good data and efficient data sharing* and *8.2 Robust operation of the common infrastructure*. During the realisation of the Digital Strategy it has become evident that public authorities on all level of government is struggeling with **time-to-market for new applications and integrations** that does not match the ambitions of integrated public service delivery, the ever-changing political and regulatory landscape and the  technological development in general.
 
-A number of barriers to the desired speedier development has been identified [more about how?].
+A number of barriers to the change of pace has been identified [more about how?].
 
-Compliance to legal and strategic requirements is a very time consuming aspect and has been extending both large and smaller projects with periods of years. Public procurement, personal data protection and protection of national infrastructure are highly regulated areas, but also characterized by generic and re-usable concrete elements. Strategies are developed on many levels and in many domains, thus a single project or application will be covered by many principles and requirements. Sometimes the strategies align well, other times not so much.
+- Compliance to legal and strategic requirements is a very time consuming aspect and has been extending both large and smaller projects with periods of years. Public procurement, personal data protection and protection of national infrastructure are highly regulated areas, but also characterized by generic and re-usable concrete elements. Strategies are developed on many levels and in many domains, thus a single project or application will be covered by many principles and requirements. Sometimes the strategies align well, other times not so much.
 
-> Costs of sharing data are not related to the reciever of the data. The re-use of data for a different purpose than originally planned comes with a cost. Typically the data are stored in an application maintained by the data reponsible. And the cost usually appear on one budget, whereas the benefits is to be found at another.
+- Budget scope. Typically data are stored in one application financed by the data reponsible, but can be used by another organisation. Hence the cost usually appear on one budget, whereas the benefits is to be found at another.
 
-Public administrative organisations are too small to carry a full professional environment for efficient/agile development. Even that IT plays an ever big role for efficient government, very few organisations has managed to build and maintain their own development.
+- Small professional environments. Public administrative organisations are too small to carry a full professional environment for efficient/agile development. Even that IT plays an ever big role for efficient government, very few organisations has managed to build and maintain their own development.
 
-Knowledge about application and data landscapes of other organisations are sparse. Even when organisation cooperate and depend on each other information about existing application and data with potential reuse is hard to come by.
+- Sparse knowledge about application and data landscapes of other organisations. Even when organisation cooperate and depend on each other information about existing application and data with potential reuse is hard to come by.
 
-Cloud technology is maturing but product categories, and more important their interfaces, are still plenty. Interoperability and 'moveability' of applications is typically not a priority in an emergent market where service differention is a driver. This results in a big challenge for the individual organisation and puts them in risk of significant vendor lock-in.
+- Service differentiation. Cloud technology is maturing but product categories, and more important their interfaces, are still plenty. Interoperability and 'moveability' of applications is typically not a priority in an emergent market where service differentation is a driver. This results in a big challenge for the individual organisation and puts them in risk of significant vendor lock-in.
 
 
-[RAD 'fælles service- og data-platform'?]
+[RAD 'fælles service- og data-platform'! Seperate distribution of data from processes that produce]
 
+
+## First Applications
+The GovCloud roadmap primarily support identified applications and secondly The Digital Strategy 2016-2020.
+
+Paramount to establishment a GovCloud is the succesfull support of an intial large scale strategic project to proof that the architecture provides a solution to the identified problems.
+
+[DMI as external partner and consumer of platform] [DIGST as consumer to support experience in governance processes] [SIT as consumer of their own platform]
+
+
+*DMI Data*
+[Describe data to be shared, volume and latency]
+
+[Describe the need for API keys]
+
+*PubOrg*
+[Describe data to be shared, volume and latency]
+[Describe few sources and first know usages]
+
+*Platform DevOps*
+[Back Log is prioritized joint public]
+
+
+Initial
+
+| | Providers | In | Comp. | Storage | Out | Consumers |
+| --- | --- | --- | --- | --- | --- | --- |
+| Observations | DMI | 1mb/min stream | -  | 75GB | ? | Private companies |
+| Forecast | DMI |  4GB dump 4 hour | ++ | 250GB | ? | Private companies |
+| PubOrg   | KL, SM, DM | 1GB/day | - | 25GB |  1GB/day | DIGST and other Government Digital Services |
+| Platform | SIT | 1GB/day | + | 150GB| 1GB/day| DMI, DIGST, SIT |
+
+Future
+[Insert graph with guestimates]
 
 ## Problem
 An architecture is a solution to a problem.
@@ -49,43 +80,75 @@ This document describes an initial architecture for a government cloud aimed at 
 
 SIT has a small number of suggested operational models that today provides the stability and security required by the customers. This new model is believed to be prefered over existing because of the following charactaristics:
 
-- *Shorter development and rapid changes.* Based on experiences from the proof of concept, customers can expect a rapid deployment cycle. If the suggested goals for deployment and changes are met (see later), the GovCloud will match existing cloud vendors.
+- *Continuity of Service.* Existing models allow small and planned windows for maintainance. Cloud technologies typically offers a continuity with rolling updates of both platform and applications without any interuption.
 
+- *Shorter Development and Rapid Changes.* Based on experiences from the proof of concept, customers can expect a rapid deployment cycle. If the suggested goals for deployment and changes are met (see later), the GovCloud will match existing cloud vendors.
+
+To support the first applications SIT most extend existing operational model with new high level use cases.
+
+- *Public Data Distribution.* A private company wants to access data from a public organisation. SIT has a suitable operation model and technology platform to support the intentions in the directive on the re-use of public sector information. The data holding government organisation leaves the operational aspects to SIT and focuses on tailoring the data service applicatin and help the private users to understand the data.
+
+- *Application Development.* A governement organisation decides that GovCloud is the future home for a new application. Early in the process SIT helps to identify reusable services and data on the GovCloud.    SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project
+
+
+-----
+
+Furture versions of the GovCloud is expected to focus on
 
 - *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
 
-- *Synergy.* Projects delivering compliance assurances as shared services is one kind of synergy. The sharing of cost related to identity and ressource management  is another. Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. I an market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition.
+- *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
 
-To address customers new requirements SIT most extend existing operational model with a new high level use cases.
+to support a number of new use cases
 
-- *New Application development.* An existing customer at SIT wants to establish a new application. Early in the process SIT is identified as the future operations partner. Services and data on the GovCloud are identified as reuseable during reviews. The development follows agile principles and is partly supported by a development toolchain offered by SIT.
+- *Sharing of sensistive data*
+An existing customer at SIT wants to access data from another organisation. The data is not available at any existing dataservices. SIT suggests the data owner to replicate the data onto the GovCloud. The data user builds a custom dataservice and reuses existing security controls incl identity management.
 
 - *Reuse Application/Service.* A software vendor delivers an application to a customer of SIT. The vendor wants to deploy on the GovCloud preparing for more customers. The vendor sells a license to another SIT customer and SIT extends the installation and the software product is available to the new customer.
 
-- *Datasharing.*
-An existing customer at SIT wants to access data from another organisation. The data is not available at any existing dataservices. SIT suggests the data owner to replicate the data onto the GovCloud. The data user builds a custom dataservice and reuses existing security controls incl identity management.
-
-- *Migrate existing application.* SIT has identified a customer application that is sutiable for hosting on the new GovCloud. SIT plans a transition with the customer and reuse a number of exsiting services and datasets in the Cloud and can turn off some application elements. [add SQL explenation]
+- *Migrate existing application.* SIT has identified a customer application that is sutiable for hosting on the new GovCloud. SIT plans a transition with the customer and reuse a number of exsiting services and datasets in the Cloud and can turn off some application elements.
 
 
 ## Principles
-Good architecture is based on shared principles. Agreed principles can guide solutions to future unforseen problems and allow the GovCloud to evolve with less escalation of descissions and clarify where substantial diagreement exists. The strategic principle supporting the GovCloud is:
+Good architecture is based on agreed upon principles that can guide solutions to future unforseen problems, allow the GovCloud to evolve with less escalation of desicisions, and clarify where substantial diagreement exists. The strategic principle supporting the GovCloud is:
 
-**Cloud First** - new applications and new integrations between existing applications are designed to take advantage of the charaterritics of a Cloud.
+**Cloud First** - new applications and new integrations between existing applications are designed to take advantage of the characteristics of cloud computing.
 
-Cloud technology is maturing and has proven to support large scale operations and rapid development. Across public organisations there are still a many different understandings of a Cloud, but for the purpose of this document we focus on the following essential charaterristics: Consumer on-demand self-service, Provider resource pooling, Rapid elasticity and Measured services. A detailed describition can be found in the [definition from NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
+Cloud technology is maturing and has proven to support large scale operations and rapid development. For the purpose of this document we focus on the following essential charateristics: Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services. A detailed describition can be found in the [definition from NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
-The Cloud First is further refined by a few issues spcific to the use of cloud technologies in a danish governement setting.
+
+The Cloud First is further refined by a few principples spcific to the use of cloud technologies in a danish governement setting.
+
+
 
 **Vendor neutral** - applications and data shall be movable from one cloud platform to another without unreasonable effort.
 
-Public agencies can not allow there data or application to be locked-in to a specific vendor. From a regulatory view public procurement should support competition and not favour a specific propitary tehcnology or sole vendor. From a strategic perspective public services should be possbile to move between organisation, and to be intergrated into new operational landscapes.
+Public agencies can not allow there data or application to be locked-in to a specific vendor. From a regulatory view public procurement should support competition and not favour a specific propitary tehcnology or sole vendor. From a strategic perspective public services should be possbile to move between organisation, and to be intergrated into new operational landscapes. This principle supports the provider resource pooling characteristic.
 
-Exposed interfaces are supported by Open Source. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected regards to their support in the open source community. Selecting open source supported interfaces ensures a licens-free fall back option, if the benefits of licensed implementions are not balanced with the price.
+Exposed interfaces are standardized and supported by Open Source. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected regards to their support in the open source community. Selecting open source supported interfaces ensures a licens-free fall back option, if the benefits of licensed implementions are not balanced with the price. Standardization ensure a clear governance of changes and transparent terms of use.
 
 Applications are containarized. By choosing widely adopted container technologies the binding between applications and operation environment is broken. Containarized applications declare their required ressources and relies on configurations from their environement.
 
 Propriatary technolgies are used with caution. When used, the imidiate benefits needs to be evaluated against the later cost from the binding. A part of the evaluation is to describe a likely exit strategy for replacing propiatary technology with more open.
+
+
+**Continious service availabilty** - services run 24/7 even during new service releases and platform upgrades.
+
+It solutions used by public agencies are often critical, not only to the agency itself but to the society in general. Traditionally some services had so called service windows, where service was suspended and new software relases could be rolled out. Digital self-services have changes this and the public is serving it self around the clock at times suitable for the costumer and not for the service provider.
+
+Deployed services run continuously and must be build accordingly. Cloud technology can enforce some of this, but services must be designed for high availabilty, automated testing and detailed monitoring.
+
+Problems must be solved imidiately and in close collaboration between platform consumers, platform providers and software vendors. The GovCloud provides clear seperation of responsibilities, but recognizes that solutions are found in collaboration, and the collaboration must be supported efficiently by it.
+
+High availability is not only a concern for the platform it self, but is a result of carefull planing across all dependencies from electrical power, bandwidth, incident reaction time and capacity to solve problems when they arise.
+
+Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored
+
+
+
+---------
+
+Principles related to future versions
 
 **Cloud Broker** - cloud services are consumed through a central cloud broker.
 
@@ -96,34 +159,37 @@ At the same time the cost efficiency of public cloud offerings are hard to match
 The cloud broker will take advantage of a competitative market by moving applications to the most best available platforms. Reason can be applications with no personal data or when needed capabilities are only accessible as SaaS at cloud providers.
 
 
+
 **Designed for compliance**
 > General contract, so no seperate tendering processes.
 > seperate datamanagement
 > audit.
 > Public Architecture... Patternes from Reference Architectures are supported, Infrastructure can be reached through local services
 
-**Continious service availabilty** - services are expected to run 24/7 even during new releases and platform upgrades.
-> clear seperation of responsibilities, multiple instances in multiple versions. Automated testing
 
 **Reuse of data and applications**
 > Public Catalogues, standarised re-use processes, central (cross customer) user management.
 
-**Pay as you go.../ unlimit..**
-> No need to order specific ressources up front... free to try...
 
-## Referencemodel model
+
+
+
+
+
+
+## Reference model
 To identify the different components in the architecture, we use a conceptual model based on a number of excisting frameworks, including
 [Microsoft Cloud Service Foundation Reference Model](https://blogs.technet.microsoft.com/cloudsolutions/2013/08/15/cloud-services-foundation-reference-architecture-reference-model/), [IBM Cloud Garage Method](https://www.ibm.com/cloud/garage/), [OpenGroup IT4IT](http://www.opengroup.org/it4it) and [NIST Cloud Computing Reference Architecture](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf). A total detailed view of all elemements can be found in appendix of this document.
 
 
-![Three business areas and supporting it components](areas.svg)
+![](areas.svg)
+
+[include roles Cloud Consumer, Cloud Provider, Cloud Broker, Application Responsible, Application Developer, Data Responsible.]
+
+Four business domains...[compress the descriptions to a minimum]
 
 
-Four business domains...
-
-
-*Platform Delivery* [Lifecycle management is different on shared platform, shared understanding of Cloud First and roadmap]
-
+*Platform Delivery*
 > The components in this subdomain serve as the conduit for translating consumer requirements into cloud services and for the provider to manage the delivery of the services to the consumer requirements throughout the service lifecycle. This subdomain contains components that represent:
 
 > Service level requirements that must be defined when:
@@ -133,10 +199,9 @@ Four business domains...
 
 > It’s critical to define and measure cloud services requirements as specifically as possible to ensure ongoing customer satisfaction with the service. The components in this subdomain are defined in the following sections.
 
-
-
 *Development* [Not done by SIT, but vital in DevOps]
 
+> *DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality [Bass, Weber and Limin. 2015.](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847)*
 
 *Operations* [To support service with high availability]
 
@@ -148,8 +213,6 @@ Four business domains...
 > * Consistent application of the processes is critical to meeting service level requirements. While this might state the obvious, many organizations that don’t provide cloud services to their consumers might not be as diligent in their operational processes as organizations that do provide cloud services.
 
 *Audit*
-Security, privacy and performance
-
 > A cloud auditor is a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. Audits are performed to verify conformance to standards through review of objective evidence. A cloud auditor can evaluate the services provided by a cloud provider in terms of security controls, privacy impact, performance, etc.
 
 > Auditing is especially important for federal agencies as “agencies should include a contractual clause enabling third parties to assess security controls of cloud providers” [4] (by Vivek Kundra, Federal Cloud Computing Strategy, Feb. 2011.). Security controls [3] are the management, operational, and technical safeguards or countermeasures employed within an organizational information system to protect the confidentiality, integrity, and availability of the system and its information. For security auditing, a cloud auditor can make an assessment of the security controls in the information system to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to the security requirements for the system. The security auditing should also include the verification of the compliance with regulation and security policy. For example, an auditor can be tasked with ensuring that the correct policies are applied to data retention according to relevant rules for the jurisdiction. The auditor may ensure that fixed content has not been modified and that the legal and business data archival requirements have been satisfied.
@@ -167,23 +230,10 @@ Supporting IT components:
 > Platform components are aggregated with Infrastructure and Management and Support components to provide platform as a service (PaaS) services1. This subdomain does not include any technical capabilities components because Platform components are not critical to provide services in every service model, whereas the other technical capabilities components that are represented in the CSFRM are. Platform technical capabilities components are however, critical to providing platform services. If you provide platform services in your environment, either with platform technical capabilities that you manage or with platform technical capabilities managed by an external provider, you can add Platform components to the CSFRM, as appropriate. Examples of platform services that you might provide in your organization are data, media, and service bus. Platform components are sometimes provided as services that are consumed by Software capabilities, but they may also be consumed directly by end-users.
 
 *Infrastructure*
-[Owned to prepare for sensitive data]
 > The components within this subdomain represent the technical capabilities that you manage that are required to host on-premises Platform, Software, and Management and Support technical capabilities components. You might use these components to enable IaaS services that you provide to consumers in the public, private, community, or hybrid deployment models1. You may also consume IaaS services provided by an external provider that manages the infrastructure components for IaaS services. The requirements that these components meet are driven by all subdomains within the CSFRM, but are generally heavily-standardized to facilitate both automation in the environment, and to optimize volume purchases of hardware and software.
 
 
-## First Applications
-The platform is a continious developement and identified by needs off customer application and prioritized in the platform service lifecycle process.
 
-*DMI Data*
-[Describe data to be shared, volume and latency]
-[Describe the need for API keys]
-
-*PubOrg*
-[Describe data to be shared, volume and latency]
-[Describe few sources and first know usages]
-
-*Platform DevOps*
-[Back Log is prioritized joint public]
 
 
 
@@ -193,34 +243,36 @@ The platform is a continious developement and identified by needs off customer a
 ### Service Delivery
 Statens IT is the strategic appointed provider of IT operation and service to the Danish Government and shall as such provide the requested cloud environment.
 
-| Design decision |
-| --- |
-| Government Cloud is a Platform as a Service offered by SIT within existing license to operate|
+
+**# Government Cloud is a Platform as a Service offered by SIT within existing license to operate.**
 
 [Rational from customer requirements (to reduce maintaince of basic software)]
+
+
+> The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider.3 The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.
 
 Customers are responsible for the developement and maintainance of applications, data management, awarding and revoking user rights and licensing of software.
 
 SIT as a platform provider is responsible for updating platform software, automated testing of services after update, monitoring and reporting on services.
 
-| Design decision |
-| --- |
-| SIT defines a new Operational Model (da. driftsmodel) in the existing framework and all customer applications using the Government Cloud are offered through it |
-[Reuse grayed out elements below]
+
+**#  SIT defines a new Operational Model (da. driftsmodel) in the existing framework and all customer applications using the Government Cloud are offered through it**
+
+
+> Reuse grayed out elements below
+> Suitable payment model
+
+> Percieved unlimited capacity from consumer point of view?
 
 
 
-| Scope decision |
-| --- |
-| SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model |
+-----
 
-[Rational from efficiency and synergy and not bloating the platform project]
 
-| Design decision? |
-| --- |
-| Percieved unlimited capacity from consumer point of view? |
-[otherwise not a cloud]
-[pay as you gov, dev for free, what limits?]
+**# SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model**
+
+> Rational from efficiency and synergy and not bloating the platform project
+
 
 ![](delivery.svg)
 
@@ -238,10 +290,13 @@ SIT as a platform provider is responsible for updating platform software, automa
 - Automated test requirements and criteria for automated deployment of artefacts.
 - Scale up/down criteria
 
-| --- |
-| The Government Cloud has 24/7 operations support and development support during normal business hours |
+**# GovCloud has 24/7 operations support and development support during normal business hours**
 
 SIT can restart, but not change configuration or code without consumers...
+
+
+**# Samarbejdsrum til problem-løsning**
+
 
 
 #### Service Lifecycle
@@ -249,9 +304,9 @@ SIT can restart, but not change configuration or code without consumers...
 
 DIGST defines the technical roadmap for the platform in collaboration with existing and future customers and SIT.
 
-| Design decision |
-| --- |
-| The service life cycle of of the GovCloud is based on customer needs, in a baglog maintained by SIT ,and prioritized by a joint public group lead by DIGST |
+**# The service life cycle of of the GovCloud is based on customer needs, in a baglog maintained by SIT ,and prioritized by a joint public group lead by DIGST**
+
+**# Planned support lifetime for each interface in the platform**
 
 [Rational from vendor neutrality, ownership to both 'business' and 'platform' direction]
 
@@ -292,9 +347,7 @@ and...
 - Capacity and Scaling
 - Maintain images
 
-| Design decision |
-| --- |
-| SIT (GovCloud team) establishes processes suitable for cloud platform operations based on the ITIL framework |
+**# SIT (GovCloud team) establishes processes suitable for cloud platform operations based on the ITIL framework**
 
 [To minimize Employee training, but new because cloud is different]
 
@@ -311,33 +364,27 @@ and...
 
 ![](devops.svg)
 
-| Design decision |
-| --- |
-| The Toolchain is provided as SaaS by SIT and delivers docker images into the artefact repository|
-bring your own licens
+**The Toolchain is provided as SaaS by SIT and delivers docker images into the artefact repository|
+bring your own licens*
 
 - harmonization
 - time-to-market
 - integrated with identity management
 - to allow alternative toolchains at consumers
 
-| Design decision |
-| --- |
-| The Toolchain is based on Confluence, Jira, Git, Build?, Test?|
+**# The Toolchain is based on Confluence, Jira, Git, Build?, Test?**
+
 OpenSource?
 
-| Design decision |
-| --- |
-| The Government Cloud is born with sand boxes for each existing customer |
+
+**# The Government Cloud is born with sand boxes for each existing customer**
 
 [rational from time to market and spreading the news...]
 
 
 
 #### Build
-| Design decision |
-| --- |
-| Docker images are build from source using Maven?|
+**# Docker images are build from source using custom build image provided by SIT**
 [Run identical builds on local development ]
 
 
@@ -351,9 +398,8 @@ OpenSource?
 - No Billing in first version
 - Process Automation (left to the team to build ad hoc)
 
-| Roadmap decision |
-| --- |
-| Portal later...  |
+
+**# Portal later...**
 [too few consumers, and needs not known]
 
 Describe intention about DevOps through selfservice, Same views and (mostly) controls as SIT employee.
@@ -361,9 +407,7 @@ Describe intention about DevOps through selfservice, Same views and (mostly) con
 
 - Authorization (not needed in the first two applications. Future services can use attributes from datasets and roles/rights from AD)
 
-| Scope/Design decision |
-| --- |
-| Consumer Authorization outside platform with common STS service|
+**# Consumer Authorization outside platform with common STS service**
 
 - Authentication (platform administrator using the existing SIT solutions, other users in application)
 
@@ -419,9 +463,7 @@ Monitoring adskilt fra Reporting
 #### Directory
 Directory (reuse existing)
 
-| Design decision |
-| --- |
-| Users, Applications and Dataset are ressources registered in SITs existing Active Directory.|
+**# Users, Applications and Dataset are ressources registered in SITs existing Active Directory.**
 
 #### Data protection
 
@@ -429,9 +471,7 @@ Directory (reuse existing)
 
 #### Artifact repository
 
-| Design decision |
-| --- |
-| The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only) |
+**# The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only)**
 
 Configuration of environments are done via management.
 
@@ -441,9 +481,7 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 ### Platform
 
 
-| Design decision |
-| --- |
-| Three seperate layers |
+**# Three seperate layers: gateway, application, data**
 
 - compliance
 - moveability
@@ -454,9 +492,7 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 
 #### Gateway
 
-| Design decision |
-| --- |
-| The API Gateway is [KrakenD](http://www.krakend.io/) |
+**# The API Gateway is [KrakenD](http://www.krakend.io/)**
 - scaleability,
 - distributed configuration
 - OAuth
@@ -477,9 +513,7 @@ Test inside but seperate gateway?
 
 #### Application fabric
 
-| Design decision |
-| --- |
-| The application environment is [Kubernetes](https://kubernetes.io/) |
+**# The application environment is [Kubernetes](https://kubernetes.io/)**
 - No need for management tools yet.
 - Kubernetes is the core technology.
 - Selfservice and automation is build on top in future versions.
@@ -491,15 +525,13 @@ Relation to gateway
 
 Compute Ressource Quota
 
-Application consist of a few controllers with pods with images. 
+Application consist of a few controllers with pods with images.
 
 #### Data fabric
 
 [add keylines from storyline]
 
-| Design decision |
-| --- |
-| The data fabric is [MapR](https://mapr.com/) |
+**# The data fabric is [MapR](https://mapr.com/)**
 - manageability,
 - access control,
 - scale out,
@@ -511,17 +543,13 @@ Application consist of a few controllers with pods with images.
 
 ### Infrastructure
 
-| Roadmap decision |
-| --- |
-| Scale out and multiple cloud providers as needed, but not initial |
+**# Scale out and multiple cloud providers as needed, but not initial**
 - on premise because we want to test and prepare SIT to handle sensitive data
 
 
 [Consider Hardware certification??]
 
-| Design decision |
-| --- |
-| The on-premise application and data fabric runs on non-virtualized hardware under CentOS |
+**# The on-premise application and data fabric runs on non-virtualized hardware under CentOS**
 
 - no Virtualization to reduce complexity/licensing and performance storage
 
@@ -543,11 +571,12 @@ Application consist of a few controllers with pods with images.
 #### Network
 > This component represents the physical network switches, routers, firewalls, and cabling. It also represents logical networking constructs including virtual local area networks (LANs), access control lists, quality of service, and network interfaces defined in converged network architectures.
 
+
 [Network in Kubernetes]
 
-| Design decision |
-| --- |
-| What kind of seperation? |
+**# What kind of seperation? **
+
+[What about IP6 internally/eternaly]
 
 ## Appendix
 
