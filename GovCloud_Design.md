@@ -6,7 +6,7 @@ This document is an initial architectur for a project aiming at establishing the
 | Date    | Version  | Usages
 |-------- |--------- | --------------------------------------------------------
 | 20180903|      0.1 | Used for first workshop 20180906
-| **201809?**| **0.2** | Updated with input from DMI and SIT
+| **20180911**| **0.2** | Updated with input from DMI and SIT used for second workshop
 | *20180927?*| 1.0 | Support for go-decision 20181003
 
 ## Introduction
@@ -61,13 +61,13 @@ Initial
 
 | | Providers | In | Comp. | Storage | Out | Consumers |
 | --- | --- | --- | --- | --- | --- | --- |
-| Observations | DMI | 1mb/min stream | -  | 75GB | ? | Private companies |
-| Forecast | DMI |  4GB dump 4 hour | ++ | 250GB | ? | Private companies |
+| Observations | DMI | ?mb/min stream | -  | ?GB | ? | Private companies |
+| Forecast | DMI |  ?GB dump 4 hour | ++ | ?GB | ? | Private companies |
 | PubOrg   | KL, SM, DM | 1GB/day | - | 25GB |  1GB/day | DIGST and other Government Digital Services |
-| Platform | SIT | 1GB/day | + | 150GB| 1GB/day| DMI, DIGST, SIT |
+| Platform | SIT | ?GB/day | + | ?GB| ?GB/day| DMI, DIGST, SIT |
 
 Future
-[Insert graph with guestimates]
+[Insert graph with guestimates and add application X, Y, Z]
 
 ## Problem
 An architecture is a solution to a problem.
@@ -90,23 +90,9 @@ To support the first applications SIT most extend existing operational model wit
 
 - *Application Development.* A governement organisation decides that GovCloud is the future home for a new application. Early in the process SIT helps to identify reusable services and data on the GovCloud.    SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project
 
+<br>
+Furture versions of the GovCloud is expected to focus on *Compliance as a Service.*, *Development procurment framework*, *Sharing of sensistive data*, *Reuse Application/Service*,  *Migrate existing application*. [See appendix]
 
------
-
-Furture versions of the GovCloud is expected to focus on
-
-- *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
-
-- *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
-
-to support a number of new use cases
-
-- *Sharing of sensistive data*
-An existing customer at SIT wants to access data from another organisation. The data is not available at any existing dataservices. SIT suggests the data owner to replicate the data onto the GovCloud. The data user builds a custom dataservice and reuses existing security controls incl identity management.
-
-- *Reuse Application/Service.* A software vendor delivers an application to a customer of SIT. The vendor wants to deploy on the GovCloud preparing for more customers. The vendor sells a license to another SIT customer and SIT extends the installation and the software product is available to the new customer.
-
-- *Migrate existing application.* SIT has identified a customer application that is sutiable for hosting on the new GovCloud. SIT plans a transition with the customer and reuse a number of exsiting services and datasets in the Cloud and can turn off some application elements.
 
 
 ## Principles
@@ -117,7 +103,7 @@ Good architecture is based on agreed upon principles that can guide solutions to
 Cloud technology is maturing and has proven to support large scale operations and rapid development. For the purpose of this document we focus on the following essential charateristics: Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services. A detailed describition can be found in the [definition from NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
 
-The Cloud First is further refined by a few principples spcific to the use of cloud technologies in a danish governement setting.
+The Cloud First principles is further refined by a few principples specific to the use of cloud technologies in a danish governement setting.
 
 
 
@@ -145,36 +131,8 @@ High availability is not only a concern for the platform it self, but is a resul
 Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored
 
 
-
----------
-
-Principles related to future versions
-
-**Cloud Broker** - cloud services are consumed through a central cloud broker.
-
-Regulatory issues on the use of public cloud services for sensitive personal data in a government settings are still unclear. Even with clearification, some critical data are still to be kept on danish territory and under strict control. But even critical applications need better time to market and cloud technologies can support this. Hence the need for a onpremise infrastructure based on cloud technologies.
-
-At the same time the cost efficiency of public cloud offerings are hard to match. But government organisations will soon find integration of cloud services can be too complexto manage. A cloud consumer may request cloud services from a cloud broker, instead of contacting a cloud provider directly. A cloud broker is an entity that manages the use, performance and delivery of cloud services and negotiates relationships between cloud providers and cloud consumers. [NIST definition of Cloud Broker](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf)
-
-The cloud broker will take advantage of a competitative market by moving applications to the most best available platforms. Reason can be applications with no personal data or when needed capabilities are only accessible as SaaS at cloud providers.
-
-
-
-**Designed for compliance**
-> General contract, so no seperate tendering processes.
-> seperate datamanagement
-> audit.
-> Public Architecture... Patternes from Reference Architectures are supported, Infrastructure can be reached through local services
-
-
-**Reuse of data and applications**
-> Public Catalogues, standarised re-use processes, central (cross customer) user management.
-
-
-
-
-
-
+<br>
+In future version new principles can be included e.g. *Cloud Broker*, *Compliance As A Service*, *Reuse of data and applications*.[See appendix]
 
 
 ## Reference model
@@ -184,259 +142,245 @@ To identify the different components in the architecture, we use a conceptual mo
 
 ![](areas.svg)
 
-[include roles Cloud Consumer, Cloud Provider, Cloud Broker, Application Responsible, Application Developer, Data Responsible.]
+[include roles Cloud Consumer, Cloud Provider, Cloud Broker, Application Responsible, Application Developer, Data Responsible. And correct use in the business area description. ]
 
-Four business domains...[compress the descriptions to a minimum]
+Four areas of business...[compress the descriptions to a minimum]
 
 
 *Platform Delivery*
-> The components in this subdomain serve as the conduit for translating consumer requirements into cloud services and for the provider to manage the delivery of the services to the consumer requirements throughout the service lifecycle. This subdomain contains components that represent:
+This area is responsible for translating consumer requirements into platform services. Capabilities and technologies are provided with a specific service level agreement. All changes follow a transparent governance process with consumer involvement,.
 
-> Service level requirements that must be defined when:
-> * Designing technical capabilities implementations where the provider owns or manages the technical capabilities that enable the service
->* Evaluating services provided by an external provider that owns or manages the technical capabilities that enable the service
->* Processes that must be defined to ensure that a service meets its service level requirements throughout its lifecycle
+*Development*
+This area translate customer requirements into application services. Development is primarily done by third party developers, but can also be done by employees at a consumer. Platform services follow the same processes and are developed by SIT or third parties. Application services can generalised into platform services in a collaboration.
 
-> It’s critical to define and measure cloud services requirements as specifically as possible to ensure ongoing customer satisfaction with the service. The components in this subdomain are defined in the following sections.
+*Operations*
+This area encapsules processes applied to the platform and its applications to meet the requirement in service level agreements. Processes are typically highly automated to minimize human error and labor. [end user support? behaviour?]
 
-*Development* [Not done by SIT, but vital in DevOps]
-
-> *DevOps is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality [Bass, Weber and Limin. 2015.](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847)*
-
-*Operations* [To support service with high availability]
-
-> The components in this subdomain represent the processes that are applied to each service to ensure that it continuously meets the requirements that are defined by the components in the Service Delivery subdomain. Although many organizations define each of these components as standardized processes, the specific application of the processes often varies across services. The Management and Support components support the components of this subdomain.
-
-> The following sections provide high-level detail about each of the process components in this subdomain. While many of the processes might be similar to the processes used to operate services without cloud characteristics in an organization, there are a few notable differences when operating services with cloud characteristics:
-
-> * Processes are typically highly automated to minimize human error and labor
-> * Consistent application of the processes is critical to meeting service level requirements. While this might state the obvious, many organizations that don’t provide cloud services to their consumers might not be as diligent in their operational processes as organizations that do provide cloud services.
+Processes in Development and Operations are increasingly considered as overlapping, especially in the case of self service cloud services, where a consumers take a larger part in the operational aspects of service delivery. One definition of DevOps *is a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality [Bass, Weber and Limin. 2015.](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847)*
 
 *Audit*
-> A cloud auditor is a party that can perform an independent examination of cloud service controls with the intent to express an opinion thereon. Audits are performed to verify conformance to standards through review of objective evidence. A cloud auditor can evaluate the services provided by a cloud provider in terms of security controls, privacy impact, performance, etc.
-
-> Auditing is especially important for federal agencies as “agencies should include a contractual clause enabling third parties to assess security controls of cloud providers” [4] (by Vivek Kundra, Federal Cloud Computing Strategy, Feb. 2011.). Security controls [3] are the management, operational, and technical safeguards or countermeasures employed within an organizational information system to protect the confidentiality, integrity, and availability of the system and its information. For security auditing, a cloud auditor can make an assessment of the security controls in the information system to determine the extent to which the controls are implemented correctly, operating as intended, and producing the desired outcome with respect to the security requirements for the system. The security auditing should also include the verification of the compliance with regulation and security policy. For example, an auditor can be tasked with ensuring that the correct policies are applied to data retention according to relevant rules for the jurisdiction. The auditor may ensure that fixed content has not been modified and that the legal and business data archival requirements have been satisfied.
-
-> A privacy impact audit can help Federal agencies comply with applicable privacy laws and regulations governing an individual‟s privacy, and to ensure confidentiality, integrity, and availability of an individual‟s personal information at every stage of development and operation [5].
+Auditing are processes where independent examination through controls with the intent to express an opinion. On opinion can be on the compliance with standards. Audits are based on objective evidence and can evaluate terms of security controls, privacy impact, performance, etc.
 
 
-Supporting IT components:
+The four business areas above are supported by technology components in three areas [consider using IT4IT terms]:
 
 *Management and support*
-> The technical capabilities components within this subdomain manage and support on-premises technical capabilities that host, manage, or support private, externally-consumed public, or hybrid cloud services. The requirements that these capabilities meet are defined by both the Service Delivery and Service Operations components in the environment, but the components also provide data to the Consumer and Provider Portal component that enables consumers to monitor whether the provider adhered to the SLA requirements defined by the Service Level Management component. When you select technologies to implement these components, keep in mind that the functionality of multiple components may be provided by a single technology or that multiple technologies may be required to provide a single component, or that multiple technologies may provide the same component, but in different ways.
+The components in this area supports the capabilities defined by the DevOps business area and supports the consumer self-service characteristics of a cloud. Components also provides data to Platform and Service Delivery supporting Meassured Services and fair billing.
 
 
 *Platform*
-> Platform components are aggregated with Infrastructure and Management and Support components to provide platform as a service (PaaS) services1. This subdomain does not include any technical capabilities components because Platform components are not critical to provide services in every service model, whereas the other technical capabilities components that are represented in the CSFRM are. Platform technical capabilities components are however, critical to providing platform services. If you provide platform services in your environment, either with platform technical capabilities that you manage or with platform technical capabilities managed by an external provider, you can add Platform components to the CSFRM, as appropriate. Examples of platform services that you might provide in your organization are data, media, and service bus. Platform components are sometimes provided as services that are consumed by Software capabilities, but they may also be consumed directly by end-users.
+Platform components are aggregated with Infrastructure and Management and Support components to provide platform as a service (PaaS) services. Platform components are mostly provided as services that are consumed by applications, but they may also be consumed directly by end-users.
 
 *Infrastructure*
-> The components within this subdomain represent the technical capabilities that you manage that are required to host on-premises Platform, Software, and Management and Support technical capabilities components. You might use these components to enable IaaS services that you provide to consumers in the public, private, community, or hybrid deployment models1. You may also consume IaaS services provided by an external provider that manages the infrastructure components for IaaS services. The requirements that these components meet are driven by all subdomains within the CSFRM, but are generally heavily-standardized to facilitate both automation in the environment, and to optimize volume purchases of hardware and software.
-
-
-
+Infrastructure components provide the necessary environment to run the platform. Infrastructure can be on-premise or extended with Infrastructure as a Service from an private provider. Infrastructure is heavily-standardized to facilitate both automation in the environment, and to optimize volume purchases of hardware and software.
 
 
 
 ## Design
-
+The initial design of the GovCloud consists of a number of design decisions and the rationals behind them. During the establishment decisions can be changed following the established service lifecycle management processes.
 
 ### Service Delivery
 Statens IT is the strategic appointed provider of IT operation and service to the Danish Government and shall as such provide the requested cloud environment.
 
+**[PaaS]** Government Cloud is a Platform as a Service offered by SIT within existing license to operate.
 
-**# Government Cloud is a Platform as a Service offered by SIT within existing license to operate.**
+NIST defines the capability provied to the consumer in the PaaS operational model as: *to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.*
 
-[Rational from customer requirements (to reduce maintaince of basic software)]
+Consumers are responsible for the developement and maintainance of applications, data management, awarding and revoking user rights and licensing of software. SIT as a platform provider is responsible for updating platform software, automated testing of services after update, monitoring and reporting on services.
 
-
-> The capability provided to the consumer is to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider.3 The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.
-
-Customers are responsible for the developement and maintainance of applications, data management, awarding and revoking user rights and licensing of software.
-
-SIT as a platform provider is responsible for updating platform software, automated testing of services after update, monitoring and reporting on services.
-
-
-**#  SIT defines a new Operational Model (da. driftsmodel) in the existing framework and all customer applications using the Government Cloud are offered through it**
-
-
-> Reuse grayed out elements below
-> Suitable payment model
-
-> Percieved unlimited capacity from consumer point of view?
+PaaS is choosen over IaaS to limit the ammount of operational knowledge required by government organisations. SIt is setup to lift this requirement from other organisations. [more?] SaaS is an existing offering from SIT and will still be provided. SIT can use the GovCloud as a basis for SaaS offerings to further harmonize the operational environment.
 
 
 
------
+**[Operational Model]**  SIT defines a new Operational Model (da. driftsmodel) in the existing framework.
+
+SIT has established business support functions across a few operational models. Initial PaaS will be a supplement to existing models and will benefit from establihed practices around agreements, reporting and financing.
+
+[do we need to change anything in the SIT regulatory setting?]
 
 
-**# SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model**
-
-> Rational from efficiency and synergy and not bloating the platform project
-
+<br>
+For the initial applications processes related the management of Platform Service Lifecycle and Platform Service Level needs to be established.
 
 ![](delivery.svg)
 
 
-#### Service Level
-
-[Describe what should be in the operational model]
-
-- Uptime for services
-- Internet bandwidth
-- Notfication after platform update
-- Cost model
-- Security notification processes
-- Expected time from Artefact delivery to deployment
-- Automated test requirements and criteria for automated deployment of artefacts.
-- Scale up/down criteria
-
-**# GovCloud has 24/7 operations support and development support during normal business hours**
-
-SIT can restart, but not change configuration or code without consumers...
-
-
-**# Samarbejdsrum til problem-løsning**
 
 
 
 #### Service Lifecycle
-
-
-DIGST defines the technical roadmap for the platform in collaboration with existing and future customers and SIT.
-
-**# The service life cycle of of the GovCloud is based on customer needs, in a baglog maintained by SIT ,and prioritized by a joint public group lead by DIGST**
-
-**# Planned support lifetime for each interface in the platform**
-
-[Rational from vendor neutrality, ownership to both 'business' and 'platform' direction]
-
 > * Requirements for many of the processes that are defined in the Service Operations subdomain components in this article.
 > * Requirements for many of the technical capabilities that are defined in the Management and Support subdomain components in this article.
 > * The plan for how these requirements are to be met. While the processes and technical capability requirements might differ across services, they generally do not dramatically differ, because most organizations define a standard, and then try to adhere to it as much as possible.
 
+
+
+**[Customer driven]** The service life cycle of GovCloud is based on customer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST**
+
+> Rational from vendor neutrality, ownership to both 'business' and 'platform' direction
+
+
+**[Support lifetime]** Each technology, interface and platform service in GovCloud has a planned support lifetime
+
+> rational from customers need to plan ahead... and from the need to be able to face out
+
+
+
+
+
+
+
+#### Service Level
+
 > This component is a key enabler for customer satisfaction and results in the service level agreement (SLA) for the service, which is created from the outcomes of many of the components in this subdomain. This component has a close relationship to both the Business Relationship Management component and all Service Operations components.
+
+>Describe what should be in the operational model. Check existing SITs]
+>- Uptime for services
+>- Internet bandwidth
+>- Notfication after platform update
+>- Cost model
+>- Security notification processes
+>- Expected time from Artefact delivery to deployment
+>- Automated test requirements and criteria for automated deployment of artefacts.
+>- Scale up/down criteria
+
+**[24/7 platform]** GovCloud includes 24/7 support on operations on infrastructure and platform
+
+**[24/7 services]** Consumers wanting to host 24/7 application most provide ressources to collaborated on solutions to incidents. [2nd level? Developer?, Check up on NSP]
+
+> SIT can restart, but not change configuration or code without consumers...
+
+
+
 
 
 
 ### Platform Operations
-[Existing processes are not suitable for DevOps and automation. New variants of existing processes are needed. ITIL and IT4IT are well supported in existing tools]
+> Existing processes are not suitable for DevOps and automation. New variants of existing processes are needed. ITIL and IT4IT are well supported in existing tools
 
-[+ terminology of applications, services, pods, image, artefact]
-
-
-| Design decision |
+>+ terminology of applications, services, pods, image, artefact]
 
 
+**[ITIL]** SIT (GovCloud team) establishes processes suitable for cloud platform operations based on the ITIL framework [Check mapping to DevOps].
 
-Processes likely to be supported in existing Service Now tool
-- Request Fulfillment
-- Change Management
-- Knowledge Management
-- Incident and Problem Management
-
-Processes likely to be supported by new tools decided by the GovCloud Team
-- Access Management
-- Asset and Configuration Management
-- Systems Administration
-- Release and Deployment Management
-
-and...
-- Create identities for Dataset and Application Instance
-- Re-build, Test
-- Deploy
-- Capacity and Scaling
-- Maintain images
-
-**# SIT (GovCloud team) establishes processes suitable for cloud platform operations based on the ITIL framework**
-
-[To minimize Employee training, but new because cloud is different]
+>Rationale to minimize Employee training, but new because cloud is different so not a direct reuse]
 
 
 ![Platform Operation](operations.svg)
 
+#### Access Management
+**[Access]** SIT (GovCloud team) establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+
+
+
 #### System Administration
-[Different because responsible for platform and base images]
+**[SysAdm]** SIT (GovCloud team) establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+
+> Initial tools chosen with aim of automation, CLI, rmeote management
+
+#### Configuration Management
+**[Config]** Configuration of services and platform as different processes.
+
+> Initial tools chosen with to later support self service for application configuration and changes
+
+
 
 
 ### Service DevOps
-[Not at SIT, but important]
-[Scoping of toolchain as a service]
 
-![](devops.svg)
 
-**The Toolchain is provided as SaaS by SIT and delivers docker images into the artefact repository|
-bring your own licens*
+**[SharedOps]** The platform operator and service operators share dashboards, information and tools to deploy and monitor services [incl online collaboration tool?].
 
+
+**[Toolchain]** Consumers can choose between SITs SaaS toolchain or using their own integrating build and test from SITs.
+
+
+**[SIT Tool]** SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model is based on Confluence, Jira, Git, Build?, Test? [Consider license free tools...]
+
+> Rational from efficiency and synergy and not bloating the platform project
 - harmonization
 - time-to-market
 - integrated with identity management
 - to allow alternative toolchains at consumers
 
-**# The Toolchain is based on Confluence, Jira, Git, Build?, Test?**
+**[Sandbox]** The Government Cloud is born with a free-of-charge sand boxe for each existing customer
 
-OpenSource?
+> rational from time to market and spreading the news...]
 
 
-**# The Government Cloud is born with sand boxes for each existing customer**
-
-[rational from time to market and spreading the news...]
+![](devops.svg)
 
 
 
 #### Build
-**# Docker images are build from source using custom build image provided by SIT**
-[Run identical builds on local development ]
+
+**[Build Image]** Docker images are build from source using custom image maintained by SIT
+
+> Run identical builds on local development
+
+#### Test
+
+**[Test Image]** Automated test of services are done using a custom image maintained by SIT
+
+> Run identical builds on local development
+
+**[Acceptance test]** Service passing the provided automated tests are considered running
+
+> to allow SIT to update platform
+
+#### Release
+
+**[Release?]** follows from PaaS or?
+
+#### Release
+
+**[Elastic?]** Every service is deployed with a scaling schedule?
+
 
 
 ### Audit
 
 ![](audit.svg)
 
+#### Security Audit
+[Tænk GovCert]
+
+#### Privacy Audit
+[Tænk Datatilsynet]
+
+#### Performance Audit
+[Tænk SIT og find den der 'sviner']
+
+
+
+
 ### Management and support
 
+>Describe intention about DevOps through selfservice, Same views and (mostly) controls as SIT employee.
+
+
 - No Portal in first version
-- No Billing in first version
+- No detailed per usage Billing in first version
 - Process Automation (left to the team to build ad hoc)
-
-
-**# Portal later...**
-[too few consumers, and needs not known]
-
-Describe intention about DevOps through selfservice, Same views and (mostly) controls as SIT employee.
-
-
 - Authorization (not needed in the first two applications. Future services can use attributes from datasets and roles/rights from AD)
-
-**# Consumer Authorization outside platform with common STS service**
-
-- Authentication (platform administrator using the existing SIT solutions, other users in application)
-
-[Tegning af STS, efter dialog med Jan]
-
-
-
-
 - Data protection (use build in platform, but still processes)???
 - Deployment and Provisioning (reuse existing)
 - Network Support (use existing)
 
-
-| Scope decision |
-| --- |
-| Deployment and provising of hardware, network support and data protection needs to |
+**[Support]** Deployment and provising of hardware, network support and data protection...
 
 ![](support.svg)
 
 #### Service Monitoring
 
-| Design decision |
-| --- |
-| Applications and services implement a common  schema for monitoring, logging...  and are monitored and reported in SITs existing tool (Nagios?)|
+**[Monitoring]** Applications and services implement a common  schema for monitoring, logging...  and are monitored and reported in SITs existing tool (Nagios?)|
 
-Monitoring adskilt fra Reporting
+>Monitoring adskilt fra Reporting
 [Tegning af service i container]
 [Ping and trace]
 [Log content and format]
+
+> Ping, Trace, CallId
 
 
 #### Service management
@@ -456,14 +400,30 @@ Monitoring adskilt fra Reporting
 
 #### Configuration Monitoring
 
+
 #### Authorization
+**[Rights]** All access rights (end-users and other services) are done by service or data responsible
+
+**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
+
+> consequence that SIT needs to know API keys.
+
+**[OAuth2?]**
 
 #### Authentication
 
-#### Directory
-Directory (reuse existing)
+**[Fed]** Authentication of end-users are done in feuderation
+> SIT established trust to idp
 
-**# Users, Applications and Dataset are ressources registered in SITs existing Active Directory.**
+**[Attribute Based Access Policy]** only?
+
+
+#### Directory
+
+
+**[AD]** Users, Applications and Dataset are ressources registered in SITs existing Active Directory
+
+Only employees and platform devops. Other users in trusted datasets.
 
 #### Data protection
 
@@ -471,7 +431,7 @@ Directory (reuse existing)
 
 #### Artifact repository
 
-**# The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only)**
+**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only)**
 
 Configuration of environments are done via management.
 
@@ -480,46 +440,34 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 
 ### Platform
 
+**[Layers]** Three seperate layers: gateway, application, data
 
-**# Three seperate layers: gateway, application, data**
-
-- compliance
-- moveability
-- data management
+> rationale from compliance, moveability, data management
 
 ![](platform.svg)
 
+**[Vert?]** Either common or Consumer.
 
 #### Gateway
 
-**# The API Gateway is [KrakenD](http://www.krakend.io/)**
-- scaleability,
-- distributed configuration
-- OAuth
+**[KrankenD]** The API Gateway is [KrakenD](http://www.krakend.io/)
 
-SSL termination
+> rational deom scaleability, distributed configuration, OAuth
 
-Consider ClientMaxRate
+> SSL termination,Consider ClientMaxRate, Act as circuit braker, Operated by Cloud Platform Team
 
-Act as circuit braker
-
-Operated by Cloud Platform Team
-
-
-Sandboxes outside.
+Sandboxes outside and unprotected.
 
 Test inside but seperate gateway?
 
 
 #### Application fabric
 
-**# The application environment is [Kubernetes](https://kubernetes.io/)**
-- No need for management tools yet.
-- Kubernetes is the core technology.
-- Selfservice and automation is build on top in future versions.
+**[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/)
 
+> rationale: No need for management tools yet, Kubernetes is the core technology, Selfservice and automation is build on top in future versions.
 
-Service layers: data, business, frontend
+**[Service classification]** Service layers: data, business, frontend
 
 Relation to gateway
 
@@ -529,13 +477,9 @@ Application consist of a few controllers with pods with images.
 
 #### Data fabric
 
-[add keylines from storyline]
+**[MapR]** The data fabric is [MapR](https://mapr.com/)
 
-**# The data fabric is [MapR](https://mapr.com/)**
-- manageability,
-- access control,
-- scale out,
-- clustering
+> rational: quick start, manageability,access control, scale out, clustering
 
 
 
@@ -543,13 +487,13 @@ Application consist of a few controllers with pods with images.
 
 ### Infrastructure
 
-**# Scale out and multiple cloud providers as needed, but not initial**
+**[Scale out]** Scale out and multiple cloud providers as needed, but not initial**
 - on premise because we want to test and prepare SIT to handle sensitive data
 
 
 [Consider Hardware certification??]
 
-**# The on-premise application and data fabric runs on non-virtualized hardware under CentOS**
+**[On-premise]** The on-premise application and data fabric runs on non-virtualized hardware under CentOS**
 
 - no Virtualization to reduce complexity/licensing and performance storage
 
@@ -598,6 +542,35 @@ Platform goals for first version:
 
 ### Future releases
 
+#### Principles
+
+**Cloud Broker** - cloud services are consumed through a central cloud broker.
+
+Regulatory issues on the use of public cloud services for sensitive personal data in a government settings are still unclear. Even with clearification, some critical data are still to be kept on danish territory and under strict control. But even critical applications need better time to market and cloud technologies can support this. Hence the need for a onpremise infrastructure based on cloud technologies.
+
+At the same time the cost efficiency of public cloud offerings are hard to match. But government organisations will soon find integration of cloud services can be too complexto manage. A cloud consumer may request cloud services from a cloud broker, instead of contacting a cloud provider directly. A cloud broker is an entity that manages the use, performance and delivery of cloud services and negotiates relationships between cloud providers and cloud consumers. [NIST definition of Cloud Broker](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf)
+
+The cloud broker will take advantage of a competitative market by moving applications to the most best available platforms. Reason can be applications with no personal data or when needed capabilities are only accessible as SaaS at cloud providers.
+
+-----
+
+Furture versions of the GovCloud is expected to focus on
+
+- *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
+
+- *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
+
+to support a number of new use cases
+
+- *Sharing of sensistive data*
+An existing customer at SIT wants to access data from another organisation. The data is not available at any existing dataservices. SIT suggests the data owner to replicate the data onto the GovCloud. The data user builds a custom dataservice and reuses existing security controls incl identity management.
+
+- *Reuse Application/Service.* A software vendor delivers an application to a customer of SIT. The vendor wants to deploy on the GovCloud preparing for more customers. The vendor sells a license to another SIT customer and SIT extends the installation and the software product is available to the new customer.
+
+- *Migrate existing application.* SIT has identified a customer application that is sutiable for hosting on the new GovCloud. SIT plans a transition with the customer and reuse a number of exsiting services and datasets in the Cloud and can turn off some application elements.
+
+
+
 * Formalized operation model
 
 * self service and DevOps
@@ -607,6 +580,56 @@ Platform goals for first version:
 * Authorisation and Authentication
 
 * Automated Billing
+
+### Processes
+
+>Processes likely to be supported in existing Service Now tool
+- Request Fulfillment
+- Change Management
+- Knowledge Management
+- Incident and Problem Management
+
+>Processes likely to be supported by new tools decided by the GovCloud Team
+- Access Management
+- Asset and Configuration Management
+- Systems Administration
+- Release and Deployment Management
+
+>and...
+- Create identities for Dataset and Application Instance
+- Re-build, Test
+- Deploy
+- Capacity and Scaling
+- Maintain images
+
+
+> Sign up as Customer
+- Establish electronic identities
+- Create data-domain (Volume in MapR)
+- Assign rights to Customer (SIT User with ACR)
+- Create a Data Collection
+- Describe using template → Publish
+- Decide security controls
+- Data controller agreement with Platform
+- Plan additional controls?
+- Place in data-domain and establish DEV/TEST/PROD
+
+> Sign up as a Developer?
+- Establish electronic identities
+- Platform GIT project
+- Education/Guidelines/Helloworld?
+- Licens/Ownership?
+
+> Request changes on platform? create topics...? create volumes?
+- Deploy one or more  service instance
+- Identify on GIT
+- Test criteria
+- Data agreements
+- SLA/Monitoring
+- Sign up as Service Consumer
+- Agreement with service owner, data responsible, SIT
+- Firewall?
+- Licensing?
 
 ### Referencemodel
 
