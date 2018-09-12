@@ -7,7 +7,15 @@ This document is an initial architectur for a project aiming at establishing the
 |-------- |--------- | --------------------------------------------------------
 | 20180903|      0.1 | Used for first workshop 20180906
 | **20180911**| **0.2** | Updated with input from DMI and SIT used for second workshop
-| *20180927?*| 1.0 | Support for go-decision 20181003
+| 20180914| 0.7 | Revision
+| 20180920| 0.9 | ready for styregruppe 24.
+| 20180926| 1.0 | Udsendelse til sponsor 20181003
+
+
+## Summary
+- Governance
+- Economy (cost split and risk) afskrivning?
+- 24/7 Operations
 
 ## Introduction
 GovCloud ideas has been around for years, and in the spring of 2018 the planets alligned in a way that allowed a small group of people to conceptualize the idea. Digitaliseringsstyrelsen initiated a coolaboration between the Danish Meteorological Institute and Statens IT that lead to this architecture.
@@ -41,11 +49,13 @@ The GovCloud roadmap primarily support identified applications and secondly The 
 
 Paramount to establishment a GovCloud is the succesfull support of an intial large scale strategic project to proof that the architecture provides a solution to the identified problems.
 
-[DMI as external partner and consumer of platform] [DIGST as consumer to support experience in governance processes] [SIT as consumer of their own platform]
+[DMI as external partner and consumer of platform] [DIGST as consumer to support experience in governance processes] [SIT as consumer of their own platform, iunclude in summary]
 
 
 *DMI Data*
 [Describe data to be shared, volume and latency]
+
+[plus government minus (delvis flyver) beredskab, forsvar og andre meterological]
 
 [Describe the need for API keys]
 
@@ -57,6 +67,8 @@ Paramount to establishment a GovCloud is the succesfull support of an intial lar
 [Back Log is prioritized joint public]
 
 
+
+
 Initial
 
 | | Providers | In | Comp. | Storage | Out | Consumers |
@@ -65,6 +77,7 @@ Initial
 | Forecast | DMI |  ?GB dump 4 hour | ++ | ?GB | ? | Private companies |
 | PubOrg   | KL, SM, DM | 1GB/day | - | 25GB |  1GB/day | DIGST and other Government Digital Services |
 | Platform | SIT | ?GB/day | + | ?GB| ?GB/day| DMI, DIGST, SIT |
+
 
 Future
 [Insert graph with guestimates and add application X, Y, Z]
@@ -102,9 +115,21 @@ Good architecture is based on agreed upon principles that can guide solutions to
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. For the purpose of this document we focus on the following essential charateristics: Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services. A detailed describition can be found in the [definition from NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
-
 The Cloud First principles is further refined by a few principples specific to the use of cloud technologies in a danish governement setting.
 
+[scope for initial?]
+
+**Continious service availabilty** - services run 24/7 even during new service releases and platform upgrades.
+
+It solutions used by public agencies are often critical, not only to the agency itself but to the society in general. Traditionally some services had so called service windows, where service was suspended and new software relases could be rolled out. Digital self-services have changes this and the public is serving it self around the clock at times suitable for the costumer and not for the service provider.
+
+Deployed services run continuously and must be build accordingly. Cloud technology can enforce some of this, but services must be designed for high availabilty, automated testing and detailed monitoring.
+
+Problems must be solved imidiately and in close collaboration between platform consumers, platform providers and software vendors. The GovCloud provides clear seperation of responsibilities, but recognizes that solutions are found in collaboration, and the collaboration must be supported efficiently by it.
+
+High availability is not only a concern for the platform it self, but is a result of carefull planing across all dependencies from electrical power, bandwidth, incident reaction time and capacity to solve problems when they arise.
+
+Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored.
 
 
 **Vendor neutral** - applications and data shall be movable from one cloud platform to another without unreasonable effort.
@@ -118,18 +143,9 @@ Applications are containarized. By choosing widely adopted container technologie
 Propriatary technolgies are used with caution. When used, the imidiate benefits needs to be evaluated against the later cost from the binding. A part of the evaluation is to describe a likely exit strategy for replacing propiatary technology with more open.
 
 
-**Continious service availabilty** - services run 24/7 even during new service releases and platform upgrades.
+- Governance
 
-It solutions used by public agencies are often critical, not only to the agency itself but to the society in general. Traditionally some services had so called service windows, where service was suspended and new software relases could be rolled out. Digital self-services have changes this and the public is serving it self around the clock at times suitable for the costumer and not for the service provider.
-
-Deployed services run continuously and must be build accordingly. Cloud technology can enforce some of this, but services must be designed for high availabilty, automated testing and detailed monitoring.
-
-Problems must be solved imidiately and in close collaboration between platform consumers, platform providers and software vendors. The GovCloud provides clear seperation of responsibilities, but recognizes that solutions are found in collaboration, and the collaboration must be supported efficiently by it.
-
-High availability is not only a concern for the platform it self, but is a result of carefull planing across all dependencies from electrical power, bandwidth, incident reaction time and capacity to solve problems when they arise.
-
-Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored
-
+- Transperant economy
 
 <br>
 In future version new principles can be included e.g. *Cloud Broker*, *Compliance As A Service*, *Reuse of data and applications*.[See appendix]
@@ -190,13 +206,18 @@ Consumers are responsible for the developement and maintainance of applications,
 
 PaaS is choosen over IaaS to limit the ammount of operational knowledge required by government organisations. SIt is setup to lift this requirement from other organisations. [more?] SaaS is an existing offering from SIT and will still be provided. SIT can use the GovCloud as a basis for SaaS offerings to further harmonize the operational environment.
 
-
+[non functional krav]
 
 **[Operational Model]**  SIT defines a new Operational Model (da. driftsmodel) in the existing framework.
 
 SIT has established business support functions across a few operational models. Initial PaaS will be a supplement to existing models and will benefit from establihed practices around agreements, reporting and financing.
 
+[beskrive problemer ved bod...aftalebaseret]
+[PaaS og ikke SaaS]
+
 [do we need to change anything in the SIT regulatory setting?]
+
+[Examples of other driftsmodeller]
 
 
 <br>
@@ -215,16 +236,23 @@ For the initial applications processes related the management of Platform Servic
 
 
 
-**[Customer driven]** The service life cycle of GovCloud is based on customer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST**
+**[Customer driven]** The service life cycle of GovCloud is based on customer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST
 
 > Rational from vendor neutrality, ownership to both 'business' and 'platform' direction
 
+> Example GDPR
+
+> Scale down to three part
 
 **[Support lifetime]** Each technology, interface and platform service in GovCloud has a planned support lifetime
 
 > rational from customers need to plan ahead... and from the need to be able to face out
 
+> Husk at beskrive dokumentation og business case
 
+> Og løbende samarbejde og aftaler
+
+> Unsupported services need to have notice time
 
 
 
@@ -244,7 +272,13 @@ For the initial applications processes related the management of Platform Servic
 >- Automated test requirements and criteria for automated deployment of artefacts.
 >- Scale up/down criteria
 
-**[24/7 platform]** GovCloud includes 24/7 support on operations on infrastructure and platform
+**[24/7 platform]** SIT provided 24/7 support on operations on infrastructure and platform
+
+[leverandør kontakt gennem samarbejdsværktøj]
+[backed by 2-3.level]
+
+[Insight in and fixes on platform but not application]
+
 
 **[24/7 services]** Consumers wanting to host 24/7 application most provide ressources to collaborated on solutions to incidents. [2nd level? Developer?, Check up on NSP]
 
@@ -265,6 +299,7 @@ For the initial applications processes related the management of Platform Servic
 
 >Rationale to minimize Employee training, but new because cloud is different so not a direct reuse]
 
+> Ser forskelligt ud på forskellige tidspunkter på ugen...
 
 ![Platform Operation](operations.svg)
 
@@ -295,7 +330,13 @@ For the initial applications processes related the management of Platform Servic
 **[Toolchain]** Consumers can choose between SITs SaaS toolchain or using their own integrating build and test from SITs.
 
 
-**[SIT Tool]** SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model is based on Confluence, Jira, Git, Build?, Test? [Consider license free tools...]
+**[SIT Tool]** SIT offers a [joint public agreed] Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model is based on Confluence, Jira, Git, Build?, Test? [Consider license free tools...]
+
+[Pris-model overslag]
+
+[Enterprise grade...]
+
+[Minus enduser support, digst uddanner]
 
 > Rational from efficiency and synergy and not bloating the platform project
 - harmonization
@@ -303,7 +344,7 @@ For the initial applications processes related the management of Platform Servic
 - integrated with identity management
 - to allow alternative toolchains at consumers
 
-**[Sandbox]** The Government Cloud is born with a free-of-charge sand boxe for each existing customer
+**[Sandbox]** The Government Cloud provides free-of-charge sand boxes for all existing SIT customer
 
 > rational from time to market and spreading the news...]
 
@@ -351,6 +392,7 @@ For the initial applications processes related the management of Platform Servic
 #### Performance Audit
 [Tænk SIT og find den der 'sviner']
 
+[overvej hvem der betaler for optimering]
 
 
 
@@ -358,6 +400,7 @@ For the initial applications processes related the management of Platform Servic
 
 >Describe intention about DevOps through selfservice, Same views and (mostly) controls as SIT employee.
 
+[Consider adding communication support]
 
 - No Portal in first version
 - No detailed per usage Billing in first version
@@ -447,6 +490,10 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 ![](platform.svg)
 
 **[Vert?]** Either common or Consumer.
+
+[Platform services til vedligehold af Data Access API, kunne genbruges på tværs af data sets?]
+
+[List expected platformservices in version 1]
 
 #### Gateway
 
@@ -634,3 +681,74 @@ An existing customer at SIT wants to access data from another organisation. The 
 ### Referencemodel
 
 ![Referencemodel](reference.svg)
+
+
+### Decisions
+
+**[PaaS]** Government Cloud is a Platform as a Service offered by SIT within existing license to operate.
+
+**[Operational Model]**  SIT defines a new Operational Model (da. driftsmodel) in the existing framework.
+
+**[Customer driven]** The service life cycle of GovCloud is based on customer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST.
+
+**[Support lifetime]** Each technology, interface and platform service in GovCloud has a planned support lifetime.
+
+**[24/7 platform]** GovCloud includes 24/7 support on operations on infrastructure and platform
+
+**[24/7 services]** Consumers wanting to host 24/7 application most provide ressources to collaborated on solutions to incidents. [2nd level? Developer?, Check up on NSP]
+
+**[ITIL]** SIT (GovCloud team) establishes processes suitable for cloud platform operations based on the ITIL framework [Check mapping to DevOps].
+
+**[Access]** SIT (GovCloud team) establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+
+**[SysAdm]** SIT (GovCloud team) establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+
+**[Config]** Configuration of services and platform as different processes.
+
+**[SharedOps]** The platform operator and service operators share dashboards, information and tools to deploy and monitor services [incl online collaboration tool?].
+
+**[Toolchain]** Consumers can choose between SITs SaaS toolchain or using their own integrating build and test from SITs.
+
+**[SIT Tool]** SIT offers a Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model is based on Confluence, Jira, Git, Build?, Test? [Consider license free tools...]
+
+**[Sandbox]** The Government Cloud is born with a free-of-charge sand boxe for each existing customer
+
+**[Build Image]** Docker images are build from source using custom image maintained by SIT
+
+**[Test Image]** Automated test of services are done using a custom image maintained by SIT
+
+**[Acceptance test]** Service passing the provided automated tests are considered running
+
+**[Release?]** follows from PaaS or?
+
+**[Elastic?]** Every service is deployed with a scaling schedule?
+
+**[Rights]** All access rights (end-users and other services) are done by service or data responsible
+
+**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
+
+**[OAuth2?]**
+
+**[Fed]** Authentication of end-users are done in feuderation
+
+**[Attribute Based Access Policy]** only?
+
+**[AD]** Users, Applications and Dataset are ressources registered in SITs existing Active Directory
+
+**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only)
+
+**[Layers]** Three seperate layers: gateway, application, data
+
+**[Vert?]** Either common or Consumer.
+
+**[KrankenD]** The API Gateway is [KrakenD](http://www.krakend.io/)
+
+**[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/)
+
+**[Service classification]** Service layers: data, business, frontend
+
+**[MapR]** The data fabric is [MapR](https://mapr.com/)
+
+**[Scale out]** Scale out and multiple cloud providers as needed, but not initial**
+
+**[On-premise]** The on-premise application and data fabric runs on non-virtualized hardware under CentOS**
