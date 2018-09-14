@@ -18,12 +18,6 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 
 ## Executive Summary
 
-
-- Governance
-- Economy (cost split and risk) afskrivning?
-- 24/7 Operations
-
-
 pre-condition: inter organisational agreement and in competition with public cloud
 
 Principles
@@ -31,10 +25,43 @@ Principles
 - Vendor Neutral
 
 
-*For GovCloud consumers*
 
 
-*For GovCloud provider*
+DMI shall in the role of GovCloud consumer:
+
+- develop, deploy and operate application services, including automated test criteria.
+
+- use the provided virtual machine image for build and test.
+
+- establish collaboration processes for 24/ support.
+
+- establish processes for onboarding data/service consumers.
+
+- provides estimates to SIT for capacity planing.
+
+
+
+
+SIT shall in the role of GovCloud provider:
+
+- establish a new operational model with suporting processes that includes 24/7 support on operation, rolling updates of platform and application servicemonitoring.
+
+- operate a PaaS using MapR, Kubernetes and KrakenD on premise.
+
+- provide a tool chain, including a virtual machine image for seperate build and test, as SaaS.
+
+- provide collaboration tools for incident management with users and required technology providers.
+
+- integrated platform, tool chain and collaboration with exsiting AD.
+
+- develop and operation platform services including API management, API rate limiting
+
+
+
+DIGST shall in the role of policy owner:
+
+ - establish a forum for service lifecycle decisions on the platform and toolchain.
+
 
 
 
@@ -76,12 +103,13 @@ Experiences from countries with free-of-charge meterological data, has shown the
 
 Initial storage, compute and network estimates for first applications (unreplicated data and external bandwith). [More DMI datasets, Update from communication with DMI. Lasse?]
 
-| Applications | Providers | In | Co. | Storage | Out | Consumers |
-| --- | --- | --- | ---:| ---:| --- | --- |
-| Observations | DMI | ?mb/m | -  | ?GB | ? | Government, private |
-| Forecast | DMI |  ?GB/4h | ++ | ?GB | ? | Government, private |
-| PubOrg   | KL,SM,FM | 1GB/d | - | 25GB |  1GB/day | Government |
-| Platform | SIT | ?GB/d | + | ?GB| ?GB/day| DMI, DIGST, SIT |
+| Applications | Providers | Daily In       | Co. | Storage | Daily Out | Consumers |
+| ---          | ---       | ---:     | ---:| ---:| --- | --- |
+| Observations | DMI       | 1        | -  | 1.000 | ? | Government, private |
+| Radar        | DMI       | 15       | -  | 1.500 | ? | Government, private |
+| Forecast     | DMI       | 6.000    | ++ | 42.000 | ? | Government, private |
+| PubOrg       | KL,SM,FM  | 1        | - | 1.000 |  1 | Government |
+| Platform     | SIT       | 5      | + | 1.000 | 1| DMI, DIGST, SIT |
 
 ## Problem
 An architecture is a solution to a problem.
@@ -250,77 +278,72 @@ The selected operational model (PaaS) seperate responsibilities between the plat
 
 When SIT identifies a failing service an incident is created. First efforts are made to restart services and identify underlaying problems. SIT can not be expected to have knowledge about the internal workings of applications, and if first efforts does not bring services up, the service provider is involved.
 
-**[24/7 services]** Consumers wanting to host 24/7 application most provide ressources to collaborated on solutions to incidents.
+**[24/7 services]** Consumers wanting to host 24/7 application most provide ressources to collaborat on solutions to incidents.
 
 Consumers can help identify problems by providing knowledge of the inner workings of applications. When platform provider and consumer agrees on the problem a suggested solution is decided upon. Solutions can be fixes to platform services, or workaround delivered as a new application version or combinations hereoff.
 
-Highly available services are a result of carefull design, early detection of problems and the required capabilities to fix them.
+Highly available services are a result of carefull design, early detection of problems and the required capabilities to fix them. Carefull design is supported by devepoment guidelines and general cloud practices. Detection of problems is supported by automated testing and health monitoring. Required capabilities covers both specific products, their configuration, dependencies and underlying infrastructure. The availability and cost of these capabilities must be considered when choosing products and should be contractually specified.
 
-
-
+Identifying and resolving problems is its own process and seperated from incident management. SLA should also gover the customers responsibility to participate in this process when needed.
 
 
 ### Platform Operations
-> Existing processes are not suitable for DevOps and automation. New variants of existing processes are needed. ITIL and IT4IT are well supported in existing tools
-
->+ terminology of applications, services, pods, image, artefact]
-
+Existing established processes at SIT are not suitable for DevOps and automation. ITIL and IT4IT are well supported in existing tools and a considerable amount of training has been done both at SIT and it's customers.
 
 **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework [Check mapping to DevOps].
 
->Rationale to minimize Employee training, but new because cloud is different so not a direct reuse]
+The required service uptime has consequences on the design of espically the incident process. The time of incident (during normal business hours, weekends or international holidays) will influence fx what contactinformation to use, what ressources are prefered and when to report to management.
 
-> Ser forskelligt ud på forskellige tidspunkter på ugen...
+The initial application will have impact on existing processes for Access Management, Configuration Management and System Administration.
 
 ![Platform Operation](operations.svg)
 
 #### Access Management
-**[Access]** SIT establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+The Public Data Sharing use case combined with the specifc need to identify consumers of the DMI data is not covered by excisting asscess management at SIT.
 
+**[API Keys]** Public Data Sharing is supported by a platform service for management of API keys.
 
+Specifically DMI establishes processes for unboarding data consumers and SIT provides a back-end service to store API keys and contact information.
+
+The API Key management should be generic and be used for all application sharing public data with private business and people.
 
 #### System Administration
-**[SysAdm]** SIT establishes new internal and external roles to assigned to users with access to DevOps processes on the platform.
+Existing SIT SysAdm tools are choosen for the support of the operation of a largely windows dominated environment.
 
-> Initial tools chosen with aim of automation, CLI, rmeote management
+The GovCloud will be based on Linux and employees are not expected to operate in both environment. Furthermore the 24/7 operation might require employess to work from home or on the road.
+
+**[SysAdm]** SIT chooses tools suitable for automation, remote management and based on individual experinces.
+
+The choice of tools most also take into account invidual preferences. The effiency and comfortness of platform operators has a huge impact on service levels and quality of solutions.
 
 #### Configuration Management
-**[Config]** Configuration of services and platform as different processes.
 
-> Initial tools chosen with to later support self service for application configuration and changes
+The configuration of GovCloud is done internally in SIT. For the first version, configuration changes to applications are send to SIT and manually applied. This process is covered by the SLA.
 
+**[Config]** Tools chosen for configuration management must later support self service for application owners.
 
+Configuration is under version control and should have high availabilty matching other critical parts of the platform.
 
 
 ### Service DevOps
+The developement and operation of applications must be supported by an efficient toolchain.
+
+All consumers (and more importantly their developers) can not be expected to adhere to tool choices made by SIT. On the other hand some customers expect a fully supported toolchain as part of the GovCloud.
+
+**[Toolchains]** Consumers can choose between SITs SaaS toolchain or use a custom build toolchain integrating the build and test process from SIT.
+
+The build and test process are required to follow the SIT defined flow to allow SIT to rebuild images and reploy services after changes on the platform.
 
 
-**[SharedOps]** SIT provides tools to support collaboration during normal operation and during incident handling.
+**[SIT Tool]** SIT offers a 'Government Development Toolchain' to support agile application development as Software as a Service.
 
-'also vendors'
+To help government organisation to adapt agile development in a cloud setting, a joint public tool chain is choosen. The use of the toolchain is recommended and can function as a guide for competances across development vendors.
 
+The toolchain should consists of professional enterprise grade tools. Free (as in beer) toolchains can be used, but is not the focus of SIT. SIT offers the toolchain preconfigured and intergrated to existing user and access management. Licenses are provided by customers or procured in bulk through SIT where possible.
 
+End-user support and traning is done outside of SIT.
 
-**[Toolchain]** Consumers can choose between SITs SaaS toolchain or using their own integrating build and test from SITs.
-
-
-**[SIT Tool]** SIT offers a [joint public agreed] Development Toolchain to support agile application development. It is offered as Software as a Service under existing operational model is based on Confluence, Jira, Git, Build?, Test? [Consider license free tools...]
-
-[Pris-model overslag]
-
-[Enterprise grade...]
-
-[Minus enduser support, digst uddanner]
-
-> Rational from efficiency and synergy and not bloating the platform project
-- harmonization
-- time-to-market
-- integrated with identity management
-- to allow alternative toolchains at consumers
-
-**[Sandbox]** SIT provides free-of-charge GovCloud sand boxes for all existing SIT customers.
-
-> rational from time to market and spreading the news...]
+The initial toolchain is based on Jira, Git, Jenkins and SOAP UI.
 
 
 ![](devops.svg)
@@ -343,38 +366,35 @@ Highly available services are a result of carefull design, early detection of pr
 
 > to allow SIT to update platform
 
-#### Release
+**[Sandbox]** SIT provides free-of-charge GovCloud sand boxes for all existing SIT customers.
 
-**[Release?]** follows from PaaS or?
+> rational from time to market and spreading the news...]
 
 #### Release
+**[Release]** Consumers label images in the repository for release based on test results.
+
+#### Deploy
+
+**[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from customer.
+
+[Automate later, webhooks in GIT....]
+
 
 **[Elastic?]** Every service is deployed with a scaling schedule?
+
+
+#### Operate
+
+**[SharedOperation]** SIT provides tools to support collaboration during normal operation and during incident handling.
+
 
 
 
 ### Audit
 
-[Descope for know]
+Auditing features are not in scope for the initial version of GovCloud.
 
 ![](audit.svg)
-
-#### Performance Audit
-
-**[Contiously improvement]**
-[Tænk SIT og find den der 'sviner']
-
-[overvej hvem der betaler for optimering]
-
-
-
-#### Security Audit
-[Tænk GovCert]
-
-#### Privacy Audit
-[Tænk Datatilsynet]
-
-
 
 ----------
 
@@ -510,10 +530,6 @@ Application consist of a few controllers with pods with images.
 **[MapR]** The data fabric is [MapR](https://mapr.com/)
 
 > rational: quick start, manageability,access control, scale out, clustering
-
-
-
-
 
 ### Infrastructure
 
