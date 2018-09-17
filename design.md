@@ -23,51 +23,50 @@ pre-condition: inter organisational agreement and in competition with public clo
 Principles
 - Continious service availabilty
 - Vendor Neutral
+- [More?]
 
 
 
+DIGST shall in the role of Government Cloud Policy owner:
 
-DMI shall in the role of GovCloud consumer:
+ - In corporation with SIT establish a forum for service lifecycle decisions on the platform and toolchain
 
-- develop, deploy and operate application services, including automated test criteria.
-
-- use the provided virtual machine image for build and test.
-
-- establish collaboration processes for 24/ support.
-
-- establish processes for onboarding data/service consumers.
-
-- provides estimates to SIT for capacity planing.
-
+ - In corporation with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain
 
 
 
 SIT shall in the role of GovCloud provider:
 
-- establish a new operational model with suporting processes that includes 24/7 support on operation, rolling updates of platform and application servicemonitoring.
+ - Establish an new operational model for GovCloud with suporting processes that includes 24/7 support on operation, rolling updates of platform and application servicemonitoring.
 
-- operate a PaaS using MapR, Kubernetes and KrakenD on premise.
+ - Operate a GovClud as a PaaS using MapR, Kubernetes, Docker and KrakenD on premise.
 
-- provide a tool chain, including a virtual machine image for seperate build and test, as SaaS.
+ - Provide a DevOps toolchain, including a virtual machine image for seperate build and test, as SaaS.
 
-- provide collaboration tools for incident management with users and required technology providers.
+ - Provide collaboration tools for incident management with users and required technology providers.
 
-- integrated platform, tool chain and collaboration with exsiting AD.
+ - Integrated platform, toolchain and collaboration tools with exsiting AD.
 
-- develop and operation platform services including API management, API rate limiting
+ - Operate a platform service for API management and rate limiting
 
-
-
-DIGST shall in the role of policy owner:
-
- - establish a forum for service lifecycle decisions on the platform and toolchain.
+ - Provide a sandbox environment for prospective users of the platform and toolchain
 
 
+ DMI and DIGST shall in the role of GovCloud consumer:
 
+ - Develop, deploy and operate application services, including automated test criteria.
+
+ - Use the virtual machine image provided by SIT for build and test.
+
+ - Establish collaboration processes for 24/7 support.
+
+ - Establish processes for onboarding data/service consumers.
+
+ - Provides estimates to SIT for capacity planing.
 
 
 ## Introduction
-GovCloud ideas have been around for years, and in the spring of 2018 the planets alligned in a way that allowed a small group of people to conceptualize the idea. Digitaliseringsstyrelsen initiated a coolaboration between the Danish Meteorological Institute and Statens IT that lead to this architecture.
+[rewrite] GovCloud ideas have been around for years, and in the spring of 2018 the planets alligned in a way that allowed a small group of people to conceptualize the idea. Digitaliseringsstyrelsen initiated a coolaboration between the Danish Meteorological Institute and Statens IT that lead to this architecture.
 
 [DMI intro]
 
@@ -133,7 +132,7 @@ To support the first applications SIT most extend existing operational model wit
 - *Application Development.* A governement organisation decides that GovCloud is the future home for a new application. Early in the process SIT helps to identify reusable services and data on the GovCloud.    SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project
 
 <br>
-Furture versions of the GovCloud is expected to focus on *Compliance as a Service, Development procurment framework, Sharing of sensistive data, Reuse Application/Service,  Migrate existing application*. [See appendix]
+Furture versions of the GovCloud is expected to add capabilitiued supporting  *Compliance as a Service, Development procurment framework, Sharing of sensistive data, Reuse Application/Service, Hybrid Cloud/Scale Out*, and *Migrate existing application*. [See appendix]
 
 
 
@@ -142,7 +141,7 @@ Good architecture is based on shared principles that can guide solutions to futu
 
 The following principles has been identified:
 
-**Continious service availabilty** - platform and services are build to deliver uninterupted service even during new releases and platform.
+**_Continious service availabilty_: Platform and services are build to deliver uninterupted service even during new releases and platform.**
 
 It solutions used by public agencies are often critical, not only to the agency itself but to the society in general. Traditionally some services had so called service windows, where service was suspended and new software relases could be rolled out. Digital self-services have changes this and the public is serving it self around the clock at times suitable for the costumer and not for the service provider.
 
@@ -155,7 +154,7 @@ High availability is not only a concern for the platform it self, but is a resul
 Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored.
 
 
-**Vendor Neutral** - applications and data shall be movable from one cloud platform to another without unreasonable effort.
+**_Vendor Neutral:_ Applications and data shall be movable from one cloud platform to another without unreasonable effort.**
 
 Public agencies can not allow there data or application to be locked-in to a specific vendor. From a regulatory view public procurement should support competition and not favour a specific propitary tehcnology or sole vendor. From a strategic perspective public services should be possbile to move between organisation, and to be intergrated into new operational landscapes. This principle supports the provider resource pooling characteristic.
 
@@ -165,8 +164,16 @@ Applications are containarized. By choosing widely adopted container technologie
 
 Propriatary technolgies are used with caution. When used, the imidiate benefits needs to be evaluated against the later cost from the binding. A part of the evaluation is to describe a likely exit strategy for replacing propiatary technology with more open.
 
+**_Faster Development of IT:_ The GovCloud platform, tools and business processes supports governement organisations in reducing the time from it-project initiation to it-service delivery**
 
-**Predictable Cost** - the operational model ensures predictable consumer costs suitable for public sector budget guidelines.
+[translate]
+Ingen udbudsproces på adgang til platform og toolchain
+Fuld understøttelse af DevOps-udvikling
+Friktionsløb transition fra prototype, til test og til produktion
+Høj grad af umiddelbar GDPR-complience
+
+
+**Predictable Cost: The operational model ensures predictable consumer costs suitable for public sector budget guidelines.**
 
 Public organisation are interested in fixing variable cost, or at least work with define caps, to control risk and comply with guidelines. The GovCloud cost model must play well with other budget items and not expose consumers to greater economic risks than other technological solutions.
 
@@ -177,9 +184,9 @@ Costs should reflect the use, maintainance and continiously improvement of the G
 <br>
 In future version new principles can be included e.g. *Cloud Broker*, *Compliance as a Service*, *Reuse of data and applications*.[See appendix]
 
-The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A strategic general principles could look like the following:
+The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A future strategic general principles could look like the following:
 
-*Cloud First* - cloud technologies are prefered when designing new applications and new integrations between existing applications.
+**_Cloud First:_ Cloud technologies are prefered when designing new applications and new integrations between existing applications.**
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. The essential charateristics of a cloud are Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services. [NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
@@ -195,9 +202,10 @@ To identify the different components in the architecture, we use a conceptual mo
 
 ![](areas.svg)
 
-[include roles Cloud Consumer, Cloud Provider, Cloud Broker, Application Responsible, Application Developer, Data Responsible. And correct use in the business area description. ]
+[include (Gov)roles Cloud Consumer, Cloud Provider, Cloud Policy Owber, Application Responsible, Application Developer, Data Responsible. And correct use in the business area description. ]
 
-Four areas of business...
+The business processes around a cloud platform can be organized into four main areas:
+
 
 *Platform Delivery.* This area is responsible for translating consumer requirements into platform services. Capabilities and technologies are provided with a specific service level agreement. All changes follow a transparent governance process with consumer involvement,.
 
@@ -254,7 +262,7 @@ For the initial applications processes related the management of Platform Servic
 #### Service Lifecycle
 Transparent governance process are necessary for consumers to evaluate fit-for-porpuse of the operational model.
 
-**[Customer driven]** The service life cycle of GovCloud is based on consumer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST.
+**[Customer driven]** The service life cycle of GovCloud is based on consumer needs, in a baglog maintained by SIT, and prioritized by a joint public group lead by DIGST in corporation with SIT.
 
 Establishment of platform services, changes service level agreements and exposed interfaces are the primary areas of governance. To support the vendor neutrality principle the supported interfaces most be carefully curated. And the choices should support the more general 'business' strategy.
 
@@ -264,12 +272,12 @@ In a two-way negotiation between consumer and provider on individal projects, th
 
 The products used to implement the platform will likely have many features that are less desirable to make an application depend on. To support the principle of vendor neutrality (and its goal of moveable applications) only a subset is selected and supported.
 
-When designing applications, consumers must take informed decissions about the use of available features of GovCloud. Therefor there most be explit planned support lifetime for each exposed element. For technologies the vendor support and for interfaces the release plans of standard organisations should be taken into consideration. Platform services are more locally controlled and the support time can be agreed upon among current service users.
+When designing applications, consumers must take informed decissions about the use of available features of GovCloud. Therefore there most be explit planned support lifetime for each exposed element. For technologies the vendor support and for interfaces the release plans of standard organisations should be taken into consideration. Platform services are more locally controlled and the support time can be agreed upon among current service users.
 
 Application developers can have valid reasons to use unsupported services, and
 often development time and the code lines can be greatly reduced by clever use of a platform. When applications rely on unsupported features it is important to estimate the immidiate savings and compare with the future cost in the event of unavailable supporting features.
 
-Unsupported features will be used and consumers should be alerted as soon as the platform provides is aware of planned changes fx in updated roadmap from vendors of technology exposed.
+Unsupported features will be used and consumers should be alerted as soon as the platform provider is aware of planned changes fx in updated roadmap from vendors of technology exposed.
 
 #### Service Level
 The selected operational model (PaaS) seperate responsibilities between the platform provider and the platform consumer. However, in a government collaboration, a running platform with a failling application, is a failling public services. Citizens and business does only care that the service is brought back up and not what part of governement (or even private vendor) is to blame.
@@ -301,9 +309,9 @@ The initial application will have impact on existing processes for Access Manage
 #### Access Management
 The Public Data Sharing use case combined with the specifc need to identify consumers of the DMI data is not covered by excisting asscess management at SIT.
 
-**[API Keys]** Public Data Sharing is supported by a platform service for management of API keys.
+**[API Keys]** Public Data Sharing is supported by a GovCloud platform service for management of API keys.
 
-Specifically DMI establishes processes for unboarding data consumers and SIT provides a back-end service to store API keys and contact information.
+Specifically the GovCloud consumer establishes processes for unboarding data consumers and SIT provides a back-end service to store API keys and contact information.
 
 The API Key management should be generic and be used for all application sharing public data with private business and people.
 
@@ -335,7 +343,7 @@ All consumers (and more importantly their developers) can not be expected to adh
 The build and test process are required to follow the SIT defined flow to allow SIT to rebuild images and reploy services after changes on the platform.
 
 
-**[SIT Tool]** SIT offers a 'Government Development Toolchain' to support agile application development as Software as a Service.
+**[SIT Tool]** SIT offers an enterprise grade 'Government Development Toolchain' to support agile application development as Software as a Service.
 
 To help government organisation to adapt agile development in a cloud setting, a joint public tool chain is choosen. The use of the toolchain is recommended and can function as a guide for competances across development vendors.
 
@@ -354,21 +362,27 @@ The initial toolchain is based on Jira, Git, Jenkins and SOAP UI.
 
 **[Build Image]** Docker images are build from source using custom image maintained by SIT
 
-> Run identical builds on local development
+In the very definition of PaaS, the provider chooses which *programming languages, libraries, services, and tools* to suopport.  The custom build and test images defines the supported technology stack on the platformn. The GovCloud aims to provide a seamless process of bringing services into production. The custom build and test image allows developers to replicate the core of the production environment on their local maching. The build and test image is governed as part of the generel service life cycle.
+
 
 #### Test
 
 **[Test Image]** Automated test of services are done using a custom image maintained by SIT
 
-> Run identical builds on local development
+As above, this allows the test to be carried out in an environment that closely match the one used in production.
 
 **[Acceptance test]** Service passing the provided automated tests are considered running.
 
-> to allow SIT to update platform
+Because the same virtual machine is use to build and test services at both the consumer and provider, the automated test can also be used as a form of acceptance test. That is, the GovCloud provider can rely on the test to verify that a service is running after an upgrade of the underlying platform. A side effect to this, is that if a service is behaving un-expected after a platform update, new tests should be write to provide better test coverage for future updates.
+
+
 
 **[Sandbox]** SIT provides free-of-charge GovCloud sand boxes for all existing SIT customers.
 
-> rational from time to market and spreading the news...]
+Sand boxes can also be provided for 3rd party developers if requested by SIT customers. Sand boxes have no support, no SLA and will be erased after a specified number of days.
+
+Sand boxes can help the uptake of the GovCloud among existing customers and private vendors interested in providing developers to government agencies can familiarize them self with the prefered setup before project establishment.
+
 
 #### Release
 **[Release]** Consumers label images in the repository for release based on test results.
@@ -467,7 +481,7 @@ Auditing features are not in scope for the initial version of GovCloud.
 #### Directory
 
 
-**[AD]** Users, Applications and Dataset are ressources registered in SITs existing Active Directory
+**[AD]** Users, Applications, Services and Dataset are ressources registered in SITs existing Active Directory
 
 Only employees and platform devops. Other users in trusted datasets.
 
@@ -506,7 +520,7 @@ Artefact are identified in the AD, semantic versioned and taged (production, pre
 
 > SSL termination,Consider ClientMaxRate, Act as circuit braker, Operated by Cloud Platform Team
 
-Sandboxes outside and unprotected.
+Sandboxes outside, unprotected and with limited ressources.
 
 Test inside but seperate gateway?
 
@@ -610,11 +624,14 @@ The cloud broker will take advantage of a competitative market by moving applica
 
 -----
 
-Furture versions of the GovCloud is expected to focus on
+Furture versions of the GovCloud is expected to add capabilities  on
 
 - *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
 
 - *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
+
+- *Hybrid Cloud/Scale Out?*
+[Expand]
 
 to support a number of new use cases
 
