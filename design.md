@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-# ![logo](cloud.svg)
-Initial Architecture <br> Government Cloud <br> Statens IT 
-=======
 # ![logo](cloud.svg) Initial Architecture <br> Government Cloud <br> Statens IT 
->>>>>>> 095ea2987247ac70cfd504368155aef6175e70c3
 
 This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT based on cloud technologies and supporting agile development processes. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
 
