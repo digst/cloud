@@ -2,8 +2,6 @@
 
 This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT using cloud technologies to proivide a managed platform for agile application development. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
 
-JENS TEST
-
 The first use of the document, is to support a decisions on how to best host meterological and climate data free of charge for government and private data users starting from late 2019.
 
 Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitaliseringsstyrelsen.
