@@ -1,4 +1,4 @@
-# ![logo](cloud.svg) Initial Architecture <br> Government Cloud <br> Statens IT 
+# Initial Architecture <br> Government Cloud <br> Statens IT 
 
 This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT based on cloud technologies and supporting agile development processes. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
 
@@ -12,6 +12,9 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | 20180914| 0.7 | Internally reviewed, discussed with DMI and SIT 201809119
 | **20180920**| **0.9** | Distribute for board meeting 20180924
 | *20180926*| *1.0* | Distribute for sponsor meeting 20181003
+
+[Table of Content]
+
 
 # Dansk resume
 [Skrives til version 1.0]
@@ -632,44 +635,7 @@ An existing customer at SIT wants to access data from another organisation. The 
 
 ### List of Design Decisions
 
-1. **[PaaS]** The operation model of GovCloud is Platform as a Service offered by SIT within existing license to operate.
-1. **[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritized by a joint public group lead by DIGST in corporation with SIT.
-1. **[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers long term planing.
-1. **[24/7 platform]** SIT continously monitor all services, reports swift on incidents, initiate problem solving and bring in support from external professional services when necessarry.
-1. **[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
-1. **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework.
-1. **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
-1. **[Existing IAM]** Identities and access rights necessary for development of applications and operation of platform are store in SITs prefered central Identify and Access Management system.
-1. **[SysAdm tooling]** GovCloud operators choose tools suitable for automation and remote management based on individual experiences.
-1. **[Manual Config]** Tools chosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
-1. **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software as a Service to support agile application development
-1. **[Consumer Tool]** Platform Consumers may choose between SIT’s SaaS tool chain and providing their own tool chain, contingent on the Platform Consumer’s tool chain’s complete integration with the build and test processes from SIT.
-1. **[Staging]** Applications, services and data sets can deployed to multiple stages of the GovCloud.
-1. **[Build Image]** Docker images are build from source using custom image maintained by SIT.
-1. **[Test Image]** Automated test of services are done using a custom image maintained by SIT.
-1. **[Acceptance test]** Service passing the provided automated tests are considered running.
-1. **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers.
-1. **[Release]** Consumers label images in the repository for release based on test results.
-1. **[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from customer.
-1. **[Scaleable]** Every service is deployed with a scaling schedule.
-1. **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
-1. **[Monitoring]** Applications and services implement a common schema for monitoring and logging, and are monitored and reported in SITs existing tools.
-1. **[SLA management]** SIT is using existing tools and channels to provide data on the fullfillment of SLA and other agreements.
-1. **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
-1. **[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service.
-1. **[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
-1. **[Federation]** Authentication of end-users are done in federation.
-1. **[Attribute Based Access Policy]** Access policies should rely on trusted attributes over detailes rights when possible.
-1. **[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
-1. **[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
-1. **[Platform Layers]** Three seperate layers: gateway, application, data
-1. **[KrankenD]** The API Gateway is [KrakenD](http://www.krakend.io/).
-1. **[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/).
-1. **[MapR]** The data fabric is [MapR](https://mapr.com/).
-1. **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
-1. **[Secure Token Service]** All services use a common secure token platform service.
-1. **[Log Service]** All services use a common logging service.
-1. **[Code service]** The code repository of applications and platform services is [GIT] and is a platform service at SIT.
+[autogenerated in publication]
 
 
 ### Referencemodel
