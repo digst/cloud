@@ -73,17 +73,17 @@ The Digital Strategy 2016-2020 is a joint public strategy for all levels of gove
 Integrated in the The Digital Strategy is a joint public architecture framework, the Federated Digital Architecture (FDA, Dan. Fællesoffentlig Digital Arkitektur). Within the framework a number of reference architectures have been approved, especially the reference architecture for *sharing of data and documents* is relevant for this project. The GovCloud concept is an implementation of the pattern *shared data and application platform*.
 
 ## First Applications
-Paramount to the establishment of a Government Cloud is the succesfull support of an intial large scale strategic project to prove the attractivness of the architecture.
+Paramount to the establishment of a Government Cloud Platform is the succesful support of an initial large scale strategic project to prove the attractiveness of the architecture.
 
-It has been the focus of a proof of concept to create common experiences across different organisations, and this focus is continued in the initial version of the GovCloud. DMIs is an experienced application developer and service provider, and has supporting throughout all aspects of this design. DIGST has much experiences with policy development, whereas SIT has established mature it operations, but neither have experiences with agile application developement. Hence DIGST has choosen to also take the role of application developer in a smaller project and SIT will use the platform to build its own platform services.
+It has been the focus of a proof of concept to create collective experiences in different organisations, and this focus is continued in the initial version of the GovCloud Platform. DMI is an experienced application developer and service provider, and has applied this knowledge to support the development of this design. DIGST is experienced in policy development, and SIT has established mature IT operations. However, neither have experience with agile application developement. Hence DIGST has choosen to also take the role of application developer in a smaller project and SIT will use the platform to build its own platform services.
 
-As drivers for the initial version of GovCloud, the following three applications has been choosen:
+As drivers for the initial version of GovCloud, the following three applications have been choosen:
 
-**DMI Data.** Meteorological and climate data are distributed widely today. The government has decided to provide these data under a open government data initiative to support growth of private businesses based on data available in government. DMI sees a potential of seperating the generic operational aspects of data sharing from the knowledge and support of the specific data they produce.
+**DMI Data.** Meteorological and climate data are distributed widely today. The government has decided to provide these data under a open government data initiative to support growth of private businesses. DMI sees a potential of separating the generic operational aspects of data sharing from the knowledge and support of the specific data they produce.
 
-In the future data sharing to both private consumers and other government organisations are expected to be done on the same infrastructure, whereas highly critical sharing e.g. crisis management and defense, will continue in seperate channels.
+In the future, data distribution to private consumers and other government organisations is expected to be done on the same infrastructure, whereas highly critical data distribution e.g. crisis management and defence, will continue in separate channels.
 
-Experiences from countries with free-of-charge meterological data, have shown the need for a way to contact data consumers in the case of erroneous data from failing sensors etc. DMI wants to register data consumers to support this and a *fair use* agreement.
+Experiences from countries with free-of-charge meterological data have shown the need for a way to contact data consumers in the case of e.g. erroneous data from failing sensors. As such DMI wants to register data consumers to support this. Registering data consumers also supports enforcing a *fair use* agreement.
 
 **PubOrg.**
 
@@ -152,9 +152,9 @@ High availability is not only a concern for the platform it self, but is a resul
 Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored.
 
 
-**_Vendor Neutrality:_ Applications and data shall be movable from one cloud platform to another without unreasonable effort.**
+**_Vendor Neutrality:_ Applications and data shall be portable from one cloud platform to another without unreasonable effort.**
 
-Public agencies can not allow their data or applications to be locked-in to a specific vendor. From a regulatory point of view, public procurement should support competition and not favour a specific propitary tehcnology or sole vendor. From a strategic perspective, it should be possbile to move public services between organisation, and additionally have them  intergrated into new operational landscapes. This principle supports the characteristic of provider resource pooling.
+Public agencies can not allow their data or applications to be locked-in to a specific vendor. From a regulatory point of view, public procurement should support competition and not favour a specific propriatary tehcnology or sole vendor. From a strategic perspective, it should be possbile to move public services between organisation, and additionally have them  intergrated into new operational landscapes. This principle supports the characteristic of provider resource pooling.
 
 Exposed interfaces are standardized and supported by Open Source implementations. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected on the basis of their support in the open source community. Selecting interfaces suopported by open source ensures a licens-free fall back option, if the benefits of licensed implementions are not balanced with the price. Standardization ensure a clear governance of changes and transparent terms of use.
 
