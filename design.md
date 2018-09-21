@@ -85,11 +85,11 @@ In the future, data distribution to private consumers and other government organ
 
 Experiences from countries with free-of-charge meterological data have shown the need for a way to contact data consumers in the case of e.g. erroneous data from failing sensors. As such DMI wants to register data consumers to support this. Registering data consumers also supports enforcing a *fair use* agreement.
 
-**PubOrg.**
+**PubOrg.** Data on the different levels of the Danish public sector and different domains within these levels are abundant. However, current data services are configured to meet domain specific purposes and as such do not support the inter-domain collaboration necessary to support e.g. citizens' contacts with a plurality of authorities and public sector entities. PubOrg addresses this by providing complete, coherent and consistent generic data on all three layers of government.
 
-[Describe data to be shared, volume and latency]
+Data is provided by real time gathering and harmonising domain specific data from existing registries. When fully implemented, PubOrg is expected to contain data on approximately 20.000 public sector entities and their respective leaders.
 
-[Describe few sources and first know usages]
+The first known usages for PubOrg is as support for the implementation of Next Generation Digital Mail, the service Borger.dk, and the publication "Det Offentlige Danmark".  
 
 **Platform DevOps.**
 
