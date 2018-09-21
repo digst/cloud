@@ -1,8 +1,8 @@
 # Initial Architecture <br> GovCloud PaaS<br> Statens IT 
 
-This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT using cloud technologies to proivide a managed platform for agile application development. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
+This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the use of cloud technologies in the Danish public sector.
 
-The first use of the document, is to support a decisions on how to best host meterological and climate data free of charge for government and private data users starting from late 2019.
+The first use of the document supports a decision of how to best host meterological and climate data free of charge for government and private data users starting from late 2019.
 
 Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitaliseringsstyrelsen.
 
@@ -10,8 +10,8 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | Date    | Version  | Usages
 |--------:|---------:|:-------------------------------------------------------
 | 20180914| 0.7 | Internally reviewed, discussed with DMI and SIT 201809119
-| **20180920**| **0.9** | Distribute for board meeting 20180924
-| *20180926*| *1.0* | Distribute for sponsor meeting 20181003
+| **20180920**| **0.9** | Distribution for board meeting 20180924
+| *20180926*| *1.0* | Distribution for sponsor meeting 20181003
 
 [Table of Content]
 
@@ -22,33 +22,38 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 # Executive Summary
 [Finalize for version 1.0]
 
-Operating model as an inter organisational agreement and in competition with public cloud providers and as supplement toi IaaS and SaaS.
+Operating model as an inter organisational agreement and in competition with public cloud providers and as a supplement to IaaS and SaaS.
 
-Principles: Continious service availabilty, Vendor Neutrality, Highly Scalable and Predictable Cost.
+Principles: Continuous Service Availabilty, Vendor Neutrality, Highly Scalable Capabilities and Predictable Cost.
+
+This document describes the architecture and capabilities of the first version of the GovCloud Platform Service and the responsibilites of the three main user types related to it: 
+* The GovCloud PaaS Policy Owner
+* The GovCloud PaaS Provider
+* The GovCloud PaaS Consumer
+
 
 DIGST shall in the role of GovCloud PaaS Policy owner:
 
-- In corporation with SIT establish a forum for service lifecycle decisions on the platform and toolchain, and continously publish an update feature catalogue (6.1.1).
+- In corporation with SIT establish a forum for service lifecycle decisions for the platform and toolchain, and continuously publish an updated feature catalogue (6.1.1).
 - In corporation with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture (6.3)
 
-SIT shall in the role of GovCloud PaaS provider:
+SIT shall in the role of GovCloud PaaS Provider:
 
-- Establish an PaaS operating model for GovCloud with suporting processes that includes 24/7 support on operation, rolling updates of platform and application servicemonitoring (6.1)
-- Operate a GovClud using MapR, Kubernetes, Docker and KrakenD on premise (6.6, 6.7)
-- Provide a DevOps toolchain, including a virtual machine image for seperate build and test, as SaaS (6.3)
-- Provide collaboration tools for incident management with users and required technology providers [6.2??]
-- Integrated platform, toolchain and collaboration tools with exsiting identify and access management systems (6.5.6)
-- Operate a platform service for API management and rate limiting [6.2.1??]
+- Establish a PaaS operating model for GovCloud with suporting processes that includes 24/7 support on operation, rolling updates of platform and application service monitoring (6.1)
+- Operate a GovClud-PaaS using MapR, Kubernetes, Docker and KrakenD on premise (6.6, 6.7)
+- Provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS (6.3)
+- Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers [6.2??]
+- Integrate platform, toolchain and collaboration tools with existing identity and access management systems (6.5.6)
+- Provide and operate a platform service for API management and rate limiting [6.2.1??]
 - Provide a sandbox environment for prospective users of the platform and toolchain [6.3.2??]
 
-
-DMI and DIGST shall in the role of GovCloud PaaS consumer:
+DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
 
 - Develop, deploy and operate application services, including automated test criteria (6.1)
-- Provides estimates to SIT for capacity planing (6.1.)
+- Provide estimates to SIT for capacity planning (6.1.)
 - Establish collaboration processes for 24/7 support (6.1.2)
-- Establish processes for onboarding data/service consumers (6.2.1)
-- Per user licens cost if they decide to use the Gov Dev Tool provided as SaaS by SIT (6.3)
+- Establish processes for onboarding data and service consumers (6.2.1)
+- Provide per user license cost if they decide to use the Gov Dev Tool provided as SaaS by SIT (6.3)
 - Use the virtual machine image provided by SIT for build and test (6.3)
 
 
