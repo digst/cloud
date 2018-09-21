@@ -1,6 +1,6 @@
-# Initial Architecture <br> Government Cloud <br> Statens IT 
+# Initial Architecture <br> GovCloud PaaS<br> Statens IT 
 
-This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT based on cloud technologies and supporting agile development processes. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
+This document is an initial architecture for a project aiming at establishing the first version of a new operations model at Statens IT using cloud technologies to proivide a managed platform for agile application development. The architecture describes which decisions that has been made and why, for selected elements in a reference model.  Decisions reflects the needs identified by first know applications and supports a longer strategic perspective on use of cloud technologies in the danish public sector.
 
 JENS TEST
 
@@ -24,16 +24,16 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 # Executive Summary
 [Finalize for version 1.0]
 
-Operating model as an inter organisational agreement and in competition with public cloud providers.
+Operating model as an inter organisational agreement and in competition with public cloud providers and as supplement toi IaaS and SaaS.
 
 Principles: Continious service availabilty, Vendor Neutrality, Highly Scalable and Predictable Cost.
 
-DIGST shall in the role of Government Cloud Policy owner:
+DIGST shall in the role of GovCloud PaaS Policy owner:
 
 - In corporation with SIT establish a forum for service lifecycle decisions on the platform and toolchain, and continously publish an update feature catalogue (6.1.1).
 - In corporation with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture (6.3)
 
-SIT shall in the role of Government Cloud provider:
+SIT shall in the role of GovCloud PaaS provider:
 
 - Establish an PaaS operating model for GovCloud with suporting processes that includes 24/7 support on operation, rolling updates of platform and application servicemonitoring (6.1)
 - Operate a GovClud using MapR, Kubernetes, Docker and KrakenD on premise (6.6, 6.7)
@@ -44,7 +44,7 @@ SIT shall in the role of Government Cloud provider:
 - Provide a sandbox environment for prospective users of the platform and toolchain [6.3.2??]
 
 
-DMI and DIGST shall in the role of Government Cloud consumer:
+DMI and DIGST shall in the role of GovCloud PaaS consumer:
 
 - Develop, deploy and operate application services, including automated test criteria (6.1)
 - Provides estimates to SIT for capacity planing (6.1.)
@@ -112,9 +112,9 @@ Customers of SIT (ministeries and their agencies) are moving towards modern, clo
 
 *What service offering will be the most attractive option for public agencies seeking the advantages of 'the cloud'?*
 
-This document describes an initial architecture for a government cloud aimed at becoming customers prefered Operating Model at SIT. It consists of a new governance model and blue print for a technical solution.
+This document describes an initial architecture for a government cloud aimed at becoming customers prefered Operating Model at SIT. It consists of a new governance model and blue print for a technical solution supporting Platform as a Service.
 
-SIT has a small number of suggested operating models that today provides the stability and security required by the customers. This new model is believed to be prefered over existing ones because of the following charactaristics:
+SIT has a number of suggested operating models (including ones base on SaaS and IaaS) that today provides the stability and security required by the customers. This new model is believed to be prefered over existing ones because of the following charactaristics:
 
 - *Continuity of Service.* Existing models allow small and planned windows for maintainance. Cloud technologies typically offers a continuity with rolling updates of both platform and applications without any interuption.
 
