@@ -133,21 +133,21 @@ Furture versions of the GovCloud are expected to add capabilities supporting Com
 
 
 ## Principles
-Good architecture is based on shared principles that assists solutions in handling future unforseen problems, allowing the GovCloud to evolve with less escalation of desicisions, and clarifying where substantial diagreement exists.
+Good architecture is based on shared principles in order to assist solutions handle future unforeseen problems. A foundation of shared and agreed principles also ensures that the GovCloud Platform may evolve with less escalation of decisions, as well as the process of describing said principles aligns stakeholdes and unearths disagreements if any.
 
-The following principles has been identified:
+The following principles have been identified:
 
-**_Continious service availabilty_: GovCloud platform and application services are build to deliver uninterupted service even during new releases and platform maintainance.**
+**_Continuous service availability_: GovCloud platform and application services are built to deliver uninterrupted service even during new releases and platform maintainance.**
 
-Applications used by public agencies are often critical, not only to the agency itself, but to the society in general. Even so, some services have traditionally had so called service windows, where services were suspended and to allow for new software relases. Digital self-services have changed this. The general public is now serving itself at times suitable for the costumer instead of the service provider.
+Applications used by public agencies are often critical, not only to the agency itself, but to society in general. However, most services have traditionally had so called service windows, where services were suspended to allow for new software relases. Digital self-services have changed this. The general public is now serving itself at times suitable for the costumer instead of the service provider.
 
-This means deployed services run continuously and must be build accordingly. Cloud technology can enforce some of this, but services must be designed for high availabilty, automated testing and detailed monitoring.
+In relation to the GovCloud Platform, this means deployed services run continuously and must be built accordingly. Cloud technology  ensures this related to infrastructure and platform, but application services must also be designed for high availabilty, automated testing and detailed monitoring.
 
-Problems must be solved imidiately and in close collaboration between platform consumers, platform providers and software vendors. The GovCloud provides clear seperation of responsibilities, but recognizes that solutions are found in collaboration, and that the collaboration must be supported efficiently tools provided as part of the GovCloud.
+Problems must be solved immediately and in close collaboration between platform provider, platform consumers and application providers. The GovCloud provides clear separation of responsibilities, but recognises that solutions are found in collaboration, and that the collaboration must be supported efficiently by tools provided as part of the GovCloud.
 
-High availability is not only a concern for the platform it self, but is a result of carefull planing across all dependencies from electrical power, bandwidth, incident reaction time and capacity to solve problems when they arise.
+High availability is not only a concern for the platform itself, but is a result of meticulous planing of all dependencies ranging from electrical power and bandwidth to incident reaction time and capacity to solve problems when they arise.
 
-Service availability is an extension of the cloud characteristica of measured services. THe health of the platform and it's individual services most be continiously monitored.
+Service availability is an extension of the cloud characteristica of measured services. The health of the platform and its individual services most be continuously monitored.
 
 
 **_Vendor Neutrality:_ Applications and data shall be portable from one cloud platform to another without unreasonable effort.**
