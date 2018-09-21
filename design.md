@@ -127,7 +127,7 @@ To support the first applications SIT must extend existing operating models with
 - *Application Development.* A governement organisation decides that GovCloud is the future home for a new application. Early in the process SIT helps to identify reusable services and data on the GovCloud. SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project
 
 <br>
-Furture versions of the GovCloud is expected to add capabilities supporting  *Compliance as a Service, Development Procurment Framework, Sharing of Sensistive Data, Reuse Applications/Services, Hybrid Cloud/Scale Out*, and *Migrating Existing Applications* (see [appendix](#more-principles,-capabilities-and-use-cases)).
+Furture versions of the GovCloud is expected to add capabilities supporting  Compliance as a Service, Development Procurment Framework, _Sharing of Sensistive Data_, _Reuse Applications/Services_, _Hybrid Cloud/Scale Out_, and _Migrating Existing Applications_ (see [appendix](#more-principles,-capabilities-and-use-cases)).
 
 
 
