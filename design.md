@@ -94,13 +94,13 @@ Experiences from countries with free-of-charge meterological data, have shown th
 
 Storage needs, compute and network estimates for first applications are shown in the table below. Unreplicated data and external bandwith. All numbers are in giga bytes (GB).
 
-| Applications | Providers | Daily In       | Co. | Storage | Daily Out | Consumers |
-| ---          | ---       | ---:     | ---:| ---:| --- | --- |
-| Observations | DMI       | 1        | -  | 1.000 | ? | Government, private |
-| Radar        | DMI       | 15       | -  | 1.500 | ? | Government, private |
-| Forecast     | DMI       | 6.000    | ++ | 42.000 | ? | Government, private |
-| PubOrg       | KL,SM,FM  | 1        | - | 1.000 |  1 | Government |
-| Platform     | SIT       | 5      | + | 1.000 | 1| DMI, DIGST, SIT |
+| Applications | Providers | Daily In | Co. | Storage | Daily Out | Consumers    |
+| ---          | ---       | ---:     | ---:| -------:|---:       | ------------ |
+| Observations | DMI       | 1        | -   | 1.000   | ?         | Government, private |
+| Radar        | DMI       | 15       | -   | 1.500   | ?         | Government, private |
+| Forecast     | DMI       | 6.000    | ++  | 42.000  | ?         | Government, private |
+| PubOrg       | KL,SM,FM  | 1        | -   | 1.000   | 1         | Government |
+| Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
 
 
 [Waiting for current daily out data for existing DMI data consumers or result from PWC forecast]
