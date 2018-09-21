@@ -109,28 +109,26 @@ Storage needs, compute and network estimates for first applications are shown in
 [Waiting for current daily out data for existing DMI data consumers or result from PWC forecast]
 
 ## Problem
-An architecture is a solution to a problem.
-
-Customers of SIT (ministeries and their agencies) are moving towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
+Customers of SIT (ministries and their agencies) are moving towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
 
 *What service offering will be the most attractive option for public agencies seeking the advantages of 'the cloud'?*
 
-This document describes an initial architecture for a government cloud aimed at becoming customers prefered Operating Model at SIT. It consists of a new governance model and blue print for a technical solution supporting Platform as a Service.
+To address this problem , this document describes an initial architecture for a government cloud platform aimed at becoming customers' prefered Operating Model at SIT. It consists of a new governance model and a blue print for a technical solution supporting Platform as a Service.
 
-SIT has a number of suggested operating models (including ones base on SaaS and IaaS) that today provides the stability and security required by the customers. This new model is believed to be prefered over existing ones because of the following charactaristics:
+Currently, SIT has a number of operating models (including ones based on SaaS and IaaS) that provide the stability and security required by the customers. This new model is believed to be preferred over existing ones because of the following characteristics:
 
-- *Continuity of Service.* Existing models allow small and planned windows for maintainance. Cloud technologies typically offers a continuity with rolling updates of both platform and applications without any interuption.
+- *Continuity of Service.* Existing models allow small and planned windows for maintainance. Cloud technologies typically offer a continuity with rolling updates of both platform and applications without any interruption.
 
-- *Shorter Development and Rapid Changes.* Based on experiences from the proof of concept, customers can expect a rapid deployment cycle. If the suggested goals for deployment and changes are met (see [appendix](#suggested-initial-roadmap)), the GovCloud will match existing cloud vendors.
+- *Shorter Development Cycles and Rapid Changes.* Based on experiences from the proof of concept, customers may expect a rapid deployment cycle. If the suggested goals for deployment and changes are met (see [appendix](#suggested-initial-roadmap)), the GovCloud Platform will match that of existing cloud vendors.
 
-To support the first applications SIT must extend existing operating models with new high level use cases.
+To support the first applications, SIT must extend existing operating models with new high level use cases.
 
-- *Public Data Distribution.* A private company wants to access data from a public organisation. SIT has suitable operating models and technology platform to support the intentions in the directive on the re-use of public sector information. The government organisation holding data leaves the operational aspects to SIT in order to focus on tailoring the data service applicatin and to help the private users to understand the data.
+- *Public Data Distribution.* A private company wants to access data from a public organisation. SIT has suitable operating models and technology platform to support the re-use of public sector information. The government organisation holding data entrusts operational aspects to SIT in order to focus on tailoring the data service application and to help end users understand the data.
 
-- *Application Development.* A governement organisation decides that GovCloud is the future home for a new application. Early in the process SIT helps to identify reusable services and data on the GovCloud. SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project
+- *Application Development.* A government organisation decides that the GovCloud Platform is the future home of a new application. Early in the process SIT helps identify reusable services and data on the GovCloud Platform. Furthermore, SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project.
 
 <br>
-Furture versions of the GovCloud is expected to add capabilities supporting  Compliance as a Service, Development Procurment Framework, _Sharing of Sensistive Data_, _Reuse Applications/Services_, _Hybrid Cloud/Scale Out_, and _Migrating Existing Applications_ (see [appendix](#more-principles,-capabilities-and-use-cases)).
+Furture versions of the GovCloud are expected to add capabilities supporting Compliance as a Service, Development Procurement Framework, _Sharing of Sensistive Data_, _Reuse Applications/Services_, _Hybrid Cloud/Scale Out_, and _Migrating Existing Applications_ (see [appendix](#more-principles,-capabilities-and-use-cases)).
 
 
 
