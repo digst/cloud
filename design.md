@@ -1,8 +1,10 @@
 # Initial Architecture <br> GovCloud PaaS<br> Statens IT 
 
-This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the increased use of cloud technologies in the Danish public sector.
+This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development, the GovCloud PaaS. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the increased use of cloud technologies in the Danish public sector.
 
 The first use of the document supports a decision of how to best host meterological and climate data free of charge for government and private data users starting from late 2019 and supporting agile development of a public sector registry by the Agency for Digitisation.
+
+Statens IT is also providing a GovCloud IaaS based on OpenStack. This service is not specified in this document.
 
 Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitaliseringsstyrelsen.
 
@@ -463,6 +465,8 @@ However this requires trust to be established between the GovCloud and external 
 Distribution copies of data sets does not need to be protected from deletion, since the original data set is stored by the data owner.
 
 In future version, data owners might choose to store the original data in the GovCloud and should be provided with the necessary back up and other data protection features.
+
+**[Encryption by default]** Data at rest on the platform is encrypted, unless the Cloud Consumer requests that his data is not encrypted
 
 #### Fabric Management
 
