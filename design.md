@@ -142,24 +142,22 @@ In relation to the GovCloud Platform, this means deployed services run continuou
 
 Problems must be solved immediately and in close collaboration between platform provider, platform consumers and application providers. The GovCloud provides clear separation of responsibilities, but recognises that solutions are found in collaboration, and that the collaboration must be supported efficiently by tools provided as part of the GovCloud.
 
-High availability is not only a concern for the platform itself, but is a result of meticulous planing of all dependencies ranging from electrical power and bandwidth to incident reaction time and capacity to solve problems when they arise.
+High availability is not only a concern for the platform itself, but is a result of meticulous planning of all dependencies ranging from electrical power and bandwidth to incident reaction time and capacity to solve problems when they arise.
 
-Service availability is an extension of the cloud characteristica of measured services. The health of the platform and its individual services most be continuously monitored.
+Service availability is an extension of the cloud characteristic of monitored services. The health of the platform and its individual services must be continuously monitored.
 
 
 **_Vendor Neutrality:_ Applications and data shall be portable from one cloud platform to another without unreasonable effort.**
 
-Public agencies can not allow their data or applications to be locked-in to a specific vendor. From a regulatory point of view, public procurement should support competition and not favour a specific propriatary tehcnology or sole vendor. From a strategic perspective, it should be possbile to move public services between organisation, and additionally have them  intergrated into new operational landscapes. This principle supports the characteristic of provider resource pooling.
+Public agencies cannot allow their data or applications to be locked-in to a specific vendor. From a regulatory point of view, public procurement should support competition and not favour a specific propriatary technology or sole vendor. From a strategic perspective, it should be possible to move public services between organisations, and additionally have them integrated into new operational landscapes. This principle supports the characteristic of provider resource pooling.
 
-Exposed interfaces are standardized and supported by Open Source implementations. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected on the basis of their support in the open source community. Selecting interfaces suopported by open source ensures a licens-free fall back option, if the benefits of licensed implementions are not balanced with the price. Standardization ensure a clear governance of changes and transparent terms of use.
+Exposed interfaces are standardised and supported by Open Source implementations. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected on the basis of their support in the open source community. Selecting interfaces suopported by open source ensures a licence-free fall back option, if the benefits of licenced implementions no longer  outweigh the price. Standardisation ensures a clear governance of changes and transparent terms of use.
 
-Applications are containarized. By choosing widely adopted container technologies the binding between applications and operation environment is broken. Containarized applications declare their required ressources and relies on configurations from their environement.
-
-Propriatary technolgies are used with caution. When used, the imidiate benefits needs to be evaluated against future costs of the binding. A part of the evaluation is to describe a likely exit strategy for replacing propiatary technology with more open.
+Consequently, proprietary technologies are used with caution. When used, the immediate benefits are evaluated against the future costs of the binding. A part of the evaluation is to describe a likely exit strategy for replacing proprietary technology with more open ones.
 
 Furthermore applications are containerised. By choosing widely adopted container technologies the binding between applications and operations environment is broken. Containerised applications declare their required resources and rely on configurations from their environment.
 
-**_Highly Scalable_: Both the governance, operating process and technology support a high number of applications with a limited addition of ressources.**
+**_Highly Scalable_: Governance, operating processes and technology support a high number of applications with a limited need for addition of ressources.**
 
 [Finalize in 1.0 after discussion]
 - R: Operation at Scale, but also predictable and repeatable
@@ -173,11 +171,11 @@ Kan vi lave en princip med ca. såden en formulering? Tænker det understøttes 
 
 **_Predictable Cost_: The operating model ensures predictable consumer costs suitable for public sector budget guidelines.**
 
-Government organisations are interested in fixing variable Costs, or at least having defined caps, to control risk and comply with guidelines. The GovCloud cost model must align well with other budget items and not expose consumers to greater economic risks than other technological solutions.
+Government organisations are interested in fixing variable Costs, or at least having defined caps, to control risk and comply with guidelines. That being so, The GovCloud cost model must align with other budget items and not expose consumers to greater economic risks than other technological solutions.
 
-Application services used by government organisations for data acess, should generally be developed by the data consuming organisation. But this does not help to limit costs when data services are exposed to the general public. In this case *fair use* agreements could be made with data consumers and their compliance being monitored.
+Specific application services to suit the needs of other government organisations for data acess, should generally be developed by the data consuming organisation. But this does not help limit costs when data services are exposed to the general public. In this case *fair use* agreements could be made with data consumers and their compliance monitored.
 
-Costs should reflect the use, maintainance and continiously improvement of the GovCloud. Consumers with services deployed on the platform should not be required to contribute beyond the initial agreement for continued hosting. In the case of new services or considerable change in use patterns, costs should re-negotiated.
+Costs should reflect the use, maintenance and continuous improvement of the GovCloud. Consumers with services deployed on the platform should not be required to contribute beyond the initial agreement for continued hosting. In the case of new services or considerable change in use patterns, costs should re-negotiated.
 
 
 <br>
@@ -189,7 +187,7 @@ The GovCloud is also expected to support a larger government initiative on benef
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. The essential charateristics of a cloud are Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services cf. [NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
-Cloud First means that cloud technology shold always be considered when designing. Simply because the above mentioned characteristica are generally desirable and for the foreseen future best can be reached through the use of cloud technology. A Cloud First principle etails second and perpherps third alternatives. Organisations should always choose the best tool for the job, duly respecting the relative long life time of government it-solutions and the everchanging overall organisation.
+Cloud First means that cloud technology should always be considered when designing. Simply because the above mentioned characteristics are generally desirable and for the foreseen future best can be reached by the use of cloud technology. However, a Cloud First principle entails second and perhaps third line alternatives. Organisations should always choose the best tool for the job, duly respecting the relative long life time of government it-solutions and the everchanging overall organisation.
 
 
 
