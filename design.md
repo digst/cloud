@@ -41,7 +41,7 @@ SIT shall in the role of GovCloud PaaS Provider:
 - Provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS (6.3)
 - Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers [6.2??]
 - Integrate platform, toolchain and collaboration tools with existing identity and access management systems (6.5.6)
-- Provide and operate a platform service for API management and rate limiting [6.2.1??]
+- Provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting and GovCloud Portal [6.2.1??]
 - Provide a sandbox environment for prospective users of the platform and toolchain [6.3.2??]
 
 DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
