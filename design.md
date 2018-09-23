@@ -12,7 +12,7 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | Date    | Version  | Usages
 |--------:|---------:|:-------------------------------------------------------
 | 20180914| 0.7 | Internally reviewed, discussed with DMI and SIT 201809119
-| **20180920**| **0.9** | Distribution for board meeting 20180924
+| **20180920**| **0.9.1** | Distribution for board meeting 20180924
 | *20180926*| *1.0* | Distribution for sponsor meeting 20181003
 
 [Table of Content]
@@ -50,7 +50,7 @@ DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
 - Provide estimates to SIT for capacity planning (6.1.)
 - Establish collaboration processes for 24/7 support (6.1.2)
 - Establish processes for onboarding data and service consumers (6.2.1)
-- Provide per user license cost if they decide to use the Gov Dev Tool provided as SaaS by SIT (6.3)
+- Provide per user licence cost if they decide to use the Gov Dev Tool provided as SaaS by SIT (6.3)
 - Use the virtual machine image provided by SIT for build and test (6.3)
 
 
@@ -134,7 +134,7 @@ Good architecture is based on shared principles in order to assist solutions han
 
 The following principles have been identified:
 
-**_Continuous service availability_: GovCloud platform and application services are built to deliver uninterrupted service even during new releases and platform maintainance.**
+**_Continuous service availability_: GovCloud platform and application services are built to deliver uninterrupted service even during new releases and platform maintenance.**
 
 Applications used by public agencies are often critical, not only to the agency itself, but to society in general. However, most services have traditionally had so called service windows, where services were suspended to allow for new software relases. Digital self-services have changed this. The general public is now serving itself at times suitable for the costumer instead of the service provider.
 
@@ -144,7 +144,7 @@ Problems must be solved immediately and in close collaboration between platform 
 
 High availability is not only a concern for the platform itself, but is a result of meticulous planning of all dependencies ranging from electrical power and bandwidth to incident reaction time and capacity to solve problems when they arise.
 
-Service availability is an extension of the cloud characteristic of monitored services. The health of the platform and its individual services must be continuously monitored.
+Service availability is an extension of the cloud characteristic of measured services. The health of the platform and its individual services must be monitored continuously.
 
 
 **_Vendor Neutrality:_ Applications and data shall be portable from one cloud platform to another without unreasonable effort.**
@@ -157,7 +157,7 @@ Consequently, proprietary technologies are used with caution. When used, the imm
 
 Furthermore applications are containerised. By choosing widely adopted container technologies the binding between applications and operations environment is broken. Containerised applications declare their required resources and rely on configurations from their environment.
 
-**_Highly Scalable_: Governance, operating processes and technology support a high number of applications with a limited need for addition of ressources.**
+**_Highly Scalable_: Governance, operating processes and technology support a high number of applications with a limited need for addition of resources.**
 
 [Finalize in 1.0 after discussion]
 - R: Operation at Scale, but also predictable and repeatable
@@ -183,7 +183,7 @@ In future versions new principles may be included e.g.  *Compliance as a Service
 
 The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A future strategic general principles could look like the following:
 
-**_Cloud First:_ Cloud technologies are prefered when designing new applications and new integrations between existing applications.**
+**_Cloud First:_ Cloud technologies are preferred when designing new applications and new integrations between existing applications.**
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. The essential charateristics of a cloud are Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services cf. [NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
@@ -210,14 +210,14 @@ The business processes around a cloud platform can be organized into four main a
 
 *Operations.* This area encapsules processes applied to the platform and its applications to meet the requirement in service level agreements. Processes are typically highly automated to minimize human error and labor. End-user behaviour is monitored to continuiously improve services.
 
-Processes in Development and Operations are increasingly considered as overlapping, especially in the case of self service cloud services, where a consumer take a larger part in the operational aspects of service delivery. One definition of [DevOps](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847) is *a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.*
+Processes in Development and Operations are increasingly considered as overlapping, especially in the case of self service cloud services, where a consumer takes a larger part in the operational aspects of service delivery. One definition of [DevOps](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847) is *a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.*
 
 *Audit.* Auditing are processes of independent examination through controls with the intent to express an opinion. An opinion can be on the compliance with standards. Audits are based on objective evidence and may evaluate terms of security controls, privacy impact, performance, etc.
 
 <br>
 The four business areas above are supported by technology components in three areas:
 
-*Management and support.* The components in this area supports the capabilities defined by the DevOps business area and support the consumer self-service characteristics of a cloud. Components also provides data to Platform and Service Delivery supporting Meassured Services and fair billing.
+*Management and support.* The components in this area support the capabilities defined by the DevOps business area and support the consumer self-service characteristics of a cloud. Components also provide data to Platform and Service Delivery supporting Measured Services and fair billing.
 
 *Platform.* Platform components are aggregated with Infrastructure and Management and Support components to provide Platform as a Service (PaaS). Platform components are mostly provided as services to be consumed by applications, but they may also be consumed directly by end-users.
 
@@ -234,7 +234,7 @@ The business areas (green) of the reference model is the focus of the interactio
 
 Statens IT is the strategically appointed provider of IT operation and service to the Danish Government and shall as such provide the requested cloud environment.
 
-**[PaaS]** The operation model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing license to operate.
+**[PaaS]** The operation model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
 
 NIST defines the capability provied to the consumer in the PaaS operating model as: *to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.*
 
@@ -336,7 +336,7 @@ The use of the toolchain is recommended and can function as a guide for competen
 
 **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software as a Service to support agile application development
 
-The tool chain will consist of professional, enterprise grade tools.  SIT offers the toolchain preconfigured and integrated with existing user and access management. Licenses are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective costumers free-of-charge with a limited number of floating trial licenses.
+The tool chain will consist of professional, enterprise grade tools.  SIT offers the toolchain preconfigured and integrated with existing user and access management. Licences are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective costumers free-of-charge with a limited number of floating trial licences.
 
 End-user support and training is done outside of SIT.
 
@@ -628,7 +628,7 @@ to support a number of new use cases
 - *Sharing of sensistive data*
 An existing customer at SIT wants to access data from another organisation. The data is not available at any existing dataservices. SIT suggests the data owner to replicate the data onto the GovCloud. The data user builds a custom dataservice and reuses existing security controls incl identity management.
 
-- *Reuse Application/Service.* A software vendor delivers an application to a customer of SIT. The vendor wants to deploy on the GovCloud preparing for more customers. The vendor sells a license to another SIT customer and SIT extends the installation and the software product is available to the new customer.
+- *Reuse Application/Service.* A software vendor delivers an application to a customer of SIT. The vendor wants to deploy on the GovCloud preparing for more customers. The vendor sells a licence to another SIT customer and SIT extends the installation after which the software product is available to the new customer.
 
 - *Migrate existing application.* SIT has identified a customer application that is sutiable for hosting on the new GovCloud. SIT plans a transition with the customer and reuse a number of exsiting services and datasets in the Cloud and can turn off some application elements.
 
