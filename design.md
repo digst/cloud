@@ -4,7 +4,7 @@ This document is an initial architecture for a project aimed at establishing the
 
 The first use of the document supports a decision of how to best host meterological and climate data free of charge for government and private data users starting from late 2019 and supporting agile development of a public sector registry by the Agency for Digitisation.
 
-Statens IT is also providing a GovCloud IaaS based on OpenStack. This service is not specified in this document.
+Statens IT also provides a GovCloud IaaS based on OpenStack. This service is not specified in this document.
 
 Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitaliseringsstyrelsen.
 
@@ -12,7 +12,8 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | Date    | Version  | Usages
 |--------:|---------:|:-------------------------------------------------------
 | 20180914| 0.7 | Internally reviewed, discussed with DMI and SIT 201809119
-| **20180920**| **0.9.1** | Distribution for board meeting 20180924
+| 20180920| 0.9 | Distribution for board meeting 20180924
+| **20180923**| **0.9.1** | Distribution for board meeting 20180924
 | *20180926*| *1.0* | Distribution for sponsor meeting 20181003
 
 [Table of Content]
@@ -22,7 +23,7 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 [Skrives til version 1.0]
 
 # Executive Summary
-[Finalize for version 1.0]
+[Finalise for version 1.0]
 
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service and the responsibilites of the three main user types related to it: 
 * The GovCloud PaaS Policy Owner
