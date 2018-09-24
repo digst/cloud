@@ -95,7 +95,7 @@ Storage needs, compute and network estimates for first applications are shown in
 | Observations | DMI       | 1        | -   | 1.000   | ?         | Government, private |
 | Radar        | DMI       | 15       | -   | 1.500   | ?         | Government, private |
 | Forecast     | DMI       | 6.000    | ++  | 42.000  | ?         | Government, private |
-| PubOrg       | KL,SM,FM  | 1        | -   | 1.000   | 1         | Government |
+| PubOrg       | KL,SDS,FM | 1        | -   | 1.000   | 1         | Government |
 | Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
 
 
@@ -249,7 +249,7 @@ For the initial applications processes related to the management of Platform Ser
 #### Service Lifecycle
 Transparent governance process are necessary for Platform Consumers to evaluate fit-for-porpuse of the operating model.
 
-**[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritized by a joint public group lead by DIGST in corporation with SIT.
+**[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritized by a joint public group of Cloud Consumers lead by DIGST in corporation with SIT.
 
 Establishment of platform services, changes to service level agreements and exposed interfaces are the primary areas of governance. To support the principle of vendor neutrality supported interfaces most be carefully curated. And the choices should support the more general 'business' strategy and the Federated Digital Architecture (FDA).
 
@@ -303,7 +303,7 @@ The Public Data Sharing use case, combined with the specific need to identify co
 
 Specifically, the Platform Consumer establishes processes for on-boarding data consumers and SIT provides a back-end service to generate and store API keys and contact information. The API Key management should be generic and be used for all applications that share public data with private businesses and the public in general.
 
-**[Existing IAM]** Identities and access rights necessary for development of applications and operation of platform are storde in SITs prefered central Identify and Access Management system.
+**[Existing IAM]** Identities and access rights necessary for development of applications and operation of platform are stored in SITs prefered central Identify and Access Management system.
 
 
 #### System Administration
@@ -317,7 +317,7 @@ Since the efficiency and comfortableness of platform operators have a huge impac
 
 The configuration of GovCloud is done internally in SIT. For the first version, configuration changes to applications are sent to SIT and manually applied. This process is covered by the SLA.
 
-**[Manual Config]** Tools chosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
+**[Manual Config]** Tools choosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
 
 Configuration is under version control and should have high availabilty matching other critical parts of the platform.
 
@@ -329,9 +329,9 @@ The development and operation of applications must be supported by an efficient 
 
 The use of the toolchain is recommended and can function as a guide for competences across development vendors. However, not all Platform Consumers (and more importantly their developers) can be expected to adhere to tool choices made by Platform Policy Owner.
 
-**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software as a Service to support agile application development
+**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development
 
-The tool chain will consist of professional, enterprise grade tools.  SIT offers the toolchain preconfigured and integrated with existing user and access management. Licences are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective costumers free-of-charge with a limited number of floating trial licences.
+The tool chain will consist of professional, enterprise grade tools. SIT offers the toolchain preconfigured and integrated with existing user and access management. Licences are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective costumers free-of-charge with a limited number of floating trial licences.
 
 End-user support and training is done outside of SIT.
 
@@ -371,7 +371,7 @@ As above, this allows test to be carried out on local developer machines in an e
 
 **[Acceptance test]** Service passing the provided automated tests are considered running.
 
-Because the same virtual machine is use to build and test services at both the consumer and provider, the automated test can also be used as a form of acceptance test. That is, the GovCloud provider can rely on the test to verify that a service is running after an upgrade of the underlying platform. A side effect to this, is that if a service is behaving un-expected after a platform update, new tests should be writen to provide better test coverage for future updates.
+Because the same virtual machine is used to build and test services at both the consumer and provider, the automated test can also be used as a form of acceptance test. That is, the GovCloud provider can rely on the test to verify that a service is running after an upgrade of the underlying platform. A side effect to this, is that if a service is behaving un-expected after a platform update, new tests should be writen to provide better test coverage for future updates.
 
 **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
@@ -393,7 +393,7 @@ A common labeling schema are maintained with clear definitions and consequences 
 
 #### Deploy
 
-**[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from customer.
+**[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from Cloud Consumer.
 
 The time from labeling to deplyoment during normal business hours should be specified in the SLA.
 
@@ -403,6 +403,7 @@ A scaling schedule allows the application fabric to automatically scale the numb
 
 In future versions the deployment of new service versions or new configuration should not require manually steps from the Platform Provider. The only exception to this is changes to the scaling schedule. Scaling schedules should be reviewed by the Platform Provider to ensure *fair use* and support in capacity planing.
 
+[Kan vi udbygge dette?]
 
 #### Operate
 
@@ -472,7 +473,7 @@ Platform operates should have central operation capabilities over all elements o
 
 Configuration of environments are done via management.
 
-Artefact are identified in the directory, semantic versioned and taged with a common schema for release.
+Artefact are identified in the directory, semantic versioned and tagged with the common schema for release.
 
 
 ### Platform
@@ -575,7 +576,7 @@ The following roadmap is based on first know applications. The roadmap must be c
     - Secure Token Service 2.0 (Government Employee)
 
 - **2021H2 _Transparency?_ 1.4**
-  - Self service fpor access to log for Data Subjects.
+  - Self service for access to log for Data Subjects.
 
 - **2021H2 _Large Scale_ 1.4**
   - Performance improvements
