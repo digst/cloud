@@ -22,6 +22,8 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 # Dansk resume
 [Skrives til version 1.0]
 
+[JRO: Synes vi skal droppe det danske resumé. Hellere lav en håndfuld slides, der formidler det væsentligste til sponsorgruppen. Spondorgruppen skal ikke drøfte selve dokumentet, bare vide at det ligger der og at der er enighed om indholdet hos dem, der forstår sig på det]
+
 # Executive Summary
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service and the responsibilites of the three main roles of goverment cloud platform as a serviece: Policy Owner, Platform Provider and Platform Consumer.
 
@@ -29,6 +31,7 @@ DIGST shall in the role of GovCloud PaaS Policy Owner:
 
 - In corporation with SIT establish a forum for service lifecycle decisions for the platform and toolchain, and continuously publish an updated feature catalogue (6.1.1).
 - In corporation with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture (6.3)
+- Assist SIT in ensuring that the GovCloud PaaS is compliant with best government practices on GDPR and cyber security
 
 SIT shall in the role of GovCloud PaaS Provider:
 
@@ -36,7 +39,7 @@ SIT shall in the role of GovCloud PaaS Provider:
 - Operate a GovClud-PaaS using MapR, Kubernetes, Docker and KrakenD on premise (6.6, 6.7)
 - Provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS (6.3)
 - Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers [6.2??]
-- Integrate platform, toolchain and collaboration tools with existing identity and access management systems (6.5.6)
+- Integrate platform, toolchain and collaboration tools with existing SIT identity and access management systems (6.5.6)
 - Provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting and GovCloud Portal [6.2.1??]
 - Provide a sandbox environment for prospective users of the platform and toolchain [6.3.2??]
 
@@ -63,14 +66,14 @@ DIGST and SIT are both part of the Ministery of Finance and employs about 250 pe
 
 The Digital Strategy 2016-2020 is a joint public strategy for all levels of government: state, regions and municipalities. Among the many initiatives in the strategy to be supported by this architecture are *8.1 Good data and efficient data sharing* and *8.2 Robust operation of the common infrastructure*. During the realisation of the Digital Strategy it has become evident that public authorities on all levels of government struggle with a **time-to-market for new applications and integrations** that does not match the ambitions of integrated public service delivery, the ever-changing political and regulatory landscape and the  technological development in general.
 
-Integrated in the The Digital Strategy is a joint public architecture framework, the Federated Digital Architecture (FDA, Dan. Fællesoffentlig Digital Arkitektur). Within the framework a number of reference architectures have been approved, especially the reference architecture for *sharing of data and documents* is relevant for this project. The GovCloud concept is an implementation of the pattern *shared data and application platform*.
+Integrated in the The Digital Strategy is a joint public architecture framework, the Federated Digital Architecture (FDA, Dan. Fællesoffentlig Digital Arkitektur). Within the framework a number of reference architectures have been approved, especially the reference architecture for *sharing of data and documents* [Indsæt link?] is relevant for this project. The GovCloud PaaS concept is an implementation of the pattern *shared data and application platform*.
 
 ## First Applications
-Paramount to the establishment of a Government Cloud Platform is the succesful support of an initial large scale strategic project to prove the attractiveness of the architecture.
+Paramount to the establishment of a Government Cloud PaaS is the succesful support of an initial large scale strategic project to prove the attractiveness of the architecture.
 
 It has been the focus of a proof of concept to create collective experiences in different organisations, and this focus is continued in the initial version of the GovCloud Platform. DMI is an experienced application developer and service provider, and has applied this knowledge to support the development of this design. DIGST is experienced in policy development, and SIT has established mature IT operations. However, neither have experience with agile application developement. Hence DIGST has choosen to also take the role of application developer in a smaller project and SIT will use the platform to build its own platform services.
 
-As drivers for the initial version of GovCloud, the following three applications have been choosen:
+As drivers for the initial version of GovCloud PaaS, the following three applications have been choosen:
 
 **DMI Data.** Meteorological and climate data are distributed widely today. The government has decided to provide these data under a open government data initiative to support growth of private businesses. DMI sees a potential of separating the generic operational aspects of data sharing from the knowledge and support of the specific data they produce.
 
@@ -102,11 +105,11 @@ Storage needs, compute and network estimates for first applications are shown in
 [Waiting for current daily out data for existing DMI data consumers or result from PWC forecast]
 
 ## Problem
-Customers of SIT (ministries and their agencies) are moving towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
+Customers of SIT (ministries and their agencies) are increasingly seeking to move towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
 
 *What service offering will be the most attractive option for public agencies seeking the advantages of 'the cloud'?*
 
-To address this problem , this document describes an initial architecture for a government cloud platform aimed at becoming customers' prefered Operating Model at SIT. It consists of a new governance model and a blue print for a technical solution supporting Platform as a Service.
+To address this problem , this document describes an initial architecture for a government cloud platform aimed at becoming customers' prefered Operating Model at SIT and pawing the way for increased usage of cloud technologies by SITs customers. It consists of a new governance model and a blue print for a technical solution supporting Platform-as-a-Service.
 
 Currently, SIT has a number of operating models (including ones based on SaaS and IaaS) that provide the stability and security required by the customers. This new model is believed to be preferred over existing ones because of the following characteristics:
 
@@ -163,7 +166,7 @@ Furthermore applications are containerised. By choosing widely adopted container
 
 **_Security-by-design_: The platform and the mechanism for accessing the platform supports by default confidentiality and integrity of the data on the platform
 
-Kan vi lave en princip med ca. såden en formulering? Tænker det understøttes af integrationen med AD og med et nyt princip om, at data på platform er krypteret med mindre dataejer beslutter noget andet.
+Kan vi lave en princip med ca. sådan en formulering? Tænker det understøttes af integrationen med AD og med et nyt princip om, at data på platform er krypteret med mindre dataejer beslutter noget andet.
 
 **_Predictable Cost_: The operating model ensures predictable consumer costs suitable for public sector budget guidelines.**
 
@@ -183,7 +186,7 @@ The GovCloud is also expected to support a larger government initiative on benef
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. The essential charateristics of a cloud are Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services cf. [NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
-Cloud First means that cloud technology should always be considered when designing. Simply because the above mentioned characteristics are generally desirable and for the foreseen future best can be reached by the use of cloud technology. However, a Cloud First principle entails second and perhaps third line alternatives. Organisations should always choose the best tool for the job, duly respecting the relative long life time of government it-solutions and the everchanging overall organisation.
+Cloud First means that cloud technology should always be considered when designing new applications and integrations. Simply because the above mentioned characteristics are generally desirable and for the foreseen future best can be reached by the use of cloud technology. However, a Cloud First principle entails second and perhaps third line alternatives. Organisations should always choose the best tool for the job, duly respecting the relative long life time of government it-solutions and the everchanging overall organisation.
 
 
 
@@ -227,7 +230,7 @@ The business areas (green) of the reference model is the focus of the interactio
 ### Platform Delivery
 ![](delivery.svg)
 
-Statens IT is the strategically appointed provider of IT operation and service to the Danish Government and shall as such provide the requested cloud environment.
+Statens IT is the strategically appointed provider of IT operation and service to the Danish State-level Government and shall as such provide the requested cloud environment.
 
 **[PaaS]** The operation model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
 
@@ -237,9 +240,9 @@ PaaS is choosen over IaaS to limit the ammount of operational knowledge required
 
 As such, consumers are responsible for the development and maintainance of applications, data management, awarding and revoking user rights and licensing of software. SIT as a Platform Provider is responsible for updating platform software, automated testing of both applications and platform during updates, monitoring and reporting on services.
 
-The GovCloud operating model is based on a collaborative agreement between  government organisations and follows traditional practices. Most importantly this does not allow for economic sanctions and private law contracts. Conflicts needs to be solved through excisting government fora and budgetting practices.
+The GovCloud operating model is based on a collaborative agreement between government organisations and follows existing practices. Most importantly this does not allow for economic sanctions and private law contracts. Conflicts needs to be solved through excisting government fora and budgetting practices.
 
-SIT has established business support functions across a few operating models. Initially PaaS will be a supplement to existing models and will benefit from establised practices concerning agreements, reporting and financing. SIT's existing SaaS offering will still be provided. SIT may use the GovCloud as a basis for SaaS offerings to further harmonize the operational environment.
+SIT has established business support functions across a few operating models. Initially PaaS will be a supplement to existing models and will benefit from establised practices concerning agreements, reporting and financing. SIT's existing SaaS offering will still be provided. SIT may use the GovCloud as a basis for new SaaS offerings to further harmonize the operational environment.
 
 
 <br>
@@ -255,7 +258,7 @@ Establishment of platform services, changes to service level agreements and expo
 
 In a two-way negotiation between consumer and provider on individal projects, the overall strategic goals of goverment-it is at risk of taking second priority. To ensure the allignment of overall strategy and it-roadmaps the responsibility of roadmap decisions is placed with the Platform Policy Owner.
 
-**[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers long term planing.
+**[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers long term planing. Backward compatability is seeked for running applications.
 
 The products used to implement the platform will likely have many features that are less desirable to have an application depend on. To support the principle of vendor neutrality (and its goal of moveable applications) only a subset of said features is selected and supported.
 
@@ -263,7 +266,7 @@ When designing applications, Platform Consumers must make informed decisions abo
 
 Application developers may have valid reasons to use unsupported services, and often development time and the code lines can be greatly reduced by clever use of a platform. When applications rely on unsupported features it is important to estimate the immidiate savings and compare those with future costs in the event of unsupported features becoming unavailable.
 
-Unsupported features will be used and Platform Consumers should be alerted as soon as they are brought to the attention ofg the Platform Provider is aware of planned changes e.g. in updated roadmaps from technology providers.
+Unsupported features will be used and Platform Consumers should be alerted as soon as they are brought to the attention of the Platform Provider is aware of planned changes e.g. in updated roadmaps from technology providers.
 
 #### Service Level
 The selected operating model (PaaS) seperates responsibilities between the Platform Provider and the Platform Consumer. However, in government collaboration, a running platform with a failing application is a failed public service. Citizens and businesses only care that the service is brought back up and not what part of government (or even private vendor) is to blame. As such, service levels and separation of duties are designed to support a common goal of high service availability.
@@ -273,7 +276,7 @@ The selected operating model (PaaS) seperates responsibilities between the Platf
 
 When SIT identifies a failing service an incident is created. First efforts are made to restart services and identify underlaying problems. SIT can not be expected to have knowledge about the internal workings of applications, and if first efforts does not bring services up, the service provider is involved. The SLA includes specific reaction times and escalation criteria.
 
-SIT does not support the deployment of new releases outside normal business hours (except of cause in the process of resolving incidents).
+SIT does not support the deployment of new releases outside normal business hours (except in the process of resolving incidents).
 
 **[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
 
@@ -287,7 +290,7 @@ Processes of identifying and resolving problems are separated from incident mana
 ### Platform Operations
 ![Platform Operation](operations.svg)
 
-Existing established processes at SIT are not suitable for DevOps and automation. Since ITIL and IT4IT are well supported in existing tools and a considerable amount of training has been done both at SIT and it's customers, new processes are based on the ITIL and IT4IT frameworks.
+Existing established processes at SIT are not all suitable for DevOps and automation. Since ITIL and IT4IT are well supported in existing tools and a considerable amount of training has been done both at SIT and it's customers, new processes are based on the ITIL and IT4IT frameworks.
 
 **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework.
 
@@ -303,7 +306,7 @@ The Public Data Sharing use case, combined with the specific need to identify co
 
 Specifically, the Platform Consumer establishes processes for on-boarding data consumers and SIT provides a back-end service to generate and store API keys and contact information. The API Key management should be generic and be used for all applications that share public data with private businesses and the public in general.
 
-**[Existing IAM]** Identities and access rights necessary for development of applications and operation of platform are stored in SITs prefered central Identify and Access Management system.
+**[Existing IAM]** Identities and access rights necessary for development of applications and operation of the platform are stored in SITs prefered central Identify and Access Management system.
 
 
 #### System Administration
@@ -325,7 +328,7 @@ Configuration is under version control and should have high availabilty matching
 ### Service DevOps
 ![](devops.svg)
 
-The development and operation of applications must be supported by an efficient tool chain. To help government organisations adapt agile development in a cloud setting, a joint public, fully supported enterprise grade tool chain is chosen and provided as part of the GovCloud Platform.
+The development and operation of applications must be supported by an efficient tool chain. To help government organisations adapt agile development in a cloud setting, a joint public, fully supported enterprise grade tool chain integrated with the CovCloud Paas is provided by SIT.
 
 The use of the toolchain is recommended and can function as a guide for competences across development vendors. However, not all Platform Consumers (and more importantly their developers) can be expected to adhere to tool choices made by Platform Policy Owner.
 
@@ -335,9 +338,9 @@ The tool chain will consist of professional, enterprise grade tools. SIT offers 
 
 End-user support and training is done outside of SIT.
 
-The initial toolchain is based on Jira, Git, Jenkins and SOAP UI.
+The initial toolchain is based on Jira, Git, Jenkins and SOAP UI. The toolchain will be expanding according to the needs of GovCloud Consumers and as agreeded in the GovCloud Policy-proces.
 
-**[Consumer Tool]** Platform Consumers may choose between SIT’s SaaS tool chain and providing their own tool chain, contingent on the Platform Consumer’s tool chain’s complete integration with the build and test processes from SIT.
+**[Consumer Tool]** GovCloud Consumers may choose between SIT’s SaaS tool chain or provide their own tool chain, contingent on the  Consumer’s tool chain’s complete integration with the build and test processes from SIT.
 
 The build and test process are required to follow the SIT defined flow to allow SIT to rebuild images and reploy services after changes on the platform.
 
@@ -352,7 +355,7 @@ Most importantly stages are not implemented as seperate physical environments wi
 
 #### Build
 
-The source of application and platform services are stored at the Platform Provider to support rebuilds even when an external code repository is out of reach.
+The source of application and platform services are stored at the GovCloud Provider to support rebuilds even when an external code repository is out of reach.
 
 **[Build Image]** Docker images are build from source using custom image maintained by SIT.
 
@@ -393,7 +396,7 @@ A common labeling schema are maintained with clear definitions and consequences 
 
 #### Deploy
 
-**[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from Cloud Consumer.
+**[Deploy]** In the initial version of the GovCloud PaaS releases of new versions of application services are done manually by SIT on request from the Cloud Consumer.
 
 The time from labeling to deplyoment during normal business hours should be specified in the SLA.
 
@@ -437,7 +440,7 @@ The schema is expected to be a part of Federated Digital Architecture provided b
 **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
 
 #### Authorization
-**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service.
+**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
 
 **[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
 
@@ -464,7 +467,7 @@ In future version, data owners might choose to store the original data in the Go
 
 #### Fabric Management
 
-Platform operates should have central operation capabilities over all elements of the API, Application and Data fabric.
+Platform operaters should have central operation capabilities over all elements of the API, Application and Data fabric.
 
 
 #### Artifact repository
