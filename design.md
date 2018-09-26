@@ -2,7 +2,7 @@
 
 This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development, the GovCloud PaaS. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the increased use of cloud technologies in the Danish public sector.
 
-The first use of the document supports a decision of how to best host meterological and climate data free of charge for government and private data users starting from late 2019 and supporting agile development of a public sector registry by the Agency for Digitisation.
+The first use of the document supports a decision of how to best host free of charge meterological and climate data for government and private data users starting from late 2019 and how to support agile development of a public sector registry by the Agency for Digitisation.
 
 Statens IT also provides a GovCloud IaaS based on OpenStack. This service is not specified in this document.
 
@@ -18,11 +18,6 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 
 [Table of Content]
 
-
-# Dansk resume
-[Skrives til version 1.0]
-
-[JRO: Synes vi skal droppe det danske resumé. Hellere lav en håndfuld slides, der formidler det væsentligste til sponsorgruppen. Spondorgruppen skal ikke drøfte selve dokumentet, bare vide at det ligger der og at der er enighed om indholdet hos dem, der forstår sig på det]
 
 # Executive Summary
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service and the responsibilites of the three main roles of goverment cloud platform as a serviece: Policy Owner, Platform Provider and Platform Consumer.
@@ -95,9 +90,9 @@ Storage needs, compute and network estimates for first applications are shown in
 
 | Applications | Providers | Daily In | Co. | Storage | Daily Out | Consumers    |
 | ---          | ---       | ---:     | ---:| -------:|---:       | ------------ |
-| Observations | DMI       | 1        | -   | 1.000   | ?         | Government, private |
+| Observations | DMI       | 1        | -   | 1.000   | 25.000    | Government, private |
 | Radar        | DMI       | 15       | -   | 1.500   | ?         | Government, private |
-| Forecast     | DMI       | 6.000    | ++  | 42.000  | ?         | Government, private |
+| Forecast     | DMI       | 6.000    | ++  | 42.000  | 48.000    | Government, private |
 | PubOrg       | KL,SDS,FM | 1        | -   | 1.000   | 1         | Government |
 | Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
 
@@ -180,35 +175,35 @@ Costs should reflect the use, maintenance and continuous improvement of the GovC
 <br>
 In future versions new principles may be included e.g.  *Compliance as a Service*, *Reuse of data and applications*.(see [appendix](#more-principles,-capabilities-and-use-cases))
 
-The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A future strategic general principles could look like the following:
+The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A future strategic general principle could look like the following:
 
 **_Cloud First:_ Cloud technologies are preferred when designing new applications and new integrations between existing applications.**
 
 Cloud technology is maturing and has proven to support large scale operations and rapid development. The essential charateristics of a cloud are Consumer on-demand self-service, Broad network access, Provider resource pooling, Rapid elasticity and Measured services cf. [NIST](https://csrc.nist.gov/publications/detail/sp/800-145/final).
 
-Cloud First means that cloud technology should always be considered when designing new applications and integrations. Simply because the above mentioned characteristics are generally desirable and for the foreseen future best can be reached by the use of cloud technology. However, a Cloud First principle entails second and perhaps third line alternatives. Organisations should always choose the best tool for the job, duly respecting the relative long life time of government it-solutions and the everchanging overall organisation.
+Cloud First means that cloud technology should always be considered when designing new applications and integrations. Simply because the above mentioned characteristics are generally desirable and for the foreseen future best can be reached by the use of cloud technology. However, a Cloud First principle entails second and perhaps third line alternatives. Organisations should always choose the best tool for the job, duly respecting the relatively long life time of government it-solutions and the everchanging overall organisation.
 
 
 
 
 ## Reference model
 To identify the different components in the architecture, we use a conceptual model based on a number of excisting frameworks, including
-[Microsoft Cloud Service Foundation Reference Model](https://blogs.technet.microsoft.com/cloudsolutions/2013/08/15/cloud-services-foundation-reference-architecture-reference-model/), [IBM Cloud Garage Method](https://www.ibm.com/cloud/garage/), [OpenGroup IT4IT](http://www.opengroup.org/it4it) and [NIST Cloud Computing Reference Architecture](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf). A total detailed view of all elemements can be found in appendix of this document.
+[Microsoft Cloud Service Foundation Reference Model](https://blogs.technet.microsoft.com/cloudsolutions/2013/08/15/cloud-services-foundation-reference-architecture-reference-model/), [IBM Cloud Garage Method](https://www.ibm.com/cloud/garage/), [OpenGroup IT4IT](http://www.opengroup.org/it4it) and [NIST Cloud Computing Reference Architecture](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf). A total detailed view of all elemements can be found in the appendix of this document.
 
 
 ![](areas.svg)
 
-From the frameworks above a number of business roles and process has been selected for this architecture. The business roles are Cloud Consumer, Cloud Provider, Application Responsible, Application Developer, Data Responsible. One additional role is introduced supporting the aspects of cloud usage in a government setting, Cloud Policy Owner.
+From the frameworks above, a number of business roles and processes have been selected for this architecture. The business roles are Cloud Consumer, Cloud Provider, Application Responsible, Application Developer, and Data Responsible. One additional role is introduced in order to support the aspects of cloud usage in a government setting, i.e. Cloud Policy Owner.
 
-The business processes around a cloud platform can be organized into four main areas:
+The business processes for a cloud platform can be organised in four main areas:
 
-*Platform Delivery.* This area is responsible for translating Cloud Consumer requirements into platform services. Capabilities and technologies are provided with a specific service level agreement. All changes follow a transparent governance process with consumer involvement.
+*Platform Delivery.* This area translates Cloud Consumer requirements into platform services. Capabilities and technologies are provided with a specific service level agreement. All changes follow a transparent governance process with consumer involvement.
 
-*Development.* This area translate requirements into application services. Development is often done by a third party Application Developer acting on behalf of a Platform Consumer, but can also be done by a Platform Consumers employees. Platform services follow the same processes and are developed by Cloud Provider employees or third parties. Application services can be generalised into platform services in a collaboration between Policy Owner, Platform Provider and Application Responsible.
+*Development.* This area translates requirements into application services. Development is often done by a third party Application Developer acting on behalf of a Platform Consumer, but can also be done by a Platform Consumer's employees. Platform services follow the same processes and are developed by Cloud Provider employees or third parties acting on behalf of the Cloud Provider. Application services can be generalised into platform services in a collaboration between Policy Owner, Platform Provider and Application Responsible.
 
-*Operations.* This area encapsules processes applied to the platform and its applications to meet the requirement in service level agreements. Processes are typically highly automated to minimize human error and labor. End-user behaviour is monitored to continuiously improve services.
+*Operations.* This area encapsules processes applied to the platform and its applications to meet the requirements in service level agreements. Processes are typically highly automated to minimise human error and labour. End-user behaviour is monitored to continuously improve services.
 
-Processes in Development and Operations are increasingly considered as overlapping, especially in the case of self service cloud services, where a consumer takes a larger part in the operational aspects of service delivery. One definition of [DevOps](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847) is *a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.*
+Processes in Development and Operations are increasingly considered as overlapping, especially in the case of self service cloud services, where a consumer has a larger part in the operational aspects of service delivery. One definition of [DevOps](https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-0134049847) is *a set of practices intended to reduce the time between committing a change to a system and the change being placed into normal production, while ensuring high quality.*
 
 *Audit.* Auditing are processes of independent examination through controls with the intent to express an opinion. An opinion can be on the compliance with standards. Audits are based on objective evidence and may evaluate terms of security controls, privacy impact, performance, etc.
 
@@ -219,54 +214,56 @@ The four business areas above are supported by technology components in three ar
 
 *Platform.* Platform components are aggregated with Infrastructure and Management and Support components to provide Platform as a Service (PaaS). Platform components are mostly provided as services to be consumed by applications, but they may also be consumed directly by end-users.
 
-*Infrastructure.* Infrastructure components provide the necessary environment to run the platform. Infrastructure can be on-premise or extended with Infrastructure as a Service from an private provider. Infrastructure is heavily-standardized to facilitate both automation in the environment, and to optimize volume purchases of hardware and software.
+*Infrastructure.* Infrastructure components provide the necessary environment to run the platform. Infrastructure can be on-premise or extended with Infrastructure as a Service from an private provider. Infrastructure is heavily-standardised to facilitate both automation in the environment, and to optimise volume purchases of hardware and software.
 
 
 ## Design
-The initial design of the GovCloud consists of a number of design decisions and the rationals behind them. Decisions are named in bold and brackets throughout the description of each element. During the establishment decisions can be changed following the established service lifecycle management processes.
+The initial design of the GovCloud consists of a number of design decisions and the rationales behind them. Decisions are named in bold and brackets throughout the description of each element. During the establishment, decisions can be changed following the established service lifecycle management processes.
 
-The business areas (green) of the reference model is the focus of the interaction between GovCloud consumers and GovCloud provider. The technology areas (blue) are included to verify that business processes are supported by technology and that no technology areas are left un-governed.
+The business areas (green) of the reference model is the focus of the interaction between GovCloud Consumers and GovCloud Provider. The technology areas (blue) are included to verify that business processes are supported by technology and that no technology areas are left un-governed.
 
 ### Platform Delivery
 ![](delivery.svg)
 
 Statens IT is the strategically appointed provider of IT operation and service to the Danish State-level Government and shall as such provide the requested cloud environment.
 
-**[PaaS]** The operation model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
+**[PaaS]** The operating model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
 
-NIST defines the capability provied to the consumer in the PaaS operating model as: *to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.*
+NIST defines the capability provided to the Platform Consumer in the PaaS operating model as: *to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.*
 
-PaaS is choosen over IaaS to limit the ammount of operational knowledge required by government organisations. SIT is setup to lift this requirement from other organisations.
+PaaS is choosen over IaaS to limit the ammount of operational knowledge required by government organisations. SIT is organised to lift this requirement from other organisations.
 
-As such, consumers are responsible for the development and maintainance of applications, data management, awarding and revoking user rights and licensing of software. SIT as a Platform Provider is responsible for updating platform software, automated testing of both applications and platform during updates, monitoring and reporting on services.
+As such, Platform Consumers are responsible for the development and maintainance of applications, data management, awarding and revoking user rights and licensing of software. SIT as a Platform Provider is responsible for updating platform software, automated testing of both applications and platform ensuing updates, and monitoring and reporting on services.
 
-The GovCloud operating model is based on a collaborative agreement between government organisations and follows existing practices. Most importantly this does not allow for economic sanctions and private law contracts. Conflicts needs to be solved through excisting government fora and budgetting practices.
+The GovCloud PaaS operating model is based on a collaborative agreement between government organisations and follows existing practices. Most importantly, this does not allow for economic sanctions and private law contracts. Conflicts are to be solved through existing government fora and budgetting practices.
 
-SIT has established business support functions across a few operating models. Initially PaaS will be a supplement to existing models and will benefit from establised practices concerning agreements, reporting and financing. SIT's existing SaaS offering will still be provided. SIT may use the GovCloud as a basis for new SaaS offerings to further harmonize the operational environment.
+SIT has established business support functions across a few operating models. Initially PaaS will be a supplement to existing models and will benefit from established practices concerning agreements, reporting and financing. SIT's existing SaaS offering will still be provided. SIT may use the GovCloud as a basis for new SaaS offerings to further harmonise the operational environment.
 
 
 <br>
-For the initial applications processes related to the management of Platform Service Lifecycle and Platform Service Level needs to be established.
+For the initial applications, processes related to the management of Platform Service Lifecycle and Platform Service Level need to be established.
 
 
 #### Service Lifecycle
-Transparent governance process are necessary for Platform Consumers to evaluate fit-for-porpuse of the operating model.
+Transparent governance processes are necessary for Platform Consumers to evaluate fit-for-purpose of the operating model.
 
-**[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritized by a joint public group of Cloud Consumers lead by DIGST in corporation with SIT.
+**[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritised by a joint public group of Cloud Consumers lead by DIGST in cooporation with SIT.
 
-Establishment of platform services, changes to service level agreements and exposed interfaces are the primary areas of governance. To support the principle of vendor neutrality supported interfaces most be carefully curated. And the choices should support the more general 'business' strategy and the Federated Digital Architecture (FDA).
+Establishment of platform services, changes to service level agreements and exposed interfaces are the primary areas of governance. To support the principle of vendor neutrality, supported interfaces must be carefully curated and choices should support a higher purpose, general 'business' strategy and the Federated Digital Architecture (FDA).
 
-In a two-way negotiation between consumer and provider on individal projects, the overall strategic goals of goverment-it is at risk of taking second priority. To ensure the allignment of overall strategy and it-roadmaps the responsibility of roadmap decisions is placed with the Platform Policy Owner.
+In a two-way negotiation between consumer and provider on individal projects, the overall strategic goals of goverment-it is at risk of taking second priority. To ensure the alignment of overall strategy and it-roadmaps, the responsibility of roadmap decisions is placed with the Platform Policy Owner.
 
-**[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers long term planing. Backward compatability is seeked for running applications.
+**[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers' long term planning. Backward compatibility is sought for running applications.
 
-The products used to implement the platform will likely have many features that are less desirable to have an application depend on. To support the principle of vendor neutrality (and its goal of moveable applications) only a subset of said features is selected and supported.
+The products used to implement the platform will likely have many features that are less desirable to have an application depend on. To support the principle of vendor neutrality (and its goal of portability of applications) only a subset of said features is selected and supported.
 
 When designing applications, Platform Consumers must make informed decisions about the use of available features of GovCloud. Therefore planned support lifetime for each feature must be explicit. For technologies the vendor support and for interfaces the release plans of standard organisations should be taken into consideration. Platform services are more locally controlled and the support time can be agreed upon among current service users.
 
-Application developers may have valid reasons to use unsupported services, and often development time and the code lines can be greatly reduced by clever use of a platform. When applications rely on unsupported features it is important to estimate the immidiate savings and compare those with future costs in the event of unsupported features becoming unavailable.
+Application developers may have valid reasons to use unsupported services, and often development time and code lines can be greatly reduced by clever use of a platform. When applications rely on unsupported features, it is important to estimate the immediate savings and compare those with future costs in the event of unsupported features becoming unavailable.
 
 Unsupported features will be used and Platform Consumers should be alerted as soon as they are brought to the attention of the Platform Provider is aware of planned changes e.g. in updated roadmaps from technology providers.
+
+Platform Consumers should be alerted as soon as planned changes to unsupported features, e.g. in updated roadmaps from technology providers, are brought to the attention of the Platform Provider.
 
 #### Service Level
 The selected operating model (PaaS) seperates responsibilities between the Platform Provider and the Platform Consumer. However, in government collaboration, a running platform with a failing application is a failed public service. Citizens and businesses only care that the service is brought back up and not what part of government (or even private vendor) is to blame. As such, service levels and separation of duties are designed to support a common goal of high service availability.
