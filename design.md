@@ -20,32 +20,34 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 
 
 # Executive Summary
-This document describes the architecture and capabilities of the first version of the GovCloud Platform Service and the responsibilites of the three main roles of goverment cloud platform as a serviece: Policy Owner, Platform Provider and Platform Consumer.
+This document describes the architecture and capabilities of the first version of the GovCloud Platform Service. The architecture establish the first principles as:
+*Continuous service*, *Vendor Neutrality*, *Highly Scalability*, *Security-by-design* and *Predictable Cost*. All in anticipation of a future strategic princple of *Cloud First*.
 
-DIGST shall in the role of GovCloud PaaS Policy Owner:
+The design is based on a industry reference model and includes three main business roles: Policy Owner, Platform Provider and Platform Consumer.
 
-- In corporation with SIT establish a forum for service lifecycle decisions for the platform and toolchain, and continuously publish an updated feature catalogue (6.1.1).
-- In corporation with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture (6.3)
-- Assist SIT in ensuring that the GovCloud PaaS is compliant with best government practices on GDPR and cyber security
+DIGST shall in the role of GovCloud PaaS Policy Owner in relation to Platform Delivery:
 
-SIT shall in the role of GovCloud PaaS Provider:
+- be responsible for establishing a forum for decisions for the platform and toolchain, and continuously publish an updated feature catalogue ([Service Lifecycle Management](#service-lifecycle)).
+- in collaboration with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture ([Service DevOps](#service-devops)).
+- assist SIT in ensuring that the GovCloud PaaS is compliant with best government practices on GDPR and cyber security (Regulation and Policy).
 
-- Establish a PaaS operating model for GovCloud with suporting processes that includes 24/7 support on operation, rolling updates of platform and application service monitoring (6.1)
-- Operate a GovClud-PaaS using MapR, Kubernetes, Docker and KrakenD on premise (6.6, 6.7)
-- Provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS (6.3)
-- Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers [6.2??]
-- Integrate platform, toolchain and collaboration tools with existing SIT identity and access management systems (6.5.6)
-- Provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting and GovCloud Portal [6.2.1??]
-- Provide a sandbox environment for prospective users of the platform and toolchain [6.3.2??]
+SIT shall in the role of GovCloud PaaS Provider in relation to Platform Delivery, Platform Operations :
+
+- be responsible for the establishment of an Service Level Agreement for GovCloud PaaS with suporting processes that includes 24/7 support on operation, rolling updates of platform and application service monitoring ([Service Level](#service-level)).
+- be responsible for the operation of a GovCloud PaaS using MapR, Kubernetes, Docker and KrakenD on premise ([Platform](#platform)).
+- provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS integrated to existing identity management ([Service DevOps](#service-devops)).
+- Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers ([Platform Operation](#platform-operations)).
+- provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting ([Platform Services](#platform-services)).
+- provide a sandbox environment for prospective users of the platform and toolchain ([Test](#test)).
 
 DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
 
-- Develop, deploy and operate application services, including automated test criteria (6.1)
-- Provide estimates to SIT for capacity planning (6.1.)
-- Establish collaboration processes for 24/7 support (6.1.2)
-- Establish processes for onboarding data and service consumers (6.2.1)
-- Provide per user licence cost if they decide to use the Gov Dev Tool provided as SaaS by SIT (6.3)
-- Use the virtual machine image provided by SIT for build and test (6.3)
+- Develop, deploy and operate application services, including automated test criteria, using the virtual machinge image provided by SIT [Service DevOps](#service-devops)).
+- Cover licensing cost if using the GovDevTool provided as SaaS by SIT ([Service DevOps](#service-devops)).
+- Provide estimates to SIT for capacity planning ([Service Lifecycle Management](#service-lifecycle)).
+- Establish collaboration processes for 24/7 support (Service Operation).
+- Establish processes for onboarding data and service consumers (Service Operation).
+
 
 
 ## Introduction
@@ -153,15 +155,22 @@ Furthermore applications are containerised. By choosing widely adopted container
 
 **_Highly Scalable_: Governance, operating processes and technology support a high number of applications with a limited need for addition of resources.**
 
-[Finalize in 1.0 after discussion]
-- R: Operation at Scale, but also predictable and repeatable
-- Q: Fair Use. over detailed contracts
-- Q: Simplify procurement
-- Q: Selfservice - Automated testing...
+The governance at SIT is based on inter-agency agreement and differs from contracts with private cloud providers in many ways. One of the reasons a GovCloud can be made economical attractive is the inherited trust between government organisations and a cost effecient way of handle disagreements in a broader organisational and at times political context.
 
-**_Security-by-design_: The platform and the mechanism for accessing the platform supports by default confidentiality and integrity of the data on the platform
+The ensure this agreement-based process run smoothly the number of hard requirements should be kept low in favour of stable and accepted fora to resolve incidents and unforseen problems. One pillor of a efficent governance is the principles and rules related to *Fair Use*. All cloud environment has house roles, but private providers often regulated the user behaviour to these roles by price models. The complexity of private cloud models add at least one extra layer of decissions in a project, and is to be avoided here for the sake of time-to-market. The *Fair Use* rules should cover elements like informing platform providers when expected capacity is known to change, public facing APIs are called in unintented ways and better alternatives exists or applications spend excessive ressources compared to similar applications.
 
-Kan vi lave en princip med ca. sådan en formulering? Tænker det understøttes af integrationen med AD og med et nyt princip om, at data på platform er krypteret med mindre dataejer beslutter noget andet.
+The scaleability is not ensure by consumers following basic rules alone. Each governance process, ressource cost, choice of tool etc must be made with the intend of scalability. In example meetings should be held on regular frequencies, rather on ad hoc basis. Cost to licenses should be scale with capacity and not by end user. Tools should have open APIs to support the difference in preference from new users.
+
+Finally self-service and automation is needed to scale to the number of potential customer in a national governement settings.
+
+**_Security-by-design_: The platform is designed to enforce security on application by default.**
+
+Security is one of the areas of high regulation and compliance as a service is therefor a large benefit for platform consumers. The GovCloud platform is initially build with authentication, authorisation and data protection suitable for the identified first applications.
+
+The platform and its hosted application most follow specific security practices. Most are decided in the joint public Digital Strategy and further described in the Federate Digital Archictecture. Technology and tools for the platform must be choosen to support known existing needs, but also with a promise of continuosly improvement on security issues over the licensing period.
+
+New processes and platform services are needed when the number of customers grow or applications using person or other sensitive data is hosted. Code inspection, network monitoring, predictive log analysis and automated responses should be added to the roadmap as needed.
+
 
 **_Predictable Cost_: The operating model ensures predictable consumer costs suitable for public sector budget guidelines.**
 
@@ -194,6 +203,7 @@ To identify the different components in the architecture, we use a conceptual mo
 ![](areas.svg)
 
 From the frameworks above, a number of business roles and processes have been selected for this architecture. The business roles are Cloud Consumer, Cloud Provider, Application Responsible, Application Developer, and Data Responsible. One additional role is introduced in order to support the aspects of cloud usage in a government setting, i.e. Cloud Policy Owner.
+
 
 The business processes for a cloud platform can be organised in four main areas:
 
@@ -307,9 +317,9 @@ Specifically, the Platform Consumer establishes processes for on-boarding data c
 
 
 #### System Administration
-Existing SIT SysAdm tools are chosen for the support of the operation of an environment dominated by Windows OS. However the GovCloud will be based on Linux and employees are not expected to operate in both environments [DENNE HER FORSTÅR JEG IKKE]. Furthermore the 24/7 operation might require employees to work from home or on the road.
+Operating the platform 24/7 might require employees to work from home or on the road.
 
-**[SysAdm tooling]** GovCloud operators choose tools suitable for automation and remote management based on individual experiences.
+**[SysAdm tooling]** Operators at the Platform Provider choose tools suitable for automation and remote management based on individual experiences.
 
 Since the efficiency and comfortableness of platform operators have a huge impact on service levels and quality of solutions, the choice of tools must also take into account individual preferences.
 
@@ -317,7 +327,7 @@ Since the efficiency and comfortableness of platform operators have a huge impac
 
 The configuration of GovCloud is done internally in SIT. For the first version, configuration changes to applications are sent to SIT and manually applied. This process is covered by the SLA.
 
-**[Manual Config]** Tools choosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
+**[Manual Config]** Tools initially chosen for configuration management by the Platform Provider must support future self-service for Platform Consumers.
 
 Configuration is under version control and should have high availabilty matching other critical parts of the platform.
 
@@ -456,7 +466,7 @@ However this requires trust to be established between the GovCloud and external 
 **[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
 
 #### Data protection
-Distribution copies of data sets does not need to be protected from deletion, since the original data set is stored by the data owner.
+Distribution copies of data sets does not need to be protected from deletion, since the original data set is stored by the data reponsible.
 
 In future version, data owners might choose to store the original data in the GovCloud and should be provided with the necessary back up and other data protection features.
 
@@ -614,7 +624,7 @@ Furture versions of the GovCloud is expected to add capabilities  on
 
 - *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
 
-- *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
+- *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more  transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
 
 - *Hybrid Cloud/Scale Out?*
 [Expand]
