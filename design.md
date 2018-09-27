@@ -26,13 +26,11 @@ This document describes the architecture and capabilities of the first version o
 The design is based on a industry reference model and includes three main business roles: Policy Owner, Platform Provider and Platform Consumer.
 
 DIGST shall in the role of GovCloud PaaS Policy Owner in relation to Platform Delivery:
-
 - be responsible for establishing a forum for decisions for the platform and toolchain, and continuously publish an updated feature catalogue ([Service Lifecycle Management](#service-lifecycle)).
 - in collaboration with SIT provide access to guides, training and courses for existing and prospective users of the GovCloud on using the platform and toolchain in accordance with the Federated Digital Architecture ([Service DevOps](#service-devops)).
 - assist SIT in ensuring that the GovCloud PaaS is compliant with best government practices on GDPR and cyber security (Regulation and Policy).
 
 SIT shall in the role of GovCloud PaaS Provider in relation to Platform Delivery, Platform Operations :
-
 - be responsible for the establishment of an Service Level Agreement for GovCloud PaaS with suporting processes that includes 24/7 support on operation, rolling updates of platform and application service monitoring ([Service Level](#service-level)).
 - be responsible for the operation of a GovCloud PaaS using MapR, Kubernetes, Docker and KrakenD on premise ([Platform](#platform)).
 - provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS integrated to existing identity management ([Service DevOps](#service-devops)).
@@ -41,7 +39,6 @@ SIT shall in the role of GovCloud PaaS Provider in relation to Platform Delivery
 - provide a sandbox environment for prospective users of the platform and toolchain ([Test](#test)).
 
 DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
-
 - Develop, deploy and operate application services, including automated test criteria, using the virtual machinge image provided by SIT [Service DevOps](#service-devops)).
 - Cover licensing cost if using the GovDevTool provided as SaaS by SIT ([Service DevOps](#service-devops)).
 - Provide estimates to SIT for capacity planning ([Service Lifecycle Management](#service-lifecycle)).
@@ -84,9 +81,8 @@ Data is provided by real time gathering and harmonising domain specific data fro
 
 The first known usages for PubOrg is as support for the implementation of Next Generation Digital Mail, the service Borger.dk, and the publication "Det Offentlige Danmark".
 
-**Platform DevOps.**
+**Platform DevOps.** Since SIT is both acting as a Platform Provider, but also is tasked with development of a few generic platform services, the organisation has an opportunity to be on the recieving end of its own services. Establishing platform services as a application will create valuable insigth and suggestions for improvement to the platform operation, and at the same time ensure platform services will follow the generel guidelines of applications.
 
-[Development of platform services]
 
 Storage needs, compute and network estimates for first applications are shown in the table below. Unreplicated data and external bandwith. All numbers are in giga bytes (GB).
 
@@ -98,8 +94,6 @@ Storage needs, compute and network estimates for first applications are shown in
 | PubOrg       | KL,SDS,FM | 1        | -   | 1.000   | 1         | Government |
 | Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
 
-
-[Waiting for current daily out data for existing DMI data consumers or result from PWC forecast]
 
 ## Problem
 Customers of SIT (ministries and their agencies) are increasingly seeking to move towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
@@ -412,8 +406,6 @@ The time from labeling to deplyoment during normal business hours should be spec
 A scaling schedule allows the application fabric to automatically scale the number of running instances to support the workload. By requiring every service to be behind a scaling mechanisme, every service will also be able to be run in various versions during rolling updates. This is critical to support the principle of continious service availabilty.
 
 In future versions the deployment of new service versions or new configuration should not require manually steps from the Platform Provider. The only exception to this is changes to the scaling schedule. Scaling schedules should be reviewed by the Platform Provider to ensure *fair use* and support in capacity planing.
-
-[Kan vi udbygge dette?]
 
 #### Operate
 
