@@ -1,4 +1,4 @@
-# Initial Architecture <br> GovCloud PaaS<br> Statens IT
+# ![logo](cloud.svg) Initial Architecture <br> GovCloud PaaS<br> Statens IT
 
 This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development, the GovCloud PaaS. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the increased use of cloud technologies in the Danish public sector.
 
@@ -15,11 +15,10 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | 20180924| 0.9.1 | Distribution for board meeting 20180924
 | **20180927**| **0.9.2** | Distribution for sponsor meeting 20181003
 
-[Table of Content]
 
 
 # Executive Summary
-SIT GovCloud PaaS is an enterprise-grade, on-premise Cloud Platform based on Open Source and Open API´s delivered, maintained and monitored 24/7 by Statens IT, compliant with Danish regulation and Government best paractices on Security, GDPR and IT-architecture and made available to all Danish state institutions on attractive economical and administrative terms. 
+SIT GovCloud PaaS is an enterprise-grade, on-premise Cloud Platform based on Open Source and Open API´s delivered, maintained and monitored 24/7 by Statens IT, compliant with Danish regulation and Government best paractices on Security, GDPR and IT-architecture and made available to all Danish state institutions on attractive economical and administrative terms.
 
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service. The architecture establish the first principles as:
 *Continuous service*, *Vendor Neutrality*, *Highly Scalability*, *Security-by-design* and *Predictable Cost*. All in anticipation of a future strategic principle of *Cloud First*.
@@ -195,7 +194,7 @@ Cloud First means that cloud technology should always be considered when designi
 
 ## Reference model
 To identify the different components in the architecture, we use a conceptual model based on a number of excisting frameworks, including
-[Microsoft Cloud Service Foundation Reference Model](https://blogs.technet.microsoft.com/cloudsolutions/2013/08/15/cloud-services-foundation-reference-architecture-reference-model/), [IBM Cloud Garage Method](https://www.ibm.com/cloud/garage/), [OpenGroup IT4IT](http://www.opengroup.org/it4it) and [NIST Cloud Computing Reference Architecture](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf). A total detailed view of all elemements can be found in the appendix of this document.
+[Microsoft Cloud Service Foundation Reference Model](https://blogs.technet.microsoft.com/cloudsolutions/2013/08/15/cloud-services-foundation-reference-architecture-reference-model/), [IBM Cloud Garage Method](https://www.ibm.com/cloud/garage/), [OpenGroup IT4IT](http://www.opengroup.org/it4it) and [NIST Cloud Computing Reference Architecture](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.svg). A total detailed view of all elemements can be found in the appendix of this document.
 
 
 ![](areas.svg)
@@ -599,7 +598,7 @@ The following roadmap is based on first know applications. The roadmap must be c
 
 Regulatory issues on the use of public cloud services for sensitive personal data in a government settings are still unclear. Even with clearification, some critical data are still to be kept on danish territory and under strict control. But even critical applications need better time to market and cloud technologies can support this. Hence the need for a onpremise infrastructure based on cloud technologies.
 
-At the same time the cost efficiency of public cloud offerings are hard to match. But government organisations will soon find integration of cloud services can be too complexto manage. A cloud consumer may request cloud services from a cloud broker, instead of contacting a cloud provider directly. A cloud broker is an entity that manages the use, performance and delivery of cloud services and negotiates relationships between cloud providers and cloud consumers. [NIST definition of Cloud Broker](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.pdf)
+At the same time the cost efficiency of public cloud offerings are hard to match. But government organisations will soon find integration of cloud services can be too complexto manage. A cloud consumer may request cloud services from a cloud broker, instead of contacting a cloud provider directly. A cloud broker is an entity that manages the use, performance and delivery of cloud services and negotiates relationships between cloud providers and cloud consumers. [NIST definition of Cloud Broker](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication500-292.svg)
 
 The cloud broker will take advantage of a competitative market by moving applications to the most best available platforms. Reason can be applications with no personal data or when needed capabilities are only accessible as SaaS at cloud providers.
 
@@ -620,6 +619,45 @@ An existing customer at SIT wants to access data from another organisation. The 
 
 ### List of Design Decisions
 
+1. **[PaaS]** The operating model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
+1. **[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritised by a joint public group of Cloud Consumers lead by DIGST in cooporation with SIT.
+1. **[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers' long term planning. Backward compatibility is sought for running applications.
+1. **[24/7 platform]** SIT continously monitors all services, reports swiftly on incidents, initiates problem solving and brings in support from external professional services when necessarry.
+1. **[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
+1. **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework.
+1. **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
+1. **[Existing IAM]** Identities and access rights necessary for the development of applications and operation of the platform are stored in SIT's preferred central Identity and Access Management system.
+1. **[SysAdm tooling]** Operators at the Platform Provider choose tools suitable for automation and remote management based on individual experiences.
+1. **[Manual Config]** Tools initially chosen for configuration management by the Platform Provider must support future self-service for Platform Consumers.
+1. **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
+1. **[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
+1. **[Staging]** Applications, services and data sets can deploy to multiple stages of the GovCloud.
+1. **[Build Image]** Docker images are build from source using custom image maintained by SIT.
+1. **[Test Image]** Automated test of services are done using a custom image maintained by SIT.
+1. **[Acceptance test]** Service passing the provided automated tests are considered running.
+1. **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
+1. **[Release]** Consumers label images in the repository for release based on test results.
+1. **[Deploy]** In the initial version of the GovCloud PaaS releases of new versions of application services are done manually by SIT on request from the Cloud Consumer.
+1. **[Scaleable]** Every service is deployed with a scaling schedule.
+1. **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
+1. **[Monitoring]** Applications and services implement a common schema for monitoring and logging, and are monitored and reported in SITs existing tools.
+1. **[SLA management]** SIT is using existing tools and channels to provide data on the fullfillment of SLA and other agreements.
+1. **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
+1. **[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
+1. **[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
+1. **[Federation]** Authentication of end-users are done in federation.
+1. **[Attribute Based Access Policy]** Access policies should rely on trusted attributes over detailes rights when possible.
+1. **[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
+1. **[Encryption by default]** Data at rest on the platform is encrypted, unless the Cloud Consumer requests that his data is not encrypted
+1. **[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
+1. **[Platform Layers]** Three seperate layers: gateway, application, data
+1. **[KrankenD]** The API Gateway is [KrakenD](http://www.krakend.io/).
+1. **[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/).
+1. **[MapR]** The data fabric is the [MapR] Hadoop Distribution (https://mapr.com/).
+1. **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
+1. **[Secure Token Service]** All services use a common secure token platform service.
+1. **[Log Service]** All services use a common logging service.
+1. **[Code service]** The code repository of applications and platform services is [GIT](https://git-scm.com/) and is a platform service at SIT.
 
 
 ### Referencemodel
