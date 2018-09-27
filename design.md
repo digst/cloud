@@ -20,7 +20,7 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 
 
 # Executive Summary
-SIT GovCloud PaaS is an enterprise-grade, on-premise Cloud Platform based on Open Source and Open API´s delivered, maintained and monitored 24/7 by Statens IT and made available to all Danish state institutions on attractive economical and administrative terms. 
+SIT GovCloud PaaS is an enterprise-grade, on-premise Cloud Platform based on Open Source and Open API´s delivered, maintained and monitored 24/7 by Statens IT, compliant with Danish regulation and Government best paractices on Security, GDPR and IT-architecture and made available to all Danish state institutions on attractive economical and administrative terms. 
 
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service. The architecture establish the first principles as:
 *Continuous service*, *Vendor Neutrality*, *Highly Scalability*, *Security-by-design* and *Predictable Cost*. All in anticipation of a future strategic princple of *Cloud First*.
