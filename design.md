@@ -2,7 +2,7 @@
 
 This document is an initial architecture for a project aimed at establishing the first version of a new operating model at Statens IT that uses cloud technologies to provide a managed platform for agile application development, the GovCloud PaaS. The architecture describes which decisions that has been made and why for selected elements in a reference model.  Decisions reflect the needs identified for the first know applications and support a longer strategic perspective on the increased use of cloud technologies in the Danish public sector.
 
-The first use of the document supports a decision of how to best host free of charge meteorological and climate data for government and private data users starting from late 2019 and how to support agile development of a public sector registry by the Agency for Digitisation.
+The first use of the document supports a decision of how to best host free of charge meterological and climate data for government and private data users starting from late 2019 and how to support agile development of a public sector registry by the Agency for Digitisation.
 
 Statens IT also provides a GovCloud IaaS based on OpenStack. This service is not specified in this document.
 
@@ -12,17 +12,16 @@ Edited in September 2018 by [Mads Hjorth](mailto:madsh@digst.dk), Digitalisering
 | Date    | Version  | Usages
 |--------:|---------:|:-------------------------------------------------------
 | 20180914| 0.7 | Internally reviewed, discussed with DMI and SIT 201809119
-| 20180924| 0.9.1 | Distribution for board meeting 20180924
-| **20180927**| **0.9.2** | Distribution for sponsor meeting 20181003
+| 20180920| 0.9 | Distribution for board meeting 20180924
+| **20180924**| **0.9.1** | Distribution for board meeting 20180924
+| *20180926*| *1.0* | Distribution for sponsor meeting 20181003
 
 [Table of Content]
 
 
 # Executive Summary
-SIT GovCloud PaaS is an enterprise-grade, on-premise Cloud Platform based on Open Source and Open API´s delivered, maintained and monitored 24/7 by Statens IT, compliant with Danish regulation and Government best paractices on Security, GDPR and IT-architecture and made available to all Danish state institutions on attractive economical and administrative terms. 
-
 This document describes the architecture and capabilities of the first version of the GovCloud Platform Service. The architecture establish the first principles as:
-*Continuous service*, *Vendor Neutrality*, *Highly Scalability*, *Security-by-design* and *Predictable Cost*. All in anticipation of a future strategic principle of *Cloud First*.
+*Continuous service*, *Vendor Neutrality*, *Highly Scalability*, *Security-by-design* and *Predictable Cost*. All in anticipation of a future strategic princple of *Cloud First*.
 
 The design is based on a industry reference model and includes three main business roles: Policy Owner, Platform Provider and Platform Consumer.
 
@@ -77,7 +76,7 @@ As drivers for the initial version of GovCloud PaaS, the following three applica
 
 In the future, data distribution to private consumers and other government organisations is expected to be done on the same infrastructure, whereas highly critical data distribution e.g. crisis management and defence, will continue in separate channels.
 
-Experiences from countries with free-of-charge meteorological data have shown the need for a way to contact data consumers in the case of e.g. erroneous data from failing sensors. As such DMI wants to register data consumers to support this. Registering data consumers also supports enforcing a *fair use* agreement.
+Experiences from countries with free-of-charge meterological data have shown the need for a way to contact data consumers in the case of e.g. erroneous data from failing sensors. As such DMI wants to register data consumers to support this. Registering data consumers also supports enforcing a *fair use* agreement.
 
 **PubOrg.** Data on the different levels of the Danish public sector and different domains within these levels are abundant. However, current data services are configured to meet domain specific purposes and as such do not support the inter-domain collaboration necessary to support e.g. citizens' contacts with a plurality of authorities and public sector entities. PubOrg addresses this by providing complete, coherent and consistent generic data on all three layers of government.
 
@@ -85,19 +84,22 @@ Data is provided by real time gathering and harmonising domain specific data fro
 
 The first known usages for PubOrg is as support for the implementation of Next Generation Digital Mail, the service Borger.dk, and the publication "Det Offentlige Danmark".
 
-**Platform DevOps.** Since SIT is both acting as a Platform Provider, but also is tasked with development of a few generic platform services, the organisation has an opportunity to be on the recieving end of its own services. Establishing platform services as a application will create valuable insigth and suggestions for improvement to the platform operation, and at the same time ensure platform services will follow the generel guidelines of applications.
+**Platform DevOps.**
 
-<br>
+[Development of platform services]
 
 Storage needs, compute and network estimates for first applications are shown in the table below. Unreplicated data and external bandwith. All numbers are in giga bytes (GB).
 
 | Applications | Providers | Daily In | Co. | Storage | Daily Out | Consumers    |
 | ---          | ---       | ---:     | ---:| -------:|---:       | ------------ |
 | Observations | DMI       | 1        | -   | 1.000   | 25.000    | Government, private |
-| Radar        | DMI       | 15       | +   | 1.500   | ?         | Government, private |
+| Radar        | DMI       | 15       | -   | 1.500   | ?         | Government, private |
 | Forecast     | DMI       | 6.000    | ++  | 42.000  | 48.000    | Government, private |
 | PubOrg       | KL,SDS,FM | 1        | -   | 1.000   | 1         | Government |
 | Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
+
+
+[Waiting for current daily out data for existing DMI data consumers or result from PWC forecast]
 
 ## Problem
 Customers of SIT (ministries and their agencies) are increasingly seeking to move towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
@@ -119,7 +121,7 @@ To support the first applications, SIT must extend existing operating models wit
 - *Application Development.* A government organisation decides that the GovCloud Platform is the future home of a new application. Early in the process SIT helps identify reusable services and data on the GovCloud Platform. Furthermore, SIT provides a sandbox environment and a toolchain for developers to produce initial proof of concepts. DIGST supports the project.
 
 <br>
-Future versions of the GovCloud are expected to add capabilities supporting *Compliance as a Service*, *Development Procurement Framework*, _Sharing of Sensistive Data_, _Reuse Applications/Services_, _Hybrid Cloud/Scale Out_, and _Migrating Existing Applications_ (see [appendix](#more-principles,-capabilities-and-use-cases)).
+Future versions of the GovCloud are expected to add capabilities supporting Compliance as a Service, Development Procurement Framework, _Sharing of Sensistive Data_, _Reuse Applications/Services_, _Hybrid Cloud/Scale Out_, and _Migrating Existing Applications_ (see [appendix](#more-principles,-capabilities-and-use-cases)).
 
 
 
@@ -360,34 +362,34 @@ Most importantly, stages are not implemented as separate physical environments w
 
 #### Build
 
-The source of application and platform services are stored at the GovCloud Provider to support rebuilds even when an external code repository is out of reach.
+The source codes for application and platform services are stored by the Platform Provider to support rebuilds in the event of an external code repository being out of reach.
 
-**[Build Image]** Docker images are build from source using custom image maintained by SIT.
+**[Build Image]** Docker images are built from source code using custom images maintained by SIT.
 
-In the very definition of PaaS, the provider chooses which *programming languages, libraries, services, and tools* to suopport.  The custom build and test images defines the supported technology stack on the platformn. The GovCloud aims to provide a seamless process of bringing services into production.
+In the very definition of PaaS, the provider chooses which *programming languages, libraries, services, and tools* to support. The build and test images define the supported technology stack on the platform. The GovCloud aims to provide a seamless process of bringing services into production.
 
-The custom build and test image allows developers to replicate the features of the automated deploy processes used by SIT on their local machine.
+The build and test image allows developers to replicate on their local machines the features of the automated deploy processes used by SIT.
 
-The build and test image is governed as part of the generel service life cycle.
+The build and test image is governed as part of the generel service lifecycle.
 
 
 #### Test
 
-**[Test Image]** Automated test of services are done using a custom image maintained by SIT.
+**[Test Image]** Automated test of services is done using a custom image maintained by SIT.
 
-As above, this allows test to be carried out on local developer machines in an environment that closely match the one used in production.
+As above, this allows tests to be carried out on developer's local machine in an environment that closely matches the one used in production.
 
-**[Acceptance test]** Service passing the provided automated tests are considered running.
+**[Acceptance test]** A service that passes the provided automated tests is considered running.
 
-Because the same virtual machine is used to build and test services at both the consumer and provider, the automated test can also be used as a form of acceptance test. That is, the GovCloud provider can rely on the test to verify that a service is running after an upgrade of the underlying platform. A side effect to this, is that if a service is behaving un-expected after a platform update, new tests should be writen to provide better test coverage for future updates.
+Scaleability of the GovCloud Platform is contingent on the automation of the Platform Provider's service monitoring. In order to support this, Application Developers must provide automated acceptance tests as an integral part of developing applications and services to the GovCloud Platform. After an upgrade of the underlying platform, the Platform Provider's criteria for assessing whether or not a service is running, is the result of its acceptance test. A side effect to this is that if a service behaves un-expectedly in an acceptance test after a platform update, new tests should be written to provide better test coverage for future updates.
 
-**[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
+**[Sandbox]** SIT provides limited, unsupported, free-of-charge GovCloud resources to existing and prospect consumers for evaluation purposes.
 
-Sandboxes can help the uptake of the GovCloud among existing customers and private vendors interested in providing developers to government agencies can familiarize them self with the prefered setup before project establishment.
+Sandboxes help the uptake of the GovCloud Platform among existing and prospective consumers, and third party developers interested in providing developers to government agencies, by allowing them to familiarise themselves with the prefered setup before project establishment.
 
-The user access management to the sand box is seperated from the rest of the GovCloud. SIT Customers can request temporary accredentials for employees and 3rd party developers to evaluate features and the tool chain. Sand boxes have no support, no SLA and will be erased after a specified number of days.
+The user access management of the sandbox is separated from the rest of the GovCloud. SIT Customers can request temporary accredentials for employees and third party developers to evaluate features and the toolchain. Sandboxes have no support, no SLA and will be erased after a specified number of days.
 
-The limited cost of sandboxes can be taken up by existing users. They will benifit significantly from each new application and customer through the economy of scale.
+The limited cost of sandboxes is covered by existing users as they will benefit significantly from each new application and customer through economy of scale.
 
 #### Release
 
@@ -501,11 +503,11 @@ The product is choosen for its price, scaleability, distributed configuration, s
 
 **[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/).
 
-The product is choosen for its price, widespread adoption and ressource handling. It has been choosen over variants with self-service portals, because the vision of a seamless and stable consumer experience across the different technologies in the GovCloud. When the nubmers of customers increase
+The product is choosen for its price, widespread adoption and ressource handling. It has been choosen over variants with self-service portals, because the vision of a seamless and stable consumer experience across the different technologies in the GovCloud.
 
 #### Data fabric
 
-**[MapR]** The data fabric is the [MapR] Hadoop Distribution (https://mapr.com/).
+**[MapR]** The data fabric is [MapR](https://mapr.com/).
 
 The product has been choose because of its proven quick implementation, enterprise features and highly manageability.
 
@@ -524,9 +526,23 @@ This platform service allow access policies in applications to described without
 
 This platform service allow for the protection and audit of logs across multiple services and applications.
 
-**[Code service]** The code repository of applications and platform services is [GIT](https://git-scm.com/) and is a platform service at SIT.
+**[Code service]** The code repository of applications and platform services is [GIT] and is a platform service at SIT.
 
-GIT is the most used version control and source repository. It supports highly distributed development environments, effectiv branching and merging and has widespread build-in support in developer tools. GIT supports advances repository synchronisation and Platform consumers or Application Developers can choose to rely on these features for local development. GIT is also suitable for automation of build and test process to support the desired scaleability of development.
+GIT is the most used repository and supports highly distributed development environments, effectiv branching and merging and has widespread build-in support in developer tools. GIT supports advances repository synchronisation and Platform consumers or Application Developers can choose to rely on these features for local development. GIT is also suitable for automation of build and test process to support the desired scaleability of development.
+
+
+
+
+
+
+### Infrastructure
+![](infrastructure.svg)
+
+#### On-premise Compute
+
+#### On-premise Storage
+
+#### Network
 
 ## Appendix
 
@@ -595,7 +611,7 @@ The following roadmap is based on first know applications. The roadmap must be c
 
 ### More principles, capabilities and use cases
 
-**_Cloud Broker_: Cloud services are consumed through a central cloud broker.**
+**Cloud Broker** - cloud services are consumed through a central cloud broker.
 
 Regulatory issues on the use of public cloud services for sensitive personal data in a government settings are still unclear. Even with clearification, some critical data are still to be kept on danish territory and under strict control. But even critical applications need better time to market and cloud technologies can support this. Hence the need for a onpremise infrastructure based on cloud technologies.
 
@@ -603,11 +619,15 @@ At the same time the cost efficiency of public cloud offerings are hard to match
 
 The cloud broker will take advantage of a competitative market by moving applications to the most best available platforms. Reason can be applications with no personal data or when needed capabilities are only accessible as SaaS at cloud providers.
 
-Furture versions of the GovCloud is expected to add capabilities on
+
+Furture versions of the GovCloud is expected to add capabilities  on
 
 - *Compliance as a Service.* The GovCloud will differ from existing cloud vendors in regard to establising and assuring compliance with regulatory and strategy requirements. Clarification of compliance can add years to project time and is a major barriere to better time to market. The GovCloud will over time establish more compliance assurances and offer them as shared services. The focus will initial be on data protection, public procurement, and the joint public digitalisation strtegy.
 
 - *Development procurment framework* Since the GovCloud is expected to be used by many public organisations, the general software and development market will be familiarized with the environment and it processes. In a market perspective, the GovCloud can function as a harmonization of services, which can lead to an increased and more  transparent competition. This can further be supported by a common framework for procuring application development build to be hosted on the GovCloud.
+
+- *Hybrid Cloud/Scale Out?*
+[Expand]
 
 to support a number of new use cases
 
@@ -620,6 +640,45 @@ An existing customer at SIT wants to access data from another organisation. The 
 
 ### List of Design Decisions
 
+1. **[PaaS]** The operation model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
+1. **[Consumer driven]** The service life cycle of GovCloud is based on consumer needs, in a feature catalogue maintained by SIT, and prioritized by a joint public group lead by DIGST in corporation with SIT.
+1. **[Support lifetime]** Each supported feature (technology, interface or platform service) in GovCloud has a planned minimum lifetime supporting Cloud Consumers long term planing.
+1. **[24/7 platform]** SIT continously monitor all services, reports swift on incidents, initiate problem solving and bring in support from external professional services when necessarry.
+1. **[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
+1. **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework.
+1. **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
+1. **[Existing IAM]** Identities and access rights necessary for development of applications and operation of platform are storde in SITs prefered central Identify and Access Management system.
+1. **[SysAdm tooling]** GovCloud operators choose tools suitable for automation and remote management based on individual experiences.
+1. **[Manual Config]** Tools chosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
+1. **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software as a Service to support agile application development
+1. **[Consumer Tool]** Platform Consumers may choose between SIT’s SaaS tool chain and providing their own tool chain, contingent on the Platform Consumer’s tool chain’s complete integration with the build and test processes from SIT.
+1. **[Staging]** Applications, services and data sets can deployed to multiple stages of the GovCloud.
+1. **[Build Image]** Docker images are build from source using custom image maintained by SIT.
+1. **[Test Image]** Automated test of services are done using a custom image maintained by SIT.
+1. **[Acceptance test]** Service passing the provided automated tests are considered running.
+1. **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
+1. **[Release]** Consumers label images in the repository for release based on test results.
+1. **[Deploy]** In the initial version releases of new versions of applications services are done manually by SIT on request from customer.
+1. **[Scaleable]** Every service is deployed with a scaling schedule.
+1. **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
+1. **[Monitoring]** Applications and services implement a common schema for monitoring and logging, and are monitored and reported in SITs existing tools.
+1. **[SLA management]** SIT is using existing tools and channels to provide data on the fullfillment of SLA and other agreements.
+1. **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
+1. **[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service.
+1. **[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
+1. **[Federation]** Authentication of end-users are done in federation.
+1. **[Attribute Based Access Policy]** Access policies should rely on trusted attributes over detailes rights when possible.
+1. **[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
+1. **[Encryption by default]** Data at rest on the platform is encrypted, unless the Cloud Consumer requests that his data is not encrypted
+1. **[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
+1. **[Platform Layers]** Three seperate layers: gateway, application, data
+1. **[KrankenD]** The API Gateway is [KrakenD](http://www.krakend.io/).
+1. **[Kubernetes]** The application environment is [Kubernetes](https://kubernetes.io/).
+1. **[MapR]** The data fabric is [MapR](https://mapr.com/).
+1. **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
+1. **[Secure Token Service]** All services use a common secure token platform service.
+1. **[Log Service]** All services use a common logging service.
+1. **[Code service]** The code repository of applications and platform services is [GIT] and is a platform service at SIT.
 
 
 ### Referencemodel
