@@ -263,25 +263,25 @@ Application developers may have valid reasons to use unsupported services, and o
 
 Unsupported features will be used and Platform Consumers should be alerted as soon as they are brought to the attention of the Platform Provider is aware of planned changes e.g. in updated roadmaps from technology providers.
 
-Platform Consumers should be alerted as soon as planned changes to unsupported features, e.g. in updated roadmaps from technology providers, are brought to the attention of the Platform Provider.
+Platform Consumers should be alerted as soon as planned changes to unsupported features, e.g. by means of updated roadmaps from technology providers, are brought to the attention of the Platform Provider.
 
 #### Service Level
-The selected operating model (PaaS) seperates responsibilities between the Platform Provider and the Platform Consumer. However, in government collaboration, a running platform with a failing application is a failed public service. Citizens and businesses only care that the service is brought back up and not what part of government (or even private vendor) is to blame. As such, service levels and separation of duties are designed to support a common goal of high service availability.
+The selected operating model (PaaS) clearly separates the responsibilities of the Platform Provider from those of the Platform Consumer. However, in government collaboration, a running platform with a failing application is a failed public service. Citizens and businesses only care that the service is restored and not which part of government (or even private vendor) is to blame. As such, service levels and separation of duties are designed to support a common goal of high service availability.
 
 
-**[24/7 platform]** SIT continously monitor all services, reports swift on incidents, initiate problem solving and bring in support from external professional services when necessarry.
+**[24/7 platform]** SIT continously monitors all services, reports swiftly on incidents, initiates problem solving and brings in support from external professional services when necessarry.
 
-When SIT identifies a failing service an incident is created. First efforts are made to restart services and identify underlaying problems. SIT can not be expected to have knowledge about the internal workings of applications, and if first efforts does not bring services up, the service provider is involved. The SLA includes specific reaction times and escalation criteria.
+When SIT identifies a failing service an incident is created. First efforts are made to restart services and identify underlying problems. SIT cannot be expected to have knowledge of the internal workings of applications, and if first efforts do not restore services, the service provider is involved. The SLA includes specific reaction times and escalation criteria.
 
 SIT does not support the deployment of new releases outside normal business hours (except in the process of resolving incidents).
 
 **[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
 
-Platform Consumers help identify problems by providing knowledge of the inner workings of applications. When Platform Provider and Platform Consumer agree on the problem a suggested solution is decided upon. Solutions can be fixes to platform services, workarounds delivered as new application versions or combinations hereof.
+Platform Consumers help identify problems by providing knowledge of the inner workings of applications. When Platform Provider and Platform Consumer agree on the cause of an incident a suggested solution is decided upon. Solutions can be fixes to platform services, workarounds delivered as new application versions or combinations hereof.
 
-Highly available services are a result of carefull design, early detection of problems and the required capabilities to fix them. Carefull design is supported by devepoment guidelines and general cloud practices. Detection of problems is supported by automated testing and health monitoring. Required capabilities covers both specific products, their configuration, dependencies and underlying infrastructure. The availability and cost of these support from technology providers must be considered when deciding the roadmap and should be contractually specifie by the Platform Provider when possible.
+Highly available services are a result of careful design, early detection of problems and the required capabilities to fix them. Careful design is supported by development guidelines and general cloud practices. Detection of problems is supported by automated testing and health monitoring. Required capabilities cover both specific products, their configurations, dependencies and underlying infrastructure. The availability and cost of these support from technology providers must be considered when deciding the roadmap and should be contractually specifie by the Platform Provider when possible.
 
-Processes of identifying and resolving problems are separated from incident management. SLA should also govern Platform Customers’ responsibility to participate in this process when needed.
+Processes of identifying and resolving problems are separated from incident management. SLA should also govern Platform Consumers' responsibility to participate in this process when needed.
 
 
 ### Platform Operations
@@ -291,23 +291,23 @@ Existing established processes at SIT are not all suitable for DevOps and automa
 
 **[ITIL]** SIT establishes processes suitable for cloud platform operations based on the ITIL framework.
 
-The required service uptime has consequences for the design of especially the incident process. The time of incident (during normal business hours, weekends or international holidays) will influence e.g. what contact information to use, what resources are preferred and when to report to management.
+The required service uptime has consequences for the design of especially the incident process. The time of incident (during normal business hours, weekends or international holidays respectively) will influence e.g. the contact information to use, which resources are preferred and when to report to management.
 
-The initial application will have impact on existing processes for Access Management, Configuration Management and System Administration.
+The initial applications will impact existing processes for Access Management, Configuration Management and System Administration.
 
 
 #### Access Management
-The Public Data Sharing use case, combined with the specific need to identify consumers of the DMI data, is not covered by excisting access management at SIT.
+The use case Public Data Sharing, combined with the specific need to identify consumers of DMI data, is not covered by existing access management at SIT. Consequently,
 
 **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
 
 Specifically, the Platform Consumer establishes processes for on-boarding data consumers and SIT provides a back-end service to generate and store API keys and contact information. The API Key management should be generic and be used for all applications that share public data with private businesses and the public in general.
 
-**[Existing IAM]** Identities and access rights necessary for development of applications and operation of the platform are stored in SITs prefered central Identify and Access Management system.
+**[Existing IAM]** Identities and access rights necessary for the development of applications and operation of the platform are stored in SIT's preferred central Identity and Access Management system.
 
 
 #### System Administration
-Existing SIT SysAdm tools are chosen for the support of the operation of an environment dominated by Windows OS. However the GovCloud will be based on Linux and employees are not expected to operate in both environments [DENNE HER FORSTÅR JEG IKKE]. Furthermore the 24/7 operation might require employees to work from home or on the road.
+Existing SIT SysAdm tools support the operation of an environment dominated by Windows OS. However, the GovCloud will be based on Linux and employees are not expected to operate in both environments. Furthermore, the 24/7 operation may require employees to work from home or on the road. Consequently,
 
 **[SysAdm tooling]** GovCloud operators choose tools suitable for automation and remote management based on individual experiences.
 
@@ -317,7 +317,7 @@ Since the efficiency and comfortableness of platform operators have a huge impac
 
 The configuration of GovCloud is done internally in SIT. For the first version, configuration changes to applications are sent to SIT and manually applied. This process is covered by the SLA.
 
-**[Manual Config]** Tools choosen for configuration management in version 1.0 must support implementing self-service for application owners in future versions.
+**[Manual Config]** Tools chosen for configuration management in version 1.0 must support a future implementation of self-service for application owners.
 
 Configuration is under version control and should have high availabilty matching other critical parts of the platform.
 
@@ -325,28 +325,28 @@ Configuration is under version control and should have high availabilty matching
 ### Service DevOps
 ![](devops.svg)
 
-The development and operation of applications must be supported by an efficient tool chain. To help government organisations adapt agile development in a cloud setting, a joint public, fully supported enterprise grade tool chain integrated with the CovCloud Paas is provided by SIT.
+The development and operation of applications must be supported by an efficient toolchain. To help government organisations adapt agile development in a cloud setting, a joint public, fully supported enterprise grade toolchain integrated with the CovCloud Paas is provided by SIT.
 
-The use of the toolchain is recommended and can function as a guide for competences across development vendors. However, not all Platform Consumers (and more importantly their developers) can be expected to adhere to tool choices made by Platform Policy Owner.
+The use of the toolchain is recommended and can function as a guide for competences across development vendors. However, not all Platform Consumers (and more importantly their developers) can be expected to adhere to tool choices made by Platform Policy Owner. Consequently,
 
-**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development
+**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
 
-The tool chain will consist of professional, enterprise grade tools. SIT offers the toolchain preconfigured and integrated with existing user and access management. Licences are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective costumers free-of-charge with a limited number of floating trial licences.
+The toolchain will consist of professional, enterprise grade tools. SIT offers the toolchain preconfigured and integrated with existing user and access management. Licences are provided by Platform Consumers or procured in bulk by SIT where possible. The tool chain used in sandboxes should be available to consumers and prospective consumers free-of-charge with a limited number of floating trial licences.
 
 End-user support and training is done outside of SIT.
 
-The initial toolchain is based on Jira, Git, Jenkins and SOAP UI. The toolchain will be expanding according to the needs of GovCloud Consumers and as agreeded in the GovCloud Policy-proces.
+The initial toolchain is based on Jira, Git, Jenkins and SOAP UI. The toolchain will be expanded in accordance with the needs of GovCloud Consumers and as agreed upon in the GovCloud Policy-process.
 
-**[Consumer Tool]** GovCloud Consumers may choose between SIT’s SaaS tool chain or provide their own tool chain, contingent on the  Consumer’s tool chain’s complete integration with the build and test processes from SIT.
+**[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
 
-The build and test process are required to follow the SIT defined flow to allow SIT to rebuild images and reploy services after changes on the platform.
+The build and test process are required to follow the flow defined by SIT to allow SIT to rebuild images and re-deploy services after changes on the platform.
 
 
-**[Staging]** Applications, services and data sets can deployed to multiple stages of the GovCloud.
+**[Staging]** Applications, services and data sets can deploy to multiple stages of the GovCloud.
 
-Stages can be used by application developers to run test before deploying, by platform provider to test updates of platform technologym, to preview new features and to supply sandboxes.
+Stages can be used by Application Developers to run tests before deploying, and by Platform Provider to test updates of platform technologies, to preview new features and to supply sandboxes.
 
-Most importantly stages are not implemented as seperate physical environments with seperate lifecycles. All stages are implemented on the same Gateway, Application and Data fabric, taking advantages of the buildin seperation of ressources and access.
+Most importantly, stages are not implemented as separate physical environments with separate lifecycles. All stages are implemented on the same Gateway, Application and Data fabric, taking advantages of the built in separation of resources and access.
 
 
 
