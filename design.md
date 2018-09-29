@@ -32,7 +32,7 @@ DIGST shall in the role of GovCloud PaaS Policy Owner in relation to Platform De
 
 SIT shall in the role of GovCloud PaaS Provider in relation to Platform Delivery, Platform Operations :
 - be responsible for the establishment of an Service Level Agreement for GovCloud PaaS with suporting processes that includes 24/7 support on operation, rolling updates of platform and application service monitoring ([Service Level](#service-level)).
-- be responsible for the operation of a GovCloud PaaS using MapR, Kubernetes, Docker and KrakenD on premise ([Platform](#platform)).
+- be responsible for the operation on premise of a GovCloud PaaS using enterprise-grade, professionally supported software components based on Open Source and supporting by Open API´s [OBS?]([Platform](#platform)).
 - provide and operate a DevOps toolchain, including a virtual machine image for decentralised, autonomous build and test, as SaaS integrated to existing identity management ([Service DevOps](#service-devops)).
 - Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers ([Platform Operation](#platform-operations)).
 - provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting ([Platform Services](#platform-services)).
@@ -142,7 +142,7 @@ Service availability is an extension of the cloud characteristic of measured ser
 
 Public agencies cannot allow their data or applications to be locked-in to a specific vendor. From a regulatory point of view, public procurement should support competition and not favour a specific propriatary technology or sole vendor. From a strategic perspective, it should be possible to move public services between organisations, and additionally have them integrated into new operational landscapes. This principle supports the characteristic of provider resource pooling.
 
-Exposed interfaces are standardised and supported by Open Source implementations. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected on the basis of their support in the open source community. Selecting interfaces suopported by open source ensures a licence-free fall back option, if the benefits of licenced implementions no longer  outweigh the price. Standardisation ensures a clear governance of changes and transparent terms of use.
+On the GovCloud PaaS-platform [korrekt?] exposed interfaces are standardised and supported by Open Source implementations. Interfaces towards customers and interfaces exposed internally between platform and applications shall be selected on the basis of their support in the open source community. Selecting interfaces suopported by open source ensures a licence-free fall back option, if the benefits of licenced implementions no longer outweigh the price. Standardisation ensures a clear governance of changes and transparent terms of use.
 
 Consequently, proprietary technologies are used with caution. When used, the immediate benefits are evaluated against the future costs of the binding. A part of the evaluation is to describe a likely exit strategy for replacing proprietary technology with more open ones.
 
@@ -150,26 +150,26 @@ Furthermore applications are containerised. By choosing widely adopted container
 
 **_Highly Scalable_: Governance, operating processes and technology support a high number of applications with a limited need for addition of resources.**
 
-The governance at SIT is based on inter-agency agreement and differs from contracts with private cloud providers in many ways. One of the reasons a GovCloud can be made economical attractive is the inherited trust between government organisations and a cost effecient way of handle disagreements in a broader organisational and at times political context.
+The governance at SIT is based on inter-agency agreement and differs from contracts with private cloud providers in many ways. One of the reasons a GovCloud PaaS is economical attractive is the inherited trust between government organisations and a cost effecient way of handle disagreements in a broader organisational and at times political context.
 
-The ensure this agreement-based process run smoothly the number of hard requirements should be kept low in favour of stable and accepted fora to resolve incidents and unforseen problems. One pillor of a efficent governance is the principles and rules related to *Fair Use*. All cloud environment has house roles, but private providers often regulated the user behaviour to these roles by price models. The complexity of private cloud models add at least one extra layer of decissions in a project, and is to be avoided here for the sake of time-to-market. The *Fair Use* rules should cover elements like informing platform providers when expected capacity is known to change, public facing APIs are called in unintented ways and better alternatives exists or applications spend excessive ressources compared to similar applications.
+To ensure this agreement-based process runs smoothly the number of hard requirements are kept low in favour of stable and accepted fora to resolve incidents and unforseen problems. One pillor of a efficent governance is the principles and rules related to *Fair Use*. All cloud environment has house roles [?], but private providers often regulates the user behaviour to these roles by price models. The complexity of private cloud models add at least one extra layer of decissions in a project, and is to be avoided here for the sake of time-to-market. The *Fair Use* rules should cover elements like informing platform providers when expected capacity is known to change, public facing APIs are called in unintented ways and better alternatives exists or applications spend excessive ressources compared to similar applications.
 
-The scaleability is not ensure by consumers following basic rules alone. Each governance process, ressource cost, choice of tool etc must be made with the intend of scalability. In example meetings should be held on regular frequencies, rather on ad hoc basis. Cost to licenses should be scale with capacity and not by end user. Tools should have open APIs to support the difference in preference from new users.
+The scaleability is not ensured by consumers following basic rules alone. Each governance process, ressource cost, choice of tool etc must be made with the intend of scalability. In example meetings should be held on regular frequencies, rather on ad hoc basis. Cost to licenses should  scale with capacity and not by end user. Tools should have open APIs to support the difference in preferences from new users.
 
 Finally self-service and automation is needed to scale to the number of potential customer in a national governement settings.
 
 **_Security-by-design_: The platform is designed to enforce security on application by default.**
 
-Security is one of the areas of high regulation and compliance as a service is therefor a large benefit for platform consumers. The GovCloud platform is initially build with authentication, authorisation and data protection suitable for the identified first applications.
+Security is one of the areas of high regulation and compliance as a service is therefore a large benefit for platform consumers. The GovCloud platform is initially build with authentication, authorisation and data protection suitable for the identified first applications.
 
-The platform and its hosted application most follow specific security practices. Most are decided in the joint public Digital Strategy and further described in the Federate Digital Archictecture. Technology and tools for the platform must be choosen to support known existing needs, but also with a promise of continuosly improvement on security issues over the licensing period.
+The platform and its hosted application most follow specific security practices. Most are decided in the joint public Digital Strategy and further described in the Federate Digital Archictecture. Technology and tools for the platform must be choosen to support known existing needs, but also with a promise of continuosly improvement on security issues going forward.
 
 New processes and platform services are needed when the number of customers grow or applications using person or other sensitive data is hosted. Code inspection, network monitoring, predictive log analysis and automated responses should be added to the roadmap as needed.
 
 
 **_Predictable Cost_: The operating model ensures predictable consumer costs suitable for public sector budget guidelines.**
 
-Government organisations are interested in fixing variable Costs, or at least having defined caps, to control risk and comply with guidelines. That being so, The GovCloud cost model must align with other budget items and not expose consumers to greater economic risks than other technological solutions.
+Government organisations are interested in fixing variable costs, or at least having defined caps, to control risk and comply with guidelines. That being so, The GovCloud cost model must align with other budget items and not expose Platform Consumers to greater economic risks than other technological solutions.
 
 Specific application services to suit the needs of other government organisations for data acess, should generally be developed by the data consuming organisation. But this does not help limit costs when data services are exposed to the general public. In this case *fair use* agreements could be made with data consumers and their compliance monitored.
 
@@ -177,7 +177,7 @@ Costs should reflect the use, maintenance and continuous improvement of the GovC
 
 
 <br>
-In future versions new principles may be included e.g.  *Compliance as a Service*, *Reuse of data and applications*.(see [appendix](#more-principles,-capabilities-and-use-cases))
+In future versions new principles is expected to be included e.g.  *Compliance as a Service*, *Reuse of data and applications*.(see [appendix](#more-principles,-capabilities-and-use-cases))
 
 The GovCloud is also expected to support a larger government initiative on benefitting from cloud technology. A future strategic general principle could look like the following:
 
@@ -232,7 +232,7 @@ The business areas (green) of the reference model is the focus of the interactio
 
 Statens IT is the strategically appointed provider of IT operation and service to the Danish State-level Government and shall as such provide the requested cloud environment.
 
-**[PaaS]** The operating model of GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
+**[PaaS]** The operating model of SIT GovCloud PaaS is Platform-as-a-Service offered by SIT within existing licence to operate.
 
 NIST defines the capability provided to the Platform Consumer in the PaaS operating model as: *to deploy onto the cloud infrastructure consumer-created or acquired applications created using programming languages, libraries, services, and tools supported by the provider. The consumer does not manage or control the underlying cloud infrastructure including network, servers, operating systems, or storage, but has control over the deployed applications and possibly configuration settings for the application-hosting environment.*
 
@@ -266,9 +266,7 @@ When designing applications, Platform Consumers must make informed decisions abo
 
 Application developers may have valid reasons to use unsupported services, and often development time and code lines can be greatly reduced by clever use of a platform. When applications rely on unsupported features, it is important to estimate the immediate savings and compare those with future costs in the event of unsupported features becoming unavailable.
 
-Unsupported features will be used and Platform Consumers should be alerted as soon as they are brought to the attention of the Platform Provider is aware of planned changes e.g. in updated roadmaps from technology providers.
-
-Platform Consumers should be alerted as soon as planned changes to unsupported features, e.g. by means of updated roadmaps from technology providers, are brought to the attention of the Platform Provider.
+Unsupported features may be used and Platform Consumers should be alerted as soon as planned changes to unsupported features, e.g. by means of updated roadmaps from technology providers, are brought to the attention of the Platform Provider.
 
 #### Service Level
 The selected operating model (PaaS) clearly separates the responsibilities of the Platform Provider from those of the Platform Consumer. However, in government collaboration, a running platform with a failing application is a failed public service. Citizens and businesses only care that the service is restored and not which part of government (or even private vendor) is to blame. As such, service levels and separation of duties are designed to support a common goal of high service availability.
@@ -278,9 +276,9 @@ The selected operating model (PaaS) clearly separates the responsibilities of th
 
 When SIT identifies a failing service an incident is created. First efforts are made to restart services and identify underlying problems. SIT cannot be expected to have knowledge of the internal workings of applications, and if first efforts do not restore services, the service provider is involved. The SLA includes specific reaction times and escalation criteria.
 
-SIT does not support the deployment of new releases outside normal business hours (except in the process of resolving incidents).
+SIT does not support the deployment of new releases outside normal business hours, except in the process of resolving incidents.
 
-**[24/7 services]** Platform Consumers wanting to host 24/7 application must provide resources to collaborate with the Platform Provider on solutions to incidents.
+**[24/7 services]** Platform Consumers wanting to host 24/7 applications must provide resources to collaborate with the Platform Provider on solutions to incidents.
 
 Platform Consumers help identify problems by providing knowledge of the inner workings of applications. When Platform Provider and Platform Consumer agree on the cause of an incident a suggested solution is decided upon. Solutions can be fixes to platform services, workarounds delivered as new application versions or combinations hereof.
 
@@ -342,7 +340,7 @@ End-user support and training is done outside of SIT.
 
 The initial toolchain is based on Jira, Git, Jenkins and SOAP UI. The toolchain will be expanded in accordance with the needs of GovCloud Consumers and as agreed upon in the GovCloud Policy-process.
 
-**[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
+**[Consumer Tool]** GovCloud Consumers may choose their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
 
 The build and test process are required to follow the flow defined by SIT to allow SIT to rebuild images and re-deploy services after changes on the platform.
 
@@ -384,7 +382,7 @@ Sandboxes help the uptake of the GovCloud Platform among existing and prospectiv
 
 The user access management of the sandbox is separated from the rest of the GovCloud. SIT Customers can request temporary accredentials for employees and third party developers to evaluate features and the toolchain. Sandboxes have no support, no SLA and will be erased after a specified number of days.
 
-The limited cost of sandboxes is covered by existing users as they will benefit significantly from each new application and customer through economy of scale.
+The limited cost of sandboxes is covered by existing users as they will benefit from new applications and customers to the GovCloud through economy of scale.
 
 #### Release
 
@@ -440,7 +438,7 @@ The schema is expected to be a part of Federated Digital Architecture provided b
 **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
 
 #### Authorization
-**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
+**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar-OBS]
 
 **[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
 
@@ -467,7 +465,7 @@ In future version, data owners might choose to store the original data in the Go
 
 #### Fabric Management
 
-Platform operaters should have central operation capabilities over all elements of the API, Application and Data fabric.
+Platform operaters should have central operational capabilities over all elements of the API, Application and Data fabric.
 
 
 #### Artifact repository
