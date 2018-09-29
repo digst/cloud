@@ -94,13 +94,14 @@ Storage needs, compute and network estimates for first applications are shown in
 | PubOrg       | KL,SDS,FM | 1        | -   | 1.000   | 1         | Government |
 | Platform     | SIT       | 5        | +   | 1.000   | 1         | DMI, DIGST, SIT |
 
+[Her mangler nogle DMI-datastrømme?]
 
 ## Problem
 Customers of SIT (ministries and their agencies) are increasingly seeking to move towards modern, cloud based platforms to improve time to market for new applications and integrations. SIT currently has no mature, formalised offering to meet this need. The problem can be describe as:
 
 *What service offering will be the most attractive option for public agencies seeking the advantages of 'the cloud'?*
 
-To address this problem , this document describes an initial architecture for a government cloud platform aimed at becoming customers' prefered Operating Model at SIT and pawing the way for increased usage of cloud technologies by SITs customers. It consists of a new governance model and a blue print for a technical solution supporting Platform-as-a-Service.
+To address this problem , this document describes an initial architecture for a government cloud platform aimed at becoming customers' prefered Operating Model at SIT and pawing the way for increased usage of cloud technologies, on- of off-premise, by SITs customers. It consists of a new governance model and a blue print for a technical solution supporting Platform-as-a-Service.
 
 Currently, SIT has a number of operating models (including ones based on SaaS and IaaS) that provide the stability and security required by the customers. This new model is believed to be preferred over existing ones because of the following characteristics:
 
@@ -108,7 +109,7 @@ Currently, SIT has a number of operating models (including ones based on SaaS an
 
 - *Shorter Development Cycles and Rapid Changes.* Based on experiences from the proof of concept, customers may expect a rapid deployment cycle. If the suggested goals for deployment and changes are met (see [appendix](#suggested-initial-roadmap)), the GovCloud Platform will match that of existing cloud vendors.
 
-To support the first applications, SIT must extend existing operating models with new high level use cases.
+To support the first applications, SIT are extending existing operating models with new high level use cases.
 
 - *Public Data Distribution.* A private company wants to access data from a public organisation. SIT has suitable operating models and technology platform to support the re-use of public sector information. The government organisation holding data entrusts operational aspects to SIT in order to focus on tailoring the data service application and to help end users understand the data.
 
