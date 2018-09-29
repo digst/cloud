@@ -37,6 +37,7 @@ SIT shall in the role of GovCloud PaaS Provider in relation to Platform Delivery
 - Provide and operate tools for managing incidents in collaboration with Platform Consumers, their application developers and required technology providers ([Platform Operation](#platform-operations)).
 - provide and operate platform services for Build and Test Images, API management, Secure Token Service, Log Service, Rate limiting ([Platform Services](#platform-services)).
 - provide a sandbox environment for prospective users of the platform and toolchain ([Test](#test)).
+- further develop the platform according to the Cloud Policy and the needs of existing and prospective Customers with additional functionality and scale-out capability to public cloud-infrastructures for attractive terms on Compute and Storage.
 
 DMI and DIGST shall individually in the role of GovCloud PaaS Consumers:
 - Develop, deploy and operate application services, including automated test criteria, using the virtual machinge image provided by SIT [Service DevOps](#service-devops)).
