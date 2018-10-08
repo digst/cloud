@@ -47,4 +47,4 @@ Udover ovenstående beslutninger vedrørende driften af platformen, er der også
 **[DevOps]** DIGST sikrer at der findes kurser i anvendelse de valgte værktøj og tilbyder rådgivning og review af design af applikationer på GovCloud platformen.
 
 <br>
-<div align=right>*/madsh@digst.dk, 20181008*</div>
+<div align=right style="font-style: italic;">/madsh@digst.dk, 20181008</div>
