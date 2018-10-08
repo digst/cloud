@@ -1,4 +1,4 @@
-# ![logo](cloud.svg) Startarkitektur <br> GovCloud PaaS<br> Statens IT
+# <img src=cloud.svg style="float:right;margin-left:20px"/> Startarkitektur <br> GovCloud PaaS<br> Statens IT
 
 Dette dokument beskriver en arkitektur for et projekt med henblik på at etablere en fællesoffentlig udviklings- og drifts-platform hos Statens IT. Platformen anvender teknologier kendt fra 'cloud' til at understøtte 'continious delivery' og 'agile development'.
 
