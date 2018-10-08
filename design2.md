@@ -33,11 +33,11 @@ Startarkitekturen består af en række designbeslutninger til brug for afgrænsn
 **[PaaS]** GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger.
 
 
-**[Service Lifecycle]** GovCloud platformen er under kontinuerlig udvikling, der styres af et anvenderforum ledet af DIGST.
+**[1. Service Lifecycle]** GovCloud platformen er under kontinuerlig udvikling, der styres af et anvenderforum ledet af DIGST.
 
-**[Service Operation]** Driften af GovCloud platformen og alle dens applikationer understøttes af en udvidet vagtordning (24/7).
+**[2. Service Operation]** Driften af GovCloud platformen og alle dens applikationer understøttes af en udvidet vagtordning (24/7).
 
-**[Middleware]** GovCloud platformen består af følgende middleware: MapR, Kubernetes og KrakenD.
+**[3. Middleware]** GovCloud platformen består af følgende middleware: MapR, Kubernetes og KrakenD.
 
 <br>
 Udover ovenstående beslutninger vedrørende driften af platformen, er der også besluttet følgende:
