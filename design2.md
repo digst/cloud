@@ -70,4 +70,4 @@ De fælles værktøj til applikationsudvikling bestemmes i regi af den fællesof
 **[Sandbox]** SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj.
 
 <br>
-<div align=right style="font-style: italic;">/madsh@digst.dk, v2.0.0, 20181008</div>
+<div align=right style="font-style: italic;">/madsh@digst.dk, v2.0.0, 20181009</div>
