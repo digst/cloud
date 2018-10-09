@@ -4,19 +4,19 @@
 
 Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og drifts-platform hos Statens IT til brug for statslige institutioner. Platformen anvender teknologier kendt fra 'cloud' til at understøtte 'continuous delivery' og 'agile development'.
 
-Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af meteorologiske observationer og vejrudsigter. DMI og DIGST er de første anvendere af platformen. 
+Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af meteorologiske observationer og vejrudsigter. DMI og DIGST er de første anvendere af GovCloud-platformen. 
 
-Projektet har  til hensigt at bidrage til en 'best practices' til understøttelse af et muligt fremtidigt princip om 'cloud first' it-udvikling i den offentlige sektor baseret på anvendelse af en række forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.
+Projektet skal bidrage til en øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af en række forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.
 
 
-## Målsætninger
-Projektets deltagere har følgende overordnede målsætninger (her udtrykt som user stories):
+## Forretningsbehov
+GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:
 
-- Som anvender af platformen vil DMI have højest mulig oppetid for mine applikationer.
-- Som applikationsudvikler ønsker DMI at kunne teste og idriftsætte nye versioner hurtigst muligt.
-- Som udbyder af platformen vil SIT have mulighed for at udskifte produkter i platformen med mindst mulig påvirkning af mine kunder.
-- Som udbyder af platformen vil SIT kunne udvide platformen med flere applikationer, uden at platformen koster væsentligt flere ressourcer.
-- Som ansvarlig for den fællesoffentlige digitaliseringsstrategi vil DISGT have mere sammenhængende, sikre og effektive it-anvendelser.
+- Anvendere af platformen vil have højest mulig oppetid for sine applikationer.
+- Applikationsudviklere ønsker at kunne teste og idriftsætte nye versioner hurtigst muligt.
+- Platformen skal kunne udskifte produkter med mindst mulig påvirkning af kunderne.
+- Platformen skal kunne udvides med flere applikationer, uden at platformen koster væsentligt flere ressourcer.
+- Udvikling af offentlig IT skal kunne ske mere økonomisk, hurtigt, agilt og sikkert
 
 ## Principper
 Ovenstående målsætninger generaliseres til principper, der anvendes til at styre udviklingen af platformen på kort og lang sigt:
