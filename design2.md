@@ -2,9 +2,9 @@
 
 # Startarkitektur <br> GovCloud PaaS<br> Statens IT
 
-Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og drifts-platform hos Statens IT til brug for statslige institutioner. Platformen anvender teknologier kendt fra 'cloud' til at understøtte 'continuous delivery' og 'agile development'.
+Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og drifts-platform hos Statens IT til brug for statslige institutioner. 
 
-Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af meteorologiske observationer og vejrudsigter. DMI og DIGST er de første anvendere af GovCloud-platformen. 
+Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af frie DMI-data og applikationsudvikling. DMI og DIGST er de første anvendere af GovCloud-platformen. 
 
 Projektet skal bidrage til en øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af en række forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.
 
