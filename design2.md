@@ -33,6 +33,8 @@ Ovenstående målsætninger generaliseres til principper, der anvendes til at st
 
 **Omkostningssikker**: Platformens driftsmodel skal sikre, at kunders omkostninger til platform-services er forudsigelige.
 
+**Agil it-udvikling**: ...
+
 ## Design
 Startarkitekturen består af en række designbeslutninger til brug for afgrænsning og konkretisering af projektet. I forbindelse med den konkrete etablering kan beslutningerne ændres med deltagernes accept.
 
