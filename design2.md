@@ -2,24 +2,26 @@
 
 # Startarkitektur <br> GovCloud PaaS<br> Statens IT
 
-Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og drifts-platform hos Statens IT til brug for statslige institutioner.
+Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og driftsplatform hos Statens IT til brug for statslige institutioner.
 
 Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af frie DMI-data og applikationsudvikling. DMI og DIGST er de første anvendere af GovCloud-platformen.
 
-Projektet skal bidrage til en øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af en række forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.
+Projektet skal bidrage til en øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af flere forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.
 
 
 ## Forretningsbehov
 GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:
 
 - Anvendere af platformen vil have højest mulig oppetid for sine applikationer.
-- Applikationsudviklere ønsker at kunne teste og idriftsætte nye versioner hurtigst muligt.
+- Anvendere af platformen vil have en fleksibel og økonomisk adgang til it-ressourcer
+- Anvendere af platformen vil kunne teste og idriftsætte nye versioner hurtigst muligt.
+- Anvendere af platformen ønsker at fokusere på den forretningsnære del af it-udviklingen
 - Platformen skal kunne udskifte produkter med mindst mulig påvirkning af kunderne.
 - Platformen skal kunne udvides med flere applikationer, uden at udgifter til platformen stiger tilsvarende.
 - Udvikling af offentlig IT skal kunne ske mere økonomisk, hurtigt, agilt og sikkert
 
 ## Principper
-Ovenstående målsætninger omsættes til principper, der anvendes til at styre udviklingen af platformen på kort og lang sigt:
+Ovenstående målsætninger omsættes til nedenstående principper, der anvendes til at styre udviklingen af platformen på kort og lang sigt:
 
 **Uafbrudte services**: GovCloud platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.
 
@@ -27,7 +29,7 @@ Ovenstående målsætninger omsættes til principper, der anvendes til at styre 
 
 **Skalérbar platform**: Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette sikres blandt andet gennem anvendelse af enterprise grade komponenter, fokus på automatisering og selvbetjening for platformens anvendere.
 
-**Security-by-design**: Platformen er designet på en måde der sikre applikationer høj informationssikkerhed bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
+**Security-by-design**: Platformen er designet på en måde der sikrer applikationer høj informationssikkerhed bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
 
 **GDPR-by-design**: Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne drifsmiljøer (public clouds).
 
@@ -36,39 +38,36 @@ Ovenstående målsætninger omsættes til principper, der anvendes til at styre 
 **Agil it-udvikling**: Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.
 
 ## Design
-Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I forbindelse med den konkrete etablering kan beslutningerne ændres med deltagernes accept.
+Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept.
 
 **[PaaS]** GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til vedlagte kopi af driftsmodel).
 
-
-**[1. Service Lifecycle]** GovCloud platformens middleware er under kontinuerlig udvikling og fastlægges af SIT og DIGST i dialog med platformens anvendere.
-
-GovCloud platformens governance bygger videre på SITs eksisterende Driftsmodel 2. Platformen og platformservices udvikles kontinuerligt af SIT. Efterhånden som flere kunder anvender samme platform etableres et forum til at prioritere og udvælge nye kapabiliteter. For at sikre sammenhæng mellem platformens udvikling og den offentlige digitaliseringsstrategi aftales platformens middleware af SIT og DIGST i fælleskab og efter dialog med platformens kunder.
+**[1. Service Lifecycle]** GovCloud platformens middleware udvikles baseret på anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere.
 
 Operativsystem, Server/Storage, Netværk og Fysisk lokation fastlægges af SIT under hensyn til anvendernes behov og økonomi.
 
 SIT og DIGST i dialog med platformens anvendere er ansvarlig for udarbejdelse af retningslinjer for 'fair use'. Formålet med retningslinjerne er at sikre en effektiv anvendelsen af platformens samlede ressourcer uden at pålægge den enkelte kunde unødige administrative byrder.
 
-**[2. Service Operation]** Drift og overvågning af GovCloud platformen samt kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7).
+**[2. Service Operation]** Drift og overvågning af GovCloud platformen og kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7).
 
 Applikationer på GovCloud platformen forventes at skulle understøtte virksomheder og borgeres aktiviteter uden for almindelige arbejdstid. For at undgå mangeartede driftsaftaler, er platformen og alle applikationer underlagt samme 24/7 service level agreement.
 
-SIT har ansvar for at overvåge platformen og kundens applikationer. Ved nedbrud af services er det SITs ansvar at drive arbejdet med at bringe applikationer i drift igen. Kunden har ansvar for at stille ressourcer tilrådighed for fejlfinding og eventuelle tilrettelser. Ved valg af middleware-komponenter lægges vægt på adgang til 24/7 professional services. Til at understøtte samarbejde i forbindelse med servicenedbrud etablerer SIT et samarbejdsværktøj til effektiv kommunikation mellem SIT, kunder, platforms- og applikations-leverandører.
+SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbrud af services er det SITs ansvar at drive arbejdet med at bringe applikationer i drift igen. Kunden har ansvar for at stille ressourcer tilrådighed for fejlfinding og eventuelle tilrettelser. Ved valg af middleware-komponenter lægges vægt på adgang til 24/7 professional services. Til at understøtte samarbejde i forbindelse med servicenedbrud etablerer SIT et samarbejdsværktøj til effektiv kommunikation mellem SIT, kunder, platforms- og applikations-leverandører.
 
-**[3. Middleware]** GovCloud platformens middleware består indledningsvis af: MapR, Docker, Kubernetes og KrakenD. Derudover udvikler SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer.
+**[3. Middleware]** GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer.
 
 Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i "Specifikation af GovCloud PaaS middleware'. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.
 
 **[4. Idriftsættelse]** GovCloud platformen og kunders applikationer vil benytte 'rolling updates'.
 
-SITs standard-idriftsættelsesproces er ikke udviklet til automatiserede idriftsættelser initieret af kunder. Derfor etablerer SIT en ny idriftsættelseproces, der i højere grad understøtter kundernes ønske om agile applikationsudvikling og hyppig idriftsættelse.
+SITs etablerer en ny idriftsættelseproces, der understøtter agil applikationsudvikling og hyppig idriftsættelse.
 
 <br>
 Udover ovenstående beslutninger vedrørende driften af platformen, er der også besluttet følgende:
 
 **[GovDev]** SIT tilbyder en samling integrerede værktøjer til applikationsudvikling  på 'Driftsmodel 1: Applikationsservice' bestående indledningsvis af Jira, Confluence, Git, Jenkins, Soap UI. DIGST sikrer, at der tilgængelige kurser i anvendelse af de valgte værktøjer og tilbyder rådgivning om design af applikationer på GovCloud platformen.
 
-DIGST vil i samarbejde med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.
+DIGST vil sammen med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.
 
 **[Sandbox]** SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj.
 
