@@ -21,7 +21,7 @@ GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:
 - Udvikling af offentlig IT skal ske økonomisk, hurtigt, agilt og sikkert
 
 ## Principper
-Ovenstående behov omsættes til følgende principper, der anvendes til at styre udviklingen af platformen på kort og lang sigt:
+Ovenstående behov omsættes til følgende principper, der anvendes til at styre GovCloud platformen på kort og lang sigt:
 
 **Uafbrudte services**: GovCloud platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.
 
