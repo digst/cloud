@@ -12,13 +12,13 @@ Projektet skal bidrage til øget anvendelse af cloud-teknologier i den offentlig
 ## Forretningsbehov
 GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:
 
-- Anvendere af platformen vil have højest mulig oppetid for sine applikationer.
-- Anvendere af platformen vil have en fleksibel og økonomisk adgang til it-ressourcer
-- Anvendere af platformen vil kunne teste og idriftsætte nye versioner hurtigst muligt.
-- Anvendere af platformen ønsker at fokusere på den forretningsnære del af it-udviklingen
+- Anvendere vil have højest mulig oppetid for sine applikationer.
+- Anvendere vil have en fleksibel og økonomisk adgang til it-ressourcer.
+- Anvendere vil kunne teste og idriftsætte nye versioner hurtigst muligt.
+- Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen
 - Platformen skal kunne udskifte produkter med mindst mulig påvirkning af kunderne.
 - Platformen skal kunne udvides med flere applikationer, uden at udgifter til platformen stiger tilsvarende.
-- Udvikling af offentlig IT skal kunne ske mere økonomisk, hurtigt, agilt og sikkert
+- Udvikling af offentlig IT skal ske økonomisk, hurtigt, agilt og sikkert
 
 ## Principper
 Ovenstående behov omsættes til følgende principper, der anvendes til at styre udviklingen af platformen på kort og lang sigt:
