@@ -69,7 +69,7 @@ Udover ovenstående beslutninger vedrørende driften af platformen, er der også
 
 DIGST vil sammen med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.
 
-**[Sandbox]** SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj.
+**[Sandkasse]** SIT tilbyder eksisterende og potentielle kunder et gratis miljø til tidsbegrænset afprøvning af GovCloud-platformen samt tilhørende udviklingsværktøj.
 
 <br>
 <div align=right style="font-style: italic;">/madsh@digst.dk, v2.0.0, 20181009</div>
