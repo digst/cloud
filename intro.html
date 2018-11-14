@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>House Rules, GovCloud PaaS, SIT</title>
+  <title>cloud.gov.dk introduktion</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1212,8 +1212,8 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 018be3f805d3272ce699a232398d6e3902d1ea8d" name="generator">
-  <link href="http://github.com/digst/cloud/house-rules" rel="canonical">
+  <meta content="Bikeshed version 7d8ce2d953ffaca8e344c0dab76f68fc292738a6" name="generator">
+  <link href="http://github.com/digst/cloud/intro" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1364,86 +1364,96 @@ pre .property::before, pre .property::after {
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="p-name no-ref" id="title">House Rules, GovCloud PaaS, SIT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-10-21">21 October 2018</time></span></h2>
+   <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-14">14 November 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/house-rules">http://github.com/digst/cloud/house-rules</a>
+     <dd><a class="u-url" href="http://github.com/digst/cloud/intro">http://github.com/digst/cloud/intro</a>
+     <dt>Issue Tracking:
+     <dd><a href="https://github.com/digst/cloud/issues/">GitHub</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Mads Hjorth</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
-and related or neighboring rights to this work.
-In addition, as of 21 October 2018,
-the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
-which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
-Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
    <hr title="Separator for header">
   </div>
-  <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A first draft of rules for applications and data to be hosted on the GovCloud PaaS.</p>
-  </div>
   <div data-fill-with="at-risk"></div>
-  <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
-    <li><a href="#introduction"><span class="secno"></span> <span class="content">Introduction</span></a>
-    <li>
-     <a href="#data"><span class="secno">1</span> <span class="content">Data</span></a>
-     <ol class="toc">
-      <li><a href="#data-controller"><span class="secno">1.1</span> <span class="content">Data Controller</span></a>
-     </ol>
-    <li>
-     <a href="#applications"><span class="secno">2</span> <span class="content">Applications</span></a>
-     <ol class="toc">
-      <li><a href="#docker-images"><span class="secno">2.1</span> <span class="content">Docker Images</span></a>
-      <li><a href="#deployments"><span class="secno">2.2</span> <span class="content">Deployments</span></a>
-     </ol>
-    <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
-    <li>
-     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
-     <ol class="toc">
-      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
-     </ol>
-    <li>
-     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
-     <ol class="toc">
-      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
-     </ol>
-   </ol>
-  </nav>
   <main>
-   <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
-   <h2 class="heading settled" data-level="1" id="data"><span class="secno">1. </span><span class="content">Data</span><a class="self-link" href="#data"></a></h2>
-   <h3 class="heading settled" data-level="1.1" id="data-controller"><span class="secno">1.1. </span><span class="content">Data Controller</span><a class="self-link" href="#data-controller"></a></h3>
-    GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. 
-   <p>All data stored in the platform MUST have a registered data controller.</p>
-   <h2 class="heading settled" data-level="2" id="applications"><span class="secno">2. </span><span class="content">Applications</span><a class="self-link" href="#applications"></a></h2>
-   <p><dfn data-dfn-type="dfn" data-noexport id="application">Application<a class="self-link" href="#application"></a></dfn> is a something</p>
-   <h3 class="heading settled" data-level="2.1" id="docker-images"><span class="secno">2.1. </span><span class="content">Docker Images</span><a class="self-link" href="#docker-images"></a></h3>
-   <h3 class="heading settled" data-level="2.2" id="deployments"><span class="secno">2.2. </span><span class="content">Deployments</span><a class="self-link" href="#deployments"></a></h3>
+   <p>Part of a document set <a href="http://github.com/digst/cloud/intro">introduktion</a> (this), <a href="http://github.com/digst/cloud/concept">concept</a>, specification and house rules.</p>
+   <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
+   <p>Kick-off møde hos SIT.</p>
+   <p>Beslutningsdato</p>
+   <p>Begrebet Cloud kan fortolkes på mange måder. Her vil vi anvende markedets mest udbredte fortolkning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span></p>
+   <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).</p>
+   <p>Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.</p>
+   <h2 class="no-num heading settled" id="govcloud"><span class="content">GovCloud</span></h2>
+    GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]] 
+   <p>SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
+   <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
+   <p>Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...</p>
+   <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
+   <p>GovCloud API realiseres gennem middleware og custom build platformservices.</p>
+   <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud.</p>
+   <h2 class="no-num heading settled" id="fordele"><span class="content">Fordele</span></h2>
+   <p>Cloud karakteristika men også Complaince as a Service</p>
+   <p>FDA principles supported/enforces by a layered architecture/seperation of conserns.</p>
+   <ul>
+    <li data-md>
+     <p>Externalise User Management</p>
+    <li data-md>
+     <p>Manage Data seperately from Applications</p>
+   </ul>
+   <p>Senere....</p>
+   <p>Security (ISO27001)</p>
+   <p>Privacy (GDPR)</p>
+   <p>Procurement (SKI)</p>
+   <ul>
+    <li data-md>
+     <p>Kompentancer</p>
+   </ul>
+   <h2 class="no-num heading settled" id="services-applikationer-og-datasamlinger"><span class="content">Services, applikationer og datasamlinger</span></h2>
+    Digital Asset Management. En hovedtype af assets for hvert lag i arkitekturen: 
+   <h4 class="heading settled" id="service"><span class="content">Service</span></h4>
+    An Application Service represents an explicitly defined exposed application behaviour. 
+   <p>Eksempel: CPR opslag, Send Digital Post, Website</p>
+   <h4 class="heading settled" id="applikation"><span class="content">Applikation</span></h4>
+    An Application represents an encapsulation of application functionality 
+   <p>Eksempel: F2, Datafordeler, NemID,</p>
+   <p>Komponent unit of scalability</p>
+   <h4 class="heading settled" id="datasamling"><span class="content">Datasamling</span></h4>
+   <p>Eksempel: CVR register, HR Sager,</p>
+   <p class="note" role="note"><span>Note:</span> Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød</p>
+   <h2 class="no-num heading settled" id="containere"><span class="content">Containere</span></h2>
+   <p>Lag...base image</p>
+   <p>Bygge manifest...</p>
+   <p>Test manifest...</p>
+   <p>Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/documents/sp800-180_draft.pdf)</p>
+   <p class="note" role="note"><span>Note:</span> Tegning3 af container, baseimage, lagerplads med labels og scanner...</p>
+   <h2 class="no-num heading settled" id="platformservices"><span class="content">Platformservices</span></h2>
+    Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret 
+   <ul>
+    <li data-md>
+     <p>Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....</p>
+    <li data-md>
+     <p>Brugerstyring API Key Management</p>
+    <li data-md>
+     <p>Log Log fra tre lag... mulighed for identifikationer.... Tegning af streams.</p>
+    <li data-md>
+     <p>Directory</p>
+    <li data-md>
+     <p>Container Repository</p>
+   </ul>
+   <h2 class="no-num heading settled" id="other-software-as-a-service"><span class="content">Other Software (as a Service)</span></h2>
+   <p class="note" role="note"><span>Note:</span> Tegning4 af SaaS søjler oven på PaaS. Og der løbende kommer mere til....</p>
+   <p>Playbook ideen.</p>
+   <h4 class="heading settled" id="govdev"><span class="content">GovDev</span></h4>
+   <h4 class="heading settled" id="govopendata"><span class="content">GovOpenData</span></h4>
+   <h4 class="heading settled" id="govweb"><span class="content">GovWeb</span></h4>
+   <h4 class="heading settled" id="govai"><span class="content">GovAI</span></h4>
+   <h4 class="heading settled" id="govdata"><span class="content">GovData</span></h4>
   </main>
-  <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
-   <p> Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
-            The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
-            in the normative parts of this document
-            are to be interpreted as described in RFC 2119.
-            However, for readability,
-            these words do not appear in all uppercase letters in this specification. </p>
-   <p> All of the text of this specification is normative
-            except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a> </p>
-   <p> Examples in this specification are introduced with the words “for example”
-            or are set apart from the normative text with <code>class="example"</code>, like this: </p>
-   <div class="example" id="example-example"><a class="self-link" href="#example-example"></a> This is an example of an informative example. </div>
-   <p> Informative notes begin with the word “Note”
-            and are set apart from the normative text with <code>class="note"</code>, like this: </p>
-   <p class="note" role="note"> Note, this is an informative note. </p>
-  </div>
 <script>
 (function() {
   "use strict";
@@ -1573,14 +1583,3 @@ Parts of this work may be from another specification document.  If so, those par
 
 })();
 </script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
-  <ul class="index">
-   <li><a href="#application">Application</a><span>, in §2</span>
-  </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-  <dl>
-   <dt id="biblio-rfc2119">[RFC2119]
-   <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
-  </dl>

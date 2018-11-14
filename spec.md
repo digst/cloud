@@ -1,23 +1,26 @@
 <pre class='metadata'>
-Title: Specification, GovCloud PaaS, Statens IT
+Title: cloud.gov.dk specifikation
 Shortname: govspec
 Level: 1
 Status: LD
 Group: GovCloud
 URL: http://github.com/digst/cloud/specification
-Editor: madsh@digst.dk, Digitaliseringsstyrelsen http://arkitektur.digst.dk
+Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
+  Jan Nørgaard Jacobsen, Statens IT http://www.sit.dk
+  Chris Gadegaard, Statens IT http://www.sit.dk
 Abstract: A living specification of GovCloud PaaS middleware.
+Boilerplate: copyright no, conformance no, abstract no
+Repository: digst/cloud
+Inline Github Issues: full
 </pre>
 
+<h1>Specifikation<img src="cloud.svg" align="right"> <br> GovCloud PaaS <br> Statens IT</h1>
 
 Intro and link to Design and house rules.
 
 
 
-
-<h1 class="no-num">Introduction</h1>
-
-
+<h2 class="no-num">Introduction</h1>
 
 
 ## User Stories
@@ -66,21 +69,104 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 <dfn>Data Fabric</dfn> is...
 
 
-<img src="highlevel.svg">
+<img src="highlevel.svg" width="60%">
 
 
 
 # Network
-Zones...
 
-<img src="physical.svg">
+## Internet Network Access
 
-- Data Cluster Network
-- Data Service Network
-- App Cluster Network
-- Goverment Services
-- Public Services
-- Internet
+### Endpoints
+Tre faste IP numre
+
+### DNS
+
+<pre>
+cloud.gov.dk -> xxx.xxx.xxx.xxx
+</pre>
+
+Kunder sætter selv DNS op... Bør være til cloud.gov.dk og ikke ip...
+
+<pre>
+api.kunde.dk -> cloud.gov.dk
+</pre>
+
+### Bandwith
+
+### Monitoring
+Service rapportering (Messured service, per app) og kapacitets.
+
+
+### DDOS Protection
+
+
+
+
+## NetOps
+
+### Self-service
+Nye applikationer og services kanb deployes af kunder uden at involvere SIT netværks afdeling.
+
+### Infrastructure as code
+Ligge i SIT Git...
+
+VLAN oprettelse kan ske manuelt da det ikke
+
+
+### Remote admin access
+Beskytte med certifikater... admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
+
+## Layout
+
+Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
+<img src="physical.svg" width="75%">
+
+
+
+### App Cluster Network
+På tværs af lokaliteter. Primær IP til maskiner der kører Kubernetes.
+
+Issue: Vælge om K8S system services skal kører her?
+<pre>
+kube-service-addresses : XXX.XXX.XXX.XXX
+</pre>
+
+#### Adgang fra internettet
+
+Beskrivelse af hvordan det sker fra en laptop...
+
+#### Adgang fra SIT-PROD
+
+#### Adgang fra SIT-BYOD
+
+### Data Cluster Network
+På tværs af lokaliteter. Primær IP til maskiner der kører MapR.
+
+#### Adgang fra internettet
+
+Beskrivelse af hvordan det sker fra en laptop...
+
+#### Adgang fra SIT-PROD
+
+#### Adgang fra SIT-BYOD
+
+### Service Network
+Tildeles pods automatisk...
+
+Ingress controller bruger adresserne til loadbalancing mellem instanser.
+<pre>
+kube-pods-subnet : XXX.XXX.XXX.XXX
+</pre>
+Issue: Choose IP range
+
+
+Port range fra internettet?
+
+### Intercluster Network (Data Access??)
+
+#### DNS
+Hvordan ser en App de forskellige MapR services?
 
 
 # Data Fabric
@@ -156,6 +242,27 @@ Responsibilities:
 - Each images implement a common schema for monitoring (should this be done at application level?)
 - Each images implement a common schema for logging (should this be done at application level?)
 
+
+## Base Image
+- Linux afhænger af MapR
+- MapR klient
+- KrakenD
+- Log til NFS (afprøve performance)
+- App logger via stdout
+
+<pre highlight="docker">
+FROM docker:centos7
+
+http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.GA-1.x86_64.rpm
+
+rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
+
+
+yum install -y krakend
+systemctl start krakend
+</pre>
+
+Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...
 # API Fabric
 
 - The API Gateway is [KrakenD](http://www.krakend.io/).
@@ -198,8 +305,10 @@ Responsibilities:
 **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
 
 ## Log
-
+<img src="service_logging.svg" width="30%" align="right" valign="bottom">
 **[Log Service]** All services use a common logging service.
+
+
 
 
 ## Repository
@@ -218,23 +327,23 @@ Code and image...
 
 
 ### Build/Test Self-service
+<img src="build.svg" width="50%" align="right" valign="bottom">
 
-<img src="build.svg">
+
 
 
 ### Deploy Self-service
 
-<img src="deploy.svg">
+<img src="deploy.svg" width="50%" align="right" valign="bottom">
 
 
 **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
 **[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
 
 ## Sandbox
+<img src="sandbox.svg" width="50%" align="right" valign="bottom">
 **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
-
-<img src="sandbox.svg">
 
 
 ## Collaboration

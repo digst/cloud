@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>Specification, GovCloud PaaS, Statens IT</title>
+  <title>House Rules, GovCloud PaaS, SIT</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1212,8 +1212,8 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 04b354547d55896d854a81cffb3965bd6f8758ec" name="generator">
-  <link href="http://github.com/digst/cloud/specification" rel="canonical">
+  <meta content="Bikeshed version 7d8ce2d953ffaca8e344c0dab76f68fc292738a6" name="generator">
+  <link href="http://github.com/digst/cloud/house-rules" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1364,12 +1364,12 @@ pre .property::before, pre .property::after {
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="no-num">Introduction</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-10-26">26 October 2018</time></span></h2>
+   <h1 class="p-name no-ref" id="title">House Rules, GovCloud PaaS, SIT</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-14">14 November 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/specification">http://github.com/digst/cloud/specification</a>
+     <dd><a class="u-url" href="http://github.com/digst/cloud/house-rules">http://github.com/digst/cloud/house-rules</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
     </dl>
@@ -1377,7 +1377,7 @@ pre .property::before, pre .property::after {
    <div data-fill-with="warning"></div>
    <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
 and related or neighboring rights to this work.
-In addition, as of 26 October 2018,
+In addition, as of 14 November 2018,
 the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
 which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
 Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
@@ -1385,59 +1385,24 @@ Parts of this work may be from another specification document.  If so, those par
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A living specification of GovCloud PaaS middleware.</p>
+   <p>A first draft of rules for applications and data to be hosted on the GovCloud PaaS.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
    <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
-    <li><a href="#network"><span class="secno">1</span> <span class="content">Network</span></a>
+    <li><a href="#introduction"><span class="secno"></span> <span class="content">Introduction</span></a>
     <li>
-     <a href="#data-fabric①"><span class="secno">2</span> <span class="content">Data Fabric</span></a>
+     <a href="#data"><span class="secno">1</span> <span class="content">Data</span></a>
      <ol class="toc">
-      <li>
-       <a href="#mapr"><span class="secno">2.1</span> <span class="content">MapR</span></a>
-       <ol class="toc">
-        <li><a href="#node-configuration"><span class="secno">2.1.1</span> <span class="content">Node configuration</span></a>
-       </ol>
-      <li><a href="#datasets"><span class="secno">2.2</span> <span class="content">Datasets</span></a>
-      <li><a href="#logs"><span class="secno">2.3</span> <span class="content">Logs</span></a>
+      <li><a href="#data-controller"><span class="secno">1.1</span> <span class="content">Data Controller</span></a>
      </ol>
     <li>
-     <a href="#app-fabric①"><span class="secno">3</span> <span class="content">App Fabric</span></a>
+     <a href="#applications"><span class="secno">2</span> <span class="content">Applications</span></a>
      <ol class="toc">
-      <li><a href="#kubernetes"><span class="secno">3.1</span> <span class="content">Kubernetes</span></a>
-      <li><a href="#docker"><span class="secno">3.2</span> <span class="content">Docker</span></a>
+      <li><a href="#docker-images"><span class="secno">2.1</span> <span class="content">Docker Images</span></a>
+      <li><a href="#deployments"><span class="secno">2.2</span> <span class="content">Deployments</span></a>
      </ol>
-    <li>
-     <a href="#api-fabric①"><span class="secno">4</span> <span class="content">API Fabric</span></a>
-     <ol class="toc">
-      <li><a href="#krakend"><span class="secno">4.1</span> <span class="content">KrakenD</span></a>
-     </ol>
-    <li>
-     <a href="#platform-services"><span class="secno">5</span> <span class="content">Platform Services</span></a>
-     <ol class="toc">
-      <li><a href="#authentication"><span class="secno">5.1</span> <span class="content">Authentication</span></a>
-      <li><a href="#authorization"><span class="secno">5.2</span> <span class="content">Authorization</span></a>
-      <li><a href="#api-key-management"><span class="secno">5.3</span> <span class="content">API Key Management</span></a>
-      <li><a href="#log"><span class="secno">5.4</span> <span class="content">Log</span></a>
-      <li><a href="#repository"><span class="secno">5.5</span> <span class="content">Repository</span></a>
-      <li><a href="#directory"><span class="secno">5.6</span> <span class="content">Directory</span></a>
-     </ol>
-    <li>
-     <a href="#additional-software-as-a-service"><span class="secno">6</span> <span class="content">Additional Software as a Service</span></a>
-     <ol class="toc">
-      <li>
-       <a href="#govdev"><span class="secno">6.1</span> <span class="content">GovDev</span></a>
-       <ol class="toc">
-        <li><a href="#build-test-self-service"><span class="secno">6.1.1</span> <span class="content">Build/Test Self-service</span></a>
-        <li><a href="#deploy-self-service"><span class="secno">6.1.2</span> <span class="content">Deploy Self-service</span></a>
-       </ol>
-      <li><a href="#sandbox"><span class="secno">6.2</span> <span class="content">Sandbox</span></a>
-      <li><a href="#collaboration"><span class="secno">6.3</span> <span class="content">Collaboration</span></a>
-      <li><a href="#govai"><span class="secno">6.4</span> <span class="content">GovAI</span></a>
-     </ol>
-    <li><a href="#customer-applications-and-their-responsibilities"><span class="secno">7</span> <span class="content">Customer Applications and their responsibilities</span></a>
     <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
@@ -1452,229 +1417,15 @@ Parts of this work may be from another specification document.  If so, those par
    </ol>
   </nav>
   <main>
-   <p>Intro and link to Design and house rules.</p>
-   <h3 class="heading settled" id="user-stories"><span class="content">User Stories</span></h3>
-    The version 1.0 of the GovCloud PaaS (primo 2019) is builded to support the following user stories: 
-   <p>Få nye brugere på....</p>
-   <p>Kommer med noget kode...</p>
-   <ul>
-    <li data-md>
-     <p>As provider I want to onboard new customers</p>
-    <li data-md>
-     <p>As provider I want to re-deploy applications in a rolling fashion (ala rancher)
-Vedligehold base image</p>
-   </ul>
-   <h3 class="heading settled" id="principles-and-governing-thoughts"><span class="content">Principles and Governing Thoughts....</span></h3>
-   <p>Continuous Services, Vendor neutrality, High Scaleability, Security-by-design, GDPR-by-design, DevOps and Predictable Cost.</p>
-   <p>Architectural consequences:</p>
-   <p>**Enterprise Grade Products**, to support high scaleability with predictable cost.</p>
-   <p>**Open Source supported interfaces**, to support  vendor neutrality and predictable cost.</p>
-   <p>**Self-Service (and automation)**, to support Continous Services, High Scaleability and DevOps.</p>
-   <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
-   <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
-   <h3 class="heading settled" id="high-level-architecture"><span class="content">High Level Architecture</span></h3>
-   <p><dfn data-dfn-type="dfn" data-noexport id="api-fabric">API Fabric<a class="self-link" href="#api-fabric"></a></dfn> is...</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
-   <p><img src="highlevel.svg"></p>
-   <h2 class="heading settled" data-level="1" id="network"><span class="secno">1. </span><span class="content">Network</span><a class="self-link" href="#network"></a></h2>
-    Zones... 
-   <p><img src="physical.svg"></p>
-   <ul>
-    <li data-md>
-     <p>Data Cluster Network</p>
-    <li data-md>
-     <p>Data Service Network</p>
-    <li data-md>
-     <p>App Cluster Network</p>
-    <li data-md>
-     <p>Goverment Services</p>
-    <li data-md>
-     <p>Public Services</p>
-    <li data-md>
-     <p>Internet</p>
-   </ul>
-   <h2 class="heading settled" data-level="2" id="data-fabric①"><span class="secno">2. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h2>
-   <p>Responsible for:</p>
-   <ul>
-    <li data-md>
-     <p>Store datasets</p>
-    <li data-md>
-     <p>Authenticate access to inividual dataset per user/application/service</p>
-    <li data-md>
-     <p>Protect datasets against hardware failure at disk, machine and location level.</p>
-    <li data-md>
-     <p>Log of all dataoperations</p>
-    <li data-md>
-     <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
-   </ul>
-   <p>The data fabric is running latest version of [MapR](https://mapr.com/).</p>
-   <h3 class="heading settled" data-level="2.1" id="mapr"><span class="secno">2.1. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h3>
-   <h4 class="heading settled" data-level="2.1.1" id="node-configuration"><span class="secno">2.1.1. </span><span class="content">Node configuration</span><a class="self-link" href="#node-configuration"></a></h4>
-   <ul>
-    <li data-md>
-     <p>Linux</p>
-    <li data-md>
-     <p>Hardware</p>
-    <li data-md>
-     <p>Initially MapR uses one Topology (clusters of identical hardware, identical OS)</p>
-    <li data-md>
-     <p>Update zones, Connectivity Zones??</p>
-    <li data-md>
-     <p>One cluser across multiple location.</p>
-    <li data-md>
-     <p>The `mapr` user should not use default name, UID and GUID.</p>
-    <li data-md>
-     <p>Run as non-root?</p>
-    <li data-md>
-     <p>Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)</p>
-    <li data-md>
-     <p>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)</p>
-   </ul>
-   <h3 class="heading settled" data-level="2.2" id="datasets"><span class="secno">2.2. </span><span class="content">Datasets</span><a class="self-link" href="#datasets"></a></h3>
-   <p>A <dfn data-dfn-type="dfn" data-noexport id="dataset">dataset<a class="self-link" href="#dataset"></a></dfn> is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
-   <ul>
-    <li data-md>
-     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
-    <li data-md>
-     <p>Each <code class="idl"><a data-link-type="idl">Dataset</a></code> are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
-    <li data-md>
-     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
-    <li data-md>
-     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
-    <li data-md>
-     <p>Datasets are encrypted at rest (what keys? control?)</p>
-   </ul>
-   <h3 class="heading settled" data-level="2.3" id="logs"><span class="secno">2.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h3>
-   <ul>
-    <li data-md>
-     <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
-   </ul>
-   <h2 class="heading settled" data-level="3" id="app-fabric①"><span class="secno">3. </span><span class="content">App Fabric</span><a class="self-link" href="#app-fabric①"></a></h2>
-   <h3 class="heading settled" data-level="3.1" id="kubernetes"><span class="secno">3.1. </span><span class="content">Kubernetes</span><a class="self-link" href="#kubernetes"></a></h3>
-   <ul>
-    <li data-md>
-     <p>The application management environment is the latest standalone version of [Kubernetes](https://kubernetes.io/).</p>
-    <li data-md>
-     <p>[Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").</p>
-    <li data-md>
-     <p>Each Application is defined by a Kubernetes Deployment.</p>
-    <li data-md>
-     <p>Each Application exposes Application Services through the use of LoadBalancers.</p>
-    <li data-md>
-     <p>Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).</p>
-    <li data-md>
-     <p>(consequence that all application services have access to same datasets?)</p>
-   </ul>
-   <p>Responsibilities:</p>
-   <ul>
-    <li data-md>
-     <p>Deploy, scale, redeploy images from Repository</p>
-    <li data-md>
-     <p>Provide Configuration Environment</p>
-    <li data-md>
-     <p>Ingress/Service Discovery</p>
-    <li data-md>
-     <p>Network (...?)</p>
-    <li data-md>
-     <p>Mount NFS as Volume (for app log?)</p>
-   </ul>
-   <h3 class="heading settled" data-level="3.2" id="docker"><span class="secno">3.2. </span><span class="content">Docker</span><a class="self-link" href="#docker"></a></h3>
-   <ul>
-    <li data-md>
-     <p>The containarized application runtime environment is the latest version of [Docker](https://www.docker.com) supported by kubernetes.</p>
-    <li data-md>
-     <p>Docker [Images] are build using a common virtual image both in development and operation.</p>
-    <li data-md>
-     <p>All images are based on platform specific [Base Image].</p>
-    <li data-md>
-     <p>Each image exposed Image Services accesible only to other images in the same [Application].</p>
-    <li data-md>
-     <p>Each images implement a common schema for monitoring (should this be done at application level?)</p>
-    <li data-md>
-     <p>Each images implement a common schema for logging (should this be done at application level?)</p>
-   </ul>
-   <h2 class="heading settled" data-level="4" id="api-fabric①"><span class="secno">4. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric①"></a></h2>
-   <ul>
-    <li data-md>
-     <p>The API Gateway is [KrakenD](http://www.krakend.io/).</p>
-    <li data-md>
-     <p>Access to Application</p>
-   </ul>
-   <p>Responsibilities:</p>
-   <ul>
-    <li data-md>
-     <p>Oversæt ID og tildel requestID</p>
-    <li data-md>
-     <p>Adgangspolitik (Bruger/Service -> Service)</p>
-    <li data-md>
-     <p>Throttle/circuit breaker</p>
-    <li data-md>
-     <p>Log (AccessLog/Request Log?)</p>
-   </ul>
-   <h3 class="heading settled" data-level="4.1" id="krakend"><span class="secno">4.1. </span><span class="content">KrakenD</span><a class="self-link" href="#krakend"></a></h3>
-   <h2 class="heading settled" data-level="5" id="platform-services"><span class="secno">5. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="authentication"><span class="secno">5.1. </span><span class="content">Authentication</span><a class="self-link" href="#authentication"></a></h3>
-   <p>**[Secure Token Service]** All services use a common secure token platform service.
-**[Federation]** Authentication of end-users are done in federation.</p>
-   <h3 class="heading settled" data-level="5.2" id="authorization"><span class="secno">5.2. </span><span class="content">Authorization</span><a class="self-link" href="#authorization"></a></h3>
-   <p>**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
-**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service</p>
-   <h3 class="heading settled" data-level="5.3" id="api-key-management"><span class="secno">5.3. </span><span class="content">API Key Management</span><a class="self-link" href="#api-key-management"></a></h3>
-    **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
-**[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management. 
-   <h3 class="heading settled" data-level="5.4" id="log"><span class="secno">5.4. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h3>
-   <p>**[Log Service]** All services use a common logging service.</p>
-   <h3 class="heading settled" data-level="5.5" id="repository"><span class="secno">5.5. </span><span class="content">Repository</span><a class="self-link" href="#repository"></a></h3>
-    Code and image...
-**[Code service]** The code repository of applications and platform services is [GIT](https://git-scm.com/) and is a platform service at SIT.
-**[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
-**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only). 
-   <h3 class="heading settled" data-level="5.6" id="directory"><span class="secno">5.6. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h3>
-   <p>**[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.</p>
-   <h2 class="heading settled" data-level="6" id="additional-software-as-a-service"><span class="secno">6. </span><span class="content">Additional Software as a Service</span><a class="self-link" href="#additional-software-as-a-service"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="govdev"><span class="secno">6.1. </span><span class="content">GovDev</span><a class="self-link" href="#govdev"></a></h3>
-   <h4 class="heading settled" data-level="6.1.1" id="build-test-self-service"><span class="secno">6.1.1. </span><span class="content">Build/Test Self-service</span><a class="self-link" href="#build-test-self-service"></a></h4>
-   <p><img src="build.svg"></p>
-   <h4 class="heading settled" data-level="6.1.2" id="deploy-self-service"><span class="secno">6.1.2. </span><span class="content">Deploy Self-service</span><a class="self-link" href="#deploy-self-service"></a></h4>
-   <p><img src="deploy.svg"></p>
-   <p>**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
-**[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.</p>
-   <h3 class="heading settled" data-level="6.2" id="sandbox"><span class="secno">6.2. </span><span class="content">Sandbox</span><a class="self-link" href="#sandbox"></a></h3>
-    **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes. 
-   <p><img src="sandbox.svg"></p>
-   <h3 class="heading settled" data-level="6.3" id="collaboration"><span class="secno">6.3. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration"></a></h3>
-    **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling. 
-   <h3 class="heading settled" data-level="6.4" id="govai"><span class="secno">6.4. </span><span class="content">GovAI</span><a class="self-link" href="#govai"></a></h3>
-    ... 
-   <h2 class="heading settled" data-level="7" id="customer-applications-and-their-responsibilities"><span class="secno">7. </span><span class="content">Customer Applications and their responsibilities</span><a class="self-link" href="#customer-applications-and-their-responsibilities"></a></h2>
-   <ul>
-    <li data-md>
-     <p>Applications are responsible for implementing access policies to data at row level</p>
-    <li data-md>
-     <p>Access policies should rely on trusted attributes over detailes rights when possible.</p>
-   </ul>
-   <p>[Application]: #application "A unit of governance" <dfn data-dfn-type="dfn" data-noexport id="dataset①">Dataset<a class="self-link" href="#dataset①"></a></dfn>: #dataset "A unit of governance"</p>
-   <p>[Log]: #datalog "A unit of governance"
-  [Data Log]: #datalog "A unit of governance"
-[Image]: #image "A unit of governance"
-  [Base Image]: #image "A unit of governance"</p>
-   <p>[User]: #user "Physical person or Application instance outside the platform"</p>
-   <hr>
-   <ol>
-    <li data-md>
-     <p>**[SysAdm tooling]** Operators at the Platform Provider choose tools suitable for automation and remote management based on individual experiences.</p>
-    <li data-md>
-     <p>**[Test Image]** Automated test of services are done using a custom image maintained by SIT.</p>
-    <li data-md>
-     <p>**[Acceptance test]** Service passing the provided automated tests are considered running.</p>
-    <li data-md>
-     <p>**[Release]** Consumers label images in the repository for release based on test results.</p>
-    <li data-md>
-     <p>**[Deploy]** In the initial version of the GovCloud PaaS releases of new versions of application services are done manually by SIT on request from the Cloud Consumer.</p>
-    <li data-md>
-     <p>**[SLA management]** SIT is using existing tools and channels to provide data on the fullfillment of SLA and other agreements.</p>
-   </ol>
+   <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
+   <h2 class="heading settled" data-level="1" id="data"><span class="secno">1. </span><span class="content">Data</span><a class="self-link" href="#data"></a></h2>
+   <h3 class="heading settled" data-level="1.1" id="data-controller"><span class="secno">1.1. </span><span class="content">Data Controller</span><a class="self-link" href="#data-controller"></a></h3>
+    GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. 
+   <p>All data stored in the platform MUST have a registered data controller.</p>
+   <h2 class="heading settled" data-level="2" id="applications"><span class="secno">2. </span><span class="content">Applications</span><a class="self-link" href="#applications"></a></h2>
+   <p><dfn data-dfn-type="dfn" data-noexport id="application">Application<a class="self-link" href="#application"></a></dfn> is a something</p>
+   <h3 class="heading settled" data-level="2.1" id="docker-images"><span class="secno">2.1. </span><span class="content">Docker Images</span><a class="self-link" href="#docker-images"></a></h3>
+   <h3 class="heading settled" data-level="2.2" id="deployments"><span class="secno">2.2. </span><span class="content">Deployments</span><a class="self-link" href="#deployments"></a></h3>
   </main>
   <div data-fill-with="conformance">
    <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
@@ -1825,11 +1576,7 @@ Vedligehold base image</p>
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#api-fabric">API Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#app-fabric">App Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#data-fabric">Data Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#dataset①">Dataset</a><span>, in §7</span>
-   <li><a href="#dataset">dataset</a><span>, in §2.2</span>
+   <li><a href="#application">Application</a><span>, in §2</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>

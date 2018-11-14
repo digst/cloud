@@ -1,0 +1,156 @@
+<pre class='metadata'>
+Title: cloud.gov.dk introduktion
+Status: LD
+URL: http://github.com/digst/cloud/intro
+Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
+Boilerplate: table-of-contents no, copyright no, conformance no, abstract no
+Repository: digst/cloud
+Inline Github Issues: full
+</pre>
+<h1>Introduktion<img src="cloud.svg" align="right">,<br> GovCloud PaaS,<br> Statens IT</h1>
+
+Part of a document set <a href="http://github.com/digst/cloud/intro">introduktion</a> (this), <a href="http://github.com/digst/cloud/concept">concept</a>, specification and house rules.
+
+<h2 class="no-num">Indledning</h1>
+
+Kick-off møde hos SIT.
+
+Beslutningsdato
+
+
+
+Begrebet Cloud kan fortolkes på mange måder. Her vil vi anvende markedets mest udbredte fortolkning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. [[NIST.SP.800-145]]
+
+This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).
+
+Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.
+
+<h2 class="no-num">GovCloud</h1>
+GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
+
+SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.
+
+Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.
+
+
+Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...
+
+
+GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).
+
+
+GovCloud API realiseres gennem middleware og custom build platformservices.
+
+Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud.
+
+<h2 class="no-num">Fordele</h1>
+
+Cloud karakteristika men også Complaince as a Service
+
+FDA principles supported/enforces by a layered architecture/seperation of conserns.
+- Externalise User Management
+- Manage Data seperately from Applications
+
+
+Senere....
+
+Security (ISO27001)
+
+Privacy (GDPR)
+
+Procurement (SKI)
+- Kompentancer
+
+
+<h2 class="no-num">Services, applikationer og datasamlinger</h1>
+Digital Asset Management. En hovedtype af assets for hvert lag i arkitekturen:
+
+### Service
+An Application Service represents an explicitly defined exposed application behaviour.
+
+Eksempel: CPR opslag, Send Digital Post, Website
+
+### Applikation
+An Application represents an encapsulation of application functionality
+
+Eksempel: F2, Datafordeler, NemID,
+
+Komponent unit of scalability
+
+### Datasamling
+
+Eksempel: CVR register, HR Sager,
+
+Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød
+
+
+<h2 class="no-num">Containere</h1>
+
+Lag...base image
+
+Bygge manifest...
+
+Test manifest...
+
+Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/documents/sp800-180_draft.pdf)
+
+Note: Tegning3 af container, baseimage, lagerplads med labels og scanner...
+
+
+<h2 class="no-num">Platformservices</h1>
+Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret
+
+- Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....
+
+- Brugerstyring API Key Management
+
+- Log Log fra tre lag... mulighed for identifikationer.... Tegning af streams.
+
+- Directory
+
+- Container Repository
+
+<h2 class="no-num">Other Software (as a Service)</h1>
+
+Note: Tegning4 af SaaS søjler oven på PaaS. Og der løbende kommer mere til....
+
+Playbook ideen.
+
+### GovDev
+
+### GovOpenData
+
+### GovWeb
+
+### GovAI
+
+### GovData
+
+
+<pre class=biblio>
+ {
+ 	"NIST.SP.800-145": {
+ 		"authors": [
+ 			"Peter Mell",
+ 			"Timothy Grance"
+ 		],
+ 		"href": "https://doi.org/10.6028/NIST.SP.800-145",
+ 		"title": "The NIST Definition of Cloud Computing",
+ 		"publisher": "National Institute of Standards and Technologies"
+ 	}
+ }
+
+
+{
+ "NIST.SP.500-292": {
+   "authors": [
+   "Fang Liu", "Jin Tong", "Jian Mao", "Robert Bohn",
+"John Messina", "Lee Badger2, "Dawn Leaf"
+   ],
+   "href": "https://doi.org/10.6028/NIST.SP.500-292",
+   "title": "NIST Cloud Computing Reference Architecture",
+   "publisher": "National Institute of Standards and Technologies"
+ }
+}
+
+ </pre>
