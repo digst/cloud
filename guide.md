@@ -1,19 +1,16 @@
 <pre class='metadata'>
-Title: House Rules, GovCloud PaaS, SIT
-Shortname: govspec
-Level: 1
+Title: cloud.gov.dk guide
 Status: LD
-Group: WGNAMEORWHATEVER
-URL: http://github.com/digst/cloud/house-rules
+URL: http://github.com/digst/cloud/guide.md
 Editor: madsh@digst.dk, Digitaliseringsstyrelsen http://arkitektur.digst.dk
-Abstract: A first draft of rules for applications and data to be hosted on the GovCloud PaaS.
+Boilerplate: table-of-contents no, copyright no, conformance no, abstract no, index no, idl-index no
+Repository: digst/cloud
+Inline Github Issues: full
 </pre>
+<h1>Developers Guide<img src="cloud.svg" align="right"> <br> GovCloud PaaS <br> Statens IT</h1>
 
-<h2 class="no-num">Introduction</h2>
-
-
-
-
+<small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 # Data
 

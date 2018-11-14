@@ -1,9 +1,8 @@
 <pre class='metadata'>
-Title: cloud.gov.dk start
+Title: cloud.gov.dk start-arkitektur
 Date: 2018-10-29
 Status: LD
-Group: GovCloud
-URL: https://sitcloud.github.io/concept.html
+URL: http://github.com/digst/cloud/start.md
 Editor: madsh@digst.dk, Digitaliseringsstyrelsen http://digst.dk
 Boilerplate: table-of-contents no, copyright no, conformance no, abstract no, index no, idl-index no
 Repository: digst/cloud
@@ -13,6 +12,9 @@ Inline Github Issues: full
 
 
 <h1>Start-arkitektur <img src="cloud.svg" align="right"> <br> GovCloud PaaS <br> Statens IT</h1>
+
+<small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 
 <i>Tilføj beslutning, dato og kreds</i>

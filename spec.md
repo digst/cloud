@@ -1,10 +1,7 @@
 <pre class='metadata'>
-Title: cloud.gov.dk specifikation
-Shortname: govspec
-Level: 1
+Title: cloud.gov.dk spec
 Status: LD
-Group: GovCloud
-URL: http://github.com/digst/cloud/specification
+URL: http://github.com/digst/cloud/spec.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
   Jan Nørgaard Jacobsen, Statens IT http://www.sit.dk
   Chris Gadegaard, Statens IT http://www.sit.dk
@@ -16,7 +13,8 @@ Inline Github Issues: full
 
 <h1>Specifikation<img src="cloud.svg" align="right"> <br> GovCloud PaaS <br> Statens IT</h1>
 
-Intro and link to Design and house rules.
+<small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 
 

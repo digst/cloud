@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>House Rules, GovCloud PaaS, SIT</title>
+  <title>cloud.gov.dk guide</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1213,7 +1213,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 7d8ce2d953ffaca8e344c0dab76f68fc292738a6" name="generator">
-  <link href="http://github.com/digst/cloud/house-rules" rel="canonical">
+  <link href="http://github.com/digst/cloud/guide.md" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1364,60 +1364,24 @@ pre .property::before, pre .property::after {
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1 class="p-name no-ref" id="title">House Rules, GovCloud PaaS, SIT</h1>
+   <h1>Developers Guide<img align="right" src="cloud.svg"> <br> GovCloud PaaS <br> Statens IT</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-14">14 November 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/house-rules">http://github.com/digst/cloud/house-rules</a>
+     <dd><a class="u-url" href="http://github.com/digst/cloud/guide.md">http://github.com/digst/cloud/guide.md</a>
+     <dt>Issue Tracking:
+     <dd><a href="https://github.com/digst/cloud/issues/">GitHub</a>
      <dt class="editor">Editor:
      <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
-   <p class="copyright" data-fill-with="copyright"><a href="http://creativecommons.org/publicdomain/zero/1.0/" rel="license"><img alt="CC0" src="https://licensebuttons.net/p/zero/1.0/80x15.png"></a> To the extent possible under law, the editors have waived all copyright
-and related or neighboring rights to this work.
-In addition, as of 14 November 2018,
-the editors have made this specification available under the <a href="http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0" rel="license">Open Web Foundation Agreement Version 1.0</a>,
-which is available at http://www.openwebfoundation.org/legal/the-owf-1-0-agreements/owfa-1-0.
-Parts of this work may be from another specification document.  If so, those parts are instead covered by the license of that specification document. </p>
    <hr title="Separator for header">
   </div>
-  <div class="p-summary" data-fill-with="abstract">
-   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>A first draft of rules for applications and data to be hosted on the GovCloud PaaS.</p>
-  </div>
   <div data-fill-with="at-risk"></div>
-  <nav data-fill-with="table-of-contents" id="toc">
-   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-   <ol class="toc" role="directory">
-    <li><a href="#introduction"><span class="secno"></span> <span class="content">Introduction</span></a>
-    <li>
-     <a href="#data"><span class="secno">1</span> <span class="content">Data</span></a>
-     <ol class="toc">
-      <li><a href="#data-controller"><span class="secno">1.1</span> <span class="content">Data Controller</span></a>
-     </ol>
-    <li>
-     <a href="#applications"><span class="secno">2</span> <span class="content">Applications</span></a>
-     <ol class="toc">
-      <li><a href="#docker-images"><span class="secno">2.1</span> <span class="content">Docker Images</span></a>
-      <li><a href="#deployments"><span class="secno">2.2</span> <span class="content">Deployments</span></a>
-     </ol>
-    <li><a href="#conformance"><span class="secno"></span> <span class="content"> Conformance</span></a>
-    <li>
-     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
-     <ol class="toc">
-      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
-     </ol>
-    <li>
-     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
-     <ol class="toc">
-      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
-     </ol>
-   </ol>
-  </nav>
   <main>
-   <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
+   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="heading settled" data-level="1" id="data"><span class="secno">1. </span><span class="content">Data</span><a class="self-link" href="#data"></a></h2>
    <h3 class="heading settled" data-level="1.1" id="data-controller"><span class="secno">1.1. </span><span class="content">Data Controller</span><a class="self-link" href="#data-controller"></a></h3>
     GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. 
@@ -1427,23 +1391,6 @@ Parts of this work may be from another specification document.  If so, those par
    <h3 class="heading settled" data-level="2.1" id="docker-images"><span class="secno">2.1. </span><span class="content">Docker Images</span><a class="self-link" href="#docker-images"></a></h3>
    <h3 class="heading settled" data-level="2.2" id="deployments"><span class="secno">2.2. </span><span class="content">Deployments</span><a class="self-link" href="#deployments"></a></h3>
   </main>
-  <div data-fill-with="conformance">
-   <h2 class="no-ref no-num heading settled" id="conformance"><span class="content"> Conformance</span><a class="self-link" href="#conformance"></a></h2>
-   <p> Conformance requirements are expressed with a combination of descriptive assertions and RFC 2119 terminology.
-            The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
-            in the normative parts of this document
-            are to be interpreted as described in RFC 2119.
-            However, for readability,
-            these words do not appear in all uppercase letters in this specification. </p>
-   <p> All of the text of this specification is normative
-            except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a> </p>
-   <p> Examples in this specification are introduced with the words “for example”
-            or are set apart from the normative text with <code>class="example"</code>, like this: </p>
-   <div class="example" id="example-example"><a class="self-link" href="#example-example"></a> This is an example of an informative example. </div>
-   <p> Informative notes begin with the word “Note”
-            and are set apart from the normative text with <code>class="note"</code>, like this: </p>
-   <p class="note" role="note"> Note, this is an informative note. </p>
-  </div>
 <script>
 (function() {
   "use strict";
@@ -1573,14 +1520,3 @@ Parts of this work may be from another specification document.  If so, those par
 
 })();
 </script>
-  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
-  <ul class="index">
-   <li><a href="#application">Application</a><span>, in §2</span>
-  </ul>
-  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
-  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
-  <dl>
-   <dt id="biblio-rfc2119">[RFC2119]
-   <dd>S. Bradner. <a href="https://tools.ietf.org/html/rfc2119">Key words for use in RFCs to Indicate Requirement Levels</a>. March 1997. Best Current Practice. URL: <a href="https://tools.ietf.org/html/rfc2119">https://tools.ietf.org/html/rfc2119</a>
-  </dl>

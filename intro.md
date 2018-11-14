@@ -1,7 +1,7 @@
 <pre class='metadata'>
 Title: cloud.gov.dk introduktion
 Status: LD
-URL: http://github.com/digst/cloud/intro
+URL: http://github.com/digst/cloud/intro.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
 Boilerplate: table-of-contents no, copyright no, conformance no, abstract no
 Repository: digst/cloud
@@ -9,7 +9,9 @@ Inline Github Issues: full
 </pre>
 <h1>Introduktion<img src="cloud.svg" align="right">,<br> GovCloud PaaS,<br> Statens IT</h1>
 
-Part of a document set <a href="http://github.com/digst/cloud/intro">introduktion</a> (this), <a href="http://github.com/digst/cloud/concept">concept</a>, specification and house rules.
+<small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small>
+
 
 <h2 class="no-num">Indledning</h1>
 
