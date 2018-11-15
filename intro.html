@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-14">14 November 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-15">15 November 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1381,21 +1381,22 @@ pre .property::before, pre .property::after {
   </div>
   <div data-fill-with="at-risk"></div>
   <main>
-   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
+   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
-   <p>Kick-off møde hos SIT.</p>
+    <img align="right" src="models.svg" width="25%"> Kick-off møde hos SIT. 
    <p>Beslutningsdato</p>
    <p>Begrebet Cloud kan fortolkes på mange måder. Her vil vi anvende markedets mest udbredte fortolkning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span></p>
-   <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).</p>
+   <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,</p>
    <p>Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.</p>
    <h2 class="no-num heading settled" id="govcloud"><span class="content">GovCloud</span></h2>
-    GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]] 
-   <p>SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
+   <img align="right" src="middleware.svg" width="100"> 
+   <p>GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
+SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
    <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
    <p>Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...</p>
    <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
    <p>GovCloud API realiseres gennem middleware og custom build platformservices.</p>
-   <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud.</p>
+   <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,</p>
    <h2 class="no-num heading settled" id="fordele"><span class="content">Fordele</span></h2>
    <p>Cloud karakteristika men også Complaince as a Service</p>
    <p>FDA principles supported/enforces by a layered architecture/seperation of conserns.</p>
@@ -1424,7 +1425,7 @@ pre .property::before, pre .property::after {
    <p>Komponent unit of scalability</p>
    <h4 class="heading settled" id="datasamling"><span class="content">Datasamling</span></h4>
    <p>Eksempel: CVR register, HR Sager,</p>
-   <p class="note" role="note"><span>Note:</span> Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød</p>
+   <p class="note" role="note"><span>Note:</span> Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød ,</p>
    <h2 class="no-num heading settled" id="containere"><span class="content">Containere</span></h2>
    <p>Lag...base image</p>
    <p>Bygge manifest...</p>
@@ -1432,7 +1433,7 @@ pre .property::before, pre .property::after {
    <p>Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/documents/sp800-180_draft.pdf)</p>
    <p class="note" role="note"><span>Note:</span> Tegning3 af container, baseimage, lagerplads med labels og scanner...</p>
    <h2 class="no-num heading settled" id="platformservices"><span class="content">Platformservices</span></h2>
-    Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret 
+    <img align="right" src="highlevel.svg" width="25%"> Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret 
    <ul>
     <li data-md>
      <p>Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....</p>

@@ -10,11 +10,10 @@ Inline Github Issues: full
 <h1>Introduktion<img src="cloud.svg" align="right">,<br> GovCloud PaaS,<br> Statens IT</h1>
 
 <small>
-Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://github.com/digst/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="http://github.com/digst/cloud/intro.html">introduktion</a>, en detaljeret <a href="http://github.com/digst/cloud/spec.html"> specifikation</a> samt en <a href="http://github.com/digst/cloud/guide.html">guide</a> til applikationsudviklere.</small>
-
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small>
 
 <h2 class="no-num">Indledning</h1>
-
+<img src="models.svg" align="right" width="25%">
 Kick-off møde hos SIT.
 
 Beslutningsdato
@@ -23,13 +22,14 @@ Beslutningsdato
 
 Begrebet Cloud kan fortolkes på mange måder. Her vil vi anvende markedets mest udbredte fortolkning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. [[NIST.SP.800-145]]
 
-This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).
+This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,
 
 Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.
 
-<h2 class="no-num">GovCloud</h1>
-GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
+<h2 class="no-num">GovCloud</h1><img src="middleware.svg" align="right" width="100">
 
+
+GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
 SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.
 
 Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.
@@ -43,7 +43,7 @@ GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definitio
 
 GovCloud API realiseres gennem middleware og custom build platformservices.
 
-Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud.
+Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,
 
 <h2 class="no-num">Fordele</h1>
 
@@ -83,7 +83,7 @@ Komponent unit of scalability
 
 Eksempel: CVR register, HR Sager,
 
-Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød
+Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød ,
 
 
 <h2 class="no-num">Containere</h1>
@@ -100,6 +100,7 @@ Note: Tegning3 af container, baseimage, lagerplads med labels og scanner...
 
 
 <h2 class="no-num">Platformservices</h1>
+<img src="highlevel.svg" align="right" width="25%">
 Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret
 
 - Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....
