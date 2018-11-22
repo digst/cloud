@@ -83,7 +83,7 @@
 
 		/* Typography */
 		line-height: 1.5;
-		font-family: sans-serif;
+		font-family: "Helvetica Neue", sans-serif;
 		widows: 2;
 		orphans: 2;
 		word-wrap: break-word;
@@ -326,7 +326,7 @@
 	h1, h2, h3, h4, h5, h6, dt {
 		page-break-after: avoid;
 		page-break-inside: avoid;
-		font: 100% sans-serif;   /* Reset all font styling to clear out UA styles */
+		font: 100% "sans-serif";   /* Reset all font styling to clear out UA styles */
 		font-family: inherit;    /* Inherit the font family. */
 		line-height: 1.2;        /* Keep wrapped headings compact */
 		hyphens: manual;         /* Hyphenated headings look weird */
@@ -339,11 +339,12 @@
 	h1, h2, h3 {
 		color: #005A9C;
 		background: transparent;
+    font-family: "Garamond";
 	}
 
 	h1 { font-size: 170%; }
-	h2 { font-size: 140%; }
-	h3 { font-size: 120%; }
+	h2 { font-size: 200%; font-weight: bold;}
+	h3 { font-size: 170%; font-weight: bold;}
 	h4 { font-weight: bold; }
 	h5 { font-style: italic; }
 	h6 { font-variant: small-caps; }
@@ -355,6 +356,8 @@
 	#subtitle {
 		/* #subtitle is a subtitle in an H2 under the H1 */
 		margin-top: 0;
+    font-family: "Helvetica Neue";
+    font-size: 80%;
 	}
 	h2 + h3,
 	h3 + h4,
@@ -1141,10 +1144,15 @@ Possible extra rowspan handling
 		}
 		/* Serif for print. */
 		body {
-			font-family: serif;
+			font-family: "Helvetica Neue", sans-serif;
 		}
+    h1, h2, h3, h4, h5 {
+      page-break-after: avoid;
+    }
+
 	}
 	@page {
+    size: A4;
 		margin: 1.5cm 1.1cm;
 	}
 
@@ -1412,29 +1420,29 @@ pre .property::before, pre .property::after {
    <p><dfn data-dfn-type="dfn" data-noexport id="omkostningssikker">Omkostningssikker<a class="self-link" href="#omkostningssikker"></a></dfn> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.</p>
    <p><dfn data-dfn-type="dfn" data-noexport id="agil-it-udvikling">Agil it-udvikling<a class="self-link" href="#agil-it-udvikling"></a></dfn> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
    <h3 class="heading settled" id="design"><span class="content">Design</span></h3>
-    Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept. 
+    Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept.
    <h4 class="heading settled" id="paas"><span class="content">PaaS</span></h4>
-    GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til vedlagte kopi af driftsmodel). 
+    GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til vedlagte kopi af driftsmodel).
    <h4 class="heading settled" id="service-lifecycle-1"><span class="content">Service Lifecycle (1)</span></h4>
-    GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere. 
+    GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere.
    <p>Operativsystem, Server/Storage, Netværk og Fysisk lokation fastlægges af SIT under hensyn til anvendernes behov og økonomi.</p>
    <p>SIT og DIGST i dialog med platformens anvendere er ansvarlig for udarbejdelse af retningslinjer for 'fair use'. Formålet med retningslinjerne er at sikre en effektiv anvendelsen af platformens samlede ressourcer uden at pålægge den enkelte kunde unødige administrative byrder.</p>
    <h4 class="heading settled" id="service-operation-2"><span class="content">Service Operation (2)</span></h4>
-    Drift og overvågning af GovCloud platformen og kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7). 
+    Drift og overvågning af GovCloud platformen og kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7).
    <p>Applikationer på GovCloud platformen forventes at skulle understøtte virksomheder og borgeres aktiviteter uden for almindelige arbejdstid. For at undgå mangeartede driftsaftaler, er platformen og alle applikationer underlagt samme 24/7 service level agreement.</p>
    <p>SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbrud af services er det SITs ansvar at drive arbejdet med at bringe applikationer i drift igen. Kunden har ansvar for at stille ressourcer tilrådighed for fejlfinding og eventuelle tilrettelser. Ved valg af middleware-komponenter lægges vægt på adgang til 24/7 professional services. Til at understøtte samarbejde i forbindelse med servicenedbrud etablerer SIT et samarbejdsværktøj til effektiv kommunikation mellem SIT, kunder, platforms- og applikations-leverandører.</p>
    <h4 class="heading settled" id="middleware-3"><span class="content">Middleware (3)</span></h4>
-    GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer. 
+    GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer.
    <p>Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i "Specifikation af GovCloud PaaS middleware'. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.</p>
    <h4 class="heading settled" id="idriftsttelse-4"><span class="content">Idriftsættelse (4)</span></h4>
-    GovCloud platformen og kunders applikationer vil benytte 'rolling updates'. 
+    GovCloud platformen og kunders applikationer vil benytte 'rolling updates'.
    <p>SITs etablerer en ny idriftsættelseproces, der understøtter agil applikationsudvikling og hyppig idriftsættelse.</p>
    <p><br> Udover ovenstående beslutninger vedrørende driften af platformen, er der også besluttet følgende:</p>
    <h4 class="heading settled" id="govdev"><span class="content">GovDev</span></h4>
-    SIT tilbyder en samling integrerede værktøjer til applikationsudvikling ("DevOps-toolchain")  på 'Driftsmodel 1: Applikationsservice' bestående indledningsvis af Jira, Confluence, Git, Jenkins, Soap UI. DIGST sikrer, at der tilgængelige kurser i anvendelse af de valgte værktøjer og tilbyder rådgivning om design af applikationer på GovCloud platformen. 
+    SIT tilbyder en samling integrerede værktøjer til applikationsudvikling ("DevOps-toolchain")  på 'Driftsmodel 1: Applikationsservice' bestående indledningsvis af Jira, Confluence, Git, Jenkins, Soap UI. DIGST sikrer, at der tilgængelige kurser i anvendelse af de valgte værktøjer og tilbyder rådgivning om design af applikationer på GovCloud platformen.
    <p>DIGST vil sammen med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.</p>
    <h4 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h4>
-    SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj. 
+    SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj.
    <div align="right" class="font-style: italic; ">/madsh</div>
   </main>
 <script>
