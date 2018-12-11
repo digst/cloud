@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 7d8ce2d953ffaca8e344c0dab76f68fc292738a6" name="generator">
+  <meta content="Bikeshed version f9fa604b61e5fc96edf5cdebd2c04e0e69b33a7b" name="generator">
   <link href="http://github.com/digst/cloud/intro.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-15">15 November 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-11-29">29 November 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1383,14 +1383,44 @@ pre .property::before, pre .property::after {
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
-    <img align="right" src="models.svg" width="25%"> Kick-off møde hos SIT. 
-   <p>Beslutningsdato</p>
-   <p>Begrebet Cloud kan fortolkes på mange måder. Her vil vi anvende markedets mest udbredte fortolkning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span></p>
+    Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href>Digital service i verdensklasse</a>. 
+   <p>I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.</p>
+   <p>En fælles government cloud er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.</p>
+   <p>Med Statens ITs beslutning om at tilbyde en Platform as a Service med sigte på at skabe den fremtidige fortrukne platform for IT i staten er vi ét skridt tættere på at kunne opfylde de høje digitale ambitioner.</p>
+   <p>Nuværende niveau for offentlig IT har væsentlige mangler</p>
+   <ul>
+    <li data-md>
+     <p>usammenhængende services leveret i siloer</p>
+    <li data-md>
+     <p>ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring</p>
+    <li data-md>
+     <p>utilstrækkelig sikkerhed til at imødekomme ny trusler</p>
+   </ul>
+   <p>Cloud-teknologier har uforløste potentialer</p>
+   <ul>
+    <li data-md>
+     <p>moderne drift er ved lave omkostninger og høj skalerbarhed</p>
+    <li data-md>
+     <p>dev-ops giver effektiv udvikling, test og deployment</p>
+    <li data-md>
+     <p>scale out til public cloud ved behov</p>
+   </ul>
+   <p>Fælles platform giver nye muligheder</p>
+   <ul>
+    <li data-md>
+     <p>bedre overblik over værdier i form af data og applikationer</p>
+    <li data-md>
+     <p>lettere genbrug af data i nye sammenhænge</p>
+    <li data-md>
+     <p>effektiv udnyttelse af computerressourcer på tværs af myndigheder</p>
+   </ul>
+   <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
+   <img align="right" src="models.svg" width="20%"> Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span> 
    <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,</p>
    <p>Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.</p>
    <h2 class="no-num heading settled" id="govcloud"><span class="content">GovCloud</span></h2>
    <img align="right" src="middleware.svg" width="100"> 
-   <p>GovCloud er en service fra SIT der tilbyder et udviklings- og driftsmiljø der lever op til ovenstående cloud karakteristika. tilbudt som Platform as a Service. Er i første omgang en Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
+   <p>GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
 SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
    <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
    <p>Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...</p>

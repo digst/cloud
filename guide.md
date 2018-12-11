@@ -28,3 +28,23 @@ All data stored in the platform MUST have a registered data controller.
 
 
 ## Deployments
+
+
+## Developer enviroment
+
+### Your own laptop
+
+1. Install MapR developer container
+
+2. Application Container
+  - From Scratch (should be SIT base image)
+  - plus java
+  - plus mapr.jar (avoid?)
+
+
+### Connecting to sandbox MapR
+
+
+1. Information from SIT.
+
+govsit.dk : Kafka 8082 (REST) 8083 (Connect)

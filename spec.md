@@ -5,8 +5,9 @@ URL: http://github.com/digst/cloud/spec.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
   Jan Nørgaard Jacobsen, Statens IT http://www.sit.dk
   Chris Gadegaard, Statens IT http://www.sit.dk
-Abstract: A living specification of GovCloud PaaS middleware.
-Boilerplate: copyright no, conformance no, abstract no
+Abstract: Beskrivelse af implementeringen af GovCloud PaaS.
+Boilerplate: copyright no, conformance no, Abstract no
+Markup Shorthands: markdown yes
 Repository: digst/cloud
 Inline Github Issues: full
 </pre>
@@ -21,15 +22,74 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 
 ## User Stories
-The version 1.0 of the GovCloud PaaS (primo 2019) is builded to support the following user stories:
+[bør nok flyttes til JIRA issues på et tidspunkt...]
+For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?
+
+### Epics til understøttelse af "mennesker"
+
+#### Kravspecifikation?
+Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
 
-Få nye brugere på.....
 
-Kommer med noget kode...
-- As provider I want to onboard new customers
-- As provider I want to re-deploy applications in a rolling fashion (ala rancher)
-Vedligehold base image
+#### Byg?
+Når epic'en er færdig kan en udvikler checke kode ind og bygge en container med brug af værktøj på platformen. (git, docker)
+
+* Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere
+
+#### Test?
+Når epic'en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases.
+
+#### Deploy og Monitorering?
+Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation og se dens log.
+
+* Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation.
+
+* Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation
+
+* Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes
+
+* Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør...
+
+#### Sandbox
+Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
+
+* Som udvikler, vil jeg kunne forbinde til en sandkasse MapR så jeg kan begynde at udvikle applikationer der anvender dataservices (stream, file, table) uden at skulle installere min egen MapR.
+
+### Epics til understøttelse af "applikationer"
+
+#### Dataservice Tabel (NoSQL/OJAI)
+
+* Som operatør ønsker jeg at begrænse adgangen til datasæt til de brugere som kunden har give tilladelse til...
+
+#### Dataservice Stream (Kafka)
+
+#### Dataservice File (NFS)
+
+* Som udvikler ønsker jeg skrive og læse filer fra min applikation.
+
+
+
+
+
+### Version 1.0 primo 2019
+
+Focus på Deploy og Monitorering så vi kan demonstrere time to market og hyppige ændringer...
+
+Focus på platform Tabel-dataservice
+
+Focus på Kubernetes og Services
+
+
+### Version 1.1? marts 2019
+
+
+### Version 1.2? juli 2019
+
+
+
+
+
 
 
 
@@ -75,9 +135,13 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 ## Internet Network Access
 
 ### Endpoints
-Tre faste IP numre
+Tre faste (floating?) IP numre fra internet
+
+Tre faste (tenant?) IP numre fra kundenetværk
 
 ### DNS
+
+Resolver til forskellige numre indefra og udefra - så vi kan lukke af udefra og kun kører på kundenetværk...
 
 <pre>
 cloud.gov.dk -> xxx.xxx.xxx.xxx
@@ -85,13 +149,17 @@ cloud.gov.dk -> xxx.xxx.xxx.xxx
 
 Kunder sætter selv DNS op... Bør være til cloud.gov.dk og ikke ip...
 
+Issue: Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?
+
 <pre>
 api.kunde.dk -> cloud.gov.dk
 </pre>
 
 ### Bandwith
 
-### Monitoring
+Hvad er rimeligt at forvente fra internettet? fra kunde-netværk?
+
+### Monitoring network use
 Service rapportering (Messured service, per app) og kapacitets.
 
 
@@ -103,21 +171,25 @@ Service rapportering (Messured service, per app) og kapacitets.
 ## NetOps
 
 ### Self-service
-Nye applikationer og services kanb deployes af kunder uden at involvere SIT netværks afdeling.
+Nye applikationer og services kan deployes af kunder uden at involvere SIT.
 
 ### Infrastructure as code
-Ligge i SIT Git...
-
-VLAN oprettelse kan ske manuelt da det ikke
+VLAN oprettelse kan ske manuelt da det ikke gentages?
 
 
 ### Remote admin access
-Beskytte med certifikater... admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
+Beskytte med certifikater...
+
+admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
+
+Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
 ## Layout
 
 Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
-<img src="physical.svg" width="75%">
+
+
+<img src="physical.png" width="90%">
 
 
 
@@ -129,24 +201,15 @@ Issue: Vælge om K8S system services skal kører her?
 kube-service-addresses : XXX.XXX.XXX.XXX
 </pre>
 
-#### Adgang fra internettet
-
-Beskrivelse af hvordan det sker fra en laptop...
-
-#### Adgang fra SIT-PROD
-
-#### Adgang fra SIT-BYOD
+<pre>
+vlanXX, xxx.xxx.xxx.xxx/24
+</pre>
 
 ### Data Cluster Network
 På tværs af lokaliteter. Primær IP til maskiner der kører MapR.
 
-#### Adgang fra internettet
+Issue: Vælge om der skal en loadbalancer/fail-over foran MapR? Har indflydelse hvor stort Inter Cluster netværket skal være...
 
-Beskrivelse af hvordan det sker fra en laptop...
-
-#### Adgang fra SIT-PROD
-
-#### Adgang fra SIT-BYOD
 
 ### Service Network
 Tildeles pods automatisk...
@@ -155,15 +218,17 @@ Ingress controller bruger adresserne til loadbalancing mellem instanser.
 <pre>
 kube-pods-subnet : XXX.XXX.XXX.XXX
 </pre>
-Issue: Choose IP range
 
-
-Port range fra internettet?
 
 ### Intercluster Network (Data Access??)
 
-#### DNS
-Hvordan ser en App de forskellige MapR services?
+
+
+
+#### Environment variables
+Apps finder datasservices via environment variable
+
+Issue: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
 
 
 # Data Fabric
@@ -318,30 +383,44 @@ Code and image...
 
 **[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
 
+## Forbrugsoverblik?
+
+
+## Oprettelse af brugere til sandbox
+
+
+## Adgang til MapR for sandbox services
+
+
+
 # Additional Software as a Service
 
-## GovDev
+## Portal
 
 
-### Build/Test Self-service
-<img src="build.svg" width="50%" align="right" valign="bottom">
+### Register Service
+
+<img src="gui-services.png" width="50%" align="right" valign="bottom">
+
+Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
 
 
 
+### Redeploy Application
 
-### Deploy Self-service
-
-<img src="deploy.svg" width="50%" align="right" valign="bottom">
-
+<img src="gui-redeploy.png" width="50%" align="left" valign="bottom">
 
 **[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
+
+
+
 **[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
 
 ## Sandbox
-<img src="sandbox.svg" width="50%" align="right" valign="bottom">
+<img src="sandbox.svg" width="50%" align="left" valign="bottom">
 **[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
-
+Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).
 
 ## Collaboration
 **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
