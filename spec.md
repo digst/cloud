@@ -134,26 +134,19 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 
 ## Internet Network Access
 
-### Endpoints
-Tre faste (floating?) IP numre fra internet
-
-Tre faste (tenant?) IP numre fra kundenetværk
-
-### DNS
-
-Resolver til forskellige numre indefra og udefra - så vi kan lukke af udefra og kun kører på kundenetværk...
-
+A RECORD
 <pre>
 cloud.gov.dk -> xxx.xxx.xxx.xxx
 </pre>
 
-Kunder sætter selv DNS op... Bør være til cloud.gov.dk og ikke ip...
-
-Issue: Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?
+Kunder sætter selv DNS CNAME op... Bør være til cloud.gov.dk og ikke ip...
 
 <pre>
-api.kunde.dk -> cloud.gov.dk
+sitcloud.dk -> cloud.gov.dk
 </pre>
+Issue: Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?
+
+
 
 ### Bandwith
 
@@ -164,54 +157,43 @@ Service rapportering (Messured service, per app) og kapacitets.
 
 
 ### DDOS Protection
+Klares andet sted i SIT...??
 
 
 
 
-## NetOps
-
-### Self-service
-Nye applikationer og services kan deployes af kunder uden at involvere SIT.
-
-### Infrastructure as code
-VLAN oprettelse kan ske manuelt da det ikke gentages?
-
-
-### Remote admin access
-Beskytte med certifikater...
-
-admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
-
-Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
 ## Layout
 
 Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
 
 
-<img src="physical.png" width="90%">
+<img src="physical.png" width="50%" align="right">
+#1 VLAN/24 som primær netværk til Mapr Noder (-200x) og replikering
+#2 VLAN/24 som udstiler services fra Mapr Noder (-200x) til LoadBalancer
+#3 VLAN/26 som udstiler services fra Load Balancer (-8x) til K8S
+#4 VLAN/24 som forbindelse mellem K8S (-200x) og services på LoadBalancer (-8x)
+#5 VLAN/24 som primær netværk for K8S (-200x) og deres Ingress Controllers (-8x)
+#6 VLAN/26 som access til Ingress Controllers og et VIP fra SIT Firewall
+
+
+### Access network
+
+Netværk til loadbalancing af Ingress Controller... og internet forbindelse
 
 
 
-### App Cluster Network
-På tværs af lokaliteter. Primær IP til maskiner der kører Kubernetes.
 
-Issue: Vælge om K8S system services skal kører her?
-<pre>
-kube-service-addresses : XXX.XXX.XXX.XXX
-</pre>
 
+### Application Replication
+K8S snakker... og primær netvork for app fabric
 <pre>
 vlanXX, xxx.xxx.xxx.xxx/24
 </pre>
 
-### Data Cluster Network
-På tværs af lokaliteter. Primær IP til maskiner der kører MapR.
-
-Issue: Vælge om der skal en loadbalancer/fail-over foran MapR? Har indflydelse hvor stort Inter Cluster netværket skal være...
 
 
-### Service Network
+### K8S Service Network?? På tegning?
 Tildeles pods automatisk...
 
 Ingress controller bruger adresserne til loadbalancing mellem instanser.
@@ -220,16 +202,39 @@ kube-pods-subnet : XXX.XXX.XXX.XXX
 </pre>
 
 
-### Intercluster Network (Data Access??)
+
+### Data Access network
+Der hvor K8S kan hente data fra MapR (inter cluster...)
 
 
 
+### Data Services
+Adgang til Loadbalancer fra K8S
 
-#### Environment variables
-Apps finder datasservices via environment variable
 
-Issue: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
+### MapR Services
+Udstiller data services fra MapoR til LoadBalancer
 
+### MapR Internt
+Primær network og mapr replikering...
+
+## NetOps
+
+### Self-service
+Nye applikationer og services kan deployes af kunder uden at involvere SIT.
+
+### Infrastructure as code
+VLAN oprettelse kan ske manuelt da det ikke gentages?
+Findes VLAN og Firewall regler i reposistories?
+
+
+
+### Remote admin access
+Beskytte med certifikater...
+
+admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
+
+Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
 # Data Fabric
 
@@ -294,6 +299,10 @@ Responsibilities:
 - Network (...?)
 - Mount NFS as Volume (for app log?)
 
+### Environment variables
+Apps finder datasservices via environment variable
+
+Issue: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
 
 
 ## Docker
