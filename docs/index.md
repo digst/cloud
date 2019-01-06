@@ -1,4 +1,5 @@
 this is new
 
 
-[spec.html]
+Den seneste version af 
+- [specifikationen](spec.html)
