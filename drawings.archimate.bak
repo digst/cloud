@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="GovCloud 20190104" id="d1866f71-ec38-45d1-8f19-aa86467fdb15" version="4.0.0">
+<archimate:model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:archimate="http://www.archimatetool.com/archimate" name="GovCloud" id="d1866f71-ec38-45d1-8f19-aa86467fdb15" version="4.0.0">
   <folder name="Strategy" id="97143fc2-189f-412b-af78-72db23cd51b2" type="strategy"/>
   <folder name="Business" id="816e5a79-7f34-499f-beea-812e7312e3b4" type="business">
     <element xsi:type="archimate:BusinessActor" name="DIGST" id="323012ca-fdb9-4cee-92df-5717ff231c19"/>
@@ -28,10 +28,6 @@
     <element xsi:type="archimate:BusinessActor" name="Virksomhed" id="87643a93-29c1-47a6-b757-8e9be85aa647"/>
     <element xsi:type="archimate:BusinessInterface" name="&lt;&lt;dataanvender>>" id="48dd6138-51a0-4fdb-89b7-3a81b6948c84"/>
     <element xsi:type="archimate:BusinessRole" name="&lt;&lt;datadistributør>>" id="b8422f8c-4d5d-4ab9-80ce-86ffbd45b054"/>
-    <element xsi:type="archimate:BusinessService" name="Business Service" id="a81aabe2-7093-4741-b44f-47d1e0b75639"/>
-    <element xsi:type="archimate:BusinessActor" name="Business Actor" id="cbda6fbd-2b43-4cee-bc46-eb500b74d1c5"/>
-    <element xsi:type="archimate:BusinessFunction" name="Business Function" id="b22b6a73-1738-43d2-98db-f70b57ae848b"/>
-    <element xsi:type="archimate:BusinessService" name="Business Service" id="d3501de9-ec08-48ee-91d0-a5e3476cf2da"/>
   </folder>
   <folder name="Application" id="64d55502-3374-460b-9192-80e6c1988484" type="application">
     <element xsi:type="archimate:DataObject" name="Prognoser" id="9d0a84ce-a8f4-4e64-8e2c-439e80840859"/>
@@ -242,7 +238,7 @@
     <element xsi:type="archimate:DataObject" name="Datasets" id="30b2bc45-8156-49fd-a385-b733b17ad6d5"/>
     <element xsi:type="archimate:DataObject" name="Users" id="88eccf82-f458-44c1-8ec3-90f0a993393e"/>
     <element xsi:type="archimate:DataObject" name="Rights" id="a46c9f84-1f0b-4702-aa48-0d4db2cb72dc"/>
-    <element xsi:type="archimate:ApplicationComponent" name="Portal" id="b0d311d7-8fa5-43ad-bea0-04bec5e25a12"/>
+    <element xsi:type="archimate:ApplicationComponent" name="Self-service" id="b0d311d7-8fa5-43ad-bea0-04bec5e25a12"/>
     <element xsi:type="archimate:ApplicationComponent" name="Apache webserver" id="c21c17b2-3f21-4b28-beda-4648f753732c"/>
     <element xsi:type="archimate:ApplicationComponent" name="mock.html" id="ac7eda8f-df77-4d3a-9c52-24fdfb4f3062"/>
     <element xsi:type="archimate:ApplicationComponent" name="Axis2" id="18af6bf6-f836-46fd-a43c-6085ef451864"/>
@@ -280,13 +276,6 @@
     <element xsi:type="archimate:ApplicationInterface" name="&lt;&lt;datastream>> api.dmi.dk:9000/obs" id="5ba96e5a-88dd-48e4-8302-2378c08a1645"/>
     <element xsi:type="archimate:ApplicationComponent" name="Kafka 1.1" id="82f52957-1f88-4f40-8f68-777e54b1eb43"/>
     <element xsi:type="archimate:ApplicationComponent" name="Observation Event" id="2b7e4e03-6a9a-4565-aff7-d8767cc7eef4"/>
-    <element xsi:type="archimate:ApplicationService" name="Application Service" id="ae265d50-ea7c-4ba0-a599-136c3e3afbdf"/>
-    <element xsi:type="archimate:DataObject" name="Data Object" id="4079a804-140a-4679-85f5-ef16f53f37dd"/>
-    <element xsi:type="archimate:ApplicationComponent" name="Application Component" id="67a7a820-422f-4623-98d1-6a64f2152102"/>
-    <element xsi:type="archimate:ApplicationService" name="Application Service" id="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d"/>
-    <element xsi:type="archimate:ApplicationComponent" name="Application Component" id="188083c4-d72b-4f2e-a667-c80068356c05"/>
-    <element xsi:type="archimate:DataObject" name="Data Object" id="e753b19d-9478-48a4-99e3-9c735d785d99"/>
-    <element xsi:type="archimate:ApplicationComponent" name="Monitor" id="5befc5d2-6340-40ba-8f88-4ce101907d8f"/>
   </folder>
   <folder name="Technology &amp; Physical" id="547f0255-46a8-4deb-be54-b14dd92e6296" type="technology">
     <element xsi:type="archimate:Node" name="Data Cluster (10x?)" id="4b6aab2b-9343-40a6-b033-8f2484862c0c"/>
@@ -339,7 +328,7 @@ If 100 Gb/s NIC’s are available from SIT we want 2 of these per node for intra
     <element xsi:type="archimate:Device" name="SAN (32TB)" id="4cf5cae1-70c0-490d-a365-423ae6f47946"/>
     <element xsi:type="archimate:Node" name="org-server" id="f6f541e2-ed4b-4155-80c3-cfb9498f389d"/>
     <element xsi:type="archimate:Node" name="elasticsearch" id="a0789b85-efd6-4cc8-ad09-a1dc17cf8c6a"/>
-    <element xsi:type="archimate:Node" name="Application Fabric" id="40d71401-0f84-4dd1-963c-c8bc07f24024"/>
+    <element xsi:type="archimate:Node" name="App Fabric" id="40d71401-0f84-4dd1-963c-c8bc07f24024"/>
     <element xsi:type="archimate:Node" name="Data Fabric" id="5418bf0a-6a5d-4af3-9e18-6a851ac98e2e"/>
     <element xsi:type="archimate:Device" id="38008417-26fb-4f7c-8c78-82ad1e971fc6"/>
     <element xsi:type="archimate:CommunicationNetwork" name="App Cluster /24" id="0dada52c-06aa-41f2-9809-b49ab8895175">
@@ -360,8 +349,8 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
     </element>
     <element xsi:type="archimate:Facility" name="Developer Location" id="b2129e03-2ec4-48ee-90a4-e3e5ce14ecf3"/>
     <element xsi:type="archimate:Node" name="Repository" id="7c18ab72-15dc-476a-b58b-6837de4d5d71"/>
-    <element xsi:type="archimate:Node" name="Service Fabric" id="fc648ef2-6198-4029-8edf-bcb97e70c3ff"/>
-    <element xsi:type="archimate:Node" name="DevOps" id="c1a8dc58-c0cf-4077-9838-31358ed065e9"/>
+    <element xsi:type="archimate:Node" name="API Fabric" id="fc648ef2-6198-4029-8edf-bcb97e70c3ff"/>
+    <element xsi:type="archimate:Node" name="DevOps (Virtual) Machine" id="c1a8dc58-c0cf-4077-9838-31358ed065e9"/>
     <element xsi:type="archimate:SystemSoftware" name="Operativsystem" id="67d8154d-a84c-4011-acb2-d2a1befd5caa"/>
     <element xsi:type="archimate:Node" name="Server" id="d363b070-87f2-452b-a3cd-623225f00a8e"/>
     <element xsi:type="archimate:CommunicationNetwork" name="Network" id="5662ba5c-c210-41fd-bc26-7cb723f24572"/>
@@ -432,8 +421,6 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
     <element xsi:type="archimate:Artifact" name="DMI/management" id="1f5272bc-10c0-4592-871d-9c26a1ee585e"/>
     <element xsi:type="archimate:TechnologyInterface" name="&lt;&lt;file> NFS" id="cbf03832-bc2e-49b4-9334-9c5a1482dbe8"/>
     <element xsi:type="archimate:TechnologyInterface" name="&lt;&lt;stream> MapR" id="549f2349-5455-4768-838e-42a280436cb6"/>
-    <element xsi:type="archimate:TechnologyService" name="Technology Service" id="6682de5b-a63e-41ff-8d25-8cd09baad7dc"/>
-    <element xsi:type="archimate:Artifact" name="Artifact" id="77c07231-bb1c-481a-a880-a6b8bc767c0c"/>
   </folder>
   <folder name="Motivation" id="2c133f97-8fba-4a7b-ad37-cb01bcdb3ce2" type="motivation">
     <element xsi:type="archimate:Goal" name="Goal" id="a45c03af-b0cf-4d03-87b8-58916321ad9a"/>
@@ -961,15 +948,6 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
     <element xsi:type="archimate:AssociationRelationship" name="10.bbb.yyy.0/24" id="ddc2ff9b-8904-43fd-90cd-f68735deb77f" source="be7d8d98-690b-4801-b1c4-9012c9beb347" target="00ed1a70-f1d8-4b3e-9f7c-279e6dc7767a"/>
     <element xsi:type="archimate:AssociationRelationship" name="10.bbb.yyz.0/24" id="d04530d5-fa45-4ae6-99d1-0e4796d5a34a" source="3a1c820d-461c-4b98-abe8-30ffa0416c93" target="00ed1a70-f1d8-4b3e-9f7c-279e6dc7767a"/>
     <element xsi:type="archimate:CompositionRelationship" id="641c191a-42f9-4477-b542-a34951823314" source="830102bc-9740-48c4-a021-ed7803b5db9b" target="2b7e4e03-6a9a-4565-aff7-d8767cc7eef4"/>
-    <element xsi:type="archimate:AccessRelationship" id="ec20c61d-6525-43c8-8291-82dac4dedeca" source="188083c4-d72b-4f2e-a667-c80068356c05" target="e753b19d-9478-48a4-99e3-9c735d785d99" accessType="1"/>
-    <element xsi:type="archimate:AccessRelationship" id="26bb79ba-c4b0-46b7-b714-85c84903321a" source="188083c4-d72b-4f2e-a667-c80068356c05" target="e753b19d-9478-48a4-99e3-9c735d785d99" accessType="1"/>
-    <element xsi:type="archimate:RealizationRelationship" id="0f6fa485-0810-4b0c-9c39-f9a13030e3fd" source="188083c4-d72b-4f2e-a667-c80068356c05" target="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d"/>
-    <element xsi:type="archimate:ServingRelationship" id="5c8df29a-8dc7-42ca-8ab1-d08a154bea23" source="188083c4-d72b-4f2e-a667-c80068356c05" target="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d"/>
-    <element xsi:type="archimate:ServingRelationship" id="6bd3df3f-c634-438e-bc4f-7f96f5e48527" source="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d" target="188083c4-d72b-4f2e-a667-c80068356c05"/>
-    <element xsi:type="archimate:ServingRelationship" id="b55eeeac-0944-4674-8ecd-0635d6017da1" source="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d" target="b22b6a73-1738-43d2-98db-f70b57ae848b"/>
-    <element xsi:type="archimate:AssociationRelationship" id="bea37a11-53ed-49fd-b474-a7c1f39e3aab" source="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d" target="188083c4-d72b-4f2e-a667-c80068356c05"/>
-    <element xsi:type="archimate:AssociationRelationship" id="ece817c6-b78b-43a8-825a-60d8a3346ed6" source="188083c4-d72b-4f2e-a667-c80068356c05" target="e753b19d-9478-48a4-99e3-9c735d785d99"/>
-    <element xsi:type="archimate:CompositionRelationship" id="c2d0d110-4b14-456a-b9ce-ebd89337e8ba" source="b0d311d7-8fa5-43ad-bea0-04bec5e25a12" target="5befc5d2-6340-40ba-8f88-4ce101907d8f"/>
   </folder>
   <folder name="Views" id="77315463-a0d5-405e-ab46-06f38e302a36" type="diagrams">
     <folder name="Myndighedsfortegnelse" id="65c487f3-a74e-42d9-9eb6-952abdbb2f0b">
@@ -1297,21 +1275,6 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
         </child>
         <child xsi:type="archimate:DiagramObject" id="1b735c86-0ae3-4f05-8613-766ed0f7628d" targetConnections="8a5ab878-73cb-45a2-bbf5-a8983171ee16" archimateElement="6460211e-3991-4473-b485-12e1eda55a49">
           <bounds x="1220" y="590" width="123" height="62"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="2383af97-c286-42e5-a0be-40baf1d8a004" archimateElement="6682de5b-a63e-41ff-8d25-8cd09baad7dc">
-          <bounds x="2148" y="1132" width="173" height="31"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="d9a24df4-36da-4ea8-baa9-a09ca95076ec" archimateElement="ae265d50-ea7c-4ba0-a599-136c3e3afbdf">
-          <bounds x="2269" y="580" width="193" height="31"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="3ea2cfc6-bc58-4383-ad5e-e73f5dec91f5" archimateElement="4079a804-140a-4679-85f5-ef16f53f37dd">
-          <bounds x="2294" y="791" width="120" height="55"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="f8aa34c7-b4d7-4fa2-ab1d-003565a44f65" archimateElement="67a7a820-422f-4623-98d1-6a64f2152102" type="1">
-          <bounds x="2294" y="670" width="120" height="55"/>
-        </child>
-        <child xsi:type="archimate:DiagramObject" id="da635ee8-01c7-4aba-b21a-d75908a16ef3" archimateElement="77c07231-bb1c-481a-a880-a6b8bc767c0c">
-          <bounds x="2584" y="556" width="120" height="55"/>
         </child>
       </element>
       <element xsi:type="archimate:ArchimateDiagramModel" name="Observationsdata (copy)" id="8dd3568f-0d9b-4f9b-9b81-16408c98c45a" viewpoint="layered">
@@ -2179,14 +2142,14 @@ Least connections</content>
         <bounds x="-12" y="224" width="234" height="202"/>
         <sourceConnection xsi:type="archimate:Connection" id="0a04d836-e00f-4369-92a5-537ac80457aa" source="51e468dd-cd21-4eab-a8ac-607ed3c2b8cf" target="dca1da39-e6a9-44a3-b96a-8f7189a61dc9" archimateRelationship="b7d1e05d-6a89-4549-a7d8-57c8892885b5"/>
         <child xsi:type="archimate:DiagramObject" id="dca1da39-e6a9-44a3-b96a-8f7189a61dc9" targetConnections="0a04d836-e00f-4369-92a5-537ac80457aa" fontColor="#feffff" fillColor="#1d7795" archimateElement="b0d311d7-8fa5-43ad-bea0-04bec5e25a12" type="1">
-          <bounds x="33" y="47" width="154" height="139"/>
+          <bounds x="36" y="51" width="154" height="122"/>
+          <sourceConnection xsi:type="archimate:Connection" id="35ed4dc6-2623-4344-b8bc-7cba52b7fec7" source="dca1da39-e6a9-44a3-b96a-8f7189a61dc9" target="2c873320-aa15-4373-b661-58b31eed4811" archimateRelationship="f1770b27-6ba3-4b90-9dbd-0ca51c1cb99f"/>
           <sourceConnection xsi:type="archimate:Connection" id="2384abc5-3cf5-4745-a0ec-a7877b5f7719" source="dca1da39-e6a9-44a3-b96a-8f7189a61dc9" target="64310ee0-e79f-40ca-bdb7-90e41ce5e528" archimateRelationship="098f16ed-211b-4b73-99fc-48b0b6a09fb0"/>
-          <sourceConnection xsi:type="archimate:Connection" id="b54b7444-b216-4a46-ab57-b51ff3739402" source="dca1da39-e6a9-44a3-b96a-8f7189a61dc9" target="43b24a00-1894-4e0d-883f-8c31682c633d" archimateRelationship="c2d0d110-4b14-456a-b9ce-ebd89337e8ba"/>
-          <child xsi:type="archimate:DiagramObject" id="64310ee0-e79f-40ca-bdb7-90e41ce5e528" targetConnections="2384abc5-3cf5-4745-a0ec-a7877b5f7719" fontColor="#feffff" fillColor="#1d7795" archimateElement="ebc1cb25-871a-4391-bf64-c9844cda261c" type="1">
-            <bounds x="22" y="54" width="108" height="33"/>
+          <child xsi:type="archimate:DiagramObject" id="2c873320-aa15-4373-b661-58b31eed4811" targetConnections="35ed4dc6-2623-4344-b8bc-7cba52b7fec7" fontColor="#feffff" fillColor="#1d7795" archimateElement="eb89e7a3-7cb6-4daa-ba7a-5136c28ed0fc" type="1">
+            <bounds x="23" y="33" width="108" height="33"/>
           </child>
-          <child xsi:type="archimate:DiagramObject" id="43b24a00-1894-4e0d-883f-8c31682c633d" targetConnections="b54b7444-b216-4a46-ab57-b51ff3739402" fontColor="#feffff" fillColor="#1d7795" archimateElement="5befc5d2-6340-40ba-8f88-4ce101907d8f" type="1">
-            <bounds x="22" y="96" width="108" height="33"/>
+          <child xsi:type="archimate:DiagramObject" id="64310ee0-e79f-40ca-bdb7-90e41ce5e528" targetConnections="2384abc5-3cf5-4745-a0ec-a7877b5f7719" fontColor="#feffff" fillColor="#1d7795" archimateElement="ebc1cb25-871a-4391-bf64-c9844cda261c" type="1">
+            <bounds x="23" y="77" width="108" height="33"/>
           </child>
         </child>
       </child>
@@ -2246,33 +2209,6 @@ cloud.gov.dk -> xxx.xxx.xxx.xxx
         <bounds x="379" y="395" width="191" height="27"/>
         <sourceConnection xsi:type="archimate:Connection" id="35e805ff-cd39-49df-8000-43b8e955d83f" source="f6b772be-d6e4-4ae1-85d0-8a51a7ec146c" target="587ad520-8725-4170-ab2e-9eac8087b15c" archimateRelationship="18f465a0-9da6-4ccd-9ba4-a688be030e9a"/>
         <sourceConnection xsi:type="archimate:Connection" id="f598af5d-2408-4099-a75b-a4e7fcccbd1a" source="f6b772be-d6e4-4ae1-85d0-8a51a7ec146c" target="b5d1e4ca-8e88-4b90-93b3-b3948d4c6be2" archimateRelationship="3ac39619-20c4-4d88-ab4c-4cdb819cd2c4"/>
-      </child>
-    </element>
-    <element xsi:type="archimate:ArchimateDiagramModel" name="Bare minimum" id="9a7905cb-9037-465e-81ca-d40e1226f27d">
-      <child xsi:type="archimate:DiagramObject" id="e81c1efd-2185-4f5d-80f5-b64d37d057c4" archimateElement="0ad6d7b6-199e-4f83-95ba-f5d3d48c8b5d">
-        <bounds x="80" y="83" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="1e867d39-5744-4465-9d78-356bf7579020" source="e81c1efd-2185-4f5d-80f5-b64d37d057c4" target="e9ee4626-402e-46ca-9bf4-06938e2c7d86" archimateRelationship="6bd3df3f-c634-438e-bc4f-7f96f5e48527">
-          <bendpoint startX="-18" startY="52" endX="-18" endY="-51"/>
-        </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="bd9b2894-3a7c-4cc5-bc6e-04dda2e38857" source="e81c1efd-2185-4f5d-80f5-b64d37d057c4" target="e9ee4626-402e-46ca-9bf4-06938e2c7d86" archimateRelationship="bea37a11-53ed-49fd-b474-a7c1f39e3aab">
-          <bendpoint startX="26" startY="52" endX="26" endY="-51"/>
-        </sourceConnection>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="e9ee4626-402e-46ca-9bf4-06938e2c7d86" targetConnections="1e867d39-5744-4465-9d78-356bf7579020 bd9b2894-3a7c-4cc5-bc6e-04dda2e38857" archimateElement="188083c4-d72b-4f2e-a667-c80068356c05" type="1">
-        <bounds x="80" y="186" width="120" height="55"/>
-        <sourceConnection xsi:type="archimate:Connection" id="51bc19f0-b685-4dc2-991d-7081ef6ad10a" source="e9ee4626-402e-46ca-9bf4-06938e2c7d86" target="d8ace9d3-42d5-4435-ab10-c65325319e74" archimateRelationship="ec20c61d-6525-43c8-8291-82dac4dedeca">
-          <bendpoint startX="-28" startY="51" endX="-28" endY="-45"/>
-        </sourceConnection>
-        <sourceConnection xsi:type="archimate:Connection" id="c2768b74-baf3-4ea5-adb7-84a8d2749e37" source="e9ee4626-402e-46ca-9bf4-06938e2c7d86" target="d8ace9d3-42d5-4435-ab10-c65325319e74" archimateRelationship="ece817c6-b78b-43a8-825a-60d8a3346ed6">
-          <bendpoint startX="25" startY="47" endX="25" endY="-49"/>
-        </sourceConnection>
-      </child>
-      <child xsi:type="archimate:DiagramObject" id="d8ace9d3-42d5-4435-ab10-c65325319e74" targetConnections="51bc19f0-b685-4dc2-991d-7081ef6ad10a c2768b74-baf3-4ea5-adb7-84a8d2749e37" archimateElement="e753b19d-9478-48a4-99e3-9c735d785d99">
-        <bounds x="80" y="282" width="120" height="55"/>
-      </child>
-      <child xsi:type="archimate:Note" id="8a87d4a0-ad50-44a5-a79b-e3b7a1f13858" textAlignment="1">
-        <bounds x="229" y="186" width="185" height="56"/>
-        <content>Streger hen over organisationsgrænser skal have en retning. </content>
       </child>
     </element>
   </folder>

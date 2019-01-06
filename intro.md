@@ -107,6 +107,8 @@ Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme....
 
 
 <h2 class="no-num">Containere</h1>
+Metafor: En container er en .exe fil....
+
 
 Lag...base image
 

@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 08a3aa6cd90c2ebe41f3584121332afe3c71d780" name="generator">
+  <meta content="Bikeshed version 6dcb46ba8cae3704b42c05bcd8578c92d239786a" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation<img align="right" src="cloud.svg"> <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-12-17">17 December 2018</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-06">6 January 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1476,30 +1476,21 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#network"><span class="secno">1</span> <span class="content">Network</span></a>
      <ol class="toc">
+      <li><a href="#internet-network-access"><span class="secno">1.1</span> <span class="content">Internet Network Access</span></a>
+      <li><a href="#gateway"><span class="secno">1.2</span> <span class="content">Gateway</span></a>
       <li>
-       <a href="#internet-network-access"><span class="secno">1.1</span> <span class="content">Internet Network Access</span></a>
+       <a href="#layout"><span class="secno">1.3</span> <span class="content">Layout</span></a>
        <ol class="toc">
-        <li><a href="#bandwith"><span class="secno">1.1.1</span> <span class="content">Bandwith</span></a>
-        <li><a href="#monitoring-network-use"><span class="secno">1.1.2</span> <span class="content">Monitoring network use</span></a>
-        <li><a href="#ddos-protection"><span class="secno">1.1.3</span> <span class="content">DDOS Protection</span></a>
+        <li><a href="#application-services"><span class="secno">1.3.1</span> <span class="content">Application Services</span></a>
+        <li><a href="#data-access"><span class="secno">1.3.2</span> <span class="content">Data Access</span></a>
+        <li><a href="#data-synchronisation"><span class="secno">1.3.3</span> <span class="content">Data Synchronisation</span></a>
        </ol>
       <li>
-       <a href="#layout"><span class="secno">1.2</span> <span class="content">Layout</span></a>
+       <a href="#netops"><span class="secno">1.4</span> <span class="content">NetOps</span></a>
        <ol class="toc">
-        <li><a href="#access-network"><span class="secno">1.2.1</span> <span class="content">Access network</span></a>
-        <li><a href="#application-replication"><span class="secno">1.2.2</span> <span class="content">Application Replication</span></a>
-        <li><a href="#k8s-service-network-p-tegning"><span class="secno">1.2.3</span> <span class="content">K8S Service Network?? På tegning?</span></a>
-        <li><a href="#data-access-network"><span class="secno">1.2.4</span> <span class="content">Data Access network</span></a>
-        <li><a href="#data-services"><span class="secno">1.2.5</span> <span class="content">Data Services</span></a>
-        <li><a href="#mapr-services"><span class="secno">1.2.6</span> <span class="content">MapR Services</span></a>
-        <li><a href="#mapr-internt"><span class="secno">1.2.7</span> <span class="content">MapR Internt</span></a>
-       </ol>
-      <li>
-       <a href="#netops"><span class="secno">1.3</span> <span class="content">NetOps</span></a>
-       <ol class="toc">
-        <li><a href="#self-service"><span class="secno">1.3.1</span> <span class="content">Self-service</span></a>
-        <li><a href="#infrastructure-as-code"><span class="secno">1.3.2</span> <span class="content">Infrastructure as code</span></a>
-        <li><a href="#remote-admin-access"><span class="secno">1.3.3</span> <span class="content">Remote admin access</span></a>
+        <li><a href="#self-service"><span class="secno">1.4.1</span> <span class="content">Self-service</span></a>
+        <li><a href="#infrastructure-as-code"><span class="secno">1.4.2</span> <span class="content">Infrastructure as code</span></a>
+        <li><a href="#remote-admin-access"><span class="secno">1.4.3</span> <span class="content">Remote admin access</span></a>
        </ol>
      </ol>
     <li>
@@ -1519,7 +1510,8 @@ pre .property::before, pre .property::after {
       <li>
        <a href="#kubernetes"><span class="secno">3.1</span> <span class="content">Kubernetes</span></a>
        <ol class="toc">
-        <li><a href="#environment-variables"><span class="secno">3.1.1</span> <span class="content">Environment variables</span></a>
+        <li><a href="#k8s-service-network-p-tegning"><span class="secno">3.1.1</span> <span class="content">K8S Service Network?? På tegning?</span></a>
+        <li><a href="#environment-variables"><span class="secno">3.1.2</span> <span class="content">Environment variables</span></a>
        </ol>
       <li><a href="#docker"><span class="secno">3.2</span> <span class="content">Docker</span></a>
       <li><a href="#base-image"><span class="secno">3.3</span> <span class="content">Base Image</span></a>
@@ -1631,54 +1623,59 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
    <p><img src="highlevel.svg" width="60%"></p>
    <h2 class="heading settled" data-level="1" id="network"><span class="secno">1. </span><span class="content">Network</span><a class="self-link" href="#network"></a></h2>
+    Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
    <h3 class="heading settled" data-level="1.1" id="internet-network-access"><span class="secno">1.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
-   <p>A RECORD</p>
-<pre>cloud.gov.dk -> xxx.xxx.xxx.xxx
+    GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT. 
+<pre>cloud.gov.dk.    3589  IN  A  ???.???.???.???
 </pre>
-   <p>Kunder sætter selv DNS CNAME op... Bør være til cloud.gov.dk og ikke ip...</p>
-<pre>sitcloud.dk -> cloud.gov.dk
+   <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
+<pre>api.kunde.example.com.    3589  IN  CNAME  cloud.gov.dk
 </pre>
-   <p class="issue" id="issue-d3dc0283"><a class="self-link" href="#issue-d3dc0283"></a> Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?</p>
-   <h4 class="heading settled" data-level="1.1.1" id="bandwith"><span class="secno">1.1.1. </span><span class="content">Bandwith</span><a class="self-link" href="#bandwith"></a></h4>
-   <p>Hvad er rimeligt at forvente fra internettet? fra kunde-netværk?</p>
-   <h4 class="heading settled" data-level="1.1.2" id="monitoring-network-use"><span class="secno">1.1.2. </span><span class="content">Monitoring network use</span><a class="self-link" href="#monitoring-network-use"></a></h4>
-    Service rapportering (Messured service, per app) og kapacitets. 
-   <h4 class="heading settled" data-level="1.1.3" id="ddos-protection"><span class="secno">1.1.3. </span><span class="content">DDOS Protection</span><a class="self-link" href="#ddos-protection"></a></h4>
-    Klares andet sted i SIT...?? 
-   <h3 class="heading settled" data-level="1.2" id="layout"><span class="secno">1.2. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
+   <p class="note" role="note"><span>Note:</span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC</p>
+   <p class="issue" id="issue-79644c68"><a class="self-link" href="#issue-79644c68"></a> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
+   <p class="issue" id="issue-9d156aa8"><a class="self-link" href="#issue-9d156aa8"></a> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
+   <h3 class="heading settled" data-level="1.2" id="gateway"><span class="secno">1.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
+   <p>Reusing existing network device to integrate with existing networks operation and monitoring.</p>
+   <p>F5 Big IP</p>
+<pre>URL : cloud.gov.dk
+SSL : offloading
+Backend : 10.aaa.xxx.0/28
+Persistency : none
+No redirect from HTTP to HTTPS
+Session Timeout : standard
+Caching : none
+Compression : none
+X-Forwarded-For : Yes
+Loadbalancing : Least Connections
+</pre>
+   <p class="issue" id="issue-14bddc5b"><a class="self-link" href="#issue-14bddc5b"></a> What is value of session timeout</p>
+   <p>Monitoring: Vi starter på et TCP ping til cloud.gov.dk</p>
+   <p class="issue" id="issue-fd738efd"><a class="self-link" href="#issue-fd738efd"></a> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
+   <h3 class="heading settled" data-level="1.3" id="layout"><span class="secno">1.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
+   <p class="issue" id="issue-9e6117c0"><a class="self-link" href="#issue-9e6117c0"></a> Ikke valideret.... bør simuleres ala Cisco...</p>
    <p>Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.</p>
-   <p><img align="right" src="physical.png" width="50%"> #1 VLAN/24 som primær netværk til Mapr Noder (-200x) og replikering
-#2 VLAN/24 som udstiler services fra Mapr Noder (-200x) til LoadBalancer
-#3 VLAN/26 som udstiler services fra Load Balancer (-8x) til K8S
-#4 VLAN/24 som forbindelse mellem K8S (-200x) og services på LoadBalancer (-8x)
-#5 VLAN/24 som primær netværk for K8S (-200x) og deres Ingress Controllers (-8x)
-#6 VLAN/26 som access til Ingress Controllers og et VIP fra SIT Firewall</p>
-   <h4 class="heading settled" data-level="1.2.1" id="access-network"><span class="secno">1.2.1. </span><span class="content">Access network</span><a class="self-link" href="#access-network"></a></h4>
-   <p>Netværk til loadbalancing af Ingress Controller... og internet forbindelse</p>
-   <h4 class="heading settled" data-level="1.2.2" id="application-replication"><span class="secno">1.2.2. </span><span class="content">Application Replication</span><a class="self-link" href="#application-replication"></a></h4>
-    K8S snakker... og primær netvork for app fabric 
-<pre>vlanXX, xxx.xxx.xxx.xxx/24
+   <p><img align="right" src="network.png" width="50%"></p>
+   <h4 class="heading settled" data-level="1.3.1" id="application-services"><span class="secno">1.3.1. </span><span class="content">Application Services</span><a class="self-link" href="#application-services"></a></h4>
+    Det primære netværk App fabric dvs. K8S og den ingress controllers. 
+   <p>Load rammer et udvalg af ip-numre</p>
+<pre>vlanXX, 10.33.xxx.xxx/24
 </pre>
-   <h4 class="heading settled" data-level="1.2.3" id="k8s-service-network-p-tegning"><span class="secno">1.2.3. </span><span class="content">K8S Service Network?? På tegning?</span><a class="self-link" href="#k8s-service-network-p-tegning"></a></h4>
-    Tildeles pods automatisk... 
-   <p>Ingress controller bruger adresserne til loadbalancing mellem instanser.</p>
-<pre>kube-pods-subnet : XXX.XXX.XXX.XXX
+   <h4 class="heading settled" data-level="1.3.2" id="data-access"><span class="secno">1.3.2. </span><span class="content">Data Access</span><a class="self-link" href="#data-access"></a></h4>
+    Der hvor K8S kan hente data fra MapR via LoadBalancer 
+<pre>vlanXX, 10.33.xxx.xxx/24
 </pre>
-   <h4 class="heading settled" data-level="1.2.4" id="data-access-network"><span class="secno">1.2.4. </span><span class="content">Data Access network</span><a class="self-link" href="#data-access-network"></a></h4>
-    Der hvor K8S kan hente data fra MapR (inter cluster...) 
-   <h4 class="heading settled" data-level="1.2.5" id="data-services"><span class="secno">1.2.5. </span><span class="content">Data Services</span><a class="self-link" href="#data-services"></a></h4>
-    Adgang til Loadbalancer fra K8S 
-   <h4 class="heading settled" data-level="1.2.6" id="mapr-services"><span class="secno">1.2.6. </span><span class="content">MapR Services</span><a class="self-link" href="#mapr-services"></a></h4>
-    Udstiller data services fra MapoR til LoadBalancer 
-   <h4 class="heading settled" data-level="1.2.7" id="mapr-internt"><span class="secno">1.2.7. </span><span class="content">MapR Internt</span><a class="self-link" href="#mapr-internt"></a></h4>
-    Primær network og mapr replikering... 
-   <h3 class="heading settled" data-level="1.3" id="netops"><span class="secno">1.3. </span><span class="content">NetOps</span><a class="self-link" href="#netops"></a></h3>
-   <h4 class="heading settled" data-level="1.3.1" id="self-service"><span class="secno">1.3.1. </span><span class="content">Self-service</span><a class="self-link" href="#self-service"></a></h4>
+   <h4 class="heading settled" data-level="1.3.3" id="data-synchronisation"><span class="secno">1.3.3. </span><span class="content">Data Synchronisation</span><a class="self-link" href="#data-synchronisation"></a></h4>
+    Adgang til Loadbalancer fra K8S
+Kan bruges til at styre trafik mod forskellige gateway nodes. 
+<pre>vlanXX, 10.33.xxx.xxx/26
+</pre>
+   <h3 class="heading settled" data-level="1.4" id="netops"><span class="secno">1.4. </span><span class="content">NetOps</span><a class="self-link" href="#netops"></a></h3>
+   <h4 class="heading settled" data-level="1.4.1" id="self-service"><span class="secno">1.4.1. </span><span class="content">Self-service</span><a class="self-link" href="#self-service"></a></h4>
     Nye applikationer og services kan deployes af kunder uden at involvere SIT. 
-   <h4 class="heading settled" data-level="1.3.2" id="infrastructure-as-code"><span class="secno">1.3.2. </span><span class="content">Infrastructure as code</span><a class="self-link" href="#infrastructure-as-code"></a></h4>
+   <h4 class="heading settled" data-level="1.4.2" id="infrastructure-as-code"><span class="secno">1.4.2. </span><span class="content">Infrastructure as code</span><a class="self-link" href="#infrastructure-as-code"></a></h4>
     VLAN oprettelse kan ske manuelt da det ikke gentages?
 Findes VLAN og Firewall regler i reposistories? 
-   <h4 class="heading settled" data-level="1.3.3" id="remote-admin-access"><span class="secno">1.3.3. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
+   <h4 class="heading settled" data-level="1.4.3" id="remote-admin-access"><span class="secno">1.4.3. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
@@ -1767,7 +1764,12 @@ Findes VLAN og Firewall regler i reposistories?
     <li data-md>
      <p>Mount NFS as Volume (for app log?)</p>
    </ul>
-   <h4 class="heading settled" data-level="3.1.1" id="environment-variables"><span class="secno">3.1.1. </span><span class="content">Environment variables</span><a class="self-link" href="#environment-variables"></a></h4>
+   <h4 class="heading settled" data-level="3.1.1" id="k8s-service-network-p-tegning"><span class="secno">3.1.1. </span><span class="content">K8S Service Network?? På tegning?</span><a class="self-link" href="#k8s-service-network-p-tegning"></a></h4>
+    Tildeles pods automatisk... 
+   <p>Ingress controller bruger adresserne til loadbalancing mellem instanser.</p>
+<pre>kube-pods-subnet : XXX.XXX.XXX.XXX
+</pre>
+   <h4 class="heading settled" data-level="3.1.2" id="environment-variables"><span class="secno">3.1.2. </span><span class="content">Environment variables</span><a class="self-link" href="#environment-variables"></a></h4>
     Apps finder datasservices via environment variable 
    <p class="issue" id="issue-0870e84e"><a class="self-link" href="#issue-0870e84e"></a> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?</p>
    <h3 class="heading settled" data-level="3.2" id="docker"><span class="secno">3.2. </span><span class="content">Docker</span><a class="self-link" href="#docker"></a></h3>
@@ -2029,6 +2031,10 @@ systemctl start krakend
   </ul>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
   <div style="counter-reset:issue">
-   <div class="issue"> Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?<a href="#issue-d3dc0283"> ↵ </a></div>
+   <div class="issue"> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?<a href="#issue-79644c68"> ↵ </a></div>
+   <div class="issue"> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?<a href="#issue-9d156aa8"> ↵ </a></div>
+   <div class="issue"> What is value of session timeout<a href="#issue-14bddc5b"> ↵ </a></div>
+   <div class="issue"> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.<a href="#issue-fd738efd"> ↵ </a></div>
+   <div class="issue"> Ikke valideret.... bør simuleres ala Cisco...<a href="#issue-9e6117c0"> ↵ </a></div>
    <div class="issue"> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?<a href="#issue-0870e84e"> ↵ </a></div>
   </div>

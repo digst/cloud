@@ -7,6 +7,7 @@ Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
   Chris Gadegaard, Statens IT http://www.sit.dk
 Abstract: Beskrivelse af implementeringen af GovCloud PaaS.
 Boilerplate: copyright no, conformance no, Abstract no
+Shortname: spec
 Markup Shorthands: markdown yes
 Repository: digst/cloud
 Inline Github Issues: full
@@ -131,92 +132,97 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 
 
 # Network
+Vi beskriver netværket som det ser ud når man ankommer fra internettet....
+
+
+
+
 
 ## Internet Network Access
-
-A RECORD
-<pre>
-cloud.gov.dk -> xxx.xxx.xxx.xxx
-</pre>
-
-Kunder sætter selv DNS CNAME op... Bør være til cloud.gov.dk og ikke ip...
+GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT.
 
 <pre>
-sitcloud.dk -> cloud.gov.dk
+cloud.gov.dk.		3589	IN	A	???.???.???.???
 </pre>
-Issue: Hvad hvis vi lukker for internettet, hvordan resolver vi så indefra? Hvor skal kunden registrere sine servicenavne?
+
+Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip
+
+<pre>
+api.kunde.example.com.		3589	IN	CNAME	cloud.gov.dk
+</pre>
+
+Note: kunden kan ikke bruge samme domæne til mail o.a. jf. RFC
+
+Issue: Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?
+
+Issue: Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?
 
 
 
-### Bandwith
+## Gateway
 
-Hvad er rimeligt at forvente fra internettet? fra kunde-netværk?
+Reusing existing network device to integrate with existing networks operation and monitoring.
 
-### Monitoring network use
-Service rapportering (Messured service, per app) og kapacitets.
+F5 Big IP
+
+<pre>
+URL : cloud.gov.dk
+SSL : offloading
+Backend : 10.aaa.xxx.0/28
+Persistency : none
+No redirect from HTTP to HTTPS
+Session Timeout : standard
+Caching : none
+Compression : none
+X-Forwarded-For : Yes
+Loadbalancing : Least Connections
+</pre>
+
+Issue: What is value of session timeout
 
 
-### DDOS Protection
-Klares andet sted i SIT...??
+Monitoring: Vi starter på et TCP ping til cloud.gov.dk
 
-
+Issue: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
 
 
 
 ## Layout
 
+Issue: Ikke valideret.... bør simuleres ala Cisco...
+
 Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
 
 
-<img src="physical.png" width="50%" align="right">
-#1 VLAN/24 som primær netværk til Mapr Noder (-200x) og replikering
-#2 VLAN/24 som udstiler services fra Mapr Noder (-200x) til LoadBalancer
-#3 VLAN/26 som udstiler services fra Load Balancer (-8x) til K8S
-#4 VLAN/24 som forbindelse mellem K8S (-200x) og services på LoadBalancer (-8x)
-#5 VLAN/24 som primær netværk for K8S (-200x) og deres Ingress Controllers (-8x)
-#6 VLAN/26 som access til Ingress Controllers og et VIP fra SIT Firewall
-
-
-### Access network
-
-Netværk til loadbalancing af Ingress Controller... og internet forbindelse
+<img src="network.png" width="50%" align="right">
 
 
 
 
 
-### Application Replication
-K8S snakker... og primær netvork for app fabric
+### Application Services
+Det primære netværk App fabric dvs. K8S og den ingress controllers.
+
+Load rammer et udvalg af ip-numre
 <pre>
-vlanXX, xxx.xxx.xxx.xxx/24
+vlanXX, 10.33.xxx.xxx/24
 </pre>
 
 
+### Data Access
+Der hvor K8S kan hente data fra MapR via LoadBalancer
 
-### K8S Service Network?? På tegning?
-Tildeles pods automatisk...
-
-Ingress controller bruger adresserne til loadbalancing mellem instanser.
 <pre>
-kube-pods-subnet : XXX.XXX.XXX.XXX
+vlanXX, 10.33.xxx.xxx/24
 </pre>
 
 
-
-### Data Access network
-Der hvor K8S kan hente data fra MapR (inter cluster...)
-
-
-
-### Data Services
+### Data Synchronisation
 Adgang til Loadbalancer fra K8S
-
-
-### MapR Services
-Udstiller data services fra MapoR til LoadBalancer
-
-### MapR Internt
-Primær network og mapr replikering...
+Kan bruges til at styre trafik mod forskellige gateway nodes.
+<pre>
+vlanXX, 10.33.xxx.xxx/26
+</pre>
 
 ## NetOps
 
@@ -235,6 +241,8 @@ Beskytte med certifikater...
 admin på app cluster og admin på data cluster er to roller med hver deres certifikater.
 
 Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
+
+
 
 # Data Fabric
 
@@ -298,6 +306,15 @@ Responsibilities:
 - Ingress/Service Discovery
 - Network (...?)
 - Mount NFS as Volume (for app log?)
+
+
+### K8S Service Network?? På tegning?
+Tildeles pods automatisk...
+
+Ingress controller bruger adresserne til loadbalancing mellem instanser.
+<pre>
+kube-pods-subnet : XXX.XXX.XXX.XXX
+</pre>
 
 ### Environment variables
 Apps finder datasservices via environment variable
