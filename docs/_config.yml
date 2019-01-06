@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
-title: udviklings- og drifts-platform
-description: En fælles platform
-logo: gti
+title: GovCloud PaaS
+description: En fælles udviklings- og driftsplatform for projekter hos Statens IT.
+logo: https://digst.github.io/cloud/cloud.svg
