@@ -9,7 +9,7 @@ Documentation is published at https://digst.github.io/cloud
 
 Files in the '/docs' folder is either 
  - sent through GitHub Pages' Jekyll (.md files)
- - outputted by manually running BikeShed on files in the root directory (.html) 
+ - outputted by manually running [BikeShed](https://tabatkins.github.io/bikeshed/) on files in the root directory (.html) 
  - images produced by Archi from Archimate files (.svg)
  
  
