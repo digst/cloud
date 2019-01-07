@@ -128,7 +128,7 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 <dfn>Data Fabric</dfn> is...
 
 
-<img src="highlevel.svg" width="60%">
+<img src="highlevel.svg">
 
 
 
