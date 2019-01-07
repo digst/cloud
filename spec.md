@@ -32,7 +32,7 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
-Issue(1):
+Issue(3):
 
 #### Byg?
 Når epic'en er færdig kan en udvikler checke kode ind og bygge en container med brug af værktøj på platformen. (git, docker)
@@ -395,6 +395,7 @@ Responsibilities:
 
 ## Log
 <img src="service_logging.svg" width="30%" align="right" valign="bottom">
+
 **[Log Service]** All services use a common logging service.
 
 
