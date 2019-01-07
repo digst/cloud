@@ -179,26 +179,18 @@ X-Forwarded-For : Yes
 Loadbalancing : Least Connections
 </pre>
 
-Issue: What is value of session timeout
+Note: What is value of session timeout?
 
 
-Monitoring: Vi starter på et TCP ping til cloud.gov.dk
+Monitoring Vi starter på et TCP ping til cloud.gov.dk
 
-Issue: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
+Note: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
 
 
 
 ## Layout
 
-Issue: Ikke valideret.... bør simuleres ala Cisco...
-
-Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
-
-
 <img src="network.svg">
-
-
-
 
 
 ### Application Services
@@ -225,6 +217,8 @@ Kan bruges til at styre trafik mod forskellige gateway nodes.
 vlanXX, 10.33.xxx.xxx/26
 </pre>
 
+
+
 ## NetOps
 
 ### Self-service
@@ -233,8 +227,6 @@ Nye applikationer og services kan deployes af kunder uden at involvere SIT.
 ### Infrastructure as code
 VLAN oprettelse kan ske manuelt da det ikke gentages?
 Findes VLAN og Firewall regler i reposistories?
-
-
 
 ### Remote admin access
 Beskytte med certifikater...
@@ -289,6 +281,8 @@ A <dfn>dataset</dfn> is a collection of individual pieces of information under t
 - All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
 
 
+
+
 # App Fabric
 
 
@@ -309,7 +303,7 @@ Responsibilities:
 - Mount NFS as Volume (for app log?)
 
 
-### K8S Service Network?? På tegning?
+### K8S Service Network
 Tildeles pods automatisk...
 
 Ingress controller bruger adresserne til loadbalancing mellem instanser.
@@ -352,6 +346,8 @@ systemctl start krakend
 </pre>
 
 Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...
+
+
 # API Fabric
 
 - The API Gateway is [KrakenD](http://www.krakend.io/).
