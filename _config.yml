@@ -1,1 +1,4 @@
-theme: jekyll-theme-slate
+theme: jekyll-theme-minimal
+title: GovCloud PaaS
+description: En fælles udviklings- og driftsplatform for projekter hos Statens IT.
+logo: https://digst.github.io/cloud/cloud.svg
