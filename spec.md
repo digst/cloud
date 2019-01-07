@@ -32,7 +32,7 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
-Issue(1): 
+Issue(1):
 
 #### Byg?
 Når epic'en er færdig kan en udvikler checke kode ind og bygge en container med brug af værktøj på platformen. (git, docker)
@@ -195,7 +195,7 @@ Issue: Ikke valideret.... bør simuleres ala Cisco...
 Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.
 
 
-<img src="network.png" width="50%" align="right">
+<img src="network.svg">
 
 
 
