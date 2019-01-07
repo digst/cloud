@@ -13,7 +13,7 @@ Inline Github Issues: full
 <small>
 Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small>
 
-<h2 class="no-num">Indledning</h1>
+<h2 class="no-num">Indledning</h2>
 Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href="">Digital service i verdensklasse</a>.
 
 I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.
@@ -46,7 +46,7 @@ This cloud model is composed of five essential characteristics (On-demand self-s
 
 Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.
 
-<h2 class="no-num">GovCloud</h1><img src="middleware.svg" align="right" width="100">
+<h2 class="no-num">GovCloud</h2><img src="middleware.svg" align="right" width="100">
 
 
 GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
@@ -65,7 +65,7 @@ GovCloud API realiseres gennem middleware og custom build platformservices.
 
 Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,
 
-<h2 class="no-num">Fordele</h1>
+<h2 class="no-num">Fordele</h2>
 
 Cloud karakteristika men også Complaince as a Service
 
@@ -84,7 +84,7 @@ Procurement (SKI)
 - Kompentancer
 
 
-<h2 class="no-num">Services, applikationer og datasamlinger</h1>
+<h2 class="no-num">Services, applikationer og datasamlinger</h2>
 Digital Asset Management. En hovedtype af assets for hvert lag i arkitekturen:
 
 ### Service
@@ -106,7 +106,7 @@ Eksempel: CVR register, HR Sager,
 Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød ,
 
 
-<h2 class="no-num">Containere</h1>
+<h2 class="no-num">Containere</h2>
 Metafor: En container er en .exe fil....
 
 
@@ -121,7 +121,7 @@ Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/
 Note: Tegning3 af container, baseimage, lagerplads med labels og scanner...
 
 
-<h2 class="no-num">Platformservices</h1>
+<h2 class="no-num">Platformservices</h2>
 <img src="highlevel.svg" align="right" width="25%">
 Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret
 
@@ -135,7 +135,7 @@ Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret
 
 - Container Repository
 
-<h2 class="no-num">Other Software (as a Service)</h1>
+<h2 class="no-num">Other Software (as a Service)</h2>
 
 Note: Tegning4 af SaaS søjler oven på PaaS. Og der løbende kommer mere til....
 

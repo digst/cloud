@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>cloud.gov.dk start-arkitektur</title>
+  <title>cloud.gov.dk introduktion</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -83,7 +83,7 @@
 
 		/* Typography */
 		line-height: 1.5;
-		font-family: "Helvetica Neue","Arial","Verdana", sans-serif;
+		font-family: sans-serif;
 		widows: 2;
 		orphans: 2;
 		word-wrap: break-word;
@@ -110,7 +110,6 @@
 		font-weight: bold;
 		margin: 0 0 .1em;
 		font-size: 220%;
-		background-color: rgb(148,0,39);
 	}
 
 	div.head h2 { margin-bottom: 1.5em;}
@@ -1213,9 +1212,8 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version f9fa604b61e5fc96edf5cdebd2c04e0e69b33a7b" name="generator">
-  <link href="http://github.com/digst/cloud/start.md" rel="canonical">
-  <meta content="615a6ab6e63f87af20f5405272f46ae487add14f" name="document-revision">
+  <meta content="Bikeshed version 6dcb46ba8cae3704b42c05bcd8578c92d239786a" name="generator">
+  <link href="http://github.com/digst/cloud/intro.md" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1365,17 +1363,17 @@ pre .property::before, pre .property::after {
 }</style>
  <body class="h-entry">
   <div class="head">
-   <p data-fill-with="logo"><a class="logo" data-link-type="dfn"> <svg height="85.039" version="1.1" viewBox="0, 0, 170.079, 85.039" width="170.079" x="0" y="0" xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"> <g id="Layer_1"> <path d="M85.037,82.289 L85.042,82.289 L85.037,82.289 L85.037,82.289 z" fill="#FFFFFF"></path> <path d="M-335.906,-255.12 z" fill="#252565"></path> <path d="M8.11,76.637 C9.179,34.606 44.072,3.498 85.039,2.462 C125.598,2.6 160.934,35.661 161.969,76.637 L161.969,82.289 L8.153,82.289 L8.153,76.637 L8.11,76.637 z" fill="#9B9B9B"></path> <path d="M36.414,82.289 C22.964,82.289 12.06,71.577 12.06,58.363 C12.546,45.698 20.335,37.282 32.781,34.789 C34.249,25.785 41.76,19.982 50.818,19.532 C52.905,19.636 52.079,19.503 53.319,19.751 C60.192,9.088 71.891,3.117 84.606,2.801 C99.343,2.872 112.91,11.602 118.66,24.963 C122.47,24.199 120.523,24.445 124.502,24.247 C140.817,24.247 154.042,37.241 154.042,53.268 C154.042,69.296 140.817,82.289 124.502,82.289 L124.345,82.281 L124.345,82.289 L36.414,82.289 z" fill="#707070"></path> <path d="M57.131,82.577 C57.162,81.789 57.178,80.549 57.178,79.449 C57.178,72.308 55.926,67.04 53.256,64.172 C51.875,63.89 50.287,63.289 49.401,62.774 C48.029,60.9 43.809,51.809 43.809,46.68 C43.809,41.86 47.04,38.657 52.51,38.657 C54.32,38.657 58.092,39.276 59.808,39.745 C60.739,37.606 62.824,36.221 66.493,36.221 C70.674,36.221 77.867,38.377 77.867,40.515 C77.867,41.031 77.457,41.301 77.034,41.301 C76.703,41.301 74.818,40.84 72.803,40.84 C69.716,40.84 67.986,42.35 67.986,46.737 C67.986,56.861 72.018,67.144 78.197,67.144 C80.705,67.144 83.164,65.734 83.164,61.135 C81.898,61.011 78.337,60.217 76.9,58.932 L82.367,38.767 C79.814,37.712 78.015,35.19 78.015,32.244 C78.015,28.977 80.228,26.227 83.232,25.426 C83.232,25.211 83.269,25.148 83.301,25.013 C83.33,24.88 84.23,20.734 84.23,20.528 C84.025,20.528 79.795,21.43 79.66,21.461 C79.526,21.491 79.446,21.53 79.232,21.53 C78.424,21.53 77.769,20.465 77.769,19.716 C77.769,18.969 78.424,17.903 79.232,17.903 C79.446,17.903 79.526,17.94 79.66,17.973 C79.795,18.002 84.025,18.907 84.23,18.907 C84.23,18.7 83.33,14.881 83.301,14.746 C83.269,14.611 83.232,14.53 83.232,14.315 C83.232,13.502 84.293,12.845 85.039,12.845 C85.783,12.845 86.847,13.502 86.847,14.315 C86.847,14.53 86.81,14.611 86.779,14.746 C86.748,14.881 85.847,18.7 85.847,18.907 C86.054,18.907 90.283,18.002 90.418,17.973 C90.554,17.94 90.633,17.903 90.847,17.903 C91.656,17.903 92.31,18.969 92.31,19.716 C92.31,20.465 91.656,21.53 90.847,21.53 C90.633,21.53 90.554,21.491 90.418,21.461 C90.283,21.43 86.054,20.528 85.847,20.528 C85.847,20.734 86.748,24.88 86.779,25.013 C86.81,25.148 86.847,25.211 86.847,25.426 C89.851,26.227 92.064,28.977 92.064,32.244 C92.064,35.19 90.265,37.712 87.711,38.767 L93.179,58.932 C91.742,60.217 88.181,61.011 86.916,61.135 C86.916,65.734 89.375,67.144 91.881,67.144 C98.062,67.144 102.094,56.861 102.094,46.737 C102.094,42.35 100.363,40.84 97.277,40.84 C95.261,40.84 93.377,41.301 93.047,41.301 C92.623,41.301 92.213,41.031 92.213,40.515 C92.213,38.377 99.406,36.221 103.588,36.221 C107.256,36.221 109.34,37.606 110.271,39.745 C111.988,39.276 115.76,38.657 117.57,38.657 C123.039,38.657 126.269,41.86 126.269,46.68 C126.269,51.809 122.051,60.9 120.679,62.774 C119.793,63.289 118.203,63.89 116.824,64.172 C114.152,67.04 112.902,72.308 112.902,79.449 C112.902,80.549 112.916,81.789 112.949,82.577 L57.131,82.577 z M57.028,42.157 C54.022,42.157 52.043,43.073 52.043,47.352 C52.043,49.89 56.936,67.924 64.188,67.924 C66.939,67.924 68.089,66.536 68.089,63.689 C68.089,63.032 67.955,62.478 67.557,61.857 C66.269,61.612 64.302,60.861 63.254,60.058 C61.516,56.888 59.123,50.451 59.123,44.412 C59.123,43.653 59.157,43.069 59.24,42.373 C58.408,42.241 57.418,42.157 57.028,42.157 z M113.05,42.157 C112.662,42.157 111.669,42.241 110.839,42.372 C110.921,43.069 110.956,43.654 110.956,44.412 C110.956,50.451 108.564,56.887 106.826,60.058 C105.777,60.861 103.812,61.612 102.523,61.857 C102.124,62.477 101.99,63.032 101.99,63.689 C101.99,66.537 103.14,67.924 105.892,67.924 C113.144,67.924 118.037,49.891 118.037,47.352 C118.037,43.072 116.058,42.157 113.05,42.157 z" fill="#FFFFFF"></path> </g> </svg> </a> </p>
-   <h1>Start-arkitektur <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-10-29">29 October 2018</time></span></h2>
+   <p data-fill-with="logo"></p>
+   <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-07">7 January 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/start.md">http://github.com/digst/cloud/start.md</a>
+     <dd><a class="u-url" href="http://github.com/digst/cloud/intro.md">http://github.com/digst/cloud/intro.md</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/digst/cloud/issues/">GitHub</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://digst.dk">Digitaliseringsstyrelsen</a>)
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">Mads Hjorth</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1384,62 +1382,109 @@ pre .property::before, pre .property::after {
   <div data-fill-with="at-risk"></div>
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small></p>
-   <p><i>I slutningen af oktober 2018 besluttede DMI, SIT og DIGST bl.a. at "Statens IT etablerer en GovCloud-platform baseret på afprøvningsprojektet, således at GovCloud-platformen er klar til service- og applikationsudvikling senest 1. januar 2019 og er klar til drift af applikationer senest 1. juli 2019." Som en del af beslutningsgrundlaget indgik nedenstående beskrivelse af en start-arkitektur for projektet.</i></p>
-   <p>Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og driftsplatform hos Statens IT til brug for statslige institutioner.</p>
-   <p>Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af frie DMI-data og applikationsudvikling. DMI og DIGST er de første anvendere af GovCloud-platformen.</p>
-   <p>Projektet skal bidrage til øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af flere forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.</p>
-   <h3 class="heading settled" id="forretningsbehov"><span class="content">Forretningsbehov</span></h3>
-   <p>GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:</p>
+   <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
+    Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href>Digital service i verdensklasse</a>. 
+   <p>I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.</p>
+   <p>En fælles government cloud er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.</p>
+   <p>Med Statens ITs beslutning om at tilbyde en Platform as a Service med sigte på at skabe den fremtidige fortrukne platform for IT i staten er vi ét skridt tættere på at kunne opfylde de høje digitale ambitioner.</p>
+   <p>Nuværende niveau for offentlig IT har væsentlige mangler</p>
    <ul>
     <li data-md>
-     <p>Anvendere vil have højest mulig oppetid for sine applikationer.</p>
+     <p>usammenhængende services leveret i siloer</p>
     <li data-md>
-     <p>Anvendere vil have en fleksibel og økonomisk adgang til it-ressourcer.</p>
+     <p>ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring</p>
     <li data-md>
-     <p>Anvendere vil kunne teste og idriftsætte nye versioner hurtigst muligt.</p>
-    <li data-md>
-     <p>Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen</p>
-    <li data-md>
-     <p>Platformen skal kunne udskifte produkter med mindst mulig påvirkning af kunderne.</p>
-    <li data-md>
-     <p>Platformen skal kunne udvides med flere applikationer, uden at udgifter til platformen stiger tilsvarende.</p>
-    <li data-md>
-     <p>Udvikling af offentlig IT skal ske økonomisk, hurtigt, agilt og sikkert</p>
+     <p>utilstrækkelig sikkerhed til at imødekomme ny trusler</p>
    </ul>
-   <h3 class="heading settled" id="principper"><span class="content">Principper</span></h3>
-   <p>Ovenstående behov omsættes til følgende principper, der anvendes til at styre GovCloud platformen på kort og lang sigt:</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="uafbrudte-services">Uafbrudte services<a class="self-link" href="#uafbrudte-services"></a></dfn> GovCloud platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="leverandruafhngighed">Leverandøruafhængighed<a class="self-link" href="#leverandruafhngighed"></a></dfn> Applikationer og data på GovCloud platformen skal effektivt kunne flyttes til en anden cloud platform. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="skalrbar-platform">Skalérbar platform<a class="self-link" href="#skalrbar-platform"></a></dfn> Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette sikres blandt andet gennem anvendelse af enterprise grade komponenter, fokus på automatisering og selvbetjening for platformens anvendere.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="security-by-design">Security-by-design<a class="self-link" href="#security-by-design"></a></dfn> Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="gdpr-by-design">GDPR-by-design<a class="self-link" href="#gdpr-by-design"></a></dfn> Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne drifsmiljøer (scale-out til public clouds).</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="omkostningssikker">Omkostningssikker<a class="self-link" href="#omkostningssikker"></a></dfn> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="agil-it-udvikling">Agil it-udvikling<a class="self-link" href="#agil-it-udvikling"></a></dfn> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
-   <h3 class="heading settled" id="design"><span class="content">Design</span></h3>
-    Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept. 
-   <h4 class="heading settled" id="paas"><span class="content">PaaS</span></h4>
-    GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til vedlagte kopi af driftsmodel). 
-   <h4 class="heading settled" id="service-lifecycle-1"><span class="content">Service Lifecycle (1)</span></h4>
-    GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere. 
-   <p>Operativsystem, Server/Storage, Netværk og Fysisk lokation fastlægges af SIT under hensyn til anvendernes behov og økonomi.</p>
-   <p>SIT og DIGST i dialog med platformens anvendere er ansvarlig for udarbejdelse af retningslinjer for 'fair use'. Formålet med retningslinjerne er at sikre en effektiv anvendelsen af platformens samlede ressourcer uden at pålægge den enkelte kunde unødige administrative byrder.</p>
-   <h4 class="heading settled" id="service-operation-2"><span class="content">Service Operation (2)</span></h4>
-    Drift og overvågning af GovCloud platformen og kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7). 
-   <p>Applikationer på GovCloud platformen forventes at skulle understøtte virksomheder og borgeres aktiviteter uden for almindelige arbejdstid. For at undgå mangeartede driftsaftaler, er platformen og alle applikationer underlagt samme 24/7 service level agreement.</p>
-   <p>SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbrud af services er det SITs ansvar at drive arbejdet med at bringe applikationer i drift igen. Kunden har ansvar for at stille ressourcer tilrådighed for fejlfinding og eventuelle tilrettelser. Ved valg af middleware-komponenter lægges vægt på adgang til 24/7 professional services. Til at understøtte samarbejde i forbindelse med servicenedbrud etablerer SIT et samarbejdsværktøj til effektiv kommunikation mellem SIT, kunder, platforms- og applikations-leverandører.</p>
-   <h4 class="heading settled" id="middleware-3"><span class="content">Middleware (3)</span></h4>
-    GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer. 
-   <p>Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i "Specifikation af GovCloud PaaS middleware'. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.</p>
-   <h4 class="heading settled" id="idriftsttelse-4"><span class="content">Idriftsættelse (4)</span></h4>
-    GovCloud platformen og kunders applikationer vil benytte 'rolling updates'. 
-   <p>SITs etablerer en ny idriftsættelseproces, der understøtter agil applikationsudvikling og hyppig idriftsættelse.</p>
-   <p><br> Udover ovenstående beslutninger vedrørende driften af platformen, er der også besluttet følgende:</p>
+   <p>Cloud-teknologier har uforløste potentialer</p>
+   <ul>
+    <li data-md>
+     <p>moderne drift er ved lave omkostninger og høj skalerbarhed</p>
+    <li data-md>
+     <p>dev-ops giver effektiv udvikling, test og deployment</p>
+    <li data-md>
+     <p>scale out til public cloud ved behov</p>
+   </ul>
+   <p>Fælles platform giver nye muligheder</p>
+   <ul>
+    <li data-md>
+     <p>bedre overblik over værdier i form af data og applikationer</p>
+    <li data-md>
+     <p>lettere genbrug af data i nye sammenhænge</p>
+    <li data-md>
+     <p>effektiv udnyttelse af computerressourcer på tværs af myndigheder</p>
+   </ul>
+   <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
+   <img align="right" src="models.svg" width="20%"> Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span> 
+   <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,</p>
+   <p>Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.</p>
+   <h2 class="no-num heading settled" id="govcloud"><span class="content">GovCloud</span></h2>
+   <img align="right" src="middleware.svg" width="100"> 
+   <p>GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
+SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
+   <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
+   <p>Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...</p>
+   <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
+   <p>GovCloud API realiseres gennem middleware og custom build platformservices.</p>
+   <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,</p>
+   <h2 class="no-num heading settled" id="fordele"><span class="content">Fordele</span></h2>
+   <p>Cloud karakteristika men også Complaince as a Service</p>
+   <p>FDA principles supported/enforces by a layered architecture/seperation of conserns.</p>
+   <ul>
+    <li data-md>
+     <p>Externalise User Management</p>
+    <li data-md>
+     <p>Manage Data seperately from Applications</p>
+   </ul>
+   <p>Senere....</p>
+   <p>Security (ISO27001)</p>
+   <p>Privacy (GDPR)</p>
+   <p>Procurement (SKI)</p>
+   <ul>
+    <li data-md>
+     <p>Kompentancer</p>
+   </ul>
+   <h2 class="no-num heading settled" id="services-applikationer-og-datasamlinger"><span class="content">Services, applikationer og datasamlinger</span></h2>
+    Digital Asset Management. En hovedtype af assets for hvert lag i arkitekturen: 
+   <h4 class="heading settled" id="service"><span class="content">Service</span></h4>
+    An Application Service represents an explicitly defined exposed application behaviour. 
+   <p>Eksempel: CPR opslag, Send Digital Post, Website</p>
+   <h4 class="heading settled" id="applikation"><span class="content">Applikation</span></h4>
+    An Application represents an encapsulation of application functionality 
+   <p>Eksempel: F2, Datafordeler, NemID,</p>
+   <p>Komponent unit of scalability</p>
+   <h4 class="heading settled" id="datasamling"><span class="content">Datasamling</span></h4>
+   <p>Eksempel: CVR register, HR Sager,</p>
+   <p class="note" role="note"><span>Note:</span> Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød ,</p>
+   <h2 class="no-num heading settled" id="containere"><span class="content">Containere</span></h2>
+    Metafor: En container er en .exe fil.... 
+   <p>Lag...base image</p>
+   <p>Bygge manifest...</p>
+   <p>Test manifest...</p>
+   <p>Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/documents/sp800-180_draft.pdf)</p>
+   <p class="note" role="note"><span>Note:</span> Tegning3 af container, baseimage, lagerplads med labels og scanner...</p>
+   <h2 class="no-num heading settled" id="platformservices"><span class="content">Platformservices</span></h2>
+    <img align="right" src="highlevel.svg" width="25%"> Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret 
+   <ul>
+    <li data-md>
+     <p>Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....</p>
+    <li data-md>
+     <p>Brugerstyring API Key Management</p>
+    <li data-md>
+     <p>Log Log fra tre lag... mulighed for identifikationer.... Tegning af streams.</p>
+    <li data-md>
+     <p>Directory</p>
+    <li data-md>
+     <p>Container Repository</p>
+   </ul>
+   <h2 class="no-num heading settled" id="other-software-as-a-service"><span class="content">Other Software (as a Service)</span></h2>
+   <p class="note" role="note"><span>Note:</span> Tegning4 af SaaS søjler oven på PaaS. Og der løbende kommer mere til....</p>
+   <p>Playbook ideen.</p>
    <h4 class="heading settled" id="govdev"><span class="content">GovDev</span></h4>
-    SIT tilbyder en samling integrerede værktøjer til applikationsudvikling ("DevOps-toolchain")  på 'Driftsmodel 1: Applikationsservice' bestående indledningsvis af Jira, Confluence, Git, Jenkins, Soap UI. DIGST sikrer, at der tilgængelige kurser i anvendelse af de valgte værktøjer og tilbyder rådgivning om design af applikationer på GovCloud platformen. 
-   <p>DIGST vil sammen med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.</p>
-   <h4 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h4>
-    SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj. 
-   <div align="right" class="font-style: italic; ">/DIGST 2018-4947</div>
+   <h4 class="heading settled" id="govopendata"><span class="content">GovOpenData</span></h4>
+   <h4 class="heading settled" id="govweb"><span class="content">GovWeb</span></h4>
+   <h4 class="heading settled" id="govai"><span class="content">GovAI</span></h4>
+   <h4 class="heading settled" id="govdata"><span class="content">GovData</span></h4>
   </main>
 <script>
 (function() {
