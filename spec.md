@@ -314,7 +314,7 @@ kube-pods-subnet : XXX.XXX.XXX.XXX
 ### Environment variables
 Apps finder datasservices via environment variable
 
-Issue: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
+Note: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
 
 
 ## Docker
