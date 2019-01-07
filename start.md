@@ -7,7 +7,7 @@ Group: govcloud
 URL: http://github.com/digst/cloud/start.md
 Editor: madsh@digst.dk, Digitaliseringsstyrelsen http://digst.dk
 Boilerplate: table-of-contents no, copyright no, conformance no, abstract no, index no, idl-index no
-Abstract: somesome
+No Abstract: true
 </pre>
 
 
