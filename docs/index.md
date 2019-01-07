@@ -1,5 +1,6 @@
 this is new
 
 
-Den seneste version af 
+Den seneste version af
+- [start](start.html)
 - [specifikationen](spec.html)
