@@ -17,7 +17,7 @@ Logo: https://digst.github.io/cloud/cloud.svg
 <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
 
 <small>
-Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/start.html">GovCloud</a>. Serien består desuden af en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/intro.html">introduktion</a>, en detaljeret <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/spec.html"> specifikation</a> samt en <a href="http://htmlpreview.github.io/?https://github.com/digst/cloud/blob/master/guide.html">guide</a> til applikationsudviklere.</small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 
 <h2 class="no-num">Introduction</h1>
@@ -154,9 +154,9 @@ api.kunde.example.com.		3589	IN	CNAME	cloud.gov.dk
 
 Note: kunden kan ikke bruge samme domæne til mail o.a. jf. RFC
 
-Issue: Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?
+Note: Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?
 
-Issue: Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?
+Note: Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?
 
 
 
