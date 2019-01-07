@@ -1510,7 +1510,7 @@ pre .property::before, pre .property::after {
       <li>
        <a href="#kubernetes"><span class="secno">3.1</span> <span class="content">Kubernetes</span></a>
        <ol class="toc">
-        <li><a href="#k8s-service-network-p-tegning"><span class="secno">3.1.1</span> <span class="content">K8S Service Network?? På tegning?</span></a>
+        <li><a href="#k8s-service-network"><span class="secno">3.1.1</span> <span class="content">K8S Service Network</span></a>
         <li><a href="#environment-variables"><span class="secno">3.1.2</span> <span class="content">Environment variables</span></a>
        </ol>
       <li><a href="#docker"><span class="secno">3.2</span> <span class="content">Docker</span></a>
@@ -1652,12 +1652,10 @@ Compression : none
 X-Forwarded-For : Yes
 Loadbalancing : Least Connections
 </pre>
-   <p class="issue" id="issue-14bddc5b"><a class="self-link" href="#issue-14bddc5b"></a> What is value of session timeout</p>
-   <p>Monitoring: Vi starter på et TCP ping til cloud.gov.dk</p>
-   <p class="issue" id="issue-fd738efd"><a class="self-link" href="#issue-fd738efd"></a> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
+   <p class="note" role="note"><span>Note:</span> What is value of session timeout?</p>
+   <p>Monitoring Vi starter på et TCP ping til cloud.gov.dk</p>
+   <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
    <h3 class="heading settled" data-level="1.3" id="layout"><span class="secno">1.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
-   <p class="issue" id="issue-9e6117c0"><a class="self-link" href="#issue-9e6117c0"></a> Ikke valideret.... bør simuleres ala Cisco...</p>
-   <p>Flytte app cluster tæt på internettet... flytte data cluster ned i stakken.</p>
    <p><img src="network.svg"></p>
    <h4 class="heading settled" data-level="1.3.1" id="application-services"><span class="secno">1.3.1. </span><span class="content">Application Services</span><a class="self-link" href="#application-services"></a></h4>
     Det primære netværk App fabric dvs. K8S og den ingress controllers. 
@@ -1768,7 +1766,7 @@ Findes VLAN og Firewall regler i reposistories?
     <li data-md>
      <p>Mount NFS as Volume (for app log?)</p>
    </ul>
-   <h4 class="heading settled" data-level="3.1.1" id="k8s-service-network-p-tegning"><span class="secno">3.1.1. </span><span class="content">K8S Service Network?? På tegning?</span><a class="self-link" href="#k8s-service-network-p-tegning"></a></h4>
+   <h4 class="heading settled" data-level="3.1.1" id="k8s-service-network"><span class="secno">3.1.1. </span><span class="content">K8S Service Network</span><a class="self-link" href="#k8s-service-network"></a></h4>
     Tildeles pods automatisk... 
    <p>Ingress controller bruger adresserne til loadbalancing mellem instanser.</p>
 <pre>kube-pods-subnet : XXX.XXX.XXX.XXX
@@ -2041,8 +2039,5 @@ systemctl start krakend
     <p>With a whole lot of content</p>
     <a href="#issue-d41d8cd9"> ↵ </a>
    </div>
-   <div class="issue"> What is value of session timeout<a href="#issue-14bddc5b"> ↵ </a></div>
-   <div class="issue"> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.<a href="#issue-fd738efd"> ↵ </a></div>
-   <div class="issue"> Ikke valideret.... bør simuleres ala Cisco...<a href="#issue-9e6117c0"> ↵ </a></div>
    <div class="issue"> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?<a href="#issue-0870e84e"> ↵ </a></div>
   </div>
