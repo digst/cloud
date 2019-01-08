@@ -1,8 +1,8 @@
 Den seneste version af
-- [start](start.html) (besluttet 2018-10-29)
-- [intro](intro.html) (version 1 planlagt til 2019-03-01)
-- [specifikation](spec.html) (version 1 planlagt til 2019-03-01)
-- [guide](guide.html) (version 1 planlagt til 2019-03-01)
+- [start](start.html) <small>(besluttet 2018-10-29)</small>
+- [intro](intro.html) <small>(version 1 planlagt til 2019-03-01)</small>
+- [specifikation](spec.html) <small>(version 1 planlagt til 2019-03-01)</small>
+- [guide](guide.html) <small>(version 1 planlagt til 2019-03-01)</small>
 
 
 Listen over [issues](https://github.com/digst/cloud/issues).

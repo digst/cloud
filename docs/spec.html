@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-07">7 January 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-08">8 January 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1517,7 +1517,7 @@ pre .property::before, pre .property::after {
       <li><a href="#base-image"><span class="secno">3.3</span> <span class="content">Base Image</span></a>
      </ol>
     <li>
-     <a href="#api-fabric①"><span class="secno">4</span> <span class="content">API Fabric</span></a>
+     <a href="#api-fabric"><span class="secno">4</span> <span class="content">API Fabric</span></a>
      <ol class="toc">
       <li><a href="#krakend"><span class="secno">4.1</span> <span class="content">KrakenD</span></a>
      </ol>
@@ -1547,7 +1547,11 @@ pre .property::before, pre .property::after {
       <li><a href="#collaboration"><span class="secno">6.3</span> <span class="content">Collaboration</span></a>
       <li><a href="#govai"><span class="secno">6.4</span> <span class="content">GovAI</span></a>
      </ol>
-    <li><a href="#customer-applications-and-their-responsibilities"><span class="secno">7</span> <span class="content">Customer Applications and their responsibilities</span></a>
+    <li>
+     <a href="#customer-applications-and-their-responsibilities"><span class="secno">7</span> <span class="content">Customer Applications and their responsibilities</span></a>
+     <ol class="toc">
+      <li><a href="#use-of-archimate"><span class="secno">7.1</span> <span class="content">Use of Archimate</span></a>
+     </ol>
     <li>
      <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
      <ol class="toc">
@@ -1622,10 +1626,11 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
    <h3 class="heading settled" id="high-level-architecture"><span class="content">High Level Architecture</span></h3>
-   <p><dfn data-dfn-type="dfn" data-noexport id="api-fabric">API Fabric<a class="self-link" href="#api-fabric"></a></dfn> is...</p>
    <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
    <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
    <p><img src="highlevel.svg"></p>
+   <p>And supporting services.... some for developers and some for applications.</p>
+   <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
    <h2 class="heading settled" data-level="1" id="network"><span class="secno">1. </span><span class="content">Network</span><a class="self-link" href="#network"></a></h2>
     Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
    <h3 class="heading settled" data-level="1.1" id="internet-network-access"><span class="secno">1.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
@@ -1813,7 +1818,7 @@ yum install -y krakend
 systemctl start krakend
 </pre>
    <p class="note" role="note"><span>Note:</span> Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...</p>
-   <h2 class="heading settled" data-level="4" id="api-fabric①"><span class="secno">4. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric①"></a></h2>
+   <h2 class="heading settled" data-level="4" id="api-fabric"><span class="secno">4. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric"></a></h2>
    <ul>
     <li data-md>
      <p>The API Gateway is <a href="http://www.krakend.io/">KrakenD</a>.</p>
@@ -1872,6 +1877,7 @@ systemctl start krakend
     <li data-md>
      <p>Access policies should rely on trusted attributes over detailes rights when possible.</p>
    </ul>
+   <h3 class="heading settled" data-level="7.1" id="use-of-archimate"><span class="secno">7.1. </span><span class="content">Use of Archimate</span><a class="self-link" href="#use-of-archimate"></a></h3>
    <p>[Application]: #application "A unit of governance" <dfn data-dfn-type="dfn" data-noexport id="dataset①">Dataset<a class="self-link" href="#dataset①"></a></dfn>: #dataset "A unit of governance"</p>
    <p>[Log]: #datalog "A unit of governance"
   [Data Log]: #datalog "A unit of governance"
@@ -2026,10 +2032,9 @@ systemctl start krakend
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#api-fabric">API Fabric</a><span>, in §Unnumbered section</span>
    <li><a href="#app-fabric">App Fabric</a><span>, in §Unnumbered section</span>
    <li><a href="#data-fabric">Data Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#dataset①">Dataset</a><span>, in §7</span>
+   <li><a href="#dataset①">Dataset</a><span>, in §7.1</span>
    <li><a href="#dataset">dataset</a><span>, in §2.2</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="issues-index"><span class="content">Issues Index</span><a class="self-link" href="#issues-index"></a></h2>
