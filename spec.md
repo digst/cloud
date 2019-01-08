@@ -20,7 +20,7 @@ Logo: https://digst.github.io/cloud/cloud.svg
 Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 
-<h2 class="no-num">Introduction</h1>
+<h2 class="no-num">Introduction</h2>
 
 
 ## User Stories
@@ -121,16 +121,15 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 ## High Level Architecture
 
 
-<dfn>API Fabric</dfn> is...
-
 <dfn>App Fabric</dfn> is...
 
 <dfn>Data Fabric</dfn> is...
 
-
 <img src="highlevel.svg">
 
+And supporting services.... some for developers and some for applications.
 
+Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
 # Network
 Vi beskriver netværket som det ser ud når man ankommer fra internettet....
@@ -459,6 +458,9 @@ Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller 
 
 
 
+
+
+## Use of Archimate
 
 
 
