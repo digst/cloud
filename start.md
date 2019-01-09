@@ -62,7 +62,7 @@ Ovenstående behov omsættes til følgende principper, der anvendes til at styre
 Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept.
 
 ### PaaS
-GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til vedlagte kopi af driftsmodel).
+GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til [vedlagte kopi af driftsmodel](driftsmodel2.pdf)).
 
 ### Service Lifecycle (1)
 GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere.
