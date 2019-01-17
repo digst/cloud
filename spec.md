@@ -32,8 +32,6 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
-Issue(3):
-
 #### Byg?
 Når epic'en er færdig kan en udvikler checke kode ind og bygge en container med brug af værktøj på platformen. (git, docker)
 
@@ -161,30 +159,13 @@ Note: Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?
 
 ## Gateway
 
-Reusing existing network device to integrate with existing networks operation and monitoring.
+Vi regner med der er Intrusion Protection Service mellem internettet og platformen.
 
-F5 Big IP
-
-<pre>
-URL : cloud.gov.dk
-SSL : offloading
-Backend : 10.aaa.xxx.0/28
-Persistency : none
-No redirect from HTTP to HTTPS
-Session Timeout : standard
-Caching : none
-Compression : none
-X-Forwarded-For : Yes
-Loadbalancing : Least Connections
-</pre>
-
-Note: What is value of session timeout?
-
+Note: Vi vælger at F5 fra og tager en simplere og mere direkte approach. Fordi vi vil have control over loadbalancing som sikre hurtigere patching.
 
 Monitoring Vi starter på et TCP ping til cloud.gov.dk
 
 Note: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
-
 
 
 ## Layout
@@ -278,10 +259,10 @@ Note: Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth,
 
 ## Datasets
 
-A <dfn>dataset</dfn> is a collection of individual pieces of information under the same governance. (pending definition/translation)
+A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)
 
 - Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.
-- Each {{Dataset}} are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
+- Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
 - Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).
 - Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
 - Datasets are encrypted at rest (what keys? control?)
@@ -409,7 +390,7 @@ Responsibilities:
 
 ## Repository
 Code and image...
-**[Code service]** The code repository of applications and platform services is [GIT](https://git-scm.com/) and is a platform service at SIT.
+**[Code service]** The code repository of applications and platform services is https://git-scm.com and is a platform service at SIT.
 **[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
 **[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
 
