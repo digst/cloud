@@ -1470,6 +1470,7 @@ pre .property::before, pre .property::after {
         <li><a href="#version-12-juli-2019"><span class="secno"></span> <span class="content">Version 1.2? juli 2019</span></a>
        </ol>
       <li><a href="#principles-and-governing-thoughts"><span class="secno"></span> <span class="content">Principles and Governing Thoughts....</span></a>
+      <li><a href="#high-level-architecture"><span class="secno"></span> <span class="content">High Level Architecture</span></a>
      </ol>
     <li>
      <a href="#arbejdsgange-brugerrejser"><span class="secno">1</span> <span class="content">Arbejdsgange/Brugerrejser</span></a>
@@ -1479,7 +1480,6 @@ pre .property::before, pre .property::after {
       <li><a href="#byg-container-dev"><span class="secno">1.3</span> <span class="content">Byg container (Dev)</span></a>
       <li><a href="#test-applikation"><span class="secno">1.4</span> <span class="content">Test applikation</span></a>
       <li><a href="#give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">1.5</span> <span class="content">Give medarbejder adgang til platformsapplikationer</span></a>
-      <li><a href="#high-level-architecture"><span class="secno">1.6</span> <span class="content">High Level Architecture</span></a>
      </ol>
     <li>
      <a href="#api-fabric"><span class="secno">2</span> <span class="content">API Fabric</span></a>
@@ -1623,6 +1623,12 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    <p><strong>Self-Service (and automation)</strong>, to support Continous Services, High Scaleability and DevOps.</p>
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
+   <h3 class="heading settled" id="high-level-architecture"><span class="content">High Level Architecture</span></h3>
+   <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
+   <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
+   <p><img src="highlevel.svg"></p>
+   <p>And supporting services.... some for developers and some for applications.</p>
+   <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
    <h2 class="heading settled" data-level="1" id="arbejdsgange-brugerrejser"><span class="secno">1. </span><span class="content">Arbejdsgange/Brugerrejser</span><a class="self-link" href="#arbejdsgange-brugerrejser"></a></h2>
     Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige. 
    <h3 class="heading settled" data-level="1.1" id="registrer-ny-applikation"><span class="secno">1.1. </span><span class="content">Registrer ny applikation</span><a class="self-link" href="#registrer-ny-applikation"></a></h3>
@@ -1634,12 +1640,6 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
     (Hvorfor er der ikke noget testmiljø) 
    <h3 class="heading settled" data-level="1.5" id="give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">1.5. </span><span class="content">Give medarbejder adgang til platformsapplikationer</span><a class="self-link" href="#give-medarbejder-adgang-til-platformsapplikationer"></a></h3>
     (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD) 
-   <h3 class="heading settled" data-level="1.6" id="high-level-architecture"><span class="secno">1.6. </span><span class="content">High Level Architecture</span><a class="self-link" href="#high-level-architecture"></a></h3>
-   <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
-   <p><img src="highlevel.svg"></p>
-   <p>And supporting services.... some for developers and some for applications.</p>
-   <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
    <h2 class="heading settled" data-level="2" id="api-fabric"><span class="secno">2. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric"></a></h2>
    <ul>
     <li data-md>
@@ -2028,7 +2028,7 @@ Kan bruges til at styre trafik mod forskellige gateway nodes.
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#app-fabric">App Fabric</a><span>, in §1.6</span>
-   <li><a href="#data-fabric">Data Fabric</a><span>, in §1.6</span>
+   <li><a href="#app-fabric">App Fabric</a><span>, in §Unnumbered section</span>
+   <li><a href="#data-fabric">Data Fabric</a><span>, in §Unnumbered section</span>
    <li><a href="#dataset">Dataset</a><span>, in §8.1</span>
   </ul>
