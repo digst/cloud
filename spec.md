@@ -217,6 +217,14 @@ vlanXX, 10.33.xxx.xxx/26
 </pre>
 
 
+### Firewall
+
+
+<pre>
+allow from 10.aaa.xxx.248/29
+      to   10.bbb.yyy.0/24
+</pre>
+
 
 ## NetOps
 
@@ -264,6 +272,9 @@ The data fabric is running latest version of [MapR](https://mapr.com/).
 - Run as non-root?
 - Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)
 - Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)
+
+
+Note: Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...
 
 ## Datasets
 
@@ -414,6 +425,23 @@ Code and image...
 
 ## Adgang til MapR for sandbox services
 
+
+# Arbejdsgange/Brugerrejser
+Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
+
+
+## Registrer ny applikation
+
+<img src="reg_app.svg">
+
+
+## Deploy applikation (Ops)
+
+
+## Byg container (Dev)
+
+## Test applikation
+(Hvorfor er der ikke noget testmiljø)
 
 
 # Additional Software as a Service
