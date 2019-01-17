@@ -115,6 +115,20 @@ Layered architecture (each layer scale idependently and different governance pro
 
 One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)
 
+## High Level Architecture
+
+
+<dfn>App Fabric</dfn> is...
+
+<dfn>Data Fabric</dfn> is...
+
+<img src="highlevel.svg">
+
+And supporting services.... some for developers and some for applications.
+
+Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
+
+
 
 # Arbejdsgange/Brugerrejser
 Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
@@ -139,18 +153,6 @@ Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi fo
 (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
 
 
-## High Level Architecture
-
-
-<dfn>App Fabric</dfn> is...
-
-<dfn>Data Fabric</dfn> is...
-
-<img src="highlevel.svg">
-
-And supporting services.... some for developers and some for applications.
-
-Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
 
 
