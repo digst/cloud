@@ -1470,39 +1470,21 @@ pre .property::before, pre .property::after {
         <li><a href="#version-12-juli-2019"><span class="secno"></span> <span class="content">Version 1.2? juli 2019</span></a>
        </ol>
       <li><a href="#principles-and-governing-thoughts"><span class="secno"></span> <span class="content">Principles and Governing Thoughts....</span></a>
-      <li><a href="#high-level-architecture"><span class="secno"></span> <span class="content">High Level Architecture</span></a>
      </ol>
     <li>
-     <a href="#network"><span class="secno">1</span> <span class="content">Network</span></a>
+     <a href="#arbejdsgange-brugerrejser"><span class="secno">1</span> <span class="content">Arbejdsgange/Brugerrejser</span></a>
      <ol class="toc">
-      <li><a href="#internet-network-access"><span class="secno">1.1</span> <span class="content">Internet Network Access</span></a>
-      <li><a href="#gateway"><span class="secno">1.2</span> <span class="content">Gateway</span></a>
-      <li>
-       <a href="#layout"><span class="secno">1.3</span> <span class="content">Layout</span></a>
-       <ol class="toc">
-        <li><a href="#application-services"><span class="secno">1.3.1</span> <span class="content">Application Services</span></a>
-        <li><a href="#data-access"><span class="secno">1.3.2</span> <span class="content">Data Access</span></a>
-        <li><a href="#data-synchronisation"><span class="secno">1.3.3</span> <span class="content">Data Synchronisation</span></a>
-        <li><a href="#firewall"><span class="secno">1.3.4</span> <span class="content">Firewall</span></a>
-       </ol>
-      <li>
-       <a href="#netops"><span class="secno">1.4</span> <span class="content">NetOps</span></a>
-       <ol class="toc">
-        <li><a href="#self-service"><span class="secno">1.4.1</span> <span class="content">Self-service</span></a>
-        <li><a href="#infrastructure-as-code"><span class="secno">1.4.2</span> <span class="content">Infrastructure as code</span></a>
-        <li><a href="#remote-admin-access"><span class="secno">1.4.3</span> <span class="content">Remote admin access</span></a>
-       </ol>
+      <li><a href="#registrer-ny-applikation"><span class="secno">1.1</span> <span class="content">Registrer ny applikation</span></a>
+      <li><a href="#deploy-applikation-ops"><span class="secno">1.2</span> <span class="content">Deploy applikation (Ops)</span></a>
+      <li><a href="#byg-container-dev"><span class="secno">1.3</span> <span class="content">Byg container (Dev)</span></a>
+      <li><a href="#test-applikation"><span class="secno">1.4</span> <span class="content">Test applikation</span></a>
+      <li><a href="#give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">1.5</span> <span class="content">Give medarbejder adgang til platformsapplikationer</span></a>
+      <li><a href="#high-level-architecture"><span class="secno">1.6</span> <span class="content">High Level Architecture</span></a>
      </ol>
     <li>
-     <a href="#data-fabric①"><span class="secno">2</span> <span class="content">Data Fabric</span></a>
+     <a href="#api-fabric"><span class="secno">2</span> <span class="content">API Fabric</span></a>
      <ol class="toc">
-      <li>
-       <a href="#mapr"><span class="secno">2.1</span> <span class="content">MapR</span></a>
-       <ol class="toc">
-        <li><a href="#node-configuration"><span class="secno">2.1.1</span> <span class="content">Node configuration</span></a>
-       </ol>
-      <li><a href="#datasets"><span class="secno">2.2</span> <span class="content">Datasets</span></a>
-      <li><a href="#logs"><span class="secno">2.3</span> <span class="content">Logs</span></a>
+      <li><a href="#krakend"><span class="secno">2.1</span> <span class="content">KrakenD</span></a>
      </ol>
     <li>
      <a href="#app-fabric①"><span class="secno">3</span> <span class="content">App Fabric</span></a>
@@ -1517,9 +1499,15 @@ pre .property::before, pre .property::after {
       <li><a href="#base-image"><span class="secno">3.3</span> <span class="content">Base Image</span></a>
      </ol>
     <li>
-     <a href="#api-fabric"><span class="secno">4</span> <span class="content">API Fabric</span></a>
+     <a href="#data-fabric①"><span class="secno">4</span> <span class="content">Data Fabric</span></a>
      <ol class="toc">
-      <li><a href="#krakend"><span class="secno">4.1</span> <span class="content">KrakenD</span></a>
+      <li>
+       <a href="#mapr"><span class="secno">4.1</span> <span class="content">MapR</span></a>
+       <ol class="toc">
+        <li><a href="#node-configuration"><span class="secno">4.1.1</span> <span class="content">Node configuration</span></a>
+       </ol>
+      <li><a href="#datasets"><span class="secno">4.2</span> <span class="content">Datasets</span></a>
+      <li><a href="#logs"><span class="secno">4.3</span> <span class="content">Logs</span></a>
      </ol>
     <li>
      <a href="#platform-services"><span class="secno">5</span> <span class="content">Platform Services</span></a>
@@ -1535,13 +1523,19 @@ pre .property::before, pre .property::after {
       <li><a href="#adgang-til-mapr-for-sandbox-services"><span class="secno">5.9</span> <span class="content">Adgang til MapR for sandbox services</span></a>
      </ol>
     <li>
-     <a href="#arbejdsgange-brugerrejser"><span class="secno">6</span> <span class="content">Arbejdsgange/Brugerrejser</span></a>
+     <a href="#infrastructure-network"><span class="secno">6</span> <span class="content">Infrastructure (Network)</span></a>
      <ol class="toc">
-      <li><a href="#registrer-ny-applikation"><span class="secno">6.1</span> <span class="content">Registrer ny applikation</span></a>
-      <li><a href="#deploy-applikation-ops"><span class="secno">6.2</span> <span class="content">Deploy applikation (Ops)</span></a>
-      <li><a href="#byg-container-dev"><span class="secno">6.3</span> <span class="content">Byg container (Dev)</span></a>
-      <li><a href="#test-applikation"><span class="secno">6.4</span> <span class="content">Test applikation</span></a>
-      <li><a href="#give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">6.5</span> <span class="content">Give medarbejder adgang til platformsapplikationer</span></a>
+      <li><a href="#internet-network-access"><span class="secno">6.1</span> <span class="content">Internet Network Access</span></a>
+      <li><a href="#gateway"><span class="secno">6.2</span> <span class="content">Gateway</span></a>
+      <li>
+       <a href="#layout"><span class="secno">6.3</span> <span class="content">Layout</span></a>
+       <ol class="toc">
+        <li><a href="#application-services"><span class="secno">6.3.1</span> <span class="content">Application Services</span></a>
+        <li><a href="#data-access"><span class="secno">6.3.2</span> <span class="content">Data Access</span></a>
+        <li><a href="#data-synchronisation"><span class="secno">6.3.3</span> <span class="content">Data Synchronisation</span></a>
+        <li><a href="#firewall"><span class="secno">6.3.4</span> <span class="content">Firewall</span></a>
+        <li><a href="#remote-admin-access"><span class="secno">6.3.5</span> <span class="content">Remote admin access</span></a>
+       </ol>
      </ol>
     <li>
      <a href="#additional-software-as-a-service"><span class="secno">7</span> <span class="content">Additional Software as a Service</span></a>
@@ -1629,116 +1623,42 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    <p><strong>Self-Service (and automation)</strong>, to support Continous Services, High Scaleability and DevOps.</p>
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
-   <h3 class="heading settled" id="high-level-architecture"><span class="content">High Level Architecture</span></h3>
+   <h2 class="heading settled" data-level="1" id="arbejdsgange-brugerrejser"><span class="secno">1. </span><span class="content">Arbejdsgange/Brugerrejser</span><a class="self-link" href="#arbejdsgange-brugerrejser"></a></h2>
+    Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige. 
+   <h3 class="heading settled" data-level="1.1" id="registrer-ny-applikation"><span class="secno">1.1. </span><span class="content">Registrer ny applikation</span><a class="self-link" href="#registrer-ny-applikation"></a></h3>
+   <p><img src="reg_app.svg"></p>
+   <h3 class="heading settled" data-level="1.2" id="deploy-applikation-ops"><span class="secno">1.2. </span><span class="content">Deploy applikation (Ops)</span><a class="self-link" href="#deploy-applikation-ops"></a></h3>
+   <p><img src="deploy.svg"></p>
+   <h3 class="heading settled" data-level="1.3" id="byg-container-dev"><span class="secno">1.3. </span><span class="content">Byg container (Dev)</span><a class="self-link" href="#byg-container-dev"></a></h3>
+   <h3 class="heading settled" data-level="1.4" id="test-applikation"><span class="secno">1.4. </span><span class="content">Test applikation</span><a class="self-link" href="#test-applikation"></a></h3>
+    (Hvorfor er der ikke noget testmiljø) 
+   <h3 class="heading settled" data-level="1.5" id="give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">1.5. </span><span class="content">Give medarbejder adgang til platformsapplikationer</span><a class="self-link" href="#give-medarbejder-adgang-til-platformsapplikationer"></a></h3>
+    (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD) 
+   <h3 class="heading settled" data-level="1.6" id="high-level-architecture"><span class="secno">1.6. </span><span class="content">High Level Architecture</span><a class="self-link" href="#high-level-architecture"></a></h3>
    <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
    <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
    <p><img src="highlevel.svg"></p>
    <p>And supporting services.... some for developers and some for applications.</p>
    <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
-   <h2 class="heading settled" data-level="1" id="network"><span class="secno">1. </span><span class="content">Network</span><a class="self-link" href="#network"></a></h2>
-    Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
-   <h3 class="heading settled" data-level="1.1" id="internet-network-access"><span class="secno">1.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
-    GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT. 
-<pre>cloud.gov.dk.    3589  IN  A  ???.???.???.???
-</pre>
-   <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
-<pre>api.kunde.example.com.    3589  IN  CNAME  cloud.gov.dk
-</pre>
-   <p class="note" role="note"><span>Note:</span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC</p>
-   <p class="note" role="note"><span>Note:</span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
-   <p class="note" role="note"><span>Note:</span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
-   <h3 class="heading settled" data-level="1.2" id="gateway"><span class="secno">1.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
-   <p>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.</p>
-   <p class="note" role="note"><span>Note:</span> Vi vælger at F5 fra og tager en simplere og mere direkte approach. Fordi vi vil have control over loadbalancing som sikre hurtigere patching.</p>
-   <p>Monitoring Vi starter på et TCP ping til cloud.gov.dk</p>
-   <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
-   <h3 class="heading settled" data-level="1.3" id="layout"><span class="secno">1.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
-   <p><img src="network.svg"></p>
-   <h4 class="heading settled" data-level="1.3.1" id="application-services"><span class="secno">1.3.1. </span><span class="content">Application Services</span><a class="self-link" href="#application-services"></a></h4>
-    Det primære netværk App fabric dvs. K8S og den ingress controllers. 
-   <p>Load rammer et udvalg af ip-numre</p>
-<pre>vlanXX, 10.33.xxx.xxx/24
-</pre>
-   <h4 class="heading settled" data-level="1.3.2" id="data-access"><span class="secno">1.3.2. </span><span class="content">Data Access</span><a class="self-link" href="#data-access"></a></h4>
-    Der hvor K8S kan hente data fra MapR via LoadBalancer 
-<pre>vlanXX, 10.33.xxx.xxx/24
-</pre>
-   <h4 class="heading settled" data-level="1.3.3" id="data-synchronisation"><span class="secno">1.3.3. </span><span class="content">Data Synchronisation</span><a class="self-link" href="#data-synchronisation"></a></h4>
-    Adgang til Loadbalancer fra K8S
-Kan bruges til at styre trafik mod forskellige gateway nodes. 
-<pre>vlanXX, 10.33.xxx.xxx/26
-</pre>
-   <h4 class="heading settled" data-level="1.3.4" id="firewall"><span class="secno">1.3.4. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
-<pre>allow from 10.aaa.xxx.248/29
-      to   10.bbb.yyy.0/24
-</pre>
-   <h3 class="heading settled" data-level="1.4" id="netops"><span class="secno">1.4. </span><span class="content">NetOps</span><a class="self-link" href="#netops"></a></h3>
-   <h4 class="heading settled" data-level="1.4.1" id="self-service"><span class="secno">1.4.1. </span><span class="content">Self-service</span><a class="self-link" href="#self-service"></a></h4>
-    Nye applikationer og services kan deployes af kunder uden at involvere SIT. 
-   <h4 class="heading settled" data-level="1.4.2" id="infrastructure-as-code"><span class="secno">1.4.2. </span><span class="content">Infrastructure as code</span><a class="self-link" href="#infrastructure-as-code"></a></h4>
-    VLAN oprettelse kan ske manuelt da det ikke gentages?
-Findes VLAN og Firewall regler i reposistories? 
-   <h4 class="heading settled" data-level="1.4.3" id="remote-admin-access"><span class="secno">1.4.3. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
-    Beskytte med certifikater... 
-   <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
-   <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
-   <h2 class="heading settled" data-level="2" id="data-fabric①"><span class="secno">2. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h2>
-   <p>Responsible for:</p>
+   <h2 class="heading settled" data-level="2" id="api-fabric"><span class="secno">2. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric"></a></h2>
    <ul>
     <li data-md>
-     <p>Store datasets</p>
+     <p>The API Gateway is <a href="http://www.krakend.io/">KrakenD</a>.</p>
     <li data-md>
-     <p>Authenticate access to inividual dataset per user/application/service</p>
-    <li data-md>
-     <p>Protect datasets against hardware failure at disk, machine and location level.</p>
-    <li data-md>
-     <p>Log of all dataoperations</p>
-    <li data-md>
-     <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
+     <p>Access to Application</p>
    </ul>
-   <p>The data fabric is running latest version of <a href="https://mapr.com/">MapR</a>.</p>
-   <h3 class="heading settled" data-level="2.1" id="mapr"><span class="secno">2.1. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h3>
-   <h4 class="heading settled" data-level="2.1.1" id="node-configuration"><span class="secno">2.1.1. </span><span class="content">Node configuration</span><a class="self-link" href="#node-configuration"></a></h4>
+   <p>Responsibilities:</p>
    <ul>
     <li data-md>
-     <p>Linux</p>
+     <p>Oversæt ID og tildel requestID</p>
     <li data-md>
-     <p>Hardware</p>
+     <p>Adgangspolitik (Bruger/Service -> Service)</p>
     <li data-md>
-     <p>Initially MapR uses one Topology (clusters of identical hardware, identical OS)</p>
+     <p>Throttle/circuit breaker</p>
     <li data-md>
-     <p>Update zones, Connectivity Zones??</p>
-    <li data-md>
-     <p>One cluser across multiple location.</p>
-    <li data-md>
-     <p>The <code>mapr</code> user should not use default name, UID and GUID.</p>
-    <li data-md>
-     <p>Run as non-root?</p>
-    <li data-md>
-     <p>Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)</p>
-    <li data-md>
-     <p>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)</p>
+     <p>Log (AccessLog/Request Log?)</p>
    </ul>
-   <p class="note" role="note"><span>Note:</span> Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...</p>
-   <h3 class="heading settled" data-level="2.2" id="datasets"><span class="secno">2.2. </span><span class="content">Datasets</span><a class="self-link" href="#datasets"></a></h3>
-   <p>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
-   <ul>
-    <li data-md>
-     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
-    <li data-md>
-     <p>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
-    <li data-md>
-     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
-    <li data-md>
-     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
-    <li data-md>
-     <p>Datasets are encrypted at rest (what keys? control?)</p>
-   </ul>
-   <h3 class="heading settled" data-level="2.3" id="logs"><span class="secno">2.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h3>
-   <ul>
-    <li data-md>
-     <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
-   </ul>
+   <h3 class="heading settled" data-level="2.1" id="krakend"><span class="secno">2.1. </span><span class="content">KrakenD</span><a class="self-link" href="#krakend"></a></h3>
    <h2 class="heading settled" data-level="3" id="app-fabric①"><span class="secno">3. </span><span class="content">App Fabric</span><a class="self-link" href="#app-fabric①"></a></h2>
    <h3 class="heading settled" data-level="3.1" id="kubernetes"><span class="secno">3.1. </span><span class="content">Kubernetes</span><a class="self-link" href="#kubernetes"></a></h3>
    <ul>
@@ -1815,25 +1735,63 @@ yum install -y krakend
 systemctl start krakend
 </pre>
    <p class="note" role="note"><span>Note:</span> Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...</p>
-   <h2 class="heading settled" data-level="4" id="api-fabric"><span class="secno">4. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric"></a></h2>
+   <h2 class="heading settled" data-level="4" id="data-fabric①"><span class="secno">4. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h2>
+   <p>Responsible for:</p>
    <ul>
     <li data-md>
-     <p>The API Gateway is <a href="http://www.krakend.io/">KrakenD</a>.</p>
+     <p>Store datasets</p>
     <li data-md>
-     <p>Access to Application</p>
+     <p>Authenticate access to inividual dataset per user/application/service</p>
+    <li data-md>
+     <p>Protect datasets against hardware failure at disk, machine and location level.</p>
+    <li data-md>
+     <p>Log of all dataoperations</p>
+    <li data-md>
+     <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
    </ul>
-   <p>Responsibilities:</p>
+   <p>The data fabric is running latest version of <a href="https://mapr.com/">MapR</a>.</p>
+   <h3 class="heading settled" data-level="4.1" id="mapr"><span class="secno">4.1. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h3>
+   <h4 class="heading settled" data-level="4.1.1" id="node-configuration"><span class="secno">4.1.1. </span><span class="content">Node configuration</span><a class="self-link" href="#node-configuration"></a></h4>
    <ul>
     <li data-md>
-     <p>Oversæt ID og tildel requestID</p>
+     <p>Linux</p>
     <li data-md>
-     <p>Adgangspolitik (Bruger/Service -> Service)</p>
+     <p>Hardware</p>
     <li data-md>
-     <p>Throttle/circuit breaker</p>
+     <p>Initially MapR uses one Topology (clusters of identical hardware, identical OS)</p>
     <li data-md>
-     <p>Log (AccessLog/Request Log?)</p>
+     <p>Update zones, Connectivity Zones??</p>
+    <li data-md>
+     <p>One cluser across multiple location.</p>
+    <li data-md>
+     <p>The <code>mapr</code> user should not use default name, UID and GUID.</p>
+    <li data-md>
+     <p>Run as non-root?</p>
+    <li data-md>
+     <p>Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)</p>
+    <li data-md>
+     <p>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)</p>
    </ul>
-   <h3 class="heading settled" data-level="4.1" id="krakend"><span class="secno">4.1. </span><span class="content">KrakenD</span><a class="self-link" href="#krakend"></a></h3>
+   <p class="note" role="note"><span>Note:</span> Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...</p>
+   <h3 class="heading settled" data-level="4.2" id="datasets"><span class="secno">4.2. </span><span class="content">Datasets</span><a class="self-link" href="#datasets"></a></h3>
+   <p>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
+   <ul>
+    <li data-md>
+     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
+    <li data-md>
+     <p>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
+    <li data-md>
+     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
+    <li data-md>
+     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
+    <li data-md>
+     <p>Datasets are encrypted at rest (what keys? control?)</p>
+   </ul>
+   <h3 class="heading settled" data-level="4.3" id="logs"><span class="secno">4.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h3>
+   <ul>
+    <li data-md>
+     <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
+   </ul>
    <h2 class="heading settled" data-level="5" id="platform-services"><span class="secno">5. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h2>
    <h3 class="heading settled" data-level="5.1" id="authentication"><span class="secno">5.1. </span><span class="content">Authentication</span><a class="self-link" href="#authentication"></a></h3>
    <p><strong>[Secure Token Service]</strong> All services use a common secure token platform service. <strong>[Federation]</strong> Authentication of end-users are done in federation.</p>
@@ -1851,17 +1809,47 @@ systemctl start krakend
    <h3 class="heading settled" data-level="5.7" id="forbrugsoverblik"><span class="secno">5.7. </span><span class="content">Forbrugsoverblik?</span><a class="self-link" href="#forbrugsoverblik"></a></h3>
    <h3 class="heading settled" data-level="5.8" id="oprettelse-af-brugere-til-sandbox"><span class="secno">5.8. </span><span class="content">Oprettelse af brugere til sandbox</span><a class="self-link" href="#oprettelse-af-brugere-til-sandbox"></a></h3>
    <h3 class="heading settled" data-level="5.9" id="adgang-til-mapr-for-sandbox-services"><span class="secno">5.9. </span><span class="content">Adgang til MapR for sandbox services</span><a class="self-link" href="#adgang-til-mapr-for-sandbox-services"></a></h3>
-   <h2 class="heading settled" data-level="6" id="arbejdsgange-brugerrejser"><span class="secno">6. </span><span class="content">Arbejdsgange/Brugerrejser</span><a class="self-link" href="#arbejdsgange-brugerrejser"></a></h2>
-    Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige. 
-   <h3 class="heading settled" data-level="6.1" id="registrer-ny-applikation"><span class="secno">6.1. </span><span class="content">Registrer ny applikation</span><a class="self-link" href="#registrer-ny-applikation"></a></h3>
-   <p><img src="reg_app.svg"></p>
-   <h3 class="heading settled" data-level="6.2" id="deploy-applikation-ops"><span class="secno">6.2. </span><span class="content">Deploy applikation (Ops)</span><a class="self-link" href="#deploy-applikation-ops"></a></h3>
-   <p><img src="deploy.svg"></p>
-   <h3 class="heading settled" data-level="6.3" id="byg-container-dev"><span class="secno">6.3. </span><span class="content">Byg container (Dev)</span><a class="self-link" href="#byg-container-dev"></a></h3>
-   <h3 class="heading settled" data-level="6.4" id="test-applikation"><span class="secno">6.4. </span><span class="content">Test applikation</span><a class="self-link" href="#test-applikation"></a></h3>
-    (Hvorfor er der ikke noget testmiljø) 
-   <h3 class="heading settled" data-level="6.5" id="give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">6.5. </span><span class="content">Give medarbejder adgang til platformsapplikationer</span><a class="self-link" href="#give-medarbejder-adgang-til-platformsapplikationer"></a></h3>
-    (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD) 
+   <h2 class="heading settled" data-level="6" id="infrastructure-network"><span class="secno">6. </span><span class="content">Infrastructure (Network)</span><a class="self-link" href="#infrastructure-network"></a></h2>
+    Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
+   <h3 class="heading settled" data-level="6.1" id="internet-network-access"><span class="secno">6.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
+    GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT. 
+<pre>cloud.gov.dk.    3589  IN  A  ???.???.???.???
+</pre>
+   <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
+<pre>api.kunde.example.com.    3589  IN  CNAME  cloud.gov.dk
+</pre>
+   <p class="note" role="note"><span>Note:</span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC</p>
+   <p class="note" role="note"><span>Note:</span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
+   <p class="note" role="note"><span>Note:</span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
+   <h3 class="heading settled" data-level="6.2" id="gateway"><span class="secno">6.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
+   <p>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.</p>
+   <p class="note" role="note"><span>Note:</span> Vi vælger at F5 fra og tager en simplere og mere direkte approach. Fordi vi vil have control over loadbalancing som sikre hurtigere patching.</p>
+   <p>Monitoring Vi starter på et TCP ping til cloud.gov.dk</p>
+   <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
+   <h3 class="heading settled" data-level="6.3" id="layout"><span class="secno">6.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
+   <p><img src="network.svg"></p>
+   <h4 class="heading settled" data-level="6.3.1" id="application-services"><span class="secno">6.3.1. </span><span class="content">Application Services</span><a class="self-link" href="#application-services"></a></h4>
+    Det primære netværk App fabric dvs. K8S og den ingress controllers. 
+   <p>Load rammer et udvalg af ip-numre</p>
+<pre>vlanXX, 10.33.xxx.xxx/24
+</pre>
+   <h4 class="heading settled" data-level="6.3.2" id="data-access"><span class="secno">6.3.2. </span><span class="content">Data Access</span><a class="self-link" href="#data-access"></a></h4>
+    Der hvor K8S kan hente data fra MapR via LoadBalancer 
+<pre>vlanXX, 10.33.xxx.xxx/24
+</pre>
+   <h4 class="heading settled" data-level="6.3.3" id="data-synchronisation"><span class="secno">6.3.3. </span><span class="content">Data Synchronisation</span><a class="self-link" href="#data-synchronisation"></a></h4>
+    Adgang til Loadbalancer fra K8S
+Kan bruges til at styre trafik mod forskellige gateway nodes. 
+<pre>vlanXX, 10.33.xxx.xxx/26
+</pre>
+   <h4 class="heading settled" data-level="6.3.4" id="firewall"><span class="secno">6.3.4. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
+<pre>allow from 10.aaa.xxx.248/29
+      to   10.bbb.yyy.0/24
+</pre>
+   <h4 class="heading settled" data-level="6.3.5" id="remote-admin-access"><span class="secno">6.3.5. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
+    Beskytte med certifikater... 
+   <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
+   <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
    <h2 class="heading settled" data-level="7" id="additional-software-as-a-service"><span class="secno">7. </span><span class="content">Additional Software as a Service</span><a class="self-link" href="#additional-software-as-a-service"></a></h2>
    <h3 class="heading settled" data-level="7.1" id="portal"><span class="secno">7.1. </span><span class="content">Portal</span><a class="self-link" href="#portal"></a></h3>
    <h4 class="heading settled" data-level="7.1.1" id="register-service"><span class="secno">7.1.1. </span><span class="content">Register Service</span><a class="self-link" href="#register-service"></a></h4>
@@ -2040,7 +2028,7 @@ systemctl start krakend
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#app-fabric">App Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#data-fabric">Data Fabric</a><span>, in §Unnumbered section</span>
+   <li><a href="#app-fabric">App Fabric</a><span>, in §1.6</span>
+   <li><a href="#data-fabric">Data Fabric</a><span>, in §1.6</span>
    <li><a href="#dataset">Dataset</a><span>, in §8.1</span>
   </ul>

@@ -116,6 +116,29 @@ Layered architecture (each layer scale idependently and different governance pro
 One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)
 
 
+# Arbejdsgange/Brugerrejser
+Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
+
+
+## Registrer ny applikation
+
+<img src="reg_app.svg">
+
+
+## Deploy applikation (Ops)
+
+<img src="deploy.svg">
+
+
+## Byg container (Dev)
+
+## Test applikation
+(Hvorfor er der ikke noget testmiljø)
+
+## Give medarbejder adgang til platformsapplikationer
+(eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
+
+
 ## High Level Architecture
 
 
@@ -129,7 +152,198 @@ And supporting services.... some for developers and some for applications.
 
 Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
-# Network
+
+
+
+
+
+# API Fabric
+
+- The API Gateway is [KrakenD](http://www.krakend.io/).
+- Access to Application
+
+Responsibilities:
+
+- Oversæt ID og tildel requestID
+- Adgangspolitik (Bruger/Service -> Service)
+- Throttle/circuit breaker
+- Log (AccessLog/Request Log?)
+
+## KrakenD
+
+
+
+
+
+
+
+# App Fabric
+
+
+## Kubernetes
+- The application management environment is the latest standalone version of [Kubernetes](https://kubernetes.io/).
+- [Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").
+- Each Application is defined by a Kubernetes Deployment.
+- Each Application exposes Application Services through the use of LoadBalancers.
+- Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
+- (consequence that all application services have access to same datasets?)
+
+
+Responsibilities:
+- Deploy, scale, redeploy images from Repository
+- Provide Configuration Environment
+- Ingress/Service Discovery
+- Network (...?)
+- Mount NFS as Volume (for app log?)
+
+
+### K8S Service Network
+Tildeles pods automatisk...
+
+Ingress controller bruger adresserne til loadbalancing mellem instanser.
+<pre>
+kube-pods-subnet : XXX.XXX.XXX.XXX
+</pre>
+
+### Environment variables
+Apps finder datasservices via environment variable
+
+Note: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
+
+
+## Docker
+- The containarized application runtime environment is the latest version of [Docker](https://www.docker.com) supported by kubernetes.
+- Docker [Images] are build using a common virtual image both in development and operation.
+- All images are based on platform specific [Base Image].
+- Each image exposed Image Services accesible only to other images in the same [Application].
+- Each images implement a common schema for monitoring (should this be done at application level?)
+- Each images implement a common schema for logging (should this be done at application level?)
+
+
+## Base Image
+- Linux afhænger af MapR
+- MapR klient
+- KrakenD
+- Log til NFS (afprøve performance)
+- App logger via stdout
+
+<pre highlight="docker">
+FROM docker:centos7
+
+http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.GA-1.x86_64.rpm
+
+rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
+
+
+yum install -y krakend
+systemctl start krakend
+</pre>
+
+Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...
+
+# Data Fabric
+
+Responsible for:
+- Store datasets
+- Authenticate access to inividual dataset per user/application/service
+- Protect datasets against hardware failure at disk, machine and location level.
+- Log of all dataoperations
+- Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?
+
+
+The data fabric is running latest version of [MapR](https://mapr.com/).
+
+
+
+## MapR
+
+### Node configuration
+- Linux
+- Hardware
+
+
+- Initially MapR uses one Topology (clusters of identical hardware, identical OS)
+- Update zones, Connectivity Zones??
+- One cluser across multiple location.
+- The `mapr` user should not use default name, UID and GUID.
+- Run as non-root?
+- Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)
+- Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)
+
+
+Note: Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...
+
+## Datasets
+
+A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)
+
+- Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.
+- Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
+- Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).
+- Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
+- Datasets are encrypted at rest (what keys? control?)
+
+## Logs
+
+- All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
+
+
+
+
+
+
+
+# Platform Services
+
+
+
+## Authentication
+
+**[Secure Token Service]** All services use a common secure token platform service.
+**[Federation]** Authentication of end-users are done in federation.
+
+## Authorization
+
+**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
+**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
+
+
+
+## API Key Management
+**[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
+**[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
+
+## Log
+<img src="service_logging.svg" width="30%" align="right" valign="bottom">
+
+**[Log Service]** All services use a common logging service.
+
+
+
+
+## Repository
+Code and image...
+**[Code service]** The code repository of applications and platform services is https://git-scm.com and is a platform service at SIT.
+**[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
+**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
+
+## Directory
+
+**[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
+
+## Forbrugsoverblik?
+
+
+## Oprettelse af brugere til sandbox
+
+
+## Adgang til MapR for sandbox services
+
+
+
+
+
+# Infrastructure (Network)
 Vi beskriver netværket som det ser ud når man ankommer fra internettet....
 
 
@@ -207,15 +421,6 @@ allow from 10.aaa.xxx.248/29
 </pre>
 
 
-## NetOps
-
-### Self-service
-Nye applikationer og services kan deployes af kunder uden at involvere SIT.
-
-### Infrastructure as code
-VLAN oprettelse kan ske manuelt da det ikke gentages?
-Findes VLAN og Firewall regler i reposistories?
-
 ### Remote admin access
 Beskytte med certifikater...
 
@@ -223,211 +428,6 @@ admin på app cluster og admin på data cluster er to roller med hver deres cert
 
 Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
-
-
-# Data Fabric
-
-Responsible for:
-- Store datasets
-- Authenticate access to inividual dataset per user/application/service
-- Protect datasets against hardware failure at disk, machine and location level.
-- Log of all dataoperations
-- Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?
-
-
-The data fabric is running latest version of [MapR](https://mapr.com/).
-
-
-
-## MapR
-
-### Node configuration
-- Linux
-- Hardware
-
-
-- Initially MapR uses one Topology (clusters of identical hardware, identical OS)
-- Update zones, Connectivity Zones??
-- One cluser across multiple location.
-- The `mapr` user should not use default name, UID and GUID.
-- Run as non-root?
-- Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)
-- Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)
-
-
-Note: Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...
-
-## Datasets
-
-A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)
-
-- Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.
-- Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
-- Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).
-- Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
-- Datasets are encrypted at rest (what keys? control?)
-
-## Logs
-
-- All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
-
-
-
-
-# App Fabric
-
-
-## Kubernetes
-- The application management environment is the latest standalone version of [Kubernetes](https://kubernetes.io/).
-- [Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").
-- Each Application is defined by a Kubernetes Deployment.
-- Each Application exposes Application Services through the use of LoadBalancers.
-- Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
-- (consequence that all application services have access to same datasets?)
-
-
-Responsibilities:
-- Deploy, scale, redeploy images from Repository
-- Provide Configuration Environment
-- Ingress/Service Discovery
-- Network (...?)
-- Mount NFS as Volume (for app log?)
-
-
-### K8S Service Network
-Tildeles pods automatisk...
-
-Ingress controller bruger adresserne til loadbalancing mellem instanser.
-<pre>
-kube-pods-subnet : XXX.XXX.XXX.XXX
-</pre>
-
-### Environment variables
-Apps finder datasservices via environment variable
-
-Note: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
-
-
-## Docker
-- The containarized application runtime environment is the latest version of [Docker](https://www.docker.com) supported by kubernetes.
-- Docker [Images] are build using a common virtual image both in development and operation.
-- All images are based on platform specific [Base Image].
-- Each image exposed Image Services accesible only to other images in the same [Application].
-- Each images implement a common schema for monitoring (should this be done at application level?)
-- Each images implement a common schema for logging (should this be done at application level?)
-
-
-## Base Image
-- Linux afhænger af MapR
-- MapR klient
-- KrakenD
-- Log til NFS (afprøve performance)
-- App logger via stdout
-
-<pre highlight="docker">
-FROM docker:centos7
-
-http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.GA-1.x86_64.rpm
-
-rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
-
-
-yum install -y krakend
-systemctl start krakend
-</pre>
-
-Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...
-
-
-# API Fabric
-
-- The API Gateway is [KrakenD](http://www.krakend.io/).
-- Access to Application
-
-Responsibilities:
-
-- Oversæt ID og tildel requestID
-- Adgangspolitik (Bruger/Service -> Service)
-- Throttle/circuit breaker
-- Log (AccessLog/Request Log?)
-
-## KrakenD
-
-
-
-
-
-
-
-
-# Platform Services
-
-
-
-## Authentication
-
-**[Secure Token Service]** All services use a common secure token platform service.
-**[Federation]** Authentication of end-users are done in federation.
-
-## Authorization
-
-**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
-**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
-
-
-
-## API Key Management
-**[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
-**[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
-
-## Log
-<img src="service_logging.svg" width="30%" align="right" valign="bottom">
-
-**[Log Service]** All services use a common logging service.
-
-
-
-
-## Repository
-Code and image...
-**[Code service]** The code repository of applications and platform services is https://git-scm.com and is a platform service at SIT.
-**[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
-**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
-
-## Directory
-
-**[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
-
-## Forbrugsoverblik?
-
-
-## Oprettelse af brugere til sandbox
-
-
-## Adgang til MapR for sandbox services
-
-
-# Arbejdsgange/Brugerrejser
-Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
-
-
-## Registrer ny applikation
-
-<img src="reg_app.svg">
-
-
-## Deploy applikation (Ops)
-
-<img src="deploy.svg">
-
-
-## Byg container (Dev)
-
-## Test applikation
-(Hvorfor er der ikke noget testmiljø)
-
-## Give medarbejder adgang til platformsapplikationer
-(eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
 
 # Additional Software as a Service
 

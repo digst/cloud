@@ -5,4 +5,4 @@ curl https://api.csswg.org/bikeshed/ -F file=@spec.md -F force=1 > docs/spec.htm
 curl https://api.csswg.org/bikeshed/ -F file=@guide.md -F force=1 > docs/guide.html
 
 
-cp highlevel.svg cloud.svg network.svg service_logging.svg docs/
+cp *.svg docs/
