@@ -418,12 +418,16 @@ Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi fo
 
 ## Deploy applikation (Ops)
 
+<img src="deploy.svg">
+
 
 ## Byg container (Dev)
 
 ## Test applikation
 (Hvorfor er der ikke noget testmiljø)
 
+## Give medarbejder adgang til platformsapplikationer
+(eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
 
 # Additional Software as a Service
 
