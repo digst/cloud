@@ -437,9 +437,14 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
  Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a>
 
+<<<<<<< HEAD
 <img src="minimal.png" width="50%" align="right" valign="bottom">
 
 <hr>
+=======
+<img src="minimal.pdf" width="50%" align="right" valign="bottom">
+
+>>>>>>> c8595d0f4938840b360afb4030d481affcb5b316
 
 ### Register Service
 
