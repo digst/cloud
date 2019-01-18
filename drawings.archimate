@@ -1669,7 +1669,7 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
             <sourceConnection xsi:type="archimate:Connection" id="13f8649b-0875-4f82-a876-34aa4f79de41" source="534b58b6-8340-440f-bdb5-7c02a6e44371" target="a857790e-2769-47bf-9657-679d9f4d1a8c" archimateRelationship="caf6d167-bc0c-4841-a911-23f263a0562f"/>
           </child>
           <child xsi:type="archimate:DiagramObject" id="a857790e-2769-47bf-9657-679d9f4d1a8c" targetConnections="386a1ae9-6df9-4c31-8f65-e66906e269f0 13f8649b-0875-4f82-a876-34aa4f79de41" archimateElement="9e12ed14-e276-4b87-bcdf-531ca599df0a" type="1">
-            <bounds x="146" y="180" width="192" height="86"/>
+            <bounds x="146" y="180" width="184" height="86"/>
             <sourceConnection xsi:type="archimate:Connection" id="9860f80e-665d-4d08-851c-aa0efd09f360" source="a857790e-2769-47bf-9657-679d9f4d1a8c" target="768be03c-6b30-4c50-ab43-4cf8cbeef9d8" archimateRelationship="bdd69cd7-f9cd-4fd2-8b85-9b5727298af8"/>
             <sourceConnection xsi:type="archimate:Connection" id="edfeb3e2-e59c-4b61-8760-d7b7f6f20aee" source="a857790e-2769-47bf-9657-679d9f4d1a8c" target="768be03c-6b30-4c50-ab43-4cf8cbeef9d8" archimateRelationship="756f58c2-1418-4cea-b991-e36301252381"/>
             <sourceConnection xsi:type="archimate:Connection" id="b8d149b3-0c9a-40ce-9759-734a6ddcce1e" source="a857790e-2769-47bf-9657-679d9f4d1a8c" target="5db8a6f6-cbe3-4bf4-879c-083ecbb0bb74" archimateRelationship="6d5ff03c-5a7a-41e3-b0df-d402d804e361"/>
@@ -1683,7 +1683,7 @@ Access to 80 and 443 on selected addresses through NAT (will be moved to Externa
         <child xsi:type="archimate:DiagramObject" id="0fba0004-d0c1-4984-acfa-27583f7dd7de" fillColor="#fef3e0" archimateElement="d45774da-1933-4da1-ba49-4bfe83b46618">
           <bounds x="127" y="629" width="363" height="110"/>
           <sourceConnection xsi:type="archimate:Connection" id="438b541d-d881-4dc5-9dfa-0e8b388bd7c0" source="0fba0004-d0c1-4984-acfa-27583f7dd7de" target="ef3a3130-546b-439a-96c6-d66495d7880c" archimateRelationship="5c8b17d3-e35a-4408-b8bd-531dddfd0eee"/>
-          <child xsi:type="archimate:DiagramObject" id="ef3a3130-546b-439a-96c6-d66495d7880c" targetConnections="438b541d-d881-4dc5-9dfa-0e8b388bd7c0" archimateElement="99f528b1-bb15-4414-9fa1-fd92fd1cccbd">
+          <child xsi:type="archimate:DiagramObject" id="ef3a3130-546b-439a-96c6-d66495d7880c" targetConnections="438b541d-d881-4dc5-9dfa-0e8b388bd7c0" fillColor="#d5d5d5" archimateElement="99f528b1-bb15-4414-9fa1-fd92fd1cccbd">
             <bounds x="15" y="34" width="160" height="55"/>
             <sourceConnection xsi:type="archimate:Connection" id="19646f23-d381-4216-bd7d-ccd2eb479173" source="ef3a3130-546b-439a-96c6-d66495d7880c" target="534b58b6-8340-440f-bdb5-7c02a6e44371" archimateRelationship="c60c70c3-a316-48c2-997a-d315b1ca2a71"/>
           </child>
