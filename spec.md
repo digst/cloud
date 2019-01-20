@@ -431,9 +431,10 @@ admin på app cluster og admin på data cluster er to roller med hver deres cert
 Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
 
-# Additional Software as a Service
 
-## Portal
+
+# Self-service (portal)
+
 
  Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a>
 
@@ -441,29 +442,32 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
 <hr>
 
-### Register Service
+## Register Application
 
-<img src="gui-services.png" width="50%" align="right" valign="bottom">
+<img src="new_application.png" width="50%" align="right" valign="bottom">
+
+
+
+## Register Service
+
+<img src="new_service.png" width="50%" align="right" valign="bottom">
 
 Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
 
 
+## Redeploy Application
 
-### Redeploy Application
+<img src="deploy.png" width="50%" align="left" valign="bottom">
 
-<img src="gui-redeploy.png" width="50%" align="left" valign="bottom">
-
-**[Gov Dev Tool]** SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.
-
-
-
-**[Consumer Tool]** GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.
 
 ## Sandbox
-<img src="sandbox.svg" width="50%" align="left" valign="bottom">
-**[Sandbox]** SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
+
+SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
 Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).
+
+
+
 
 ## Collaboration
 **[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.

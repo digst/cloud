@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-18">18 January 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-20">20 January 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1538,17 +1538,14 @@ pre .property::before, pre .property::after {
        </ol>
      </ol>
     <li>
-     <a href="#additional-software-as-a-service"><span class="secno">7</span> <span class="content">Additional Software as a Service</span></a>
+     <a href="#self-service-portal"><span class="secno">7</span> <span class="content">Self-service (portal)</span></a>
      <ol class="toc">
-      <li>
-       <a href="#portal"><span class="secno">7.1</span> <span class="content">Portal</span></a>
-       <ol class="toc">
-        <li><a href="#register-service"><span class="secno">7.1.1</span> <span class="content">Register Service</span></a>
-        <li><a href="#redeploy-application"><span class="secno">7.1.2</span> <span class="content">Redeploy Application</span></a>
-       </ol>
-      <li><a href="#sandbox①"><span class="secno">7.2</span> <span class="content">Sandbox</span></a>
-      <li><a href="#collaboration"><span class="secno">7.3</span> <span class="content">Collaboration</span></a>
-      <li><a href="#govai"><span class="secno">7.4</span> <span class="content">GovAI</span></a>
+      <li><a href="#register-application"><span class="secno">7.1</span> <span class="content">Register Application</span></a>
+      <li><a href="#register-service"><span class="secno">7.2</span> <span class="content">Register Service</span></a>
+      <li><a href="#redeploy-application"><span class="secno">7.3</span> <span class="content">Redeploy Application</span></a>
+      <li><a href="#sandbox①"><span class="secno">7.4</span> <span class="content">Sandbox</span></a>
+      <li><a href="#collaboration"><span class="secno">7.5</span> <span class="content">Collaboration</span></a>
+      <li><a href="#govai"><span class="secno">7.6</span> <span class="content">GovAI</span></a>
      </ol>
     <li>
      <a href="#customer-applications-and-their-responsibilities"><span class="secno">8</span> <span class="content">Customer Applications and their responsibilities</span></a>
@@ -1850,24 +1847,23 @@ Kan bruges til at styre trafik mod forskellige gateway nodes.
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
-   <h2 class="heading settled" data-level="7" id="additional-software-as-a-service"><span class="secno">7. </span><span class="content">Additional Software as a Service</span><a class="self-link" href="#additional-software-as-a-service"></a></h2>
-   <h3 class="heading settled" data-level="7.1" id="portal"><span class="secno">7.1. </span><span class="content">Portal</span><a class="self-link" href="#portal"></a></h3>
+   <h2 class="heading settled" data-level="7" id="self-service-portal"><span class="secno">7. </span><span class="content">Self-service (portal)</span><a class="self-link" href="#self-service-portal"></a></h2>
    <p>Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a></p>
    <p><img align="right" src="minimal.png" valign="bottom" width="50%"></p>
    <hr>
-   <h4 class="heading settled" data-level="7.1.1" id="register-service"><span class="secno">7.1.1. </span><span class="content">Register Service</span><a class="self-link" href="#register-service"></a></h4>
-   <p><img align="right" src="gui-services.png" valign="bottom" width="50%"></p>
+   <h3 class="heading settled" data-level="7.1" id="register-application"><span class="secno">7.1. </span><span class="content">Register Application</span><a class="self-link" href="#register-application"></a></h3>
+   <p><img align="right" src="new_application.png" valign="bottom" width="50%"></p>
+   <h3 class="heading settled" data-level="7.2" id="register-service"><span class="secno">7.2. </span><span class="content">Register Service</span><a class="self-link" href="#register-service"></a></h3>
+   <p><img align="right" src="new_service.png" valign="bottom" width="50%"></p>
    <p>Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.</p>
-   <h4 class="heading settled" data-level="7.1.2" id="redeploy-application"><span class="secno">7.1.2. </span><span class="content">Redeploy Application</span><a class="self-link" href="#redeploy-application"></a></h4>
-   <p><img align="left" src="gui-redeploy.png" valign="bottom" width="50%"></p>
-   <p><strong>[Gov Dev Tool]</strong> SIT offers an enterprise grade 'Government Development Toolchain' as Software-as-a-Service to support agile application development.</p>
-   <p><strong>[Consumer Tool]</strong> GovCloud Consumers may choose between using SIT’s SaaS toolchain and providing their own toolchain, contingent on the Consumer’s toolchain’s complete integration with the build and test processes from SIT.</p>
-   <h3 class="heading settled" data-level="7.2" id="sandbox①"><span class="secno">7.2. </span><span class="content">Sandbox</span><a class="self-link" href="#sandbox①"></a></h3>
-    <img align="left" src="sandbox.svg" valign="bottom" width="50%"> <strong>[Sandbox]</strong> SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes. 
+   <h3 class="heading settled" data-level="7.3" id="redeploy-application"><span class="secno">7.3. </span><span class="content">Redeploy Application</span><a class="self-link" href="#redeploy-application"></a></h3>
+   <p><img align="left" src="deploy.png" valign="bottom" width="50%"></p>
+   <h3 class="heading settled" data-level="7.4" id="sandbox①"><span class="secno">7.4. </span><span class="content">Sandbox</span><a class="self-link" href="#sandbox①"></a></h3>
+   <p>SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.</p>
    <p>Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).</p>
-   <h3 class="heading settled" data-level="7.3" id="collaboration"><span class="secno">7.3. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration"></a></h3>
+   <h3 class="heading settled" data-level="7.5" id="collaboration"><span class="secno">7.5. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration"></a></h3>
     <strong>[SharedOperation]</strong> SIT provides collaborative tools to support collaboration during normal operation and during incident handling. 
-   <h3 class="heading settled" data-level="7.4" id="govai"><span class="secno">7.4. </span><span class="content">GovAI</span><a class="self-link" href="#govai"></a></h3>
+   <h3 class="heading settled" data-level="7.6" id="govai"><span class="secno">7.6. </span><span class="content">GovAI</span><a class="self-link" href="#govai"></a></h3>
     ... 
    <h2 class="heading settled" data-level="8" id="customer-applications-and-their-responsibilities"><span class="secno">8. </span><span class="content">Customer Applications and their responsibilities</span><a class="self-link" href="#customer-applications-and-their-responsibilities"></a></h2>
    <ul>
