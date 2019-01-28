@@ -69,6 +69,47 @@ Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin u
 * Som udvikler ønsker jeg skrive og læse filer fra min applikation.
 
 
+#### Data-anvender registrering (API nøgler)
+
+
+Registrer anvendelse af service mhb på 
+  - Identificere anvendelse.
+  - Sikre fair use af ressourcer. 
+(Overveje adgangskontrol til api-service)  
+
+Design + estimat til fredag. 
+
+Næste skridt er nok en generel PSI.
+
+----
+
+
+* Som data-ejer vil jeg begrænse adgangen til nogle services til kun de anvendere der har accepteret brugsvilkår
+  - Anvendere skal kunne identificeres, enten i SIT Directory eller i platformens Directory
+  - Kontaktoplysninger skal gemmes
+  - Avendelser kunne lukkes. 
+
+
+* Som platform-ejer har jeg brug at kunne begrænse båndbredden per anvender til service
+  - 
+
+
+* Som data-ejer vil jeg gerne kunne kontakte anvendere i forbindelse med fx fejl og ændringer
+
+
+
+* Som data-ejer vil jeg gerne kender anvenders formål med brug af data, så jeg kan se generelle mønstre
+
+
+
+* Som data-ejer vil jeg gerne kunne skrue ned for båndbredden for en anvender
+
+* Som data-ejer vil jeg gerne lade API nøgler udløbe for at sikre mig at kontaktoplysninger er opdaterede
+
+
+* Som data-anvender vil jeg gerne kunne anvende min API nøgle på tværs af flere data-ejere
+
+(PSI nøgle?. til anvendelse)
 
 
 
