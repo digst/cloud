@@ -348,12 +348,12 @@ Code and image...
 # Infrastructure (Network)
 Vi beskriver netværket som det ser ud når man ankommer fra internettet....
 
-
+Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.
 
 
 
 ## Internet Network Access
-GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT.
+GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT.
 
 <pre>
 cloud.gov.dk.		3589	IN	A	???.???.???.???
@@ -371,50 +371,70 @@ Note: Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmar
 
 Note: Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?
 
+Note: Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (https/hostname).
+
 
 
 ## Gateway
 
 Vi regner med der er Intrusion Protection Service mellem internettet og platformen.
 
-Note: Vi vælger at F5 fra og tager en simplere og mere direkte approach. Fordi vi vil have control over loadbalancing som sikre hurtigere patching.
+Note: Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.
 
-Monitoring Vi starter på et TCP ping til cloud.gov.dk
+
 
 Note: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
 
+Note: Monitoriering. Snak om ping/trace og kalde ned i stakken.
 
 ## Layout
 
 <img src="network.svg">
 
 
-### Application Services
-Det primære netværk App fabric dvs. K8S og den ingress controllers.
+### Application Network
+Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways.
 
-Load rammer et udvalg af ip-numre
-<pre>
-vlanXX, 10.33.xxx.xxx/24
-</pre>
+Netværket er `vlanXX, 10.aaa.xxx.0/24`
 
+men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.
 
-### Data Access
-Der hvor K8S kan hente data fra MapR via LoadBalancer
+* `10.aaa.xxx.0/28` noder der fungere som gateway og loadbalancer. I starten som manulet opsatte, men kan på sigt være ingress nodes der kontrolleres af K8S.
 
-<pre>
-vlanXX, 10.33.xxx.xxx/24
-</pre>
+* `10.aaa.xxx.16/??` de primære applikationsnoder hvor pods afvikles af K8S.
+
+* `10.aaa.xxx.248/29` noder der fungere som loadbalancer ned mod datafabric.
 
 
-### Data Synchronisation
-Adgang til Loadbalancer fra K8S
-Kan bruges til at styre trafik mod forskellige gateway nodes.
-<pre>
-vlanXX, 10.33.xxx.xxx/26
-</pre>
+
+### Data Network
+Det primære netværk til Data Fabric dvs hvor MapR kører.
+
+Netværket er `vlanXX, 10.bbb.yyy.0/23`
+
+Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.
+
+* `10.bbb.yyy.0/24` noder der kører MapR's dataservices: Kafka, OJAI og NFS.
+
+* `10.bbb.zzz.0/24` alle MapR noder.
 
 
 ### Firewall
+For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler.
+
+
+1. Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder `???.???.???.???:80,443 -> 10.aaa.xxx.3`
+
+2. Tillad forbindelse fra loadbalancer noder til nfs, ojai og kafka på MapR, så applikationer kan hente og skrive data
+`10.aaa.xxx.248/29:2049,8243,5678,8083,8082 -> 10.bbb.yyy.0/24`
+
+3. Tillad forbindelse fra applikationer til internettet, så kunders applikationer kan anvendes services på internettet.
+`10.aaa.xxx.16/?? -> any`
+
+4. Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. `10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??`
+
+
+
 
 
 <pre>

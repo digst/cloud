@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 9c6ae748322940994300e90a77c34437364b40a6" name="generator">
+  <meta content="Bikeshed version eee3e9e7543e2188fb60d183a6cf3fe3a7d971c1" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-20">20 January 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-28">28 January 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1530,11 +1530,10 @@ pre .property::before, pre .property::after {
       <li>
        <a href="#layout"><span class="secno">6.3</span> <span class="content">Layout</span></a>
        <ol class="toc">
-        <li><a href="#application-services"><span class="secno">6.3.1</span> <span class="content">Application Services</span></a>
-        <li><a href="#data-access"><span class="secno">6.3.2</span> <span class="content">Data Access</span></a>
-        <li><a href="#data-synchronisation"><span class="secno">6.3.3</span> <span class="content">Data Synchronisation</span></a>
-        <li><a href="#firewall"><span class="secno">6.3.4</span> <span class="content">Firewall</span></a>
-        <li><a href="#remote-admin-access"><span class="secno">6.3.5</span> <span class="content">Remote admin access</span></a>
+        <li><a href="#application-network"><span class="secno">6.3.1</span> <span class="content">Application Network</span></a>
+        <li><a href="#data-network"><span class="secno">6.3.2</span> <span class="content">Data Network</span></a>
+        <li><a href="#firewall"><span class="secno">6.3.3</span> <span class="content">Firewall</span></a>
+        <li><a href="#remote-admin-access"><span class="secno">6.3.4</span> <span class="content">Remote admin access</span></a>
        </ol>
      </ol>
     <li>
@@ -1808,8 +1807,9 @@ systemctl start krakend
    <h3 class="heading settled" data-level="5.9" id="adgang-til-mapr-for-sandbox-services"><span class="secno">5.9. </span><span class="content">Adgang til MapR for sandbox services</span><a class="self-link" href="#adgang-til-mapr-for-sandbox-services"></a></h3>
    <h2 class="heading settled" data-level="6" id="infrastructure-network"><span class="secno">6. </span><span class="content">Infrastructure (Network)</span><a class="self-link" href="#infrastructure-network"></a></h2>
     Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
+   <p>Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.</p>
    <h3 class="heading settled" data-level="6.1" id="internet-network-access"><span class="secno">6.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
-    GovCloud tilgås via et DNS opslag til et fast IP nummer hos Statens IT. 
+    GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT. 
 <pre>cloud.gov.dk.    3589  IN  A  ???.???.???.???
 </pre>
    <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
@@ -1818,32 +1818,52 @@ systemctl start krakend
    <p class="note" role="note"><span>Note:</span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC</p>
    <p class="note" role="note"><span>Note:</span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
    <p class="note" role="note"><span>Note:</span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
+   <p class="note" role="note"><span>Note:</span> Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (https/hostname).</p>
    <h3 class="heading settled" data-level="6.2" id="gateway"><span class="secno">6.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
    <p>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.</p>
-   <p class="note" role="note"><span>Note:</span> Vi vælger at F5 fra og tager en simplere og mere direkte approach. Fordi vi vil have control over loadbalancing som sikre hurtigere patching.</p>
-   <p>Monitoring Vi starter på et TCP ping til cloud.gov.dk</p>
+   <p class="note" role="note"><span>Note:</span> Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.</p>
    <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
+   <p class="note" role="note"><span>Note:</span> Monitoriering. Snak om ping/trace og kalde ned i stakken.</p>
    <h3 class="heading settled" data-level="6.3" id="layout"><span class="secno">6.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
    <p><img src="network.svg"></p>
-   <h4 class="heading settled" data-level="6.3.1" id="application-services"><span class="secno">6.3.1. </span><span class="content">Application Services</span><a class="self-link" href="#application-services"></a></h4>
-    Det primære netværk App fabric dvs. K8S og den ingress controllers. 
-   <p>Load rammer et udvalg af ip-numre</p>
-<pre>vlanXX, 10.33.xxx.xxx/24
-</pre>
-   <h4 class="heading settled" data-level="6.3.2" id="data-access"><span class="secno">6.3.2. </span><span class="content">Data Access</span><a class="self-link" href="#data-access"></a></h4>
-    Der hvor K8S kan hente data fra MapR via LoadBalancer 
-<pre>vlanXX, 10.33.xxx.xxx/24
-</pre>
-   <h4 class="heading settled" data-level="6.3.3" id="data-synchronisation"><span class="secno">6.3.3. </span><span class="content">Data Synchronisation</span><a class="self-link" href="#data-synchronisation"></a></h4>
-    Adgang til Loadbalancer fra K8S
-Kan bruges til at styre trafik mod forskellige gateway nodes. 
-<pre>vlanXX, 10.33.xxx.xxx/26
-</pre>
-   <h4 class="heading settled" data-level="6.3.4" id="firewall"><span class="secno">6.3.4. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
+   <h4 class="heading settled" data-level="6.3.1" id="application-network"><span class="secno">6.3.1. </span><span class="content">Application Network</span><a class="self-link" href="#application-network"></a></h4>
+    Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways. 
+   <p>Netværket er <code>vlanXX, 10.aaa.xxx.0/24</code></p>
+   <p>men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.</p>
+   <ul>
+    <li data-md>
+     <p><code>10.aaa.xxx.0/28</code> noder der fungere som gateway og loadbalancer. I starten som manulet opsatte, men kan på sigt være ingress nodes der kontrolleres af K8S.</p>
+    <li data-md>
+     <p><code>10.aaa.xxx.16/??</code> de primære applikationsnoder hvor pods afvikles af K8S.</p>
+    <li data-md>
+     <p><code>10.aaa.xxx.248/29</code> noder der fungere som loadbalancer ned mod datafabric.</p>
+   </ul>
+   <h4 class="heading settled" data-level="6.3.2" id="data-network"><span class="secno">6.3.2. </span><span class="content">Data Network</span><a class="self-link" href="#data-network"></a></h4>
+    Det primære netværk til Data Fabric dvs hvor MapR kører. 
+   <p>Netværket er <code>vlanXX, 10.bbb.yyy.0/23</code></p>
+   <p>Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.</p>
+   <ul>
+    <li data-md>
+     <p><code>10.bbb.yyy.0/24</code> noder der kører MapR’s dataservices: Kafka, OJAI og NFS.</p>
+    <li data-md>
+     <p><code>10.bbb.zzz.0/24</code> alle MapR noder.</p>
+   </ul>
+   <h4 class="heading settled" data-level="6.3.3" id="firewall"><span class="secno">6.3.3. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
+    For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler. 
+   <ol>
+    <li data-md>
+     <p>Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder <code>???.???.???.???:80,443 -> 10.aaa.xxx.3</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra loadbalancer noder til nfs, ojai og kafka på MapR, så applikationer kan hente og skrive data <code>10.aaa.xxx.248/29:2049,8243,5678,8083,8082 -> 10.bbb.yyy.0/24</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra applikationer til internettet, så kunders applikationer kan anvendes services på internettet. <code>10.aaa.xxx.16/?? -> any</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. <code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??</code></p>
+   </ol>
 <pre>allow from 10.aaa.xxx.248/29
       to   10.bbb.yyy.0/24
 </pre>
-   <h4 class="heading settled" data-level="6.3.5" id="remote-admin-access"><span class="secno">6.3.5. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
+   <h4 class="heading settled" data-level="6.3.4" id="remote-admin-access"><span class="secno">6.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
