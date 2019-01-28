@@ -1464,6 +1464,7 @@ pre .property::before, pre .property::after {
           <li><a href="#dataservice-tabel-nosql-ojai"><span class="secno"></span> <span class="content">Dataservice Tabel (NoSQL/OJAI)</span></a>
           <li><a href="#dataservice-stream-kafka"><span class="secno"></span> <span class="content">Dataservice Stream (Kafka)</span></a>
           <li><a href="#dataservice-file-nfs"><span class="secno"></span> <span class="content">Dataservice File (NFS)</span></a>
+          <li><a href="#data-anvender-registrering-api-ngler"><span class="secno"></span> <span class="content">Data-anvender registrering (API nøgler)</span></a>
          </ol>
         <li><a href="#version-10-primo-2019"><span class="secno"></span> <span class="content">Version 1.0 primo 2019</span></a>
         <li><a href="#version-11-marts-2019"><span class="secno"></span> <span class="content">Version 1.1? marts 2019</span></a>
@@ -1605,6 +1606,42 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
     <li data-md>
      <p>Som udvikler ønsker jeg skrive og læse filer fra min applikation.</p>
    </ul>
+   <h5 class="heading settled" id="data-anvender-registrering-api-ngler"><span class="content">Data-anvender registrering (API nøgler)</span></h5>
+   <p>Registrer anvendelse af service mhb på</p>
+   <ul>
+    <li data-md>
+     <p>Identificere anvendelse.</p>
+    <li data-md>
+     <p>Sikre fair use af ressourcer.
+(Overveje adgangskontrol til api-service)</p>
+   </ul>
+   <p>Design + estimat til fredag.</p>
+   <p>Næste skridt er nok en generel PSI.</p>
+   <hr>
+   <ul>
+    <li data-md>
+     <p>Som data-ejer vil jeg begrænse adgangen til nogle services til kun de anvendere der har accepteret brugsvilkår</p>
+    <li data-md>
+     <p>Anvendere skal kunne identificeres, enten i SIT Directory eller i platformens Directory</p>
+    <li data-md>
+     <p>Kontaktoplysninger skal gemmes</p>
+    <li data-md>
+     <p>Avendelser kunne lukkes.</p>
+    <li data-md>
+     <p>Som platform-ejer har jeg brug at kunne begrænse båndbredden per anvender til service</p>
+    <li data-md>
+    <li data-md>
+     <p>Som data-ejer vil jeg gerne kunne kontakte anvendere i forbindelse med fx fejl og ændringer</p>
+    <li data-md>
+     <p>Som data-ejer vil jeg gerne kender anvenders formål med brug af data, så jeg kan se generelle mønstre</p>
+    <li data-md>
+     <p>Som data-ejer vil jeg gerne kunne skrue ned for båndbredden for en anvender</p>
+    <li data-md>
+     <p>Som data-ejer vil jeg gerne lade API nøgler udløbe for at sikre mig at kontaktoplysninger er opdaterede</p>
+    <li data-md>
+     <p>Som data-anvender vil jeg gerne kunne anvende min API nøgle på tværs af flere data-ejere</p>
+   </ul>
+   <p>(PSI nøgle?. til anvendelse)</p>
    <h4 class="heading settled" id="version-10-primo-2019"><span class="content">Version 1.0 primo 2019</span></h4>
    <p>Focus på Deploy og Monitorering så vi kan demonstrere time to market og hyppige ændringer...</p>
    <p>Focus på platform Tabel-dataservice</p>
@@ -1794,7 +1831,8 @@ systemctl start krakend
    <h3 class="heading settled" data-level="5.2" id="authorization"><span class="secno">5.2. </span><span class="content">Authorization</span><a class="self-link" href="#authorization"></a></h3>
    <p><strong>[Rights]</strong> All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar] <strong>[Authorization]</strong> Access policy on service level is enforced in Gateway, Access policy on data level in Service</p>
    <h3 class="heading settled" data-level="5.3" id="api-key-management"><span class="secno">5.3. </span><span class="content">API Key Management</span><a class="self-link" href="#api-key-management"></a></h3>
-    <strong>[API Service]</strong> Private users of Open Government Data on the GovCloud are registered with a API key. <strong>[API Keys]</strong> Public Data Sharing is supported by a GovCloud platform service for API key management. 
+   <p><img align="center" src="ip-man.svg" width="70%"></p>
+   <p><strong>[API Service]</strong> Private users of Open Government Data on the GovCloud are registered with a API key. <strong>[API Keys]</strong> Public Data Sharing is supported by a GovCloud platform service for API key management.</p>
    <h3 class="heading settled" data-level="5.4" id="log"><span class="secno">5.4. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h3>
     <img align="right" src="service_logging.svg" valign="bottom" width="30%"> 
    <p><strong>[Log Service]</strong> All services use a common logging service.</p>
@@ -1860,9 +1898,6 @@ systemctl start krakend
     <li data-md>
      <p>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. <code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??</code></p>
    </ol>
-<pre>allow from 10.aaa.xxx.248/29
-      to   10.bbb.yyy.0/24
-</pre>
    <h4 class="heading settled" data-level="6.3.4" id="remote-admin-access"><span class="secno">6.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>

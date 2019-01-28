@@ -72,12 +72,12 @@ Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin u
 #### Data-anvender registrering (API nøgler)
 
 
-Registrer anvendelse af service mhb på 
+Registrer anvendelse af service mhb på
   - Identificere anvendelse.
-  - Sikre fair use af ressourcer. 
-(Overveje adgangskontrol til api-service)  
+  - Sikre fair use af ressourcer.
+(Overveje adgangskontrol til api-service)
 
-Design + estimat til fredag. 
+Design + estimat til fredag.
 
 Næste skridt er nok en generel PSI.
 
@@ -87,11 +87,11 @@ Næste skridt er nok en generel PSI.
 * Som data-ejer vil jeg begrænse adgangen til nogle services til kun de anvendere der har accepteret brugsvilkår
   - Anvendere skal kunne identificeres, enten i SIT Directory eller i platformens Directory
   - Kontaktoplysninger skal gemmes
-  - Avendelser kunne lukkes. 
+  - Avendelser kunne lukkes.
 
 
 * Som platform-ejer har jeg brug at kunne begrænse båndbredden per anvender til service
-  - 
+  -
 
 
 * Som data-ejer vil jeg gerne kunne kontakte anvendere i forbindelse med fx fejl og ændringer
@@ -353,8 +353,15 @@ A dataset is a collection of individual pieces of information under the same gov
 
 
 ## API Key Management
+
+<img src="ip-man.svg" width="70%" align="center">
+
+
 **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
 **[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
+
+
+
 
 ## Log
 <img src="service_logging.svg" width="30%" align="right" valign="bottom">
@@ -474,14 +481,6 @@ For at kontrollere trafikken mellem internettet og de to netværk, samt mellem d
 
 4. Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. `10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??`
 
-
-
-
-
-<pre>
-allow from 10.aaa.xxx.248/29
-      to   10.bbb.yyy.0/24
-</pre>
 
 
 ### Remote admin access
