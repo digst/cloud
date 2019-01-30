@@ -27,107 +27,88 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 [bør nok flyttes til JIRA issues på et tidspunkt...]
 For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?
 
-### Epics til understøttelse af "mennesker"
+### Epics til understøttelse af "mennesker (dev?)"
 
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
-#### Byg?
-Når epic'en er færdig kan en udvikler checke kode ind og bygge en container med brug af værktøj på platformen. (git, docker)
 
-* Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere
+#### Byg?
+Når epic'en er færdig kan en udvikler checke kode ind og bygge en container baseret på et basis image fra SIT.
+
+* 1.1 Som udvikler vil jeg gerne kunne gemme og versionstyre min applikationskode og konfiguration, så jeg effektivt kan rette fejl og samarbejde med andre udviklere (Git)
+
+* 1.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)
+
+* 1.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)
+
+* 1.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)
+
+* 1.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)
 
 #### Test?
 Når epic'en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases.
 
+* 2.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)
+
+* 2.2 Som udvikler og operatør vil jeg gerne kunne gennemfører automatiske test af en containers funktionalitet (??)
+
+
 #### Deploy og Monitorering?
 Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation og se dens log.
 
-* Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation.
+* 3.1 Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
 
-* Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation
+* 3.2 Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
 
-* Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes
+* 3.3 Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
 
-* Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør...
+* 3.4 Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
 
 #### Sandbox
 Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
 
-* Som udvikler, vil jeg kunne forbinde til en sandkasse MapR så jeg kan begynde at udvikle applikationer der anvender dataservices (stream, file, table) uden at skulle installere min egen MapR.
+* 4.1 Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
+
+* 4.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
+
 
 ### Epics til understøttelse af "applikationer"
 
-#### Dataservice Tabel (NoSQL/OJAI)
 
-* Som operatør ønsker jeg at begrænse adgangen til datasæt til de brugere som kunden har give tilladelse til...
+#### Data Access fra Applikationer
+Når epic'en er færdig kan en udvikler skrive en applikationer der skriver og læser data på MapR.
 
-#### Dataservice Stream (Kafka)
+* A.1 Som udvikler ønsker jeg at læse og skrive JSON dokumenter fra min applikation. (port 8243)
 
-#### Dataservice File (NFS)
+* A.2 Som udvikler ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation. (port 8082)
 
-* Som udvikler ønsker jeg skrive og læse filer fra min applikation.
+* A.3 Som udvikler ønsker jeg skrive og læse binære filer fra min applikation. (port 2049)
 
 
 #### Data-anvender registrering (API nøgler)
+Når epic'en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler.
 
+* B.1 Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, ??)
 
-Registrer anvendelse af service mhb på
-  - Identificere anvendelse.
-  - Sikre fair use af ressourcer.
-(Overveje adgangskontrol til api-service)
-
-Design + estimat til fredag.
-
-Næste skridt er nok en generel PSI.
-
-----
-
-
-* Som data-ejer vil jeg begrænse adgangen til nogle services til kun de anvendere der har accepteret brugsvilkår
-  - Anvendere skal kunne identificeres, enten i SIT Directory eller i platformens Directory
-  - Kontaktoplysninger skal gemmes
-  - Avendelser kunne lukkes.
-
-
-* Som platform-ejer har jeg brug at kunne begrænse båndbredden per anvender til service
-  -
-
-
-* Som data-ejer vil jeg gerne kunne kontakte anvendere i forbindelse med fx fejl og ændringer
-
-
-
-* Som data-ejer vil jeg gerne kender anvenders formål med brug af data, så jeg kan se generelle mønstre
-
-
-
-* Som data-ejer vil jeg gerne kunne skrue ned for båndbredden for en anvender
-
-* Som data-ejer vil jeg gerne lade API nøgler udløbe for at sikre mig at kontaktoplysninger er opdaterede
-
-
-* Som data-anvender vil jeg gerne kunne anvende min API nøgle på tværs af flere data-ejere
-
-(PSI nøgle?. til anvendelse)
-
+* B.2 Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen.
 
 
 ### Version 1.0 primo 2019
-
 Focus på Deploy og Monitorering så vi kan demonstrere time to market og hyppige ændringer...
 
-Focus på platform Tabel-dataservice
-
-Focus på Kubernetes og Services
-
+Focus på Dataservices
 
 ### Version 1.1? marts 2019
+Focus på adgangsstyring
 
+Focus på AD integration
 
 ### Version 1.2? juli 2019
+Focus på intern sikkerhed med tickets og tokens.
 
-
+### Version 1.3? september 2019
+Produktionssættelse af DMI Observationsdata
 
 
 

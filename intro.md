@@ -87,7 +87,7 @@ Procurement (SKI)
 <h2 class="no-num">Services, applikationer og datasamlinger</h2>
 Digital Asset Management. Direct data sharing... two layers of access control.
 
-<img src="layers.png" width="60%"/>
+<img src="layers.png" width="60%" align="center"/>
 
 Note: Tegning opdateres til at afspejle data ejerskab og anvendelse af services og data på tværs.
 
