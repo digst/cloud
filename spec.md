@@ -29,6 +29,8 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
 
 ### Epics til understøttelse af "mennesker (dev?)"
 
+Note: Overvej at bruge DevOps fase model som illustration.
+
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
@@ -74,7 +76,7 @@ Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin u
 
 
 ### Epics til understøttelse af "applikationer"
-
+Note: Overvej at bruge highlevel arkitektur som illlustration
 
 #### Data Access fra Applikationer
 Når epic'en er færdig kan en udvikler skrive en applikationer der skriver og læser data på MapR.
@@ -92,6 +94,8 @@ Når epic'en er færdig kan en udvikler deploy en service der er begrænset til 
 * B.1 Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, ??)
 
 * B.2 Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen.
+
+
 
 
 ### Version 1.0 primo 2019
@@ -150,10 +154,11 @@ And supporting services.... some for developers and some for applications.
 
 Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
-
+# Aktører og highlevel usecases
+Kunde, udvikler, operatør, policyowner?
 
 # Arbejdsgange/Brugerrejser
-Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
+Vi har identificerewt en række arbejdsgange. Her beskrives de i Archimate notation og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
 
 
 ## Registrer ny applikation
@@ -169,7 +174,7 @@ Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi fo
 ## Byg container (Dev)
 
 ## Test applikation
-(Hvorfor er der ikke noget testmiljø)
+(Hvorfor er der ikke noget testmiljø? Fordi kunden selv etablere forskellige applikationer, der kan anvende samme containere og datasæt til forskellige formål)
 
 ## Give medarbejder adgang til platformsapplikationer
 (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
@@ -183,7 +188,7 @@ Vi har identificerewt en række arbejdsgange. Her beskrives de som BPMN og vi fo
 
 # API Fabric
 
-- The API Gateway is [KrakenD](http://www.krakend.io/).
+- The API Gateway is [KrakenD](http://www.krakend.io/)????
 - Access to Application
 
 Responsibilities:
@@ -385,7 +390,7 @@ Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt t
 GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT.
 
 <pre>
-cloud.gov.dk.		3589	IN	A	???.???.???.???
+cloud.gov.dk.		3589	IN	A	188.64.157.76
 </pre>
 
 Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip
@@ -409,8 +414,6 @@ Note: Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (
 Vi regner med der er Intrusion Protection Service mellem internettet og platformen.
 
 Note: Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.
-
-
 
 Note: How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.
 
@@ -452,7 +455,7 @@ Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR
 For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler.
 
 
-1. Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder `???.???.???.???:80,443 -> 10.aaa.xxx.3`
+1. Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder `188.64.157.76:80,443 -> 10.aaa.xxx.3`
 
 2. Tillad forbindelse fra loadbalancer noder til nfs, ojai og kafka på MapR, så applikationer kan hente og skrive data
 `10.aaa.xxx.248/29:2049,8243,5678,8083,8082 -> 10.bbb.yyy.0/24`
@@ -522,31 +525,6 @@ Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller 
 - Access policies should rely on trusted attributes over detailes rights when possible.
 
 
-
-
+<h2 class="no-num">Appendix</h2>
 
 ## Use of Archimate
-
-
-
-
-[Application]: #application "A unit of governance"
-<dfn>Dataset</dfn>: #dataset "A unit of governance"
-
-[Log]: #datalog "A unit of governance"
-  [Data Log]: #datalog "A unit of governance"
-[Image]: #image "A unit of governance"
-  [Base Image]: #image "A unit of governance"
-
-[User]: #user "Physical person or Application instance outside the platform"
-
-------------------
-
-
-
-1. **[SysAdm tooling]** Operators at the Platform Provider choose tools suitable for automation and remote management based on individual experiences.
-1. **[Test Image]** Automated test of services are done using a custom image maintained by SIT.
-1. **[Acceptance test]** Service passing the provided automated tests are considered running.
-1. **[Release]** Consumers label images in the repository for release based on test results.
-1. **[Deploy]** In the initial version of the GovCloud PaaS releases of new versions of application services are done manually by SIT on request from the Cloud Consumer.
-1. **[SLA management]** SIT is using existing tools and channels to provide data on the fullfillment of SLA and other agreements.
