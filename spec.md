@@ -34,45 +34,51 @@ Note: Overvej at bruge DevOps fase model som illustration.
 #### Kravspecifikation?
 Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
 
+* 1.1 Som kunde vil jeg gerne kunne beskrive epics og user stories i JIRA.
+
+* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt. 
+
+* 1.3 Som udvikler vil jeg gerne kunne relatere kode checkins til user stories.
+
 
 #### Byg?
 Når epic'en er færdig kan en udvikler checke kode ind og bygge en container baseret på et basis image fra SIT.
 
-* 1.1 Som udvikler vil jeg gerne kunne gemme og versionstyre min applikationskode og konfiguration, så jeg effektivt kan rette fejl og samarbejde med andre udviklere (Git)
+* 2.1 Som udvikler vil jeg gerne kunne gemme og versionstyre min applikationskode og konfiguration, så jeg effektivt kan rette fejl og samarbejde med andre udviklere (Git)
 
-* 1.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)
+* 2.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)
 
-* 1.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)
+* 2.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)
 
-* 1.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)
+* 2.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)
 
-* 1.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)
+* 2.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)
 
 #### Test?
 Når epic'en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases.
 
-* 2.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)
+* 3.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)
 
-* 2.2 Som udvikler og operatør vil jeg gerne kunne gennemfører automatiske test af en containers funktionalitet (??)
+* 3.2 Som udvikler og operatør vil jeg gerne kunne gennemfører automatiske test af en containers funktionalitet (??)
 
 
 #### Deploy og Monitorering?
 Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation og se dens log.
 
-* 3.1 Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
+* 4.1 Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
 
-* 3.2 Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
+* 4.2 Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
 
-* 3.3 Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
+* 4.3 Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
 
-* 3.4 Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
+* 4.4 Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
 
 #### Sandbox
 Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
 
-* 4.1 Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
+* 5.1 Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
 
-* 4.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
+* 5.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
 
 
 ### Epics til understøttelse af "applikationer"
@@ -268,7 +274,7 @@ yum install -y krakend
 systemctl start krakend
 </pre>
 
-Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ...
+Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)
 
 # Data Fabric
 
@@ -323,60 +329,68 @@ A dataset is a collection of individual pieces of information under the same gov
 
 
 # Platform Services
+Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API.
+
+## Code Repository
+GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?
+
+## Container Repository
+Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR.
+
+## Directory
+Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD.
+
+Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.
+
+Rettigheder anvendes af MapR og af Access Fabric.
 
 
-
-## Authentication
-
-**[Secure Token Service]** All services use a common secure token platform service.
-**[Federation]** Authentication of end-users are done in federation.
+## !Authentication
+Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.
 
 ## Authorization
-
-**[Rights]** All access rights (end-users and other services) are given by service or data responsible to identities recognized by the secure token service. [Uklar]
-**[Authorization]** Access policy on service level is enforced in Gateway, Access policy on data level in Service
-
-
+Keycloak installation. Anvendes af Access Fabric (og Data Fabric?).
 
 ## API Key Management
 
 <img src="id-man.svg" width="100%" align="center">
 
-
-**[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
-**[API Keys]** Public Data Sharing is supported by a GovCloud platform service for API key management.
-
+## Data Services
+MapR gateway nodes med nfs, ojai og kafka. Authorization?
 
 
+## Dashboard
+Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a>
 
-## Log
-<img src="service_logging.svg" width="30%" align="right" valign="bottom">
+<img src="minimal.png" width="25%" align="right" valign="bottom">
 
-**[Log Service]** All services use a common logging service.
+## Register Application
+Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende yaml fil, som opbevares i Directory.
 
-
-
-
-## Repository
-Code and image...
-**[Code service]** The code repository of applications and platform services is https://git-scm.com and is a platform service at SIT.
-**[Versioned Configuration]** SIT is using existing tools to maintain versions of configuration items used in the platform and in platform services.
-**[Registry]** The artefact repository is [Docker Registry Server](https://docs.docker.com/registry/deploying/#use-an-insecure-registry-testing-only).
-
-## Directory
-
-**[Central Directory]** Users, Applications, Services and Dataset are ressources registered in the central directory service at SIT.
-
-## Forbrugsoverblik?
+## Register Dataset
+Oprettes manuelt på MapR. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog)
 
 
-## Oprettelse af brugere til sandbox
+## Register Service
+Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende servicebeskrivelse, som opbevares i Directory.
 
+Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
 
-## Adgang til MapR for sandbox services
+## Redeploy Application
+Rancher Installation. Bør formentlig være en simple knap på Dashboardet.
 
+## Sandbox
 
+SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
+Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).
+
+Implementeres som et 'one-node' image af CloudAPI der kan spindes op ved hjælp af OpenStack eller hentes hjem til lokalt kunde miljø.
+
+Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.
+
+## Collaboration
+SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
 
 
 # Infrastructure (Network)
@@ -474,50 +488,6 @@ admin på app cluster og admin på data cluster er to roller med hver deres cert
 
 Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.
 
-
-
-
-# Self-service (portal)
-
-
- Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a>
-
-<img src="minimal.png" width="50%" align="right" valign="bottom">
-
-<hr>
-
-## Register Application
-
-<img src="new_application.png" width="50%" align="right" valign="bottom">
-
-
-
-## Register Service
-
-<img src="new_service.png" width="50%" align="right" valign="bottom">
-
-Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
-
-
-## Redeploy Application
-
-<img src="deploy.png" width="50%" align="left" valign="bottom">
-
-
-## Sandbox
-
-SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
-
-Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).
-
-
-
-
-## Collaboration
-**[SharedOperation]** SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
-
-## GovAI
-...
 
 
 # Customer Applications and their responsibilities
