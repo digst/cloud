@@ -81,7 +81,7 @@ SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbr
 ### Middleware (3)
 GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer.
 
-Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i <a href="spec.html">Specifikation af GovCloud PaaS middleware]</a>. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.
+Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i <a href="spec.html">Specifikation af GovCloud PaaS middleware</a>. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.
 
 ### Idriftsættelse (4)
 GovCloud platformen og kunders applikationer vil benytte 'rolling updates'.

@@ -46,7 +46,7 @@ This cloud model is composed of five essential characteristics (On-demand self-s
 
 Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.
 
-<h2 class="no-num">GovCloud</h2><img src="middleware.svg" align="right" width="100">
+<h2 class="no-num">GovCloud</h2>
 
 
 GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
@@ -85,7 +85,14 @@ Procurement (SKI)
 
 
 <h2 class="no-num">Services, applikationer og datasamlinger</h2>
-Digital Asset Management. En hovedtype af assets for hvert lag i arkitekturen:
+Digital Asset Management. Direct data sharing... two layers of access control.
+
+<img src="layers.png" width="100%"/>
+
+
+
+
+En hovedtype af assets for hvert lag i arkitekturen:
 
 ### Service
 An Application Service represents an explicitly defined exposed application behaviour.
