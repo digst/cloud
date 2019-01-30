@@ -62,7 +62,7 @@ Ovenstående behov omsættes til følgende principper, der anvendes til at styre
 Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept.
 
 ### PaaS
-GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til [vedlagte kopi af driftsmodel](driftsmodel2.pdf)).
+GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til <a href="driftsmodel2.pdf">vedlagte kopi af driftsmodel</a>.
 
 ### Service Lifecycle (1)
 GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere.
@@ -81,7 +81,7 @@ SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbr
 ### Middleware (3)
 GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer.
 
-Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i "[Specifikation af GovCloud PaaS middleware](spec.html)". DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.
+Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i <a href="spec.html">Specifikation af GovCloud PaaS middleware]</a>. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.
 
 ### Idriftsættelse (4)
 GovCloud platformen og kunders applikationer vil benytte 'rolling updates'.
