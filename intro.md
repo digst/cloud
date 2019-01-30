@@ -87,9 +87,9 @@ Procurement (SKI)
 <h2 class="no-num">Services, applikationer og datasamlinger</h2>
 Digital Asset Management. Direct data sharing... two layers of access control.
 
-<img src="layers.png" width="100%"/>
+<img src="layers.png" width="60%"/>
 
-
+Note: Tegning opdateres til at afspejle data ejerskab og anvendelse af services og data på tværs.
 
 
 En hovedtype af assets for hvert lag i arkitekturen:
@@ -110,7 +110,7 @@ Komponent unit of scalability
 
 Eksempel: CVR register, HR Sager,
 
-Note: Tegning2 med hegn/barriere og ternet jordstykke, service, grænsebomme.... SIT blå, kunde rød ,
+
 
 
 <h2 class="no-num">Containere</h2>

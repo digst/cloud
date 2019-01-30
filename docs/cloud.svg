@@ -9,10 +9,7 @@
   <style>
     @keyframes fill {
       0%, 100% { fill: #707070; }
-      20% { fill: ##707070;; }
-      40% { fill: #FFFFFF;}
-      60% { fill: #707070; }
-      80% { fill: #000000; }
+      90% { fill: #000000; }
 
     }
 
