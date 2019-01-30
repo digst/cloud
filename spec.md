@@ -354,7 +354,7 @@ A dataset is a collection of individual pieces of information under the same gov
 
 ## API Key Management
 
-<img src="id-man.svg" width="70%" align="center">
+<img src="id-man.svg" width="100%" align="center">
 
 
 **[API Service]** Private users of Open Government Data on the GovCloud are registered with a API key.
