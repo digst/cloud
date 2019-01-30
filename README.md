@@ -10,5 +10,5 @@ Documentation is published at https://digst.github.io/cloud on commit via GitHub
 Files in the `/docs` folder is either 
  - sent through GitHub Pages' Jekyll (.md files)
  - outputted by manually running `compile.sh` using [BikeShed](https://tabatkins.github.io/bikeshed/) on files in the root directory (.html) 
- - images produced by [Archi](https://www.archimatetool.com/) from Archimate files in this repository (.svg)
+ - images exported manually from [Archi](https://www.archimatetool.com/) using Archimate files in this repository (.svg)
  
