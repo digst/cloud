@@ -3,8 +3,6 @@ Title: cloud.gov.dk spec
 Status: LD
 URL: http://github.com/digst/cloud/spec.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
-  Jan Nørgaard Jacobsen, Statens IT http://www.sit.dk
-  Chris Gadegaard, Statens IT http://www.sit.dk
 Abstract: Beskrivelse af implementeringen af GovCloud PaaS.
 Boilerplate: copyright no, conformance no, Abstract no
 Shortname: spec
@@ -25,7 +23,7 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 ## User Stories
 [bør nok flyttes til JIRA issues på et tidspunkt...]
-For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?
+For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?  Auditor?
 
 ### Epics til understøttelse af "mennesker (dev?)"
 
@@ -36,7 +34,7 @@ Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen 
 
 * 1.1 Som kunde vil jeg gerne kunne beskrive epics og user stories i JIRA.
 
-* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt. 
+* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt.
 
 * 1.3 Som udvikler vil jeg gerne kunne relatere kode checkins til user stories.
 
@@ -84,22 +82,25 @@ Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin u
 ### Epics til understøttelse af "applikationer"
 Note: Overvej at bruge highlevel arkitektur som illlustration
 
+
+
+
 #### Data Access fra Applikationer
 Når epic'en er færdig kan en udvikler skrive en applikationer der skriver og læser data på MapR.
 
-* A.1 Som udvikler ønsker jeg at læse og skrive JSON dokumenter fra min applikation. (port 8243)
+* A.1 Som udvikler ønsker jeg at læse og skrive JSON dokumenter fra min applikation. (*Data fabric* , port 8243)
 
-* A.2 Som udvikler ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation. (port 8082)
+* A.2 Som udvikler ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation. (*Data fabric*, port 8082)
 
-* A.3 Som udvikler ønsker jeg skrive og læse binære filer fra min applikation. (port 2049)
+* A.3 Som udvikler ønsker jeg skrive og læse binære filer fra min applikation. (*Data fabric*, port 2049)
 
 
 #### Data-anvender registrering (API nøgler)
 Når epic'en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler.
 
-* B.1 Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, ??)
+* B.1 Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, *API Gateway*)
 
-* B.2 Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen.
+* B.2 Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen. (*Directory*)
 
 
 
@@ -214,22 +215,36 @@ Responsibilities:
 
 # App Fabric
 
-
-## Kubernetes
-- The application management environment is the latest standalone version of [Kubernetes](https://kubernetes.io/).
-- [Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").
-- Each Application is defined by a Kubernetes Deployment.
-- Each Application exposes Application Services through the use of LoadBalancers.
-- Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
-- (consequence that all application services have access to same datasets?)
-
-
 Responsibilities:
 - Deploy, scale, redeploy images from Repository
 - Provide Configuration Environment
 - Ingress/Service Discovery
 - Network (...?)
 - Mount NFS as Volume (for app log?)
+
+
+## Rancher
+
+[Rancher](https://rancher.com/) has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation.
+
+The mapping from business objects to Rancher elements are:
+
+- Each SIT Customer is given one Rancher Project.
+
+- Each Customer Application is given one Kubernetes Namespace in Rancher
+
+- Each Customer (Application) Service is a Rancher Load Balancing Workload (Ingress)
+
+and identities are stored in the Directory service.
+
+
+
+
+
+
+
+
+
 
 
 ### K8S Service Network
@@ -343,6 +358,12 @@ Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi
 Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.
 
 Rettigheder anvendes af MapR og af Access Fabric.
+
+- [Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").
+
+- Each Application exposes Application Services through the use of LoadBalancers.
+- Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
+- (consequence that all application services have access to same datasets?)
 
 
 ## !Authentication
