@@ -36,7 +36,7 @@ Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen 
 
 * 1.1 Som kunde vil jeg gerne kunne beskrive epics og user stories i JIRA.
 
-* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt. 
+* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt.
 
 * 1.3 Som udvikler vil jeg gerne kunne relatere kode checkins til user stories.
 
@@ -343,6 +343,12 @@ Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi
 Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.
 
 Rettigheder anvendes af MapR og af Access Fabric.
+
+Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).
+
+Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.
+
+
 
 
 ## !Authentication
