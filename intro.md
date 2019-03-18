@@ -1,7 +1,7 @@
 <pre class='metadata'>
 Title: cloud.gov.dk introduktion
 Status: LD
-URL: http://github.com/digst/cloud/intro.md
+URL: https://github.com/digst/cloud/blob/master/intro.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
 Boilerplate: table-of-contents no, copyright no, conformance no, abstract no
 Markup Shorthands: biblio yes
@@ -18,10 +18,9 @@ Danmark er et digitalt samfund med høje ambitioner for sammenhængende services
 
 I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.
 
-En fælles government cloud er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.
+En fælles cloud-baseret platform er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.
 
-Med Statens ITs beslutning om at tilbyde en Platform as a Service med sigte på at skabe den fremtidige fortrukne platform for IT i staten er vi ét skridt tættere på at kunne opfylde de høje digitale ambitioner.
-
+Statens ITs beslutning om at tilbyde en ny driftsmodel, bringer ét skridt tættere på at kunne opfylde de høje digitale ambitioner.
 
 Nuværende niveau for offentlig IT har væsentlige mangler
   - usammenhængende services leveret i siloer
@@ -36,32 +35,32 @@ Cloud-teknologier har uforløste potentialer
 Fælles platform giver nye muligheder
   - bedre overblik over værdier i form af data og applikationer
   - lettere genbrug af data i nye sammenhænge
-  - effektiv udnyttelse af computerressourcer på tværs af myndigheder
+  - effektiv udnyttelse af ressourcer på tværs af myndigheder
 
 
 <h2 class="no-num">Cloud</h2><img src="models.svg" align="right" width="20%">
-Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else's computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. [[NIST.SP.800-145]]
+Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else's computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services.
 
-This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,
+<blockquote cite="">This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).<footer><cite>[[NIST.SP.800-145]]</cite></footer></blockquote>
 
-Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.
+Cloud modellens succes skyldes i følge NIST øget <q>developer agility and attractive (initial) cost</q>.
 
-<h2 class="no-num">GovCloud</h2>
+<h2 class="no-num">SIT som Cloudbroker</h2>
+Statens ITs nye driftsmodel er et fælles offentligt udviklings- og driftsmiljø tilbudt som Platform as a Service. I første omgang alene som en 'on-premise' Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT i rollen som Cloud Broker. [[NIST.SP.500‐291]]
 
+PaaS beskriver ansvarsfordelinger:
 
-GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
-SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.
+Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.
 
 Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.
 
-
-Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...
+Ansvarsfordelingen mellem platform og applikationer er flydende. Men forsøges fastlagt ....
 
 
 GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).
 
 
-GovCloud API realiseres gennem middleware og custom build platformservices.
+GovCloud API realiseres gennem generisk middleware og custom build platformservices.
 
 Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,
 
@@ -69,10 +68,14 @@ Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tub
 
 Cloud karakteristika men også Complaince as a Service
 
-FDA principles supported/enforces by a layered architecture/seperation of conserns.
-- Externalise User Management
-- Manage Data seperately from Applications
+Self-service -> time to market
 
+Ressource sharing (+ self healing) -> lower cost hardware -> multitude lower cost
+
+
+FDA principles supported/enforces by a layered architecture/seperation of conserns.
+
+- Seperate functionality to manage user, share data and provide self-service from core business applications
 
 Senere....
 
@@ -83,9 +86,12 @@ Privacy (GDPR)
 Procurement (SKI)
 - Kompentancer
 
+Effektivt understøtte emerging principper som once-only, open by default, single digital gateway, reusable infrastructure... government data platform/datastrategi.
 
 <h2 class="no-num">Services, applikationer og datasamlinger</h2>
-Digital Asset Management. Direct data sharing... two layers of access control.
+Enforce Digital Asset Management.
+Allow Direct data sharing.
+Third party audit.
 
 <img src="layers.png" width="60%" align="center"/>
 
@@ -108,7 +114,10 @@ Komponent unit of scalability
 
 ### Datasamling
 
+
 Eksempel: CVR register, HR Sager,
+
+
 
 
 

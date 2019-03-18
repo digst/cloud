@@ -1212,8 +1212,8 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version eee3e9e7543e2188fb60d183a6cf3fe3a7d971c1" name="generator">
-  <link href="http://github.com/digst/cloud/intro.md" rel="canonical">
+  <meta content="Bikeshed version 8ac92da89bb2253e0da87e20a9b9caa745f5f5b6" name="generator">
+  <link href="https://github.com/digst/cloud/blob/master/intro.md" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1365,11 +1365,11 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-01-30">30 January 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-03-18">18 March 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/intro.md">http://github.com/digst/cloud/intro.md</a>
+     <dd><a class="u-url" href="https://github.com/digst/cloud/blob/master/intro.md">https://github.com/digst/cloud/blob/master/intro.md</a>
      <dt>Issue Tracking:
      <dd><a href="https://github.com/digst/cloud/issues/">GitHub</a>
      <dt class="editor">Editor:
@@ -1385,8 +1385,8 @@ pre .property::before, pre .property::after {
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
     Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href>Digital service i verdensklasse</a>. 
    <p>I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.</p>
-   <p>En fælles government cloud er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.</p>
-   <p>Med Statens ITs beslutning om at tilbyde en Platform as a Service med sigte på at skabe den fremtidige fortrukne platform for IT i staten er vi ét skridt tættere på at kunne opfylde de høje digitale ambitioner.</p>
+   <p>En fælles cloud-baseret platform er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.</p>
+   <p>Statens ITs beslutning om at tilbyde en ny driftsmodel, bringer ét skridt tættere på at kunne opfylde de høje digitale ambitioner.</p>
    <p>Nuværende niveau for offentlig IT har væsentlige mangler</p>
    <ul>
     <li data-md>
@@ -1412,28 +1412,32 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>lettere genbrug af data i nye sammenhænge</p>
     <li data-md>
-     <p>effektiv udnyttelse af computerressourcer på tværs af myndigheder</p>
+     <p>effektiv udnyttelse af ressourcer på tværs af myndigheder</p>
    </ul>
    <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
-   <img align="right" src="models.svg" width="20%"> Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. <span>[NIST.SP.800-145]</span> 
-   <p>This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid). ,</p>
-   <p>Og er blevet populært særligt på grund af developer agility and attractive (initial) cost.</p>
-   <h2 class="no-num heading settled" id="govcloud"><span class="content">GovCloud</span></h2>
-   <p>GovCloud er en udviklings- og driftsmiljø der tilbydes af Statens IT som Platform as a Service. I første omgang  Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT som Cloud Broker. [[]]
-SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
+   <img align="right" src="models.svg" width="20%"> Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. 
+   <blockquote cite>
+    This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).
+    <footer><cite><span>[NIST.SP.800-145]</span></cite></footer>
+   </blockquote>
+   <p>Cloud modellens succes skyldes i følge NIST øget <q>developer agility and attractive (initial) cost</q>.</p>
+   <h2 class="no-num heading settled" id="sit-som-cloudbroker"><span class="content">SIT som Cloudbroker</span></h2>
+    Statens ITs nye driftsmodel er et fælles offentligt udviklings- og driftsmiljø tilbudt som Platform as a Service. I første omgang alene som en <a class="property" data-link-type="propdesc">on-premise</a> Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT i rollen som Cloud Broker. [[NIST.SP.500‐291]] 
+   <p>PaaS beskriver ansvarsfordelinger:</p>
+   <p>Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
    <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
-   <p>Beskrivelse af stadig flydende ansvarsfordelingen mellem platform og applikationer. Men det fastlægges her...</p>
+   <p>Ansvarsfordelingen mellem platform og applikationer er flydende. Men forsøges fastlagt ....</p>
    <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
-   <p>GovCloud API realiseres gennem middleware og custom build platformservices.</p>
+   <p>GovCloud API realiseres gennem generisk middleware og custom build platformservices.</p>
    <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,</p>
    <h2 class="no-num heading settled" id="fordele"><span class="content">Fordele</span></h2>
    <p>Cloud karakteristika men også Complaince as a Service</p>
+   <p>Self-service -> time to market</p>
+   <p>Ressource sharing (+ self healing) -> lower cost hardware -> multitude lower cost</p>
    <p>FDA principles supported/enforces by a layered architecture/seperation of conserns.</p>
    <ul>
     <li data-md>
-     <p>Externalise User Management</p>
-    <li data-md>
-     <p>Manage Data seperately from Applications</p>
+     <p>Seperate functionality to manage user, share data and provide self-service from core business applications</p>
    </ul>
    <p>Senere....</p>
    <p>Security (ISO27001)</p>
@@ -1443,8 +1447,11 @@ SIT som provider, kunder som consumers. PaaS beskriver ansvarsfordelinger: Kunde
     <li data-md>
      <p>Kompentancer</p>
    </ul>
+   <p>Effektivt understøtte emerging principper som once-only, open by default, single digital gateway, reusable infrastructure... government data platform/datastrategi.</p>
    <h2 class="no-num heading settled" id="services-applikationer-og-datasamlinger"><span class="content">Services, applikationer og datasamlinger</span></h2>
-    Digital Asset Management. Direct data sharing... two layers of access control. 
+    Enforce Digital Asset Management.
+Allow Direct data sharing.
+Third party audit. 
    <p><img align="center" src="layers.png" width="60%"></p>
    <p class="note" role="note"><span>Note:</span> Tegning opdateres til at afspejle data ejerskab og anvendelse af services og data på tværs.</p>
    <p>En hovedtype af assets for hvert lag i arkitekturen:</p>
