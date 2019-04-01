@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 8ac92da89bb2253e0da87e20a9b9caa745f5f5b6" name="generator">
+  <meta content="Bikeshed version 4d208866a95a1121fceca549a36bfb09c5bf1705" name="generator">
   <link href="http://github.com/digst/cloud/guide.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Developers Guide<img align="right" src="cloud.svg"> <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-03-18">18 March 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-01">1 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1406,12 +1406,79 @@ pre .property::before, pre .property::after {
        <p>plus mapr.jar (avoid?)</p>
      </ul>
    </ol>
-   <h4 class="heading settled" data-level="2.3.2" id="connecting-to-sandbox-mapr"><span class="secno">2.3.2. </span><span class="content">Connecting to sandbox MapR</span><a class="self-link" href="#connecting-to-sandbox-mapr"></a></h4>
-   <ol>
+   <h2 class="heading settled" data-level="3" id="user-and-application-interfaces"><span class="secno">3. </span><span class="content">User and application interfaces</span><a class="self-link" href="#user-and-application-interfaces"></a></h2>
+   <p><img align="center" src="highlevel.svg" width="100%"></p>
+   <p>GovCloud er en selvbetjent og i høj grad automatiseret service leveret af Statens IT. Den samlede service består dels af en selvbetjenings-løsning der anvendes af ansatte og konsulenter hos Statens ITs kunder, dels af en række tekniske services der anvendes af kundes applikationer. [Sætning om at den samlede lifecycle management for den samlede GovCloud service foretages i fæøllesoffentligt regi].</p>
+   <h3 class="heading settled" data-level="3.1" id="selvbetjeningslsning-er"><span class="secno">3.1. </span><span class="content">Selvbetjeningsløsning(er)</span><a class="self-link" href="#selvbetjeningslsning-er"></a></h3>
+   <p>For at kunne komme hurtigt igang og for at hurtigt at kunne efterprøve kunders behov, er der etableret en midlertidig selvbetjeningsløsninger på `k8s.govcloud.dk`. Løsningen er realiseret ved anvendelse af <a href="https://rancher.com/">Rancher</a>.</p>
+   <ul>
     <li data-md>
-     <p>Information from SIT.</p>
-   </ol>
-   <p>govsit.dk : Kafka 8082 (REST) 8083 (Connect)</p>
+     <p><a href="http://k8s.govcloud.dk"><code>k8s.govcloud.dk</code></a>  <small>Fra 20190201</small></p>
+   </ul>
+   <p>Her understøttes kunders deployment og monitorering af applikationer, samt deployment af services.</p>
+   <p>Det er planen at udvikle en simple og mere målrettet selvbetjening, der skal sikre større uafhængighed af den underliggende implementering, og tillade tilpasning af sprogbrug til fællesoffentlige begreber om it-systemer. Ansvaret for løsningen er stadig under diskussion.</p>
+   <ul>
+    <li data-md>
+     <p><a href="http://cloud.gov.dk"><code>cloud.gov.dk</code></a>  <small>Endnu ikke planlagt</small></p>
+   </ul>
+   <h3 class="heading settled" data-level="3.2" id="tekniske-services-til-applikationer-cloudapi"><span class="secno">3.2. </span><span class="content">Tekniske services til applikationer  (CloudAPI?)</span><a class="self-link" href="#tekniske-services-til-applikationer-cloudapi"></a></h3>
+    I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases. 
+   <p>Følgende service er tilgængelig i første version af GovCloud.</p>
+   <h4 class="heading settled" data-level="3.2.1" id="dataservice"><span class="secno">3.2.1. </span><span class="content">Dataservice</span><a class="self-link" href="#dataservice"></a></h4>
+    Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller: 
+   <p><a href="https://tools.ietf.org/html/rfc7530">Network Files System (NFS)</a> lader applikationer skrive og læse binære filer fra en lang række operativsystemer og programmeringssprog. Et datasæt repræsenteres af et NFS Directory.</p>
+   <ul>
+    <li data-md>
+     <p><code>data.govcloud.dk:2049</code> <small>version 1 - 20190201</small></p>
+   </ul>
+   <p><a href="https://kafka.apache.org/">Apace Kafka</a> lader applikationer skrive og læse meddelelser til streams og topics. Et datasæt repræsenteres af en Kafka Stream.</p>
+   <ul>
+    <li data-md>
+     <p><code>data.govcloud.dk:8082</code> <small>version 1 - 20190201</small></p>
+   </ul>
+   <p><a href="http://www.ojai.io">OJAI</a> lader applikationer at skrive og læse JSON dokumenter til dokumentsamlinger. Et datasæt repræsenteres af en OJAI Document Store.</p>
+   <ul>
+    <li data-md>
+     <p><code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small></p>
+   </ul>
+   <h4 class="heading settled" data-level="3.2.2" id="directory"><span class="secno">3.2.2. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h4>
+    Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP. 
+   <ul>
+    <li data-md>
+     <p><code>ldap.govcloud.dk:349</code> <small>TBD</small></p>
+   </ul>
+   <h4 class="heading settled" data-level="3.2.3" id="log"><span class="secno">3.2.3. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h4>
+    Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via 
+   <ul>
+    <li data-md>
+     <p><code>log.govcloud.dk</code> <small>TBD</small></p>
+   </ul>
+   <h4 class="heading settled" data-level="3.2.4" id="id"><span class="secno">3.2.4. </span><span class="content">ID</span><a class="self-link" href="#id"></a></h4>
+    Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Servicen returnerer en <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. 
+   <ul>
+    <li data-md>
+     <p><code>sts.govcloud.dk</code> <small>version 1 - 20190201</small></p>
+   </ul>
+   <h4 class="heading settled" data-level="3.2.5" id="external-keys"><span class="secno">3.2.5. </span><span class="content">External keys</span><a class="self-link" href="#external-keys"></a></h4>
+    Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug. 
+   <ul>
+    <li data-md>
+     <p><code>services.govcloud.dk/keyman</code> <small>version 1 - TBD</small></p>
+   </ul>
+   <h3 class="heading settled" data-level="3.3" id="devtools-saas"><span class="secno">3.3. </span><span class="content">DevTools (SaaS)</span><a class="self-link" href="#devtools-saas"></a></h3>
+    Statens IT tilbyder - som supplement til GovCloud - en række sammenhængende services til brug for applikationsudvikling. På sigt vil en fuld DevOps proces kunne understøttes hos SIT, men indledningsvis tilbydes services til opbevaring af kildekode og docker container images. 
+   <h4 class="heading settled" data-level="3.3.1" id="code-repository"><span class="secno">3.3.1. </span><span class="content">Code repository</span><a class="self-link" href="#code-repository"></a></h4>
+    Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring. 
+   <ul>
+    <li data-md>
+     <p><a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
+   </ul>
+   <h4 class="heading settled" data-level="3.3.2" id="container-image-repository"><span class="secno">3.3.2. </span><span class="content">Container Image Repository</span><a class="self-link" href="#container-image-repository"></a></h4>
+    Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring. 
+   <ul>
+    <li data-md>
+     <p><a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
+   </ul>
   </main>
 <script>
 (function() {

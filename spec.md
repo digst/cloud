@@ -48,12 +48,16 @@ Når epic'en er færdig kan en udvikler checke kode ind og bygge en container ba
 
 * 2.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)
 
+[baseimages?]
+
 * 2.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)
 
 * 2.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)
 
 #### Test?
 Når epic'en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases.
+
+[no baseimages?]
 
 * 3.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)
 
@@ -261,22 +265,6 @@ Apps finder datasservices via environment variable
 Note: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
 
 
-## Docker
-- The containarized application runtime environment is the latest version of [Docker](https://www.docker.com) supported by kubernetes.
-- Docker [Images] are build using a common virtual image both in development and operation.
-- All images are based on platform specific [Base Image].
-- Each image exposed Image Services accesible only to other images in the same [Application].
-- Each images implement a common schema for monitoring (should this be done at application level?)
-- Each images implement a common schema for logging (should this be done at application level?)
-
-
-## Base Image
-- Linux afhænger af MapR
-- MapR klient
-- KrakenD
-- Log til NFS (afprøve performance)
-- App logger via stdout
-
 <pre highlight="docker">
 FROM docker:centos7
 
@@ -285,8 +273,6 @@ http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.
 rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
 
 
-yum install -y krakend
-systemctl start krakend
 </pre>
 
 Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)
@@ -344,6 +330,8 @@ A dataset is a collection of individual pieces of information under the same gov
 
 
 # Platform Services
+
+(Split into services to humans and to applications)
 Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API.
 
 ## Code Repository

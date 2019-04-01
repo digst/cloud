@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 8ac92da89bb2253e0da87e20a9b9caa745f5f5b6" name="generator">
+  <meta content="Bikeshed version 4d208866a95a1121fceca549a36bfb09c5bf1705" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-03-18">18 March 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-01">1 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1494,8 +1494,6 @@ pre .property::before, pre .property::after {
         <li><a href="#k8s-service-network"><span class="secno">4.1.1</span> <span class="content">K8S Service Network</span></a>
         <li><a href="#environment-variables"><span class="secno">4.1.2</span> <span class="content">Environment variables</span></a>
        </ol>
-      <li><a href="#docker"><span class="secno">4.2</span> <span class="content">Docker</span></a>
-      <li><a href="#base-image"><span class="secno">4.3</span> <span class="content">Base Image</span></a>
      </ol>
     <li>
      <a href="#data-fabric①"><span class="secno">5</span> <span class="content">Data Fabric</span></a>
@@ -1580,6 +1578,9 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
      <p>2.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)</p>
     <li data-md>
      <p>2.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)</p>
+   </ul>
+   <p>[baseimages?]</p>
+   <ul>
     <li data-md>
      <p>2.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)</p>
     <li data-md>
@@ -1587,6 +1588,7 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    </ul>
    <h5 class="heading settled" id="test"><span class="content">Test?</span></h5>
     Når epic’en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases. 
+   <p>[no baseimages?]</p>
    <ul>
     <li data-md>
      <p>3.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)</p>
@@ -1723,43 +1725,11 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
    <h4 class="heading settled" data-level="4.1.2" id="environment-variables"><span class="secno">4.1.2. </span><span class="content">Environment variables</span><a class="self-link" href="#environment-variables"></a></h4>
     Apps finder datasservices via environment variable 
    <p class="note" role="note"><span>Note:</span> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?</p>
-   <h3 class="heading settled" data-level="4.2" id="docker"><span class="secno">4.2. </span><span class="content">Docker</span><a class="self-link" href="#docker"></a></h3>
-   <ul>
-    <li data-md>
-     <p>The containarized application runtime environment is the latest version of <a href="https://www.docker.com">Docker</a> supported by kubernetes.</p>
-    <li data-md>
-     <p>Docker [Images] are build using a common virtual image both in development and operation.</p>
-    <li data-md>
-     <p>All images are based on platform specific [Base Image].</p>
-    <li data-md>
-     <p>Each image exposed Image Services accesible only to other images in the same [Application].</p>
-    <li data-md>
-     <p>Each images implement a common schema for monitoring (should this be done at application level?)</p>
-    <li data-md>
-     <p>Each images implement a common schema for logging (should this be done at application level?)</p>
-   </ul>
-   <h3 class="heading settled" data-level="4.3" id="base-image"><span class="secno">4.3. </span><span class="content">Base Image</span><a class="self-link" href="#base-image"></a></h3>
-   <ul>
-    <li data-md>
-     <p>Linux afhænger af MapR</p>
-    <li data-md>
-     <p>MapR klient</p>
-    <li data-md>
-     <p>KrakenD</p>
-    <li data-md>
-     <p>Log til NFS (afprøve performance)</p>
-    <li data-md>
-     <p>App logger via stdout</p>
-   </ul>
 <pre class="highlight"><c- k>FROM</c-><c- s> docker:centos7</c->
 
 http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.GA-1.x86_64.rpm
 
 rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
-
-
-yum install -y krakend
-systemctl start krakend
 </pre>
    <p class="note" role="note"><span>Note:</span> Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)</p>
    <h2 class="heading settled" data-level="5" id="data-fabric①"><span class="secno">5. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h2>
@@ -1820,7 +1790,8 @@ systemctl start krakend
      <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
    </ul>
    <h2 class="heading settled" data-level="6" id="platform-services"><span class="secno">6. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h2>
-    Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API. 
+   <p>(Split into services to humans and to applications)
+Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API.</p>
    <h3 class="heading settled" data-level="6.1" id="code-repository"><span class="secno">6.1. </span><span class="content">Code Repository</span><a class="self-link" href="#code-repository"></a></h3>
     GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm? 
    <h3 class="heading settled" data-level="6.2" id="container-repository"><span class="secno">6.2. </span><span class="content">Container Repository</span><a class="self-link" href="#container-repository"></a></h3>

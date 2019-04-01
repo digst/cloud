@@ -68,10 +68,9 @@ Note: Tegning1 layers, and middleware on one side, selfservice on the other. Tub
 
 Cloud karakteristika men også Complaince as a Service
 
-Self-service -> time to market
+Self-service (+ procurement) -> time to market
 
 Ressource sharing (+ self healing) -> lower cost hardware -> multitude lower cost
-
 
 FDA principles supported/enforces by a layered architecture/seperation of conserns.
 
@@ -83,7 +82,7 @@ Security (ISO27001)
 
 Privacy (GDPR)
 
-Procurement (SKI)
+Procurement
 - Kompentancer
 
 Effektivt understøtte emerging principper som once-only, open by default, single digital gateway, reusable infrastructure... government data platform/datastrategi.
@@ -96,7 +95,6 @@ Third party audit.
 <img src="layers.png" width="60%" align="center"/>
 
 Note: Tegning opdateres til at afspejle data ejerskab og anvendelse af services og data på tværs.
-
 
 En hovedtype af assets for hvert lag i arkitekturen:
 
@@ -114,10 +112,7 @@ Komponent unit of scalability
 
 ### Datasamling
 
-
 Eksempel: CVR register, HR Sager,
-
-
 
 
 
