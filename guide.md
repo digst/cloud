@@ -14,6 +14,23 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 
 
+
+# Developer skillset
+Udvikling og drift af applikationer på GovCloud PaaS forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om lifetime og sikring af adskillelse af services, applikationer og datasæt (da disse ofte forvaltes gennem forkellige processer).
+
+* Udvikling af container baserede applikationer fx <a href="https://www.docker.com/">Docker</a>.
+
+* Anvendelse af asynkrone meddelelser som integration mellem applikationskomponenter fx <a href="https://kafka.apache.org/">Apace Kafka</a>.
+
+* Anvendelse af NoSQL dokumentdatabaser  fx <a href="http://www.ojai.io">OJAI</a>.
+
+* Udvikling af HTTP services efter REST principper. 
+
+* Token baseret adgangskontrol fx <href="http://jwt.io">JWT</a>.
+
+
+
+
 # Data
 
 
@@ -52,14 +69,13 @@ All data stored in the platform MUST have a registered data controller.
 
 <img src="highlevel.svg" width="100%" align="center">
 
-
 GovCloud er en selvbetjent og i høj grad automatiseret service leveret af Statens IT. Den samlede service består dels af en selvbetjenings-løsning der anvendes af ansatte og konsulenter hos Statens ITs kunder, dels af en række tekniske services der anvendes af kundes applikationer. [Sætning om at den samlede lifecycle management for den samlede GovCloud service foretages i fæøllesoffentligt regi].
 
 ## Selvbetjeningsløsning(er)
 
 For at kunne komme hurtigt igang og for at hurtigt at kunne efterprøve kunders behov, er der etableret en midlertidig selvbetjeningsløsninger på `k8s.govcloud.dk`. Løsningen er realiseret ved anvendelse af <a href="https://rancher.com/">Rancher</a>.
 
-* <a href="http://k8s.govcloud.dk"><code>k8s.govcloud.dk</code></a>&nbsp;&nbsp;<small>Fra 20190201</small>
+* <a href="http://k8s.govcloud.dk"><code>k8s.govcloud.dk</code></a>&nbsp;&nbsp;<small>version 1 - 20190201</small>
 
 Her understøttes kunders deployment og monitorering af applikationer, samt deployment af services.
 
@@ -67,7 +83,7 @@ Det er planen at udvikle en simple og mere målrettet selvbetjening, der skal si
 
 * <a href="http://cloud.gov.dk"><code>cloud.gov.dk</code></a>&nbsp;&nbsp;<small>Endnu ikke planlagt</small>
 
-## Tekniske services til applikationer  (CloudAPI?)
+## Tekniske services til applikationer  (GovCloud API?)
 I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases.
 
 Følgende service er tilgængelig i første version af GovCloud.
@@ -126,3 +142,24 @@ Kunder kan bringe deres applikationskode under versionskontrol i det fælles rep
 Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
 * <a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
+
+
+# Examples of usage GovCloud PaaS
+
+
+## Datadistribution
+
+## Trusted Messaging
+
+## Datascience/BI/Analytics
+
+## Static Website
+
+
+
+
+
+
+
+## RPA Robot Proces Automation
