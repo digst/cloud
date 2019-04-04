@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>cloud.gov.dk guide</title>
+  <title>cloud.gov.dk start-arkitektur - opklaring</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1213,7 +1213,7 @@ Possible extra rowspan handling
 	}
 </style>
   <meta content="Bikeshed version 4d208866a95a1121fceca549a36bfb09c5bf1705" name="generator">
-  <link href="http://github.com/digst/cloud/guide.md" rel="canonical">
+  <link href="http://github.com/digst/cloud/clarify.md" rel="canonical">
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1364,16 +1364,14 @@ pre .property::before, pre .property::after {
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1>Developers Guide<img align="right" src="cloud.svg"> <br> GovCloud PaaS <br> Statens IT</h1>
+   <h1>Noter om start-arkitektur <br> GovCloud Paas <br> Statens IT</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-04">4 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
-     <dd><a class="u-url" href="http://github.com/digst/cloud/guide.md">http://github.com/digst/cloud/guide.md</a>
-     <dt>Issue Tracking:
-     <dd><a href="https://github.com/digst/cloud/issues/">GitHub</a>
+     <dd><a class="u-url" href="http://github.com/digst/cloud/clarify.md">http://github.com/digst/cloud/clarify.md</a>
      <dt class="editor">Editor:
-     <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://arkitektur.digst.dk">Digitaliseringsstyrelsen</a>)
+     <dd class="editor p-author h-card vcard"><span class="p-name fn">madsh@digst.dk</span> (<a class="p-org org" href="http://digst.dk">Digitaliseringsstyrelsen</a>)
     </dl>
    </div>
    <div data-fill-with="warning"></div>
@@ -1382,126 +1380,35 @@ pre .property::before, pre .property::after {
   <div data-fill-with="at-risk"></div>
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
-   <h2 class="heading settled" data-level="1" id="developer-skillset"><span class="secno">1. </span><span class="content">Developer skillset</span><a class="self-link" href="#developer-skillset"></a></h2>
-    Udvikling og drift af applikationer på GovCloud PaaS forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om lifetime og sikring af adskillelse af services, applikationer og datasæt (da disse ofte forvaltes gennem forkellige processer). 
+   <p><i>I slutningen af oktober 2018 besluttede DMI, SIT og DIGST bl.a. at "Statens IT etablerer en GovCloud-platform baseret på afprøvningsprojektet, således at GovCloud-platformen er klar til service- og applikationsudvikling senest 1. januar 2019 og er klar til drift af applikationer senest 1. juli 2019." Som en del af beslutningsgrundlaget indgik en start-arkitektur for projektet.</i></p>
+   <p>Start-arkitektur belv besluttet i en kontekst, hvor det var vigtigt at opnå enighed. Senere har det vist sig at flere formulering kan fortolkes - og bliver fortolket - på forskellige måder. Dette dokument forsøger at fastholde de originale intentioner bag formuleringerne. Dokumenter kan fungere som bidrag til SITs udformning af den endelige Service Model for GovCloud PaaS.</p>
+   <p>Der udestår t0 vigtige afklaringer før DMI, SIT og DIGST kan opnå enighed om en kommende Service Model:</p>
    <ul>
     <li data-md>
-     <p>Udvikling af container baserede applikationer fx <a href="https://www.docker.com/">Docker</a>.</p>
+     <p>***Multi-tenancy*** eller hvordan sikkerheds- og ressourcemæssige-afgrænsinger mellem kunder og applikationer understøttes på platformen,  herunder implementeringen af *fair use* med mindst mulig forvaltningsbyrde. DIGST foreslår der udarbejdes et selvstændigt notat om dette, samt at den nuværende specifkation udvides på baggrund af NIST Cloud Security model.</p>
     <li data-md>
-     <p>Anvendelse af asynkrone meddelelser som integration mellem applikationskomponenter fx <a href="https://kafka.apache.org/">Apace Kafka</a>.</p>
-    <li data-md>
-     <p>Anvendelse af NoSQL dokumentdatabaser  fx <a href="http://www.ojai.io">OJAI</a>.</p>
-    <li data-md>
-     <p>Udvikling af HTTP services efter REST principper.</p>
-    <li data-md>
-     <p>
-      Token baseret adgangskontrol fx 
-      <hrefU0003DU00022httpU0003A jwt.ioU00022>JWT.</hrefU0003DU00022httpU0003A>
-     </p>
+     <p>***Monitorering af applikationsservices*** Det er uklart hvordan ansvaret for overvågning og reaktion ved nedbrud bedst fordeles mellem platformsanvender og platformsejer. DIGST foreslå at der først aftales en konkret proces for hvordan de forskellige aktører skal inddrages ved nedbrud af applikationsservices, og der dernæst udpeges passe værktøjer til it-understøttelse af denne.</p>
    </ul>
-   <h2 class="heading settled" data-level="2" id="data"><span class="secno">2. </span><span class="content">Data</span><a class="self-link" href="#data"></a></h2>
-   <h3 class="heading settled" data-level="2.1" id="data-controller"><span class="secno">2.1. </span><span class="content">Data Controller</span><a class="self-link" href="#data-controller"></a></h3>
-    GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. 
-   <p>All data stored in the platform MUST have a registered data controller.</p>
-   <h2 class="heading settled" data-level="3" id="applications"><span class="secno">3. </span><span class="content">Applications</span><a class="self-link" href="#applications"></a></h2>
-   <p><dfn data-dfn-type="dfn" data-noexport id="application">Application<a class="self-link" href="#application"></a></dfn> is a something</p>
-   <h3 class="heading settled" data-level="3.1" id="docker-images"><span class="secno">3.1. </span><span class="content">Docker Images</span><a class="self-link" href="#docker-images"></a></h3>
-   <h3 class="heading settled" data-level="3.2" id="deployments"><span class="secno">3.2. </span><span class="content">Deployments</span><a class="self-link" href="#deployments"></a></h3>
-   <h3 class="heading settled" data-level="3.3" id="developer-enviroment"><span class="secno">3.3. </span><span class="content">Developer enviroment</span><a class="self-link" href="#developer-enviroment"></a></h3>
-   <h4 class="heading settled" data-level="3.3.1" id="your-own-laptop"><span class="secno">3.3.1. </span><span class="content">Your own laptop</span><a class="self-link" href="#your-own-laptop"></a></h4>
+   <p>Her følger en kort baggrund til hver af de modtagede kommentarer fra SIT:</p>
    <ol>
     <li data-md>
-     <p>Install MapR developer container</p>
+     <p>**Agil it-udvikling** SIT ønsker at fremhæve DevOps hos kunderne. Ordet agil er anvendt for at beskrive at det vigtigt for  platformsanvenderens (forretnings)-agilitet at platformen er bygget til at understøtte DevOps og Contiuous Delivery.</p>
     <li data-md>
-     <p>Application Container</p>
-     <ul>
-      <li data-md>
-       <p>From Scratch (should be SIT base image)</p>
-      <li data-md>
-       <p>plus java</p>
-      <li data-md>
-       <p>plus mapr.jar (avoid?)</p>
-     </ul>
+     <p>**Driftsmodel** SIT ønsker at anvende begrebet Service Model istedet. Driftsmodel er alene valgt for at henvise til SITs på det tidspunkt foretrukne modeller. SITs Service Model begreb erstatter driftmodeller, som ikke længere bør refereres fra GovCloud arbejdet.</p>
+    <li data-md>
+     <p>**Service Lifecycle** SIT peger på at platformen kan styres gennem eksisterende eller kommende fora, fremfor at have eget styringsparadigme. DIGST der er enige. Den fremtidige governance skal nærmere aftales og DIGST ser muligheder for at lade GovCloud indgå i en fællesoffentlig styring af infrastruktur.</p>
+    <li data-md>
+     <p>**Middleware** SIT påpeger at begrebet middleware har en anderledes betydning hos dem. Intentionen er at Service Lifecycle omhandler den del af GovCloud der er synlig for anvendere, enten i form af selvbetjening eller i form af tekniske service til brug for applikationer (CloudAPI). SIT tilvejebringer CloudAPIen ved brug af software, og har efter ibrugtagning  mandat til at vælge produkter, så længe de opfylder den aftale specifikation af CloudAPIen.</p>
+    <li data-md>
+     <p>**Fair use** skal sikre effektiv udnyttelse af delte ressourcer, uden at en enkelt platformsanvender eller dennes brugere ligger beslag på andre anvenderes ressourcer. Der udestår en afklaring af hvordan fair use reguleres. For platformsudbyderen er det vigtigt at begrænse services brug af network, applikationer brug af processor og kunders brug af storage i form af datasæt. Desuden er det vigtigt for platformsanvender at kunne begrænse brugeres brug af ressourcer ved uhensigtmæssige anvendelser. Endelig findes der endnu ikke et datagrundlag for at vurdere betydningen af in-effektiv applikationskode og/eller uhensigtsmæssige anvendelse af service på platformen.</p>
+    <li data-md>
+     <p>***Service Operation*** Der enighed om at en fuld 24/7 support af applikationer kræver involvering af både platformsudbyder og platformsanvender. SIT mener ikke de kan påtage sig det fulde ansvar for overvågning af applikationer, men kan godt se en mulighed for at udbyde services til brug i overvågning. Der er enighed om at SIT principielt ikke kan eller bør ændrer i indholdet af applikationscontainere.</p>
+    <li data-md>
+     <p>***Idriftsættelse*** Afsnittet omhandler to processer. Dels SITs ændringer på platformen, dels platformsanvenderens ændringer i applikationer. Platformsanvenderen forventer at sætter applikationer i drift via selvbetjeningsløsningen og fuldt automatiske processer, og at ændringer på platformen rulles ud hyppigt, uden at brug af service vinduer (Continuous Service).</p>
+    <li data-md>
+     <p>***Developer Toolchain*** SIT og DIGST ønsker at udbyde en samling værktøjer til DevOps og detilhørende uddannelse. Værktøjerne er valgfrie at benytte for platformsanvendere. DIGST vurdere at det er hensigtmæssigt at det gøres obligatorisk at anvende platformens repositories til opbevaring af kode og container images. Dette vil sikre direkte adgang til det anskaffede, samt give mulighed for på sigt at tilbyde automatisk scanning med henblik på at opdage kendte usikkerheder (Vulnerability Scan).</p>
    </ol>
-   <h2 class="heading settled" data-level="4" id="user-and-application-interfaces"><span class="secno">4. </span><span class="content">User and application interfaces</span><a class="self-link" href="#user-and-application-interfaces"></a></h2>
-   <p><img align="center" src="highlevel.svg" width="100%"></p>
-   <p>GovCloud er en selvbetjent og i høj grad automatiseret service leveret af Statens IT. Den samlede service består dels af en selvbetjenings-løsning der anvendes af ansatte og konsulenter hos Statens ITs kunder, dels af en række tekniske services der anvendes af kundes applikationer. [Sætning om at den samlede lifecycle management for den samlede GovCloud service foretages i fæøllesoffentligt regi].</p>
-   <h3 class="heading settled" data-level="4.1" id="selvbetjeningslsning-er"><span class="secno">4.1. </span><span class="content">Selvbetjeningsløsning(er)</span><a class="self-link" href="#selvbetjeningslsning-er"></a></h3>
-   <p>For at kunne komme hurtigt igang og for at hurtigt at kunne efterprøve kunders behov, er der etableret en midlertidig selvbetjeningsløsninger på `k8s.govcloud.dk`. Løsningen er realiseret ved anvendelse af <a href="https://rancher.com/">Rancher</a>.</p>
-   <ul>
-    <li data-md>
-     <p><a href="http://k8s.govcloud.dk"><code>k8s.govcloud.dk</code></a>  <small>version 1 - 20190201</small></p>
-   </ul>
-   <p>Her understøttes kunders deployment og monitorering af applikationer, samt deployment af services.</p>
-   <p>Det er planen at udvikle en simple og mere målrettet selvbetjening, der skal sikre større uafhængighed af den underliggende implementering, og tillade tilpasning af sprogbrug til fællesoffentlige begreber om it-systemer. Ansvaret for løsningen er stadig under diskussion.</p>
-   <ul>
-    <li data-md>
-     <p><a href="http://cloud.gov.dk"><code>cloud.gov.dk</code></a>  <small>Endnu ikke planlagt</small></p>
-   </ul>
-   <h3 class="heading settled" data-level="4.2" id="tekniske-services-til-applikationer-govcloud-api"><span class="secno">4.2. </span><span class="content">Tekniske services til applikationer  (GovCloud API?)</span><a class="self-link" href="#tekniske-services-til-applikationer-govcloud-api"></a></h3>
-    I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases. 
-   <p>Følgende service er tilgængelig i første version af GovCloud.</p>
-   <h4 class="heading settled" data-level="4.2.1" id="dataservice"><span class="secno">4.2.1. </span><span class="content">Dataservice</span><a class="self-link" href="#dataservice"></a></h4>
-    Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller: 
-   <p><a href="https://tools.ietf.org/html/rfc7530">Network Files System (NFS)</a> lader applikationer skrive og læse binære filer fra en lang række operativsystemer og programmeringssprog. Et datasæt repræsenteres af et NFS Directory.</p>
-   <ul>
-    <li data-md>
-     <p><code>data.govcloud.dk:2049</code> <small>version 1 - 20190201</small></p>
-   </ul>
-   <p><a href="https://kafka.apache.org/">Apace Kafka</a> lader applikationer skrive og læse meddelelser til streams og topics. Et datasæt repræsenteres af en Kafka Stream.</p>
-   <ul>
-    <li data-md>
-     <p><code>data.govcloud.dk:8082</code> <small>version 1 - 20190201</small></p>
-   </ul>
-   <p><a href="http://www.ojai.io">OJAI</a> lader applikationer at skrive og læse JSON dokumenter til dokumentsamlinger. Et datasæt repræsenteres af en OJAI Document Store.</p>
-   <ul>
-    <li data-md>
-     <p><code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small></p>
-   </ul>
-   <h4 class="heading settled" data-level="4.2.2" id="directory"><span class="secno">4.2.2. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h4>
-    Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP. 
-   <ul>
-    <li data-md>
-     <p><code>ldap.govcloud.dk:349</code> <small>TBD</small></p>
-   </ul>
-   <h4 class="heading settled" data-level="4.2.3" id="log"><span class="secno">4.2.3. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h4>
-    Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via 
-   <ul>
-    <li data-md>
-     <p><code>log.govcloud.dk</code> <small>TBD</small></p>
-   </ul>
-   <h4 class="heading settled" data-level="4.2.4" id="id"><span class="secno">4.2.4. </span><span class="content">ID</span><a class="self-link" href="#id"></a></h4>
-    Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Servicen returnerer en <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. 
-   <ul>
-    <li data-md>
-     <p><code>sts.govcloud.dk</code> <small>version 1 - 20190201</small></p>
-   </ul>
-   <h4 class="heading settled" data-level="4.2.5" id="external-keys"><span class="secno">4.2.5. </span><span class="content">External keys</span><a class="self-link" href="#external-keys"></a></h4>
-    Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug. 
-   <ul>
-    <li data-md>
-     <p><code>services.govcloud.dk/keyman</code> <small>version 1 - TBD</small></p>
-   </ul>
-   <h3 class="heading settled" data-level="4.3" id="devtools-saas"><span class="secno">4.3. </span><span class="content">DevTools (SaaS)</span><a class="self-link" href="#devtools-saas"></a></h3>
-    Statens IT tilbyder - som supplement til GovCloud - en række sammenhængende services til brug for applikationsudvikling. På sigt vil en fuld DevOps proces kunne understøttes hos SIT, men indledningsvis tilbydes services til opbevaring af kildekode og docker container images. 
-   <h4 class="heading settled" data-level="4.3.1" id="code-repository"><span class="secno">4.3.1. </span><span class="content">Code repository</span><a class="self-link" href="#code-repository"></a></h4>
-    Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring. 
-   <ul>
-    <li data-md>
-     <p><a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
-   </ul>
-   <h4 class="heading settled" data-level="4.3.2" id="container-image-repository"><span class="secno">4.3.2. </span><span class="content">Container Image Repository</span><a class="self-link" href="#container-image-repository"></a></h4>
-    Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring. 
-   <ul>
-    <li data-md>
-     <p><a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
-   </ul>
-   <h2 class="heading settled" data-level="5" id="examples-of-usage-govcloud-paas"><span class="secno">5. </span><span class="content">Examples of usage GovCloud PaaS</span><a class="self-link" href="#examples-of-usage-govcloud-paas"></a></h2>
-   <h3 class="heading settled" data-level="5.1" id="datadistribution"><span class="secno">5.1. </span><span class="content">Datadistribution</span><a class="self-link" href="#datadistribution"></a></h3>
-   <h3 class="heading settled" data-level="5.2" id="trusted-messaging"><span class="secno">5.2. </span><span class="content">Trusted Messaging</span><a class="self-link" href="#trusted-messaging"></a></h3>
-   <h3 class="heading settled" data-level="5.3" id="datascience-bi-analytics"><span class="secno">5.3. </span><span class="content">Datascience/BI/Analytics</span><a class="self-link" href="#datascience-bi-analytics"></a></h3>
-   <h3 class="heading settled" data-level="5.4" id="static-website"><span class="secno">5.4. </span><span class="content">Static Website</span><a class="self-link" href="#static-website"></a></h3>
-   <h3 class="heading settled" data-level="5.5" id="rpa-robot-proces-automation"><span class="secno">5.5. </span><span class="content">RPA Robot Proces Automation</span><a class="self-link" href="#rpa-robot-proces-automation"></a></h3>
+   <div align="right" class="font-style: italic;">/DIGST 2018-4947</div>
   </main>
 <script>
 (function() {
