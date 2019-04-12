@@ -21,6 +21,9 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 <h2 class="no-num">Introduction</h2>
 
 
+!add security specific notes... Multitenancy, Privacy, Resilliance
+
+
 ## User Stories
 [bør nok flyttes til JIRA issues på et tidspunkt...]
 For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?  Auditor?
@@ -511,5 +514,30 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
 
 <h2 class="no-num">Appendix</h2>
+
+## Inspiration
+
+### Kundens It-miljø
+
+Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologi hos mange leverandører.
+
+
+
+DevOps og Cloud teknologi
+
+Fælles platform...
+
+Arkitekturstil...
+
+Realiseret... og selvbetjening.
+
+24/7 Platform support. Applikationssupport...
+
+
+### Tekniske kompetancer
+
+Docker, K8S
+
+REST, JWT. NoSql, Queue
 
 ## Use of Archimate

@@ -24,9 +24,9 @@ Udvikling og drift af applikationer på GovCloud PaaS forudsætter fortrolighed 
 
 * Anvendelse af NoSQL dokumentdatabaser  fx <a href="http://www.ojai.io">OJAI</a>.
 
-* Udvikling af HTTP services efter REST principper. 
+* Udvikling af HTTP services der følger REST.
 
-* Token baseret adgangskontrol fx <href="http://jwt.io">JWT</a>.
+* Token baseret adgangskontrol fx <a href="http://jwt.io">JWT</a>.
 
 
 

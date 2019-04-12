@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-04">4 April 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-10">10 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1382,6 +1382,8 @@ pre .property::before, pre .property::after {
   <div data-fill-with="at-risk"></div>
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
+   <p>[Målgruppe: Direktioner i statslige styrelser og ministerier.
+Formåæl: fokus på it-styring, paradigmeskift Cloud Native/First , begreber om styring og cloud,  ]</p>
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
     Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href>Digital service i verdensklasse</a>. 
    <p>I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.</p>
@@ -1414,85 +1416,101 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>effektiv udnyttelse af ressourcer på tværs af myndigheder</p>
    </ul>
+   <h2 class="no-num heading settled" id="moderne-it-forvaltning"><span class="content">Moderne IT forvaltning</span></h2>
+   <p>Systemforvaltning... giver problemer...
+Forvaltning af værdier (assest management)... i form af</p>
+   <p>Cloud teknologi som enabler, by design. Men det skal styres gennem arkitektur, vedor login.</p>
+   <p>Figur.</p>
    <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
-   <img align="right" src="models.svg" width="20%"> Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. 
+    Plank NIST side 1,
+Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. 
    <blockquote cite>
     This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).
     <footer><cite><span>[NIST.SP.800-145]</span></cite></footer>
    </blockquote>
    <p>Cloud modellens succes skyldes i følge NIST øget <q>developer agility and attractive (initial) cost</q>.</p>
-   <h2 class="no-num heading settled" id="sit-som-cloudbroker"><span class="content">SIT som Cloudbroker</span></h2>
-    Statens ITs nye driftsmodel er et fælles offentligt udviklings- og driftsmiljø tilbudt som Platform as a Service. I første omgang alene som en <a class="property" data-link-type="propdesc">on-premise</a> Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT i rollen som Cloud Broker. [[NIST.SP.500‐291]] 
-   <p>PaaS beskriver ansvarsfordelinger:</p>
+   <p>Nye roller:</p>
+   <ul>
+    <li data-md>
+     <p>Cloudconsumer = Statslige organisationer, DIG!</p>
+    <li data-md>
+     <p>Cloudprovider = ??</p>
+    <li data-md>
+     <p>Audit, Broker og Carrier... er lidt uden for scope lige nu...</p>
+   </ul>
+   <h2 class="no-num heading settled" id="digst-policy"><span class="content">DIGST policy</span></h2>
+    eksisterende...Sammenhængende sikre og effektive services.. 
+   <p>Strategi: Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen. Fra IaaS til PaaS. FDA, siger brugerstyring, selvbetjening og datadistribution.</p>
+   <p>Strategi: Compliance by design. Samle mange krav til én vejledning.</p>
+   <p>Strategi: Effektiv implementering gennem central løsning med exit.</p>
+   <p>Strategi: Styre på snitfladen mellem platform og applikation. Definition af platform services...</p>
+   <p>Rolle:</p>
+   <ul>
+    <li data-md>
+     <p>Myndighed</p>
+    <li data-md>
+     <p>borger og virksomheder</p>
+    <li data-md>
+     <p>Policy owner
+plus en ny?</p>
+   </ul>
+   <p>Policy på GovCloud, Digst tror på..... Statslig regi... PaaS... Community Cloud.</p>
+   <p>Mulighed for at styre noget arkitektur på stålet...</p>
+   <p>Statens ITs nye driftsmodel er et fælles offentligt udviklings- og driftsmiljø tilbudt som Platform as a Service. I første omgang alene som en <a class="property" data-link-type="propdesc">on-premise</a> Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT i rollen som Cloud Broker. [[NIST.SP.500‐291]]</p>
+   <h2 class="no-num heading settled" id="govcloud-paas"><span class="content">GovCloud PaaS</span></h2>
+    Formålet ... Compliance by design! og hyppig, effektiv udbredelse...på til harmoniserede services.. 
+   <p>Placering af roller...
+SIT bliver...
+DIGT bliver...
+Myndighede bliver cloudconsumers
+Borger og virksomheder er busines service consumers</p>
+   <h2 class="no-num heading settled" id="behov-og-der-opfyldelse"><span class="content">Behov og der opfyldelse</span></h2>
+   <ul>
+    <li data-md>
+     <p>Anvendere ønsker mere fleksibel og billigere adgang til it-ressourcer - Self-service, measured service (), ressource pooling og fælles indkøb, leverandør kendskab.</p>
+    <li data-md>
+     <p>Anvendere ønsker at kunne teste og idriftsætte nye versioner hurtigst muligt. - Self-service,</p>
+    <li data-md>
+     <p>Anvender ønsker sig sikkerhed for compliance... - policy understøttelse</p>
+    <li data-md>
+     <p>Sikkerheds (ISO27001)</p>
+    <li data-md>
+     <p>Privacy GDPR</p>
+    <li data-md>
+     <p>FDA principles supported/enforces by a layered architecture/seperation of conserns. Seperate functionality to manage user, share data and provide self-service from core business applications</p>
+    <li data-md>
+     <p>Anvender ønsker sig indflydele på platformens udvikling. - Fælles offentlig governance</p>
+    <li data-md>
+     <p>Anvender ønsker sig en fremtidssikring af løsninger... - Effektivt understøtte emerging principper som once-only, open by default, single digital gateway, reusable infrastructure... government data platform/datastrategi.</p>
+   </ul>
+   <h2 class="no-num heading settled" id="mulige-gevinster"><span class="content">Mulige gevinster</span></h2>
+   <h2 class="no-num heading settled" id="anvarsfordeling"><span class="content">Anvarsfordeling</span></h2>
+    PaaS beskriver ansvarsfordelinger: 
    <p>Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
    <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
    <p>Ansvarsfordelingen mellem platform og applikationer er flydende. Men forsøges fastlagt ....</p>
    <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
-   <p>GovCloud API realiseres gennem generisk middleware og custom build platformservices.</p>
-   <p class="note" role="note"><span>Note:</span> Tegning1 layers, and middleware on one side, selfservice on the other. Tuborg... der folder middleware ud. ,</p>
-   <h2 class="no-num heading settled" id="fordele"><span class="content">Fordele</span></h2>
-   <p>Cloud karakteristika men også Complaince as a Service</p>
-   <p>Self-service (+ procurement) -> time to market</p>
-   <p>Ressource sharing (+ self healing) -> lower cost hardware -> multitude lower cost</p>
-   <p>FDA principles supported/enforces by a layered architecture/seperation of conserns.</p>
-   <ul>
-    <li data-md>
-     <p>Seperate functionality to manage user, share data and provide self-service from core business applications</p>
-   </ul>
-   <p>Senere....</p>
-   <p>Security (ISO27001)</p>
-   <p>Privacy (GDPR)</p>
-   <p>Procurement</p>
-   <ul>
-    <li data-md>
-     <p>Kompentancer</p>
-   </ul>
-   <p>Effektivt understøtte emerging principper som once-only, open by default, single digital gateway, reusable infrastructure... government data platform/datastrategi.</p>
-   <h2 class="no-num heading settled" id="services-applikationer-og-datasamlinger"><span class="content">Services, applikationer og datasamlinger</span></h2>
-    Enforce Digital Asset Management.
-Allow Direct data sharing.
-Third party audit. 
-   <p><img align="center" src="layers.png" width="60%"></p>
-   <p class="note" role="note"><span>Note:</span> Tegning opdateres til at afspejle data ejerskab og anvendelse af services og data på tværs.</p>
-   <p>En hovedtype af assets for hvert lag i arkitekturen:</p>
-   <h4 class="heading settled" id="service"><span class="content">Service</span></h4>
+   <h3 class="no-num heading settled" id="myndighedens-it-system-er"><span class="content">Myndighedens it-system(er)</span></h3>
+   <h4 class="no-num heading settled" id="service"><span class="content">Service</span></h4>
     An Application Service represents an explicitly defined exposed application behaviour. 
    <p>Eksempel: CPR opslag, Send Digital Post, Website</p>
-   <h4 class="heading settled" id="applikation"><span class="content">Applikation</span></h4>
-    An Application represents an encapsulation of application functionality 
+   <p>Rette mod Borger og Virksomheder (herunder andre myndigheder).</p>
+   <h4 class="no-num heading settled" id="applikation"><span class="content">Applikation</span></h4>
+    An Application represents an encapsulation of application (business!) functionality 
+   <p>Process understøttelse.. hvor der også indgår borger og virksomhed, kun gennem services..</p>
+   <p>Minus data.</p>
    <p>Eksempel: F2, Datafordeler, NemID,</p>
    <p>Komponent unit of scalability</p>
-   <h4 class="heading settled" id="datasamling"><span class="content">Datasamling</span></h4>
+   <h4 class="no-num heading settled" id="datasamling"><span class="content">Datasamling</span></h4>
    <p>Eksempel: CVR register, HR Sager,</p>
-   <h2 class="no-num heading settled" id="containere"><span class="content">Containere</span></h2>
-    Metafor: En container er en .exe fil.... 
-   <p>Lag...base image</p>
-   <p>Bygge manifest...</p>
-   <p>Test manifest...</p>
-   <p>Scanning. [NIST](https://csrc.nist.gov/CSRC/media/Publications/sp/800-180/draft/documents/sp800-180_draft.pdf)</p>
-   <p class="note" role="note"><span>Note:</span> Tegning3 af container, baseimage, lagerplads med labels og scanner...</p>
-   <h2 class="no-num heading settled" id="platformservices"><span class="content">Platformservices</span></h2>
-    <img align="right" src="highlevel.svg" width="25%"> Skal anvendes af applikationsudviklere. Bliver løbende udbygget og prioriteret 
-   <ul>
-    <li data-md>
-     <p>Authorisation, men ikke authentication.  Genkende brugere... externt Anonyme services, identitetsbaseret services Godkende adgang internt i application. ABAC over RBAC Aka service... Identity broker....</p>
-    <li data-md>
-     <p>Brugerstyring API Key Management</p>
-    <li data-md>
-     <p>Log Log fra tre lag... mulighed for identifikationer.... Tegning af streams.</p>
-    <li data-md>
-     <p>Directory</p>
-    <li data-md>
-     <p>Container Repository</p>
-   </ul>
-   <h2 class="no-num heading settled" id="other-software-as-a-service"><span class="content">Other Software (as a Service)</span></h2>
-   <p class="note" role="note"><span>Note:</span> Tegning4 af SaaS søjler oven på PaaS. Og der løbende kommer mere til....</p>
-   <p>Playbook ideen.</p>
-   <h4 class="heading settled" id="govdev"><span class="content">GovDev</span></h4>
-   <h4 class="heading settled" id="govopendata"><span class="content">GovOpenData</span></h4>
-   <h4 class="heading settled" id="govweb"><span class="content">GovWeb</span></h4>
-   <h4 class="heading settled" id="govai"><span class="content">GovAI</span></h4>
-   <h4 class="heading settled" id="govdata"><span class="content">GovData</span></h4>
+   <h3 class="no-num heading settled" id="statens-its-platform"><span class="content">Statens ITs platform</span></h3>
+   <h4 class="no-num heading settled" id="selvbetjening"><span class="content">Selvbetjening</span></h4>
+   <h4 class="no-num heading settled" id="application-fabric"><span class="content">Application Fabric</span></h4>
+   <h4 class="no-num heading settled" id="data-fabric"><span class="content">Data Fabric</span></h4>
+   <h4 class="no-num heading settled" id="platform-services"><span class="content">Platform Services</span></h4>
+   <h3 class="no-num heading settled" id="digitaliseringsstyrelsen"><span class="content">Digitaliseringsstyrelsen</span></h3>
+   <h4 class="no-num heading settled" id="roadmap-for-platform-services"><span class="content">Roadmap for Platform Services</span></h4>
+   <h4 class="no-num heading settled" id="vejledning-i-anvendelse"><span class="content">Vejledning i anvendelse</span></h4>
   </main>
 <script>
 (function() {

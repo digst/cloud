@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-04">4 April 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-10">10 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1542,6 +1542,12 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#appendix"><span class="secno"></span> <span class="content">Appendix</span></a>
      <ol class="toc">
+      <li>
+       <a href="#inspiration"><span class="secno"></span> <span class="content">Inspiration</span></a>
+       <ol class="toc">
+        <li><a href="#kundens-it-milj"><span class="secno"></span> <span class="content">Kundens It-miljø</span></a>
+        <li><a href="#tekniske-kompetancer"><span class="secno"></span> <span class="content">Tekniske kompetancer</span></a>
+       </ol>
       <li><a href="#use-of-archimate"><span class="secno"></span> <span class="content">Use of Archimate</span></a>
      </ol>
     <li>
@@ -1554,6 +1560,7 @@ pre .property::before, pre .property::after {
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
+   <p>!add security specific notes... Multitenancy, Privacy, Resilliance</p>
    <h3 class="heading settled" id="user-stories"><span class="content">User Stories</span></h3>
     [bør nok flyttes til JIRA issues på et tidspunkt...]
 For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?  Auditor? 
@@ -1906,6 +1913,17 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
      <p>Access policies should rely on trusted attributes over detailes rights when possible.</p>
    </ul>
    <h2 class="no-num heading settled" id="appendix"><span class="content">Appendix</span><a class="self-link" href="#appendix"></a></h2>
+   <h3 class="heading settled" id="inspiration"><span class="content">Inspiration</span><a class="self-link" href="#inspiration"></a></h3>
+   <h4 class="heading settled" id="kundens-it-milj"><span class="content">Kundens It-miljø</span><a class="self-link" href="#kundens-it-milj"></a></h4>
+   <p>Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologi hos mange leverandører.</p>
+   <p>DevOps og Cloud teknologi</p>
+   <p>Fælles platform...</p>
+   <p>Arkitekturstil...</p>
+   <p>Realiseret... og selvbetjening.</p>
+   <p>24/7 Platform support. Applikationssupport...</p>
+   <h4 class="heading settled" id="tekniske-kompetancer"><span class="content">Tekniske kompetancer</span><a class="self-link" href="#tekniske-kompetancer"></a></h4>
+   <p>Docker, K8S</p>
+   <p>REST, JWT. NoSql, Queue</p>
    <h3 class="heading settled" id="use-of-archimate"><span class="content">Use of Archimate</span><a class="self-link" href="#use-of-archimate"></a></h3>
   </main>
 <script>
