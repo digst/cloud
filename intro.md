@@ -3,6 +3,7 @@ Title: cloud.gov.dk introduktion
 Status: LD
 URL: https://github.com/digst/cloud/blob/master/intro.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
+  Christian Fahrenkrug, Statens IT
 Boilerplate: table-of-contents no, copyright no, conformance no, abstract no
 Markup Shorthands: biblio yes
 Repository: digst/cloud
