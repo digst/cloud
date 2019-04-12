@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-10">10 April 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-12">12 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1381,54 +1381,24 @@ pre .property::before, pre .property::after {
   </div>
   <div data-fill-with="at-risk"></div>
   <main>
-   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
-   <p>[Målgruppe: Direktioner i statslige styrelser og ministerier.
-Formåæl: fokus på it-styring, paradigmeskift Cloud Native/First , begreber om styring og cloud,  ]</p>
+   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small> <br><br></p>
+   <p>Statens ITs nye cloud baserede service model, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi.</p>
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
-    Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder og ambitionerne løftes endnu engang med Regeringens Sammenhængsreforms delaftale om <a href>Digital service i verdensklasse</a>. 
-   <p>I dag tilbydes mange offentlige services af enkelte myndigheder og er sjældent integreret i de sammenhængende brugeroplevelser som er en del af ambitionen. Selvom Digitaliseringsstrategiens initiativer peger i den rigtige retning oplever flere myndigheder at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. Leverandører og enkelte myndigheder har gode erfaringer med nedbringe tiden ved at bruge moderne udviklingsmetoder og cloud-teknologier.</p>
-   <p>En fælles cloud-baseret platform er en måde at bringe nye metoder og teknologier i spil på, der tilbyder en ny sikker og mere effektiv platform for en ny generation af offentlige it-systemer.</p>
-   <p>Statens ITs beslutning om at tilbyde en ny driftsmodel, bringer ét skridt tættere på at kunne opfylde de høje digitale ambitioner.</p>
-   <p>Nuværende niveau for offentlig IT har væsentlige mangler</p>
-   <ul>
-    <li data-md>
-     <p>usammenhængende services leveret i siloer</p>
-    <li data-md>
-     <p>ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring</p>
-    <li data-md>
-     <p>utilstrækkelig sikkerhed til at imødekomme ny trusler</p>
-   </ul>
-   <p>Cloud-teknologier har uforløste potentialer</p>
-   <ul>
-    <li data-md>
-     <p>moderne drift er ved lave omkostninger og høj skalerbarhed</p>
-    <li data-md>
-     <p>dev-ops giver effektiv udvikling, test og deployment</p>
-    <li data-md>
-     <p>scale out til public cloud ved behov</p>
-   </ul>
-   <p>Fælles platform giver nye muligheder</p>
-   <ul>
-    <li data-md>
-     <p>bedre overblik over værdier i form af data og applikationer</p>
-    <li data-md>
-     <p>lettere genbrug af data i nye sammenhænge</p>
-    <li data-md>
-     <p>effektiv udnyttelse af ressourcer på tværs af myndigheder</p>
-   </ul>
+    Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder. Digitaliseringsstrategiens initiativer understøtter disse ambitioner, men flere myndigheder oplever at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. 
+   <p>Nuværende niveau for offentlig IT har væsentlige mangler - usammenhængende services leveret i siloer - ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring - utilstrækkelig sikkerhed til at imødekomme ny trusler</p>
+   <p>Cloud-teknologier har uforløste potentialer - moderne drift er ved lave omkostninger og høj skalerbarhed - dev-ops giver effektiv udvikling, test og deployment - scale out til public cloud ved behov</p>
+   <p>Fælles platform giver nye muligheder - bedre overblik over værdier i form af data og applikationer - lettere genbrug af data i nye sammenhænge - effektiv udnyttelse af ressourcer på tværs af myndigheder</p>
    <h2 class="no-num heading settled" id="moderne-it-forvaltning"><span class="content">Moderne IT forvaltning</span></h2>
-   <p>Systemforvaltning... giver problemer...
-Forvaltning af værdier (assest management)... i form af</p>
-   <p>Cloud teknologi som enabler, by design. Men det skal styres gennem arkitektur, vedor login.</p>
-   <p>Figur.</p>
+   <p>Systemforvaltning... giver problemer...særligt på grund af governence af de forskellige dele af systemer er forskellige, både services og data har en levetid ud over det enkelte systems.</p>
+   <p>Forvaltning af værdier (Digital Asset Management)... i form af, særligt services, applikationsfunktionalitet og datasamlinger.</p>
+   <p><img height="200" src="change.png"></p>
+   <p>Cloud Platform som enabler, by design. Men det skal styres gennem arkitektur for at undgå vendor lock-in.</p>
    <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
-    Plank NIST side 1,
-Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services. 
+    Ordet cloud er blevet del af dagligdagssproget og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services: 
    <blockquote cite>
-    This cloud model is composed of five essential characteristics (On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, Measured service), three service models (Software as a Service, Platform as a Service, Infrastructure as Services), and four deployment models (Private, Community, Public, Hybrid).
-    <footer><cite><span>[NIST.SP.800-145]</span></cite></footer>
+    The NIST definition provides a unifying view of five essential characteristics that all cloud services exhibit: *ondemand self-service*, *broad network access*, *resource pooling*, *rapid elasticity*, and *measured service*. [...] It provides three service models available to cloud consumers: cloud software as a service (*SaaS*), cloud platform as a service (*PaaS*), and cloud infrastructure as a service (*IaaS*). [And] describes how the computing infrastructure that delivers these services can be shared: *private cloud*, *community cloud*, *public cloud*, and *hybrid cloud*. 
+    <footer><cite><span>[NIST.SP.500-292]</span></cite></footer>
    </blockquote>
-   <p>Cloud modellens succes skyldes i følge NIST øget <q>developer agility and attractive (initial) cost</q>.</p>
    <p>Nye roller:</p>
    <ul>
     <li data-md>
@@ -1439,39 +1409,47 @@ Ordet cloud er blevet del af dagligdagssproget for mange og dækker over alt lig
      <p>Audit, Broker og Carrier... er lidt uden for scope lige nu...</p>
    </ul>
    <h2 class="no-num heading settled" id="digst-policy"><span class="content">DIGST policy</span></h2>
-    eksisterende...Sammenhængende sikre og effektive services.. 
-   <p>Strategi: Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen. Fra IaaS til PaaS. FDA, siger brugerstyring, selvbetjening og datadistribution.</p>
-   <p>Strategi: Compliance by design. Samle mange krav til én vejledning.</p>
-   <p>Strategi: Effektiv implementering gennem central løsning med exit.</p>
-   <p>Strategi: Styre på snitfladen mellem platform og applikation. Definition af platform services...</p>
-   <p>Rolle:</p>
+    Strategi eksisterende...Sammenhængende sikre og effektive services.. 
+   <p>Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen (Står det i strategien?)</p>
+   <p>FDA: Byg efter fælles retningslinjer... brugerstyring, selvbetjening og datadistribution. Ny? Cloud first?.</p>
+   <p>Ny taktik: Compliance by design. Samle mange krav til én vejledning.</p>
+   <p>DIGST tror essentielle egeneskaber ved cloud computing vi bidrage væsentligt til den hastighed hvormed løsning udvikles og forbedres.</p>
+   <p>DIGST tror på fælles retningslinjer giver flytbare applikationer, mindre risiko for vendor login og effektiv overholdelse af retningslinjer.</p>
+   <p>*Paas* fordi...</p>
+   <p>*Community* fordi...</p>
+   <p>*Statens IT* fordi...</p>
+   <p>I øvrigt en gammel taktik: Effektiv implementering gennem central løsning med exit, e.g. Dankort.</p>
+   <p>*Hybrid cloud* på langsigt, måske med Statens IT som cloudbroker</p>
+   <p>Så GovCloud er vision om at Statens IT tilbyder en fælles platform til udvikling og drift af applikationer. Platformen er designet til effektiv overholdelse af fællesoffentlige retningslinjer og general lovgivning, og samtidig understøtte hyppige ændringer, øget datadeling og sammenhængende services (integrated service delivery in public sector).</p>
+   <h2 class="no-num heading settled" id="govcloud-paas"><span class="content">GovCloud PaaS</span></h2>
+    Formålet tilbyde hyppigere ændringer gennem selvbetjening, lavere omkostninger ved ensartede modeller og understøtte compliance gennem platform design. 
+   <p>Compliance by design! og hyppig, effektiv udbredelse...på til harmoniserede services..</p>
+   <p>Placering af roller...</p>
+   <p>Myndigheder bliver cloud consumers, mere specifikt platformsanvendere</p>
+   <p>SIT bliver cloud provider, mere specifikt platformsudbyder</p>
+   <p>DIGT er policy owner, mere specifikt ansvarlig for retningsslinjer for anvendelsen af platformen og life cycle management of platform services.</p>
+   <p>Borger og virksomheder er busines service consumers</p>
+   <p>SIT genbruger</p>
    <ul>
     <li data-md>
-     <p>Myndighed</p>
+     <p>Kundesupport/kontakt</p>
     <li data-md>
-     <p>borger og virksomheder</p>
+     <p>Faciliteter</p>
     <li data-md>
-     <p>Policy owner
-plus en ny?</p>
+     <p>Sikkerhedsfunktioner</p>
+    <li data-md>
+     <p>Brugerstyring</p>
    </ul>
-   <p>Policy på GovCloud, Digst tror på..... Statslig regi... PaaS... Community Cloud.</p>
-   <p>Mulighed for at styre noget arkitektur på stålet...</p>
-   <p>Statens ITs nye driftsmodel er et fælles offentligt udviklings- og driftsmiljø tilbudt som Platform as a Service. I første omgang alene som en <a class="property" data-link-type="propdesc">on-premise</a> Community Cloud, men forventes udvidet til en Hybrid Cloud med anvendelse af andre Public Cloud og SIT i rollen som Cloud Broker. [[NIST.SP.500‐291]]</p>
-   <h2 class="no-num heading settled" id="govcloud-paas"><span class="content">GovCloud PaaS</span></h2>
-    Formålet ... Compliance by design! og hyppig, effektiv udbredelse...på til harmoniserede services.. 
-   <p>Placering af roller...
-SIT bliver...
-DIGT bliver...
-Myndighede bliver cloudconsumers
-Borger og virksomheder er busines service consumers</p>
+   <p>I fremtiden.... Audit, Broker og Carrier....</p>
    <h2 class="no-num heading settled" id="behov-og-der-opfyldelse"><span class="content">Behov og der opfyldelse</span></h2>
+    Så 
    <ul>
     <li data-md>
      <p>Anvendere ønsker mere fleksibel og billigere adgang til it-ressourcer - Self-service, measured service (), ressource pooling og fælles indkøb, leverandør kendskab.</p>
     <li data-md>
      <p>Anvendere ønsker at kunne teste og idriftsætte nye versioner hurtigst muligt. - Self-service,</p>
     <li data-md>
-     <p>Anvender ønsker sig sikkerhed for compliance... - policy understøttelse</p>
+     <p>Anvender ønsker sig sikkerhed for compliance... regulation and policy understøttelse</p>
     <li data-md>
      <p>Sikkerheds (ISO27001)</p>
     <li data-md>
@@ -1486,10 +1464,12 @@ Borger og virksomheder er busines service consumers</p>
    <h2 class="no-num heading settled" id="mulige-gevinster"><span class="content">Mulige gevinster</span></h2>
    <h2 class="no-num heading settled" id="anvarsfordeling"><span class="content">Anvarsfordeling</span></h2>
     PaaS beskriver ansvarsfordelinger: 
-   <p>Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT.</p>
-   <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
-   <p>Ansvarsfordelingen mellem platform og applikationer er flydende. Men forsøges fastlagt ....</p>
-   <p>GovCloud API aftales mellem kunder, SIT og DIGST som policy owner (own definition).</p>
+   <blockquote cite>
+     Kunden får mulighed for at deploye egne applikationer der er udviklet med brug af programmeringssprog, services og værktøj der understøttes af SIT. 
+    <p>Kunden har ingen kontrol over den underlæggende infrastruktur, herunder network, serverer, operativsystemer og storage. Men tilgengæld over egne applikationer og deres konfigurationer.</p>
+    <footer><cite><span>[NIST.SP.800-145]</span></cite></footer>
+   </blockquote>
+   <p>Ansvarsfordelingen mellem platform og applikationer kan være flydende, men fastlægges i service model og life cycle management af API.</p>
    <h3 class="no-num heading settled" id="myndighedens-it-system-er"><span class="content">Myndighedens it-system(er)</span></h3>
    <h4 class="no-num heading settled" id="service"><span class="content">Service</span></h4>
     An Application Service represents an explicitly defined exposed application behaviour. 
@@ -1505,9 +1485,9 @@ Borger og virksomheder er busines service consumers</p>
    <p>Eksempel: CVR register, HR Sager,</p>
    <h3 class="no-num heading settled" id="statens-its-platform"><span class="content">Statens ITs platform</span></h3>
    <h4 class="no-num heading settled" id="selvbetjening"><span class="content">Selvbetjening</span></h4>
+   <h4 class="no-num heading settled" id="platform-services"><span class="content">Platform Services</span></h4>
    <h4 class="no-num heading settled" id="application-fabric"><span class="content">Application Fabric</span></h4>
    <h4 class="no-num heading settled" id="data-fabric"><span class="content">Data Fabric</span></h4>
-   <h4 class="no-num heading settled" id="platform-services"><span class="content">Platform Services</span></h4>
    <h3 class="no-num heading settled" id="digitaliseringsstyrelsen"><span class="content">Digitaliseringsstyrelsen</span></h3>
    <h4 class="no-num heading settled" id="roadmap-for-platform-services"><span class="content">Roadmap for Platform Services</span></h4>
    <h4 class="no-num heading settled" id="vejledning-i-anvendelse"><span class="content">Vejledning i anvendelse</span></h4>
