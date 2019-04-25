@@ -16,14 +16,17 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 <br /><br />
 
 
-Statens ITs nye cloud baserede service model, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi.
+Statens ITs nye cloudbaserede servicemodel, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi, og understøtter at jeres data kan gøres tilgængelig på tværs af applikationer, og er fritstillet ved fremtidige opgraderinger af jeres applikationer.
 
 
 <h2 class="no-num">Indledning</h2>
 Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder. Digitaliseringsstrategiens initiativer understøtter disse ambitioner, men flere myndigheder oplever at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres.
 
+Det nuværende niveau for offentlig IT har væsentlige mangler. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.
 
-Nuværende niveau for offentlig IT har væsentlige mangler - usammenhængende services leveret i siloer - ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring - utilstrækkelig sikkerhed til at imødekomme ny trusler
+Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde. Ved at anvende Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv udvikling, test og deployment. 
+
+Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue applikationer og data
 
 Cloud-teknologier har uforløste potentialer - moderne drift er ved lave omkostninger og høj skalerbarhed - dev-ops giver effektiv udvikling, test og deployment - scale out til public cloud ved behov
 
