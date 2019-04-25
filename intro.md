@@ -22,11 +22,13 @@ Statens ITs nye cloudbaserede servicemodel, bringer jer et stort skridt tættere
 <h2 class="no-num">Indledning</h2>
 Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder. Digitaliseringsstrategiens initiativer understøtter disse ambitioner, men flere myndigheder oplever at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres.
 
-Det nuværende niveau for offentlig IT har væsentlige mangler. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.
 
-Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde. Ved at anvende Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv udvikling, test og deployment. 
+Det nuværende niveau for offentlig IT har væsentlige udfordringer. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.
 
-Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue applikationer og data
+
+Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde. Hos Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv udvikling, test og deployment. 
+
+Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue, opbevare, udvikle og køre applikationer og data. Regnekraft og opbevaringsplads deles mellem brugere af clouden, og alle betaler kun for det de selv bruger. Det betyder at man kan deles om regnekraften og opbevaringspladsen, .
 
 Cloud-teknologier har uforløste potentialer - moderne drift er ved lave omkostninger og høj skalerbarhed - dev-ops giver effektiv udvikling, test og deployment - scale out til public cloud ved behov
 
