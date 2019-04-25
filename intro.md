@@ -28,11 +28,7 @@ Det nuværende niveau for offentlig IT har væsentlige udfordringer. Usammenhæn
 
 Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde. Hos Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv udvikling, test og deployment. 
 
-Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue, opbevare, udvikle og køre applikationer og data. Regnekraft og opbevaringsplads deles mellem brugere af clouden, og alle betaler kun for det de selv bruger. Det betyder at man kan deles om regnekraften og opbevaringspladsen, .
-
-Cloud-teknologier har uforløste potentialer - moderne drift er ved lave omkostninger og høj skalerbarhed - dev-ops giver effektiv udvikling, test og deployment - scale out til public cloud ved behov
-
-Fælles platform giver nye muligheder - bedre overblik over værdier i form af data og applikationer - lettere genbrug af data i nye sammenhænge - effektiv udnyttelse af ressourcer på tværs af myndigheder
+Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue, opbevare, udvikle og køre applikationer og data. Regnekraft og opbevaringsplads deles mellem brugere af clouden, og alle betaler kun for det de selv bruger. Det betyder at man kan deles om regnekraften og opbevaringspladsen, så man kun skal betale for de nødvendige ressourcer, når man bruger dem. - Hvis der er behov for mere end Statens ITs egne maskiner kan levere, så kan systemet automatisk trække på andre cloudservere efter behov. Det giver effektiv udnyttelse af ressourcer på tværs af myndigheder.
 
 
 <h2 class="no-num">Moderne IT forvaltning</h2>
