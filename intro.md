@@ -33,8 +33,9 @@ Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigh
 
 <h2 class="no-num">Moderne IT forvaltning</h2>
 
-Systemforvaltning... giver problemer...særligt på grund af governence af de forskellige dele af systemer er forskellige, både services og data har en levetid ud over det enkelte systems.
+Moderne systemforvaltning har en række velkendte udfordringer. Mange af dem udspringer af, at de forskellige dele af et samlet system, bør forvaltes på forskellige måder, da services, applikationer og data ikke har lige lang levetid. Derfor kræver de styring der rækker ud over levetiden for det system de er en del af.
 
+Det betyder at systemforvaltning i dag, er forvaltning af digitale værdier der kan sættes sammen til at løfte specifikker services, og genbruges til at sikre sammenhæng og delt viden på tværs. 
 
 Forvaltning af værdier (Digital Asset Management)... i form af, særligt services, applikationsfunktionalitet og datasamlinger.
 
