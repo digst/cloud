@@ -35,9 +35,8 @@ Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigh
 
 Moderne systemforvaltning har en række velkendte udfordringer. Mange af dem udspringer af, at de forskellige dele af et samlet system, bør forvaltes på forskellige måder, da services, applikationer og data ikke har lige lang levetid. Derfor kræver de styring der rækker ud over levetiden for det system de er en del af.
 
-Det betyder at systemforvaltning i dag, er forvaltning af digitale værdier der kan sættes sammen til at løfte specifikker services, og genbruges til at sikre sammenhæng og delt viden på tværs. 
+Det betyder at systemforvaltning i dag, er forvaltning af digitale værdier (Digital Asset Management) der kan sættes sammen til at løfte specifikker services, og genbruges til at sikre sammenhæng og delt viden på tværs. Statens ITs cloudservice er opbygget efter en arkitektur der understøtter en sammenhængende forvaltning af adskilte digitale værdier, så de kan bruges i endnu flere sammensætninger.
 
-Forvaltning af værdier (Digital Asset Management)... i form af, særligt services, applikationsfunktionalitet og datasamlinger.
 
 <img src="change.png" height="200" >
 
