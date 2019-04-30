@@ -60,7 +60,7 @@ Ordet cloud er blevet del af dagligdagssproget og dækker over alt lige fra "jus
 Nye roller:
   - Cloudconsumer = Statslige organisationer, DIG!
   - Cloudprovider = ??
-  - Audit, Broker og Carrier... er lidt uden for scope lige nu...
+  - Audit, Broker og Carrier... er lidt uden for scope lige nu...men kommer snart
 
 
 
