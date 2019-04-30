@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 4d208866a95a1121fceca549a36bfb09c5bf1705" name="generator">
+  <meta content="Bikeshed version 10ff3eb4050069e20bb9b943c8b76fe5bfe3a48f" name="generator">
   <link href="https://github.com/digst/cloud/blob/master/intro.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1365,7 +1365,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Introduktion<img align="right" src="cloud.svg">,<br> GovCloud PaaS,<br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-12">12 April 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-30">30 April 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1382,17 +1382,21 @@ pre .property::before, pre .property::after {
   </div>
   <div data-fill-with="at-risk"></div>
   <main>
-   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small> <br><br></p>
-   <p>Statens ITs nye cloud baserede service model, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi.</p>
+   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a> (dette dokument), en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small> <br><br></p>
+   <p>Statens ITs nye cloudbaserede servicemodel, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi, [og samtidig?]  og understøtter at jeres data kan gøres tilgængelig på tværs af applikationer, og er [fritstillet?] ved fremtidige opgraderinger af jeres applikationer.</p>
    <h2 class="no-num heading settled" id="indledning"><span class="content">Indledning</span></h2>
     Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder. Digitaliseringsstrategiens initiativer understøtter disse ambitioner, men flere myndigheder oplever at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres. 
-   <p>Nuværende niveau for offentlig IT har væsentlige mangler - usammenhængende services leveret i siloer - ineffektiv datadeling koster og hæmmer effektiv, data-drevet styring - utilstrækkelig sikkerhed til at imødekomme ny trusler</p>
-   <p>Cloud-teknologier har uforløste potentialer - moderne drift er ved lave omkostninger og høj skalerbarhed - dev-ops giver effektiv udvikling, test og deployment - scale out til public cloud ved behov</p>
-   <p>Fælles platform giver nye muligheder - bedre overblik over værdier i form af data og applikationer - lettere genbrug af data i nye sammenhænge - effektiv udnyttelse af ressourcer på tværs af myndigheder</p>
+   <p>Det nuværende niveau for offentlig IT har væsentlige udfordringer. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. [Når data deles?...] Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til [gennemsigtighed i?] offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.</p>
+   <p>Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde.</p>
+   <p>Hos Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv forvaltning, lige fra prototyping til dev-ops og avancerede data-analytics.</p>
+   <p>Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at forvalte deres services, applikationer og data. Regnekraft og opbevaringsplads deles mellem alle brugere af servicen, og alle betaler kun for de ressourcer de anvender. Det betyder at man kan deles om regnekraften og opbevaringspladsen, så man kun skal betale for de nødvendige ressourcer, når man bruger dem. [Hvis der er behov for mere end Statens ITs egne maskiner kan levere, så kan systemet automatisk trække på andre cloudservere efter behov]. Det giver effektiv udnyttelse af ressourcer på tværs af myndigheder, og dermed en betydelige besparelse for den enkelte myndighed.</p>
+   <p>[Der mangler noget om selvbetjening ]</p>
    <h2 class="no-num heading settled" id="moderne-it-forvaltning"><span class="content">Moderne IT forvaltning</span></h2>
-   <p>Systemforvaltning... giver problemer...særligt på grund af governence af de forskellige dele af systemer er forskellige, både services og data har en levetid ud over det enkelte systems.</p>
-   <p>Forvaltning af værdier (Digital Asset Management)... i form af, særligt services, applikationsfunktionalitet og datasamlinger.</p>
+   <p>Traditionelt har systemforvaltning i det offentlige primært været et forhold med mellem en leverandør og en myndighed. I takt med at opgaver, arbejdsgange og it-systemer er langt mere integrerede og sammenhængende på tværs af den enkelte myndighed, opstår nye udfordringer.</p>
+   <p>Det vigtigste forhold er nok at services og data ofte forvaltes over længere tid end den enkelte applikation. [ITIL og GDPR giver også nye krav, og fører til hvad man kan kalde moderne ystemforvaltning eeller digital asset management].</p>
+   <p>Statens ITs cloudservice er opbygget efter en arkitektur der understøtter [måske ligefrem håndhæver?] en sammenhængende forvaltning af adskilte digitale værdier, så de kan bruges i endnu flere sammensætninger.</p>
    <p><img height="200" src="change.png"></p>
+   <p>[Håndhæves gennem selvbetjenings portal]</p>
    <p>Cloud Platform som enabler, by design. Men det skal styres gennem arkitektur for at undgå vendor lock-in.</p>
    <h2 class="no-num heading settled" id="cloud"><span class="content">Cloud</span></h2>
     Ordet cloud er blevet del af dagligdagssproget og dækker over alt lige fra "just someone else’s computer" til datacentre der bruger over en tiendedel af den samlede danske el-produktion. Her anvender vi markedets mest udbredte betydning som den kan findes hos det amerikanske National Institute of Standards and Technologies. De har udgivet en kort og præcis beskrivelse af en række begreber omkring cloud computing services: 

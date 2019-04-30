@@ -16,29 +16,37 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 <br /><br />
 
 
-Statens ITs nye cloudbaserede servicemodel, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi, og understøtter at jeres data kan gøres tilgængelig på tværs af applikationer, og er fritstillet ved fremtidige opgraderinger af jeres applikationer.
+Statens ITs nye cloudbaserede servicemodel, bringer jer et stort skridt tættere på at kunne opfylde målsætningerne i den fællesoffentlige digitaliseringsstrategi, [og samtidig?]  og understøtter at jeres data kan gøres tilgængelig på tværs af applikationer, og er [fritstillet?] ved fremtidige opgraderinger af jeres applikationer.
 
 
 <h2 class="no-num">Indledning</h2>
 Danmark er et digitalt samfund med høje ambitioner for sammenhængende services for borgere og virksomheder. Digitaliseringsstrategiens initiativer understøtter disse ambitioner, men flere myndigheder oplever at tilvejebringelsen af nye løsninger tager uforholdsmæssigt lang tid, særligt når flere myndigheder involveres.
 
 
-Det nuværende niveau for offentlig IT har væsentlige udfordringer. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.
+Det nuværende niveau for offentlig IT har væsentlige udfordringer. Usammenhængende services leveret i siloer giver en ineffektiv datadeling der koster tid og penge samt hæmmer effektiv, data-drevet styring. [Når data deles?...] Den manglende modenhed ved datadeling giver utilstrækkelig sikkerhed til at imødekomme nye trusler og gør det svært at leve op til borgernes forventninger til [gennemsigtighed i?] offentlige it-services. En lang række af de tekniske udfordringer der holder offentlige services tilbage kan løftes ved at anvende en cloudservice.
 
 
-Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde. Hos Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv udvikling, test og deployment. 
+Ved at gøre brug af det endnu uforløste potentiale i cloudteknologien tager jeres organisation et væsentligt skridt mod lavere omkostninger og langt højere skalerbarhed end traditionelle udviklings- og driftmiljøer kan tilbyde.
 
-Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at overskue, opbevare, udvikle og køre applikationer og data. Regnekraft og opbevaringsplads deles mellem brugere af clouden, og alle betaler kun for det de selv bruger. Det betyder at man kan deles om regnekraften og opbevaringspladsen, så man kun skal betale for de nødvendige ressourcer, når man bruger dem. - Hvis der er behov for mere end Statens ITs egne maskiner kan levere, så kan systemet automatisk trække på andre cloudservere efter behov. Det giver effektiv udnyttelse af ressourcer på tværs af myndigheder.
+Hos Statens ITs cloudservice får i rammerne for en moderne dev-ops organisation der kan håndtere effektiv forvaltning, lige fra prototyping til dev-ops og avancerede data-analytics.
+
+Statens ITs Cloud service er en fælles platform der hjælper offentlige myndigheder med at forvalte deres services, applikationer og data. Regnekraft og opbevaringsplads deles mellem alle brugere af servicen, og alle betaler kun for de ressourcer de anvender. Det betyder at man kan deles om regnekraften og opbevaringspladsen, så man kun skal betale for de nødvendige ressourcer, når man bruger dem. [Hvis der er behov for mere end Statens ITs egne maskiner kan levere, så kan systemet automatisk trække på andre cloudservere efter behov]. Det giver effektiv udnyttelse af ressourcer på tværs af myndigheder, og dermed en betydelige besparelse for den enkelte myndighed.
+
+[Der mangler noget om selvbetjening ]
 
 
 <h2 class="no-num">Moderne IT forvaltning</h2>
 
-Moderne systemforvaltning har en række velkendte udfordringer. Mange af dem udspringer af, at de forskellige dele af et samlet system, bør forvaltes på forskellige måder, da services, applikationer og data ikke har lige lang levetid. Derfor kræver de styring der rækker ud over levetiden for det system de er en del af.
+Traditionelt har systemforvaltning i det offentlige primært været et forhold med mellem en leverandør og en myndighed. I takt med at opgaver, arbejdsgange og it-systemer er langt mere integrerede og sammenhængende på tværs af den enkelte myndighed, opstår nye udfordringer.
 
-Det betyder at systemforvaltning i dag, er forvaltning af digitale værdier (Digital Asset Management) der kan sættes sammen til at løfte specifikker services, og genbruges til at sikre sammenhæng og delt viden på tværs. Statens ITs cloudservice er opbygget efter en arkitektur der understøtter en sammenhængende forvaltning af adskilte digitale værdier, så de kan bruges i endnu flere sammensætninger.
+Det vigtigste forhold er nok at services og data ofte forvaltes over længere tid end den enkelte applikation. [ITIL og GDPR giver også nye krav, og fører til hvad man kan kalde moderne ystemforvaltning eeller digital asset management].
+
+Statens ITs cloudservice er opbygget efter en arkitektur der understøtter [måske ligefrem håndhæver?] en sammenhængende forvaltning af adskilte digitale værdier, så de kan bruges i endnu flere sammensætninger.
 
 
 <img src="change.png" height="200" >
+
+[Håndhæves gennem selvbetjenings portal]
 
 Cloud Platform som enabler, by design. Men det skal styres gennem arkitektur for at undgå vendor lock-in.
 
