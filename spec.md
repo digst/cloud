@@ -322,6 +322,8 @@ A dataset is a collection of individual pieces of information under the same gov
 - Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
 - Datasets are encrypted at rest (what keys? control?)
 
+(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )
+
 ## Logs
 
 - All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.

@@ -226,3 +226,13 @@ Eksempel: CVR register, HR Sager,
 }
 
  </pre>
+
+
+ ### Fra Watts,
+
+ - Den rigtige hardware   (det samme)
+ - Plads nok (50 TB), SSD, MapR
+ - Stabilitet.
+ - Overvågning.
+ - Support. 
+ - Planer og ansvar for nedbrud
