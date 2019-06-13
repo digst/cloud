@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 10ff3eb4050069e20bb9b943c8b76fe5bfe3a48f" name="generator">
+  <meta content="Bikeshed version 872cce6d3026423d677f3bd5837f1a1a46299a04" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-04-30">30 April 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-06-13">13 June 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1445,21 +1445,15 @@ pre .property::before, pre .property::after {
      <a href="#introduction"><span class="secno"></span> <span class="content">Introduction</span></a>
      <ol class="toc">
       <li>
-       <a href="#user-stories"><span class="secno"></span> <span class="content">User Stories</span></a>
+       <a href="#epics-and-user-stories"><span class="secno"></span> <span class="content">Epics and User Stories</span></a>
        <ol class="toc">
+        <li><a href="#platform-service-delivery"><span class="secno"></span> <span class="content">Platform Service Delivery</span></a>
+        <li><a href="#platform-service-operation"><span class="secno"></span> <span class="content">Platform Service Operation</span></a>
+        <li><a href="#application-development-and-operation"><span class="secno"></span> <span class="content">Application Development and Operation</span></a>
+        <li><a href="#sandbox"><span class="secno"></span> <span class="content">Sandbox</span></a>
         <li>
-         <a href="#epics-til-understttelse-af-mennesker-dev"><span class="secno"></span> <span class="content">Epics til understøttelse af "mennesker (dev?)"</span></a>
+         <a href="#platform-and-support"><span class="secno"></span> <span class="content">Platform and Support</span></a>
          <ol class="toc">
-          <li><a href="#kravspecifikation"><span class="secno"></span> <span class="content">Kravspecifikation?</span></a>
-          <li><a href="#byg"><span class="secno"></span> <span class="content">Byg?</span></a>
-          <li><a href="#test"><span class="secno"></span> <span class="content">Test?</span></a>
-          <li><a href="#deploy-og-monitorering"><span class="secno"></span> <span class="content">Deploy og Monitorering?</span></a>
-          <li><a href="#sandbox"><span class="secno"></span> <span class="content">Sandbox</span></a>
-         </ol>
-        <li>
-         <a href="#epics-til-understttelse-af-applikationer"><span class="secno"></span> <span class="content">Epics til understøttelse af "applikationer"</span></a>
-         <ol class="toc">
-          <li><a href="#data-access-fra-applikationer"><span class="secno"></span> <span class="content">Data Access fra Applikationer</span></a>
           <li><a href="#data-anvender-registrering-api-ngler"><span class="secno"></span> <span class="content">Data-anvender registrering (API nøgler)</span></a>
          </ol>
         <li><a href="#version-10-primo-2019"><span class="secno"></span> <span class="content">Version 1.0 primo 2019</span></a>
@@ -1561,60 +1555,61 @@ pre .property::before, pre .property::after {
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
    <p>!add security specific notes... Multitenancy, Privacy, Resilliance</p>
-   <h3 class="heading settled" id="user-stories"><span class="content">User Stories</span></h3>
-    [bør nok flyttes til JIRA issues på et tidspunkt...]
-For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?  Auditor? 
-   <h4 class="heading settled" id="epics-til-understttelse-af-mennesker-dev"><span class="content">Epics til understøttelse af "mennesker (dev?)"</span></h4>
-   <p class="note" role="note"><span>Note:</span> Overvej at bruge DevOps fase model som illustration.</p>
-   <h5 class="heading settled" id="kravspecifikation"><span class="content">Kravspecifikation?</span></h5>
-    Når epic’en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence) 
+   <h3 class="heading settled" id="epics-and-user-stories"><span class="content">Epics and User Stories</span></h3>
+    [bør nok flyttes til JIRA issues på et tidspunkt...] 
+   <p>For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler/Anvender, (Platforms)-operatør  og Policy Owner?  Auditor?</p>
+   <h4 class="heading settled" id="platform-service-delivery"><span class="content">Platform Service Delivery</span></h4>
+   <p>Når epic’en er afsluttet er overordnde opgaver og ansvar omkring GovCloud Paas placeret, første møde i nyoprette fora afholdt og første aftale om anvendelse af platformen indgået.</p>
    <ul>
     <li data-md>
-     <p>1.1 Som kunde vil jeg gerne kunne beskrive epics og user stories i JIRA.</p>
+     <p>1.1 Som anvender af platformen ønsker jeg sikkerhed for hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold.</p>
     <li data-md>
-     <p>1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt.</p>
+     <p>1.2 Som policy owner, ønsker jeg at sikre mig at anvendere har mulighed for at flytte applikationer til andre platforme med mindst mulig besvær, så jeg ikke er bundet til en specifik leverandør.</p>
     <li data-md>
-     <p>1.3 Som udvikler vil jeg gerne kunne relatere kode checkins til user stories.</p>
+     <p>1.3 Som udbyder ønsker jeg at mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware)</p>
+    <li data-md>
+     <p>1.4 Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet.</p>
+    <li data-md>
+     <p>1.5 Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt.</p>
+    <li data-md>
+     <p>1.6 Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet.</p>
+    <li data-md>
+     <p>1.7 Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer.</p>
+    <li data-md>
+     <p>1.8 Som policyowner ønsker jeg at servicemodellen udformes som et bilag til eksisterende kundeaftaler, for at sikre mindst mulig administration i forbindelse med udbredelse.</p>
    </ul>
-   <h5 class="heading settled" id="byg"><span class="content">Byg?</span></h5>
-    Når epic’en er færdig kan en udvikler checke kode ind og bygge en container baseret på et basis image fra SIT. 
+   <h4 class="heading settled" id="platform-service-operation"><span class="content">Platform Service Operation</span></h4>
+    Når epic’en er afsluttet er arbejdsgange for event management beskrevet og understøttet i samarbejdsværktøjet. 
    <ul>
     <li data-md>
-     <p>2.1 Som udvikler vil jeg gerne kunne gemme og versionstyre min applikationskode og konfiguration, så jeg effektivt kan rette fejl og samarbejde med andre udviklere (Git)</p>
+     <p>2.1 Som anvender ønsker jeg at udbyderen overvåger mine service og forsøger at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.</p>
     <li data-md>
-     <p>2.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)</p>
+     <p>2.2 Som udbyder ønsker jeg at anvendere deltager i diagnostik og ændringer i forbindelse med nedbrud på enkelte applikationer, så jeg ikke selv behøver kendskab til anvenderens applikationer, men kan fokusere på platformen.</p>
     <li data-md>
-     <p>2.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)</p>
+     <p>2.3 Som policy owner ønsker jeg at anvendere kan tage ansvar for fejlfinding og ændringer i deres egen applikationer, så udbyderen ikke bliver en flaskehals for vedligehold.</p>
+    <li data-md>
+     <p>2.4 Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.</p>
    </ul>
-   <p>[baseimages?]</p>
+   <h4 class="heading settled" id="application-development-and-operation"><span class="content">Application Development and Operation</span></h4>
+    Note: Overvej at bruge DevOps fase model som illustration. 
+   <p>Ikke alle funktioner er understøttet af platformen i sig selv, nogle gør brug af et andet produkt fra platformsudbyder, nemlig DevOps ToolChain.</p>
+   <p>Når epic’en er færdig kan en udvikler push’e en container til et repository på platformen, re-deploye en applikation, dens log, samt styre rettigheder til services og datasæt.</p>
    <ul>
     <li data-md>
-     <p>2.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)</p>
+     <p>4.1 Som anveder ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)</p>
     <li data-md>
-     <p>2.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)</p>
+     <p>4.2 Som anveder ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)</p>
+    <li data-md>
+     <p>4.3 Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)</p>
+    <li data-md>
+     <p>4.4 Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)</p>
+    <li data-md>
+     <p>4.5 Som anvender ønsker jeg kunne styre adgangen til services, så jeg kan begrænse adgangen til mine services, så jeg undgår <a class="property" data-link-type="propdesc">unfair</a> use eller anonyme anvendelse. (behov for at kunne kontakte brugere)</p>
+    <li data-md>
+     <p>4.6 Som anvender ønsker jeg ay kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service.</p>
    </ul>
-   <h5 class="heading settled" id="test"><span class="content">Test?</span></h5>
-    Når epic’en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases. 
-   <p>[no baseimages?]</p>
-   <ul>
-    <li data-md>
-     <p>3.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)</p>
-    <li data-md>
-     <p>3.2 Som udvikler og operatør vil jeg gerne kunne gennemfører automatiske test af en containers funktionalitet (??)</p>
-   </ul>
-   <h5 class="heading settled" id="deploy-og-monitorering"><span class="content">Deploy og Monitorering?</span></h5>
-    Når epic’en er færdig kan en udvikler push’e en container til et repository på platformen, re-deploye en applikation og se dens log. 
-   <ul>
-    <li data-md>
-     <p>4.1 Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)</p>
-    <li data-md>
-     <p>4.2 Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)</p>
-    <li data-md>
-     <p>4.3 Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)</p>
-    <li data-md>
-     <p>4.4 Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)</p>
-   </ul>
-   <h5 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h5>
+   <p>Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).</p>
+   <h4 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h4>
     Når epic’en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc. 
    <ul>
     <li data-md>
@@ -1622,17 +1617,24 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
     <li data-md>
      <p>5.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)</p>
    </ul>
-   <h4 class="heading settled" id="epics-til-understttelse-af-applikationer"><span class="content">Epics til understøttelse af "applikationer"</span></h4>
-    Note: Overvej at bruge highlevel arkitektur som illlustration 
-   <h5 class="heading settled" id="data-access-fra-applikationer"><span class="content">Data Access fra Applikationer</span></h5>
-    Når epic’en er færdig kan en udvikler skrive en applikationer der skriver og læser data på MapR. 
+   <h4 class="heading settled" id="platform-and-support"><span class="content">Platform and Support</span></h4>
+    Når epic’en er færdig kan en anvender deploye services, applikationer og datasæt igennem selvbetjening. 
    <ul>
     <li data-md>
-     <p>A.1 Som udvikler ønsker jeg at læse og skrive JSON dokumenter fra min applikation. (<em>Data fabric</em> , port 8243)</p>
+     <p>6.1. Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime. (Docker, K8S)</p>
     <li data-md>
-     <p>A.2 Som udvikler ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation. (<em>Data fabric</em>, port 8082)</p>
+     <p>6.2 Som anvender ønsker jeg at læse og skrive JSON dokumenter fra min applikation, så jeg kan anvende en NoSQL baseret datastorage (<em>Data fabric</em> , port 8243)</p>
     <li data-md>
-     <p>A.3 Som udvikler ønsker jeg skrive og læse binære filer fra min applikation. (<em>Data fabric</em>, port 2049)</p>
+     <p>6.3 Som anvender ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.  (<em>Data fabric</em>, port 8082)</p>
+    <li data-md>
+     <p>6.4 Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL. (<em>Data fabric</em>, port 2049)</p>
+    <li data-md>
+     <p>6.5 Som anvender ønsker jeg en en token service....</p>
+    <li data-md>
+     <ol start="6">
+      <li data-md>
+       <p>Som policy owner... ekstern IdP, så vi sikre overholdelse af anbefalinger.</p>
+     </ol>
    </ul>
    <h5 class="heading settled" id="data-anvender-registrering-api-ngler"><span class="content">Data-anvender registrering (API nøgler)</span></h5>
     Når epic’en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler. 
@@ -1791,6 +1793,7 @@ rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
     <li data-md>
      <p>Datasets are encrypted at rest (what keys? control?)</p>
    </ul>
+   <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
    <h3 class="heading settled" data-level="5.3" id="logs"><span class="secno">5.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h3>
    <ul>
     <li data-md>

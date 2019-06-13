@@ -24,61 +24,70 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 !add security specific notes... Multitenancy, Privacy, Resilliance
 
 
-## User Stories
+## Epics and User Stories
 [bør nok flyttes til JIRA issues på et tidspunkt...]
-For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler, (Platforms)-operatør  og Policy Owner?  Auditor?
 
-### Epics til understøttelse af "mennesker (dev?)"
+For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler/Anvender, (Platforms)-operatør  og Policy Owner?  Auditor?
 
+
+### Platform Service Delivery
+
+Når epic'en er afsluttet er overordnde opgaver og ansvar omkring GovCloud Paas placeret, første møde i nyoprette fora afholdt og første aftale om anvendelse af platformen indgået.
+
+* 1.1 Som anvender af platformen ønsker jeg sikkerhed for hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold.
+
+* 1.2 Som policy owner, ønsker jeg at sikre mig at anvendere har mulighed for at flytte applikationer til andre platforme med mindst mulig besvær, så jeg ikke er bundet til en specifik leverandør.
+
+* 1.3 Som udbyder ønsker jeg at mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware)
+
+* 1.4 Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet.
+
+* 1.5 Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt.
+
+* 1.6 Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet.
+
+* 1.7 Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer.
+
+* 1.8 Som policyowner ønsker jeg at servicemodellen udformes som et bilag til eksisterende kundeaftaler, for at sikre mindst mulig administration i forbindelse med udbredelse.
+
+
+### Platform Service Operation
+Når epic'en er afsluttet er arbejdsgange for event management beskrevet og understøttet i samarbejdsværktøjet.
+
+* 2.1 Som anvender ønsker jeg at udbyderen overvåger mine service og forsøger at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.
+
+* 2.2 Som udbyder ønsker jeg at anvendere deltager i diagnostik og ændringer i forbindelse med nedbrud på enkelte applikationer, så jeg ikke selv behøver kendskab til anvenderens applikationer, men kan fokusere på platformen.
+
+* 2.3 Som policy owner ønsker jeg at anvendere kan tage ansvar for fejlfinding og ændringer i deres egen applikationer, så udbyderen ikke bliver en flaskehals for vedligehold.
+
+* 2.4 Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.
+
+
+
+
+### Application Development and Operation
 Note: Overvej at bruge DevOps fase model som illustration.
 
-#### Kravspecifikation?
-Når epic'en er færdig kan en kunde og en udvikler samarbejde om udarbejdelsen af epics, user stories, start arkitektur og andet i værktøj der kører på platformen. (Jira, Confluence)
+Ikke alle funktioner er understøttet af platformen i sig selv, nogle gør brug af et andet produkt fra platformsudbyder, nemlig DevOps ToolChain.
 
-* 1.1 Som kunde vil jeg gerne kunne beskrive epics og user stories i JIRA.
+Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation, dens log, samt styre rettigheder til services og datasæt.
 
-* 1.2 Som kunde og udvikler vil jeg gerne kunne beskrive en start arkitektur i Confluence applikationer, container, services og datasæt.
+* 4.1 Som anveder ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
 
-* 1.3 Som udvikler vil jeg gerne kunne relatere kode checkins til user stories.
+* 4.2 Som anveder ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
 
+* 4.3 Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
 
-#### Byg?
-Når epic'en er færdig kan en udvikler checke kode ind og bygge en container baseret på et basis image fra SIT.
+* 4.4 Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
 
-* 2.1 Som udvikler vil jeg gerne kunne gemme og versionstyre min applikationskode og konfiguration, så jeg effektivt kan rette fejl og samarbejde med andre udviklere (Git)
+* 4.5 Som anvender ønsker jeg kunne styre adgangen til services, så jeg kan begrænse adgangen til mine services, så jeg undgår 'unfair' use eller anonyme anvendelse. (behov for at kunne kontakte brugere)
 
-* 2.2 Som udvikler vil gerne kunne bygge en container og placere den på et repository, så den kan flyttes ind på platformen af operatøren når jeg beder om det (Docker, Harbor)
-
-* 2.3 Som udvikler vil gerne have adgang til data på platformen direkte fra mit udviklingsmiljø, så jeg nemt og hurtigt kan afprøve nye funktionalitet i min applikation (Kubernetes?)
-
-[baseimages?]
-
-* 2.4 Som operatør vil jeg gerne kunne udgive et base image til brug for udviklere, så jeg på sigt kan overtage ansvaret for at opdatere de dele af applikationer der er fælles fx en java platform (Harbor)
-
-* 2.5 Som udvikler vil jeg gerne kunne sætte et automatisk bygge forløb op, der starter når jeg checker kode ind, så jeg effektivt kan bygge containere (Git, Maven?)
-
-#### Test?
-Når epic'en er færdig kan en udvikler eller en operatør teste en containers funktionalitet med en række automatiske testcases.
-
-[no baseimages?]
-
-* 3.1 Som udvikler vil jeg gerne kunne vedlige holde scripts, data og stubbe til automatisk test af en containers funktionalitet. (Git, SoapUI/JMeter/Postman?)
-
-* 3.2 Som udvikler og operatør vil jeg gerne kunne gennemfører automatiske test af en containers funktionalitet (??)
+* 4.6 Som anvender ønsker jeg ay kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service.
 
 
-#### Deploy og Monitorering?
-Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation og se dens log.
+Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).
 
-* 4.1 Som udvikler ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
-
-* 4.2 Som udvikler ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
-
-* 4.3 Som udvikler ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
-
-* 4.4 Som udvikler ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
-
-#### Sandbox
+### Sandbox
 Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
 
 * 5.1 Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
@@ -86,20 +95,34 @@ Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin u
 * 5.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
 
 
-### Epics til understøttelse af "applikationer"
-Note: Overvej at bruge highlevel arkitektur som illlustration
+### Platform and Support
+Når epic'en er færdig kan en anvender deploye services, applikationer og datasæt igennem selvbetjening.
+
+* 6.1. Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime. (Docker, K8S)
+
+* 6.2 Som anvender ønsker jeg at læse og skrive JSON dokumenter fra min applikation, så jeg kan anvende en NoSQL baseret datastorage (*Data fabric* , port 8243)
+
+* 6.3 Som anvender ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.  (*Data fabric*, port 8082)
+
+* 6.4 Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL. (*Data fabric*, port 2049)
+
+* 6.5 Som anvender ønsker jeg en en token service....
+
+
+* 6. Som policy owner... ekstern IdP, så vi sikre overholdelse af anbefalinger. 
 
 
 
 
-#### Data Access fra Applikationer
-Når epic'en er færdig kan en udvikler skrive en applikationer der skriver og læser data på MapR.
 
-* A.1 Som udvikler ønsker jeg at læse og skrive JSON dokumenter fra min applikation. (*Data fabric* , port 8243)
 
-* A.2 Som udvikler ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation. (*Data fabric*, port 8082)
 
-* A.3 Som udvikler ønsker jeg skrive og læse binære filer fra min applikation. (*Data fabric*, port 2049)
+
+
+
+
+
+
 
 
 #### Data-anvender registrering (API nøgler)
