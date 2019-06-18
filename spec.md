@@ -34,35 +34,45 @@ For at fastholde og prioritere forskellige ønsker under udviklingen, anvender v
 
 Når epic'en er afsluttet er overordnde opgaver og ansvar omkring GovCloud Paas placeret, første møde i nyoprette fora afholdt og første aftale om anvendelse af platformen indgået.
 
-* 1.1 Som anvender af platformen ønsker jeg sikkerhed for hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold.
+* Som anvender af platformen ønsker jeg at kunne påvirke  hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold. (sikkerhed for long term support)
 
-* 1.2 Som policy owner, ønsker jeg at sikre mig at anvendere har mulighed for at flytte applikationer til andre platforme med mindst mulig besvær, så jeg ikke er bundet til en specifik leverandør.
+* Som anvender og policy owner, ønsker at sikres sig at applikationer kan flyttes til andre platforme med mindst mulig besvær, så anvendere ikke er bundet til en specifik leverandør.
 
-* 1.3 Som udbyder ønsker jeg at mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware)
+* Som udbyder ønsker jeg at mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware)
 
-* 1.4 Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet.
+* Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet. (langsigtet planlægning)
 
-* 1.5 Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt.
+* Som anvender ønsker jeg at platformens ressource udvides i takt med mine behov. ??
 
-* 1.6 Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet.
+* Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt.
 
-* 1.7 Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer.
+* Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet.
 
-* 1.8 Som policyowner ønsker jeg at servicemodellen udformes som et bilag til eksisterende kundeaftaler, for at sikre mindst mulig administration i forbindelse med udbredelse.
+* Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer.
+
+* Som policyowner? ønsker jeg at servicemodellen udbredes til alle eksisterende, med henblik på hurtig ibrugtaging.
+
+
+[] Productboard kommisorium
+[] Servicemodel
+[] CloadAPI Roadmap
+[] Servicerapport
 
 
 ### Platform Service Operation
 Når epic'en er afsluttet er arbejdsgange for event management beskrevet og understøttet i samarbejdsværktøjet.
 
-* 2.1 Som anvender ønsker jeg at udbyderen overvåger mine service og forsøger at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.
-
-* 2.2 Som udbyder ønsker jeg at anvendere deltager i diagnostik og ændringer i forbindelse med nedbrud på enkelte applikationer, så jeg ikke selv behøver kendskab til anvenderens applikationer, men kan fokusere på platformen.
-
-* 2.3 Som policy owner ønsker jeg at anvendere kan tage ansvar for fejlfinding og ændringer i deres egen applikationer, så udbyderen ikke bliver en flaskehals for vedligehold.
-
-* 2.4 Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.
 
 
+* Som udbyder ønsker jeg at anvendere deltager i diagnostik og ændringer i forbindelse med nedbrud på enkelte applikationer, så jeg ikke selv behøver kendskab til anvenderens applikationer, men kan fokusere på platformen.
+
+* Som policy owner ønsker jeg at anvendere kan tage ansvar for fejlfinding og ændringer i deres egen applikationer, så udbyderen ikke bliver en flaskehals for vedligehold.
+
+* Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.
+
+[] Status dimsen...
+[] Adgang til log (portal)
+[] Arbejdsrum
 
 
 ### Application Development and Operation
@@ -72,85 +82,125 @@ Ikke alle funktioner er understøttet af platformen i sig selv, nogle gør brug 
 
 Når epic'en er færdig kan en udvikler push'e en container til et repository på platformen, re-deploye en applikation, dens log, samt styre rettigheder til services og datasæt.
 
-* 4.1 Som anveder ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
+* Som anvender ønsker jeg at udbyderen overvåger mine service og forsøger at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.
 
-* 4.2 Som anveder ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
+* Som anvender (operatør) ønsker jeg, at udbyderen overvåger mine applikationer og kontakter mig ved ikke-simple nedbrud, så vi sammen kan påbegynde fejlsøgning og fejlretning.
 
-* 4.3 Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
+* Som anveder ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. (Harbor)
 
-* 4.4 Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
+* Som anveder ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation (Rancher)
 
-* 4.5 Som anvender ønsker jeg kunne styre adgangen til services, så jeg kan begrænse adgangen til mine services, så jeg undgår 'unfair' use eller anonyme anvendelse. (behov for at kunne kontakte brugere)
+* Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes (Rancher)
 
-* 4.6 Som anvender ønsker jeg ay kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service.
+* Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... (Rancher)
+
+* Som anvender ønsker jeg kunne styre adgangen til services, så jeg kan begrænse adgangen til mine services, så jeg undgår 'unfair' use eller anonyme anvendelse. (behov for at kunne kontakte brugere)
+
+* Som anvender ønsker jeg ay kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service. [Sikkerheds epic?]
+
+* Som anvender ønsker jeg at kunne tildele adgang til services, applikationer og data til bruger i egen og andre organisationer (inden for SIT AD), så vi bedre kan arbejde sammen. [bør splittes op, Sikkerhed/Deling epic?]
+
+* Som policy owner, sikre at oplysninger om services, applikationer og  dastasæt lever op til krav om registrering.... [ala Statens Arkiver, ISO... CaaS, Compliance Epic?]
+
+* Events i anvenders værktøj. Statusovervågning i eget værktøj
 
 
 Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).
 
-### Sandbox
-Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
 
-* 5.1 Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
 
-* 5.2 Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
+
 
 
 ### Platform and Support
 Når epic'en er færdig kan en anvender deploye services, applikationer og datasæt igennem selvbetjening.
 
-* 6.1. Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime. (Docker, K8S)
+* Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime. (Docker, K8S)
 
-* 6.2 Som anvender ønsker jeg at læse og skrive JSON dokumenter fra min applikation, så jeg kan anvende en NoSQL baseret datastorage (*Data fabric* , port 8243)
+* Som anvender ønsker jeg at læse og skrive JSON dokumenter fra min applikation, så jeg kan anvende en NoSQL baseret datastorage (*Data fabric* , port 8243)
 
-* 6.3 Som anvender ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.  (*Data fabric*, port 8082)
+* Som anvender ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.  (*Data fabric*, port 8082)
 
-* 6.4 Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL. (*Data fabric*, port 2049)
+* Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL. (*Data fabric*, port 2049)
 
-* 6.5 Som anvender ønsker jeg en en token service....
-
-
-* 6. Som policy owner... ekstern IdP, så vi sikre overholdelse af anbefalinger. 
+* Som anvender ønsker jeg en en token service....
 
 
 
 
 
+### Performance og Optimering
+
+* Som udvikler og udbyder vil jeg kende applikations performance profil på platform, og kunne se hvor tiden bliver brugt, så bruger ressourcer fair og effektivt.
+
+
+### Sikring og Privacy
+
+* Som anvender ønsker jeg at udbyder scanner mine applikationer for sårbarheder.
+
+
+### Compliance
+
+* Overblik over ISO 27001 kontrollere
+
+* Overblik over GDPR aftaler, rettigheder og pligter
+
+* Som policy owner... ekstern IdP, så vi sikre overholdelse af anbefalinger.
+
+* Som policy owner... om selvbetjening? og datadeling?
+
+* Digital Asset management
+
+* Dokumentation af applikationer
 
 
 
 
 
-
-
-
-
-
-#### Data-anvender registrering (API nøgler)
+### PaaS+? Data-anvender registrering (API nøgler)
 Når epic'en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler.
 
-* B.1 Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, *API Gateway*)
+* Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, *API Gateway*)
 
-* B.2 Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen. (*Directory*)
-
-
+* Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen. (*Directory*)
 
 
-### Version 1.0 primo 2019
+### Sandbox (kommer behovet fra udbyder?)
+Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
+
+* Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
+
+* Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
+
+(kombinere med udbyders behov for pre-prod?)
+
+
+## Versions and plans
+
+### Version 1.0 medio 2019
+
+* Learning
+
+* Stable
+
 Focus på Deploy og Monitorering så vi kan demonstrere time to market og hyppige ændringer...
 
 Focus på Dataservices
 
-### Version 1.1? marts 2019
-Focus på adgangsstyring
-
-Focus på AD integration
-
-### Version 1.2? juli 2019
-Focus på intern sikkerhed med tickets og tokens.
-
-### Version 1.3? september 2019
 Produktionssættelse af DMI Observationsdata
 
+### Version 1.1
+Performant
+
+### Version 1.2
+Focus på intern sikkerhed med tickets og tokens.
+
+### Version 1.3
+compliance
+
+
+### Version 2
+Brokering
 
 
 
