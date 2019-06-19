@@ -53,6 +53,8 @@ Når epic'en er færdig kan en udvikler push'e en container til et repository p�
 * Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jegf ikke skal kigge andre steder. [kunde.status] [platform.status]
     - Kan integreres til NagIos.
 
+* Som operatør vil jeg gerne begrænse
+    - Fx login til status.
 
 Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).
 
