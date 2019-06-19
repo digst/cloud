@@ -50,8 +50,8 @@ Når epic'en er færdig kan en udvikler push'e en container til et repository p�
 
 * Som policy owner, sikre at oplysninger om services, applikationer og  dastasæt lever op til krav om registrering.... [ala Statens Arkiver, ISO... CaaS, Compliance Epic?]
 
-* Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jegf ikke skal kigge andre steder.
-  - Kan integreres til NagIos. 
+* Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jegf ikke skal kigge andre steder. [kunde.status] [platform.status]
+  - Kan integreres til NagIos.
 
 
 Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).
