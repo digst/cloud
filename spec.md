@@ -137,6 +137,8 @@ Når epic'en er færdig kan en anvender deploye services, applikationer og datas
 
 * Som anvender ønsker jeg at kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service. [Sikkerheds epic?]
 
+* Sikkerhedsmodel
+
 ### Compliance
 
 * Overblik over ISO 27001 kontrollere
@@ -152,8 +154,11 @@ Når epic'en er færdig kan en anvender deploye services, applikationer og datas
 * Dokumentation af applikationer
 
 
-
-
+### Audit / Erfaring
+* Tilsyn...
+* Security Audit
+* Privacy Audit
+* Performance Audit
 
 ### PaaS+? Data-anvender registrering (API nøgler)
 Når epic'en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler.
