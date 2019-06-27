@@ -270,10 +270,10 @@
       ><path d="M414 496 L456 496 L456 513 L414 513 L414 496 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath89"
-      ><path d="M381 522 L488 522 L488 557 L381 557 L381 522 Z"
+      ><path d="M381 522 L429 522 L429 557 L381 557 L381 522 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath90"
-      ><path d="M420 535 L448 535 L448 552 L420 552 L420 535 Z"
+      ><path d="M391 535 L419 535 L419 552 L391 552 L391 535 Z"
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath91"
       ><path d="M571 527 L639 527 L639 554 L571 554 L571 527 Z"
@@ -292,6 +292,12 @@
       /></clipPath
       ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath96"
       ><path d="M576 564 L610 564 L610 581 L576 581 L576 564 Z"
+      /></clipPath
+      ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath97"
+      ><path d="M439 523 L487 523 L487 558 L439 558 L439 523 Z"
+      /></clipPath
+      ><clipPath clipPathUnits="userSpaceOnUse" id="clipPath98"
+      ><path d="M445 536 L481 536 L481 553 L445 553 L445 536 Z"
       /></clipPath
       ><font horiz-adv-x="50.0" id="font1"
       ><font-face ascent="95.200005" font-style="normal" descent="21.3" units-per-em="100" font-family="Helvetica Neue" font-weight="normal"
@@ -589,10 +595,10 @@
       /><rect x="383" y="484" clip-path="url(#clipPath87)" fill="none" width="104" height="32" stroke="rgb(130,143,166)"
       /><text fill="black" x="415" xml:space="preserve" y="509" clip-path="url(#clipPath88)" stroke="none"
       >Dataset</text
-      ><rect x="382" y="523" clip-path="url(#clipPath89)" fill="rgb(186,205,238)" width="105" height="33" stroke="none"
-      /><line clip-path="url(#clipPath89)" fill="none" x1="382" x2="486" y1="535" y2="535" stroke="rgb(130,143,166)"
-      /><rect x="382" y="523" clip-path="url(#clipPath89)" fill="none" width="104" height="32" stroke="rgb(130,143,166)"
-      /><text fill="black" x="421" xml:space="preserve" y="548" clip-path="url(#clipPath90)" stroke="none"
+      ><rect x="382" y="523" clip-path="url(#clipPath89)" fill="rgb(186,205,238)" width="46" height="33" stroke="none"
+      /><line clip-path="url(#clipPath89)" fill="none" x1="382" x2="427" y1="535" y2="535" stroke="rgb(130,143,166)"
+      /><rect x="382" y="523" clip-path="url(#clipPath89)" fill="none" width="45" height="32" stroke="rgb(130,143,166)"
+      /><text fill="black" x="392" xml:space="preserve" y="548" clip-path="url(#clipPath90)" stroke="none"
       >Logs</text
       ><rect x="572" y="528" clip-path="url(#clipPath91)" fill="rgb(213,211,213)" width="66" height="25" stroke="none"
       /><rect x="572" y="528" clip-path="url(#clipPath91)" fill="none" width="65" height="24" stroke="rgb(149,147,149)"
@@ -611,6 +617,11 @@
       /><line clip-path="url(#clipPath95)" fill="none" x1="624" x2="617" y1="573" y2="573" stroke="black"
       /><text fill="black" x="577" xml:space="preserve" y="577" clip-path="url(#clipPath96)" stroke="none"
       >/kafka</text
+      ><rect x="440" y="524" clip-path="url(#clipPath97)" fill="rgb(213,213,213)" width="46" height="33" stroke="none"
+      /><line clip-path="url(#clipPath97)" fill="none" x1="440" x2="485" y1="536" y2="536" stroke="rgb(149,149,149)"
+      /><rect x="440" y="524" clip-path="url(#clipPath97)" fill="none" width="45" height="32" stroke="rgb(149,149,149)"
+      /><text fill="black" x="446" xml:space="preserve" y="549" clip-path="url(#clipPath98)" stroke="none"
+      >PLogs</text
     ></g
   ></g
 ></svg

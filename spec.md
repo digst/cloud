@@ -430,8 +430,9 @@ A dataset is a collection of individual pieces of information under the same gov
 
 (Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )
 
-### Logs
+### Application Logs
 
+### Platform Logs
 - All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
 
 ### `/nfs` (NFS)
