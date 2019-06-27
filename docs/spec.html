@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-06-19">19 June 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-06-26">26 June 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1455,8 +1455,8 @@ pre .property::before, pre .property::after {
         <li><a href="#sharing-sikring-og-privacy"><span class="secno"></span> <span class="content">Sharing, Sikring og Privacy</span></a>
         <li><a href="#compliance"><span class="secno"></span> <span class="content">Compliance</span></a>
         <li><a href="#audit-erfaring"><span class="secno"></span> <span class="content">Audit / Erfaring</span></a>
-        <li><a href="#paas-data-anvender-registrering-api-ngler"><span class="secno"></span> <span class="content">PaaS+? Data-anvender registrering (API nøgler)</span></a>
-        <li><a href="#sandbox-kommer-behovet-fra-udbyder"><span class="secno"></span> <span class="content">Sandbox (kommer behovet fra udbyder?)</span></a>
+        <li><a href="#paas"><span class="secno"></span> <span class="content">PaaS+</span></a>
+        <li><a href="#sandbox"><span class="secno"></span> <span class="content">Sandbox</span></a>
        </ol>
       <li>
        <a href="#versions-and-plans"><span class="secno"></span> <span class="content">Versions and plans</span></a>
@@ -1467,10 +1467,25 @@ pre .property::before, pre .property::after {
         <li><a href="#version-13"><span class="secno"></span> <span class="content">Version 1.3</span></a>
         <li><a href="#version-2"><span class="secno"></span> <span class="content">Version 2</span></a>
        </ol>
-      <li><a href="#principles-and-governing-thoughts"><span class="secno"></span> <span class="content">Principles and Governing Thoughts....</span></a>
-      <li><a href="#high-level-architecture"><span class="secno"></span> <span class="content">High Level Architecture</span></a>
      </ol>
-    <li><a href="#aktrer-og-highlevel-usecases"><span class="secno">1</span> <span class="content">Aktører og highlevel usecases</span></a>
+    <li>
+     <a href="#highlevel"><span class="secno">1</span> <span class="content">Highlevel</span></a>
+     <ol class="toc">
+      <li>
+       <a href="#aktrer-og-use-cases"><span class="secno">1.1</span> <span class="content">Aktører og use cases</span></a>
+       <ol class="toc">
+        <li><a href="#anvender"><span class="secno">1.1.1</span> <span class="content">Anvender</span></a>
+        <li><a href="#udbyder"><span class="secno">1.1.2</span> <span class="content">Udbyder</span></a>
+        <li><a href="#policy-owner"><span class="secno">1.1.3</span> <span class="content">Policy Owner</span></a>
+        <li><a href="#platform-delivery"><span class="secno">1.1.4</span> <span class="content">Platform Delivery</span></a>
+        <li><a href="#application-devops"><span class="secno">1.1.5</span> <span class="content">Application DevOps</span></a>
+        <li><a href="#platform-operation"><span class="secno">1.1.6</span> <span class="content">Platform Operation</span></a>
+        <li><a href="#audit"><span class="secno">1.1.7</span> <span class="content">Audit</span></a>
+       </ol>
+      <li><a href="#principles"><span class="secno">1.2</span> <span class="content">Principles</span></a>
+      <li><a href="#governing-thoughts"><span class="secno">1.3</span> <span class="content">Governing Thoughts....</span></a>
+      <li><a href="#high-level-architecture"><span class="secno">1.4</span> <span class="content">High Level Architecture</span></a>
+     </ol>
     <li>
      <a href="#arbejdsgange-brugerrejser"><span class="secno">2</span> <span class="content">Arbejdsgange/Brugerrejser</span></a>
      <ol class="toc">
@@ -1479,66 +1494,99 @@ pre .property::before, pre .property::after {
       <li><a href="#byg-container-dev"><span class="secno">2.3</span> <span class="content">Byg container (Dev)</span></a>
       <li><a href="#test-applikation"><span class="secno">2.4</span> <span class="content">Test applikation</span></a>
       <li><a href="#give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">2.5</span> <span class="content">Give medarbejder adgang til platformsapplikationer</span></a>
+      <li><a href="#register-application"><span class="secno">2.6</span> <span class="content">Register Application</span></a>
+      <li><a href="#register-dataset"><span class="secno">2.7</span> <span class="content">Register Dataset</span></a>
+      <li><a href="#register-service"><span class="secno">2.8</span> <span class="content">Register Service</span></a>
+      <li><a href="#redeploy-application"><span class="secno">2.9</span> <span class="content">Redeploy Application</span></a>
+      <li><a href="#sandbox①"><span class="secno">2.10</span> <span class="content">Sandbox</span></a>
+      <li><a href="#collaboration"><span class="secno">2.11</span> <span class="content">Collaboration</span></a>
      </ol>
     <li>
-     <a href="#api-fabric"><span class="secno">3</span> <span class="content">API Fabric</span></a>
-     <ol class="toc">
-      <li><a href="#krakend"><span class="secno">3.1</span> <span class="content">KrakenD</span></a>
-     </ol>
-    <li>
-     <a href="#app-fabric①"><span class="secno">4</span> <span class="content">App Fabric</span></a>
+     <a href="#platform"><span class="secno">3</span> <span class="content">Platform</span></a>
      <ol class="toc">
       <li>
-       <a href="#rancher"><span class="secno">4.1</span> <span class="content">Rancher</span></a>
+       <a href="#application-and-service-fabric"><span class="secno">3.1</span> <span class="content">Application and Service Fabric</span></a>
        <ol class="toc">
-        <li><a href="#k8s-service-network"><span class="secno">4.1.1</span> <span class="content">K8S Service Network</span></a>
-        <li><a href="#environment-variables"><span class="secno">4.1.2</span> <span class="content">Environment variables</span></a>
+        <li><a href="#service-access-control"><span class="secno">3.1.1</span> <span class="content">Service Access Control</span></a>
+        <li><a href="#application-service"><span class="secno">3.1.2</span> <span class="content">Application Service</span></a>
+        <li><a href="#application"><span class="secno">3.1.3</span> <span class="content">Application</span></a>
+        <li><a href="#container-image"><span class="secno">3.1.4</span> <span class="content">Container/Image</span></a>
+        <li><a href="#docker-k8s"><span class="secno">3.1.5</span> <span class="content">Docker/K8S</span></a>
+        <li><a href="#gravitee"><span class="secno">3.1.6</span> <span class="content">Gravitee</span></a>
+       </ol>
+      <li>
+       <a href="#data-fabric①"><span class="secno">3.2</span> <span class="content">Data Fabric</span></a>
+       <ol class="toc">
+        <li><a href="#data-access-control"><span class="secno">3.2.1</span> <span class="content">Data Access Control</span></a>
+        <li><a href="#datasets"><span class="secno">3.2.2</span> <span class="content">Datasets</span></a>
+        <li><a href="#logs"><span class="secno">3.2.3</span> <span class="content">Logs</span></a>
+        <li><a href="#-nfs-nfs"><span class="secno">3.2.4</span> <span class="content"><code>/nfs</code> (NFS)</span></a>
+        <li><a href="#-ojai-nosql"><span class="secno">3.2.5</span> <span class="content"><code>/ojai</code> (NoSQL)</span></a>
+        <li><a href="#-msg-kafka"><span class="secno">3.2.6</span> <span class="content"><code>/msg</code> (Kafka)</span></a>
+        <li><a href="#-log"><span class="secno">3.2.7</span> <span class="content"><code>/log</code></span></a>
+        <li><a href="#mapr"><span class="secno">3.2.8</span> <span class="content">MapR</span></a>
        </ol>
      </ol>
     <li>
-     <a href="#data-fabric①"><span class="secno">5</span> <span class="content">Data Fabric</span></a>
+     <a href="#platform-support"><span class="secno">4</span> <span class="content">Platform Support</span></a>
      <ol class="toc">
       <li>
-       <a href="#mapr"><span class="secno">5.1</span> <span class="content">MapR</span></a>
+       <a href="#self-service-portal"><span class="secno">4.1</span> <span class="content">Self Service Portal</span></a>
        <ol class="toc">
-        <li><a href="#node-configuration"><span class="secno">5.1.1</span> <span class="content">Node configuration</span></a>
+        <li><a href="#selvbetjening"><span class="secno">4.1.1</span> <span class="content">Selvbetjening</span></a>
+        <li><a href="#k8sgovclouddk"><span class="secno">4.1.2</span> <span class="content"><code>k8s.govcloud.dk</code></span></a>
+        <li><a href="#rancher"><span class="secno">4.1.3</span> <span class="content">Rancher</span></a>
+        <li><a href="#cloudgovdk"><span class="secno">4.1.4</span> <span class="content"><code>cloud.gov.dk</code></span></a>
        </ol>
-      <li><a href="#datasets"><span class="secno">5.2</span> <span class="content">Datasets</span></a>
-      <li><a href="#logs"><span class="secno">5.3</span> <span class="content">Logs</span></a>
-     </ol>
-    <li>
-     <a href="#platform-services"><span class="secno">6</span> <span class="content">Platform Services</span></a>
-     <ol class="toc">
-      <li><a href="#code-repository"><span class="secno">6.1</span> <span class="content">Code Repository</span></a>
-      <li><a href="#container-repository"><span class="secno">6.2</span> <span class="content">Container Repository</span></a>
-      <li><a href="#directory"><span class="secno">6.3</span> <span class="content">Directory</span></a>
-      <li><a href="#authentication"><span class="secno">6.4</span> <span class="content">!Authentication</span></a>
-      <li><a href="#authorization"><span class="secno">6.5</span> <span class="content">Authorization</span></a>
-      <li><a href="#api-key-management"><span class="secno">6.6</span> <span class="content">API Key Management</span></a>
-      <li><a href="#data-services"><span class="secno">6.7</span> <span class="content">Data Services</span></a>
-      <li><a href="#dashboard"><span class="secno">6.8</span> <span class="content">Dashboard</span></a>
-      <li><a href="#register-application"><span class="secno">6.9</span> <span class="content">Register Application</span></a>
-      <li><a href="#register-dataset"><span class="secno">6.10</span> <span class="content">Register Dataset</span></a>
-      <li><a href="#register-service"><span class="secno">6.11</span> <span class="content">Register Service</span></a>
-      <li><a href="#redeploy-application"><span class="secno">6.12</span> <span class="content">Redeploy Application</span></a>
-      <li><a href="#sandbox"><span class="secno">6.13</span> <span class="content">Sandbox</span></a>
-      <li><a href="#collaboration"><span class="secno">6.14</span> <span class="content">Collaboration</span></a>
-     </ol>
-    <li>
-     <a href="#infrastructure-network"><span class="secno">7</span> <span class="content">Infrastructure (Network)</span></a>
-     <ol class="toc">
-      <li><a href="#internet-network-access"><span class="secno">7.1</span> <span class="content">Internet Network Access</span></a>
-      <li><a href="#gateway"><span class="secno">7.2</span> <span class="content">Gateway</span></a>
       <li>
-       <a href="#layout"><span class="secno">7.3</span> <span class="content">Layout</span></a>
+       <a href="#operation"><span class="secno">4.2</span> <span class="content">Operation</span></a>
        <ol class="toc">
-        <li><a href="#application-network"><span class="secno">7.3.1</span> <span class="content">Application Network</span></a>
-        <li><a href="#data-network"><span class="secno">7.3.2</span> <span class="content">Data Network</span></a>
-        <li><a href="#firewall"><span class="secno">7.3.3</span> <span class="content">Firewall</span></a>
-        <li><a href="#remote-admin-access"><span class="secno">7.3.4</span> <span class="content">Remote admin access</span></a>
+        <li><a href="#monitorering"><span class="secno">4.2.1</span> <span class="content">Monitorering</span></a>
+        <li><a href="#events"><span class="secno">4.2.2</span> <span class="content">Events</span></a>
+        <li><a href="#statusgovclouddk"><span class="secno">4.2.3</span> <span class="content"><code>status.govcloud.dk</code></span></a>
+        <li><a href="#kundestatusgovclouddk"><span class="secno">4.2.4</span> <span class="content"><code>kunde.status.govcloud.dk</code></span></a>
+        <li><a href="#collaboration①"><span class="secno">4.2.5</span> <span class="content">Collaboration</span></a>
+        <li><a href="#collab-url"><span class="secno">4.2.6</span> <span class="content">collab url?</span></a>
+       </ol>
+      <li>
+       <a href="#directory"><span class="secno">4.3</span> <span class="content">Directory</span></a>
+       <ol class="toc">
+        <li><a href="#users"><span class="secno">4.3.1</span> <span class="content">Users</span></a>
+        <li><a href="#services-apps-deployments-og-datasets"><span class="secno">4.3.2</span> <span class="content">Services, Apps (Deployments) og Datasets</span></a>
+        <li><a href="#rights"><span class="secno">4.3.3</span> <span class="content">Rights</span></a>
+        <li><a href="#-token"><span class="secno">4.3.4</span> <span class="content"><code>/token</code></span></a>
+        <li><a href="#-ldap"><span class="secno">4.3.5</span> <span class="content"><code>/ldap</code></span></a>
+        <li><a href="#single-sign-on-url"><span class="secno">4.3.6</span> <span class="content">Single Sign On url?</span></a>
+        <li><a href="#freeipa"><span class="secno">4.3.7</span> <span class="content">FreeIPA</span></a>
+        <li><a href="#keycloak"><span class="secno">4.3.8</span> <span class="content">KeyCloak</span></a>
+       </ol>
+      <li>
+       <a href="#repository"><span class="secno">4.4</span> <span class="content">Repository</span></a>
+       <ol class="toc">
+        <li><a href="#application-code"><span class="secno">4.4.1</span> <span class="content">Application Code</span></a>
+        <li><a href="#gitgovclouddk"><span class="secno">4.4.2</span> <span class="content"><code>git.govcloud.dk</code></span></a>
+        <li><a href="#gitlab"><span class="secno">4.4.3</span> <span class="content">GitLab</span></a>
+        <li><a href="#docker-images"><span class="secno">4.4.4</span> <span class="content">Docker Images</span></a>
+        <li><a href="#reggovclouddk"><span class="secno">4.4.5</span> <span class="content"><code>reg.govcloud.dk</code></span></a>
+        <li><a href="#habour"><span class="secno">4.4.6</span> <span class="content">Habour</span></a>
        </ol>
      </ol>
-    <li><a href="#customer-applications-and-their-responsibilities"><span class="secno">8</span> <span class="content">Customer Applications and their responsibilities</span></a>
+    <li>
+     <a href="#infrastructure"><span class="secno">5</span> <span class="content">Infrastructure</span></a>
+     <ol class="toc">
+      <li><a href="#internet-network-access"><span class="secno">5.1</span> <span class="content">Internet Network Access</span></a>
+      <li><a href="#gateway"><span class="secno">5.2</span> <span class="content">Gateway</span></a>
+      <li>
+       <a href="#network-layout"><span class="secno">5.3</span> <span class="content">Network Layout</span></a>
+       <ol class="toc">
+        <li><a href="#application-network"><span class="secno">5.3.1</span> <span class="content">Application Network</span></a>
+        <li><a href="#data-network"><span class="secno">5.3.2</span> <span class="content">Data Network</span></a>
+        <li><a href="#firewall"><span class="secno">5.3.3</span> <span class="content">Firewall</span></a>
+        <li><a href="#remote-admin-access"><span class="secno">5.3.4</span> <span class="content">Remote admin access</span></a>
+       </ol>
+      <li><a href="#hardware"><span class="secno">5.4</span> <span class="content">Hardware</span></a>
+     </ol>
+    <li><a href="#customer-applications-and-their-responsibilities"><span class="secno">6</span> <span class="content">Customer Applications and their responsibilities</span></a>
     <li>
      <a href="#appendix"><span class="secno"></span> <span class="content">Appendix</span></a>
      <ol class="toc">
@@ -1561,65 +1609,134 @@ pre .property::before, pre .property::after {
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
    <p>!add security specific notes... Multitenancy, Privacy, Resilliance</p>
+   <p><img src="PaaSBusiness.svg" width="95%"></p>
    <h3 class="heading settled" id="epics-and-user-stories"><span class="content">Epics and User Stories</span></h3>
     [bør nok flyttes til JIRA issues på et tidspunkt...] 
    <p>For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler/Anvender, (Platforms)-operatør  og Policy Owner?  Auditor?</p>
+   <p>Navne i kantede parenteser, henviser til eksterne dokumenter, eller til services/interfaces i figuren længere nede (dem med punktummer).</p>
    <h4 class="heading settled" id="application-development-and-operation"><span class="content">Application Development and Operation</span></h4>
-    Når epic’en er færdig kan en udvikler push’e en container til et repository på platformen, re-deploye en applikation, se dens log, samt styre rettigheder til services og datasæt. (Ikke alle funktioner er understøttet af platformen i sig selv, nogle gør brug af et andet produkt fra platformsudbyder, nemlig DevOps ToolChain.) 
+    Når epic’en er færdig kan en udvikler push’e et docker image til et repository på platformen, re-deploye en applikation, se dens log, samt styre rettigheder til services og datasæt. 
    <ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at udbyderen overvåger mine service og forsøger at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud. [servicemodel] [incidentproces] [kunde.status.] [platform.status.]</p>
+     <p>Som anvender ønsker jeg at udbyder kan overvåger mine services og kan forsøge at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.</p>
+     <ul>
+      <li data-md>
+       <p>[servicemodel] beskriver udbyders og anvenders ansvar</p>
+      <li data-md>
+       <p>[proces] beskriver at udbyder starter processen og at [collab.] anvedndes i håndteringen af hændelsen.</p>
+      <li data-md>
+       <p>[status.] viser oversigt over anvenders services</p>
+      <li data-md>
+       <p>[status.] viser oversigt over platformens services</p>
+     </ul>
     <li data-md>
-     <p>Som anvender (operatør) ønsker jeg, at udbyderen overvåger mine applikationer og kontakter mig ved ikke-simple nedbrud, så vi sammen kan påbegynde fejlsøgning og fejlretning. [servicemodel] [incidentproces] [kunde.status.] [platform.status.] [samarbejdsværktøj]</p>
+     <p>Som anvender ønsker jeg, at udbyderen overvåger mine services og kontakter mig ved ikke-simple nedbrud, så vi sammen kan påbegynde fejlsøgning og fejlretning.</p>
+     <ul>
+      <li data-md>
+       <p>[proces] beskriver, hvornår der tages kontakt til anvender</p>
+      <li data-md>
+       <p>[proces] beskriver, hvordan samarbejdet om fejlsøgning og fejlretning foretages samt hvordan det konkluderes, at servicen kører igen</p>
+      <li data-md>
+       <p>[proces] beskriver, hvornår der tages kontakt til 3. part</p>
+      <li data-md>
+       <p>[collab.] opretter automatisk sagerved incidents</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at kunne skrive 'docker push user/container' i en terminal for at sende min container til platformen. (labeling?) så jeg selv nemt kan styre hvilken kode der kører i min applikation. [reg.] [k8s.]</p>
+     <p>Som anvender ønsker jeg at kunne sende et image til platformen og sætte en label på, så jeg selv nemt kan styre hvilken kode der kører i min applikation.</p>
+     <ul>
+      <li data-md>
+       <p>en anvender kan logge ind i [reg.] med sine AD brugernavn/password.</p>
+      <li data-md>
+       <p>labels kan anvendes i [k8s.] til at udpege versioner af images.</p>
+     </ul>
     <li data-md>
-     <p>Som anveder ønsker jeg at kunne starte et re-deploy af min applikation med specifikke version af containere (vha labeling), så jeg hurtigt kan ændrer funktionalitet i min applikation [reg.] [k8s.]</p>
+     <p>Som anveder ønsker jeg at kunne starte et re-deploy af min applikation ved blot at ændre labels, så jeg hurtigt kan ændrer funktionalitet i min applikation</p>
+     <ul>
+      <li data-md>
+       <p>[k8s.] skal genkende ændringer images og reagere på labels ændringer.</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes [k8s.]</p>
+     <p>Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes</p>
     <li data-md>
-     <p>Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør... [k8s.] [grafana.]</p>
+     <p>Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør...</p>
     <li data-md>
-     <p>Som anvender ønsker jeg kunne styre adgangen til services, så jeg kan begrænse adgangen til mine services, så jeg undgår <a class="property" data-link-type="propdesc">unfair</a> use eller anonyme anvendelse. (behov for at kunne kontakte brugere) [directory.]  [servicefabric.] (API nøgle service på PaaS+)</p>
+     <p>Som anvender ønsker jeg kunne begrænse adgangen til services til kendte anvendere, så jeg undgår <a class="property" data-link-type="propdesc">unfair</a> use eller anonyme anvendelse.</p>
+     <ul>
+      <li data-md>
+       <p>[directory.] skal kunne opbevare api-nøgler</p>
+      <li data-md>
+       <p>[service.] skal kunne begrænse adgang til services baseret på api-nøgler.</p>
+      <li data-md>
+       <p>anvender kan oprette og slette api-nøgler ved web-service kald.</p>
+      <li data-md>
+       <p>(Vi skal snakkeo om anvendelse af Gravitee)</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at kunne tildele adgang til services, applikationer og data til bruger i egen og andre organisationer (inden for SIT AD), så vi bedre kan arbejde sammen. [bør splittes op, Sikkerhed/Deling epic?, beta]</p>
+     <p>Som anvender ønsker jeg at kunne tildele adgang til services, applikationer og data til bruger i egen og andre organisationer (inden for SIT AD), så vi bedre kan arbejde sammen.</p>
+     <ul>
+      <li data-md>
+       <p>[directory.] skal kunne opbevare rettigheder</p>
+     </ul>
     <li data-md>
-     <p>Som policy owner, sikre at oplysninger om services, applikationer og  dastasæt lever op til krav om registrering.... [ala Statens Arkiver, ISO... CaaS, Compliance Epic?]</p>
+     <p>Som policy owner, ønsker jeg at oplysninger om services, applikationer og dastasæt lever op til krav om registrering, så anvender ikke behøver at registrere oplysninger andre steder.</p>
+     <ul>
+      <li data-md>
+       <p>[directory.] skal kunne opbevare alle felter der findes i modellen til beskrivelse af it-systemer.</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jegf ikke skal kigge andre steder.</p>
+     <p>Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jeg ikke skal kigge andre steder.</p>
+     <ul>
+      <li data-md>
+       <p>[status.] events er tilgængelig for Nagios hos anvender</p>
+      <li data-md>
+       <p>[??] incidents er tilgængelig for Nagios hos anvender</p>
+     </ul>
     <li data-md>
-     <p>Kan integreres til NagIos.</p>
+     <p>Som udbyder vil jeg gerne begrænse synlighed af statuses og incidents, så der ikke opstår unødig opmærksomhed fra offentligheden.</p>
+     <ul>
+      <li data-md>
+       <p>[status.] er ikke tilgængelig for andre end anvendere.</p>
+     </ul>
    </ul>
-   <p>Plan, Code, Build, Test, Release understøttes ikke af platformen (se ToolChain SaaS).</p>
    <h4 class="heading settled" id="platform-service-delivery"><span class="content">Platform Service Delivery</span></h4>
    <p>Når epic’en er afsluttet er overordnde opgaver og ansvar omkring GovCloud Paas placeret, første møde i nyoprette fora afholdt og første aftale om anvendelse af platformen indgået.</p>
    <ul>
     <li data-md>
-     <p>Som anvender af platformen ønsker jeg at kunne påvirke  hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold. (sikkerhed for long term support) [productboardkommisorium] [cloadapiroadmap]</p>
+     <p>Som udbyder, anvender og policy owner ønsker vi et fælles samarbejdsorgan, hvor vi kan diskutere problemer og finde løsninger i fællesskab, så vi i samarbejde kan afhjælpe problemer og uklarheder med henblik på videreudvikling af platformen.</p>
+     <ul>
+      <li data-md>
+       <p>Der er etableret forum på KC-niveau</p>
+      <li data-md>
+       <p>Der er etableret forum på styrelsesdirektørniveau</p>
+     </ul>
     <li data-md>
-     <p>Anvender og policy owner, ønsker at sikres sig, at applikationer kan flyttes til andre platforme med mindst mulig besvær, så anvendere ikke er bundet til en specifik leverandør. [cloadapiroadmap] [spec?] (prøve en flytning? prop. api?)</p>
+     <p>Som anvender af platformen ønsker jeg at kunne påvirke  hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold. (sikkerhed for long term support)</p>
+     <ul>
+      <li data-md>
+       <p>[brugergruppe] vedligeholder [api] og et [roadmap]</p>
+     </ul>
     <li data-md>
-     <p>Som udbyder ønsker jeg mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware) [productboardkommisorium] [start]</p>
+     <p>Anvender og policy owner, ønsker at sikres sig, at applikationer kan flyttes til andre platforme med mindst mulig besvær, så anvendere ikke er bundet til en specifik leverandør.</p>
+     <ul>
+      <li data-md>
+       <p>[api] anvender snitflader der kan implementeres på andre platforme.</p>
+     </ul>
+    <li data-md>
+     <p>Som udbyder ønsker jeg mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware) [brugergruppe] [start]</p>
     <li data-md>
      <p>Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet. (langsigtet planlægning) [servicemodel]
-[productboardkommisorium] [capacityroadmap]</p>
+[brugergruppe] [roadmap]</p>
     <li data-md>
      <p>Som anvender ønsker jeg at platformens ressource udvides i takt med mine behov. ??[servicemodel]</p>
     <li data-md>
-     <p>Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt. [productboardkommisorium] [servicemodel] [servicerapport]</p>
+     <p>Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt. [brugergruppe] [servicemodel] [servicerapport]</p>
     <li data-md>
      <p>Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet. [servicemodel]</p>
     <li data-md>
-     <p>Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer. [servicemodel] [cloadapiroadmap]</p>
+     <p>Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer. [servicemodel] [api] [roadmap]</p>
     <li data-md>
      <p>Som policyowner? ønsker jeg at servicemodellen udbredes til alle eksisterende, med henblik på hurtig ibrugtaging. [kundeaftaler]</p>
    </ul>
-   <p>[] Productboard kommisorium
-[] Servicemodel
-[] CloadAPI Roadmap
-[] Servicerapport
-[] Capacity Roadmap
-[] Kundeaftaler</p>
    <h4 class="heading settled" id="platform-service-operation"><span class="content">Platform Service Operation</span></h4>
     Når epic’en er afsluttet er arbejdsgange for event management beskrevet og understøttet i samarbejdsværktøjet. 
    <ul>
@@ -1630,20 +1747,39 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.</p>
    </ul>
-   <p>[] Status dimsen...
-[] Adgang til log (portal)
-[] Arbejdsrum</p>
    <h4 class="heading settled" id="platform-and-support"><span class="content">Platform and Support</span></h4>
     Når epic’en er færdig kan en anvender deploye services, applikationer og datasæt igennem selvbetjening. 
    <ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime. (Docker, K8S)</p>
+     <p>Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime.</p>
+     <ul>
+      <li data-md>
+       <p>[api] beskriver runtime (K8S and Docker) og snitflader til platform services.</p>
+      <li data-md>
+       <p>[reg] er beskrevet.</p>
+      <li data-md>
+       <p>(Git og GitLabRunner er en del af toolchain?)</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at læse og skrive JSON dokumenter fra min applikation, så jeg kan anvende en NoSQL baseret datastorage (<em>Data fabric</em> , port 8243)</p>
+     <p>Som anvender ønsker at anvende en NoSQL datastore</p>
+     <ul>
+      <li data-md>
+       <p>applikationer kan læse og skrive JSON dokumenter på port 8243 på [data.]</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg at produce og consume beskeder på Mapr Kafka service fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.  (<em>Data fabric</em>, port 8082)</p>
+     <p>Som anvender ønsker jeg at produce og consume beskeder fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.</p>
+     <ul>
+      <li data-md>
+       <p>applikationer kan læse og skrive meddelelser via Kafka på port 8082 på [data.]</p>
+     </ul>
     <li data-md>
-     <p>Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL. (<em>Data fabric</em>, port 2049)</p>
+     <p>Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL.</p>
+     <ul>
+      <li data-md>
+       <p>applikationer kan læse og skrive vilkårlige filer via NFS på port 2049 på [data.]</p>
+     </ul>
+    <li data-md>
+     <p>Som anvender ønsker jeg at kunne anvende dataservies fra platformen direkte fra eget netværk (well.... det bliver så nok igennem deres egen proxy-applikation og services. Er det noget udbyder til tilbyde?)</p>
     <li data-md>
      <p>Som anvender ønsker jeg en en token service....</p>
    </ul>
@@ -1687,7 +1823,7 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Performance Audit</p>
    </ul>
-   <h4 class="heading settled" id="paas-data-anvender-registrering-api-ngler"><span class="content">PaaS+? Data-anvender registrering (API nøgler)</span></h4>
+   <h4 class="heading settled" id="paas"><span class="content">PaaS+</span></h4>
     Når epic’en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler. 
    <ul>
     <li data-md>
@@ -1695,7 +1831,7 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen. (<em>Directory</em>)</p>
    </ul>
-   <h4 class="heading settled" id="sandbox-kommer-behovet-fra-udbyder"><span class="content">Sandbox (kommer behovet fra udbyder?)</span></h4>
+   <h4 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h4>
     Når epic’en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc. 
    <ul>
     <li data-md>
@@ -1723,22 +1859,30 @@ pre .property::before, pre .property::after {
     compliance 
    <h4 class="heading settled" id="version-2"><span class="content">Version 2</span></h4>
     Brokering 
-   <h3 class="heading settled" id="principles-and-governing-thoughts"><span class="content">Principles and Governing Thoughts....</span></h3>
+   <h2 class="heading settled" data-level="1" id="highlevel"><span class="secno">1. </span><span class="content">Highlevel</span><a class="self-link" href="#highlevel"></a></h2>
+   <h3 class="heading settled" data-level="1.1" id="aktrer-og-use-cases"><span class="secno">1.1. </span><span class="content">Aktører og use cases</span><a class="self-link" href="#aktrer-og-use-cases"></a></h3>
+   <h4 class="heading settled" data-level="1.1.1" id="anvender"><span class="secno">1.1.1. </span><span class="content">Anvender</span><a class="self-link" href="#anvender"></a></h4>
+   <h4 class="heading settled" data-level="1.1.2" id="udbyder"><span class="secno">1.1.2. </span><span class="content">Udbyder</span><a class="self-link" href="#udbyder"></a></h4>
+   <h4 class="heading settled" data-level="1.1.3" id="policy-owner"><span class="secno">1.1.3. </span><span class="content">Policy Owner</span><a class="self-link" href="#policy-owner"></a></h4>
+   <h4 class="heading settled" data-level="1.1.4" id="platform-delivery"><span class="secno">1.1.4. </span><span class="content">Platform Delivery</span><a class="self-link" href="#platform-delivery"></a></h4>
+   <h4 class="heading settled" data-level="1.1.5" id="application-devops"><span class="secno">1.1.5. </span><span class="content">Application DevOps</span><a class="self-link" href="#application-devops"></a></h4>
+   <h4 class="heading settled" data-level="1.1.6" id="platform-operation"><span class="secno">1.1.6. </span><span class="content">Platform Operation</span><a class="self-link" href="#platform-operation"></a></h4>
+   <h4 class="heading settled" data-level="1.1.7" id="audit"><span class="secno">1.1.7. </span><span class="content">Audit</span><a class="self-link" href="#audit"></a></h4>
+   <h3 class="heading settled" data-level="1.2" id="principles"><span class="secno">1.2. </span><span class="content">Principles</span><a class="self-link" href="#principles"></a></h3>
    <p>Continuous Services, Vendor neutrality, High Scaleability, Security-by-design, GDPR-by-design, DevOps and Predictable Cost.</p>
+   <h3 class="heading settled" data-level="1.3" id="governing-thoughts"><span class="secno">1.3. </span><span class="content">Governing Thoughts....</span><a class="self-link" href="#governing-thoughts"></a></h3>
    <p>Architectural consequences:</p>
    <p><strong>Enterprise Grade Products</strong>, to support high scaleability with predictable cost.</p>
    <p><strong>Open Source supported interfaces</strong>, to support  vendor neutrality and predictable cost.</p>
    <p><strong>Self-Service (and automation)</strong>, to support Continous Services, High Scaleability and DevOps.</p>
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
-   <h3 class="heading settled" id="high-level-architecture"><span class="content">High Level Architecture</span></h3>
+   <h3 class="heading settled" data-level="1.4" id="high-level-architecture"><span class="secno">1.4. </span><span class="content">High Level Architecture</span><a class="self-link" href="#high-level-architecture"></a></h3>
    <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
    <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
    <p><img src="highlevel.svg"></p>
    <p>And supporting services.... some for developers and some for applications.</p>
    <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
-   <h2 class="heading settled" data-level="1" id="aktrer-og-highlevel-usecases"><span class="secno">1. </span><span class="content">Aktører og highlevel usecases</span><a class="self-link" href="#aktrer-og-highlevel-usecases"></a></h2>
-    Kunde, udvikler, operatør, policyowner? 
    <h2 class="heading settled" data-level="2" id="arbejdsgange-brugerrejser"><span class="secno">2. </span><span class="content">Arbejdsgange/Brugerrejser</span><a class="self-link" href="#arbejdsgange-brugerrejser"></a></h2>
     Vi har identificerewt en række arbejdsgange. Her beskrives de i Archimate notation og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige. 
    <h3 class="heading settled" data-level="2.1" id="registrer-ny-applikation"><span class="secno">2.1. </span><span class="content">Registrer ny applikation</span><a class="self-link" href="#registrer-ny-applikation"></a></h3>
@@ -1750,14 +1894,25 @@ pre .property::before, pre .property::after {
     (Hvorfor er der ikke noget testmiljø? Fordi kunden selv etablere forskellige applikationer, der kan anvende samme containere og datasæt til forskellige formål) 
    <h3 class="heading settled" data-level="2.5" id="give-medarbejder-adgang-til-platformsapplikationer"><span class="secno">2.5. </span><span class="content">Give medarbejder adgang til platformsapplikationer</span><a class="self-link" href="#give-medarbejder-adgang-til-platformsapplikationer"></a></h3>
     (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD) 
-   <h2 class="heading settled" data-level="3" id="api-fabric"><span class="secno">3. </span><span class="content">API Fabric</span><a class="self-link" href="#api-fabric"></a></h2>
-   <ul>
-    <li data-md>
-     <p>The API Gateway is <a href="http://www.krakend.io/">KrakenD</a>????</p>
-    <li data-md>
-     <p>Access to Application</p>
-   </ul>
-   <p>Responsibilities:</p>
+   <h3 class="heading settled" data-level="2.6" id="register-application"><span class="secno">2.6. </span><span class="content">Register Application</span><a class="self-link" href="#register-application"></a></h3>
+    Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende yaml fil, som opbevares i Directory. 
+   <h3 class="heading settled" data-level="2.7" id="register-dataset"><span class="secno">2.7. </span><span class="content">Register Dataset</span><a class="self-link" href="#register-dataset"></a></h3>
+    Oprettes manuelt på MapR. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog) 
+   <h3 class="heading settled" data-level="2.8" id="register-service"><span class="secno">2.8. </span><span class="content">Register Service</span><a class="self-link" href="#register-service"></a></h3>
+    Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende servicebeskrivelse, som opbevares i Directory. 
+   <p>Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.</p>
+   <h3 class="heading settled" data-level="2.9" id="redeploy-application"><span class="secno">2.9. </span><span class="content">Redeploy Application</span><a class="self-link" href="#redeploy-application"></a></h3>
+    Rancher Installation. Bør formentlig være en simple knap på Dashboardet. 
+   <h3 class="heading settled" data-level="2.10" id="sandbox①"><span class="secno">2.10. </span><span class="content">Sandbox</span><a class="self-link" href="#sandbox①"></a></h3>
+   <p>SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.</p>
+   <p>Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).</p>
+   <p>Implementeres som et <a class="property" data-link-type="propdesc">one-node</a> image af CloudAPI der kan spindes op ved hjælp af OpenStack eller hentes hjem til lokalt kunde miljø.</p>
+   <p>Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.</p>
+   <h3 class="heading settled" data-level="2.11" id="collaboration"><span class="secno">2.11. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration"></a></h3>
+    SIT provides collaborative tools to support collaboration during normal operation and during incident handling. 
+   <h2 class="heading settled" data-level="3" id="platform"><span class="secno">3. </span><span class="content">Platform</span><a class="self-link" href="#platform"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="application-and-service-fabric"><span class="secno">3.1. </span><span class="content">Application and Service Fabric</span><a class="self-link" href="#application-and-service-fabric"></a></h3>
+    Responsibilities: 
    <ul>
     <li data-md>
      <p>Oversæt ID og tildel requestID</p>
@@ -1768,8 +1923,6 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Log (AccessLog/Request Log?)</p>
    </ul>
-   <h3 class="heading settled" data-level="3.1" id="krakend"><span class="secno">3.1. </span><span class="content">KrakenD</span><a class="self-link" href="#krakend"></a></h3>
-   <h2 class="heading settled" data-level="4" id="app-fabric①"><span class="secno">4. </span><span class="content">App Fabric</span><a class="self-link" href="#app-fabric①"></a></h2>
    <p>Responsibilities:</p>
    <ul>
     <li data-md>
@@ -1783,7 +1936,11 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Mount NFS as Volume (for app log?)</p>
    </ul>
-   <h3 class="heading settled" data-level="4.1" id="rancher"><span class="secno">4.1. </span><span class="content">Rancher</span><a class="self-link" href="#rancher"></a></h3>
+   <h4 class="heading settled" data-level="3.1.1" id="service-access-control"><span class="secno">3.1.1. </span><span class="content">Service Access Control</span><a class="self-link" href="#service-access-control"></a></h4>
+   <h4 class="heading settled" data-level="3.1.2" id="application-service"><span class="secno">3.1.2. </span><span class="content">Application Service</span><a class="self-link" href="#application-service"></a></h4>
+   <h4 class="heading settled" data-level="3.1.3" id="application"><span class="secno">3.1.3. </span><span class="content">Application</span><a class="self-link" href="#application"></a></h4>
+   <h4 class="heading settled" data-level="3.1.4" id="container-image"><span class="secno">3.1.4. </span><span class="content">Container/Image</span><a class="self-link" href="#container-image"></a></h4>
+   <h4 class="heading settled" data-level="3.1.5" id="docker-k8s"><span class="secno">3.1.5. </span><span class="content">Docker/K8S</span><a class="self-link" href="#docker-k8s"></a></h4>
    <p><a href="https://rancher.com/">Rancher</a> has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation.</p>
    <p>The mapping from business objects to Rancher elements are:</p>
    <ul>
@@ -1795,13 +1952,11 @@ pre .property::before, pre .property::after {
      <p>Each Customer (Application) Service is a Rancher Load Balancing Workload (Ingress)</p>
    </ul>
    <p>and identities are stored in the Directory service.</p>
-   <h4 class="heading settled" data-level="4.1.1" id="k8s-service-network"><span class="secno">4.1.1. </span><span class="content">K8S Service Network</span><a class="self-link" href="#k8s-service-network"></a></h4>
-    Tildeles pods automatisk... 
+   <p>K8S Service Network Tildeles pods automatisk...</p>
    <p>Ingress controller bruger adresserne til loadbalancing mellem instanser.</p>
 <pre>kube-pods-subnet : XXX.XXX.XXX.XXX
 </pre>
-   <h4 class="heading settled" data-level="4.1.2" id="environment-variables"><span class="secno">4.1.2. </span><span class="content">Environment variables</span><a class="self-link" href="#environment-variables"></a></h4>
-    Apps finder datasservices via environment variable 
+   <p>Environment variablesApps finder datasservices via  environment variable</p>
    <p class="note" role="note"><span>Note:</span> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?</p>
 <pre class="highlight"><c- k>FROM</c-><c- s> docker:centos7</c->
 
@@ -1810,7 +1965,8 @@ http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.
 rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
 </pre>
    <p class="note" role="note"><span>Note:</span> Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)</p>
-   <h2 class="heading settled" data-level="5" id="data-fabric①"><span class="secno">5. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h2>
+   <h4 class="heading settled" data-level="3.1.6" id="gravitee"><span class="secno">3.1.6. </span><span class="content">Gravitee</span><a class="self-link" href="#gravitee"></a></h4>
+   <h3 class="heading settled" data-level="3.2" id="data-fabric①"><span class="secno">3.2. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h3>
    <p>Responsible for:</p>
    <ul>
     <li data-md>
@@ -1825,8 +1981,32 @@ rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
      <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
    </ul>
    <p>The data fabric is running latest version of <a href="https://mapr.com/">MapR</a>.</p>
-   <h3 class="heading settled" data-level="5.1" id="mapr"><span class="secno">5.1. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h3>
-   <h4 class="heading settled" data-level="5.1.1" id="node-configuration"><span class="secno">5.1.1. </span><span class="content">Node configuration</span><a class="self-link" href="#node-configuration"></a></h4>
+   <h4 class="heading settled" data-level="3.2.1" id="data-access-control"><span class="secno">3.2.1. </span><span class="content">Data Access Control</span><a class="self-link" href="#data-access-control"></a></h4>
+   <h4 class="heading settled" data-level="3.2.2" id="datasets"><span class="secno">3.2.2. </span><span class="content">Datasets</span><a class="self-link" href="#datasets"></a></h4>
+   <p>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
+   <ul>
+    <li data-md>
+     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
+    <li data-md>
+     <p>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
+    <li data-md>
+     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
+    <li data-md>
+     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
+    <li data-md>
+     <p>Datasets are encrypted at rest (what keys? control?)</p>
+   </ul>
+   <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
+   <h4 class="heading settled" data-level="3.2.3" id="logs"><span class="secno">3.2.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h4>
+   <ul>
+    <li data-md>
+     <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
+   </ul>
+   <h4 class="heading settled" data-level="3.2.4" id="-nfs-nfs"><span class="secno">3.2.4. </span><span class="content"><code>/nfs</code> (NFS)</span><a class="self-link" href="#-nfs-nfs"></a></h4>
+   <h4 class="heading settled" data-level="3.2.5" id="-ojai-nosql"><span class="secno">3.2.5. </span><span class="content"><code>/ojai</code> (NoSQL)</span><a class="self-link" href="#-ojai-nosql"></a></h4>
+   <h4 class="heading settled" data-level="3.2.6" id="-msg-kafka"><span class="secno">3.2.6. </span><span class="content"><code>/msg</code> (Kafka)</span><a class="self-link" href="#-msg-kafka"></a></h4>
+   <h4 class="heading settled" data-level="3.2.7" id="-log"><span class="secno">3.2.7. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
+   <h4 class="heading settled" data-level="3.2.8" id="mapr"><span class="secno">3.2.8. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h4>
    <ul>
     <li data-md>
      <p>Linux</p>
@@ -1848,42 +2028,36 @@ rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
      <p>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)</p>
    </ul>
    <p class="note" role="note"><span>Note:</span> Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...</p>
-   <h3 class="heading settled" data-level="5.2" id="datasets"><span class="secno">5.2. </span><span class="content">Datasets</span><a class="self-link" href="#datasets"></a></h3>
-   <p>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
-   <ul>
-    <li data-md>
-     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
-    <li data-md>
-     <p>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
-    <li data-md>
-     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
-    <li data-md>
-     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
-    <li data-md>
-     <p>Datasets are encrypted at rest (what keys? control?)</p>
-   </ul>
-   <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
-   <h3 class="heading settled" data-level="5.3" id="logs"><span class="secno">5.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h3>
-   <ul>
-    <li data-md>
-     <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
-   </ul>
-   <h2 class="heading settled" data-level="6" id="platform-services"><span class="secno">6. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h2>
+   <h2 class="heading settled" data-level="4" id="platform-support"><span class="secno">4. </span><span class="content">Platform Support</span><a class="self-link" href="#platform-support"></a></h2>
    <p>(Split into services to humans and to applications)
 Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API.</p>
-   <h3 class="heading settled" data-level="6.1" id="code-repository"><span class="secno">6.1. </span><span class="content">Code Repository</span><a class="self-link" href="#code-repository"></a></h3>
-    GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm? 
-   <h3 class="heading settled" data-level="6.2" id="container-repository"><span class="secno">6.2. </span><span class="content">Container Repository</span><a class="self-link" href="#container-repository"></a></h3>
-    Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR. 
-   <h3 class="heading settled" data-level="6.3" id="directory"><span class="secno">6.3. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h3>
+   <h3 class="heading settled" data-level="4.1" id="self-service-portal"><span class="secno">4.1. </span><span class="content">Self Service Portal</span><a class="self-link" href="#self-service-portal"></a></h3>
+   <h4 class="heading settled" data-level="4.1.1" id="selvbetjening"><span class="secno">4.1.1. </span><span class="content">Selvbetjening</span><a class="self-link" href="#selvbetjening"></a></h4>
+   <h4 class="heading settled" data-level="4.1.2" id="k8sgovclouddk"><span class="secno">4.1.2. </span><span class="content"><code>k8s.govcloud.dk</code></span><a class="self-link" href="#k8sgovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.1.3" id="rancher"><span class="secno">4.1.3. </span><span class="content">Rancher</span><a class="self-link" href="#rancher"></a></h4>
+   <h4 class="heading settled" data-level="4.1.4" id="cloudgovdk"><span class="secno">4.1.4. </span><span class="content"><code>cloud.gov.dk</code></span><a class="self-link" href="#cloudgovdk"></a></h4>
+   <h3 class="heading settled" data-level="4.2" id="operation"><span class="secno">4.2. </span><span class="content">Operation</span><a class="self-link" href="#operation"></a></h3>
+   <h4 class="heading settled" data-level="4.2.1" id="monitorering"><span class="secno">4.2.1. </span><span class="content">Monitorering</span><a class="self-link" href="#monitorering"></a></h4>
+   <h4 class="heading settled" data-level="4.2.2" id="events"><span class="secno">4.2.2. </span><span class="content">Events</span><a class="self-link" href="#events"></a></h4>
+   <h4 class="heading settled" data-level="4.2.3" id="statusgovclouddk"><span class="secno">4.2.3. </span><span class="content"><code>status.govcloud.dk</code></span><a class="self-link" href="#statusgovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.2.4" id="kundestatusgovclouddk"><span class="secno">4.2.4. </span><span class="content"><code>kunde.status.govcloud.dk</code></span><a class="self-link" href="#kundestatusgovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.2.5" id="collaboration①"><span class="secno">4.2.5. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration①"></a></h4>
+   <h4 class="heading settled" data-level="4.2.6" id="collab-url"><span class="secno">4.2.6. </span><span class="content">collab url?</span><a class="self-link" href="#collab-url"></a></h4>
+   <h3 class="heading settled" data-level="4.3" id="directory"><span class="secno">4.3. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h3>
     Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD. 
    <p>Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.</p>
    <p>Rettigheder anvendes af MapR og af Access Fabric.</p>
    <p>Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).</p>
    <p>Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.</p>
+   <h4 class="heading settled" data-level="4.3.1" id="users"><span class="secno">4.3.1. </span><span class="content">Users</span><a class="self-link" href="#users"></a></h4>
+    !Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre. 
+   <h4 class="heading settled" data-level="4.3.2" id="services-apps-deployments-og-datasets"><span class="secno">4.3.2. </span><span class="content">Services, Apps (Deployments) og Datasets</span><a class="self-link" href="#services-apps-deployments-og-datasets"></a></h4>
    <ul>
     <li data-md>
      <p>[Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").</p>
+   </ul>
+   <h4 class="heading settled" data-level="4.3.3" id="rights"><span class="secno">4.3.3. </span><span class="content">Rights</span><a class="self-link" href="#rights"></a></h4>
+   <ul>
     <li data-md>
      <p>Each Application exposes Application Services through the use of LoadBalancers.</p>
     <li data-md>
@@ -1891,37 +2065,24 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
     <li data-md>
      <p>(consequence that all application services have access to same datasets?)</p>
    </ul>
-   <h3 class="heading settled" data-level="6.4" id="authentication"><span class="secno">6.4. </span><span class="content">!Authentication</span><a class="self-link" href="#authentication"></a></h3>
-    Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre. 
-   <h3 class="heading settled" data-level="6.5" id="authorization"><span class="secno">6.5. </span><span class="content">Authorization</span><a class="self-link" href="#authorization"></a></h3>
-    Keycloak installation. Anvendes af Access Fabric (og Data Fabric?). 
-   <h3 class="heading settled" data-level="6.6" id="api-key-management"><span class="secno">6.6. </span><span class="content">API Key Management</span><a class="self-link" href="#api-key-management"></a></h3>
-   <p><img align="center" src="id-man.svg" width="100%"></p>
-   <h3 class="heading settled" data-level="6.7" id="data-services"><span class="secno">6.7. </span><span class="content">Data Services</span><a class="self-link" href="#data-services"></a></h3>
-    MapR gateway nodes med nfs, ojai og kafka. Authorization? 
-   <h3 class="heading settled" data-level="6.8" id="dashboard"><span class="secno">6.8. </span><span class="content">Dashboard</span><a class="self-link" href="#dashboard"></a></h3>
-    Nedenstående mockups kan findes samlet <a href="https://app.moqups.com/mads.hjorth@gmail.com/PWwjFtF0KR/view">her.</a> 
-   <p><img align="right" src="minimal.png" valign="bottom" width="25%"></p>
-   <h3 class="heading settled" data-level="6.9" id="register-application"><span class="secno">6.9. </span><span class="content">Register Application</span><a class="self-link" href="#register-application"></a></h3>
-    Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende yaml fil, som opbevares i Directory. 
-   <h3 class="heading settled" data-level="6.10" id="register-dataset"><span class="secno">6.10. </span><span class="content">Register Dataset</span><a class="self-link" href="#register-dataset"></a></h3>
-    Oprettes manuelt på MapR. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog) 
-   <h3 class="heading settled" data-level="6.11" id="register-service"><span class="secno">6.11. </span><span class="content">Register Service</span><a class="self-link" href="#register-service"></a></h3>
-    Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende servicebeskrivelse, som opbevares i Directory. 
-   <p>Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.</p>
-   <h3 class="heading settled" data-level="6.12" id="redeploy-application"><span class="secno">6.12. </span><span class="content">Redeploy Application</span><a class="self-link" href="#redeploy-application"></a></h3>
-    Rancher Installation. Bør formentlig være en simple knap på Dashboardet. 
-   <h3 class="heading settled" data-level="6.13" id="sandbox"><span class="secno">6.13. </span><span class="content">Sandbox</span><a class="self-link" href="#sandbox"></a></h3>
-   <p>SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.</p>
-   <p>Whitelist af mail domæner, re-activation efter 14 dage på samme mail... eller anden (medarbejderen stopper, udvikleren fortsætter).</p>
-   <p>Implementeres som et <a class="property" data-link-type="propdesc">one-node</a> image af CloudAPI der kan spindes op ved hjælp af OpenStack eller hentes hjem til lokalt kunde miljø.</p>
-   <p>Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.</p>
-   <h3 class="heading settled" data-level="6.14" id="collaboration"><span class="secno">6.14. </span><span class="content">Collaboration</span><a class="self-link" href="#collaboration"></a></h3>
-    SIT provides collaborative tools to support collaboration during normal operation and during incident handling. 
-   <h2 class="heading settled" data-level="7" id="infrastructure-network"><span class="secno">7. </span><span class="content">Infrastructure (Network)</span><a class="self-link" href="#infrastructure-network"></a></h2>
+   <h4 class="heading settled" data-level="4.3.4" id="-token"><span class="secno">4.3.4. </span><span class="content"><code>/token</code></span><a class="self-link" href="#-token"></a></h4>
+   <h4 class="heading settled" data-level="4.3.5" id="-ldap"><span class="secno">4.3.5. </span><span class="content"><code>/ldap</code></span><a class="self-link" href="#-ldap"></a></h4>
+   <h4 class="heading settled" data-level="4.3.6" id="single-sign-on-url"><span class="secno">4.3.6. </span><span class="content">Single Sign On url?</span><a class="self-link" href="#single-sign-on-url"></a></h4>
+   <h4 class="heading settled" data-level="4.3.7" id="freeipa"><span class="secno">4.3.7. </span><span class="content">FreeIPA</span><a class="self-link" href="#freeipa"></a></h4>
+   <h4 class="heading settled" data-level="4.3.8" id="keycloak"><span class="secno">4.3.8. </span><span class="content">KeyCloak</span><a class="self-link" href="#keycloak"></a></h4>
+   <h3 class="heading settled" data-level="4.4" id="repository"><span class="secno">4.4. </span><span class="content">Repository</span><a class="self-link" href="#repository"></a></h3>
+   <h4 class="heading settled" data-level="4.4.1" id="application-code"><span class="secno">4.4.1. </span><span class="content">Application Code</span><a class="self-link" href="#application-code"></a></h4>
+   <h4 class="heading settled" data-level="4.4.2" id="gitgovclouddk"><span class="secno">4.4.2. </span><span class="content"><code>git.govcloud.dk</code></span><a class="self-link" href="#gitgovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.4.3" id="gitlab"><span class="secno">4.4.3. </span><span class="content">GitLab</span><a class="self-link" href="#gitlab"></a></h4>
+   <p>GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?</p>
+   <h4 class="heading settled" data-level="4.4.4" id="docker-images"><span class="secno">4.4.4. </span><span class="content">Docker Images</span><a class="self-link" href="#docker-images"></a></h4>
+   <h4 class="heading settled" data-level="4.4.5" id="reggovclouddk"><span class="secno">4.4.5. </span><span class="content"><code>reg.govcloud.dk</code></span><a class="self-link" href="#reggovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.4.6" id="habour"><span class="secno">4.4.6. </span><span class="content">Habour</span><a class="self-link" href="#habour"></a></h4>
+    Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR. 
+   <h2 class="heading settled" data-level="5" id="infrastructure"><span class="secno">5. </span><span class="content">Infrastructure</span><a class="self-link" href="#infrastructure"></a></h2>
     Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
    <p>Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.</p>
-   <h3 class="heading settled" data-level="7.1" id="internet-network-access"><span class="secno">7.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
+   <h3 class="heading settled" data-level="5.1" id="internet-network-access"><span class="secno">5.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
     GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT. 
 <pre>cloud.gov.dk.    3589  IN  A  188.64.157.76
 </pre>
@@ -1932,14 +2093,14 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
    <p class="note" role="note"><span>Note:</span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
    <p class="note" role="note"><span>Note:</span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
    <p class="note" role="note"><span>Note:</span> Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (https/hostname).</p>
-   <h3 class="heading settled" data-level="7.2" id="gateway"><span class="secno">7.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
+   <h3 class="heading settled" data-level="5.2" id="gateway"><span class="secno">5.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
    <p>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.</p>
    <p class="note" role="note"><span>Note:</span> Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.</p>
    <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
    <p class="note" role="note"><span>Note:</span> Monitoriering. Snak om ping/trace og kalde ned i stakken.</p>
-   <h3 class="heading settled" data-level="7.3" id="layout"><span class="secno">7.3. </span><span class="content">Layout</span><a class="self-link" href="#layout"></a></h3>
+   <h3 class="heading settled" data-level="5.3" id="network-layout"><span class="secno">5.3. </span><span class="content">Network Layout</span><a class="self-link" href="#network-layout"></a></h3>
    <p><img src="network.svg"></p>
-   <h4 class="heading settled" data-level="7.3.1" id="application-network"><span class="secno">7.3.1. </span><span class="content">Application Network</span><a class="self-link" href="#application-network"></a></h4>
+   <h4 class="heading settled" data-level="5.3.1" id="application-network"><span class="secno">5.3.1. </span><span class="content">Application Network</span><a class="self-link" href="#application-network"></a></h4>
     Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways. 
    <p>Netværket er <code>vlanXX, 10.aaa.xxx.0/24</code></p>
    <p>men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.</p>
@@ -1951,7 +2112,7 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
     <li data-md>
      <p><code>10.aaa.xxx.248/29</code> noder der fungere som loadbalancer ned mod datafabric.</p>
    </ul>
-   <h4 class="heading settled" data-level="7.3.2" id="data-network"><span class="secno">7.3.2. </span><span class="content">Data Network</span><a class="self-link" href="#data-network"></a></h4>
+   <h4 class="heading settled" data-level="5.3.2" id="data-network"><span class="secno">5.3.2. </span><span class="content">Data Network</span><a class="self-link" href="#data-network"></a></h4>
     Det primære netværk til Data Fabric dvs hvor MapR kører. 
    <p>Netværket er <code>vlanXX, 10.bbb.yyy.0/23</code></p>
    <p>Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.</p>
@@ -1961,7 +2122,7 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
     <li data-md>
      <p><code>10.bbb.zzz.0/24</code> alle MapR noder.</p>
    </ul>
-   <h4 class="heading settled" data-level="7.3.3" id="firewall"><span class="secno">7.3.3. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
+   <h4 class="heading settled" data-level="5.3.3" id="firewall"><span class="secno">5.3.3. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
     For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler. 
    <ol>
     <li data-md>
@@ -1973,11 +2134,12 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
     <li data-md>
      <p>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. <code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??</code></p>
    </ol>
-   <h4 class="heading settled" data-level="7.3.4" id="remote-admin-access"><span class="secno">7.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
+   <h4 class="heading settled" data-level="5.3.4" id="remote-admin-access"><span class="secno">5.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
-   <h2 class="heading settled" data-level="8" id="customer-applications-and-their-responsibilities"><span class="secno">8. </span><span class="content">Customer Applications and their responsibilities</span><a class="self-link" href="#customer-applications-and-their-responsibilities"></a></h2>
+   <h3 class="heading settled" data-level="5.4" id="hardware"><span class="secno">5.4. </span><span class="content">Hardware</span><a class="self-link" href="#hardware"></a></h3>
+   <h2 class="heading settled" data-level="6" id="customer-applications-and-their-responsibilities"><span class="secno">6. </span><span class="content">Customer Applications and their responsibilities</span><a class="self-link" href="#customer-applications-and-their-responsibilities"></a></h2>
    <ul>
     <li data-md>
      <p>Applications are responsible for implementing access policies to data at row level</p>
@@ -1994,8 +2156,18 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
    <p>Realiseret... og selvbetjening.</p>
    <p>24/7 Platform support. Applikationssupport...</p>
    <h4 class="heading settled" id="tekniske-kompetancer"><span class="content">Tekniske kompetancer</span><a class="self-link" href="#tekniske-kompetancer"></a></h4>
-   <p>Docker, K8S</p>
-   <p>REST, JWT. NoSql, Queue</p>
+   <ul>
+    <li data-md>
+     <p>Udvikling af container baserede applikationer fx Docker.</p>
+    <li data-md>
+     <p>Anvendelse af asynkrone meddelelser som integration mellem applikationskomponenter fx Apace Kafka.</p>
+    <li data-md>
+     <p>Anvendelse af NoSQL dokumentdatabaser fx OJAI.</p>
+    <li data-md>
+     <p>Udvikling af HTTP services der følger REST.</p>
+    <li data-md>
+     <p>Token baseret adgangskontrol fx JWT.</p>
+   </ul>
    <h3 class="heading settled" id="use-of-archimate"><span class="content">Use of Archimate</span><a class="self-link" href="#use-of-archimate"></a></h3>
   </main>
 <script>
@@ -2130,6 +2302,6 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#app-fabric">App Fabric</a><span>, in §Unnumbered section</span>
-   <li><a href="#data-fabric">Data Fabric</a><span>, in §Unnumbered section</span>
+   <li><a href="#app-fabric">App Fabric</a><span>, in §1.4</span>
+   <li><a href="#data-fabric">Data Fabric</a><span>, in §1.4</span>
   </ul>
