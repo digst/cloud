@@ -295,6 +295,7 @@ A tag is a label applied to a Docker image in a repository. Tags are how various
 (Alt det med Grønt (og gråt).... Technology Layer,
 <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a>
 
+<img src="platform.svg" width="95%">
 
 ## Fabrics...
 
