@@ -1472,9 +1472,34 @@ pre .property::before, pre .property::after {
         <li><a href="#reggovclouddk"><span class="secno">4.3.2</span> <span class="content"><code>reg.govcloud.dk</code></span></a>
         <li><a href="#k8sgovclouddk-portal"><span class="secno">4.3.3</span> <span class="content"><code>k8s.govcloud.dk</code> (portal.)</span></a>
         <li><a href="#statusgovclouddk"><span class="secno">4.3.4</span> <span class="content"><code>status.govcloud.dk</code></span></a>
-        <li><a href="#remote-admin-access"><span class="secno">4.3.5</span> <span class="content">Remote admin access</span></a>
+        <li><a href="#collabgovclouddk"><span class="secno">4.3.5</span> <span class="content"><code>collab?.govcloud.dk</code></span></a>
        </ol>
-      <li><a href="#hardware"><span class="secno">4.4</span> <span class="content">Hardware</span></a>
+      <li>
+       <a href="#middleware"><span class="secno">4.4</span> <span class="content">Middleware</span></a>
+       <ol class="toc">
+        <li><a href="#gravitee"><span class="secno">4.4.1</span> <span class="content">Gravitee</span></a>
+        <li><a href="#rancher"><span class="secno">4.4.2</span> <span class="content">Rancher</span></a>
+        <li><a href="#mapr"><span class="secno">4.4.3</span> <span class="content">MapR</span></a>
+        <li><a href="#keycloak"><span class="secno">4.4.4</span> <span class="content">KeyCloak</span></a>
+        <li><a href="#freeipa"><span class="secno">4.4.5</span> <span class="content">FreeIPA</span></a>
+        <li><a href="#gitlab"><span class="secno">4.4.6</span> <span class="content">GitLab</span></a>
+        <li><a href="#habor"><span class="secno">4.4.7</span> <span class="content">Habor</span></a>
+       </ol>
+     </ol>
+    <li>
+     <a href="#infrastructure"><span class="secno">5</span> <span class="content">Infrastructure</span></a>
+     <ol class="toc">
+      <li><a href="#internet-network-access"><span class="secno">5.1</span> <span class="content">Internet Network Access</span></a>
+      <li><a href="#gateway"><span class="secno">5.2</span> <span class="content">Gateway</span></a>
+      <li>
+       <a href="#network-layout"><span class="secno">5.3</span> <span class="content">Network Layout</span></a>
+       <ol class="toc">
+        <li><a href="#application-network"><span class="secno">5.3.1</span> <span class="content">Application Network</span></a>
+        <li><a href="#data-network"><span class="secno">5.3.2</span> <span class="content">Data Network</span></a>
+        <li><a href="#firewall"><span class="secno">5.3.3</span> <span class="content">Firewall</span></a>
+        <li><a href="#remote-admin-access"><span class="secno">5.3.4</span> <span class="content">Remote admin access</span></a>
+       </ol>
+      <li><a href="#hardware"><span class="secno">5.4</span> <span class="content">Hardware</span></a>
      </ol>
     <li>
      <a href="#appendix"><span class="secno"></span> <span class="content">Appendix</span></a>
@@ -1713,189 +1738,143 @@ pre .property::before, pre .property::after {
    <h4 class="heading settled" data-level="4.3.2" id="reggovclouddk"><span class="secno">4.3.2. </span><span class="content"><code>reg.govcloud.dk</code></span><a class="self-link" href="#reggovclouddk"></a></h4>
    <h4 class="heading settled" data-level="4.3.3" id="k8sgovclouddk-portal"><span class="secno">4.3.3. </span><span class="content"><code>k8s.govcloud.dk</code> (portal.)</span><a class="self-link" href="#k8sgovclouddk-portal"></a></h4>
    <h4 class="heading settled" data-level="4.3.4" id="statusgovclouddk"><span class="secno">4.3.4. </span><span class="content"><code>status.govcloud.dk</code></span><a class="self-link" href="#statusgovclouddk"></a></h4>
-   <p>
-    og noget med 
-    <kunde>.status.govcloud.<code data-span-tag="dk">&lt;/p>
-
-&lt;h4 line-number=382></code>collab?.govcloud.<code data-span-tag="dk">&lt;/h4>
-
-
-
-&lt;h3 line-number=386>Middleware&lt;/h3>
-
-&lt;h4 line-number=388>Gravitee&lt;/h4>
-
-
-
-&lt;h4 line-number=392>Rancher&lt;/h4>
-[Rancher](https://rancher.com/) has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation.
-
-&lt;p line-number=395>The mapping from business objects to Rancher elements are:&lt;/p>
-
-&lt;ul data-md line-number=397>&lt;li data-md line-number=397>&lt;p line-number=397>Each SIT Customer is given one Rancher Project.&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=399>&lt;p line-number=399>Each Customer Application is given one Kubernetes Namespace in Rancher&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=401>&lt;p line-number=401>Each Customer (Application) Service is a Rancher Load Balancing Workload (Ingress)&lt;/p>
-&lt;/li>&lt;/ul>
-&lt;p line-number=403>and identities are stored in the Directory service.&lt;/p>
-
-&lt;p line-number=405>K8S Service Network Tildeles pods automatisk...&lt;/p>
-
-&lt;p line-number=407>Ingress controller bruger adresserne til loadbalancing mellem instanser.&lt;/p>
-&lt;pre>kube-pods-subnet : XXX.XXX.XXX.XXX
-&lt;/pre>
-&lt;p line-number=412>Environment variablesApps finder datasservices via  environment variable&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?&lt;/p>
-
-
-
-
-
-
-
-
-
-&lt;h4 line-number=424>MapR&lt;/h4>
-
-&lt;ul data-md line-number=426>&lt;li data-md line-number=426>&lt;p line-number=426>Linux&lt;/p>
-&lt;/li>&lt;li data-md line-number=427>&lt;p line-number=427>Hardware&lt;/p>
-
-
-&lt;/li>&lt;li data-md line-number=430>&lt;p line-number=430>Initially MapR uses one Topology (clusters of identical hardware, identical OS)&lt;/p>
-&lt;/li>&lt;li data-md line-number=431>&lt;p line-number=431>Update zones, Connectivity Zones??&lt;/p>
-&lt;/li>&lt;li data-md line-number=432>&lt;p line-number=432>One cluser across multiple location.&lt;/p>
-&lt;/li>&lt;li data-md line-number=433>&lt;p line-number=433>The </code><code data-span-tag="mapr"> user should not use default name, UID and GUID.&lt;/p>
-&lt;/li>&lt;li data-md line-number=434>&lt;p line-number=434>Run as non-root?&lt;/p>
-&lt;/li>&lt;li data-md line-number=435>&lt;p line-number=435>Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)&lt;/p>
-&lt;/li>&lt;li data-md line-number=436>&lt;p line-number=436>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)&lt;/p>
-
-&lt;/li>&lt;/ul>
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...&lt;/p>
-
-
-&lt;p line-number=442>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)&lt;/p>
-
-&lt;ul data-md line-number=444>&lt;li data-md line-number=444>&lt;p line-number=444>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.&lt;/p>
-&lt;/li>&lt;li data-md line-number=445>&lt;p line-number=445>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).&lt;/p>
-&lt;/li>&lt;li data-md line-number=446>&lt;p line-number=446>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).&lt;/p>
-&lt;/li>&lt;li data-md line-number=447>&lt;p line-number=447>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)&lt;/p>
-&lt;/li>&lt;li data-md line-number=448>&lt;p line-number=448>Datasets are encrypted at rest (what keys? control?)&lt;/p>
-&lt;/li>&lt;/ul>
-&lt;p line-number=450>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )&lt;/p>
-
-
-&lt;h4 line-number=453>KeyCloak&lt;/h4>
-
-&lt;h4 line-number=455>FreeIPA&lt;/h4>
-Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD.
-
-&lt;p line-number=458>Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.&lt;/p>
-
-&lt;p line-number=460>Rettigheder anvendes af MapR og af Access Fabric.&lt;/p>
-
-&lt;p line-number=462>Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).&lt;/p>
-
-&lt;p line-number=464>Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.&lt;/p>
-
-&lt;ul data-md line-number=466>&lt;li data-md line-number=466>&lt;p line-number=466>Each Application exposes Application Services through the use of LoadBalancers.&lt;/p>
-&lt;/li>&lt;li data-md line-number=467>&lt;p line-number=467>Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).&lt;/p>
-&lt;/li>&lt;li data-md line-number=468>&lt;p line-number=468>(consequence that all application services have access to same datasets?)&lt;/p>
-&lt;/li>&lt;/ul>
-&lt;h4 line-number=470>GitLab&lt;/h4>
-
-&lt;p line-number=472>GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?&lt;/p>
-
-
-&lt;h4 line-number=475>Habor&lt;/h4>
-Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR.
-
-
-
-&lt;h2 line-number=480>Infrastructure&lt;/h2>
-Vi beskriver netværket som det ser ud når man ankommer fra internettet....
-
-&lt;p line-number=483>Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.&lt;/p>
-
-
-
-&lt;h3 line-number=487>Internet Network Access&lt;/h3>
-GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT.
-
-&lt;pre>cloud.gov.dk.    3589  IN  A  188.64.157.76
-&lt;/pre>
-&lt;p line-number=494>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip&lt;/p>
-
-&lt;pre>api.kunde.example.com.    3589  IN  CNAME  cloud.gov.dk
-&lt;/pre>
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (https/hostname).&lt;/p>
-
-
-
-&lt;h3 line-number=510>Gateway&lt;/h3>
-
-&lt;p line-number=512>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.&lt;/p>
-
-&lt;p class='replace-with-note-class'>&lt;span>Note:&lt;/span> Monitoriering. Snak om ping/trace og kalde ned i stakken.&lt;/p>
-
-&lt;h3 line-number=520>Network Layout&lt;/h3>
-
-&lt;p line-number=522>&lt;img src="network.svg">&lt;/p>
-
-
-&lt;h4 line-number=525>Application Network&lt;/h4>
-Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways.
-
-&lt;p line-number=528>Netværket er </code>vlanXX, 10.aaa.xxx.0/<code data-span-tag="24">&lt;/p>
-
-&lt;p line-number=530>men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.&lt;/p>
-
-&lt;ul data-md line-number=532>&lt;li data-md line-number=532>&lt;p line-number=532></code>10.aaa.xxx.0/<code data-span-tag="28"> noder der fungere som gateway og loadbalancer. I starten som manulet opsatte, men kan på sigt være ingress nodes der kontrolleres af K8S.&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=534>&lt;p line-number=534></code>10.aaa.xxx.16/??<code>de primære applikationsnoder hvor pods afvikles af K8S.&lt;/p> &lt;/li>&lt;li data-md line-number=536>&lt;p line-number=536></code>10.aaa.xxx.248/<code data-span-tag="29"> noder der fungere som loadbalancer ned mod datafabric.&lt;/p>
-
-
-&lt;/li>&lt;/ul>
-&lt;h4 line-number=540>Data Network&lt;/h4>
-Det primære netværk til Data Fabric dvs hvor MapR kører.
-
-&lt;p line-number=543>Netværket er </code>vlanXX, 10.bbb.yyy.0/<code data-span-tag="23">&lt;/p>
-
-&lt;p line-number=545>Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.&lt;/p>
-
-&lt;ul data-md line-number=547>&lt;li data-md line-number=547>&lt;p line-number=547></code>10.bbb.yyy.0/<code data-span-tag="24"> noder der kører MapR's dataservices: Kafka, OJAI og NFS.&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=549>&lt;p line-number=549></code>10.bbb.zzz.0/<code data-span-tag="24"> alle MapR noder.&lt;/p>
-
-&lt;/li>&lt;/ul>
-&lt;h4 line-number=552>Firewall&lt;/h4>
-For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler.
-
-
-&lt;ol data-md line-number=556>&lt;li data-md line-number=556>&lt;p line-number=556>Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder </code>188.64.157.76:80,443 -> 10.aaa.xxx.<code data-span-tag="3">&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=558>&lt;p line-number=558>Tillad forbindelse fra loadbalancer noder til nfs, ojai og kafka på MapR, så applikationer kan hente og skrive data </code>10.aaa.xxx.248/29:2049,8243,5678,8083,8082 -> 10.bbb.yyy.0/<code data-span-tag="24">&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=561>&lt;p line-number=561>Tillad forbindelse fra applikationer til internettet, så kunders applikationer kan anvendes services på internettet. </code>10.aaa.xxx.16/?? -> <code data-span-tag="any">&lt;/p>
-
-&lt;/li>&lt;li data-md line-number=564>&lt;p line-number=564>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. </code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??`</kunde>
-   </p>
-   <h4 class="heading settled" data-level="4.3.5" id="remote-admin-access"><span class="secno">4.3.5. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
+   <p>og noget med <code>&lt;kunde>.status.govcloud.dk</code></p>
+   <h4 class="heading settled" data-level="4.3.5" id="collabgovclouddk"><span class="secno">4.3.5. </span><span class="content"><code>collab?.govcloud.dk</code></span><a class="self-link" href="#collabgovclouddk"></a></h4>
+   <h3 class="heading settled" data-level="4.4" id="middleware"><span class="secno">4.4. </span><span class="content">Middleware</span><a class="self-link" href="#middleware"></a></h3>
+   <h4 class="heading settled" data-level="4.4.1" id="gravitee"><span class="secno">4.4.1. </span><span class="content">Gravitee</span><a class="self-link" href="#gravitee"></a></h4>
+   <h4 class="heading settled" data-level="4.4.2" id="rancher"><span class="secno">4.4.2. </span><span class="content">Rancher</span><a class="self-link" href="#rancher"></a></h4>
+    <a href="https://rancher.com/">Rancher</a> has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation. 
+   <p>The mapping from business objects to Rancher elements are:</p>
+   <ul>
+    <li data-md>
+     <p>Each SIT Customer is given one Rancher Project.</p>
+    <li data-md>
+     <p>Each Customer Application is given one Kubernetes Namespace in Rancher</p>
+    <li data-md>
+     <p>Each Customer (Application) Service is a Rancher Load Balancing Workload (Ingress)</p>
+   </ul>
+   <p>and identities are stored in the Directory service.</p>
+   <p>K8S Service Network Tildeles pods automatisk...</p>
+   <p>Ingress controller bruger adresserne til loadbalancing mellem instanser.</p>
+<pre>kube-pods-subnet : XXX.XXX.XXX.XXX
+</pre>
+   <p>Environment variablesApps finder datasservices via  environment variable</p>
+   <p class="note" role="note"><span>Note:</span> Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?</p>
+   <h4 class="heading settled" data-level="4.4.3" id="mapr"><span class="secno">4.4.3. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h4>
+   <ul>
+    <li data-md>
+     <p>Linux</p>
+    <li data-md>
+     <p>Hardware</p>
+    <li data-md>
+     <p>Initially MapR uses one Topology (clusters of identical hardware, identical OS)</p>
+    <li data-md>
+     <p>Update zones, Connectivity Zones??</p>
+    <li data-md>
+     <p>One cluser across multiple location.</p>
+    <li data-md>
+     <p>The <code>mapr</code> user should not use default name, UID and GUID.</p>
+    <li data-md>
+     <p>Run as non-root?</p>
+    <li data-md>
+     <p>Access to the MapR Control System is done through a Linux PAM connected to the central Directory using regular administrative SIT user accounts. (OpenLDAP?)</p>
+    <li data-md>
+     <p>Load Balancing using MapR Gateways? (L7, L3-4?, Locations?, Common endpoints across locations)</p>
+   </ul>
+   <p class="note" role="note"><span>Note:</span> Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...</p>
+   <p>A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)</p>
+   <ul>
+    <li data-md>
+     <p>Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.</p>
+    <li data-md>
+     <p>Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).</p>
+    <li data-md>
+     <p>Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).</p>
+    <li data-md>
+     <p>Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)</p>
+    <li data-md>
+     <p>Datasets are encrypted at rest (what keys? control?)</p>
+   </ul>
+   <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
+   <h4 class="heading settled" data-level="4.4.4" id="keycloak"><span class="secno">4.4.4. </span><span class="content">KeyCloak</span><a class="self-link" href="#keycloak"></a></h4>
+   <h4 class="heading settled" data-level="4.4.5" id="freeipa"><span class="secno">4.4.5. </span><span class="content">FreeIPA</span><a class="self-link" href="#freeipa"></a></h4>
+    Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD. 
+   <p>Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.</p>
+   <p>Rettigheder anvendes af MapR og af Access Fabric.</p>
+   <p>Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).</p>
+   <p>Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.</p>
+   <ul>
+    <li data-md>
+     <p>Each Application exposes Application Services through the use of LoadBalancers.</p>
+    <li data-md>
+     <p>Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).</p>
+    <li data-md>
+     <p>(consequence that all application services have access to same datasets?)</p>
+   </ul>
+   <h4 class="heading settled" data-level="4.4.6" id="gitlab"><span class="secno">4.4.6. </span><span class="content">GitLab</span><a class="self-link" href="#gitlab"></a></h4>
+   <p>GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?</p>
+   <h4 class="heading settled" data-level="4.4.7" id="habor"><span class="secno">4.4.7. </span><span class="content">Habor</span><a class="self-link" href="#habor"></a></h4>
+    Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR. 
+   <h2 class="heading settled" data-level="5" id="infrastructure"><span class="secno">5. </span><span class="content">Infrastructure</span><a class="self-link" href="#infrastructure"></a></h2>
+    Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
+   <p>Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.</p>
+   <h3 class="heading settled" data-level="5.1" id="internet-network-access"><span class="secno">5.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
+    GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT. 
+<pre>cloud.gov.dk.    3589  IN  A  188.64.157.76
+</pre>
+   <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
+<pre>api.kunde.example.com.    3589  IN  CNAME  cloud.gov.dk
+</pre>
+   <p class="note" role="note"><span>Note:</span> kunden kan ikke bruge samme domæne til mail o.a. jf. RFC</p>
+   <p class="note" role="note"><span>Note:</span> Er der trust-relaterede opsætninger i DNS der skal udføres? dnssec? dmarc?</p>
+   <p class="note" role="note"><span>Note:</span> Hvor skal kunden registrere sine servicenavne? Skal vi anbefale SIT?</p>
+   <p class="note" role="note"><span>Note:</span> Overveje hvordan det fælles certifikat kan genbruges til kundedomæner. (https/hostname).</p>
+   <h3 class="heading settled" data-level="5.2" id="gateway"><span class="secno">5.2. </span><span class="content">Gateway</span><a class="self-link" href="#gateway"></a></h3>
+   <p>Vi regner med der er Intrusion Protection Service mellem internettet og platformen.</p>
+   <p class="note" role="note"><span>Note:</span> Vi vælger at F5 da vi ikke ønsker at scripte oprettelse af kundedomæner til den. Og da vi ikke ønsker den er ingress controller og indgang til alle øvrige services.</p>
+   <p class="note" role="note"><span>Note:</span> How do we repport usage? Metering: Undersøg om der findes eksisterende overvågning. Vi kan 'nøjes' med per hostname.</p>
+   <p class="note" role="note"><span>Note:</span> Monitoriering. Snak om ping/trace og kalde ned i stakken.</p>
+   <h3 class="heading settled" data-level="5.3" id="network-layout"><span class="secno">5.3. </span><span class="content">Network Layout</span><a class="self-link" href="#network-layout"></a></h3>
+   <p><img src="network.svg"></p>
+   <h4 class="heading settled" data-level="5.3.1" id="application-network"><span class="secno">5.3.1. </span><span class="content">Application Network</span><a class="self-link" href="#application-network"></a></h4>
+    Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways. 
+   <p>Netværket er <code>vlanXX, 10.aaa.xxx.0/24</code></p>
+   <p>men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.</p>
+   <ul>
+    <li data-md>
+     <p><code>10.aaa.xxx.0/28</code> noder der fungere som gateway og loadbalancer. I starten som manulet opsatte, men kan på sigt være ingress nodes der kontrolleres af K8S.</p>
+    <li data-md>
+     <p><code>10.aaa.xxx.16/??</code> de primære applikationsnoder hvor pods afvikles af K8S.</p>
+    <li data-md>
+     <p><code>10.aaa.xxx.248/29</code> noder der fungere som loadbalancer ned mod datafabric.</p>
+   </ul>
+   <h4 class="heading settled" data-level="5.3.2" id="data-network"><span class="secno">5.3.2. </span><span class="content">Data Network</span><a class="self-link" href="#data-network"></a></h4>
+    Det primære netværk til Data Fabric dvs hvor MapR kører. 
+   <p>Netværket er <code>vlanXX, 10.bbb.yyy.0/23</code></p>
+   <p>Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.</p>
+   <ul>
+    <li data-md>
+     <p><code>10.bbb.yyy.0/24</code> noder der kører MapR’s dataservices: Kafka, OJAI og NFS.</p>
+    <li data-md>
+     <p><code>10.bbb.zzz.0/24</code> alle MapR noder.</p>
+   </ul>
+   <h4 class="heading settled" data-level="5.3.3" id="firewall"><span class="secno">5.3.3. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
+    For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler. 
+   <ol>
+    <li data-md>
+     <p>Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder <code>188.64.157.76:80,443 -> 10.aaa.xxx.3</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra loadbalancer noder til nfs, ojai og kafka på MapR, så applikationer kan hente og skrive data <code>10.aaa.xxx.248/29:2049,8243,5678,8083,8082 -> 10.bbb.yyy.0/24</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra applikationer til internettet, så kunders applikationer kan anvendes services på internettet. <code>10.aaa.xxx.16/?? -> any</code></p>
+    <li data-md>
+     <p>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. <code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??</code></p>
+   </ol>
+   <h4 class="heading settled" data-level="5.3.4" id="remote-admin-access"><span class="secno">5.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
     Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
-   <h3 class="heading settled" data-level="4.4" id="hardware"><span class="secno">4.4. </span><span class="content">Hardware</span><a class="self-link" href="#hardware"></a></h3>
+   <h3 class="heading settled" data-level="5.4" id="hardware"><span class="secno">5.4. </span><span class="content">Hardware</span><a class="self-link" href="#hardware"></a></h3>
    <h2 class="no-num heading settled" id="appendix"><span class="content">Appendix</span><a class="self-link" href="#appendix"></a></h2>
    <h3 class="heading settled" id="inspiration"><span class="content">Inspiration</span><a class="self-link" href="#inspiration"></a></h3>
    <h4 class="heading settled" id="kundens-it-milj"><span class="content">Kundens It-miljø</span><a class="self-link" href="#kundens-it-milj"></a></h4>

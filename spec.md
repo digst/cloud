@@ -377,7 +377,7 @@ Web applikationer i browsere til brug for ansatte og konsulenter hos platformsan
 
 ### `status.govcloud.dk`
 
-og noget med <kunde>.status.govcloud.dk`
+og noget med `<kunde>.status.govcloud.dk`
 
 ### `collab?.govcloud.dk`
 
