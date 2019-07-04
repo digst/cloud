@@ -1029,7 +1029,7 @@ Possible extra rowspan handling
 		}
 	/* } */
 
-	@supports (display:grid) {
+	@supports (display:grid) and (display:contents) {
 		/* Use #toc over .toc to override non-@supports rules. */
 		#toc {
 			display: grid;
@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 872cce6d3026423d677f3bd5837f1a1a46299a04" name="generator">
+  <meta content="Bikeshed version 30aa90d768746168deba12493f1f3622df2814b6" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>/* style-md-lists */
 
@@ -1423,7 +1423,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-06-26">26 June 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-04">4 July 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1515,16 +1515,17 @@ pre .property::before, pre .property::after {
         <li><a href="#gravitee"><span class="secno">3.1.6</span> <span class="content">Gravitee</span></a>
        </ol>
       <li>
-       <a href="#data-fabric①"><span class="secno">3.2</span> <span class="content">Data Fabric</span></a>
+       <a href="#data-fabric"><span class="secno">3.2</span> <span class="content">Data Fabric</span></a>
        <ol class="toc">
         <li><a href="#data-access-control"><span class="secno">3.2.1</span> <span class="content">Data Access Control</span></a>
         <li><a href="#datasets"><span class="secno">3.2.2</span> <span class="content">Datasets</span></a>
-        <li><a href="#logs"><span class="secno">3.2.3</span> <span class="content">Logs</span></a>
-        <li><a href="#-nfs-nfs"><span class="secno">3.2.4</span> <span class="content"><code>/nfs</code> (NFS)</span></a>
-        <li><a href="#-ojai-nosql"><span class="secno">3.2.5</span> <span class="content"><code>/ojai</code> (NoSQL)</span></a>
-        <li><a href="#-msg-kafka"><span class="secno">3.2.6</span> <span class="content"><code>/msg</code> (Kafka)</span></a>
-        <li><a href="#-log"><span class="secno">3.2.7</span> <span class="content"><code>/log</code></span></a>
-        <li><a href="#mapr"><span class="secno">3.2.8</span> <span class="content">MapR</span></a>
+        <li><a href="#application-logs"><span class="secno">3.2.3</span> <span class="content">Application Logs</span></a>
+        <li><a href="#platform-logs"><span class="secno">3.2.4</span> <span class="content">Platform Logs</span></a>
+        <li><a href="#-nfs-nfs"><span class="secno">3.2.5</span> <span class="content"><code>/nfs</code> (NFS)</span></a>
+        <li><a href="#-ojai-nosql"><span class="secno">3.2.6</span> <span class="content"><code>/ojai</code> (NoSQL)</span></a>
+        <li><a href="#-msg-kafka"><span class="secno">3.2.7</span> <span class="content"><code>/msg</code> (Kafka)</span></a>
+        <li><a href="#-log"><span class="secno">3.2.8</span> <span class="content"><code>/log</code></span></a>
+        <li><a href="#mapr"><span class="secno">3.2.9</span> <span class="content">MapR</span></a>
        </ol>
      </ol>
     <li>
@@ -1860,6 +1861,7 @@ pre .property::before, pre .property::after {
    <h4 class="heading settled" id="version-2"><span class="content">Version 2</span></h4>
     Brokering 
    <h2 class="heading settled" data-level="1" id="highlevel"><span class="secno">1. </span><span class="content">Highlevel</span><a class="self-link" href="#highlevel"></a></h2>
+   <p><img src="platform.svg" width="95%"></p>
    <h3 class="heading settled" data-level="1.1" id="aktrer-og-use-cases"><span class="secno">1.1. </span><span class="content">Aktører og use cases</span><a class="self-link" href="#aktrer-og-use-cases"></a></h3>
    <h4 class="heading settled" data-level="1.1.1" id="anvender"><span class="secno">1.1.1. </span><span class="content">Anvender</span><a class="self-link" href="#anvender"></a></h4>
    <h4 class="heading settled" data-level="1.1.2" id="udbyder"><span class="secno">1.1.2. </span><span class="content">Udbyder</span><a class="self-link" href="#udbyder"></a></h4>
@@ -1878,8 +1880,6 @@ pre .property::before, pre .property::after {
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
    <h3 class="heading settled" data-level="1.4" id="high-level-architecture"><span class="secno">1.4. </span><span class="content">High Level Architecture</span><a class="self-link" href="#high-level-architecture"></a></h3>
-   <p><dfn data-dfn-type="dfn" data-noexport id="app-fabric">App Fabric<a class="self-link" href="#app-fabric"></a></dfn> is...</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric">Data Fabric<a class="self-link" href="#data-fabric"></a></dfn> is...</p>
    <p><img src="highlevel.svg"></p>
    <p>And supporting services.... some for developers and some for applications.</p>
    <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
@@ -1966,7 +1966,8 @@ rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
 </pre>
    <p class="note" role="note"><span>Note:</span> Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)</p>
    <h4 class="heading settled" data-level="3.1.6" id="gravitee"><span class="secno">3.1.6. </span><span class="content">Gravitee</span><a class="self-link" href="#gravitee"></a></h4>
-   <h3 class="heading settled" data-level="3.2" id="data-fabric①"><span class="secno">3.2. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric①"></a></h3>
+   <h3 class="heading settled" data-level="3.2" id="data-fabric"><span class="secno">3.2. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric"></a></h3>
+   <p><dfn data-dfn-type="dfn" data-noexport id="data-fabric①">Data Fabric<a class="self-link" href="#data-fabric①"></a></dfn></p>
    <p>Responsible for:</p>
    <ul>
     <li data-md>
@@ -1997,16 +1998,17 @@ rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
      <p>Datasets are encrypted at rest (what keys? control?)</p>
    </ul>
    <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
-   <h4 class="heading settled" data-level="3.2.3" id="logs"><span class="secno">3.2.3. </span><span class="content">Logs</span><a class="self-link" href="#logs"></a></h4>
+   <h4 class="heading settled" data-level="3.2.3" id="application-logs"><span class="secno">3.2.3. </span><span class="content">Application Logs</span><a class="self-link" href="#application-logs"></a></h4>
+   <h4 class="heading settled" data-level="3.2.4" id="platform-logs"><span class="secno">3.2.4. </span><span class="content">Platform Logs</span><a class="self-link" href="#platform-logs"></a></h4>
    <ul>
     <li data-md>
      <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
    </ul>
-   <h4 class="heading settled" data-level="3.2.4" id="-nfs-nfs"><span class="secno">3.2.4. </span><span class="content"><code>/nfs</code> (NFS)</span><a class="self-link" href="#-nfs-nfs"></a></h4>
-   <h4 class="heading settled" data-level="3.2.5" id="-ojai-nosql"><span class="secno">3.2.5. </span><span class="content"><code>/ojai</code> (NoSQL)</span><a class="self-link" href="#-ojai-nosql"></a></h4>
-   <h4 class="heading settled" data-level="3.2.6" id="-msg-kafka"><span class="secno">3.2.6. </span><span class="content"><code>/msg</code> (Kafka)</span><a class="self-link" href="#-msg-kafka"></a></h4>
-   <h4 class="heading settled" data-level="3.2.7" id="-log"><span class="secno">3.2.7. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
-   <h4 class="heading settled" data-level="3.2.8" id="mapr"><span class="secno">3.2.8. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h4>
+   <h4 class="heading settled" data-level="3.2.5" id="-nfs-nfs"><span class="secno">3.2.5. </span><span class="content"><code>/nfs</code> (NFS)</span><a class="self-link" href="#-nfs-nfs"></a></h4>
+   <h4 class="heading settled" data-level="3.2.6" id="-ojai-nosql"><span class="secno">3.2.6. </span><span class="content"><code>/ojai</code> (NoSQL)</span><a class="self-link" href="#-ojai-nosql"></a></h4>
+   <h4 class="heading settled" data-level="3.2.7" id="-msg-kafka"><span class="secno">3.2.7. </span><span class="content"><code>/msg</code> (Kafka)</span><a class="self-link" href="#-msg-kafka"></a></h4>
+   <h4 class="heading settled" data-level="3.2.8" id="-log"><span class="secno">3.2.8. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
+   <h4 class="heading settled" data-level="3.2.9" id="mapr"><span class="secno">3.2.9. </span><span class="content">MapR</span><a class="self-link" href="#mapr"></a></h4>
    <ul>
     <li data-md>
      <p>Linux</p>
@@ -2302,6 +2304,5 @@ Note: Link til online API beskrivelse af alle services med adresser, porte og pr
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
-   <li><a href="#app-fabric">App Fabric</a><span>, in §1.4</span>
-   <li><a href="#data-fabric">Data Fabric</a><span>, in §1.4</span>
+   <li><a href="#data-fabric①">Data Fabric</a><span>, in §3.2</span>
   </ul>

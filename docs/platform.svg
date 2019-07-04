@@ -1,3 +1,844 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" version="1.1" viewBox="444 146 138 158" width="138pt" height="158pt" xmlns:dc="http://purl.org/dc/elements/1.1/"><metadata> Produced by OmniGraffle 6.6.2 <dc:date>2018-09-21 08:34:01 +0000</dc:date></metadata><defs><font-face font-family="Helvetica Neue" font-size="9" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.99585" descent="-212.99744" font-weight="500"><font-face-src><font-face-name name="HelveticaNeue"/></font-face-src></font-face><font-face font-family="Helvetica Neue" font-size="7" panose-1="2 0 5 3 0 0 0 2 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="0" x-height="517" cap-height="714" ascent="951.99585" descent="-212.99744" font-weight="500"><font-face-src><font-face-name name="HelveticaNeue"/></font-face-src></font-face><font-face font-family="Helvetica Neue" font-size="7" panose-1="2 0 5 3 0 0 0 9 0 4" units-per-em="1000" underline-position="-100" underline-thickness="50" slope="-1714.2857" x-height="517" cap-height="714" ascent="957.00073" descent="-212.99744" font-style="italic" font-weight="500"><font-face-src><font-face-name name="HelveticaNeue-Italic"/></font-face-src></font-face></defs><g stroke="none" stroke-opacity="1" stroke-dasharray="none" fill="none" fill-opacity="1"><title>Canvas 3</title><g><title>Layer 1</title><rect x="453.5433" y="155.90551" width="119.05512" height="138.89764" fill="#183973"/><text transform="translate(458.5433 160.90551)" fill="white"><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="0" y="9" textLength="6.832">P</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="6.832" y="9" textLength="2.998">l</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="9.83" y="9" textLength="5.833">a</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="15.663" y="9" textLength="3.835">t</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="19.498" y="9" textLength="3.664">f</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="23.162" y="9" textLength="6.166">o</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="29.328" y="9" textLength="3.997">r</tspan><tspan font-family="Helvetica Neue" font-size="9" font-weight="500" fill="white" x="33.325" y="9" textLength="8.677">m</tspan></text><rect x="516.79134" y="266.45669" width="48.366141" height="22.677166" fill="#c6c6c6" fill-opacity=".5"/><text transform="translate(519.79134 269.45669)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="7" textLength="30.87">Common </tspan><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="15.195999" textLength="14.651">Data</tspan></text><rect x="460.98425" y="178.58268" width="104.17323" height="14.173228" fill="#c6c6c6"/><text transform="translate(463.98425 181.58268)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="7" textLength="27.601">Gateway</tspan></text><rect x="460.98425" y="226.77165" width="104.17323" height="14.173228" fill="#c6c6c6"/><text transform="translate(463.98425 229.77165)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="7" textLength="60.543">Application ‘Fabric’</tspan></text><rect x="460.98425" y="246.61417" width="104.17323" height="14.173228" fill="#c6c6c6"/><text transform="translate(463.98425 249.61417)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="7" textLength="40.061">Data ‘Fabric’</tspan></text><rect x="460.98425" y="266.45669" width="48.366141" height="22.677166" fill="white"/><text transform="translate(463.98425 269.45669)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-style="italic" font-weight="500" fill="black" x="0" y="7" textLength="32.536">Customer </tspan><tspan font-family="Helvetica Neue" font-size="7" font-style="italic" font-weight="500" fill="black" x="0" y="15.195999" textLength="14.399">Data</tspan></text><a xl:href="https://github.com/digst/cloud/blob/master/design.md#platform-services"><rect x="516.79134" y="198.4252" width="48.366141" height="22.677166" fill="#c6c6c6"/><text transform="translate(519.79134 201.4252)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="7" textLength="28.392">Platform </tspan><tspan font-family="Helvetica Neue" font-size="7" font-weight="500" fill="black" x="0" y="15.195999" textLength="26.698">Services</tspan></text></a><rect x="460.98425" y="198.4252" width="48.366141" height="22.677166" fill="white"/><text transform="translate(463.98425 201.4252)" fill="black"><tspan font-family="Helvetica Neue" font-size="7" font-style="italic" font-weight="500" fill="black" x="0" y="7" textLength="32.536">Customer </tspan><tspan font-family="Helvetica Neue" font-size="7" font-style="italic" font-weight="500" fill="black" x="0" y="15.195999" textLength="14.917">App.</tspan></text></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-opacity="1" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" width="886" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="612" font-family="'Dialog'" font-style="normal" stroke-linejoin="miter" font-size="12px" stroke-dashoffset="0" image-rendering="auto">
+  <!--Generated by ySVG 2.5-->
+  <defs id="genericDefs"/>
+  <g>
+    <defs id="defs1">
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
+        <path d="M0 0 L886 0 L886 612 L0 612 L0 0 Z"/>
+      </clipPath>
+      <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
+        <path d="M0 0 L0 18 L349 18 L349 0 Z"/>
+      </clipPath>
+      <script type="text/ecmascript"><![CDATA[      var SVGDocument = null;
+      var SVGRoot = null;
+      var TrueCoords = null;
+      var lastElement = null;
+      var initialized = null;
+      var tipGroup;
+      function Init(evt)
+      {
+         SVGDocument = evt.target.ownerDocument;
+         SVGRoot = SVGDocument.documentElement;
+         TrueCoords = SVGRoot.createSVGPoint();
+         initialized = evt;
+      };
+      function GetTrueCoords(evt)
+      {
+         var newScale = SVGRoot.currentScale;
+         var translation = SVGRoot.currentTranslate;
+         TrueCoords.x = (evt.clientX - translation.x)/newScale;
+         TrueCoords.y = (evt.clientY - translation.y)/newScale;
+      };
+      function HideTooltip( evt )
+      {
+         if(initialized == null) {
+           Init(evt);
+         }
+         if(tipGroup != null) {
+           tipGroup.setAttributeNS(null, 'visibility', 'hidden');
+         }
+      };
+      function ShowTooltip( evt )
+      {
+         if(initialized == null) {
+           Init(evt);
+         }
+         GetTrueCoords( evt );
+         var tipScale = 1/SVGRoot.currentScale;
+         var targetElement = evt.currentTarget;
+         if ( lastElement != targetElement )
+         {
+            var targetId = targetElement.getAttributeNS(null, 'id');
+            var tipId = 'tooltip.' + targetId;
+            tipGroup = SVGDocument.getElementById(tipId);
+            var xPos = TrueCoords.x + (10 * tipScale);
+            var yPos = TrueCoords.y + (10 * tipScale);
+            tipGroup.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ') scale(' + tipScale + ')');
+            tipGroup.setAttributeNS(null, 'visibility', 'visible');
+         }
+      };
+]]></script>
+    </defs>
+    <g id="y.node.0">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1243.8557" y="348.824" fill="none" width="384.44" rx="4" ry="4" height="119.6179"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1249.8557" xml:space="preserve" y="366.248" stroke="none">Platform Service Operations</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.1">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="930.1501" y="348.824" fill="none" width="291.9614" rx="4" ry="4" height="119.6179"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="936.1501" xml:space="preserve" y="366.248" stroke="none">Platform Service Delivery</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.2">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1358.1516" y="810.1581" fill="none" width="172.7456" rx="4" ry="4" height="119.6179"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1364.1516" xml:space="preserve" y="827.5821" stroke="none">Org X Data</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.3">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1134.448" y="810.1581" fill="none" width="211" rx="4" ry="4" height="119.6179"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1140.448" xml:space="preserve" y="827.5821" stroke="none">Shared Data</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.4">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1543.6007" y="809.8314" fill="none" width="83.64" rx="4" ry="4" height="119.9446"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1549.6007" xml:space="preserve" y="827.2554" stroke="none">Org Y Data</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.5">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1370.8621" width="92.08" height="27.44" y="842.8064" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1370.8621" width="92.08" height="27.44" y="842.8064"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1376.8622" xml:space="preserve" y="860.408" stroke="none">Dataset X123</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.6">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1557.6207" width="55.5957" height="27.44" y="839.168" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1557.6207" width="55.5957" height="27.44" y="839.168"/>
+      </g>
+      <g/>
+    </g>
+    <g id="y.node.7">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1150.6843" width="92.08" height="27.44" y="845.2547" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1150.6843" width="92.08" height="27.44" y="845.2547"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1156.6843" xml:space="preserve" y="862.8563" stroke="none">Dataset 431</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.8">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1134.448" y="747.688" fill="none" width="493.8477" rx="4" ry="4" height="49.648"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1140.448" xml:space="preserve" y="765.112" stroke="none">Platform Dataservices</text>
+          <text x="1140.448" xml:space="preserve" y="779.092" stroke="none">Access Control</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.9">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1375.5" width="58.8" height="27.44" y="758.792" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1375.5" width="58.8" height="27.44" y="758.792"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1381.5" xml:space="preserve" y="776.3936" stroke="none">/table</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.10">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1450.8572" width="58.8" height="27.44" y="758.792" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1450.8572" width="58.8" height="27.44" y="758.792"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1456.8572" xml:space="preserve" y="776.3936" stroke="none">/stream</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.11">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1526.2143" width="58.8" height="27.44" y="758.792" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1526.2143" width="58.8" height="27.44" y="758.792"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1532.2144" xml:space="preserve" y="776.3936" stroke="none">/file</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.12">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1358.1516" y="572.68" fill="none" width="172.7456" rx="4" ry="4" height="145.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1364.1516" xml:space="preserve" y="590.104" stroke="none">Org X App</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.13">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1269.4115" width="58.8" height="27.44" y="758.792" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1269.4115" width="58.8" height="27.44" y="758.792"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1275.4115" xml:space="preserve" y="776.3936" stroke="none">/log</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.14">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="930.1501" y="747.688" fill="none" width="189.24" rx="4" ry="4" height="182.088"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="936.1501" xml:space="preserve" y="765.112" stroke="none">Directory/Registry </text>
+          <text x="936.1501" xml:space="preserve" y="779.092" stroke="none">Access Control</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.15">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="945.6547" width="153.52" height="42.16" y="796.3173" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="945.6547" width="153.52" height="42.16" y="796.3173"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="951.6547" xml:space="preserve" y="813.9188" stroke="none">Org X Access Policy </text>
+          <text x="951.6547" xml:space="preserve" y="828.0516" stroke="none">(Service and Data)</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.16">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1269.3516" width="58.8" height="27.44" y="643.1766" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1269.3516" width="58.8" height="27.44" y="643.1766"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1275.3516" xml:space="preserve" y="660.7782" stroke="none">/ldap</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.17">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="1544.6557" y="572.68" fill="none" width="83.64" rx="4" ry="4" height="145.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1550.6558" xml:space="preserve" y="590.104" stroke="none">Org Y App</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.18">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="930.1501" y="572.68" fill="none" width="415.2979" rx="4" ry="4" height="145.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="936.1501" xml:space="preserve" y="590.104" stroke="none">Platform Applications (middleware?)</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.19">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="773.6214" y="493.032" fill="none" width="854.6744" rx="4" ry="4" height="49.648"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="779.6214" xml:space="preserve" y="510.456" stroke="none">Applications Services</text>
+          <text x="779.6214" xml:space="preserve" y="524.436" stroke="none">Access Control</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.20">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1550.52" width="51.6438" height="27.44" y="504.136" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1550.52" width="51.6438" height="27.44" y="504.136"/>
+      </g>
+      <g/>
+    </g>
+    <g id="y.node.21">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1438.8172" width="92.08" height="27.44" y="504.136" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1438.8172" width="92.08" height="27.44" y="504.136"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1444.8171" xml:space="preserve" y="521.7375" stroke="none">Service X125</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.22">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1366.5686" width="136.76" height="102.32" y="601.3674" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1366.5686" width="136.76" height="102.32" y="601.3674"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1372.5686" xml:space="preserve" y="618.9689" stroke="none">App X126</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.23">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1552.6" width="58.8" height="54.32" y="601.9533" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1552.6" width="58.8" height="54.32" y="601.9533"/>
+      </g>
+      <g/>
+    </g>
+    <g id="y.node.24">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="773.6214" y="747.688" fill="none" width="136.76" rx="4" ry="4" height="182.088"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="779.6214" xml:space="preserve" y="765.112" stroke="none">Repository </text>
+          <text x="779.6214" xml:space="preserve" y="779.092" stroke="none">Access Control</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.25">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1269.3516" width="58.8" height="27.44" y="601.048" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1269.3516" width="58.8" height="27.44" y="601.048"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1275.3516" xml:space="preserve" y="618.6495" stroke="none">/token</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.26">
+      <a xlink:href="#reggovclouddk">
+        <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+          <rect x="1074.9305" width="40.88" height="27.44" y="504.136" stroke="none"/>
+        </g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <rect fill="none" x="1074.9305" width="40.88" height="27.44" y="504.136"/>
+        </g>
+        <g>
+          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+            <text x="1080.9305" xml:space="preserve" y="521.7375" stroke="none">reg.</text>
+          </g>
+        </g>
+      </a>
+    </g>
+    <g onmouseout="HideTooltip(evt)" id="y.node.27" onmousemove="ShowTooltip(evt)">
+      <a xlink:href="https://digst.github.io/cloud/spec.html#gitgovclouddk">
+        <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+          <rect x="1020.7937" width="40.88" height="27.44" y="504.136" stroke="none"/>
+        </g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <rect fill="none" x="1020.7937" width="40.88" height="27.44" y="504.136"/>
+        </g>
+        <g>
+          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+            <text x="1026.7937" xml:space="preserve" y="521.7375" stroke="none">git.</text>
+          </g>
+        </g>
+      </a>
+    </g>
+    <g id="y.node.28">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1202.9533" width="51.6438" height="27.44" y="504.136" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1202.9533" width="51.6438" height="27.44" y="504.136"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1208.9534" xml:space="preserve" y="521.7375" stroke="none">status.</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.29">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1133.56" width="51.6438" height="27.44" y="504.136" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1133.56" width="51.6438" height="27.44" y="504.136"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1139.5601" xml:space="preserve" y="521.7375" stroke="none">portal.</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.30">
+      <g fill="rgb(153,204,0)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,0)">
+        <rect x="1272.3466" width="51.6438" height="27.44" y="504.136" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1272.3466" width="51.6438" height="27.44" y="504.136"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1278.3467" xml:space="preserve" y="521.7375" stroke="none">collab?.</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.31">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1375.448" width="107.1272" height="27.44" y="628.264" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1375.448" width="107.1272" height="27.44" y="628.264"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1381.448" xml:space="preserve" y="645.8655" stroke="none">Container X567</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.32">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="1375.448" width="107.1272" height="27.44" y="665.2573" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1375.448" width="107.1272" height="27.44" y="665.2573"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1381.448" xml:space="preserve" y="682.8588" stroke="none">Container X893</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.33">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="945.6547" width="153.52" height="27.44" y="850.2139" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="945.6547" width="153.52" height="27.44" y="850.2139"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="951.6547" xml:space="preserve" y="867.8155" stroke="none">App X126 Deployment</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.34">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="945.6547" width="153.52" height="27.44" y="889.3906" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="945.6547" width="153.52" height="27.44" y="889.3906"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="951.6547" xml:space="preserve" y="906.9921" stroke="none">Service X125 Monitoring</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.35">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="784.9451" width="107.1272" height="27.44" y="850.6033" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="784.9451" width="107.1272" height="27.44" y="850.6033"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="790.9451" xml:space="preserve" y="868.2048" stroke="none">Container X567</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.36">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="784.9451" width="107.1272" height="27.44" y="890.2386" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="784.9451" width="107.1272" height="27.44" y="890.2386"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="790.9451" xml:space="preserve" y="907.8401" stroke="none">Container X893</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.37">
+      <g fill="rgb(153,204,255)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(153,204,255)">
+        <rect x="784.9451" width="107.1272" height="42.16" y="796.248" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="784.9451" width="107.1272" height="42.16" y="796.248"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="800.5867" xml:space="preserve" y="813.8495" stroke="none">App X126 </text>
+          <text x="790.9451" xml:space="preserve" y="827.9824" stroke="none">(Source Code)</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.38">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="773.6214" y="572.68" fill="none" width="136.76" rx="4" ry="4" height="145.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="779.6214" xml:space="preserve" y="590.104" stroke="none">Toolchain Applications</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.39">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1108.6172" width="92.08" height="27.44" y="380.008" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1108.6172" width="92.08" height="27.44" y="380.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1114.6172" xml:space="preserve" y="397.6096" stroke="none">Roadmap</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.40">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1108.6172" width="92.08" height="27.44" y="421.056" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1108.6172" width="92.08" height="27.44" y="421.056"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1114.6172" xml:space="preserve" y="438.6576" stroke="none">Servicemodel</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.41">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1017.3347" width="81.2996" height="27.44" y="380.008" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1017.3347" width="81.2996" height="27.44" y="380.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1023.3347" xml:space="preserve" y="397.6096" stroke="none">start</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.42">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1017.3347" width="81.2996" height="27.44" y="421.056" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1017.3347" width="81.2996" height="27.44" y="421.056"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1023.3347" xml:space="preserve" y="438.6576" stroke="none">User Stories</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.43">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1258.7143" width="92.08" height="27.44" y="382.0301" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1258.7143" width="92.08" height="27.44" y="382.0301"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1264.7144" xml:space="preserve" y="399.6317" stroke="none">Proces</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.44">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1258.7143" width="92.08" height="27.44" y="421.8342" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1258.7143" width="92.08" height="27.44" y="421.8342"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1264.7144" xml:space="preserve" y="439.4358" stroke="none">SLA / OLA</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.45">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1365.0286" width="92.08" height="27.44" y="382.0301" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1365.0286" width="92.08" height="27.44" y="382.0301"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1371.0286" xml:space="preserve" y="399.6317" stroke="none">guide</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.46">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1365.0286" width="92.08" height="27.44" y="421.8342" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1365.0286" width="92.08" height="27.44" y="421.8342"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1371.0286" xml:space="preserve" y="439.4358" stroke="none">spec</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.47">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1471.3429" width="136.76" height="27.44" y="382.0301" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1471.3429" width="136.76" height="27.44" y="382.0301"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1477.3429" xml:space="preserve" y="399.6317" stroke="none">Event / Incident Log</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.48">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="1471.3429" width="136.76" height="27.44" y="421.8342" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1471.3429" width="136.76" height="27.44" y="421.8342"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1477.3429" xml:space="preserve" y="439.4358" stroke="none">Knowledge Base</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.49">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="942.289" width="58.8" height="27.44" y="421.056" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="942.289" width="58.8" height="27.44" y="421.056"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="948.289" xml:space="preserve" y="438.6576" stroke="none">Fora</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.50">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="940.3814" width="63.92" height="27.44" y="606.6278" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="940.3814" width="63.92" height="27.44" y="606.6278"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="946.3813" xml:space="preserve" y="624.2294" stroke="none">Rancher</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.51">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="940.3814" width="63.92" height="27.44" y="643.1766" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="940.3814" width="63.92" height="27.44" y="643.1766"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="946.3813" xml:space="preserve" y="660.7782" stroke="none">GitLab</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.52">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="940.3814" width="63.92" height="27.44" y="679.7254" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="940.3814" width="63.92" height="27.44" y="679.7254"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="946.3813" xml:space="preserve" y="697.327" stroke="none">Habor</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.53">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="786.5628" width="63.92" height="27.44" y="607.2957" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="786.5628" width="63.92" height="27.44" y="607.2957"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="792.5627" xml:space="preserve" y="624.8972" stroke="none">Jira?</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.54">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1015.0428" width="63.92" height="27.44" y="679.7254" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1015.0428" width="63.92" height="27.44" y="679.7254"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1021.0427" xml:space="preserve" y="697.327" stroke="none">FreeIPA</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.55">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1015.0428" width="63.92" height="27.44" y="643.1766" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1015.0428" width="63.92" height="27.44" y="643.1766"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1021.0427" xml:space="preserve" y="660.7782" stroke="none">KeyCloak</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.56">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1089.7041" width="63.92" height="27.44" y="679.7254" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1089.7041" width="63.92" height="27.44" y="679.7254"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1095.7041" xml:space="preserve" y="697.327" stroke="none">MapR</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.57">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1089.7041" width="63.92" height="27.44" y="643.1766" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1089.7041" width="63.92" height="27.44" y="643.1766"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1095.7041" xml:space="preserve" y="660.7782" stroke="none">K8S</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.58">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1089.7041" width="63.92" height="27.44" y="606.6278" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1089.7041" width="63.92" height="27.44" y="606.6278"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1095.7041" xml:space="preserve" y="624.2294" stroke="none">Gravitee</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.59">
+      <g fill="silver" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="silver">
+        <rect x="1164.3655" width="81.2996" height="27.44" y="679.7254" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="1164.3655" width="81.2996" height="27.44" y="679.7254"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="1170.3655" xml:space="preserve" y="697.327" stroke="none">MatterMost?</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.60">
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect x="775.529" y="348.824" fill="none" width="136.76" rx="4" ry="4" height="119.6179"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica Neue'" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="781.529" xml:space="preserve" y="366.248" stroke="none">Toolchain Service</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.61">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="853.0018" width="148.0872" height="27.44" y="380.008" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="853.0018" width="148.0872" height="27.44" y="380.008"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="859.0018" xml:space="preserve" y="397.6096" stroke="none">training</text>
+        </g>
+      </g>
+    </g>
+    <g id="y.node.62">
+      <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke="rgb(255,255,153)">
+        <rect x="788.5894" width="81.2996" height="27.44" y="422.9901" stroke="none"/>
+      </g>
+      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+        <rect fill="none" x="788.5894" width="81.2996" height="27.44" y="422.9901"/>
+      </g>
+      <g>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="sans-serif" transform="matrix(1,0,0,1,-758,-333)" stroke-linecap="butt">
+          <text x="794.5894" xml:space="preserve" y="440.5916" stroke="none">template?</text>
+        </g>
+      </g>
+    </g>
+    <g visibility="hidden" id="tooltip.y.node.27" pointer-events="none">
+      <g fill="rgb(255,255,204)" text-rendering="geometricPrecision" font-size="11px" shape-rendering="geometricPrecision" font-family="'Lucida Grande'" stroke="rgb(255,255,204)">
+        <rect x="0" width="349" height="18" y="0" clip-path="url(#clipPath2)" stroke="none"/>
+        <text fill="black" x="3" xml:space="preserve" y="13" clip-path="url(#clipPath2)" stroke="none">A git based code repository with support for continious delivery</text>
+      </g>
+    </g>
+  </g>
+</svg>

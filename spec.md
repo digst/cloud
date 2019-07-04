@@ -230,6 +230,9 @@ Brokering
 
 # Highlevel
 
+<img src="platform.svg" width="95%">
+
+
 ## Aktører og use cases
 
 ### Anvender
@@ -268,9 +271,6 @@ One platform? (staging on the same platform, run on dev laptop, integrated autom
 ## High Level Architecture
 
 
-<dfn>App Fabric</dfn> is...
-
-<dfn>Data Fabric</dfn> is...
 
 <img src="highlevel.svg">
 
@@ -405,6 +405,8 @@ Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller sna
 
 
 ## Data Fabric
+
+<dfn>Data Fabric</dfn>
 
 Responsible for:
 - Store datasets
