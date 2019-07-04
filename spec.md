@@ -21,130 +21,18 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 <h2 class="no-num">Introduction</h2>
 
 
-!add security specific notes... Multitenancy, Privacy, Resilliance
 
-<img src="PaaSBusiness.svg" width="95%">
+
+
+## Background
+
+## High Level Description
+
+<img src="highlevel.svg" width="95%">
 
 
 ## Epics and User Stories
-[bør nok flyttes til JIRA issues på et tidspunkt...]
-
-For at fastholde og prioritere forskellige ønsker under udviklingen, anvender vi epics og user stories. I første omgang er aktørerne (Applikations-)udvikler/Anvender, (Platforms)-operatør  og Policy Owner?  Auditor?
-
-Navne i kantede parenteser, henviser til eksterne dokumenter, eller til services/interfaces i figuren længere nede (dem med punktummer).
-
-
-### Application Development and Operation
-Når epic'en er færdig kan en udvikler push'e et docker image til et repository på platformen, re-deploye en applikation, se dens log, samt styre rettigheder til services og datasæt.
-
-* Som anvender ønsker jeg at udbyder kan overvåger mine services og kan forsøge at genstarte applikationer, så jeg ikke behøves at reagere på simple (dem der kan klares ved en genstart) nedbrud.
-    * [servicemodel] beskriver udbyders og anvenders ansvar
-    * [proces] beskriver at udbyder starter processen og at [collab.] anvedndes i håndteringen af hændelsen.
-    * [status.] viser oversigt over anvenders services
-    * [status.] viser oversigt over platformens services
-
-* Som anvender ønsker jeg, at udbyderen overvåger mine services og kontakter mig ved ikke-simple nedbrud, så vi sammen kan påbegynde fejlsøgning og fejlretning.
-    * [proces] beskriver, hvornår der tages kontakt til anvender
-    * [proces] beskriver, hvordan samarbejdet om fejlsøgning og fejlretning foretages samt hvordan det konkluderes, at servicen kører igen
-    * [proces] beskriver, hvornår der tages kontakt til 3. part
-    * [collab.] opretter automatisk sagerved incidents
-
-
-* Som anvender ønsker jeg at kunne sende et image til platformen og sætte en label på, så jeg selv nemt kan styre hvilken kode der kører i min applikation.
-    * en anvender kan logge ind i [reg.] med sine AD brugernavn/password.
-    * labels kan anvendes i [k8s.] til at udpege versioner af images.
-
-* Som anveder ønsker jeg at kunne starte et re-deploy af min applikation ved blot at ændre labels, så jeg hurtigt kan ændrer funktionalitet i min applikation
-    * [k8s.] skal genkende ændringer images og reagere på labels ændringer.
-
-* Som anvender ønsker jeg at kunne se loggen fra mine deployments af applikationer, så jeg kan se om det lykkedes
-
-* Som anvender ønsker jeg at kunne se loggen fra mine kørende applikationer, så jeg kan sikre mig at den kører som forventligt eller jeg kan finde ud af hvorfor den ikke gør...
-
-* Som anvender ønsker jeg kunne begrænse adgangen til services til kendte anvendere, så jeg undgår 'unfair' use eller anonyme anvendelse.
-    * [directory.] skal kunne opbevare api-nøgler
-    * [service.] skal kunne begrænse adgang til services baseret på api-nøgler.
-    * anvender kan oprette og slette api-nøgler ved web-service kald.
-    * (Vi skal snakkeo om anvendelse af Gravitee)
-
-* Som anvender ønsker jeg at kunne tildele adgang til services, applikationer og data til bruger i egen og andre organisationer (inden for SIT AD), så vi bedre kan arbejde sammen.
-    * [directory.] skal kunne opbevare rettigheder
-
-
-* Som policy owner, ønsker jeg at oplysninger om services, applikationer og dastasæt lever op til krav om registrering, så anvender ikke behøver at registrere oplysninger andre steder.
-    * [directory.] skal kunne opbevare alle felter der findes i modellen til beskrivelse af it-systemer.
-
-* Som anvender ønsker jeg kunne se incidents og events i eget overvågningsssystem, så jeg ikke skal kigge andre steder.
-    * [status.] events er tilgængelig for Nagios hos anvender
-    * [??] incidents er tilgængelig for Nagios hos anvender
-
-* Som udbyder vil jeg gerne begrænse synlighed af statuses og incidents, så der ikke opstår unødig opmærksomhed fra offentligheden.
-    * [status.] er ikke tilgængelig for andre end anvendere.
-
-
-
-
-### Platform Service Delivery
-
-Når epic'en er afsluttet er overordnde opgaver og ansvar omkring GovCloud Paas placeret, første møde i nyoprette fora afholdt og første aftale om anvendelse af platformen indgået.
-
-* Som udbyder, anvender og policy owner ønsker vi et fælles samarbejdsorgan, hvor vi kan diskutere problemer og finde løsninger i fællesskab, så vi i samarbejde kan afhjælpe problemer og uklarheder med henblik på videreudvikling af platformen.
-    * Der er etableret forum på KC-niveau
-    * Der er etableret forum på styrelsesdirektørniveau
-
-* Som anvender af platformen ønsker jeg at kunne påvirke  hvilke service der er tilrådighed, så jeg kan designe mine applikationer med henblik på minimal vedligehold. (sikkerhed for long term support)
-    * [brugergruppe] vedligeholder [api] og et [roadmap]
-
-* Anvender og policy owner, ønsker at sikres sig, at applikationer kan flyttes til andre platforme med mindst mulig besvær, så anvendere ikke er bundet til en specifik leverandør.
-    * [api] anvender snitflader der kan implementeres på andre platforme.
-
-* Som udbyder ønsker jeg mulighed for at påvirke hvilke service der forventes at være tilrådighed, så jeg kan sikre mig den mest effektive implementering. (frihed til at valg af middleware) [brugergruppe] [start]
-
-* Som udbyder ønsker jeg kendskab til anvenderes behov for kapicitet, så jeg kan planlægger provisioning af hardware, netværk og fysiske lokalitet. (langsigtet planlægning) [servicemodel]
-[brugergruppe] [roadmap]
-
-* Som anvender ønsker jeg at platformens ressource udvides i takt med mine behov. ??[servicemodel]
-
-* Som anvender, udbyder og policy owner, ønsker jeg et tydeligt overblik over om aftalte serviceniveauer er overholdt. [brugergruppe] [servicemodel] [servicerapport]
-
-* Som udbyder ønsker jeg at tilbyde platformen på en fælles servicemodel til alle anvendere, så jeg nemmere kan styre hele kundeforholdet. [servicemodel]
-
-* Som anvender ønsker jeg en tydelige beskrivelse af hvilke services og serviceniveauer jeg kan forvente, så jeg bedre kan indgå aftaler med eksterne leverandører og/eller ansætte kompetancer. [servicemodel] [api] [roadmap]
-
-* Som policyowner? ønsker jeg at servicemodellen udbredes til alle eksisterende, med henblik på hurtig ibrugtaging. [kundeaftaler]
-
-
-
-### Platform Service Operation
-Når epic'en er afsluttet er arbejdsgange for event management beskrevet og understøttet i samarbejdsværktøjet.
-
-* Som udbyder ønsker jeg at anvendere deltager i diagnostik og ændringer i forbindelse med nedbrud på enkelte applikationer, så jeg ikke selv behøver kendskab til anvenderens applikationer, men kan fokusere på platformen.
-
-* Som policy owner ønsker jeg at anvendere kan tage ansvar for fejlfinding og ændringer i deres egen applikationer, så udbyderen ikke bliver en flaskehals for vedligehold.
-
-* Som udbyder og anvender ønsker jeg et fælles netbaseret samarbejdsrum, hvor vi kan diskutere problemer og løsninger i fællesskab, eventuelt inddrage leverandører af middleware, så vi sikre et fælles billede af hændelsesforløb til brug for problem management og raportering af serviceniveauer.
-
-
-### Platform and Support
-Når epic'en er færdig kan en anvender deploye services, applikationer og datasæt igennem selvbetjening.
-
-* Som anvender ønsker jeg at kunne afvikle min applikationer på en veldefineret runtime.
-    * [api] beskriver runtime (K8S and Docker) og snitflader til platform services.
-    * [reg] er beskrevet.
-    * (Git og GitLabRunner er en del af toolchain?)
-
-* Som anvender ønsker at anvende en NoSQL datastore
-    * applikationer kan læse og skrive JSON dokumenter på port 8243 på [data.]
-
-* Som anvender ønsker jeg at produce og consume beskeder fra min applikation, så jeg kan anvende løskoblet meddelsesbaseret integration mellem mine applikationskomponenter.
-    * applikationer kan læse og skrive meddelelser via Kafka på port 8082 på [data.]
-
-* Som anvender ønsker jeg skrive og læse binære filer fra min applikation, så jeg selv kan deploye andre dataservices som fx SQL.
-    * applikationer kan læse og skrive vilkårlige filer via NFS på port 2049 på [data.]
-
-* Som anvender ønsker jeg at kunne anvende dataservies fra platformen direkte fra eget netværk (well.... det bliver så nok igennem deres egen proxy-applikation og services. Er det noget udbyder til tilbyde?)
-
-* Som anvender ønsker jeg en en token service....
+Se excel.... backlog her...?
 
 
 ### Performance og Optimering
@@ -181,73 +69,12 @@ Når epic'en er færdig kan en anvender deploye services, applikationer og datas
 * Privacy Audit
 * Performance Audit
 
-### PaaS+
-Når epic'en er færdig kan en udvikler deploy en service der er begrænset til anvender med aktive API nøgler samt selv oprette og (de)-aktivere API nøgler.
 
-* Som udvikler vil jeg kunne angive i mit deployment hvilke services der kræver en gyldig API nøgle. (Rancher, *API Gateway*)
+# Motivation
 
-* Som udvikler vil jeg kunne kalde en service der opretter, aktivere og deaktivere API nøgler på platformen. (*Directory*)
+Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?
 
-
-### Sandbox
-Når epic'en er færdig kan en SIT kunde oprette en midlertidig bruger til sin udvikler, som kan anvende MapR fra sine udvikler pc.
-
-* Som udvikler vil jeg kunne bestille en virtual maskine hos SIT der kører den samlede Cloud API, så jeg kan afprøve teknologierne. (OpenStack)
-
-* Som udvikler vil jeg kunne hente en virtual maskine hos SIT der kører den samlede Cloud API og afvikle den på min egen bærbare. (OpenStack)
-
-(kombinere med udbyders behov for pre-prod?)
-
-
-## Versions and plans
-
-### Version 1.0 medio 2019
-
-* Learning
-
-* Stable
-
-Focus på Deploy og Monitorering så vi kan demonstrere time to market og hyppige ændringer...
-
-Focus på Dataservices
-
-Produktionssættelse af DMI Observationsdata
-
-### Version 1.1
-Performant
-
-### Version 1.2
-Focus på intern sikkerhed med tickets og tokens.
-
-### Version 1.3
-compliance
-
-
-### Version 2
-Brokering
-
-
-
-# Highlevel
-
-<img src="platform.svg" width="95%">
-
-
-## Aktører og use cases
-
-### Anvender
-
-### Udbyder
-
-### Policy Owner
-
-### Platform Delivery
-
-### Application DevOps
-
-### Platform Operation
-
-### Audit
+Måske bare tegne et lille UML shared use case diagram?
 
 ## Principles
 
@@ -268,56 +95,132 @@ Layered architecture (each layer scale idependently and different governance pro
 
 One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)
 
-## High Level Architecture
+Services, Applications and Dataset!
 
-
-
-<img src="highlevel.svg">
-
-And supporting services.... some for developers and some for applications.
+And supporting services.... some for developers and some for applications (API).
 
 Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
+# Business
+
+## Aktører og Business Collaboration
+
+<img src="roles.svg" width="60%">
+
+### Anvender
+
+Cloud Consumer NIST
+<blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
+A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider.
+</blockquote>
+
+### Udbyder
+
+Cloud Provider NIST
+<blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
+A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access.
+</blockquote>
+
+### Policy Owner
+
+<blockquote cite="http://www.form-online.dk/opgavenoegle/06/#06.38.10">
+De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder</blockquote>
 
 
-# Arbejdsgange/Brugerrejser
+<img src="businessfunctions.svg" width="95%">
+
+
+### General Management
+ITIL 4
+(Platform Service Delivery)
+
+* Architecture Management
+
+<blockquote cite="https://wiki.en.it-processmaps.com/index.php/IT_Architecture_Management">
+IT Architecture Management process aims to define a blueprint for the future development of the technological landscape, taking into account the service strategy and newly available technologies.
+</blockquote>
+
+
+### Application Development and Operation
+
+<blockquote cite="https://en.wikipedia.org/wiki/DevOps">
+DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
+</blockquote>
+
+### (Platform) Service Management
+ITIL 4
+
+* Monitoring and Event Management
+<blockquote cite="">
+ITIL 4
+</blockquote>
+
+* Incident Management
+<blockquote cite="">
+ITIL 4
+</blockquote>
+
+* Problem Management
+<blockquote cite="">
+ITIL 4
+</blockquote>
+
+
+### Future collaborations
+
+* Audit?
+
+
+## Security and Multitenancy
+
+
+- Applications are responsible for implementing access policies to data at row level
+- Access policies should rely on trusted attributes over detailes rights when possible.
+
+
+
+
+
+
+
+## Business Processes and Functions
 Vi har identificerewt en række arbejdsgange. Her beskrives de i Archimate notation og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
 
 
-## Registrer ny applikation
+### Registrer ny applikation
 
 <img src="reg_app.svg">
 
 
-## Deploy applikation (Ops)
+### Deploy applikation (Ops)
 
 <img src="deploy.svg">
 
 
-## Byg container (Dev)
+### Byg container (Dev)
 
-## Test applikation
+### Test applikation
 (Hvorfor er der ikke noget testmiljø? Fordi kunden selv etablere forskellige applikationer, der kan anvende samme containere og datasæt til forskellige formål)
 
-## Give medarbejder adgang til platformsapplikationer
+### Give medarbejder adgang til platformsapplikationer
 (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
 
-## Register Application
+### Register Application
 Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende yaml fil, som opbevares i Directory.
 
-## Register Dataset
+### Register Dataset
 Oprettes manuelt på MapR. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog)
 
 
-## Register Service
+### Register Service
 Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende servicebeskrivelse, som opbevares i Directory.
 
 Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
 
-## Redeploy Application
+### Redeploy Application
 Rancher Installation. Bør formentlig være en simple knap på Dashboardet.
 
-## Sandbox
+### Sandbox
 
 SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.
 
@@ -327,23 +230,84 @@ Implementeres som et 'one-node' image af CloudAPI der kan spindes op ved hjælp 
 
 Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.
 
-## Collaboration
+### Collaboration
 SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
 
 
 
-# Platform
+<img src="platform.svg" width="95%">
+
+
+# Application (Cloud Consumer)
+(Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)
+
+
+## Application Service (and Interface)
+
+<blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946068">
+An application interface represents a point of access where application services are made available to a user, another application component, or a node.
+</blockquote>
+
+<blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075">
+An application service represents an explicitly defined exposed application behavior.
+</blockquote>
+
+
+## Application (Component)
+<blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946066">
+An application component represents an encapsulation of application functionality aligned to implementation structure, which is modular and replaceable. It encapsulates its behavior and data, exposes services, and makes them available through interfaces.
+</blockquote>
+
+## Container
+
+<blockquote cite="https://docs.docker.com/glossary/?term=container">
+A container is a runtime instance of a docker image.
+</blockquote>
 
 
 
-## Application and Service Fabric
+## Dataset
+
+<blockquote cite="https://arkitektur.digst.dk/sites/default/files/20180503_rad_v1.0_-_godkendt_af_sda.pdf">
+en samling af oplysninger bestående af enkelte dele der forvaltes under et
+</blockquote>
+
+## Source Code
+
+
+## Images
+<blockquote cite="https://docs.docker.com/glossary/?term=image">
+Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
+
+
+## Tags
+<blockquote cite="https://docs.docker.com/glossary/?term=tag">
+A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.
+</blockquote>
+
+A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.
+
+
+
+
+# Technology (Platform Provider)
+
+(Alt det med Grønt (og gråt).... Technology Layer,
+<a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a>
+
+
+## Fabrics...
+
+### Service Fabric
 Responsibilities:
-
 - Oversæt ID og tildel requestID
 - Adgangspolitik (Bruger/Service -> Service)
 - Throttle/circuit breaker
 - Log (AccessLog/Request Log?)
 
+
+
+### Application Fabrics
 Responsibilities:
 - Deploy, scale, redeploy images from Repository
 - Provide Configuration Environment
@@ -351,19 +315,81 @@ Responsibilities:
 - Network (...?)
 - Mount NFS as Volume (for app log?)
 
-
-### Service Access Control
-
-### Application Service
-
-### Application
-
-### Container/Image
-
+### Data Fabric
+Responsible for:
+- Store datasets
+- Authenticate access to inividual dataset per user/application/service
+- Protect datasets against hardware failure at disk, machine and location level.
+- Log of all dataoperations
+- Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?
 
 
-### Docker/K8S
+## Platform API
+alle webservices der kan kaldes inde fra anvenderens applikationer.
 
+Adgangskontrol til data via rettigheder i directory/registry.
+
+Dataservices...
+
+### `/file` (NFS)
+
+### `/table` (NoSQL)
+
+### `/stream` (Kafka)
+
+### `/ldap` (Opslag i directory)
+
+
+
+### `/log`
+platformen skriver fra application services og dataservices.
+
+anvenders applikations skriver også...
+
+sammenstille, søge og hente
+
+- All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
+
+### `/token`
+Oversætte id-tokens fra ekstern IdP. Måske oversætte til interne id'er. JWT?
+
+!Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.
+
+
+
+
+
+
+
+
+## Platform Services
+alle med brugergenkendelse gennem SIT AD.
+
+Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.
+
+
+
+### `git.govcloud.dk`
+
+### `reg.govcloud.dk`
+
+### `k8s.govcloud.dk` (portal.)
+
+### `status.govcloud.dk`
+
+og noget med <kunde>.status.govcloud.dk`
+
+### `collab?.govcloud.dk`
+
+
+
+## Middleware
+
+### Gravitee
+
+
+
+### Rancher
 [Rancher](https://rancher.com/) has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation.
 
 The mapping from business objects to Rancher elements are:
@@ -388,62 +414,12 @@ Environment variablesApps finder datasservices via  environment variable
 Note: Hvad peger de (table, stream, file?) på? Ip-adresser, DNS, virtuelle adresser?
 
 
-<pre highlight="docker">
-FROM docker:centos7
-
-http://package.mapr.com/releases/v6.1.0/redhat/mapr-client-6.1.0.20180926230239.GA-1.x86_64.rpm
-
-rpm -Uvh http://repo.krakend.io/rpm/krakend-repo-0.1-0.noarch.rpm
-
-
-</pre>
-
-Note: Missing HTTPS.... så vi skal nok hente lokalt og checksumme ... eller snakke med MapR om https :-)
-
-### Gravitee
 
 
 
-## Data Fabric
-
-<dfn>Data Fabric</dfn>
-
-Responsible for:
-- Store datasets
-- Authenticate access to inividual dataset per user/application/service
-- Protect datasets against hardware failure at disk, machine and location level.
-- Log of all dataoperations
-- Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?
 
 
-The data fabric is running latest version of [MapR](https://mapr.com/).
 
-### Data Access Control
-
-### Datasets
-
-A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)
-
-- Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.
-- Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
-- Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).
-- Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
-- Datasets are encrypted at rest (what keys? control?)
-
-(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )
-
-### Application Logs
-
-### Platform Logs
-- All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.
-
-### `/nfs` (NFS)
-
-### `/ojai` (NoSQL)
-
-### `/msg` (Kafka)
-
-### `/log`
 
 ### MapR
 
@@ -463,50 +439,20 @@ A dataset is a collection of individual pieces of information under the same gov
 Note: Dual 10Gb NIC with trunking has been suggested. Would give more bandwidth, but also allow for moving without loosing network connection...
 
 
+A dataset is a collection of individual pieces of information under the same governance. (pending definition/translation)
+
+- Each customer has its own MapR Volume and is Data Responsible (Controller)i for all data stored.
+- Each Dataset are stored in seperate sub-volumes and can have multiple representations (file, table, stream).
+- Datasets are given an identity in the central Directory (mapping Dxxxxx to MapR path, storing access rights and ADMS metadata).
+- Access to MapR volumes are given to [Application]s and [User]s in the central Directory. (Or should it really be Images?)
+- Datasets are encrypted at rest (what keys? control?)
+
+(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )
 
 
+### KeyCloak
 
-
-
-
-
-
-
-
-
-# Platform Support
-
-(Split into services to humans and to applications)
-Note: Link til online API beskrivelse af alle services med adresser, porte og protokoller. Husk alt hvad der kan gøres i portal også skal kunne gøres via API.
-
-## Self Service Portal
-
-
-### Selvbetjening
-
-### `k8s.govcloud.dk`
-
-### Rancher
-
-### `cloud.gov.dk`
-
-
-
-## Operation
-
-### Monitorering
-
-### Events
-
-### `status.govcloud.dk`
-
-### `kunde.status.govcloud.dk`
-
-### Collaboration
-
-### collab url?
-
-## Directory
+### FreeIPA
 Product with OpenLDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD.
 
 Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.
@@ -517,56 +463,17 @@ Oplysninger om henholdvis services, applikationer og datasæt modelleres efter d
 
 Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.
 
-### Users
-!Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.
-
-### Services, Apps (Deployments) og Datasets
-- [Application]s are given an identity in the central Directory (Axxxxx, storing ownership, access rights and "Systembeskrivelser").
-
-### Rights
-
-
-
 - Each Application exposes Application Services through the use of LoadBalancers.
 - Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
 - (consequence that all application services have access to same datasets?)
-
-### `/token`
-
-### `/ldap`
-
-### Single Sign On url?
-
-### FreeIPA
-
-### KeyCloak
-
-
-
-## Repository
-
-### Application Code
-
-### `git.govcloud.dk`
 
 ### GitLab
 
 GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?
 
 
-
-### Docker Images
-
-### `reg.govcloud.dk`
-
-### Habour
+### Habor
 Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR.
-
-
-
-
-
-
 
 
 
@@ -667,9 +574,6 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
 ## Hardware
 
-# Customer Applications and their responsibilities
-- Applications are responsible for implementing access policies to data at row level
-- Access policies should rely on trusted attributes over detailes rights when possible.
 
 
 <h2 class="no-num">Appendix</h2>
@@ -703,3 +607,9 @@ Realiseret... og selvbetjening.
 
 
 ## Use of Archimate
+
+
+
+AXELOS (2019). "5.1 General management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
+^ AXELOS (2019). "5.2 Service management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
+^ AXELOS (2019). "5.3 Technical management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
