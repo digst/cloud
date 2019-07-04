@@ -235,12 +235,12 @@ SIT provides collaborative tools to support collaboration during normal operatio
 
 
 
-<img src="platform.svg" width="95%">
 
 
 # Application (Cloud Consumer)
 (Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)
 
+<img src="platform.svg" width="95%">
 
 ## Application Service (and Interface)
 
