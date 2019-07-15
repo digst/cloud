@@ -23,51 +23,8 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 
 
+<img src="resume.svg" width="50%">
 
-## Background
-
-## High Level Description
-
-<img src="highlevel.svg" width="95%">
-
-
-## Epics and User Stories
-Se excel.... backlog her...?
-
-
-### Performance og Optimering
-
-* Som udvikler og udbyder vil jeg kende applikations performance profil på platform, og kunne se hvor tiden bliver brugt, så bruger ressourcer fair og effektivt.
-
-
-### Sharing, Sikring og Privacy
-
-* Som anvender ønsker jeg at udbyder scanner mine applikationer for sårbarheder.
-
-* Som anvender ønsker jeg at kunne give adgang til data for andre anvenderes applikationer, så jeg kan dele data uden at skulle udvikle en service. [Sikkerheds epic?]
-
-* Sikkerhedsmodel
-
-### Compliance
-
-* Overblik over ISO 27001 kontrollere
-
-* Overblik over GDPR aftaler, rettigheder og pligter
-
-* Som policy owner... ekstern IdP, så vi sikre overholdelse af anbefalinger.
-
-* Som policy owner... om selvbetjening? og datadeling?
-
-* Digital Asset management
-
-* Dokumentation af applikationer
-
-
-### Audit / Erfaring
-* Tilsyn...
-* Security Audit
-* Privacy Audit
-* Performance Audit
 
 
 # Motivation
@@ -78,147 +35,160 @@ Måske bare tegne et lille UML shared use case diagram?
 
 ## Principles
 
-Continuous Services, Vendor neutrality, High Scaleability, Security-by-design, GDPR-by-design, DevOps and Predictable Cost.
+**Uafbrudte services** Platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.
+
+**Leverandøruafhængighed** Data, applikation og services på Platformen skal effektivt kunne flyttes til en anden cloud platform. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.
+
+**Skalérbar platform** Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette sikres blandt andet gennem anvendelse af enterprise grade komponenter, fokus på automatisering og selvbetjening for platformens anvendere.
+
+**Security-by-design** Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
+
+**GDPR-by-design** Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne drifsmiljøer (scale-out til public clouds).
+
+**Omkostningssikker** Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.
+
+**Agil it-udvikling** Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.
 
 
 ## Governing Thoughts....
 
-Architectural consequences:
-
-**Enterprise Grade Products**, to support high scaleability with predictable cost.
-
-**Open Source supported interfaces**, to support  vendor neutrality and predictable cost.
-
-**Self-Service (and automation)**, to support Continous Services, High Scaleability and DevOps.
-
 Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)
 
 One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)
-
-Services, Applications and Dataset!
 
 And supporting services.... some for developers and some for applications (API).
 
 Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
 # Business
+På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Og herunder seks vigtige opgaver....
 
-## Aktører og Business Collaboration
+<img src="roles.svg" width="75%">
 
-<img src="roles.svg" width="60%">
+## Roller og områder for samarbejde
 
-### Anvender
+### <dfn export="true">Platformanvender</dfn>
+- virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder.
 
-Cloud Consumer NIST
+For denne platform gælder det mere specifikt at platformanvenderen er en eksisterende kunde hos Statens IT og derfor oftest vil være en offentlig myndighed på statsligt niveau. Vi bruger termen virksomhed for at gøre det eksplicit at anvenderen har et CVR-nummer.
+
 <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
-A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider.
+A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider. [[NIST.SP.500-292]]
 </blockquote>
 
-### Udbyder
+Anvender er ansvarlig for og udfører Application DevOps.
 
-Cloud Provider NIST
+Anvender deltager i General Management
+
+Anvender er ansvarlig for, udfører og deltager i Service Management (den del der handler om deres egne applikationer)
+
+
+### <dfn export="true">Platformudbyder</dfn>
+- virksomhed der ansvarlig for at stille en tjeneste (PaaS) til rådighed for andre interesserede virksomheder.
+
+For denne platform er udbyderen Statens IT, der indkøber og forvalter den nødvendige fysisk infrastruktur og software installationer, samt gør den tilgængelig for anvendere, virksomheder og borgere.
+
 <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
-A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access.
+A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access. [[NIST.SP.500-292]]
 </blockquote>
 
-### Policy Owner
+
+### <dfn export="true">Policy Owner</dfn>
+- myndighed der er ansvarlig for de overordnede rammer for udvikling og anvendelse af it, særligt hos andre offentlige myndigheder.
 
 <blockquote cite="http://www.form-online.dk/opgavenoegle/06/#06.38.10">
-De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder</blockquote>
+De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder [[FORM]]</blockquote>
 
 
-<img src="businessfunctions.svg" width="95%">
 
+De tre rolles samarbejde er beskrevet i termer af *practices* eller på dansk opgaver.
 
-### General Management
-ITIL 4
-(Platform Service Delivery)
+<blockquote>
+In ITIL 4, practices are a set of organizational resources designed for performing work or accomplishing an objective. [[ITIL4]]
+</blockquote>
 
-* Architecture Management
+Herunder har vi valgt de vigtigste seks...
 
-<blockquote cite="https://wiki.en.it-processmaps.com/index.php/IT_Architecture_Management">
-IT Architecture Management process aims to define a blueprint for the future development of the technological landscape, taking into account the service strategy and newly available technologies.
+## Opgaver
+
+### <dfn export="true">Arkitektur(-styring)</dfn>
+- forvaltningsopgave .... (tjek FDA)
+
+<blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
+To provide an understanding of all the different elements that make up an organization and how those elements interrelate, enabling the organization to effectively achieve its current and future objectives. It provides the principles, standards, and tools that enable an organization to manage complex change in a structured and agile way. [[ITIL4]]
 </blockquote>
 
 
-### Application Development and Operation
+### <dfn export="true">Application Development and Operation</dfn>
 
 <blockquote cite="https://en.wikipedia.org/wiki/DevOps">
-DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives.
-</blockquote>
-
-### (Platform) Service Management
-ITIL 4
-
-* Monitoring and Event Management
-<blockquote cite="">
-ITIL 4
-</blockquote>
-
-* Incident Management
-<blockquote cite="">
-ITIL 4
-</blockquote>
-
-* Problem Management
-<blockquote cite="">
-ITIL 4
+DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. [[ITIL4]]
 </blockquote>
 
 
-### Future collaborations
+### <dfn export="true">Monitoring and Event Management</dfn>
 
-* Audit?
+<blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
+To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. [[ITIL4]]</blockquote>
+
+
+### <dfn export="true">Incident Management</dfn>
+
+<blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
+To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.[[ITIL4]]
+</blockquote>
+
+### <dfn export="true">Problem Management</dfn>
+
+<blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
+To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors. [[ITIL4]]
+</blockquote>
+
 
 
 ## Security and Multitenancy
 
-
+- Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant. 
 - Applications are responsible for implementing access policies to data at row level
 - Access policies should rely on trusted attributes over detailes rights when possible.
 
 
 
+## Arbejdsgange/Brugeroplevelser
+Vi har identificerewt en række arbejdsgange. Her beskrives den brugeroplevelse vi sigter efter og vi forklarer hvordan de anvender de forskellige komponenter overfor.
+
+### Registrere Applikationer, Datasamlinger og Services
+Har til formål at sikre beskrivende felter til mange formål.
+
+Especially Information, Software and Services from ISO 27001 Information Asset Inventory.
 
 
 
-
-## Business Processes and Functions
-Vi har identificerewt en række arbejdsgange. Her beskrives de i Archimate notation og vi forklarer hvordan de anvender de forskellige komponenter overfor. Under etableringen af platformen er arbejdsgange blevet væsentlig simplere og en lang række skridt er blevet fundet overflødige.
-
-
-### Registrer ny applikation
-
-<img src="reg_app.svg">
-
-
-### Deploy applikation (Ops)
-
-<img src="deploy.svg">
-
-
-### Byg container (Dev)
-
-### Test applikation
-(Hvorfor er der ikke noget testmiljø? Fordi kunden selv etablere forskellige applikationer, der kan anvende samme containere og datasæt til forskellige formål)
-
-### Give medarbejder adgang til platformsapplikationer
-(eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
-
-### Register Application
-Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende yaml fil, som opbevares i Directory.
-
-### Register Dataset
 Oprettes manuelt på MapR. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog)
 
-
-### Register Service
 Rancher installation. K8S ressources. Bør formentlig flyttes til en SIT branded selvbetjeningsløsning med få felter... som danner en passende servicebeskrivelse, som opbevares i Directory.
 
 Udviklere kan registrere services på platformen. En service er en ressource på access fabric og er en forbindelse mellem et endpoint synligt udefra og et endpoint udstillet af en application på kubernetes.
 
-### Redeploy Application
-Rancher Installation. Bør formentlig være en simple knap på Dashboardet.
+
+### DevOps
+(Beskrive lidt om hvad opgaverne består i... måske relatere dem til services?)
+
+
+* **Plan**
+* **Code**
+* **Build**
+* **Test** (Hvorfor er der ikke noget testmiljø? Fordi kunden selv etablere forskellige applikationer, der kan anvende samme containere og datasæt til forskellige formål)
+* **Release**
+* **Deploy**
+* **Operate** (eksisterende arbejdsgang. tilknytte B/X nummer til gruppe i AD)
+* **Monitor**
+
+
+### Collaborative Incident Management
+Har til formål at få services op at kører.. men er kompleks fordi der både er en platform, en applikation og en status overvågning...
+
+SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
 
 ### Sandbox
 
@@ -230,17 +200,12 @@ Implementeres som et 'one-node' image af CloudAPI der kan spindes op ved hjælp 
 
 Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.
 
-### Collaboration
-SIT provides collaborative tools to support collaboration during normal operation and during incident handling.
-
-
-
-
-
-# Application (Cloud Consumer)
-(Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)
+# Application
 
 <img src="platform.svg" width="95%">
+
+(Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)
+
 
 ## Application Service (and Interface)
 
@@ -290,12 +255,13 @@ A tag is a label applied to a Docker image in a repository. Tags are how various
 
 
 
-# Technology (Platform Provider)
+# Technology
+
+<img src="platform.svg" width="95%">
 
 (Alt det med Grønt (og gråt).... Technology Layer,
 <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a>
 
-<img src="platform.svg" width="95%">
 
 ## Fabrics...
 
@@ -305,7 +271,6 @@ Responsibilities:
 - Adgangspolitik (Bruger/Service -> Service)
 - Throttle/circuit breaker
 - Log (AccessLog/Request Log?)
-
 
 
 ### Application Fabrics
@@ -579,7 +544,7 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
 <h2 class="no-num">Appendix</h2>
 
-## Inspiration
+## Inspiration til udarbejdelse af kontrakter
 
 ### Kundens It-miljø
 
@@ -607,10 +572,33 @@ Realiseret... og selvbetjening.
 * Token baseret adgangskontrol fx JWT.
 
 
-## Use of Archimate
 
+<pre class="biblio">
 
+{
+	"ITIL4": {
+		"date": "2019",
+    "href":"https://en.wikipedia.org/wiki/Special:BookSources?isbn=978-011331607",
+    "id":"ISBN 978-0113316076",
+    	"title": "ITIL Foundation, ITIL 4 edition.",
+		"publisher": "TSO (The Stationary Office)",
+		"deliveredBy": [
+			"AXELOS"
+		]
+	}
+  ,
+  "NIST.SP.500-292": {
+    "href": "https://doi.org/10.6028/NIST.SP.500-292",
+    "title": "NIST Cloud Computing Reference Architecture",
+    "date": "September 2011"
+    }
+  ,
+  "FORM": {
+      "href": "http://www.form-online.dk",
+      "title": "Opgavenøglen v2.14",
+      "date": "Juli 2019"
+      }
 
-AXELOS (2019). "5.1 General management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
-^ AXELOS (2019). "5.2 Service management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
-^ AXELOS (2019). "5.3 Technical management practices". ITIL Foundation, ITIL 4 edition. TSO (The Stationery Office). ISBN 978-0113316076.
+}
+
+ </pre>
