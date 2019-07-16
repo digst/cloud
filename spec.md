@@ -33,9 +33,9 @@ Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?
 
 Måske bare tegne et lille UML shared use case diagram?
 
-## Principles
+## Designprincipper
 
-**Uafbrudte services** Platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.
+**Uafbrudte services** Platformen og dens applikationer er bygget med henblik på at understøtte uafbrudte services både under opdatering af enkelte services og hele platformen.
 
 **Leverandøruafhængighed** Data, applikation og services på Platformen skal effektivt kunne flyttes til en anden cloud platform. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.
 
@@ -43,14 +43,14 @@ Måske bare tegne et lille UML shared use case diagram?
 
 **Security-by-design** Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
 
-**GDPR-by-design** Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne drifsmiljøer (scale-out til public clouds).
+**GDPR-by-design** Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
 
 **Omkostningssikker** Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.
 
 **Agil it-udvikling** Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.
 
 
-## Governing Thoughts....
+## Styringsprincipper
 
 Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)
 
@@ -61,44 +61,28 @@ And supporting services.... some for developers and some for applications (API).
 Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).
 
 # Business
-På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Og herunder seks vigtige opgaver....
-
-Særligt hvor der er delt ansvar (mere end et RA?) er det vigtigte at beskrive hvilke dele af opgaven der ligger hos hvem...
+På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Herunder findes seks vigtige opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem de tre roller, fire arbejdsområder og seks opgaver præsenteret.
 
 <img src="roles.svg" width="75%">
 
 ## Roller og områder for samarbejde
 
-### <dfn export="true">Platformanvender</dfn>
-— virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder
+### <dfn export="true">Platformsudbyder</dfn>
+- Virksomhed der er ansvarlig for at stille en tjeneste (PaaS) til rådighed for andre interesserede virksomheder.
 
-For denne platform gælder det mere specifikt at platformanvenderen er en eksisterende kunde hos Statens IT og derfor oftest vil være en offentlig myndighed på statsligt niveau. Vi bruger termen virksomhed for at gøre det eksplicit at anvenderen har et CVR-nummer.
-
-<blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
-A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider. [[NIST.SP.500-292]]
-</blockquote>
-
-Anvender er ansvarlig for og udfører Application DevOps.
-
-Anvender deltager i General Management
-
-Anvender er ansvarlig for, udfører og deltager i Service Management (den del der handler om deres egne applikationer)
-
-
-### <dfn export="true">Platformudbyder</dfn>
-- virksomhed der ansvarlig for at stille en tjeneste (PaaS) til rådighed for andre interesserede virksomheder.
-
-For denne platform er udbyderen Statens IT, der indkøber og forvalter den nødvendige fysisk infrastruktur og software installationer, samt gør den tilgængelig for anvendere, virksomheder og borgere.
-
-Udbyder er alene ansvarlig for Technical Management af platformen.
-
-Udbyder er ansvarlig for og udfører dele af General Management (realisering af services).
-
-Udbyder er ansvarlig for og udfører dele af Service Management (den del der har med platformen at gøre).
-
+For denne platform er udbyderen Statens IT, der indkøber og forvalter den nødvendige fysisk infrastruktur og softwareinstallationer, og gør begge dele tilgængelig for platformsanvendere.
 
 <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
 A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access. [[NIST.SP.500-292]]
+</blockquote>
+
+### <dfn export="true">Platformsanvender</dfn>
+- Virksomhed der indgår i en relation med, og anvender tjenester fra en platformsudbyder.
+
+For denne platform gælder det mere specifikt at platformsanvenderen er en eksisterende kunde hos Statens IT og derfor oftest vil være en offentlig myndighed på statsligt niveau. Vi bruger termen virksomhed for at gøre det eksplicit at anvenderen har et CVR-nummer.
+
+<blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
+A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider. [[NIST.SP.500-292]]
 </blockquote>
 
 
@@ -113,16 +97,16 @@ De overordnede rammer for digitaliseringen af samfundet, herunder tværgående a
 
 ## Opgaver
 
-De tre rolles samarbejde er beskrevet i termer af *practices* [[ITIL4]] eller på dansk opgaver.
+Som præsenteret i illustrationen i starten af afsnittet samarbejder de tre roller om en række opgaver (practices).
 
 <blockquote>
 In ITIL 4, practices are a set of organizational resources designed for performing work or accomplishing an objective. [[ITIL4]]
 </blockquote>
 
-Herunder har vi valgt de vigtigste seks...
+Herunder har beskriver vi de seks vigtigste opgaver, som rollerne arbejder sammen om at løfte.
 
 
-### <dfn export="true">Arkitektur(-styring)</dfn>
+### <dfn export="true">Arkitekturstyring</dfn>
 - forvaltningsopgave .... (tjek FDA)
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
@@ -135,7 +119,7 @@ Polic-ansvarlig sikre at princippet om leverandøruafhængighed overholdes ved a
 
 Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisations øvrige teknologivalg og driftsmodeller.
 
-### <dfn export="true">Application Development and Operation</dfn>
+### <dfn export="true">Applikationsudvikling og -drift</dfn>
 
 <blockquote cite="https://en.wikipedia.org/wiki/DevOps">
 DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. [[ITIL4]]
@@ -145,27 +129,25 @@ Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.
 
 Policy-ansavrlig bidrager med vejledning
 
-### <dfn export="true">Monitoring and Event Management</dfn>
+### <dfn export="true">Overvågning Eventhåndtering</dfn>
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. [[ITIL4]]</blockquote>
 
 
-### <dfn export="true">Incident Management</dfn>
+### <dfn export="true">Hændelsesstyring</dfn>
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.[[ITIL4]]
 </blockquote>
 
-### <dfn export="true">Problem Management</dfn>
+### <dfn export="true">Problemhåndtering</dfn>
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors. [[ITIL4]]
 </blockquote>
 
-
-
-## Security and Multitenancy
+### <dfn export="true">Sikkerhed og Ressourcestyring</dfn>
 
 - Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant.
 - Applications are responsible for implementing access policies to data at row level
@@ -174,7 +156,7 @@ To reduce the likelihood and impact of incidents by identifying actual and poten
 
 
 ## Arbejdsgange/Brugeroplevelser
-Vi har identificerewt en række arbejdsgange. Her beskrives den brugeroplevelse vi sigter efter og vi forklarer hvordan de anvender de forskellige komponenter overfor.
+Vi har identificeret fire centrale arbejdsgange eller samarbejdsområder som de forskellige roller kan udføre. I det nedenstående  beskriver vi den brugeroplevelse vi sigter efter og vi forklarer sammenhængen til de seks centrale opgaver overfor.
 
 ### Registrere Applikationer, Datasamlinger og Services
 Har til formål at sikre beskrivende felter til mange formål.
@@ -589,7 +571,6 @@ Realiseret... og selvbetjening.
 * Anvendelse af NoSQL dokumentdatabaser fx OJAI.
 * Udvikling af HTTP services der følger REST.
 * Token baseret adgangskontrol fx JWT.
-
 
 
 
