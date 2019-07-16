@@ -282,7 +282,7 @@
       </a>
     </g>
     <g onmouseout="HideTooltip(evt)" id="y.node.10" onmousemove="ShowTooltip(evt)">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#application-development-and-operation">
+      <a xlink:href="#application-development-and-operation">
         <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
           <rect x="-187.753" width="95.9893" height="46.6471" y="67.9146" stroke="none"/>
         </g>
@@ -334,8 +334,8 @@
         <path fill="none" d="M132.6548 455.1 L35.7818 455.1"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="42.8291" xml:space="preserve" y="478.7016" stroke="none">RAC</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="42.8282" xml:space="preserve" y="476.3402" stroke="none">RAC</text>
         </g>
       </g>
     </g>
@@ -344,8 +344,8 @@
         <path fill="none" d="M-83.7579 310.0355 L-83.7579 382.641"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-71.7579" xml:space="preserve" y="373.1097" stroke="none">RAC</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="-71.7579" xml:space="preserve" y="372.8795" stroke="none">RAC</text>
         </g>
       </g>
     </g>
@@ -354,8 +354,8 @@
         <path fill="none" d="M-83.7579 137.112 L-83.7579 209.9644"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-71.8243" xml:space="preserve" y="155.6388" stroke="none">RA</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="-71.8243" xml:space="preserve" y="153.2775" stroke="none">RA</text>
         </g>
       </g>
     </g>
@@ -364,8 +364,8 @@
         <path fill="none" d="M35.7818 87.0764 L132.6548 87.0764"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="42.7818" xml:space="preserve" y="110.678" stroke="none">C</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="42.7818" xml:space="preserve" y="108.3167" stroke="none">C</text>
         </g>
       </g>
     </g>
@@ -374,8 +374,8 @@
         <path fill="none" d="M192.7411 455.1 L279.4511 455.1"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="248.2711" xml:space="preserve" y="479.0924" stroke="none">RAC</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="247.106" xml:space="preserve" y="476.731" stroke="none">RAC</text>
         </g>
       </g>
     </g>
@@ -384,8 +384,8 @@
         <path fill="none" d="M192.7411 87.0764 L342.2221 87.0764 L346.5971 87.7014 L349.7221 89.5764 L351.5971 92.7014 L352.2221 97.0764 L352.2221 405.0612"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="364.1832" xml:space="preserve" y="383.7568" stroke="none">C</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="364.1832" xml:space="preserve" y="383.4868" stroke="none">C</text>
         </g>
       </g>
     </g>
@@ -394,8 +394,8 @@
         <path fill="none" d="M162.7021 137.112 L162.7021 209.9644"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="174.7021" xml:space="preserve" y="200.4332" stroke="none">RAC</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="174.7021" xml:space="preserve" y="200.2029" stroke="none">RAC</text>
         </g>
       </g>
     </g>
@@ -404,8 +404,8 @@
         <path fill="none" d="M-53.7228 260 L89.96 260"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="74.6222" xml:space="preserve" y="283.6016" stroke="none">C</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="74.259" xml:space="preserve" y="281.2402" stroke="none">C</text>
         </g>
       </g>
     </g>
@@ -414,8 +414,8 @@
         <path fill="none" d="M162.7021 405.0536 L162.7021 310"/>
       </g>
       <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="174.7021" xml:space="preserve" y="328.648" stroke="none">RAC</text>
+        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
+          <text x="174.7021" xml:space="preserve" y="326.2881" stroke="none">RAC</text>
         </g>
       </g>
     </g>

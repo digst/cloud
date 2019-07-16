@@ -63,12 +63,14 @@ Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technol
 # Business
 På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Og herunder seks vigtige opgaver....
 
+Særligt hvor der er delt ansvar (mere end et RA?) er det vigtigte at beskrive hvilke dele af opgaven der ligger hos hvem...
+
 <img src="roles.svg" width="75%">
 
 ## Roller og områder for samarbejde
 
 ### <dfn export="true">Platformanvender</dfn>
-- virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder.
+— virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder
 
 For denne platform gælder det mere specifikt at platformanvenderen er en eksisterende kunde hos Statens IT og derfor oftest vil være en offentlig myndighed på statsligt niveau. Vi bruger termen virksomhed for at gøre det eksplicit at anvenderen har et CVR-nummer.
 
@@ -88,6 +90,13 @@ Anvender er ansvarlig for, udfører og deltager i Service Management (den del de
 
 For denne platform er udbyderen Statens IT, der indkøber og forvalter den nødvendige fysisk infrastruktur og software installationer, samt gør den tilgængelig for anvendere, virksomheder og borgere.
 
+Udbyder er alene ansvarlig for Technical Management af platformen.
+
+Udbyder er ansvarlig for og udfører dele af General Management (realisering af services).
+
+Udbyder er ansvarlig for og udfører dele af Service Management (den del der har med platformen at gøre).
+
+
 <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292">
 A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access. [[NIST.SP.500-292]]
 </blockquote>
@@ -96,12 +105,15 @@ A cloud provider is a person, an organization; it is the entity responsible for 
 ### <dfn export="true">Policy Owner</dfn>
 - myndighed der er ansvarlig for de overordnede rammer for udvikling og anvendelse af it, særligt hos andre offentlige myndigheder.
 
+
+
+
 <blockquote cite="http://www.form-online.dk/opgavenoegle/06/#06.38.10">
 De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder [[FORM]]</blockquote>
 
 
 
-De tre rolles samarbejde er beskrevet i termer af *practices* eller på dansk opgaver.
+De tre rolles samarbejde er beskrevet i termer af *practices* [[ITIL4]] eller på dansk opgaver.
 
 <blockquote>
 In ITIL 4, practices are a set of organizational resources designed for performing work or accomplishing an objective. [[ITIL4]]
@@ -113,6 +125,8 @@ Herunder har vi valgt de vigtigste seks...
 
 ### <dfn export="true">Arkitektur(-styring)</dfn>
 - forvaltningsopgave .... (tjek FDA)
+
+
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To provide an understanding of all the different elements that make up an organization and how those elements interrelate, enabling the organization to effectively achieve its current and future objectives. It provides the principles, standards, and tools that enable an organization to manage complex change in a structured and agile way. [[ITIL4]]
@@ -571,7 +585,7 @@ Realiseret... og selvbetjening.
 * Udvikling af HTTP services der følger REST.
 * Token baseret adgangskontrol fx JWT.
 
-HERE
+
 
 
 <pre class="biblio">

@@ -8,6 +8,3 @@ sed -f inline.sed spec.html > docs/spec.html
 
 
 curl https://api.csswg.org/bikeshed/ -F file=@guide.md -F force=1 > docs/guide.html
-
-
-cp *.svg docs/
