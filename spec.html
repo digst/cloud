@@ -1398,7 +1398,7 @@ pre .property::before, pre .property::after {
        <ol class="toc">
         <li><a href="#platformanvender"><span class="secno">2.1.1</span> <span class="content"><span>Platformanvender</span></span></a>
         <li><a href="#platformudbyder"><span class="secno">2.1.2</span> <span class="content"><span>Platformudbyder</span></span></a>
-        <li><a href="#policy-owner"><span class="secno">2.1.3</span> <span class="content"><span>Policy Owner</span></span></a>
+        <li><a href="#policy-ansvarlig"><span class="secno">2.1.3</span> <span class="content"><span>Policy-ansvarlig</span></span></a>
        </ol>
       <li>
        <a href="#opgaver"><span class="secno">2.2</span> <span class="content">Opgaver</span></a>
@@ -1530,10 +1530,11 @@ pre .property::before, pre .property::after {
    <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
    <h2 class="heading settled" data-level="2" id="business"><span class="secno">2. </span><span class="content">Business</span><a class="self-link" href="#business"></a></h2>
     På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Og herunder seks vigtige opgaver.... 
+   <p>Særligt hvor der er delt ansvar (mere end et RA?) er det vigtigte at beskrive hvilke dele af opgaven der ligger hos hvem...</p>
    <p><img src="roles.svg" width="75%"></p>
    <h3 class="heading settled" data-level="2.1" id="roller-og-omrder-for-samarbejde"><span class="secno">2.1. </span><span class="content">Roller og områder for samarbejde</span><a class="self-link" href="#roller-og-omrder-for-samarbejde"></a></h3>
    <h4 class="heading settled" data-level="2.1.1" id="platformanvender"><span class="secno">2.1.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="platformanvender①">Platformanvender<a class="self-link" href="#platformanvender①"></a></dfn></span><a class="self-link" href="#platformanvender"></a></h4>
-    — virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder. 
+    — virksomhed der indgår i en relation med, og anvender tjenester fra en platformudbyder 
    <p>For denne platform gælder det mere specifikt at platformanvenderen er en eksisterende kunde hos Statens IT og derfor oftest vil være en offentlig myndighed på statsligt niveau. Vi bruger termen virksomhed for at gøre det eksplicit at anvenderen har et CVR-nummer.</p>
    <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292"> A cloud consumer represents a person or organization that maintains a business relationship with, and uses the service from a cloud provider. <a data-link-type="biblio" href="#biblio-nistsp500-292">[NIST.SP.500-292]</a> </blockquote>
    <p>Anvender er ansvarlig for og udfører Application DevOps.</p>
@@ -1545,25 +1546,33 @@ pre .property::before, pre .property::after {
      <p>virksomhed der ansvarlig for at stille en tjeneste (PaaS) til rådighed for andre interesserede virksomheder.</p>
    </ul>
    <p>For denne platform er udbyderen Statens IT, der indkøber og forvalter den nødvendige fysisk infrastruktur og software installationer, samt gør den tilgængelig for anvendere, virksomheder og borgere.</p>
+   <p>Udbyder er alene ansvarlig for Technical Management af platformen.</p>
+   <p>Udbyder er ansvarlig for og udfører dele af General Management (realisering af services).</p>
+   <p>Udbyder er ansvarlig for og udfører dele af Service Management (den del der har med platformen at gøre).</p>
    <blockquote cite="https://doi.org/10.6028/NIST.SP.500-292"> A cloud provider is a person, an organization; it is the entity responsible for making a service available to interested parties. A Cloud Provider acquires and manages the computing infrastructure required for providing the services, runs the cloud software that provides the services, and makes arrangement to deliver the cloud services to the Cloud Consumers through network access. <a data-link-type="biblio" href="#biblio-nistsp500-292">[NIST.SP.500-292]</a> </blockquote>
-   <h4 class="heading settled" data-level="2.1.3" id="policy-owner"><span class="secno">2.1.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="policy-owner①">Policy Owner<a class="self-link" href="#policy-owner①"></a></dfn></span><a class="self-link" href="#policy-owner"></a></h4>
+   <h4 class="heading settled" data-level="2.1.3" id="policy-ansvarlig"><span class="secno">2.1.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="policy-ansvarlig①">Policy-ansvarlig<a class="self-link" href="#policy-ansvarlig①"></a></dfn></span><a class="self-link" href="#policy-ansvarlig"></a></h4>
    <ul>
     <li data-md>
      <p>myndighed der er ansvarlig for de overordnede rammer for udvikling og anvendelse af it, særligt hos andre offentlige myndigheder.</p>
    </ul>
    <blockquote cite="http://www.form-online.dk/opgavenoegle/06/#06.38.10"> De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder <a data-link-type="biblio" href="#biblio-form">[FORM]</a></blockquote>
-   <p>De tre rolles samarbejde er beskrevet i termer af <em>practices</em> eller på dansk opgaver.</p>
+   <h3 class="heading settled" data-level="2.2" id="opgaver"><span class="secno">2.2. </span><span class="content">Opgaver</span><a class="self-link" href="#opgaver"></a></h3>
+   <p>De tre rolles samarbejde er beskrevet i termer af <em>practices</em> <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> eller på dansk opgaver.</p>
    <blockquote> In ITIL 4, practices are a set of organizational resources designed for performing work or accomplishing an objective. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Herunder har vi valgt de vigtigste seks...</p>
-   <h3 class="heading settled" data-level="2.2" id="opgaver"><span class="secno">2.2. </span><span class="content">Opgaver</span><a class="self-link" href="#opgaver"></a></h3>
    <h4 class="heading settled" data-level="2.2.1" id="arkitektur--styring"><span class="secno">2.2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="arkitektur--styring①">Arkitektur(-styring)<a class="self-link" href="#arkitektur--styring①"></a></dfn></span><a class="self-link" href="#arkitektur--styring"></a></h4>
    <ul>
     <li data-md>
      <p>forvaltningsopgave .... (tjek FDA)</p>
    </ul>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To provide an understanding of all the different elements that make up an organization and how those elements interrelate, enabling the organization to effectively achieve its current and future objectives. It provides the principles, standards, and tools that enable an organization to manage complex change in a structured and agile way. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
+   <p>Ansvaret for opgaven er delt mellem policy-ansvarlig og platformsudbyder. Policy-ansvarlig har ansvaret for beskrivelsen af den del af arkitekturen som er synlig for anvenderen dvs. platform services og platform api. Udbyderen har derimod ansvaret for den del af arkitketuren der realisere de beskrevne services og interfaces.</p>
+   <p>Polic-ansvarlig sikre at princippet om leverandøruafhængighed overholdes ved at basere platform services og api på modne og veletablerede specifikationer og standarder fx ved brug af CAMMS...</p>
+   <p>Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisations øvrige teknologivalg og driftsmodeller.</p>
    <h4 class="heading settled" data-level="2.2.2" id="application-development-and-operation"><span class="secno">2.2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="application-development-and-operation①">Application Development and Operation<a class="self-link" href="#application-development-and-operation①"></a></dfn></span><a class="self-link" href="#application-development-and-operation"></a></h4>
    <blockquote cite="https://en.wikipedia.org/wiki/DevOps"> DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
+   <p>Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.</p>
+   <p>Policy-ansavrlig bidrager med vejledning</p>
    <h4 class="heading settled" data-level="2.2.3" id="monitoring-and-event-management"><span class="secno">2.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="monitoring-and-event-management①">Monitoring and Event Management<a class="self-link" href="#monitoring-and-event-management①"></a></dfn></span><a class="self-link" href="#monitoring-and-event-management"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a></blockquote>
    <h4 class="heading settled" data-level="2.2.4" id="incident-management"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="incident-management①">Incident Management<a class="self-link" href="#incident-management①"></a></dfn></span><a class="self-link" href="#incident-management"></a></h4>
@@ -2001,7 +2010,7 @@ pre .property::before, pre .property::after {
    <li><a href="#monitoring-and-event-management①">Monitoring and Event Management</a><span>, in §2.2.3</span>
    <li><a href="#platformanvender①">Platformanvender</a><span>, in §2.1.1</span>
    <li><a href="#platformudbyder①">Platformudbyder</a><span>, in §2.1.2</span>
-   <li><a href="#policy-owner①">Policy Owner</a><span>, in §2.1.3</span>
+   <li><a href="#policy-ansvarlig①">Policy-ansvarlig</a><span>, in §2.1.3</span>
    <li><a href="#problem-management①">Problem Management</a><span>, in §2.2.5</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>

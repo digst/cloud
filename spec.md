@@ -102,7 +102,7 @@ A cloud provider is a person, an organization; it is the entity responsible for 
 </blockquote>
 
 
-### <dfn export="true">Policy Owner</dfn>
+### <dfn export="true">Policy-ansvarlig</dfn>
 - myndighed der er ansvarlig for de overordnede rammer for udvikling og anvendelse af it, særligt hos andre offentlige myndigheder.
 
 
@@ -111,7 +111,7 @@ A cloud provider is a person, an organization; it is the entity responsible for 
 <blockquote cite="http://www.form-online.dk/opgavenoegle/06/#06.38.10">
 De overordnede rammer for digitaliseringen af samfundet, herunder tværgående arkitektur, offentlige data og it-standarder [[FORM]]</blockquote>
 
-
+## Opgaver
 
 De tre rolles samarbejde er beskrevet i termer af *practices* [[ITIL4]] eller på dansk opgaver.
 
@@ -121,17 +121,19 @@ In ITIL 4, practices are a set of organizational resources designed for performi
 
 Herunder har vi valgt de vigtigste seks...
 
-## Opgaver
 
 ### <dfn export="true">Arkitektur(-styring)</dfn>
 - forvaltningsopgave .... (tjek FDA)
-
-
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To provide an understanding of all the different elements that make up an organization and how those elements interrelate, enabling the organization to effectively achieve its current and future objectives. It provides the principles, standards, and tools that enable an organization to manage complex change in a structured and agile way. [[ITIL4]]
 </blockquote>
 
+Ansvaret for opgaven er delt mellem policy-ansvarlig og platformsudbyder. Policy-ansvarlig har ansvaret for beskrivelsen af den del af arkitekturen som er synlig for anvenderen dvs. platform services og platform api. Udbyderen har derimod ansvaret for den del af arkitketuren der realisere de beskrevne services og interfaces.
+
+Polic-ansvarlig sikre at princippet om leverandøruafhængighed overholdes ved at basere platform services og api på modne og veletablerede specifikationer og standarder fx ved brug af CAMMS...
+
+Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisations øvrige teknologivalg og driftsmodeller.
 
 ### <dfn export="true">Application Development and Operation</dfn>
 
@@ -139,6 +141,9 @@ To provide an understanding of all the different elements that make up an organi
 DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. [[ITIL4]]
 </blockquote>
 
+Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.
+
+Policy-ansavrlig bidrager med vejledning
 
 ### <dfn export="true">Monitoring and Event Management</dfn>
 
