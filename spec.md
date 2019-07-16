@@ -148,7 +148,7 @@ To reduce the likelihood and impact of incidents by identifying actual and poten
 
 ## Security and Multitenancy
 
-- Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant. 
+- Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant.
 - Applications are responsible for implementing access policies to data at row level
 - Access policies should rely on trusted attributes over detailes rights when possible.
 
@@ -571,6 +571,7 @@ Realiseret... og selvbetjening.
 * Udvikling af HTTP services der følger REST.
 * Token baseret adgangskontrol fx JWT.
 
+HERE
 
 
 <pre class="biblio">
