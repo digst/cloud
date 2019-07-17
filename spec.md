@@ -1,3 +1,29 @@
+<style>
+@media print {
+  html { margin: 0cm 2cm 2cm 0cm; font-size: 80%; }
+  /* DIGST fonts */
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+  h2,h3,h4, h4 dfn { font-family: "Garamond", serif; color: black; margin-bottom: 0; font-style: normal; font-weight: normal;}
+
+  h2:not(#subtitle) { page-break-before: always; font-size: 250%; border-bottom: solid 0.5px black; padding-top: 20px; margin-bottom: 6px;}
+  h3 { font-size: 145%;}
+  h4 { font-size: 125%;}
+
+  #toc {page-break-before: always;}
+  /* DIGST-like frontpage */
+  .head { width: 50%; margin-left: 24px; padding: 0px; background-color: #031D5C;}
+  .head div { background-color: white; padding: 24px; }
+  .head hr { display: none;}
+  .head h1 { background-color: #031D5C; color: white; margin: 0px; padding: 50px 0px 50px 24px; font-weight: normal; }
+  #subtitle { padding-left: 24px; background-color: #031D5C; color: #031D5C; }
+  .head time { display: block; font-family: "Helvetica Neue", Helvetica, Arial; margin: 0px; background-color: #031D5C; font-size: 80%; color: white;}
+  .toc li { line-height: 70%; font-family: "Helvetica Neue", Helvetica, Arial;
+    font-weight: 600; font-size: 90%; }
+  .self-link { display: none; }
+
+  blockquote { font-size: 80%; font-style: italic; margin-left: 5%; width: 70%; border-left-width: 2px;}
+}
+</style>
 <pre class='metadata'>
 Title: cloud.gov.dk spec
 Status: LD
@@ -12,6 +38,7 @@ Inline Github Issues: full
 Logo: https://digst.github.io/cloud/cloud.svg
 </pre>
 
+
 <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
 
 <small>
@@ -22,9 +49,7 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 
 
-
-<img src="resume.svg" width="50%">
-
+<img src="resume.svg">
 
 
 # Motivation
@@ -50,7 +75,9 @@ Måske bare tegne et lille UML shared use case diagram?
 **Agil it-udvikling** Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.
 
 
-## Styringsprincipper
+## Arkitekturstil
+
+SOA, Cloud, PaaS. API enabled GUI.
 
 Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)
 
@@ -129,13 +156,13 @@ Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.
 
 Policy-ansavrlig bidrager med vejledning
 
-### <dfn export="true">Overvågning Eventhåndtering</dfn>
+### <dfn export="true">Statusovervågning</dfn>
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. [[ITIL4]]</blockquote>
 
 
-### <dfn export="true">Hændelsesstyring</dfn>
+### <dfn export="true">Hændelseshåndtering</dfn>
 
 <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/">
 To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.[[ITIL4]]
@@ -147,12 +174,15 @@ To minimize the negative impact of incidents by restoring normal service operati
 To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors. [[ITIL4]]
 </blockquote>
 
-### <dfn export="true">Sikkerhed og Ressourcestyring</dfn>
+### <dfn export="true">Sikkerhed og ressourcestyring</dfn>
+
+Multitenancy...
 
 - Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant.
 - Applications are responsible for implementing access policies to data at row level
 - Access policies should rely on trusted attributes over detailes rights when possible.
 
+### <dfn export="true">Privacy?</dfn>
 
 
 ## Arbejdsgange/Brugeroplevelser
@@ -203,12 +233,17 @@ Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation
 
 # Application
 
-<img src="platform.svg" width="95%">
+<img src="platform.svg"/>
 
 (Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)
 
 
-## Application Service (and Interface)
+## Applilkationstjeneste (Tjek FDA)
+I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload.
+
+Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.
+
+Det kunne fx være en hjemmeside med en selvbetjeningsløsning eller en webservice hvor man kan hente aktuelle vejrobservationer.
 
 <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946068">
 An application interface represents a point of access where application services are made available to a user, another application component, or a node.
@@ -219,7 +254,9 @@ An application service represents an explicitly defined exposed application beha
 </blockquote>
 
 
-## Application (Component)
+## Application (Component) (Tjek FDA)
+
+
 <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946066">
 An application component represents an encapsulation of application functionality aligned to implementation structure, which is modular and replaceable. It encapsulates its behavior and data, exposes services, and makes them available through interfaces.
 </blockquote>
@@ -232,40 +269,61 @@ A container is a runtime instance of a docker image.
 
 
 
-## Dataset
+## Dataset (Tjek FDA)
+
+
 
 <blockquote cite="https://arkitektur.digst.dk/sites/default/files/20180503_rad_v1.0_-_godkendt_af_sda.pdf">
 en samling af oplysninger bestående af enkelte dele der forvaltes under et
 </blockquote>
 
+
+Bemærk at vi ikke bruger termen it-system... Hvis vi gjorde ville det omfatte alle de nødvendige dele for at realisere en Applikationstjeneste... og det er mange... inkl strømforsyning, tidsservere og mennesker...
+
+
+
 ## Source Code
+Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet.
+
+Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.
 
 
 ## Images
+er resultatet af et byg på baggrund af en version af kildekoden.
+
+I docker er navngivet ejer/navn for at synliggøre ejerskabet.
+
+Note: Et namespace per platformsanvender/virksomhed?
+
 <blockquote cite="https://docs.docker.com/glossary/?term=image">
 Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
 
 
 ## Tags
+Et docker images kan tagges med flere tags.
+
+De anvendes fx ved deployment, ejer/navn:prod
+
+Note: Vi bør have anbefalinger for et fælles skema i udviklingshåndbogen.
+
 <blockquote cite="https://docs.docker.com/glossary/?term=tag">
 A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.
 </blockquote>
 
-A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.
 
 
 
 
 # Technology
 
-<img src="platform.svg" width="95%">
+<img src="platform.svg"/>
 
 (Alt det med Grønt (og gråt).... Technology Layer,
 <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a>
 
 
 ## Fabrics...
-
+nnnk c
 ### Service Fabric
 Responsibilities:
 - Oversæt ID og tildel requestID

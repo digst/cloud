@@ -1212,8 +1212,34 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version a3b64e58e069c2e8a9ffcadffb76601231663a47" name="generator">
+  <meta content="Bikeshed version 9c51ae462b4b8b2f14dbddcd7d4b5224375eccc0" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
+<style>
+@media print {
+  html { margin: 0cm 2cm 2cm 0cm; font-size: 80%; }
+  /* DIGST fonts */
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+  h2,h3,h4, h4 dfn { font-family: "Garamond", serif; color: black; margin-bottom: 0; font-style: normal; font-weight: normal;}
+
+  h2:not(#subtitle) { page-break-before: always; font-size: 250%; border-bottom: solid 0.5px black; padding-top: 20px; margin-bottom: 6px;}
+  h3 { font-size: 145%;}
+  h4 { font-size: 125%;}
+
+  #toc {page-break-before: always;}
+  /* DIGST-like frontpage */
+  .head { width: 50%; margin-left: 24px; padding: 0px; background-color: #031D5C;}
+  .head div { background-color: white; padding: 24px; }
+  .head hr { display: none;}
+  .head h1 { background-color: #031D5C; color: white; margin: 0px; padding: 50px 0px 50px 24px; font-weight: normal; }
+  #subtitle { padding-left: 24px; background-color: #031D5C; color: #031D5C; }
+  .head time { display: block; font-family: "Helvetica Neue", Helvetica, Arial; margin: 0px; background-color: #031D5C; font-size: 80%; color: white;}
+  .toc li { line-height: 70%; font-family: "Helvetica Neue", Helvetica, Arial;
+    font-weight: 600; font-size: 90%; }
+  .self-link { display: none; }
+
+  blockquote { font-size: 80%; font-style: italic; margin-left: 5%; width: 70%; border-left-width: 2px;}
+}
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1365,7 +1391,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-16">16 July 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-17">17 July 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1388,7 +1414,7 @@ pre .property::before, pre .property::after {
      <a href="#motivation"><span class="secno">1</span> <span class="content">Motivation</span></a>
      <ol class="toc">
       <li><a href="#designprincipper"><span class="secno">1.1</span> <span class="content">Designprincipper</span></a>
-      <li><a href="#styringsprincipper"><span class="secno">1.2</span> <span class="content">Styringsprincipper</span></a>
+      <li><a href="#arkitekturstil"><span class="secno">1.2</span> <span class="content">Arkitekturstil</span></a>
      </ol>
     <li>
      <a href="#business"><span class="secno">2</span> <span class="content">Business</span></a>
@@ -1405,10 +1431,11 @@ pre .property::before, pre .property::after {
        <ol class="toc">
         <li><a href="#arkitekturstyring"><span class="secno">2.2.1</span> <span class="content"><span>Arkitekturstyring</span></span></a>
         <li><a href="#applikationsudvikling-og--drift"><span class="secno">2.2.2</span> <span class="content"><span>Applikationsudvikling og -drift</span></span></a>
-        <li><a href="#overvgning-eventhndtering"><span class="secno">2.2.3</span> <span class="content"><span>Overvågning Eventhåndtering</span></span></a>
-        <li><a href="#hndelsesstyring"><span class="secno">2.2.4</span> <span class="content"><span>Hændelsesstyring</span></span></a>
+        <li><a href="#statusovervgning"><span class="secno">2.2.3</span> <span class="content"><span>Statusovervågning</span></span></a>
+        <li><a href="#hndelseshndtering"><span class="secno">2.2.4</span> <span class="content"><span>Hændelseshåndtering</span></span></a>
         <li><a href="#problemhndtering"><span class="secno">2.2.5</span> <span class="content"><span>Problemhåndtering</span></span></a>
-        <li><a href="#sikkerhed-og-ressourcestyring"><span class="secno">2.2.6</span> <span class="content"><span>Sikkerhed og Ressourcestyring</span></span></a>
+        <li><a href="#sikkerhed-og-ressourcestyring"><span class="secno">2.2.6</span> <span class="content"><span>Sikkerhed og ressourcestyring</span></span></a>
+        <li><a href="#privacy"><span class="secno">2.2.7</span> <span class="content"><span>Privacy?</span></span></a>
        </ol>
       <li>
        <a href="#arbejdsgange-brugeroplevelser"><span class="secno">2.3</span> <span class="content">Arbejdsgange/Brugeroplevelser</span></a>
@@ -1422,10 +1449,10 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#application"><span class="secno">3</span> <span class="content">Application</span></a>
      <ol class="toc">
-      <li><a href="#application-service-and-interface"><span class="secno">3.1</span> <span class="content">Application Service (and Interface)</span></a>
-      <li><a href="#application-component"><span class="secno">3.2</span> <span class="content">Application (Component)</span></a>
+      <li><a href="#applilkationstjeneste-tjek-fda"><span class="secno">3.1</span> <span class="content">Applilkationstjeneste (Tjek FDA)</span></a>
+      <li><a href="#application-component-tjek-fda"><span class="secno">3.2</span> <span class="content">Application (Component) (Tjek FDA)</span></a>
       <li><a href="#container"><span class="secno">3.3</span> <span class="content">Container</span></a>
-      <li><a href="#dataset"><span class="secno">3.4</span> <span class="content">Dataset</span></a>
+      <li><a href="#dataset-tjek-fda"><span class="secno">3.4</span> <span class="content">Dataset (Tjek FDA)</span></a>
       <li><a href="#source-code"><span class="secno">3.5</span> <span class="content">Source Code</span></a>
       <li><a href="#images"><span class="secno">3.6</span> <span class="content">Images</span></a>
       <li><a href="#tags"><span class="secno">3.7</span> <span class="content">Tags</span></a>
@@ -1511,7 +1538,7 @@ pre .property::before, pre .property::after {
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
-   <p><img src="resume.svg" width="50%"></p>
+   <p><img src="resume.svg"></p>
    <h2 class="heading settled" data-level="1" id="motivation"><span class="secno">1. </span><span class="content">Motivation</span><a class="self-link" href="#motivation"></a></h2>
    <p>Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?</p>
    <p>Måske bare tegne et lille UML shared use case diagram?</p>
@@ -1523,442 +1550,15 @@ pre .property::before, pre .property::after {
    <p><strong>GDPR-by-design</strong> Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).</p>
    <p><strong>Omkostningssikker</strong> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.</p>
    <p><strong>Agil it-udvikling</strong> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
-   <h3 class="heading settled" data-level="1.2" id="styringsprincipper"><span class="secno">1.2. </span><span class="content">Styringsprincipper</span><a class="self-link" href="#styringsprincipper"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="arkitekturstil"><span class="secno">1.2. </span><span class="content">Arkitekturstil</span><a class="self-link" href="#arkitekturstil"></a></h3>
+   <p>SOA, Cloud, PaaS. API enabled GUI.</p>
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
    <p>And supporting services.... some for developers and some for applications (API).</p>
    <p>Pure Archimate ... vi har valgt at sætte lighedstegn mellem platform of technology og lade kunders applikationer være blå. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS).</p>
    <h2 class="heading settled" data-level="2" id="business"><span class="secno">2. </span><span class="content">Business</span><a class="self-link" href="#business"></a></h2>
     På et forretningsmæssigt niveau kan platformen kan beskrives ved tre roller og fire områder for samarbejde. Herunder findes seks vigtige opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem de tre roller, fire arbejdsområder og seks opgaver præsenteret. 
-<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-opacity="1" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" width="659" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="577" font-family="'Dialog'" font-style="normal" stroke-linejoin="miter" font-size="12px" stroke-dashoffset="0" image-rendering="auto">
-  <!--Generated by ySVG 2.5-->
-  <defs id="genericDefs"/>
-  <g>
-    <g id="y.node.0">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#platformudbyder">
-        <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.4634,0,0,1.4493,351.7021,425.1)">
-          <g>
-            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" opacity="1" writing-mode="lr-tb" stop-color="rgb(0, 0, 0)" shape-rendering="auto" glyph-orientation-horizontal="0deg" color-profile="auto" lighting-color="rgb(255, 255, 255)" color="rgb(0, 0, 0)" font-weight="400" alignment-baseline="auto" font-style="normal" version="1.0" color-interpolation-filters="linearrgb" text-anchor="start" stroke-linecap="butt" color-interpolation="srgb" font-variant="normal" word-spacing="normal" fill-opacity="1" text-rendering="auto" clip-path="none" text-decoration="none" letter-spacing="normal" glyph-orientation-vertical="auto" display="inline" font-size-adjust="none" overflow="hidden" fill="rgb(0, 0, 0)" font-stretch="normal" stroke-dasharray="none" inkscape:version="0.45.1" id="svg1.svg2" stroke-miterlimit="4" stop-opacity="1" color-rendering="auto" font-size="12" sodipodi:docbase="C:\Daten\alberts\projects\yfx" pointer-events="visiblepainted" mask="none" direction="ltr" baseline-shift="baseline" sodipodi:docname="uml_actor.svg" enable-background="accumulate" fill-rule="nonzero" image-rendering="auto" stroke-dashoffset="0" inkscape:output_extension="org.inkscape.output.svg.inkscape" marker-end="none" width="41" clip="auto" cursor="auto" stroke="none" filter="none" visibility="visible" kerning="auto" stroke-width="1" font-family="&quot;Arial&quot;,&quot;Helvetica&quot;,sans-serif" flood-opacity="1" clip-rule="nonzero" src="none" height="68.997391" unicode-bidi="normal" sodipodi:version="0.32" stroke-linejoin="miter" stroke-opacity="1" flood-color="rgb(0, 0, 0)" dominant-baseline="auto" marker-start="none" marker-mid="none">
-                
-              <defs id="svg1.defs4">
-                <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
-                  <path d="M0 0 L659 0 L659 577 L0 577 L0 0 Z"/>
-                </clipPath>
-                <clipPath clipPathUnits="userSpaceOnUse" id="clipPath2">
-                  <path d="M0 0 L0 18 L140 18 L140 0 Z"/>
-                </clipPath>
-                <script type="text/ecmascript">
-                  <![CDATA[      var SVGDocument = null;
-      var SVGRoot = null;
-      var TrueCoords = null;
-      var lastElement = null;
-      var initialized = null;
-      var tipGroup;
-      function Init(evt)
-      {
-         SVGDocument = evt.target.ownerDocument;
-         SVGRoot = SVGDocument.documentElement;
-         TrueCoords = SVGRoot.createSVGPoint();
-         initialized = evt;
-      };
-      function GetTrueCoords(evt)
-      {
-         var newScale = SVGRoot.currentScale;
-         var translation = SVGRoot.currentTranslate;
-         TrueCoords.x = (evt.clientX - translation.x)/newScale;
-         TrueCoords.y = (evt.clientY - translation.y)/newScale;
-      };
-      function HideTooltip( evt )
-      {
-         if(initialized == null) {
-           Init(evt);
-         }
-         if(tipGroup != null) {
-           tipGroup.setAttributeNS(null, 'visibility', 'hidden');
-         }
-      };
-      function ShowTooltip( evt )
-      {
-         if(initialized == null) {
-           Init(evt);
-         }
-         GetTrueCoords( evt );
-         var tipScale = 1/SVGRoot.currentScale;
-         var targetElement = evt.currentTarget;
-         if ( lastElement != targetElement )
-         {
-            var targetId = targetElement.getAttributeNS(null, 'id');
-            var tipId = 'tooltip.' + targetId;
-            tipGroup = SVGDocument.getElementById(tipId);
-            var xPos = TrueCoords.x + (10 * tipScale);
-            var yPos = TrueCoords.y + (10 * tipScale);
-            tipGroup.setAttributeNS(null, 'transform', 'translate(' + xPos + ',' + yPos + ') scale(' + tipScale + ')');
-            tipGroup.setAttributeNS(null, 'visibility', 'visible');
-         }
-      };
-]]>
-                </script>
-              </defs>
-                
-  
-              <metadata id="svg1.metadata7">
-    
-  </metadata>
-                
-              <g inkscape:groupmode="layer" id="svg1.layer1" transform="translate(-29.5,-42.959476)" inkscape:label="Ebene 1">
-                    
-                <a id="svg1.a3142" transform="matrix(1.0873906,0,0,1,-4.4741999,0)">
-                        
-                  <path transform="translate(11.586889,5.2908993)" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" sodipodi:cx="38.509369" sodipodi:cy="47.36993" sodipodi:rx="8.5197716" id="svg1.path2160" d="M 47.02914 47.36993 A 8.5197716 9.2013531 0 1 1  29.989597,47.36993 A 8.5197716 9.2013531 0 1 1  47.02914 47.36993 z" sodipodi:ry="9.2013531" sodipodi:type="arc"/>
-                      
-                </a>
-                    
-                <path style="fill:none" sodipodi:cx="43.962021" sodipodi:cy="48.392303" d="M 47.71072 48.392303 A 3.7486994 0 0 1 1  40.213321,48.392303 A 3.7486994 0 0 1 1  47.71072 48.392303 z" id="svg1.path3134" sodipodi:rx="3.7486994" sodipodi:ry="0" sodipodi:type="arc"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.24319649px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 50,61.33709 C 50,91.363211 50,92.247838 50,92.247838" id="svg1.path3136"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 69.760668,72.362183 C 69.760668,72.362183 69.760668,72.362183 50.239332,72.362183 C 30.239332,72.362183 30.239332,72.362183 30.239332,72.362183 L 30.239332,72.362183" id="svg1.path3138"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 30,111.45687 C 30,111.45687 30,111.45687 50,92.013532 C 70,111.45687 70,111.45687 70,111.45687" id="svg1.path3140"/>
-                  
-              </g>
-              
-            </svg>
-          </g>
-        </g>
-        <g>
-          <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,219,20)" text-rendering="geometricPrecision" font-family="'Helvetica'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-            <text x="140.9731" xml:space="preserve" y="523.1147" stroke="none">Platform </text>
-          </g>
-          <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,219,20)" text-rendering="geometricPrecision" font-family="'Helvetica'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-            <text x="142.7758" xml:space="preserve" y="536.1147" stroke="none">Provider</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.1">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#platformanvender">
-        <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.4634,0,0,1.4493,105.2421,230)">
-          <g>
-            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" opacity="1" writing-mode="lr-tb" stop-color="rgb(0, 0, 0)" shape-rendering="auto" glyph-orientation-horizontal="0deg" color-profile="auto" lighting-color="rgb(255, 255, 255)" color="rgb(0, 0, 0)" font-weight="400" alignment-baseline="auto" font-style="normal" version="1.0" color-interpolation-filters="linearrgb" text-anchor="start" stroke-linecap="butt" color-interpolation="srgb" font-variant="normal" word-spacing="normal" fill-opacity="1" text-rendering="auto" clip-path="none" text-decoration="none" letter-spacing="normal" glyph-orientation-vertical="auto" display="inline" font-size-adjust="none" overflow="hidden" fill="rgb(0, 0, 0)" font-stretch="normal" stroke-dasharray="none" inkscape:version="0.45.1" id="svg2.svg2" stroke-miterlimit="4" stop-opacity="1" color-rendering="auto" font-size="12" sodipodi:docbase="C:\Daten\alberts\projects\yfx" pointer-events="visiblepainted" mask="none" direction="ltr" baseline-shift="baseline" sodipodi:docname="uml_actor.svg" enable-background="accumulate" fill-rule="nonzero" image-rendering="auto" stroke-dashoffset="0" inkscape:output_extension="org.inkscape.output.svg.inkscape" marker-end="none" width="41" clip="auto" cursor="auto" stroke="none" filter="none" visibility="visible" kerning="auto" stroke-width="1" font-family="&quot;Arial&quot;,&quot;Helvetica&quot;,sans-serif" flood-opacity="1" clip-rule="nonzero" src="none" height="68.997391" unicode-bidi="normal" sodipodi:version="0.32" stroke-linejoin="miter" stroke-opacity="1" flood-color="rgb(0, 0, 0)" dominant-baseline="auto" marker-start="none" marker-mid="none">
-                
-              <defs id="svg2.defs4"/>
-                
-  
-              <metadata id="svg2.metadata7">
-    
-  </metadata>
-                
-              <g inkscape:groupmode="layer" id="svg2.layer1" transform="translate(-29.5,-42.959476)" inkscape:label="Ebene 1">
-                    
-                <a id="svg2.a3142" transform="matrix(1.0873906,0,0,1,-4.4741999,0)">
-                        
-                  <path transform="translate(11.586889,5.2908993)" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" sodipodi:cx="38.509369" sodipodi:cy="47.36993" sodipodi:rx="8.5197716" id="svg2.path2160" d="M 47.02914 47.36993 A 8.5197716 9.2013531 0 1 1  29.989597,47.36993 A 8.5197716 9.2013531 0 1 1  47.02914 47.36993 z" sodipodi:ry="9.2013531" sodipodi:type="arc"/>
-                      
-                </a>
-                    
-                <path style="fill:none" sodipodi:cx="43.962021" sodipodi:cy="48.392303" d="M 47.71072 48.392303 A 3.7486994 0 0 1 1  40.213321,48.392303 A 3.7486994 0 0 1 1  47.71072 48.392303 z" id="svg2.path3134" sodipodi:rx="3.7486994" sodipodi:ry="0" sodipodi:type="arc"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.24319649px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 50,61.33709 C 50,91.363211 50,92.247838 50,92.247838" id="svg2.path3136"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 69.760668,72.362183 C 69.760668,72.362183 69.760668,72.362183 50.239332,72.362183 C 30.239332,72.362183 30.239332,72.362183 30.239332,72.362183 L 30.239332,72.362183" id="svg2.path3138"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 30,111.45687 C 30,111.45687 30,111.45687 50,92.013532 C 70,111.45687 70,111.45687 70,111.45687" id="svg2.path3140"/>
-                  
-              </g>
-              
-            </svg>
-          </g>
-        </g>
-        <g>
-          <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,219,20)" text-rendering="geometricPrecision" font-family="'Helvetica'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-            <text x="-179.2035" xml:space="preserve" y="249.0668" stroke="none">Platform </text>
-            <text x="-183.1803" xml:space="preserve" y="262.0667" stroke="none">Consumer</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.2">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#policy-owner">
-        <g text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1.4634,0,0,1.4493,351.7021,57.0764)">
-          <g>
-            <svg xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" opacity="1" writing-mode="lr-tb" stop-color="rgb(0, 0, 0)" shape-rendering="auto" glyph-orientation-horizontal="0deg" color-profile="auto" lighting-color="rgb(255, 255, 255)" color="rgb(0, 0, 0)" font-weight="400" alignment-baseline="auto" font-style="normal" version="1.0" color-interpolation-filters="linearrgb" text-anchor="start" stroke-linecap="butt" color-interpolation="srgb" font-variant="normal" word-spacing="normal" fill-opacity="1" text-rendering="auto" clip-path="none" text-decoration="none" letter-spacing="normal" glyph-orientation-vertical="auto" display="inline" font-size-adjust="none" overflow="hidden" fill="rgb(0, 0, 0)" font-stretch="normal" stroke-dasharray="none" inkscape:version="0.45.1" id="svg3.svg2" stroke-miterlimit="4" stop-opacity="1" color-rendering="auto" font-size="12" sodipodi:docbase="C:\Daten\alberts\projects\yfx" pointer-events="visiblepainted" mask="none" direction="ltr" baseline-shift="baseline" sodipodi:docname="uml_actor.svg" enable-background="accumulate" fill-rule="nonzero" image-rendering="auto" stroke-dashoffset="0" inkscape:output_extension="org.inkscape.output.svg.inkscape" marker-end="none" width="41" clip="auto" cursor="auto" stroke="none" filter="none" visibility="visible" kerning="auto" stroke-width="1" font-family="&quot;Arial&quot;,&quot;Helvetica&quot;,sans-serif" flood-opacity="1" clip-rule="nonzero" src="none" height="68.997391" unicode-bidi="normal" sodipodi:version="0.32" stroke-linejoin="miter" stroke-opacity="1" flood-color="rgb(0, 0, 0)" dominant-baseline="auto" marker-start="none" marker-mid="none">
-                
-              <defs id="svg3.defs4"/>
-                
-  
-              <metadata id="svg3.metadata7">
-    
-  </metadata>
-                
-              <g inkscape:groupmode="layer" id="svg3.layer1" transform="translate(-29.5,-42.959476)" inkscape:label="Ebene 1">
-                    
-                <a id="svg3.a3142" transform="matrix(1.0873906,0,0,1,-4.4741999,0)">
-                        
-                  <path transform="translate(11.586889,5.2908993)" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" sodipodi:cx="38.509369" sodipodi:cy="47.36993" sodipodi:rx="8.5197716" id="svg3.path2160" d="M 47.02914 47.36993 A 8.5197716 9.2013531 0 1 1  29.989597,47.36993 A 8.5197716 9.2013531 0 1 1  47.02914 47.36993 z" sodipodi:ry="9.2013531" sodipodi:type="arc"/>
-                      
-                </a>
-                    
-                <path style="fill:none" sodipodi:cx="43.962021" sodipodi:cy="48.392303" d="M 47.71072 48.392303 A 3.7486994 0 0 1 1  40.213321,48.392303 A 3.7486994 0 0 1 1  47.71072 48.392303 z" id="svg3.path3134" sodipodi:rx="3.7486994" sodipodi:ry="0" sodipodi:type="arc"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.24319649px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 50,61.33709 C 50,91.363211 50,92.247838 50,92.247838" id="svg3.path3136"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 69.760668,72.362183 C 69.760668,72.362183 69.760668,72.362183 50.239332,72.362183 C 30.239332,72.362183 30.239332,72.362183 30.239332,72.362183 L 30.239332,72.362183" id="svg3.path3138"/>
-                    
-                <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" d="M 30,111.45687 C 30,111.45687 30,111.45687 50,92.013532 C 70,111.45687 70,111.45687 70,111.45687" id="svg3.path3140"/>
-                  
-              </g>
-              
-            </svg>
-          </g>
-        </g>
-        <g>
-          <g font-size="13px" stroke-linecap="butt" transform="matrix(1,0,0,1,219,20)" text-rendering="geometricPrecision" font-family="'Helvetica'" shape-rendering="geometricPrecision" stroke-miterlimit="1.45">
-            <text x="145.6848" xml:space="preserve" y="7.2923" stroke="none">Policy </text>
-            <text x="145.6848" xml:space="preserve" y="20.2923" stroke="none">Owner</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.3">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <rect x="-203.2975" y="382.6764" fill="none" width="239.0793" rx="4" ry="4" height="144.8471"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-197.9958" xml:space="preserve" y="397.9189" stroke="none">(Platform) </text>
-          <text x="-197.9958" xml:space="preserve" y="409.9189" stroke="none">Service Management</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.node.4">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <rect x="-203.2975" y="37.0764" fill="none" width="239.0793" rx="4" ry="4" height="100"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-198.07" xml:space="preserve" y="52.3203" stroke="none">Application DevOps</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.node.5">
-      <g fill="white" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="white">
-        <rect x="279.48" y="405.1" width="145.4842" rx="4" ry="4" height="100" stroke="none"/>
-      </g>
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <rect x="279.48" y="405.1" fill="none" width="145.4842" rx="4" ry="4" height="100"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="289.1128" xml:space="preserve" y="420.3424" stroke="none">(Platform) </text>
-          <text x="289.1128" xml:space="preserve" y="432.3424" stroke="none">Technical Management</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.node.6">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <rect x="89.96" y="210" fill="none" width="145.4842" rx="4" ry="4" height="100"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="99.6045" xml:space="preserve" y="225.2424" stroke="none">General Management</text>
-          <text x="99.6045" xml:space="preserve" y="237.2424" stroke="none">(Platform Governance )</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.node.7">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#problem-management">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="-80.005" width="95.9893" height="46.6471" y="466.7821" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="-80.005" width="95.9893" height="46.6471" y="466.7821"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="-72.0265" xml:space="preserve" y="484.1574" stroke="none">Problem </text>
-            <text x="-72.0265" xml:space="preserve" y="496.1574" stroke="none">Management</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.8">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#incident-management">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="-187.753" width="95.9893" height="46.6471" y="466.7821" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="-187.753" width="95.9893" height="46.6471" y="466.7821"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="-179.7744" xml:space="preserve" y="484.1574" stroke="none">Incident </text>
-            <text x="-179.7744" xml:space="preserve" y="496.1574" stroke="none">Management</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.9">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#monitoring-and-event-management">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="-187.753" width="203.7372" height="28.6471" y="428.3821" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="-187.753" width="203.7372" height="28.6471" y="428.3821"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="-181.753" xml:space="preserve" y="443.6224" stroke="none">Monitoring and Event Management</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g onmouseout="HideTooltip(evt)" id="y.node.10" onmousemove="ShowTooltip(evt)">
-      <a xlink:href="#application-development-and-operation">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="-187.753" width="95.9893" height="46.6471" y="67.9146" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="-187.753" width="95.9893" height="46.6471" y="67.9146"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="-179.1055" xml:space="preserve" y="85.2899" stroke="none">Application </text>
-            <text x="-179.1055" xml:space="preserve" y="97.2899" stroke="none">Development</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.11">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#arkitektur--styring">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="113.46" width="98.4842" height="46.6471" y="253.4511" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="113.46" width="98.4842" height="46.6471" y="253.4511"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="121.4385" xml:space="preserve" y="270.8263" stroke="none">Architecture </text>
-            <text x="121.4385" xml:space="preserve" y="282.8263" stroke="none">Management</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.node.12">
-      <a xlink:href="https://digst.github.io/cloud/spec.html#application-development-and-operation">
-        <g fill="rgb(255,255,153)" text-rendering="geometricPrecision" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke="rgb(255,255,153)">
-          <rect x="-80.005" width="95.9893" height="46.6471" y="67.9146" stroke="none"/>
-        </g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <rect fill="none" x="-80.005" width="95.9893" height="46.6471" y="67.9146"/>
-        </g>
-        <g>
-          <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-            <text x="-71.0246" xml:space="preserve" y="85.2899" stroke="none">Application </text>
-            <text x="-71.0246" xml:space="preserve" y="97.2899" stroke="none">Operation</text>
-          </g>
-        </g>
-      </a>
-    </g>
-    <g id="y.edge.3">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M132.6548 455.1 L35.7818 455.1"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="42.8282" xml:space="preserve" y="476.3402" stroke="none">RAC</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.4">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M-83.7579 310.0355 L-83.7579 382.641"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-71.7579" xml:space="preserve" y="372.8795" stroke="none">RAC</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.5">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M-83.7579 137.112 L-83.7579 209.9644"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="-71.8243" xml:space="preserve" y="153.2775" stroke="none">RA</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.6">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M35.7818 87.0764 L132.6548 87.0764"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="42.7818" xml:space="preserve" y="108.3167" stroke="none">C</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.7">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M192.7411 455.1 L279.4511 455.1"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="247.106" xml:space="preserve" y="476.731" stroke="none">RAC</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.8">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M192.7411 87.0764 L342.2221 87.0764 L346.5971 87.7014 L349.7221 89.5764 L351.5971 92.7014 L352.2221 97.0764 L352.2221 405.0612"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="364.1832" xml:space="preserve" y="383.4868" stroke="none">C</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.0">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M162.7021 137.112 L162.7021 209.9644"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="174.7021" xml:space="preserve" y="200.2029" stroke="none">RAC</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.1">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M-53.7228 260 L89.96 260"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="74.259" xml:space="preserve" y="281.2402" stroke="none">C</text>
-        </g>
-      </g>
-    </g>
-    <g id="y.edge.2">
-      <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-        <path fill="none" d="M162.7021 405.0536 L162.7021 310"/>
-      </g>
-      <g>
-        <g text-rendering="geometricPrecision" stroke-miterlimit="1.45" shape-rendering="geometricPrecision" font-family="'Helvetica'" transform="matrix(1,0,0,1,219,20)" stroke-linecap="butt">
-          <text x="174.7021" xml:space="preserve" y="326.2881" stroke="none">RAC</text>
-        </g>
-      </g>
-    </g>
-    <g visibility="hidden" id="tooltip.y.node.10" pointer-events="none">
-      <g fill="rgb(255,255,204)" text-rendering="geometricPrecision" font-size="11px" shape-rendering="geometricPrecision" font-family="'Lucida Grande'" stroke="rgb(255,255,204)">
-        <rect x="0" width="140" height="18" y="0" clip-path="url(#clipPath2)" stroke="none"/>
-        <text fill="black" x="3" xml:space="preserve" y="13" clip-path="url(#clipPath2)" stroke="none">Application Development</text>
-      </g>
-    </g>
-  </g>
-</svg>
+   <p><img src="roles.svg" width="75%"></p>
    <h3 class="heading settled" data-level="2.1" id="roller-og-omrder-for-samarbejde"><span class="secno">2.1. </span><span class="content">Roller og områder for samarbejde</span><a class="self-link" href="#roller-og-omrder-for-samarbejde"></a></h3>
    <h4 class="heading settled" data-level="2.1.1" id="platformsudbyder"><span class="secno">2.1.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="platformsudbyder①">Platformsudbyder<a class="self-link" href="#platformsudbyder①"></a></dfn></span><a class="self-link" href="#platformsudbyder"></a></h4>
    <ul>
@@ -1997,13 +1597,14 @@ pre .property::before, pre .property::after {
    <blockquote cite="https://en.wikipedia.org/wiki/DevOps"> DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.</p>
    <p>Policy-ansavrlig bidrager med vejledning</p>
-   <h4 class="heading settled" data-level="2.2.3" id="overvgning-eventhndtering"><span class="secno">2.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="overvgning-eventhndtering①">Overvågning Eventhåndtering<a class="self-link" href="#overvgning-eventhndtering①"></a></dfn></span><a class="self-link" href="#overvgning-eventhndtering"></a></h4>
+   <h4 class="heading settled" data-level="2.2.3" id="statusovervgning"><span class="secno">2.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="statusovervgning①">Statusovervågning<a class="self-link" href="#statusovervgning①"></a></dfn></span><a class="self-link" href="#statusovervgning"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a></blockquote>
-   <h4 class="heading settled" data-level="2.2.4" id="hndelsesstyring"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hndelsesstyring①">Hændelsesstyring<a class="self-link" href="#hndelsesstyring①"></a></dfn></span><a class="self-link" href="#hndelsesstyring"></a></h4>
+   <h4 class="heading settled" data-level="2.2.4" id="hndelseshndtering"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hndelseshndtering①">Hændelseshåndtering<a class="self-link" href="#hndelseshndtering①"></a></dfn></span><a class="self-link" href="#hndelseshndtering"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.<a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <h4 class="heading settled" data-level="2.2.5" id="problemhndtering"><span class="secno">2.2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="problemhndtering①">Problemhåndtering<a class="self-link" href="#problemhndtering①"></a></dfn></span><a class="self-link" href="#problemhndtering"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
-   <h4 class="heading settled" data-level="2.2.6" id="sikkerhed-og-ressourcestyring"><span class="secno">2.2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sikkerhed-og-ressourcestyring①">Sikkerhed og Ressourcestyring<a class="self-link" href="#sikkerhed-og-ressourcestyring①"></a></dfn></span><a class="self-link" href="#sikkerhed-og-ressourcestyring"></a></h4>
+   <h4 class="heading settled" data-level="2.2.6" id="sikkerhed-og-ressourcestyring"><span class="secno">2.2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sikkerhed-og-ressourcestyring①">Sikkerhed og ressourcestyring<a class="self-link" href="#sikkerhed-og-ressourcestyring①"></a></dfn></span><a class="self-link" href="#sikkerhed-og-ressourcestyring"></a></h4>
+   <p>Multitenancy...</p>
    <ul>
     <li data-md>
      <p>Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant.</p>
@@ -2012,6 +1613,7 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Access policies should rely on trusted attributes over detailes rights when possible.</p>
    </ul>
+   <h4 class="heading settled" data-level="2.2.7" id="privacy"><span class="secno">2.2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="privacy①">Privacy?<a class="self-link" href="#privacy①"></a></dfn></span><a class="self-link" href="#privacy"></a></h4>
    <h3 class="heading settled" data-level="2.3" id="arbejdsgange-brugeroplevelser"><span class="secno">2.3. </span><span class="content">Arbejdsgange/Brugeroplevelser</span><a class="self-link" href="#arbejdsgange-brugeroplevelser"></a></h3>
     Vi har identificeret fire centrale arbejdsgange eller samarbejdsområder som de forskellige roller kan udføre. I det nedenstående  beskriver vi den brugeroplevelse vi sigter efter og vi forklarer sammenhængen til de seks centrale opgaver overfor. 
    <h4 class="heading settled" data-level="2.3.1" id="registrere-applikationer-datasamlinger-og-services"><span class="secno">2.3.1. </span><span class="content">Registrere Applikationer, Datasamlinger og Services</span><a class="self-link" href="#registrere-applikationer-datasamlinger-og-services"></a></h4>
@@ -2049,27 +1651,39 @@ pre .property::before, pre .property::after {
    <p>Implementeres som et <a class="property" data-link-type="propdesc">one-node</a> image af CloudAPI der kan spindes op ved hjælp af OpenStack eller hentes hjem til lokalt kunde miljø.</p>
    <p>Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.</p>
    <h2 class="heading settled" data-level="3" id="application"><span class="secno">3. </span><span class="content">Application</span><a class="self-link" href="#application"></a></h2>
-   <p><img src="platform.svg" width="95%"></p>
+   <p><img src="platform.svg"></p>
    <p>(Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)</p>
-   <h3 class="heading settled" data-level="3.1" id="application-service-and-interface"><span class="secno">3.1. </span><span class="content">Application Service (and Interface)</span><a class="self-link" href="#application-service-and-interface"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="applilkationstjeneste-tjek-fda"><span class="secno">3.1. </span><span class="content">Applilkationstjeneste (Tjek FDA)</span><a class="self-link" href="#applilkationstjeneste-tjek-fda"></a></h3>
+    I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload. 
+   <p>Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.</p>
+   <p>Det kunne fx være en hjemmeside med en selvbetjeningsløsning eller en webservice hvor man kan hente aktuelle vejrobservationer.</p>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946068"> An application interface represents a point of access where application services are made available to a user, another application component, or a node. </blockquote>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075"> An application service represents an explicitly defined exposed application behavior. </blockquote>
-   <h3 class="heading settled" data-level="3.2" id="application-component"><span class="secno">3.2. </span><span class="content">Application (Component)</span><a class="self-link" href="#application-component"></a></h3>
+   <h3 class="heading settled" data-level="3.2" id="application-component-tjek-fda"><span class="secno">3.2. </span><span class="content">Application (Component) (Tjek FDA)</span><a class="self-link" href="#application-component-tjek-fda"></a></h3>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946066"> An application component represents an encapsulation of application functionality aligned to implementation structure, which is modular and replaceable. It encapsulates its behavior and data, exposes services, and makes them available through interfaces. </blockquote>
    <h3 class="heading settled" data-level="3.3" id="container"><span class="secno">3.3. </span><span class="content">Container</span><a class="self-link" href="#container"></a></h3>
    <blockquote cite="https://docs.docker.com/glossary/?term=container"> A container is a runtime instance of a docker image. </blockquote>
-   <h3 class="heading settled" data-level="3.4" id="dataset"><span class="secno">3.4. </span><span class="content">Dataset</span><a class="self-link" href="#dataset"></a></h3>
+   <h3 class="heading settled" data-level="3.4" id="dataset-tjek-fda"><span class="secno">3.4. </span><span class="content">Dataset (Tjek FDA)</span><a class="self-link" href="#dataset-tjek-fda"></a></h3>
    <blockquote cite="https://arkitektur.digst.dk/sites/default/files/20180503_rad_v1.0_-_godkendt_af_sda.pdf"> en samling af oplysninger bestående af enkelte dele der forvaltes under et </blockquote>
+   <p>Bemærk at vi ikke bruger termen it-system... Hvis vi gjorde ville det omfatte alle de nødvendige dele for at realisere en Applikationstjeneste... og det er mange... inkl strømforsyning, tidsservere og mennesker...</p>
    <h3 class="heading settled" data-level="3.5" id="source-code"><span class="secno">3.5. </span><span class="content">Source Code</span><a class="self-link" href="#source-code"></a></h3>
+    Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet. 
+   <p>Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.</p>
    <h3 class="heading settled" data-level="3.6" id="images"><span class="secno">3.6. </span><span class="content">Images</span><a class="self-link" href="#images"></a></h3>
+    er resultatet af et byg på baggrund af en version af kildekoden. 
+   <p>I docker er navngivet ejer/navn for at synliggøre ejerskabet.</p>
+   <p class="note" role="note"><span>Note:</span> Et namespace per platformsanvender/virksomhed?</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=image"> Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
    <h3 class="heading settled" data-level="3.7" id="tags"><span class="secno">3.7. </span><span class="content">Tags</span><a class="self-link" href="#tags"></a></h3>
+    Et docker images kan tagges med flere tags. 
+   <p>De anvendes fx ved deployment, ejer/navn:prod</p>
+   <p class="note" role="note"><span>Note:</span> Vi bør have anbefalinger for et fælles skema i udviklingshåndbogen.</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=tag"> A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other. </blockquote>
-   <p>A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.</p>
    <h2 class="heading settled" data-level="4" id="technology"><span class="secno">4. </span><span class="content">Technology</span><a class="self-link" href="#technology"></a></h2>
-   <p><img src="platform.svg" width="95%"></p>
+   <p><img src="platform.svg"></p>
    <p>(Alt det med Grønt (og gråt).... Technology Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a></p>
    <h3 class="heading settled" data-level="4.1" id="fabrics"><span class="secno">4.1. </span><span class="content">Fabrics...</span><a class="self-link" href="#fabrics"></a></h3>
+    nnnk c 
    <h4 class="heading settled" data-level="4.1.1" id="service-fabric"><span class="secno">4.1.1. </span><span class="content">Service Fabric</span><a class="self-link" href="#service-fabric"></a></h4>
     Responsibilities: 
    <ul>
@@ -2430,13 +2044,14 @@ pre .property::before, pre .property::after {
   <ul class="index">
    <li><a href="#applikationsudvikling-og--drift①">Applikationsudvikling og -drift</a><span>, in §2.2.2</span>
    <li><a href="#arkitekturstyring①">Arkitekturstyring</a><span>, in §2.2.1</span>
-   <li><a href="#hndelsesstyring①">Hændelsesstyring</a><span>, in §2.2.4</span>
-   <li><a href="#overvgning-eventhndtering①">Overvågning Eventhåndtering</a><span>, in §2.2.3</span>
+   <li><a href="#hndelseshndtering①">Hændelseshåndtering</a><span>, in §2.2.4</span>
    <li><a href="#platformsanvender①">Platformsanvender</a><span>, in §2.1.2</span>
    <li><a href="#platformsudbyder①">Platformsudbyder</a><span>, in §2.1.1</span>
    <li><a href="#policy-ansvarlig①">Policy-ansvarlig</a><span>, in §2.1.3</span>
+   <li><a href="#privacy①">Privacy?</a><span>, in §2.2.7</span>
    <li><a href="#problemhndtering①">Problemhåndtering</a><span>, in §2.2.5</span>
-   <li><a href="#sikkerhed-og-ressourcestyring①">Sikkerhed og Ressourcestyring</a><span>, in §2.2.6</span>
+   <li><a href="#sikkerhed-og-ressourcestyring①">Sikkerhed og ressourcestyring</a><span>, in §2.2.6</span>
+   <li><a href="#statusovervgning①">Statusovervågning</a><span>, in §2.2.3</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>

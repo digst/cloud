@@ -1212,8 +1212,34 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version a3b64e58e069c2e8a9ffcadffb76601231663a47" name="generator">
+  <meta content="Bikeshed version 9c51ae462b4b8b2f14dbddcd7d4b5224375eccc0" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
+<style>
+@media print {
+  html { margin: 0cm 2cm 2cm 0cm; font-size: 80%; }
+  /* DIGST fonts */
+  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;}
+  h2,h3,h4, h4 dfn { font-family: "Garamond", serif; color: black; margin-bottom: 0; font-style: normal; font-weight: normal;}
+
+  h2:not(#subtitle) { page-break-before: always; font-size: 250%; border-bottom: solid 0.5px black; padding-top: 20px; margin-bottom: 6px;}
+  h3 { font-size: 145%;}
+  h4 { font-size: 125%;}
+
+  #toc {page-break-before: always;}
+  /* DIGST-like frontpage */
+  .head { width: 50%; margin-left: 24px; padding: 0px; background-color: #031D5C;}
+  .head div { background-color: white; padding: 24px; }
+  .head hr { display: none;}
+  .head h1 { background-color: #031D5C; color: white; margin: 0px; padding: 50px 0px 50px 24px; font-weight: normal; }
+  #subtitle { padding-left: 24px; background-color: #031D5C; color: #031D5C; }
+  .head time { display: block; font-family: "Helvetica Neue", Helvetica, Arial; margin: 0px; background-color: #031D5C; font-size: 80%; color: white;}
+  .toc li { line-height: 70%; font-family: "Helvetica Neue", Helvetica, Arial;
+    font-weight: 600; font-size: 90%; }
+  .self-link { display: none; }
+
+  blockquote { font-size: 80%; font-style: italic; margin-left: 5%; width: 70%; border-left-width: 2px;}
+}
+</style>
 <style>/* style-md-lists */
 
 /* This is a weird hack for me not yet following the commonmark spec
@@ -1365,7 +1391,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-16">16 July 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-17">17 July 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1388,7 +1414,7 @@ pre .property::before, pre .property::after {
      <a href="#motivation"><span class="secno">1</span> <span class="content">Motivation</span></a>
      <ol class="toc">
       <li><a href="#designprincipper"><span class="secno">1.1</span> <span class="content">Designprincipper</span></a>
-      <li><a href="#styringsprincipper"><span class="secno">1.2</span> <span class="content">Styringsprincipper</span></a>
+      <li><a href="#arkitekturstil"><span class="secno">1.2</span> <span class="content">Arkitekturstil</span></a>
      </ol>
     <li>
      <a href="#business"><span class="secno">2</span> <span class="content">Business</span></a>
@@ -1405,10 +1431,11 @@ pre .property::before, pre .property::after {
        <ol class="toc">
         <li><a href="#arkitekturstyring"><span class="secno">2.2.1</span> <span class="content"><span>Arkitekturstyring</span></span></a>
         <li><a href="#applikationsudvikling-og--drift"><span class="secno">2.2.2</span> <span class="content"><span>Applikationsudvikling og -drift</span></span></a>
-        <li><a href="#overvgning-eventhndtering"><span class="secno">2.2.3</span> <span class="content"><span>Overvågning Eventhåndtering</span></span></a>
-        <li><a href="#hndelsesstyring"><span class="secno">2.2.4</span> <span class="content"><span>Hændelsesstyring</span></span></a>
+        <li><a href="#statusovervgning"><span class="secno">2.2.3</span> <span class="content"><span>Statusovervågning</span></span></a>
+        <li><a href="#hndelseshndtering"><span class="secno">2.2.4</span> <span class="content"><span>Hændelseshåndtering</span></span></a>
         <li><a href="#problemhndtering"><span class="secno">2.2.5</span> <span class="content"><span>Problemhåndtering</span></span></a>
-        <li><a href="#sikkerhed-og-ressourcestyring"><span class="secno">2.2.6</span> <span class="content"><span>Sikkerhed og Ressourcestyring</span></span></a>
+        <li><a href="#sikkerhed-og-ressourcestyring"><span class="secno">2.2.6</span> <span class="content"><span>Sikkerhed og ressourcestyring</span></span></a>
+        <li><a href="#privacy"><span class="secno">2.2.7</span> <span class="content"><span>Privacy?</span></span></a>
        </ol>
       <li>
        <a href="#arbejdsgange-brugeroplevelser"><span class="secno">2.3</span> <span class="content">Arbejdsgange/Brugeroplevelser</span></a>
@@ -1422,10 +1449,10 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#application"><span class="secno">3</span> <span class="content">Application</span></a>
      <ol class="toc">
-      <li><a href="#application-service-and-interface"><span class="secno">3.1</span> <span class="content">Application Service (and Interface)</span></a>
-      <li><a href="#application-component"><span class="secno">3.2</span> <span class="content">Application (Component)</span></a>
+      <li><a href="#applilkationstjeneste-tjek-fda"><span class="secno">3.1</span> <span class="content">Applilkationstjeneste (Tjek FDA)</span></a>
+      <li><a href="#application-component-tjek-fda"><span class="secno">3.2</span> <span class="content">Application (Component) (Tjek FDA)</span></a>
       <li><a href="#container"><span class="secno">3.3</span> <span class="content">Container</span></a>
-      <li><a href="#dataset"><span class="secno">3.4</span> <span class="content">Dataset</span></a>
+      <li><a href="#dataset-tjek-fda"><span class="secno">3.4</span> <span class="content">Dataset (Tjek FDA)</span></a>
       <li><a href="#source-code"><span class="secno">3.5</span> <span class="content">Source Code</span></a>
       <li><a href="#images"><span class="secno">3.6</span> <span class="content">Images</span></a>
       <li><a href="#tags"><span class="secno">3.7</span> <span class="content">Tags</span></a>
@@ -1511,7 +1538,7 @@ pre .property::before, pre .property::after {
   <main>
    <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
-   <p><img src="resume.svg" width="50%"></p>
+   <p><img src="resume.svg"></p>
    <h2 class="heading settled" data-level="1" id="motivation"><span class="secno">1. </span><span class="content">Motivation</span><a class="self-link" href="#motivation"></a></h2>
    <p>Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?</p>
    <p>Måske bare tegne et lille UML shared use case diagram?</p>
@@ -1523,7 +1550,8 @@ pre .property::before, pre .property::after {
    <p><strong>GDPR-by-design</strong> Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).</p>
    <p><strong>Omkostningssikker</strong> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.</p>
    <p><strong>Agil it-udvikling</strong> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
-   <h3 class="heading settled" data-level="1.2" id="styringsprincipper"><span class="secno">1.2. </span><span class="content">Styringsprincipper</span><a class="self-link" href="#styringsprincipper"></a></h3>
+   <h3 class="heading settled" data-level="1.2" id="arkitekturstil"><span class="secno">1.2. </span><span class="content">Arkitekturstil</span><a class="self-link" href="#arkitekturstil"></a></h3>
+   <p>SOA, Cloud, PaaS. API enabled GUI.</p>
    <p>Layered architecture (each layer scale idependently and different governance processes for: Data, Application and Access)</p>
    <p>One platform? (staging on the same platform, run on dev laptop, integrated automated test, multiple versions of same service, active-active)</p>
    <p>And supporting services.... some for developers and some for applications (API).</p>
@@ -1569,13 +1597,14 @@ pre .property::before, pre .property::after {
    <blockquote cite="https://en.wikipedia.org/wiki/DevOps"> DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.</p>
    <p>Policy-ansavrlig bidrager med vejledning</p>
-   <h4 class="heading settled" data-level="2.2.3" id="overvgning-eventhndtering"><span class="secno">2.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="overvgning-eventhndtering①">Overvågning Eventhåndtering<a class="self-link" href="#overvgning-eventhndtering①"></a></dfn></span><a class="self-link" href="#overvgning-eventhndtering"></a></h4>
+   <h4 class="heading settled" data-level="2.2.3" id="statusovervgning"><span class="secno">2.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="statusovervgning①">Statusovervågning<a class="self-link" href="#statusovervgning①"></a></dfn></span><a class="self-link" href="#statusovervgning"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a></blockquote>
-   <h4 class="heading settled" data-level="2.2.4" id="hndelsesstyring"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hndelsesstyring①">Hændelsesstyring<a class="self-link" href="#hndelsesstyring①"></a></dfn></span><a class="self-link" href="#hndelsesstyring"></a></h4>
+   <h4 class="heading settled" data-level="2.2.4" id="hndelseshndtering"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hndelseshndtering①">Hændelseshåndtering<a class="self-link" href="#hndelseshndtering①"></a></dfn></span><a class="self-link" href="#hndelseshndtering"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.<a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <h4 class="heading settled" data-level="2.2.5" id="problemhndtering"><span class="secno">2.2.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="problemhndtering①">Problemhåndtering<a class="self-link" href="#problemhndtering①"></a></dfn></span><a class="self-link" href="#problemhndtering"></a></h4>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
-   <h4 class="heading settled" data-level="2.2.6" id="sikkerhed-og-ressourcestyring"><span class="secno">2.2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sikkerhed-og-ressourcestyring①">Sikkerhed og Ressourcestyring<a class="self-link" href="#sikkerhed-og-ressourcestyring①"></a></dfn></span><a class="self-link" href="#sikkerhed-og-ressourcestyring"></a></h4>
+   <h4 class="heading settled" data-level="2.2.6" id="sikkerhed-og-ressourcestyring"><span class="secno">2.2.6. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="sikkerhed-og-ressourcestyring①">Sikkerhed og ressourcestyring<a class="self-link" href="#sikkerhed-og-ressourcestyring①"></a></dfn></span><a class="self-link" href="#sikkerhed-og-ressourcestyring"></a></h4>
+   <p>Multitenancy...</p>
    <ul>
     <li data-md>
      <p>Applications (and Service and Datasets) are treated like first class tenants because ownership changes over time. But always a clear owner (customer) to a tenant.</p>
@@ -1584,6 +1613,7 @@ pre .property::before, pre .property::after {
     <li data-md>
      <p>Access policies should rely on trusted attributes over detailes rights when possible.</p>
    </ul>
+   <h4 class="heading settled" data-level="2.2.7" id="privacy"><span class="secno">2.2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="privacy①">Privacy?<a class="self-link" href="#privacy①"></a></dfn></span><a class="self-link" href="#privacy"></a></h4>
    <h3 class="heading settled" data-level="2.3" id="arbejdsgange-brugeroplevelser"><span class="secno">2.3. </span><span class="content">Arbejdsgange/Brugeroplevelser</span><a class="self-link" href="#arbejdsgange-brugeroplevelser"></a></h3>
     Vi har identificeret fire centrale arbejdsgange eller samarbejdsområder som de forskellige roller kan udføre. I det nedenstående  beskriver vi den brugeroplevelse vi sigter efter og vi forklarer sammenhængen til de seks centrale opgaver overfor. 
    <h4 class="heading settled" data-level="2.3.1" id="registrere-applikationer-datasamlinger-og-services"><span class="secno">2.3.1. </span><span class="content">Registrere Applikationer, Datasamlinger og Services</span><a class="self-link" href="#registrere-applikationer-datasamlinger-og-services"></a></h4>
@@ -1621,27 +1651,39 @@ pre .property::before, pre .property::after {
    <p>Implementeres som et <a class="property" data-link-type="propdesc">one-node</a> image af CloudAPI der kan spindes op ved hjælp af OpenStack eller hentes hjem til lokalt kunde miljø.</p>
    <p>Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.</p>
    <h2 class="heading settled" data-level="3" id="application"><span class="secno">3. </span><span class="content">Application</span><a class="self-link" href="#application"></a></h2>
-   <p><img src="platform.svg" width="95%"></p>
+   <p><img src="platform.svg"></p>
    <p>(Alt det med blåt.... Application Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946063">Archimate</a>)</p>
-   <h3 class="heading settled" data-level="3.1" id="application-service-and-interface"><span class="secno">3.1. </span><span class="content">Application Service (and Interface)</span><a class="self-link" href="#application-service-and-interface"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="applilkationstjeneste-tjek-fda"><span class="secno">3.1. </span><span class="content">Applilkationstjeneste (Tjek FDA)</span><a class="self-link" href="#applilkationstjeneste-tjek-fda"></a></h3>
+    I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload. 
+   <p>Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.</p>
+   <p>Det kunne fx være en hjemmeside med en selvbetjeningsløsning eller en webservice hvor man kan hente aktuelle vejrobservationer.</p>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946068"> An application interface represents a point of access where application services are made available to a user, another application component, or a node. </blockquote>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075"> An application service represents an explicitly defined exposed application behavior. </blockquote>
-   <h3 class="heading settled" data-level="3.2" id="application-component"><span class="secno">3.2. </span><span class="content">Application (Component)</span><a class="self-link" href="#application-component"></a></h3>
+   <h3 class="heading settled" data-level="3.2" id="application-component-tjek-fda"><span class="secno">3.2. </span><span class="content">Application (Component) (Tjek FDA)</span><a class="self-link" href="#application-component-tjek-fda"></a></h3>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946066"> An application component represents an encapsulation of application functionality aligned to implementation structure, which is modular and replaceable. It encapsulates its behavior and data, exposes services, and makes them available through interfaces. </blockquote>
    <h3 class="heading settled" data-level="3.3" id="container"><span class="secno">3.3. </span><span class="content">Container</span><a class="self-link" href="#container"></a></h3>
    <blockquote cite="https://docs.docker.com/glossary/?term=container"> A container is a runtime instance of a docker image. </blockquote>
-   <h3 class="heading settled" data-level="3.4" id="dataset"><span class="secno">3.4. </span><span class="content">Dataset</span><a class="self-link" href="#dataset"></a></h3>
+   <h3 class="heading settled" data-level="3.4" id="dataset-tjek-fda"><span class="secno">3.4. </span><span class="content">Dataset (Tjek FDA)</span><a class="self-link" href="#dataset-tjek-fda"></a></h3>
    <blockquote cite="https://arkitektur.digst.dk/sites/default/files/20180503_rad_v1.0_-_godkendt_af_sda.pdf"> en samling af oplysninger bestående af enkelte dele der forvaltes under et </blockquote>
+   <p>Bemærk at vi ikke bruger termen it-system... Hvis vi gjorde ville det omfatte alle de nødvendige dele for at realisere en Applikationstjeneste... og det er mange... inkl strømforsyning, tidsservere og mennesker...</p>
    <h3 class="heading settled" data-level="3.5" id="source-code"><span class="secno">3.5. </span><span class="content">Source Code</span><a class="self-link" href="#source-code"></a></h3>
+    Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet. 
+   <p>Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.</p>
    <h3 class="heading settled" data-level="3.6" id="images"><span class="secno">3.6. </span><span class="content">Images</span><a class="self-link" href="#images"></a></h3>
+    er resultatet af et byg på baggrund af en version af kildekoden. 
+   <p>I docker er navngivet ejer/navn for at synliggøre ejerskabet.</p>
+   <p class="note" role="note"><span>Note:</span> Et namespace per platformsanvender/virksomhed?</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=image"> Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
    <h3 class="heading settled" data-level="3.7" id="tags"><span class="secno">3.7. </span><span class="content">Tags</span><a class="self-link" href="#tags"></a></h3>
+    Et docker images kan tagges med flere tags. 
+   <p>De anvendes fx ved deployment, ejer/navn:prod</p>
+   <p class="note" role="note"><span>Note:</span> Vi bør have anbefalinger for et fælles skema i udviklingshåndbogen.</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=tag"> A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other. </blockquote>
-   <p>A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other.</p>
    <h2 class="heading settled" data-level="4" id="technology"><span class="secno">4. </span><span class="content">Technology</span><a class="self-link" href="#technology"></a></h2>
-   <p><img src="platform.svg" width="95%"></p>
+   <p><img src="platform.svg"></p>
    <p>(Alt det med Grønt (og gråt).... Technology Layer, <a href="http://pubs.opengroup.org/architecture/archimate3-doc/chap10.html#_Toc489946081">Archimate</a></p>
    <h3 class="heading settled" data-level="4.1" id="fabrics"><span class="secno">4.1. </span><span class="content">Fabrics...</span><a class="self-link" href="#fabrics"></a></h3>
+    nnnk c 
    <h4 class="heading settled" data-level="4.1.1" id="service-fabric"><span class="secno">4.1.1. </span><span class="content">Service Fabric</span><a class="self-link" href="#service-fabric"></a></h4>
     Responsibilities: 
    <ul>
@@ -2002,13 +2044,14 @@ pre .property::before, pre .property::after {
   <ul class="index">
    <li><a href="#applikationsudvikling-og--drift①">Applikationsudvikling og -drift</a><span>, in §2.2.2</span>
    <li><a href="#arkitekturstyring①">Arkitekturstyring</a><span>, in §2.2.1</span>
-   <li><a href="#hndelsesstyring①">Hændelsesstyring</a><span>, in §2.2.4</span>
-   <li><a href="#overvgning-eventhndtering①">Overvågning Eventhåndtering</a><span>, in §2.2.3</span>
+   <li><a href="#hndelseshndtering①">Hændelseshåndtering</a><span>, in §2.2.4</span>
    <li><a href="#platformsanvender①">Platformsanvender</a><span>, in §2.1.2</span>
    <li><a href="#platformsudbyder①">Platformsudbyder</a><span>, in §2.1.1</span>
    <li><a href="#policy-ansvarlig①">Policy-ansvarlig</a><span>, in §2.1.3</span>
+   <li><a href="#privacy①">Privacy?</a><span>, in §2.2.7</span>
    <li><a href="#problemhndtering①">Problemhåndtering</a><span>, in §2.2.5</span>
-   <li><a href="#sikkerhed-og-ressourcestyring①">Sikkerhed og Ressourcestyring</a><span>, in §2.2.6</span>
+   <li><a href="#sikkerhed-og-ressourcestyring①">Sikkerhed og ressourcestyring</a><span>, in §2.2.6</span>
+   <li><a href="#statusovervgning①">Statusovervågning</a><span>, in §2.2.3</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
