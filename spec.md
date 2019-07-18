@@ -22,6 +22,9 @@
   .self-link { display: none; }
 
   blockquote { font-size: 80%; font-style: italic; margin-left: 5%; width: 70%; border-left-width: 2px;}
+	h2#abstract {display: none;}
+	.p-summary {width: 50%; margin-left: 24px; padding: 0px;}
+
 }
 </style>
 <pre class='metadata'>
@@ -30,7 +33,7 @@ Status: LD
 URL: http://github.com/digst/cloud/spec.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
 Abstract: Beskrivelse af implementeringen af GovCloud PaaS.
-Boilerplate: copyright no, conformance no, Abstract no
+Boilerplate: copyright no, conformance no,
 Shortname: spec
 Markup Shorthands: markdown yes
 Repository: digst/cloud
@@ -41,34 +44,44 @@ Logo: https://digst.github.io/cloud/cloud.svg
 
 <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
 
-<small>
-Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
+
 
 
 <h2 class="no-num">Introduction</h2>
-
+<small>
+Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 
 <img src="resume.svg">
 
 
 # Motivation
+God arkitektur er løsninger på et problem.
+
+*Hvordan tager de offentlige bedst cloud-teknologier i brug?*
+
+Denne arkitektur sigter mod at øge anvendelsen af data der registreres af offentlige myndigheder (formuleres som problem?).
+
+(Hvilke assesments har vi? Disruption er sket...)
+
+Effektiv it-udvikling, men det er næppe de direkte gevinster der er de vigtigste/største, it-udgifter er specielle, fordi hvis de bruges rigtige spares rigtig mange penge, men de kan også bruges på en måde der ikke giver meget værdi (fx flytte data rundt, fremfor at lave gode brugeroplevelser/hyppige tilpasninger)
 
 Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?
 
-Måske bare tegne et lille UML shared use case diagram?
 
 ## Designprincipper
 
-**Uafbrudte services** Platformen og dens applikationer er bygget med henblik på at understøtte uafbrudte services både under opdatering af enkelte services og hele platformen.
+**Uafbrudte services** Platformen og dens applikationer er bygget med henblik på at understøtte uafbrudte services både under opdatering af enkelte services og hele platformen. Det betyder at der ikke eksisterer aftale service-vinduer, at services kan kører i forskellige versioner og infrastruktur og middleware etableres med hensyn til high-availability. Princippet følger tendenser med digital selvbetjening skal være tilgængelig 24/7 da brugere anvender dem på alle tider af døgnet og fra hele verden.
 
-**Leverandøruafhængighed** Data, applikation og services på Platformen skal effektivt kunne flyttes til en anden cloud platform. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.
+**Leverandøruafhængighed** Data, applikation og services på Platformen skal effektivt kunne flyttes til en anden cloud platform. Det betyder at teknologivalg og snitflader mellem komponenter skal nøje overvejes så bindinger til enkelt leverandører undgås. Fordi det er en fælles platform, er valget ikke op til den enkelte anvender, men træffes i fællesskab. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.
 
-**Skalérbar platform** Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette sikres blandt andet gennem anvendelse af enterprise grade komponenter, fokus på automatisering og selvbetjening for platformens anvendere.
+**Skalérbar platform** Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette betyder at platform services realiseres gennem anvendelse af enterprise-grade komponenter med professional services-aftaler, at der tidligt i udviklingen er fokus på automatisering af daglige opgaver samt at platformen kan anvendes alene gennem selvbetjening uden involvering af udbyderen. Skalérbarheden giver ikke bare stordriftsfordele, men er en grundlæggende ændringer i opgavefordeling.
+
+**GDPR-by-design** Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Det betyder datasubjekters rettigheder og dataansvarliges pligter på sigt understøttes af fælles services. Princippet om privacy-by-design betyder at der tidligt i udviklingen indtænkes sikkerheds-kontroller og privacy-barriere, i form af tekniske service, men også i form af nye opgaver og ansvar. Særligt den såkaldte krigsregel betyder at særlige kristisk applikationer kan kræves at blive opbevaret på dansk territori. Derfor opbevares applikationer og data indledningsvis alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
+
 
 **Security-by-design** Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
 
-**GDPR-by-design** Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
 
 **Omkostningssikker** Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.
 
