@@ -190,7 +190,7 @@ DevOps is a set of software development practices that combine software developm
 
 Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.
 
-Policy-ansavrlig bidrager med vejledning til anvendelse af platformens services og api, og sikre applikationer er flytbare gennem at udvælge teknologier og snitflader (se <a>arkitekturstyring</a>).
+Policy-ansvarlig bidrager med vejledning til anvendelse af platformens services og api, og sikre applikationer er flytbare gennem at udvælge teknologier og snitflader (se <a>arkitekturstyring</a>).
 
 ### <dfn export="true">Statusovervågning</dfn>
 
