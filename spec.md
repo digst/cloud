@@ -32,7 +32,7 @@ Title: cloud.gov.dk spec
 Status: LD
 URL: http://github.com/digst/cloud/spec.md
 Editor: Mads Hjorth, Digitaliseringsstyrelsen http://arkitektur.digst.dk
-Abstract: Beskrivelse af implementeringen af GovCloud PaaS.
+Abstract: Beskrivelse af implementeringen af GovCloud PaaS. Denne version skrives med henblik på godkendelse i styregruppe medio august 2019.
 Boilerplate: copyright no, conformance no,
 Shortname: spec
 Markup Shorthands: markdown yes
@@ -51,6 +51,7 @@ Logo: https://digst.github.io/cloud/cloud.svg
 <small>
 Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
+<br>
 
 <img src="resume.svg">
 
@@ -117,8 +118,10 @@ The ArchiMate core language defines a structure of generic elements and their re
 
 # Business
 På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med)
+<br>
 
-INSERT_ROLES_HERE
+<img src="roles.svg"/>
+
 
 ## Roller og områder for samarbejde
 
@@ -279,7 +282,7 @@ Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at s
 
 - Applications (and Service and Datasets) are treated like first class tenants because different life spand and ownership changes over time. But always a clear owner (customer) to a tenant.
 
-(Skal foldes helt ud:)
+(Skal foldes helt ud...)
 
 - Dataset lever laaaaang tid. Og kan være underlagt meget regulering.
 - Services kan leve laaaang tid, men nogle har også brug for meget hyppige ændringer.
@@ -291,6 +294,8 @@ Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at s
 Network, Compute and Storage... per fabric.
 
 Hard and soft limits? Max scale factor?
+
+(Skal foldes  helt  ud...)
 
 Udbyder kan ikke prioritere mellem anvendere, da de ikke kender kritikalitet... og selv på instruks har de ikke myndighed til at vælge.. så der skal bare være nok :-)
 
@@ -368,9 +373,9 @@ Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation
 <img src="platform.svg"/>
 
 
+## Run time (find på bedre term)
 
-
-## Applilkationstjeneste (Tjek FDA)
+### <dfn export="true">Applilkationstjeneste</dfn> (Tjek FDA)
 I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload.
 
 Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.
@@ -394,12 +399,12 @@ An application service represents an explicitly defined exposed application beha
 </blockquote>
 
 
-## Application (Tjek FDA)
+### <dfn export="true">Application/Deployment</dfn> (Tjek FDA og finde bedre term)
 
 Det bliver til et namespace i rancher/k8s
 
 
-## Container (Application Component)
+### <dfn export="true">Container (Application Component)</dfn>
 
 <blockquote cite="https://docs.docker.com/glossary/?term=container">
 A container is a runtime instance of a docker image.
@@ -414,7 +419,7 @@ An application component represents an encapsulation of application functionalit
 
 Pointe om at den netop *ikke* har data inde i sig... Eller skal vi snakke Logic Component and Data Component?
 
-## Dataset (Tjek FDA)
+### <dfn export="true">Dataset</dfn> (Tjek FDA)
 
 (Den forbruger ressourceer, storage og kan derfor også begrænsees)
 
@@ -426,9 +431,15 @@ en samling af oplysninger bestående af enkelte dele der forvaltes under et
 
 Note: Vi bruger ikke termen it-system... Hvis vi gjorde ville det omfatte alle de nødvendige dele for at realisere en Applikationstjeneste... og det er mange... inkl strømforsyning, tidsservere og mennesker...
 
+### <dfn export="true">Logs</dfn>
+
+Både fra de tre fabrics og fra applikationer.
 
 
-## Source Code
+## <dfn export="true">Repository</dfn>
+Der hvor man opbevare det der bliver til it-systemer...
+
+### <dfn export="true">Source Code</dfn>
 Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet.
 
 Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.
@@ -436,7 +447,7 @@ Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der 
 En vigtig artifakt er configuration, men ikke secrets.
 
 
-## Images
+### <dfn export="true">Images</dfn>
 er resultatet af et byg på baggrund af en version af kildekoden.
 
 I docker er navngivet ejer/navn for at synliggøre ejerskabet.
@@ -449,7 +460,7 @@ Note: Et namespace per platformsanvender/virksomhed?
 Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
 
 
-## Tags
+### <dfn export="true">Tags</dfn>
 Et docker images kan tagges med flere tags.
 
 De anvendes fx ved deployment, ejer/navn:prod
@@ -461,11 +472,53 @@ A tag is a label applied to a Docker image in a repository. Tags are how various
 </blockquote>
 
 
+## <dfn export="true">Directory/Inventory</dfn>
+der hvor der er oplysninger om hvad der kører og hvem der har adgang til det...
 
 
+
+
+
+
+### <dfn export="true">Oplysning om services</dfn>
+
+### <dfn export="true">Oplysning om applikationer</dfn>
+
+### <dfn export="true">Oplysning om datasætr</dfn>
+
+
+### <dfn export="true">Users</dfn> (Personer, Brugere?)
+
+### <dfn export="true">Rettigheder</dfn>
+
+
+A,U -> S
+
+A -(r,w)-> D
 
 # Technology
 
+
+## Platform Services
+alle med brugergenkendelse gennem SIT AD.
+
+Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.
+
+
+
+### `git.govcloud.dk`
+
+### `reg.govcloud.dk`
+
+### `k8s.govcloud.dk` (portal.)
+
+Beskriv custom GUI
+
+### `status.govcloud.dk`
+
+og noget med `<kunde>.status.govcloud.dk`
+
+### `collab?.govcloud.dk`
 
 
 
@@ -476,8 +529,6 @@ Det har et dashboard hver hvor de kan overvåges og driftes fra. Og provisionere
 Men det også et arkitekturlag... Der matcher digital assets.
 
 Og det realiseres gennem platform komponenter og middleware.
-
-
 
 
 ### Service Fabric
@@ -545,35 +596,6 @@ Noget om SSO og STS og realms.
 !Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.
 
 Hvsd betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel
-
-### `/ldap` (Opslag i directory)
-(måske er den tilgængelig gennem `/token?` for så har 5+5 services)
-Om man kun kan læse anvenderes egne? eller på tværs.
-
-
-
-
-
-## Platform Services
-alle med brugergenkendelse gennem SIT AD.
-
-Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.
-
-
-
-### `git.govcloud.dk`
-
-### `reg.govcloud.dk`
-
-### `k8s.govcloud.dk` (portal.)
-
-Beskriv custom GUI
-
-### `status.govcloud.dk`
-
-og noget med `<kunde>.status.govcloud.dk`
-
-### `collab?.govcloud.dk`
 
 
 
@@ -821,34 +843,49 @@ Udvikling og drift af applikationer på platformen forudsætter fortrolighed med
 
 
 ## Compliance with NIST PaaS Reccomendations
-Generic Interfaces. Before a decision is made to develop new applications on a public PaaS cloud
-platform, it is recommended to evaluate whether the application infrastructure interfaces (for file,
-queue, hash table, etc.) provided in that platform are or could be made generic enough to support
-portability and interoperability of the application. PaaS clouds that support generic interfaces are
-preferable.
- Standard Languages and Tools. Choose PaaS systems that work with standardized languages and
-tools unless the only practical options are PaaS systems that are restricted to proprietary languages
-and tools.
- Data Access. Choose PaaS systems that work with standard data access protocols (e.g., SQL) when
-practicable.
- Data Protection. Analyze the PaaS provider’s data protection mechanisms, data location
-configuration and database organization/transaction processing technologies, and assess whether they
-will meet the confidentiality, compliance, integrity and availability needs of the organization that will
-be using the subscribed PaaS application.
- Application Frameworks. If available, choose PaaS systems that provide application development
-frameworks that include an architecture and tools for mitigating security vulnerabilities.
- Component Testing. Before a decision is made to deploy a new application on a public PaaS cloud
-platform (or in some cases composing an application from the building blocks provided by the PaaS
-cloud provider), ensure that software libraries included in the compilation phase or called during the
-execution phase behave as intended both in terms of functionality and performance.
- Security. Ensure that a PaaS application can be configured to run in a secure manner (e.g., a
-dedicated VLAN segment, using cryptography for client-server communications) and can be
-CLOUD COMPUTING SYNOPSIS AND RECOMMENDATIONS
-6-6
-integrated with existing enterprise/agency security frameworks such as identification and
-authorization so that enterprise/agency security policies can be enforced.
- Secure Data Deletion. Require that a cloud provider offer a mechanism for reliably deleting data on
-a consumer's request.
+
+<blockquote>
+*Generic Interfaces.* Before a decision is made to develop new applications on a public PaaS cloud platform, it is recommended to evaluate whether the application infrastructure interfaces (for file, queue, hash table, etc.) provided in that platform are or could be made generic enough to support portability and interoperability of the application. PaaS clouds that support generic interfaces are preferable.
+</blockquote>
+
+Overholder vi gennem arktiekturstyring og anvendelse af bl.a. CAMSS kriterier ved beskrivelsen af snitflader.
+
+
+<blockquote>
+*Standard Languages and Tools.* Choose PaaS systems that work with standardized languages and tools unless the only practical options are PaaS systems that are restricted to proprietary languages and tools.
+</blockquote>
+
+Frit valg, så længe vi kan putte det i en container. I praksis vil de mest populær sprog understøttes igennem officielle base images.
+
+<blockquote>
+*Data Access.* Choose PaaS systems that work with standard data access protocols (e.g., SQL) when practicable.
+</blockquote>
+
+Tjek... men vi har valgt at gå uden om SQL, da fristelserne for at gå udover SQL92 er for store for udviklere..
+
+<blockquote>
+*Data Protection.* Analyze the PaaS provider’s data protection mechanisms, data location configuration and database organization/transaction processing technologies, and assess whether they will meet the confidentiality, compliance, integrity and availability needs of the organization that will be using the subscribed PaaS application.
+</blockquote>
+
+Basere os på eksisterende hos SIT, men skal overveje ydereligere tiltag omkring fortrolighed.
+
+<blockquote>
+*Application Frameworks.* If available, choose PaaS systems that provide application development frameworks that include an architecture and tools for mitigating security vulnerabilities.
+</blockquote>
+
+
+
+<blockquote>
+*Component Testing.* Before a decision is made to deploy a new application on a public PaaS cloud platform (or in some cases composing an application from the building blocks provided by the PaaS cloud provider), ensure that software libraries included in the compilation phase or called during the execution phase behave as intended both in terms of functionality and performance.
+</blockquote>
+
+<blockquote>
+*Security.* Ensure that a PaaS application can be configured to run in a secure manner (e.g., a dedicated VLAN segment, using cryptography for client-server communications) and can be integrated with existing enterprise/agency security frameworks such as identification and authorization so that enterprise/agency security policies can be enforced.
+</blockquote>
+
+<blockquote>
+*Secure Data Deletion.* Require that a cloud provider offer a mechanism for reliably deleting data on a consumer's request.
+</blockquote>
 
 <pre class="biblio">
 

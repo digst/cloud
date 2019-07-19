@@ -1447,7 +1447,7 @@ pre .property::before, pre .property::after {
   </div>
   <div class="p-summary" data-fill-with="abstract">
    <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
-   <p>Beskrivelse af implementeringen af GovCloud PaaS.</p>
+   <p>Beskrivelse af implementeringen af GovCloud PaaS. Denne version skrives med henblik på godkendelse i styregruppe medio august 2019.</p>
   </div>
   <div data-fill-with="at-risk"></div>
   <nav data-fill-with="table-of-contents" id="toc">
@@ -1496,42 +1496,59 @@ pre .property::before, pre .property::after {
     <li>
      <a href="#application"><span class="secno">3</span> <span class="content">Application</span></a>
      <ol class="toc">
-      <li><a href="#applilkationstjeneste-tjek-fda"><span class="secno">3.1</span> <span class="content">Applilkationstjeneste (Tjek FDA)</span></a>
-      <li><a href="#application-tjek-fda"><span class="secno">3.2</span> <span class="content">Application (Tjek FDA)</span></a>
-      <li><a href="#container-application-component"><span class="secno">3.3</span> <span class="content">Container (Application Component)</span></a>
-      <li><a href="#dataset-tjek-fda"><span class="secno">3.4</span> <span class="content">Dataset (Tjek FDA)</span></a>
-      <li><a href="#source-code"><span class="secno">3.5</span> <span class="content">Source Code</span></a>
-      <li><a href="#images"><span class="secno">3.6</span> <span class="content">Images</span></a>
-      <li><a href="#tags"><span class="secno">3.7</span> <span class="content">Tags</span></a>
+      <li>
+       <a href="#run-time-find-p-bedre-term"><span class="secno">3.1</span> <span class="content">Run time (find på bedre term)</span></a>
+       <ol class="toc">
+        <li><a href="#applilkationstjeneste-tjek-fda"><span class="secno">3.1.1</span> <span class="content"><span>Applilkationstjeneste</span> (Tjek FDA)</span></a>
+        <li><a href="#application-deployment-tjek-fda-og-finde-bedre-term"><span class="secno">3.1.2</span> <span class="content"><span>Application/Deployment</span> (Tjek FDA og finde bedre term)</span></a>
+        <li><a href="#container-application-component"><span class="secno">3.1.3</span> <span class="content"><span>Container (Application Component)</span></span></a>
+        <li><a href="#dataset-tjek-fda"><span class="secno">3.1.4</span> <span class="content"><span>Dataset</span> (Tjek FDA)</span></a>
+        <li><a href="#logs"><span class="secno">3.1.5</span> <span class="content"><span>Logs</span></span></a>
+       </ol>
+      <li>
+       <a href="#repository"><span class="secno">3.2</span> <span class="content"><span>Repository</span></span></a>
+       <ol class="toc">
+        <li><a href="#source-code"><span class="secno">3.2.1</span> <span class="content"><span>Source Code</span></span></a>
+        <li><a href="#images"><span class="secno">3.2.2</span> <span class="content"><span>Images</span></span></a>
+        <li><a href="#tags"><span class="secno">3.2.3</span> <span class="content"><span>Tags</span></span></a>
+       </ol>
+      <li>
+       <a href="#directory-inventory"><span class="secno">3.3</span> <span class="content"><span>Directory/Inventory</span></span></a>
+       <ol class="toc">
+        <li><a href="#oplysning-om-services"><span class="secno">3.3.1</span> <span class="content"><span>Oplysning om services</span></span></a>
+        <li><a href="#oplysning-om-applikationer"><span class="secno">3.3.2</span> <span class="content"><span>Oplysning om applikationer</span></span></a>
+        <li><a href="#oplysning-om-datastr"><span class="secno">3.3.3</span> <span class="content"><span>Oplysning om datasætr</span></span></a>
+        <li><a href="#users-personer-brugere"><span class="secno">3.3.4</span> <span class="content"><span>Users</span> (Personer, Brugere?)</span></a>
+        <li><a href="#rettigheder"><span class="secno">3.3.5</span> <span class="content"><span>Rettigheder</span></span></a>
+       </ol>
      </ol>
     <li>
      <a href="#technology"><span class="secno">4</span> <span class="content">Technology</span></a>
      <ol class="toc">
       <li>
-       <a href="#fabrics"><span class="secno">4.1</span> <span class="content">Fabrics...</span></a>
+       <a href="#platform-services"><span class="secno">4.1</span> <span class="content">Platform Services</span></a>
        <ol class="toc">
-        <li><a href="#service-fabric"><span class="secno">4.1.1</span> <span class="content">Service Fabric</span></a>
-        <li><a href="#application-fabrics"><span class="secno">4.1.2</span> <span class="content">Application Fabrics</span></a>
-        <li><a href="#data-fabric"><span class="secno">4.1.3</span> <span class="content">Data Fabric</span></a>
+        <li><a href="#gitgovclouddk"><span class="secno">4.1.1</span> <span class="content"><code>git.govcloud.dk</code></span></a>
+        <li><a href="#reggovclouddk"><span class="secno">4.1.2</span> <span class="content"><code>reg.govcloud.dk</code></span></a>
+        <li><a href="#k8sgovclouddk-portal"><span class="secno">4.1.3</span> <span class="content"><code>k8s.govcloud.dk</code> (portal.)</span></a>
+        <li><a href="#statusgovclouddk"><span class="secno">4.1.4</span> <span class="content"><code>status.govcloud.dk</code></span></a>
+        <li><a href="#collabgovclouddk"><span class="secno">4.1.5</span> <span class="content"><code>collab?.govcloud.dk</code></span></a>
        </ol>
       <li>
-       <a href="#platform-api"><span class="secno">4.2</span> <span class="content">Platform API</span></a>
+       <a href="#fabrics"><span class="secno">4.2</span> <span class="content">Fabrics...</span></a>
        <ol class="toc">
-        <li><a href="#-file-nfs"><span class="secno">4.2.1</span> <span class="content"><code>/file</code> (NFS)</span></a>
-        <li><a href="#-table-nosql"><span class="secno">4.2.2</span> <span class="content"><code>/table</code> (NoSQL)</span></a>
-        <li><a href="#-stream-kafka"><span class="secno">4.2.3</span> <span class="content"><code>/stream</code> (Kafka)</span></a>
-        <li><a href="#-log"><span class="secno">4.2.4</span> <span class="content"><code>/log</code></span></a>
-        <li><a href="#-token"><span class="secno">4.2.5</span> <span class="content"><code>/token</code></span></a>
-        <li><a href="#-ldap-opslag-i-directory"><span class="secno">4.2.6</span> <span class="content"><code>/ldap</code> (Opslag i directory)</span></a>
+        <li><a href="#service-fabric"><span class="secno">4.2.1</span> <span class="content">Service Fabric</span></a>
+        <li><a href="#application-fabrics"><span class="secno">4.2.2</span> <span class="content">Application Fabrics</span></a>
+        <li><a href="#data-fabric"><span class="secno">4.2.3</span> <span class="content">Data Fabric</span></a>
        </ol>
       <li>
-       <a href="#platform-services"><span class="secno">4.3</span> <span class="content">Platform Services</span></a>
+       <a href="#platform-api"><span class="secno">4.3</span> <span class="content">Platform API</span></a>
        <ol class="toc">
-        <li><a href="#gitgovclouddk"><span class="secno">4.3.1</span> <span class="content"><code>git.govcloud.dk</code></span></a>
-        <li><a href="#reggovclouddk"><span class="secno">4.3.2</span> <span class="content"><code>reg.govcloud.dk</code></span></a>
-        <li><a href="#k8sgovclouddk-portal"><span class="secno">4.3.3</span> <span class="content"><code>k8s.govcloud.dk</code> (portal.)</span></a>
-        <li><a href="#statusgovclouddk"><span class="secno">4.3.4</span> <span class="content"><code>status.govcloud.dk</code></span></a>
-        <li><a href="#collabgovclouddk"><span class="secno">4.3.5</span> <span class="content"><code>collab?.govcloud.dk</code></span></a>
+        <li><a href="#-file-nfs"><span class="secno">4.3.1</span> <span class="content"><code>/file</code> (NFS)</span></a>
+        <li><a href="#-table-nosql"><span class="secno">4.3.2</span> <span class="content"><code>/table</code> (NoSQL)</span></a>
+        <li><a href="#-stream-kafka"><span class="secno">4.3.3</span> <span class="content"><code>/stream</code> (Kafka)</span></a>
+        <li><a href="#-log"><span class="secno">4.3.4</span> <span class="content"><code>/log</code></span></a>
+        <li><a href="#-token"><span class="secno">4.3.5</span> <span class="content"><code>/token</code></span></a>
        </ol>
       <li>
        <a href="#middleware"><span class="secno">4.4</span> <span class="content">Middleware</span></a>
@@ -1625,8 +1642,8 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
     </ol>
    </blockquote>
    <h2 class="heading settled" data-level="2" id="business"><span class="secno">2. </span><span class="content">Business</span><a class="self-link" href="#business"></a></h2>
-    På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med) 
-   <p>INSERT_ROLES_HERE</p>
+    På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med) <br> 
+   <p><img src="roles.svg"></p>
    <h3 class="heading settled" data-level="2.1" id="roller-og-omrder-for-samarbejde"><span class="secno">2.1. </span><span class="content">Roller og områder for samarbejde</span><a class="self-link" href="#roller-og-omrder-for-samarbejde"></a></h3>
    <h4 class="heading settled" data-level="2.1.1" id="platformsudbyder"><span class="secno">2.1.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="platformsudbyder①">Platformsudbyder<a class="self-link" href="#platformsudbyder①"></a></dfn></span><a class="self-link" href="#platformsudbyder"></a></h4>
    <p><em>— virksomhed med ansvar for at stille en platformstjeneste til rådighed for andre interesserede virksomheder</em></p>
@@ -1699,7 +1716,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
     <li data-md>
      <p>Applications (and Service and Datasets) are treated like first class tenants because different life spand and ownership changes over time. But always a clear owner (customer) to a tenant.</p>
    </ul>
-   <p>(Skal foldes helt ud:)</p>
+   <p>(Skal foldes helt ud...)</p>
    <ul>
     <li data-md>
      <p>Dataset lever laaaaang tid. Og kan være underlagt meget regulering.</p>
@@ -1712,6 +1729,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
     Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang og ressourcer (multitenancy). 
    <p>Network, Compute and Storage... per fabric.</p>
    <p>Hard and soft limits? Max scale factor?</p>
+   <p>(Skal foldes  helt  ud...)</p>
    <p>Udbyder kan ikke prioritere mellem anvendere, da de ikke kender kritikalitet... og selv på instruks har de ikke myndighed til at vælge.. så der skal bare være nok :-)</p>
    <h4 class="heading settled" data-level="2.2.8" id="privacy"><span class="secno">2.2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="privacy①">Privacy?<a class="self-link" href="#privacy①"></a></dfn></span><a class="self-link" href="#privacy"></a></h4>
     Med tiden vil der kommer mange datasæt. Og vi har eksplicit sænket barrierene for datadeling. Når der er nok datasæt skal vi til at tænke på at sætte benspænd op for sammenstilling af personfølsomme datasæt (profillering). 
@@ -1762,7 +1780,8 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <p>Bør kunne laves med tilpasning af Ansible scripts der anvendes til installation af platformen.</p>
    <h2 class="heading settled" data-level="3" id="application"><span class="secno">3. </span><span class="content">Application</span><a class="self-link" href="#application"></a></h2>
    <p><img src="platform.svg"></p>
-   <h3 class="heading settled" data-level="3.1" id="applilkationstjeneste-tjek-fda"><span class="secno">3.1. </span><span class="content">Applilkationstjeneste (Tjek FDA)</span><a class="self-link" href="#applilkationstjeneste-tjek-fda"></a></h3>
+   <h3 class="heading settled" data-level="3.1" id="run-time-find-p-bedre-term"><span class="secno">3.1. </span><span class="content">Run time (find på bedre term)</span><a class="self-link" href="#run-time-find-p-bedre-term"></a></h3>
+   <h4 class="heading settled" data-level="3.1.1" id="applilkationstjeneste-tjek-fda"><span class="secno">3.1.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applilkationstjeneste">Applilkationstjeneste<a class="self-link" href="#applilkationstjeneste"></a></dfn> (Tjek FDA)</span><a class="self-link" href="#applilkationstjeneste-tjek-fda"></a></h4>
     I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload. 
    <p>Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.</p>
    <p>Det kunne fx være en hjemmeside med en selvbetjeningsløsning eller en webservice hvor man kan hente aktuelle vejrobservationer.</p>
@@ -1772,39 +1791,62 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <p>I følge 12 faktor er det REST så den kan skalere...</p>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946068"> An application interface represents a point of access where application services are made available to a user, another application component, or a node. </blockquote>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946075"> An application service represents an explicitly defined exposed application behavior. </blockquote>
-   <h3 class="heading settled" data-level="3.2" id="application-tjek-fda"><span class="secno">3.2. </span><span class="content">Application (Tjek FDA)</span><a class="self-link" href="#application-tjek-fda"></a></h3>
+   <h4 class="heading settled" data-level="3.1.2" id="application-deployment-tjek-fda-og-finde-bedre-term"><span class="secno">3.1.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="application-deployment">Application/Deployment<a class="self-link" href="#application-deployment"></a></dfn> (Tjek FDA og finde bedre term)</span><a class="self-link" href="#application-deployment-tjek-fda-og-finde-bedre-term"></a></h4>
    <p>Det bliver til et namespace i rancher/k8s</p>
-   <h3 class="heading settled" data-level="3.3" id="container-application-component"><span class="secno">3.3. </span><span class="content">Container (Application Component)</span><a class="self-link" href="#container-application-component"></a></h3>
+   <h4 class="heading settled" data-level="3.1.3" id="container-application-component"><span class="secno">3.1.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="container-application-component①">Container (Application Component)<a class="self-link" href="#container-application-component①"></a></dfn></span><a class="self-link" href="#container-application-component"></a></h4>
    <blockquote cite="https://docs.docker.com/glossary/?term=container"> A container is a runtime instance of a docker image. </blockquote>
    <p>(Den forbruger ressourceer, compute og kan derfor også begrænsees)</p>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap09.html#_Toc489946066"> An application component represents an encapsulation of application functionality aligned to implementation structure, which is modular and replaceable. It encapsulates its behavior <strong>and data</strong>, exposes services, and makes them available through interfaces. </blockquote>
    <p>Pointe om at den netop <em>ikke</em> har data inde i sig... Eller skal vi snakke Logic Component and Data Component?</p>
-   <h3 class="heading settled" data-level="3.4" id="dataset-tjek-fda"><span class="secno">3.4. </span><span class="content">Dataset (Tjek FDA)</span><a class="self-link" href="#dataset-tjek-fda"></a></h3>
+   <h4 class="heading settled" data-level="3.1.4" id="dataset-tjek-fda"><span class="secno">3.1.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="dataset">Dataset<a class="self-link" href="#dataset"></a></dfn> (Tjek FDA)</span><a class="self-link" href="#dataset-tjek-fda"></a></h4>
    <p>(Den forbruger ressourceer, storage og kan derfor også begrænsees)</p>
    <p>Den tilgås gennem standardiserede snitflader, bestemt gennem arkitektur styring. Men også gennem andre applikationers services.</p>
    <blockquote cite="https://arkitektur.digst.dk/sites/default/files/20180503_rad_v1.0_-_godkendt_af_sda.pdf"> en samling af oplysninger bestående af enkelte dele der forvaltes under et </blockquote>
    <p class="note" role="note"><span>Note:</span> Vi bruger ikke termen it-system... Hvis vi gjorde ville det omfatte alle de nødvendige dele for at realisere en Applikationstjeneste... og det er mange... inkl strømforsyning, tidsservere og mennesker...</p>
-   <h3 class="heading settled" data-level="3.5" id="source-code"><span class="secno">3.5. </span><span class="content">Source Code</span><a class="self-link" href="#source-code"></a></h3>
+   <h4 class="heading settled" data-level="3.1.5" id="logs"><span class="secno">3.1.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="logs①">Logs<a class="self-link" href="#logs①"></a></dfn></span><a class="self-link" href="#logs"></a></h4>
+   <p>Både fra de tre fabrics og fra applikationer.</p>
+   <h3 class="heading settled" data-level="3.2" id="repository"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="repository①">Repository<a class="self-link" href="#repository①"></a></dfn></span><a class="self-link" href="#repository"></a></h3>
+    Der hvor man opbevare det der bliver til it-systemer... 
+   <h4 class="heading settled" data-level="3.2.1" id="source-code"><span class="secno">3.2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="source-code①">Source Code<a class="self-link" href="#source-code①"></a></dfn></span><a class="self-link" href="#source-code"></a></h4>
     Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet. 
    <p>Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.</p>
    <p>En vigtig artifakt er configuration, men ikke secrets.</p>
-   <h3 class="heading settled" data-level="3.6" id="images"><span class="secno">3.6. </span><span class="content">Images</span><a class="self-link" href="#images"></a></h3>
+   <h4 class="heading settled" data-level="3.2.2" id="images"><span class="secno">3.2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="images①">Images<a class="self-link" href="#images①"></a></dfn></span><a class="self-link" href="#images"></a></h4>
     er resultatet af et byg på baggrund af en version af kildekoden. 
    <p>I docker er navngivet ejer/navn for at synliggøre ejerskabet.</p>
    <p>Vi kan skanne dem for sårbarheder.</p>
    <p class="note" role="note"><span>Note:</span> Et namespace per platformsanvender/virksomhed?</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=image"> Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
-   <h3 class="heading settled" data-level="3.7" id="tags"><span class="secno">3.7. </span><span class="content">Tags</span><a class="self-link" href="#tags"></a></h3>
+   <h4 class="heading settled" data-level="3.2.3" id="tags"><span class="secno">3.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="tags①">Tags<a class="self-link" href="#tags①"></a></dfn></span><a class="self-link" href="#tags"></a></h4>
     Et docker images kan tagges med flere tags. 
    <p>De anvendes fx ved deployment, ejer/navn:prod</p>
    <p class="note" role="note"><span>Note:</span> Vi bør have anbefalinger for et fælles skema i udviklingshåndbogen.</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=tag"> A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other. </blockquote>
+   <h3 class="heading settled" data-level="3.3" id="directory-inventory"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="directory-inventory①">Directory/Inventory<a class="self-link" href="#directory-inventory①"></a></dfn></span><a class="self-link" href="#directory-inventory"></a></h3>
+    der hvor der er oplysninger om hvad der kører og hvem der har adgang til det... 
+   <h4 class="heading settled" data-level="3.3.1" id="oplysning-om-services"><span class="secno">3.3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-services①">Oplysning om services<a class="self-link" href="#oplysning-om-services①"></a></dfn></span><a class="self-link" href="#oplysning-om-services"></a></h4>
+   <h4 class="heading settled" data-level="3.3.2" id="oplysning-om-applikationer"><span class="secno">3.3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-applikationer①">Oplysning om applikationer<a class="self-link" href="#oplysning-om-applikationer①"></a></dfn></span><a class="self-link" href="#oplysning-om-applikationer"></a></h4>
+   <h4 class="heading settled" data-level="3.3.3" id="oplysning-om-datastr"><span class="secno">3.3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-datastr①">Oplysning om datasætr<a class="self-link" href="#oplysning-om-datastr①"></a></dfn></span><a class="self-link" href="#oplysning-om-datastr"></a></h4>
+   <h4 class="heading settled" data-level="3.3.4" id="users-personer-brugere"><span class="secno">3.3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="users">Users<a class="self-link" href="#users"></a></dfn> (Personer, Brugere?)</span><a class="self-link" href="#users-personer-brugere"></a></h4>
+   <h4 class="heading settled" data-level="3.3.5" id="rettigheder"><span class="secno">3.3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rettigheder①">Rettigheder<a class="self-link" href="#rettigheder①"></a></dfn></span><a class="self-link" href="#rettigheder"></a></h4>
+   <p>A,U -> S</p>
+   <p>A -(r,w)-> D</p>
    <h2 class="heading settled" data-level="4" id="technology"><span class="secno">4. </span><span class="content">Technology</span><a class="self-link" href="#technology"></a></h2>
-   <h3 class="heading settled" data-level="4.1" id="fabrics"><span class="secno">4.1. </span><span class="content">Fabrics...</span><a class="self-link" href="#fabrics"></a></h3>
+   <h3 class="heading settled" data-level="4.1" id="platform-services"><span class="secno">4.1. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h3>
+    alle med brugergenkendelse gennem SIT AD. 
+   <p>Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.</p>
+   <h4 class="heading settled" data-level="4.1.1" id="gitgovclouddk"><span class="secno">4.1.1. </span><span class="content"><code>git.govcloud.dk</code></span><a class="self-link" href="#gitgovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.1.2" id="reggovclouddk"><span class="secno">4.1.2. </span><span class="content"><code>reg.govcloud.dk</code></span><a class="self-link" href="#reggovclouddk"></a></h4>
+   <h4 class="heading settled" data-level="4.1.3" id="k8sgovclouddk-portal"><span class="secno">4.1.3. </span><span class="content"><code>k8s.govcloud.dk</code> (portal.)</span><a class="self-link" href="#k8sgovclouddk-portal"></a></h4>
+   <p>Beskriv custom GUI</p>
+   <h4 class="heading settled" data-level="4.1.4" id="statusgovclouddk"><span class="secno">4.1.4. </span><span class="content"><code>status.govcloud.dk</code></span><a class="self-link" href="#statusgovclouddk"></a></h4>
+   <p>og noget med <code>&lt;kunde>.status.govcloud.dk</code></p>
+   <h4 class="heading settled" data-level="4.1.5" id="collabgovclouddk"><span class="secno">4.1.5. </span><span class="content"><code>collab?.govcloud.dk</code></span><a class="self-link" href="#collabgovclouddk"></a></h4>
+   <h3 class="heading settled" data-level="4.2" id="fabrics"><span class="secno">4.2. </span><span class="content">Fabrics...</span><a class="self-link" href="#fabrics"></a></h3>
    <p>Det har et dashboard hver hvor de kan overvåges og driftes fra. Og provisioneres til.</p>
    <p>Men det også et arkitekturlag... Der matcher digital assets.</p>
    <p>Og det realiseres gennem platform komponenter og middleware.</p>
-   <h4 class="heading settled" data-level="4.1.1" id="service-fabric"><span class="secno">4.1.1. </span><span class="content">Service Fabric</span><a class="self-link" href="#service-fabric"></a></h4>
+   <h4 class="heading settled" data-level="4.2.1" id="service-fabric"><span class="secno">4.2.1. </span><span class="content">Service Fabric</span><a class="self-link" href="#service-fabric"></a></h4>
     Responsibilities: 
    <ul>
     <li data-md>
@@ -1816,7 +1858,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
     <li data-md>
      <p>Log (AccessLog/Request Log?)</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.2" id="application-fabrics"><span class="secno">4.1.2. </span><span class="content">Application Fabrics</span><a class="self-link" href="#application-fabrics"></a></h4>
+   <h4 class="heading settled" data-level="4.2.2" id="application-fabrics"><span class="secno">4.2.2. </span><span class="content">Application Fabrics</span><a class="self-link" href="#application-fabrics"></a></h4>
     Responsibilities: 
    <ul>
     <li data-md>
@@ -1830,7 +1872,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
     <li data-md>
      <p>Mount NFS as Volume (for app log?)</p>
    </ul>
-   <h4 class="heading settled" data-level="4.1.3" id="data-fabric"><span class="secno">4.1.3. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric"></a></h4>
+   <h4 class="heading settled" data-level="4.2.3" id="data-fabric"><span class="secno">4.2.3. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric"></a></h4>
     Responsible for: 
    <ul>
     <li data-md>
@@ -1844,19 +1886,19 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
     <li data-md>
      <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
    </ul>
-   <h3 class="heading settled" data-level="4.2" id="platform-api"><span class="secno">4.2. </span><span class="content">Platform API</span><a class="self-link" href="#platform-api"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="platform-api"><span class="secno">4.3. </span><span class="content">Platform API</span><a class="self-link" href="#platform-api"></a></h3>
     alle webservices der kan kaldes inde fra anvenderens applikationer. 
    <p>Der er underlagt arkitekturstyring og bestemmes af Policy-owner.</p>
    <p>Adgangskontrol til data via rettigheder i directory/registry.</p>
    <p>Dataservices...</p>
-   <h4 class="heading settled" data-level="4.2.1" id="-file-nfs"><span class="secno">4.2.1. </span><span class="content"><code>/file</code> (NFS)</span><a class="self-link" href="#-file-nfs"></a></h4>
+   <h4 class="heading settled" data-level="4.3.1" id="-file-nfs"><span class="secno">4.3.1. </span><span class="content"><code>/file</code> (NFS)</span><a class="self-link" href="#-file-nfs"></a></h4>
     Possix compliance... så man kan det samme som på UNIX og LINUX og Windows? 
-   <h4 class="heading settled" data-level="4.2.2" id="-table-nosql"><span class="secno">4.2.2. </span><span class="content"><code>/table</code> (NoSQL)</span><a class="self-link" href="#-table-nosql"></a></h4>
+   <h4 class="heading settled" data-level="4.3.2" id="-table-nosql"><span class="secno">4.3.2. </span><span class="content"><code>/table</code> (NoSQL)</span><a class="self-link" href="#-table-nosql"></a></h4>
     Desværre ikke nogle standard (endnu). 
    <p>Men kendetegnet ved Non-ACID. men tilgengæld skalerbar.</p>
    <p>OJAI. Særligt interessant med store JSON dokumenter der kune låser den del af DOM der skrives i.</p>
-   <h4 class="heading settled" data-level="4.2.3" id="-stream-kafka"><span class="secno">4.2.3. </span><span class="content"><code>/stream</code> (Kafka)</span><a class="self-link" href="#-stream-kafka"></a></h4>
-   <h4 class="heading settled" data-level="4.2.4" id="-log"><span class="secno">4.2.4. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
+   <h4 class="heading settled" data-level="4.3.3" id="-stream-kafka"><span class="secno">4.3.3. </span><span class="content"><code>/stream</code> (Kafka)</span><a class="self-link" href="#-stream-kafka"></a></h4>
+   <h4 class="heading settled" data-level="4.3.4" id="-log"><span class="secno">4.3.4. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
     platformen skriver fra application services og dataservices. 
    <p>anvenders applikations skriver også...</p>
    <p>sammenstille, søge og hente</p>
@@ -1865,24 +1907,11 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p>All operations on datasets are logged into one datalog stream (Log4J specification needed!), and later split on a per customer base.</p>
    </ul>
    <p class="note" role="note"><span>Note:</span> Vi mangler vejledning i hvordan Log skrives fx Log4J mønster, men gem det til udvikler håndbogen.</p>
-   <h4 class="heading settled" data-level="4.2.5" id="-token"><span class="secno">4.2.5. </span><span class="content"><code>/token</code></span><a class="self-link" href="#-token"></a></h4>
+   <h4 class="heading settled" data-level="4.3.5" id="-token"><span class="secno">4.3.5. </span><span class="content"><code>/token</code></span><a class="self-link" href="#-token"></a></h4>
     Oversætte id-tokens fra ekstern IdP. Måske oversætte til interne id’er. JWT? 
    <p>Noget om SSO og STS og realms.</p>
    <p>!Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.</p>
    <p>Hvsd betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel</p>
-   <h4 class="heading settled" data-level="4.2.6" id="-ldap-opslag-i-directory"><span class="secno">4.2.6. </span><span class="content"><code>/ldap</code> (Opslag i directory)</span><a class="self-link" href="#-ldap-opslag-i-directory"></a></h4>
-    (måske er den tilgængelig gennem <code>/token?</code> for så har 5+5 services)
-Om man kun kan læse anvenderes egne? eller på tværs. 
-   <h3 class="heading settled" data-level="4.3" id="platform-services"><span class="secno">4.3. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h3>
-    alle med brugergenkendelse gennem SIT AD. 
-   <p>Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.</p>
-   <h4 class="heading settled" data-level="4.3.1" id="gitgovclouddk"><span class="secno">4.3.1. </span><span class="content"><code>git.govcloud.dk</code></span><a class="self-link" href="#gitgovclouddk"></a></h4>
-   <h4 class="heading settled" data-level="4.3.2" id="reggovclouddk"><span class="secno">4.3.2. </span><span class="content"><code>reg.govcloud.dk</code></span><a class="self-link" href="#reggovclouddk"></a></h4>
-   <h4 class="heading settled" data-level="4.3.3" id="k8sgovclouddk-portal"><span class="secno">4.3.3. </span><span class="content"><code>k8s.govcloud.dk</code> (portal.)</span><a class="self-link" href="#k8sgovclouddk-portal"></a></h4>
-   <p>Beskriv custom GUI</p>
-   <h4 class="heading settled" data-level="4.3.4" id="statusgovclouddk"><span class="secno">4.3.4. </span><span class="content"><code>status.govcloud.dk</code></span><a class="self-link" href="#statusgovclouddk"></a></h4>
-   <p>og noget med <code>&lt;kunde>.status.govcloud.dk</code></p>
-   <h4 class="heading settled" data-level="4.3.5" id="collabgovclouddk"><span class="secno">4.3.5. </span><span class="content"><code>collab?.govcloud.dk</code></span><a class="self-link" href="#collabgovclouddk"></a></h4>
    <h3 class="heading settled" data-level="4.4" id="middleware"><span class="secno">4.4. </span><span class="content">Middleware</span><a class="self-link" href="#middleware"></a></h3>
    <h4 class="heading settled" data-level="4.4.1" id="gravitee"><span class="secno">4.4.1. </span><span class="content">Gravitee</span><a class="self-link" href="#gravitee"></a></h4>
    <h4 class="heading settled" data-level="4.4.2" id="rancher"><span class="secno">4.4.2. </span><span class="content">Rancher</span><a class="self-link" href="#rancher"></a></h4>
@@ -2068,34 +2097,18 @@ Om man kun kan læse anvenderes egne? eller på tværs.
      <p>Token baseret adgangskontrol fx JWT.</p>
    </ul>
    <h3 class="heading settled" id="compliance-with-nist-paas-reccomendations"><span class="content">Compliance with NIST PaaS Reccomendations</span><a class="self-link" href="#compliance-with-nist-paas-reccomendations"></a></h3>
-    Generic Interfaces. Before a decision is made to develop new applications on a public PaaS cloud
-platform, it is recommended to evaluate whether the application infrastructure interfaces (for file,
-queue, hash table, etc.) provided in that platform are or could be made generic enough to support
-portability and interoperability of the application. PaaS clouds that support generic interfaces are
-preferable.
- Standard Languages and Tools. Choose PaaS systems that work with standardized languages and
-tools unless the only practical options are PaaS systems that are restricted to proprietary languages
-and tools.
- Data Access. Choose PaaS systems that work with standard data access protocols (e.g., SQL) when
-practicable.
- Data Protection. Analyze the PaaS provider’s data protection mechanisms, data location
-configuration and database organization/transaction processing technologies, and assess whether they
-will meet the confidentiality, compliance, integrity and availability needs of the organization that will
-be using the subscribed PaaS application.
- Application Frameworks. If available, choose PaaS systems that provide application development
-frameworks that include an architecture and tools for mitigating security vulnerabilities.
- Component Testing. Before a decision is made to deploy a new application on a public PaaS cloud
-platform (or in some cases composing an application from the building blocks provided by the PaaS
-cloud provider), ensure that software libraries included in the compilation phase or called during the
-execution phase behave as intended both in terms of functionality and performance.
- Security. Ensure that a PaaS application can be configured to run in a secure manner (e.g., a
-dedicated VLAN segment, using cryptography for client-server communications) and can be
-CLOUD COMPUTING SYNOPSIS AND RECOMMENDATIONS
-6-6
-integrated with existing enterprise/agency security frameworks such as identification and
-authorization so that enterprise/agency security policies can be enforced.
- Secure Data Deletion. Require that a cloud provider offer a mechanism for reliably deleting data on
-a consumer’s request. 
+   <blockquote> <em>Generic Interfaces.</em> Before a decision is made to develop new applications on a public PaaS cloud platform, it is recommended to evaluate whether the application infrastructure interfaces (for file, queue, hash table, etc.) provided in that platform are or could be made generic enough to support portability and interoperability of the application. PaaS clouds that support generic interfaces are preferable. </blockquote>
+   <p>Overholder vi gennem arktiekturstyring og anvendelse af bl.a. CAMSS kriterier ved beskrivelsen af snitflader.</p>
+   <blockquote> <em>Standard Languages and Tools.</em> Choose PaaS systems that work with standardized languages and tools unless the only practical options are PaaS systems that are restricted to proprietary languages and tools. </blockquote>
+   <p>Frit valg, så længe vi kan putte det i en container. I praksis vil de mest populær sprog understøttes igennem officielle base images.</p>
+   <blockquote> <em>Data Access.</em> Choose PaaS systems that work with standard data access protocols (e.g., SQL) when practicable. </blockquote>
+   <p>Tjek... men vi har valgt at gå uden om SQL, da fristelserne for at gå udover SQL92 er for store for udviklere..</p>
+   <blockquote> <em>Data Protection.</em> Analyze the PaaS provider’s data protection mechanisms, data location configuration and database organization/transaction processing technologies, and assess whether they will meet the confidentiality, compliance, integrity and availability needs of the organization that will be using the subscribed PaaS application. </blockquote>
+   <p>Basere os på eksisterende hos SIT, men skal overveje ydereligere tiltag omkring fortrolighed.</p>
+   <blockquote> <em>Application Frameworks.</em> If available, choose PaaS systems that provide application development frameworks that include an architecture and tools for mitigating security vulnerabilities. </blockquote>
+   <blockquote> <em>Component Testing.</em> Before a decision is made to deploy a new application on a public PaaS cloud platform (or in some cases composing an application from the building blocks provided by the PaaS cloud provider), ensure that software libraries included in the compilation phase or called during the execution phase behave as intended both in terms of functionality and performance. </blockquote>
+   <blockquote> <em>Security.</em> Ensure that a PaaS application can be configured to run in a secure manner (e.g., a dedicated VLAN segment, using cryptography for client-server communications) and can be integrated with existing enterprise/agency security frameworks such as identification and authorization so that enterprise/agency security policies can be enforced. </blockquote>
+   <blockquote> <em>Secure Data Deletion.</em> Require that a cloud provider offer a mechanism for reliably deleting data on a consumer’s request. </blockquote>
   </main>
 <script>
 (function() {
@@ -2229,17 +2242,32 @@ a consumer’s request.
   <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
   <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
   <ul class="index">
+   <li><a href="#application-deployment">Application/Deployment</a><span>, in §3.1.2</span>
    <li><a href="#applikationsudvikling-og--drift①">Applikationsudvikling og -drift</a><span>, in §2.2.2</span>
+   <li><a href="#applilkationstjeneste">Applilkationstjeneste</a><span>, in §3.1.1</span>
    <li><a href="#arkitekturstyring①">Arkitekturstyring</a><span>, in §2.2.1</span>
+   <li><a href="#container-application-component①">Container (Application Component)</a><span>, in §3.1.3</span>
+   <li><a href="#dataset">Dataset</a><span>, in §3.1.4</span>
+   <li><a href="#directory-inventory①">Directory/Inventory</a><span>, in §3.3</span>
    <li><a href="#hndelseshndtering①">Hændelseshåndtering</a><span>, in §2.2.4</span>
+   <li><a href="#images①">Images</a><span>, in §3.2.2</span>
+   <li><a href="#logs①">Logs</a><span>, in §3.1.5</span>
+   <li><a href="#oplysning-om-applikationer①">Oplysning om applikationer</a><span>, in §3.3.2</span>
+   <li><a href="#oplysning-om-datastr①">Oplysning om datasætr</a><span>, in §3.3.3</span>
+   <li><a href="#oplysning-om-services①">Oplysning om services</a><span>, in §3.3.1</span>
    <li><a href="#platformsanvender①">Platformsanvender</a><span>, in §2.1.2</span>
    <li><a href="#platformsudbyder①">Platformsudbyder</a><span>, in §2.1.1</span>
    <li><a href="#policy-ansvarlig①">Policy-ansvarlig</a><span>, in §2.1.3</span>
    <li><a href="#privacy①">Privacy?</a><span>, in §2.2.8</span>
    <li><a href="#problemhndtering①">Problemhåndtering</a><span>, in §2.2.5</span>
+   <li><a href="#repository①">Repository</a><span>, in §3.2</span>
    <li><a href="#ressource-management①">Ressource management</a><span>, in §2.2.7</span>
+   <li><a href="#rettigheder①">Rettigheder</a><span>, in §3.3.5</span>
    <li><a href="#sikkerhed-og-ressourcestyring①">Sikkerhed og ressourcestyring</a><span>, in §2.2.6</span>
+   <li><a href="#source-code①">Source Code</a><span>, in §3.2.1</span>
    <li><a href="#statusovervgning①">Statusovervågning</a><span>, in §2.2.3</span>
+   <li><a href="#tags①">Tags</a><span>, in §3.2.3</span>
+   <li><a href="#users">Users</a><span>, in §3.3.4</span>
   </ul>
   <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
   <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>

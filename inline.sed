@@ -1,14 +1,14 @@
-/INSERT_ROLES_HERE/ {
+/<p.*img.*roles.svg.*<\/p>/ {
   r roles.svg
   d
 }
 
-/INSERT_PLATFORM_HERE/ {
+/<p.*img.*platform.svg.*<\/p>/ {
   r platform.svg
   d
 }
 
-/INSERT_RESUME_HERE/ {
+/<p.*img.*resume.svg.*<\/p>/ {
   r resume.svg
   d
 }
