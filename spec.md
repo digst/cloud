@@ -484,7 +484,8 @@ der hvor der er oplysninger om hvad der kører og hvem der har adgang til det...
 
 ### <dfn export="true">Oplysning om applikationer</dfn>
 
-### <dfn export="true">Oplysning om datasætr</dfn>
+### <dfn export="true">Oplysning om datasæt</dfn>
+Default til følsommes. Beskrive udfordringen mellem Open By Default og Privacy By Design... afhænger om indhold af persondata. 
 
 
 ### <dfn export="true">Users</dfn> (Personer, Brugere?)
@@ -495,6 +496,12 @@ der hvor der er oplysninger om hvad der kører og hvem der har adgang til det...
 A,U -> S
 
 A -(r,w)-> D
+
+Pointe om at tjekke rettigheder i forhold til lovgivning automatisk. Indtaste hvilken hjemmel, pege på retsinformation, maskinlæsbare regler for (gen)-anvendelse.
+
+
+
+
 
 # Technology
 
