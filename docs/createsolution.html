@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <script src="main.js"></script>
+
+  <title>Hello, world!</title>
+  <style>
+    form {
+        padding: 12pt;
+        border: solid 2px gray;
+        margin-top: 24px;
+      }
+      form h2 {
+        font-size: 14pt;
+        color: black;
+        margin-bottom: 16px;
+      }
+      code {
+        color: gray;
+        font-size: 103%;
+      }
+
+
+    </style>
+</head>
+
+<body>
+  <script>var app = Elm.Main.init();</script>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1>Create new Solution</h1>
+        <div id="" class="text-muted">Here you can create an order to register the assetts in a new solution. Use the form(s) below to fill up the shopping cart on the right. And press create when your are done. </div>
+
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+
+        <form>
+          <h2>About the solution</h2>
+
+          <div class="form-group">
+            <label for="solutionTitle">Title
+              <small id="" class="form-text text-muted">Give your solution a descriptive name unique among your organisations other solutions. No spaces, dashes or emojis please.</small>
+            </label>
+            <input class="form-control" id="solutionTitle">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Stage
+              <small id="" class="form-text text-muted">What do you call this non-prod stage of your solution? You can not go directly to production, but will have to use the promote solution feature. We will prefix the title with the stage of
+                non-prod solutions.</small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" maxlength="8" size="8">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Owner
+              <small id="" class="form-text text-muted">What registered user in your organisation should we contact about this solution. Use an email with your organisation domain, or use a B or X number from SIT.</small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" size="8">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Done</button> <button type="submit" class="btn btn-outline-secondary">Upload</button>
+        </form>
+
+        <hr>
+
+        <form>
+          <h2>Order to create new Solution</h2>
+
+          <div class="form-group">
+            <table class="table table-borderless">
+
+              <tbody>
+                <tr>
+                  <th class="text-right" scope="row">Ax</th><td>org-test<br>Peter (peter@digst.dk)</td><td class="text-right"><a href="">edit</a></td>
+                <tr></tr>
+                  <th class="text-right" scope="row">Sa</th><td>https://test.dop.dk<br>Ca:456, Open access</td><td class="text-right"><a href="">edit</a></td>
+                </tr>
+              </tr>
+                <th class="text-right" scope="row">Ca</th><td>name/image:tag<br>80, 1234</td><td class="text-right"><a href="">edit</a></td>
+              </tr>
+            </tr>
+              <th class="text-right" scope="row">Da</th><td>bigdataset<br>Files and folders (NFS)</td><td class="text-right"><a href="">edit</a></td>
+            </tr>
+              </tbody>
+            </table>
+
+
+
+          </div>
+          <button type="submit" class="btn btn-primary">Send</button> <button type="submit" class="btn btn-outline-secondary">Download</button>
+        </form>
+
+        <hr>
+        <div>
+          <a href="">Add Components...</a> <a href="">Add Services...</a> <a href="">Add Datasets...</a>
+        </div>
+
+        <hr>
+
+
+
+        <form>
+          <h2>Application Component</h2>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Container
+              <small id="" class="form-text text-muted">How should we find the container to deploy in our repository? Use <code>username/image:tag</code> </small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" maxlength="8" size="8">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Open Ports
+              <small id="" class="form-text text-muted">What ports should be accessible from other components in the solution and be available to base external services on? Use spaces or commas to seperate more port numbers</small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" size="8">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Done</button> <button type="submit" class="btn btn-secondary">Remove</button>
+        </form>
+        <hr>
+        <form>
+          <h2>Application Service</h2>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Internet address
+              <small id="" class="form-text text-muted">At what URL will your users access this service? All services will be using HTTPS, so you dont need to add this to the url. The URL most be registered with a DNS CNAME record pointing to <code>cloud.gov.dk</code></small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" maxlength="8" size="8">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Backend
+              <small id="" class="form-text text-muted">What component should your users see when accessing this service? And through which port? Selector?</small>
+            </label>
+            <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" size="8">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Access
+              <small id="" class="form-text text-muted">Do you want to restrict where your service can be accessed from, or require users to login?</small>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                No.
+                <small id="" class="form-text text-muted">Your service will be available on the internet.</small>
+
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <label class="form-check-label" for="defaultCheck2">
+                Only from my inside my organisation.
+                <small id="" class="form-text text-muted">We will restrict access to an ip-range.</small>
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <label class="form-check-label" for="defaultCheck2">
+                Only to specific users.
+              </label>
+              </label>
+              <small id="" class="form-text text-muted">Use B or X numbers below, seperated by spaces or commas.</small>
+              <input type="solutionTitle" class="form-control" id="" aria-describedby="emailHelp" maxlength="8" size="8">
+            </div>
+          </div>
+
+
+
+          <button type="submit" class="btn btn-primary">Done</button> <button type="submit" class="btn btn-secondary">Remove</button>
+        </form>
+
+        <hr>
+        <form>
+          <h2>Data Set</h2>
+
+          <div class="form-group">
+            <label for="solutionTitle">Title
+              <small id="" class="form-text text-muted">Give your dataset a descriptive name unique among your organisations other datasets. No spaces, dashes or emojis please. We will postfix with the stage of the solution.</small>
+            </label>
+            <input class="form-control" id="solutionTitle">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Form
+              <small id="" class="form-text text-muted">How are you data structured? Your components will access the data through a protocol according to this selction.</small>
+            </label>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <label class="form-check-label" for="defaultCheck1">
+                Files in Folders (NFS)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <label class="form-check-label" for="defaultCheck2">
+                Records in Tables (OJAI)
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <label class="form-check-label" for="defaultCheck2">
+                Messages in Streams (Kafka)
+              </label>
+            </div>
+
+                    </div>
+
+          <button type="submit" class="btn btn-primary">Done</button> <button type="submit" class="btn btn-secondary">Remove</button>
+        </form>
+
+
+
+
+
+      </div>
+      <div class="col-4">
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
