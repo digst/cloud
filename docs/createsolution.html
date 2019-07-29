@@ -156,7 +156,7 @@
               <small id="" class="form-text text-muted">Do you want to restrict where your service can be accessed from, or require users to login?</small>
             </label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <input class="form-check-input" type="radio" value="" name="serviceaccess" id="defaultCheck1">
               <label class="form-check-label" for="defaultCheck1">
                 No.
                 <small id="" class="form-text text-muted">Your service will be available on the internet.</small>
@@ -164,14 +164,14 @@
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <input class="form-check-input" type="radio" value="" name="serviceaccess" id="defaultCheck2" >
               <label class="form-check-label" for="defaultCheck2">
                 Only from my inside my organisation.
                 <small id="" class="form-text text-muted">We will restrict access to an ip-range.</small>
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <input class="form-check-input" type="radio" name="serviceaccess" value="" id="defaultCheck2" >
               <label class="form-check-label" for="defaultCheck2">
                 Only to specific users.
               </label>
@@ -202,19 +202,19 @@
               <small id="" class="form-text text-muted">How are you data structured? Your components will access the data through a protocol according to this selction.</small>
             </label>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+              <input class="form-check-input" type="radio" value="" name="dataform" id="defaultCheck1">
               <label class="form-check-label" for="defaultCheck1">
                 Files in Folders (NFS)
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <input class="form-check-input" type="radio" value="" name="dataform" id="defaultCheck2" >
               <label class="form-check-label" for="defaultCheck2">
                 Records in Tables (OJAI)
               </label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" >
+              <input class="form-check-input" type="radio" value="" name="dataform" id="defaultCheck2" >
               <label class="form-check-label" for="defaultCheck2">
                 Messages in Streams (Kafka)
               </label>
