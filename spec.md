@@ -49,7 +49,7 @@ Logo: https://digst.github.io/cloud/cloud.svg
 
 <h2 class="no-num">Introduction</h2>
 <small>
-Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
+Dette dokument er del af en serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
 
 <br>
 
@@ -65,7 +65,7 @@ Denne arkitektur sigter mod at øge anvendelsen af data der registreres af offen
 
 (Hvilke assesments har vi? Disruption er sket...)
 
-Effektiv it-udvikling, men det er næppe de direkte gevinster der er de vigtigste/største, it-udgifter er specielle, fordi hvis de bruges rigtige spares rigtig mange penge, men de kan også bruges på en måde der ikke giver meget værdi (fx flytte data rundt, fremfor at lave gode brugeroplevelser/hyppige tilpasninger)
+Effektiv it-udvikling, men det er næppe de direkte gevinster der er de vigtigste/største, it-udgifter er specielle, fordi hvis de bruges rigtigt spares rigtig mange penge, men de kan også bruges på en måde der ikke giver meget værdi (fx flytte data rundt, fremfor at lave gode brugeroplevelser/hyppige tilpasninger)
 
 Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?
 
@@ -82,7 +82,7 @@ Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?
 
 
 **Security-by-design** Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
-Særligt den såkaldte krigsregel betyder at særlige kristisk applikationer kan kræves at blive opbevaret på dansk territorie [[!DATALOV]]. Derfor opbevares applikationer og data indledningsvis alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
+Særligt den såkaldte krigsregel betyder at særlige kristiske applikationer kan kræves at blive opbevaret på dansk territorie [[!DATALOV]]. Derfor opbevares applikationer og data indledningsvis alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
 Det betyder platformen på sigt tilbyder funktioner til at udfører den type af kontroller som er beskrevet i [[ISO27]] og understøttelse af effektiv information asset management som aftalt (hvem har besluttet anvendelse af 27001?). (ref. til cybersecurity?)
 
 
@@ -93,7 +93,7 @@ Det betyder platformen på sigt tilbyder funktioner til at udfører den type af 
 
 ## Arkitekturstil
 
-Platformen skal understøtte moderner applikationer...
+Platformen skal understøtte moderne applikationer...
 
 SOA (den modne udgave), 12 factor apps, Cloud, PaaS. API enabled GUI.
 
@@ -117,7 +117,7 @@ The ArchiMate core language defines a structure of generic elements and their re
 
 
 # Business
-På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med)
+På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. I tegningen bliver der brugt en RAC matrix som normalt bliver brugt til at afklare og definere ansvar og roller i et projekt. RAC står for Responsible, Accountable og Consulted, dette betyder at hvis der er et R ved en aktør er aktøren ansvarlig for det stregen peger mod, hvis der er et A ved aktøren er aktøren forpligtet og hvis der er et C ved aktøren bliver aktøren konsulteret. Denne (Forklar RAC og hvorfor I ikke er med)
 <br>
 
 <img src="roles.svg"/>
@@ -183,7 +183,7 @@ Ansvaret for opgaven er delt mellem policy-ansvarlig og platformsudbyder. Policy
 
 Policy-ansvarlig sikre at princippet om leverandøruafhængighed overholdes ved at basere platform services og api på modne og veletablerede specifikationer og standarder fx ved brug af CAMMS...
 
-Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisations øvrige teknologivalg og driftsmodeller.
+Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisationens øvrige teknologivalg og driftsmodeller.
 
 ### <dfn export="true">Applikationsudvikling og -drift</dfn>
 
@@ -210,7 +210,7 @@ To systematically observe services and service components, and record and report
 
 
 ### <dfn export="true">Hændelseshåndtering</dfn>
-Formålet med opgaven er simple - at få applikations og platformsservices i normal drift så hurtigt som muligt efter utilsigtede hændelser. Ansvaret for opgave er derimod komplekst (uddyb? udbyder har ikke viden om anvenders applikationer)
+Formålet med opgaven er simpel - at få applikations og platformsservices i normal drift så hurtigt som muligt efter utilsigtede hændelser. Ansvaret for opgave er derimod komplekst (uddyb? udbyder har ikke viden om anvenders applikationer)
 
 Derfor har det være nødvendigt at aftale en eksplict proces (henvisning?, beskriv hvad vi ønsker at opnå med processen)
 
@@ -241,7 +241,7 @@ The on-site private cloud scenario og PaaS using Scavenged Resources:.
 
 **Data Protection** Piggy bag on excisting 27001?
 
-**Browser-anvendelse** Brugeren af applikationsservices vil ofte anvende en webbrowser som klient til services fra mange udbydere. Derved risikere brugeren at ondsindede hjemmeside efterlader kode i form af fx plugins, cached javascript eller system services, som vil true fortroligheden af information fra andre hjemmesider.
+**Browser-anvendelse** Brugeren af applikationsservices vil ofte anvende en webbrowser som klient til services fra mange udbydere. Derved risikere brugeren at ondsindede hjemmesider efterlader kode i form af fx plugins, cached javascript eller system services, som vil true fortroligheden af information fra andre hjemmesider.
 
 En måde at imødegå dette på er at anvende én browser dedikeret til services brugeren har tillid til, og andre til browsere til det almindelige internet (Eventuelt browser med særlige indstillinger til fx tilladte algoritmer og accepterede rod-certifikater). Det kan eventuelt gøres med brug af virtuelle maskiner enten på sin egen maskine eller over en service. (skal vi nævne VIA?)
 
@@ -249,15 +249,15 @@ Særligt vigtig er fortroligheden af brugerens login-acredentials. Browsere vil 
 
 Note: (Skal vi tilbyde det som option i service fabric? eller måske endda slå det til som default hvis applikationer har adgang til (person)følsomme data.)
 
-**Netværk** Hverken anvender eller udbyder kan sikre internettet. Men vi kan lave boundary controllers (og skelne mellem SIT PROD og internettet). Selv indenfor er der brug for at sikre sig mod sniffing, så brug HTTPS. Og ha styr på certifikathåndtering og anbefalede algoritmer. Særligt med app-2-app forbindelser... men husk at ansvaret ligger hos dem der udstiller følsomme data
+**Netværk** Hverken anvender eller udbyder kan sikre internettet. Men vi kan lave boundary controllers (og skelne mellem SIT PROD og internettet). Selv indenfor er der brug for at sikre sig mod sniffing, så brug HTTPS. Og hav styr på certifikathåndtering og anbefalede algoritmer. Særligt med app-2-app forbindelser... men husk at ansvaret ligger hos dem der udstiller følsomme data
 
 Note: Mangler vi anbefalinger om sikring af webservices?
 
-**Isolation vs Effiency (Deling af instancer)**  Det er dyrt af have en server per client... så en applikationsservice services flere brugere. Særligt opmærksom på services der tillader adgang fra brugere fra flere platformsanvendere (shared services). Der kan fejl i applikationer føre til utilsigtet adgang til dataset.
+**Isolation vs Effiency (Deling af instancer)**  Det er dyrt at have en server per client... så en applikationsservice services flere brugere. Særligt opmærksom på services der tillader adgang fra brugere fra flere platformsanvendere (shared services). Der kan fejl i applikationer føre til utilsigtet adgang til dataset.
 
 Derfor reducere vi antallet af shared services med adgang til følsomme data og opfordrer til at applikationer deles på image niveau. Det vil sige samme applikationskode kan kører i mange instancer, men hver instance anvendes kun af anvendere inden for samme platformsanvender.
 
-Desuden sikre udbyders logning af dataanvendelse af hvis fejl opstår fx i configuration og rettigheder, så er der sporbarhed og synlighed omkring hændelsen.
+Desuden sikre udbyders logning af dataanvendelse at hvis fejl opstår fx i configuration og rettigheder, så er der sporbarhed og synlighed omkring hændelsen.
 
 **Lack of portability**
 NIST opfordring til anvendelse af generiske snitflader. Her er vi meget specifikke og siger kun adgang til data gennem standardiserede (og tilgængelige i open source implementeringer) snitflader. Og K8S/Docker.
@@ -278,7 +278,7 @@ Note: her mangler vi noget... og noget med Statens Arkiver...
 
 
 **Security Risks from Multitenancy**
-Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang til information og ressourcer (multitenancy).
+Når der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang til information og ressourcer (multitenancy).
 
 - Applications (and Service and Datasets) are treated like first class tenants because different life spand and ownership changes over time. But always a clear owner (customer) to a tenant.
 
@@ -448,7 +448,7 @@ En vigtig artifakt er configuration, men ikke secrets.
 
 
 ### <dfn export="true">Images</dfn>
-er resultatet af et byg på baggrund af en version af kildekoden.
+er resultatet af et build på baggrund af en version af kildekoden.
 
 I docker er navngivet ejer/navn for at synliggøre ejerskabet.
 
@@ -580,7 +580,7 @@ Desværre ikke nogle standard (endnu).
 
 Men kendetegnet ved Non-ACID. men tilgengæld skalerbar.
 
-OJAI. Særligt interessant med store JSON dokumenter der kune låser den del af DOM der skrives i.
+OJAI. Særligt interessant med store JSON dokumenter der kun låser den del af DOM der skrives i.
 
 ### `/stream` (Kafka)
 
@@ -602,7 +602,7 @@ Noget om SSO og STS og realms.
 
 !Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.
 
-Hvsd betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel
+Hvad betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel
 
 
 
@@ -685,7 +685,7 @@ Rettigheder anvendes af MapR og af Access Fabric.
 
 Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).
 
-Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.
+Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunde vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.
 
 - Each Application exposes Application Services through the use of LoadBalancers.
 - Application Services are given an identity in the central Directory (mapping Sxxxxx to Applications, storing access rights and metadata).
@@ -806,7 +806,7 @@ Eksterne professionel services skal anvende remote desktop med overvågning fra 
 
 ### Kundens It-miljø
 
-Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologi hos mange leverandører, men har til denne opgave valgt at gå 'cloud first'.
+Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologier hos mange leverandører, men har til denne opgave valgt at gå 'cloud first'.
 
 De private cloud baserede miljøer, der tilbydes idag, har desværre en række begrænsninger. Særligt omkring omkostningssikkerhed og opbevaring af it-systemer og data på dansk grund.
 
@@ -838,7 +838,7 @@ Platformens API består medio 2019 af følgende services til brug for kundens ap
 
 
 
-### Tekniske kompetancer
+### Tekniske kompetencer
 Udvikling og drift af applikationer på platformen forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om levetid og sikring af adskillelse af services, applikationer og datasæt.
 
 * Udvikling af container baserede applikationer fx Docker.
