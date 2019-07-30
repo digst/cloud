@@ -117,7 +117,7 @@ The ArchiMate core language defines a structure of generic elements and their re
 
 
 # Business
-På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med)
+På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. I tegningen bliver der brugt en RAC matrix som normalt bliver brugt til at afklare og definere ansvar og roller i et projekt. RAC står for Responsible, Accountable og Consulted, dette betyder at hvis der er et R ved en aktør er aktøren ansvarlig for det stregen peger mod, hvis der er et A ved aktøren er aktøren forpligtet og hvis der er et C ved aktøren bliver aktøren konsulteret. Denne (Forklar RAC og hvorfor I ikke er med)
 <br>
 
 <img src="roles.svg"/>
