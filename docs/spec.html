@@ -1212,7 +1212,7 @@ Possible extra rowspan handling
 		}
 	}
 </style>
-  <meta content="Bikeshed version 9c51ae462b4b8b2f14dbddcd7d4b5224375eccc0" name="generator">
+  <meta content="Bikeshed version 2c217db8f2549f1109565b1487be9d7c7a7854fa" name="generator">
   <link href="http://github.com/digst/cloud/spec.md" rel="canonical">
 <style>
 @media print {
@@ -1431,7 +1431,7 @@ pre .property::before, pre .property::after {
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Specifikation <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-19">19 July 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-07-30">30 July 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1450,9 +1450,8 @@ pre .property::before, pre .property::after {
    <p>Beskrivelse af implementeringen af GovCloud PaaS. Denne version skrives med henblik på godkendelse i styregruppe medio august 2019.</p>
   </div>
   <div data-fill-with="at-risk"></div>
-  <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
-  <div style="color: red; column-count: 2;">
   <nav data-fill-with="table-of-contents" id="toc">
+   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
    <ol class="toc" role="directory">
     <li><a href="#introduction"><span class="secno"></span> <span class="content">Introduction</span></a>
     <li>
@@ -1518,7 +1517,7 @@ pre .property::before, pre .property::after {
        <ol class="toc">
         <li><a href="#oplysning-om-services"><span class="secno">3.3.1</span> <span class="content"><span>Oplysning om services</span></span></a>
         <li><a href="#oplysning-om-applikationer"><span class="secno">3.3.2</span> <span class="content"><span>Oplysning om applikationer</span></span></a>
-        <li><a href="#oplysning-om-datastr"><span class="secno">3.3.3</span> <span class="content"><span>Oplysning om datasætr</span></span></a>
+        <li><a href="#oplysning-om-datast"><span class="secno">3.3.3</span> <span class="content"><span>Oplysning om datasæt</span></span></a>
         <li><a href="#users-personer-brugere"><span class="secno">3.3.4</span> <span class="content"><span>Users</span> (Personer, Brugere?)</span></a>
         <li><a href="#rettigheder"><span class="secno">3.3.5</span> <span class="content"><span>Rettigheder</span></span></a>
        </ol>
@@ -1585,7 +1584,7 @@ pre .property::before, pre .property::after {
        <a href="#inspiration-til-udarbejdelse-af-kontrakter"><span class="secno"></span> <span class="content">Inspiration til udarbejdelse af kontrakter</span></a>
        <ol class="toc">
         <li><a href="#kundens-it-milj"><span class="secno"></span> <span class="content">Kundens It-miljø</span></a>
-        <li><a href="#tekniske-kompetancer"><span class="secno"></span> <span class="content">Tekniske kompetancer</span></a>
+        <li><a href="#tekniske-kompetencer"><span class="secno"></span> <span class="content">Tekniske kompetencer</span></a>
        </ol>
       <li><a href="#compliance-with-nist-paas-reccomendations"><span class="secno"></span> <span class="content">Compliance with NIST PaaS Reccomendations</span></a>
      </ol>
@@ -1602,12 +1601,10 @@ pre .property::before, pre .property::after {
      </ol>
    </ol>
   </nav>
-</div>
   <main>
    <h2 class="no-num heading settled" id="introduction"><span class="content">Introduction</span></h2>
-    <small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small>
-
-
+    <small> Dette dokument er del af en serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small> 
+   <p><br></p>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" width="300" height="150" viewBox="0, 0, 300, 150">
@@ -1668,11 +1665,11 @@ pre .property::before, pre .property::after {
   </g>
 </svg>
    <h2 class="heading settled" data-level="1" id="motivation"><span class="secno">1. </span><span class="content">Motivation</span><a class="self-link" href="#motivation"></a></h2>
-    God arkitektur er løsninger på et problem.
+    God arkitektur er løsninger på et problem. 
    <p><em>Hvordan tager de offentlige bedst cloud-teknologier i brug?</em></p>
    <p>Denne arkitektur sigter mod at øge anvendelsen af data der registreres af offentlige myndigheder (formuleres som problem?).</p>
    <p>(Hvilke assesments har vi? Disruption er sket...)</p>
-   <p>Effektiv it-udvikling, men det er næppe de direkte gevinster der er de vigtigste/største, it-udgifter er specielle, fordi hvis de bruges rigtige spares rigtig mange penge, men de kan også bruges på en måde der ikke giver meget værdi (fx flytte data rundt, fremfor at lave gode brugeroplevelser/hyppige tilpasninger)</p>
+   <p>Effektiv it-udvikling, men det er næppe de direkte gevinster der er de vigtigste/største, it-udgifter er specielle, fordi hvis de bruges rigtigt spares rigtig mange penge, men de kan også bruges på en måde der ikke giver meget værdi (fx flytte data rundt, fremfor at lave gode brugeroplevelser/hyppige tilpasninger)</p>
    <p>Skal vi ikke have nogle drivers / outcomes med? og nogle stakeholders?</p>
    <h3 class="heading settled" data-level="1.1" id="designprincipper"><span class="secno">1.1. </span><span class="content">Designprincipper</span><a class="self-link" href="#designprincipper"></a></h3>
    <p><strong>Uafbrudte services</strong> Platformen og dens applikationer er bygget med henblik på at understøtte uafbrudte services både under opdatering af enkelte services og hele platformen. Det betyder at der ikke eksisterer aftale service-vinduer, at services kan kører i forskellige versioner og infrastruktur og middleware etableres med hensyn til high-availability. Princippet følger tendenser med digital selvbetjening skal være tilgængelig 24/7 da brugere anvender dem på alle tider af døgnet og fra hele verden.</p>
@@ -1680,12 +1677,12 @@ pre .property::before, pre .property::after {
    <p><strong>Skalérbar platform</strong> Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette betyder at platform services realiseres gennem anvendelse af enterprise-grade komponenter med professional services-aftaler, at der tidligt i udviklingen er fokus på automatisering af daglige opgaver samt at platformen kan anvendes alene gennem selvbetjening uden involvering af udbyderen. Skalérbarheden giver ikke bare stordriftsfordele, men er en grundlæggende ændringer i opgavefordeling.</p>
    <p><strong>GDPR-by-design</strong> Platformen er forberedt til behandling af persondata og andre følsomme data i hht. <a data-link-type="biblio" href="#biblio-gdpr">[GDPR]</a>. Det betyder datasubjekters rettigheder og dataansvarliges pligter på sigt understøttes af fælles services. Princippet om privacy-by-design betyder at der tidligt i udviklingen indtænkes sikkerheds-kontroller og privacy-barriere, i form af tekniske service, men også i form af nye opgaver og ansvar. Fælles services kunne fx være overblik over anvendelse af persondata så vi sikre effektiv implementering af datasubjekter ret til indsigt. (ref. til digi.strategi?)</p>
    <p><strong>Security-by-design</strong> Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.
-Særligt den såkaldte krigsregel betyder at særlige kristisk applikationer kan kræves at blive opbevaret på dansk territorie <a data-link-type="biblio" href="#biblio-datalov">[DATALOV]</a>. Derfor opbevares applikationer og data indledningsvis alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
+Særligt den såkaldte krigsregel betyder at særlige kristiske applikationer kan kræves at blive opbevaret på dansk territorie <a data-link-type="biblio" href="#biblio-datalov">[DATALOV]</a>. Derfor opbevares applikationer og data indledningsvis alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne driftsmiljøer (scale-out til public clouds).
 Det betyder platformen på sigt tilbyder funktioner til at udfører den type af kontroller som er beskrevet i <a data-link-type="biblio" href="#biblio-iso27">[ISO27]</a> og understøttelse af effektiv information asset management som aftalt (hvem har besluttet anvendelse af 27001?). (ref. til cybersecurity?)</p>
    <p><strong>Omkostningssikker</strong> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige (som modsætning til eksisterende public cloud tilbud).</p>
    <p><strong>Agil it-udvikling</strong> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
    <h3 class="heading settled" data-level="1.2" id="arkitekturstil"><span class="secno">1.2. </span><span class="content">Arkitekturstil</span><a class="self-link" href="#arkitekturstil"></a></h3>
-   <p>Platformen skal understøtte moderner applikationer...</p>
+   <p>Platformen skal understøtte moderne applikationer...</p>
    <p>SOA (den modne udgave), 12 factor apps, Cloud, PaaS. API enabled GUI.</p>
    <p>Platformen skal styre adskilles mellem services, applikationer og data... gennem Layered architecture. Fordi de har forskellige levetid og forvaltes meget forskelligt.</p>
    <p>Converged infrastruktur, henvisning til factor 10</p>
@@ -1693,7 +1690,7 @@ Det betyder platformen på sigt tilbyder funktioner til at udfører den type af 
    <p>Platformen (og den applikationer) dokumenteres ensartet gennem brug af ure Archimate <a data-link-type="biblio" href="#biblio-fda">[FDA]</a> ... vi har valgt at sætte lighedstegn mellem platform og technology.
 Derfor er organisatorisk/forretning elementer gule, applikation blå og platform/teknologi grøn. Det gør det muligt at synliggøre ansvarsfordelingen mellem platform og applikations som beskrevet i driftsmodellen (PaaS). (Archimate er overaskende adapt når man tænker på det skabt i kontekst før cloud teknologi)</p>
    <blockquote cite="http://pubs.opengroup.org/architecture/archimate3-doc/chap03.html#_Toc489945969">
-     The ArchiMate core language defines a structure of generic elements and their relationships, which can be specialized in different layers. Three layers are defined within the ArchiMate core language as follows:
+     The ArchiMate core language defines a structure of generic elements and their relationships, which can be specialized in different layers. Three layers are defined within the ArchiMate core language as follows: 
     <ol>
      <li data-md>
       <p>The Business Layer depicts business services offered to customers, which are realized in the organization by business processes performed by business actors.</p>
@@ -1704,7 +1701,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
     </ol>
    </blockquote>
    <h2 class="heading settled" data-level="2" id="business"><span class="secno">2. </span><span class="content">Business</span><a class="self-link" href="#business"></a></h2>
-    På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. (Forklar RAC og hvorfor I ikke er med) <br>
+    På et forretningsmæssigt niveau kan platformen kan beskrives i termer af roller og områder for samarbejde. Herunder beskrives de væsentligste opgaver, nemlig Arkitekturstyring, Applikationsudvikling og -drift, Overvågning og eventhåndtering, Hændelseshåndtering, Problemhåndtering samt Sikkerhed og ressourceafgrænsning. I nedenstående tegning bliver relationen mellem roller, samarbejdsområder og opgaver præsenteret. I tegningen bliver der brugt en RAC matrix som normalt bliver brugt til at afklare og definere ansvar og roller i et projekt. RAC står for Responsible, Accountable og Consulted, dette betyder at hvis der er et R ved en aktør er aktøren ansvarlig for det stregen peger mod, hvis der er et A ved aktøren er aktøren forpligtet og hvis der er et C ved aktøren bliver aktøren konsulteret. Denne (Forklar RAC og hvorfor I ikke er med) <br> 
 <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill-opacity="1" color-rendering="auto" color-interpolation="auto" text-rendering="auto" stroke="black" stroke-linecap="square" width="517" stroke-miterlimit="10" shape-rendering="auto" stroke-opacity="1" fill="black" stroke-dasharray="none" font-weight="normal" stroke-width="1" height="auto" font-family="'Dialog'" font-style="normal" stroke-linejoin="miter" font-size="12px" stroke-dashoffset="0" image-rendering="auto" viewBox="0 0 517 480">
   <!--Generated by ySVG 2.5-->
   <defs id="genericDefs"/>
@@ -2156,7 +2153,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To provide an understanding of all the different elements that make up an organization and how those elements interrelate, enabling the organization to effectively achieve its current and future objectives. It provides the principles, standards, and tools that enable an organization to manage complex change in a structured and agile way. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Ansvaret for opgaven er delt mellem policy-ansvarlig og platformsudbyder. Policy-ansvarlig har ansvaret for beskrivelsen af den del af arkitekturen som er synlig for anvenderen dvs. platform services og platform api. Udbyderen har derimod ansvaret for den del af arkitketuren der realisere de beskrevne services og interfaces.</p>
    <p>Policy-ansvarlig sikre at princippet om leverandøruafhængighed overholdes ved at basere platform services og api på modne og veletablerede specifikationer og standarder fx ved brug af CAMMS...</p>
-   <p>Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisations øvrige teknologivalg og driftsmodeller.</p>
+   <p>Udbyderen sikrer at princippet om uafbrudte services og skalérbarhed  overholdes ved at vælge middleware komponenter der er bedst egnet til formålet og passer til organisationens øvrige teknologivalg og driftsmodeller.</p>
    <h4 class="heading settled" data-level="2.2.2" id="applikationsudvikling-og--drift"><span class="secno">2.2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applikationsudvikling-og--drift①">Applikationsudvikling og -drift<a class="self-link" href="#applikationsudvikling-og--drift①"></a></dfn></span><a class="self-link" href="#applikationsudvikling-og--drift"></a></h4>
    <blockquote cite="https://en.wikipedia.org/wiki/DevOps"> DevOps is a set of software development practices that combine software development (Dev) and information technology operations (Ops) to shorten the systems development life cycle while delivering features, fixes, and updates frequently in close alignment with business objectives. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Anvenderen har ansvaret for udviklingen og anvendelsen af egne applikationer.</p>
@@ -2168,7 +2165,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
    <p>Statusovervågning resulter i rapporter om platformen og applikationers status der indgår i den almindelige styring (se general management).</p>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To systematically observe services and service components, and record and report selected changes of state identified as events, through identifying and prioritizing infrastructure, services, business processes, and information security events, and establishing the appropriate response to those events, including responding to conditions that could lead to potential faults or incidents. <a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a></blockquote>
    <h4 class="heading settled" data-level="2.2.4" id="hndelseshndtering"><span class="secno">2.2.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="hndelseshndtering①">Hændelseshåndtering<a class="self-link" href="#hndelseshndtering①"></a></dfn></span><a class="self-link" href="#hndelseshndtering"></a></h4>
-    Formålet med opgaven er simple - at få applikations og platformsservices i normal drift så hurtigt som muligt efter utilsigtede hændelser. Ansvaret for opgave er derimod komplekst (uddyb? udbyder har ikke viden om anvenders applikationer)
+    Formålet med opgaven er simpel - at få applikations og platformsservices i normal drift så hurtigt som muligt efter utilsigtede hændelser. Ansvaret for opgave er derimod komplekst (uddyb? udbyder har ikke viden om anvenders applikationer) 
    <p>Derfor har det være nødvendigt at aftale en eksplict proces (henvisning?, beskriv hvad vi ønsker at opnå med processen)</p>
    <blockquote cite="https://www.bmc.com/blogs/itil-management-practices/"> To minimize the negative impact of incidents by restoring normal service operation as quickly as possible.<a data-link-type="biblio" href="#biblio-itil4">[ITIL4]</a> </blockquote>
    <p>Vigtigt at opsamle viden undervejs, derfor en særskilt samarbejdsplatform (se Collab). Både til brug for den generelle management, men også til problem-håndtering.</p>
@@ -2180,15 +2177,15 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
    <p>Liste over risici <a data-link-type="biblio" href="#biblio-nistsp800-146">[NIST.SP.800-146]</a> og måder at imødegå dem på. (se forøvrigt listen over open issues...særligt 8-8)</p>
    <p>The on-site private cloud scenario og PaaS using Scavenged Resources:.</p>
    <p><strong>Data Protection</strong> Piggy bag on excisting 27001?</p>
-   <p><strong>Browser-anvendelse</strong> Brugeren af applikationsservices vil ofte anvende en webbrowser som klient til services fra mange udbydere. Derved risikere brugeren at ondsindede hjemmeside efterlader kode i form af fx plugins, cached javascript eller system services, som vil true fortroligheden af information fra andre hjemmesider.</p>
+   <p><strong>Browser-anvendelse</strong> Brugeren af applikationsservices vil ofte anvende en webbrowser som klient til services fra mange udbydere. Derved risikere brugeren at ondsindede hjemmesider efterlader kode i form af fx plugins, cached javascript eller system services, som vil true fortroligheden af information fra andre hjemmesider.</p>
    <p>En måde at imødegå dette på er at anvende én browser dedikeret til services brugeren har tillid til, og andre til browsere til det almindelige internet (Eventuelt browser med særlige indstillinger til fx tilladte algoritmer og accepterede rod-certifikater). Det kan eventuelt gøres med brug af virtuelle maskiner enten på sin egen maskine eller over en service. (skal vi nævne VIA?)</p>
    <p>Særligt vigtig er fortroligheden af brugerens login-acredentials. Browsere vil tilbyde at opbevare dem for convinience. To-faktor login til tjenester hvor det er brug for høj fortrolighed.</p>
    <p class="note" role="note"><span>Note:</span> (Skal vi tilbyde det som option i service fabric? eller måske endda slå det til som default hvis applikationer har adgang til (person)følsomme data.)</p>
-   <p><strong>Netværk</strong> Hverken anvender eller udbyder kan sikre internettet. Men vi kan lave boundary controllers (og skelne mellem SIT PROD og internettet). Selv indenfor er der brug for at sikre sig mod sniffing, så brug HTTPS. Og ha styr på certifikathåndtering og anbefalede algoritmer. Særligt med app-2-app forbindelser... men husk at ansvaret ligger hos dem der udstiller følsomme data</p>
+   <p><strong>Netværk</strong> Hverken anvender eller udbyder kan sikre internettet. Men vi kan lave boundary controllers (og skelne mellem SIT PROD og internettet). Selv indenfor er der brug for at sikre sig mod sniffing, så brug HTTPS. Og hav styr på certifikathåndtering og anbefalede algoritmer. Særligt med app-2-app forbindelser... men husk at ansvaret ligger hos dem der udstiller følsomme data</p>
    <p class="note" role="note"><span>Note:</span> Mangler vi anbefalinger om sikring af webservices?</p>
-   <p><strong>Isolation vs Effiency (Deling af instancer)</strong> Det er dyrt af have en server per client... så en applikationsservice services flere brugere. Særligt opmærksom på services der tillader adgang fra brugere fra flere platformsanvendere (shared services). Der kan fejl i applikationer føre til utilsigtet adgang til dataset.</p>
+   <p><strong>Isolation vs Effiency (Deling af instancer)</strong> Det er dyrt at have en server per client... så en applikationsservice services flere brugere. Særligt opmærksom på services der tillader adgang fra brugere fra flere platformsanvendere (shared services). Der kan fejl i applikationer føre til utilsigtet adgang til dataset.</p>
    <p>Derfor reducere vi antallet af shared services med adgang til følsomme data og opfordrer til at applikationer deles på image niveau. Det vil sige samme applikationskode kan kører i mange instancer, men hver instance anvendes kun af anvendere inden for samme platformsanvender.</p>
-   <p>Desuden sikre udbyders logning af dataanvendelse af hvis fejl opstår fx i configuration og rettigheder, så er der sporbarhed og synlighed omkring hændelsen.</p>
+   <p>Desuden sikre udbyders logning af dataanvendelse at hvis fejl opstår fx i configuration og rettigheder, så er der sporbarhed og synlighed omkring hændelsen.</p>
    <p><strong>Lack of portability</strong> NIST opfordring til anvendelse af generiske snitflader. Her er vi meget specifikke og siger kun adgang til data gennem standardiserede (og tilgængelige i open source implementeringer) snitflader. Og K8S/Docker.</p>
    <p><strong>Eventbase process scheduling</strong> Det er svært at garantere tid og næppe muligt at kører realtidssystemer på delt hardware. Derfor bør platformen ikke anvendes til tidskritiske systemer. Vi vurdere at langt det meste af den offentlige forvaltning ikke er tidskritisk men kan leve med svartider der variere op til flere sekunder.</p>
    <p><strong>Security Engineering</strong> (Særlig opgave med ansvar for adgang til de enkelte record i et data sæt... men vi tror PaaS er mere sikkert, fordi de begrænsede sikkerhedsressourcer får lov til at fokusere på det specifikke og det generelle håndteres på platform niveau)</p>
@@ -2199,7 +2196,7 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
      <p>Acces policy enforcement and audit</p>
    </ul>
    <p><strong>Secure Data Deletion</strong> Note: her mangler vi noget... og noget med Statens Arkiver...</p>
-   <p><strong>Security Risks from Multitenancy</strong> Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang til information og ressourcer (multitenancy).</p>
+   <p><strong>Security Risks from Multitenancy</strong> Når der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang til information og ressourcer (multitenancy).</p>
    <ul>
     <li data-md>
      <p>Applications (and Service and Datasets) are treated like first class tenants because different life spand and ownership changes over time. But always a clear owner (customer) to a tenant.</p>
@@ -2214,26 +2211,26 @@ Derfor er organisatorisk/forretning elementer gule, applikation blå og platform
      <p>Applikationer er der mere frit slag.. men huske at de måske ændrer ejerskab ved ressortomlægning.</p>
    </ul>
    <h4 class="heading settled" data-level="2.2.7" id="ressource-management"><span class="secno">2.2.7. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="ressource-management①">Ressource management<a class="self-link" href="#ressource-management①"></a></dfn></span><a class="self-link" href="#ressource-management"></a></h4>
-    Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang og ressourcer (multitenancy).
+    Der der er flere anvender af den samme fysiske infrastruktur er det vigtigt at sikre en fornødne afgrænsning af adgang og ressourcer (multitenancy). 
    <p>Network, Compute and Storage... per fabric.</p>
    <p>Hard and soft limits? Max scale factor?</p>
    <p>(Skal foldes  helt  ud...)</p>
    <p>Udbyder kan ikke prioritere mellem anvendere, da de ikke kender kritikalitet... og selv på instruks har de ikke myndighed til at vælge.. så der skal bare være nok :-)</p>
    <h4 class="heading settled" data-level="2.2.8" id="privacy"><span class="secno">2.2.8. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="privacy①">Privacy?<a class="self-link" href="#privacy①"></a></dfn></span><a class="self-link" href="#privacy"></a></h4>
-    Med tiden vil der kommer mange datasæt. Og vi har eksplicit sænket barrierene for datadeling. Når der er nok datasæt skal vi til at tænke på at sætte benspænd op for sammenstilling af personfølsomme datasæt (profillering).
+    Med tiden vil der kommer mange datasæt. Og vi har eksplicit sænket barrierene for datadeling. Når der er nok datasæt skal vi til at tænke på at sætte benspænd op for sammenstilling af personfølsomme datasæt (profillering). 
    <p>Vi ser personal id’s som kernen og tror ikke på global ids.
 Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (in flight) og tredje part med service til sammenstilling af id (id correlation)... og anbefalinger om transient id’s hvor det er muligt.</p>
    <p>Forberede på måske at give datasubjekt ret til...?</p>
    <h3 class="heading settled" data-level="2.3" id="arbejdsgange-brugeroplevelser"><span class="secno">2.3. </span><span class="content">Arbejdsgange/Brugeroplevelser</span><a class="self-link" href="#arbejdsgange-brugeroplevelser"></a></h3>
-    På en række centrale områder adskiller brugeroplevelsen ved platformen sig væsentligt fra mere konventionel udvikling og drift af it.
+    På en række centrale områder adskiller brugeroplevelsen ved platformen sig væsentligt fra mere konventionel udvikling og drift af it. 
    <h4 class="heading settled" data-level="2.3.1" id="registrere-applikationer-datasamlinger-og-services"><span class="secno">2.3.1. </span><span class="content">Registrere Applikationer, Datasamlinger og Services</span><a class="self-link" href="#registrere-applikationer-datasamlinger-og-services"></a></h4>
-    Har til formål at sikre beskrivende felter til mange formål.
+    Har til formål at sikre beskrivende felter til mange formål. 
    <p>Opfordre til at der sker allerede i en start arkitketur... og vedligeholdes løbende i forbindelse med udvkling.</p>
    <p>Especially Information, Software and Services from ISO 27001 Information Asset Inventory.</p>
    <p>Fællesoffentlige DCAT/ADMS profil, som opbevares i Directory (og kan udstilles i Datasætkatalog)</p>
    <p>Understøttes i selvbetjeningsløsning, der både registrere, men også opretter på platformen. Fx opretter (sub)volume i MapR eller placeholder på URL.</p>
    <h4 class="heading settled" data-level="2.3.2" id="devops"><span class="secno">2.3.2. </span><span class="content">DevOps</span><a class="self-link" href="#devops"></a></h4>
-    (Beskrive lidt om hvad opgaverne består i... måske relatere dem til services?)
+    (Beskrive lidt om hvad opgaverne består i... måske relatere dem til services?) 
    <ul>
     <li data-md>
      <p><strong>Plan</strong> Fastholde user stories og start arkitektur. Id’er på user stories til løbende status og kobling til code versioner. Måske allerede registrere dem (se ovenfor).</p>
@@ -2254,12 +2251,12 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    </ul>
    <p>Samme miljø på tværs af dev, test og ops.. forklar.</p>
    <h4 class="heading settled" data-level="2.3.3" id="collaborative-incident-management"><span class="secno">2.3.3. </span><span class="content">Collaborative Incident Management</span><a class="self-link" href="#collaborative-incident-management"></a></h4>
-    Har til formål at få services op at kører.. men er kompleks fordi der både er en platform, en applikation og en status overvågning...
+    Har til formål at få services op at kører.. men er kompleks fordi der både er en platform, en applikation og en status overvågning... 
    <p>Det er også en del af Operate skridtet i <a data-link-type="dfn">DevOps</a> ovenfor.</p>
    <p>Beskriv det som en online samarbejdsøvelse...</p>
    <p>SIT provides collaborative tools to support collaboration during normal operation and during incident handling.</p>
    <h4 class="heading settled" data-level="2.3.4" id="toolchain"><span class="secno">2.3.4. </span><span class="content">Toolchain</span><a class="self-link" href="#toolchain"></a></h4>
-    Ikke den del af PaaS, men samlet tilbud.
+    Ikke den del af PaaS, men samlet tilbud. 
    <h4 class="heading settled" data-level="2.3.5" id="trning"><span class="secno">2.3.5. </span><span class="content">Træning</span><a class="self-link" href="#trning"></a></h4>
    <p>SKI?</p>
    <p>SIT provides limited unsupported free-of-charge GovCloud ressources to existing and prospect consumers for evaluation purposes.</p>
@@ -2943,7 +2940,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
 </svg>
    <h3 class="heading settled" data-level="3.1" id="run-time-find-p-bedre-term"><span class="secno">3.1. </span><span class="content">Run time (find på bedre term)</span><a class="self-link" href="#run-time-find-p-bedre-term"></a></h3>
    <h4 class="heading settled" data-level="3.1.1" id="applilkationstjeneste-tjek-fda"><span class="secno">3.1.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="applilkationstjeneste">Applilkationstjeneste<a class="self-link" href="#applilkationstjeneste"></a></dfn> (Tjek FDA)</span><a class="self-link" href="#applilkationstjeneste-tjek-fda"></a></h4>
-    I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload.
+    I denne platform er en applikationstjeneste enten en konkret webapplikation eller en webservice som forvaltes af en platformanvender. Applikationstjenester er tilgængelig fra internettet via en URL og anvender typisk HTTPS som protokol og enten HTML eller XML/JSON som payload. 
    <p>Applikationstjenester anvendes enten af medarbejder hos den enkelte myndighed eller af borger og virksomheder som en del af en offentlig opgave.</p>
    <p>Det kunne fx være en hjemmeside med en selvbetjeningsløsning eller en webservice hvor man kan hente aktuelle vejrobservationer.</p>
    <p>(Den forbruger ressourceer, netværk og kan derfor også begrænsees)</p>
@@ -2967,34 +2964,36 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <h4 class="heading settled" data-level="3.1.5" id="logs"><span class="secno">3.1.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="logs①">Logs<a class="self-link" href="#logs①"></a></dfn></span><a class="self-link" href="#logs"></a></h4>
    <p>Både fra de tre fabrics og fra applikationer.</p>
    <h3 class="heading settled" data-level="3.2" id="repository"><span class="secno">3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="repository①">Repository<a class="self-link" href="#repository①"></a></dfn></span><a class="self-link" href="#repository"></a></h3>
-    Der hvor man opbevare det der bliver til it-systemer...
+    Der hvor man opbevare det der bliver til it-systemer... 
    <h4 class="heading settled" data-level="3.2.1" id="source-code"><span class="secno">3.2.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="source-code①">Source Code<a class="self-link" href="#source-code①"></a></dfn></span><a class="self-link" href="#source-code"></a></h4>
-    Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet.
+    Den kildekode og andre artifakter som anvendes til at bygge et image. Oftest skrevet i et programmeringssprog som Java eller Go, men kan også være grafikelementer, installationsscripts og andet. 
    <p>Kildekoden findes ofte i flere samtidige branches og har tilknyttet version der opdateres ved ændringer og markering af releases, som er særlige version der fx er taget i brug eller blevet afprøvet.</p>
    <p>En vigtig artifakt er configuration, men ikke secrets.</p>
    <h4 class="heading settled" data-level="3.2.2" id="images"><span class="secno">3.2.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="images①">Images<a class="self-link" href="#images①"></a></dfn></span><a class="self-link" href="#images"></a></h4>
-    er resultatet af et byg på baggrund af en version af kildekoden.
+    er resultatet af et build på baggrund af en version af kildekoden. 
    <p>I docker er navngivet ejer/navn for at synliggøre ejerskabet.</p>
    <p>Vi kan skanne dem for sårbarheder.</p>
    <p class="note" role="note"><span>Note:</span> Et namespace per platformsanvender/virksomhed?</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=image"> Docker images are the basis of containers. An Image is an ordered collection of root filesystem changes and the corresponding execution parameters for use within a container runtime. An image typically contains a union of layered filesystems stacked on top of each other. An image does not have state and it never changes.</blockquote>
    <h4 class="heading settled" data-level="3.2.3" id="tags"><span class="secno">3.2.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="tags①">Tags<a class="self-link" href="#tags①"></a></dfn></span><a class="self-link" href="#tags"></a></h4>
-    Et docker images kan tagges med flere tags.
+    Et docker images kan tagges med flere tags. 
    <p>De anvendes fx ved deployment, ejer/navn:prod</p>
    <p class="note" role="note"><span>Note:</span> Vi bør have anbefalinger for et fælles skema i udviklingshåndbogen.</p>
    <blockquote cite="https://docs.docker.com/glossary/?term=tag"> A tag is a label applied to a Docker image in a repository. Tags are how various images in a repository are distinguished from each other. </blockquote>
    <h3 class="heading settled" data-level="3.3" id="directory-inventory"><span class="secno">3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="directory-inventory①">Directory/Inventory<a class="self-link" href="#directory-inventory①"></a></dfn></span><a class="self-link" href="#directory-inventory"></a></h3>
-    der hvor der er oplysninger om hvad der kører og hvem der har adgang til det...
+    der hvor der er oplysninger om hvad der kører og hvem der har adgang til det... 
    <h4 class="heading settled" data-level="3.3.1" id="oplysning-om-services"><span class="secno">3.3.1. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-services①">Oplysning om services<a class="self-link" href="#oplysning-om-services①"></a></dfn></span><a class="self-link" href="#oplysning-om-services"></a></h4>
    <h4 class="heading settled" data-level="3.3.2" id="oplysning-om-applikationer"><span class="secno">3.3.2. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-applikationer①">Oplysning om applikationer<a class="self-link" href="#oplysning-om-applikationer①"></a></dfn></span><a class="self-link" href="#oplysning-om-applikationer"></a></h4>
-   <h4 class="heading settled" data-level="3.3.3" id="oplysning-om-datastr"><span class="secno">3.3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-datastr①">Oplysning om datasætr<a class="self-link" href="#oplysning-om-datastr①"></a></dfn></span><a class="self-link" href="#oplysning-om-datastr"></a></h4>
+   <h4 class="heading settled" data-level="3.3.3" id="oplysning-om-datast"><span class="secno">3.3.3. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="oplysning-om-datast①">Oplysning om datasæt<a class="self-link" href="#oplysning-om-datast①"></a></dfn></span><a class="self-link" href="#oplysning-om-datast"></a></h4>
+    Default til følsommes. Beskrive udfordringen mellem Open By Default og Privacy By Design... afhænger om indhold af persondata. 
    <h4 class="heading settled" data-level="3.3.4" id="users-personer-brugere"><span class="secno">3.3.4. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="users">Users<a class="self-link" href="#users"></a></dfn> (Personer, Brugere?)</span><a class="self-link" href="#users-personer-brugere"></a></h4>
    <h4 class="heading settled" data-level="3.3.5" id="rettigheder"><span class="secno">3.3.5. </span><span class="content"><dfn data-dfn-type="dfn" data-export id="rettigheder①">Rettigheder<a class="self-link" href="#rettigheder①"></a></dfn></span><a class="self-link" href="#rettigheder"></a></h4>
    <p>A,U -> S</p>
    <p>A -(r,w)-> D</p>
+   <p>Pointe om at tjekke rettigheder i forhold til lovgivning automatisk. Indtaste hvilken hjemmel, pege på retsinformation, maskinlæsbare regler for (gen)-anvendelse.</p>
    <h2 class="heading settled" data-level="4" id="technology"><span class="secno">4. </span><span class="content">Technology</span><a class="self-link" href="#technology"></a></h2>
    <h3 class="heading settled" data-level="4.1" id="platform-services"><span class="secno">4.1. </span><span class="content">Platform Services</span><a class="self-link" href="#platform-services"></a></h3>
-    alle med brugergenkendelse gennem SIT AD.
+    alle med brugergenkendelse gennem SIT AD. 
    <p>Web applikationer i browsere til brug for ansatte og konsulenter hos platformsanvender.</p>
    <h4 class="heading settled" data-level="4.1.1" id="gitgovclouddk"><span class="secno">4.1.1. </span><span class="content"><code>git.govcloud.dk</code></span><a class="self-link" href="#gitgovclouddk"></a></h4>
    <h4 class="heading settled" data-level="4.1.2" id="reggovclouddk"><span class="secno">4.1.2. </span><span class="content"><code>reg.govcloud.dk</code></span><a class="self-link" href="#reggovclouddk"></a></h4>
@@ -3008,7 +3007,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <p>Men det også et arkitekturlag... Der matcher digital assets.</p>
    <p>Og det realiseres gennem platform komponenter og middleware.</p>
    <h4 class="heading settled" data-level="4.2.1" id="service-fabric"><span class="secno">4.2.1. </span><span class="content">Service Fabric</span><a class="self-link" href="#service-fabric"></a></h4>
-    Responsibilities:
+    Responsibilities: 
    <ul>
     <li data-md>
      <p>Oversæt ID og tildel requestID</p>
@@ -3020,7 +3019,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p>Log (AccessLog/Request Log?)</p>
    </ul>
    <h4 class="heading settled" data-level="4.2.2" id="application-fabrics"><span class="secno">4.2.2. </span><span class="content">Application Fabrics</span><a class="self-link" href="#application-fabrics"></a></h4>
-    Responsibilities:
+    Responsibilities: 
    <ul>
     <li data-md>
      <p>Deploy, scale, redeploy images from Repository</p>
@@ -3034,7 +3033,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p>Mount NFS as Volume (for app log?)</p>
    </ul>
    <h4 class="heading settled" data-level="4.2.3" id="data-fabric"><span class="secno">4.2.3. </span><span class="content">Data Fabric</span><a class="self-link" href="#data-fabric"></a></h4>
-    Responsible for:
+    Responsible for: 
    <ul>
     <li data-md>
      <p>Store datasets</p>
@@ -3048,19 +3047,19 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p>Implement dataaccess interfaces: File (NFS), Stream (Kafka), Document (OJAI), Table?</p>
    </ul>
    <h3 class="heading settled" data-level="4.3" id="platform-api"><span class="secno">4.3. </span><span class="content">Platform API</span><a class="self-link" href="#platform-api"></a></h3>
-    alle webservices der kan kaldes inde fra anvenderens applikationer.
+    alle webservices der kan kaldes inde fra anvenderens applikationer. 
    <p>Der er underlagt arkitekturstyring og bestemmes af Policy-owner.</p>
    <p>Adgangskontrol til data via rettigheder i directory/registry.</p>
    <p>Dataservices...</p>
    <h4 class="heading settled" data-level="4.3.1" id="-file-nfs"><span class="secno">4.3.1. </span><span class="content"><code>/file</code> (NFS)</span><a class="self-link" href="#-file-nfs"></a></h4>
-    Possix compliance... så man kan det samme som på UNIX og LINUX og Windows?
+    Possix compliance... så man kan det samme som på UNIX og LINUX og Windows? 
    <h4 class="heading settled" data-level="4.3.2" id="-table-nosql"><span class="secno">4.3.2. </span><span class="content"><code>/table</code> (NoSQL)</span><a class="self-link" href="#-table-nosql"></a></h4>
-    Desværre ikke nogle standard (endnu).
+    Desværre ikke nogle standard (endnu). 
    <p>Men kendetegnet ved Non-ACID. men tilgengæld skalerbar.</p>
-   <p>OJAI. Særligt interessant med store JSON dokumenter der kune låser den del af DOM der skrives i.</p>
+   <p>OJAI. Særligt interessant med store JSON dokumenter der kun låser den del af DOM der skrives i.</p>
    <h4 class="heading settled" data-level="4.3.3" id="-stream-kafka"><span class="secno">4.3.3. </span><span class="content"><code>/stream</code> (Kafka)</span><a class="self-link" href="#-stream-kafka"></a></h4>
    <h4 class="heading settled" data-level="4.3.4" id="-log"><span class="secno">4.3.4. </span><span class="content"><code>/log</code></span><a class="self-link" href="#-log"></a></h4>
-    platformen skriver fra application services og dataservices.
+    platformen skriver fra application services og dataservices. 
    <p>anvenders applikations skriver også...</p>
    <p>sammenstille, søge og hente</p>
    <ul>
@@ -3069,14 +3068,14 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    </ul>
    <p class="note" role="note"><span>Note:</span> Vi mangler vejledning i hvordan Log skrives fx Log4J mønster, men gem det til udvikler håndbogen.</p>
    <h4 class="heading settled" data-level="4.3.5" id="-token"><span class="secno">4.3.5. </span><span class="content"><code>/token</code></span><a class="self-link" href="#-token"></a></h4>
-    Oversætte id-tokens fra ekstern IdP. Måske oversætte til interne id’er. JWT?
+    Oversætte id-tokens fra ekstern IdP. Måske oversætte til interne id’er. JWT? 
    <p>Noget om SSO og STS og realms.</p>
    <p>!Authentication Findes ikke på platformen men sker hos IdP. Federation til Directory. Fx... binde NemId sammen med B-numre.</p>
-   <p>Hvsd betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel</p>
+   <p>Hvad betyder det at man kan bruge eksisterende trusted attributes. Giv eksempel</p>
    <h3 class="heading settled" data-level="4.4" id="middleware"><span class="secno">4.4. </span><span class="content">Middleware</span><a class="self-link" href="#middleware"></a></h3>
    <h4 class="heading settled" data-level="4.4.1" id="gravitee"><span class="secno">4.4.1. </span><span class="content">Gravitee</span><a class="self-link" href="#gravitee"></a></h4>
    <h4 class="heading settled" data-level="4.4.2" id="rancher"><span class="secno">4.4.2. </span><span class="content">Rancher</span><a class="self-link" href="#rancher"></a></h4>
-    <a href="https://rancher.com/">Rancher</a> has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation.
+    <a href="https://rancher.com/">Rancher</a> has been choosen as Kubernetes Cluster Management, for the following reasons: Multitenancy build in, API access suitable for building SIT branded self-service, possible to resuse existing user interface elementes, multi-cluster capabilities, plans provding simple OS and ease of use for platform operation. 
    <p>The mapping from business objects to Rancher elements are:</p>
    <ul>
     <li data-md>
@@ -3132,11 +3131,11 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <p>(Er det mulig at bruge symlinks til at referere til datasæts via både FORM, CVR )</p>
    <h4 class="heading settled" data-level="4.4.4" id="keycloak"><span class="secno">4.4.4. </span><span class="content">KeyCloak</span><a class="self-link" href="#keycloak"></a></h4>
    <h4 class="heading settled" data-level="4.4.5" id="freeipa"><span class="secno">4.4.5. </span><span class="content">FreeIPA</span><a class="self-link" href="#freeipa"></a></h4>
-    Product with LDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD.
+    Product with LDAP interface. Data opbevares uden for MapR, men findes i kopi på MapR. Oplysninger om Kunder og Bruger hentes fra SIT AD. 
    <p>Derudover gemmes identiteter og oplysninger om Applikationer, Services, Datasæt (D-numre) og rettigheder imellem disse og Kunder og Brugere.</p>
    <p>Rettigheder anvendes af MapR og af Access Fabric.</p>
    <p>Oplysninger om henholdvis services, applikationer og datasæt modelleres efter de fælles offentlige modeller herfor (se data.gov.dk).</p>
-   <p>Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunne vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.</p>
+   <p>Overvej ikke at gøre for mange felter obligatoriske fra starten. Lad kunde vedligeholde oplysninger gennem selvbetjening og uden om (ex excel). Custom felter? Henvisninger til stereotyper fra Referencearkitekturer.</p>
    <ul>
     <li data-md>
      <p>Each Application exposes Application Services through the use of LoadBalancers.</p>
@@ -3148,12 +3147,12 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <h4 class="heading settled" data-level="4.4.6" id="gitlab"><span class="secno">4.4.6. </span><span class="content">GitLab</span><a class="self-link" href="#gitlab"></a></h4>
    <p>GitLab installation. Bør kører som applikation i K8S med AD integration og opbevare code som datasæt på MapR. Kræver vist in SQL database som skal installeres sammen med. Helm?</p>
    <h4 class="heading settled" data-level="4.4.7" id="habor"><span class="secno">4.4.7. </span><span class="content">Habor</span><a class="self-link" href="#habor"></a></h4>
-    Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR.
+    Harbor installation. Bør kører som applikation i K8S med AD integration og opbevare containere som datasæt på MapR. 
    <h2 class="heading settled" data-level="5" id="infrastructure"><span class="secno">5. </span><span class="content">Infrastructure</span><a class="self-link" href="#infrastructure"></a></h2>
-    Vi beskriver netværket som det ser ud når man ankommer fra internettet....
+    Vi beskriver netværket som det ser ud når man ankommer fra internettet.... 
    <p>Vi skal understøtte rolling updates og location failures samtidigt. Eventuelt tegning af L1/L2 og update gruppe A/B. Pointen er at der skal være nok maskiner med nok services i alle fire grupper til at kunne køre selvstændigt.</p>
    <h3 class="heading settled" data-level="5.1" id="internet-network-access"><span class="secno">5.1. </span><span class="content">Internet Network Access</span><a class="self-link" href="#internet-network-access"></a></h3>
-    GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT.
+    GovCloud tilgås via kundens egen DNS record, der peger på ét fælles SIT kontrollet domæne, der peger på ét fast IP nummer hos Statens IT. 
 <pre>cloud.gov.dk.    3589  IN  A  188.64.157.76
 </pre>
    <p>Kunder sætter selv DNS CNAME op. Bør være til cloud.gov.dk og ikke ip</p>
@@ -3171,7 +3170,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <h3 class="heading settled" data-level="5.3" id="network-layout"><span class="secno">5.3. </span><span class="content">Network Layout</span><a class="self-link" href="#network-layout"></a></h3>
    <p><img src="network.svg"></p>
    <h4 class="heading settled" data-level="5.3.1" id="application-network"><span class="secno">5.3.1. </span><span class="content">Application Network</span><a class="self-link" href="#application-network"></a></h4>
-    Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways.
+    Det primære netværk til App fabric dvs. K8S og den ingress controllers, men også loadbalancer ned mod MapR gateways. 
    <p>Netværket er <code>vlanXX, 10.aaa.xxx.0/24</code></p>
    <p>men er yderligere delt op i en række subnet der anvendes til forskellige funktioner, og dermed også kan anvendes til afgrænsninger af trafik i firewallen.</p>
    <ul>
@@ -3183,7 +3182,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p><code>10.aaa.xxx.248/29</code> noder der fungere som loadbalancer ned mod datafabric.</p>
    </ul>
    <h4 class="heading settled" data-level="5.3.2" id="data-network"><span class="secno">5.3.2. </span><span class="content">Data Network</span><a class="self-link" href="#data-network"></a></h4>
-    Det primære netværk til Data Fabric dvs hvor MapR kører.
+    Det primære netværk til Data Fabric dvs hvor MapR kører. 
    <p>Netværket er <code>vlanXX, 10.bbb.yyy.0/23</code></p>
    <p>Alle maskiner har et netværkskort på to subnet, så vi kan skille internt MapR chatter fra adgang til data.</p>
    <ul>
@@ -3193,7 +3192,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p><code>10.bbb.zzz.0/24</code> alle MapR noder.</p>
    </ul>
    <h4 class="heading settled" data-level="5.3.3" id="firewall"><span class="secno">5.3.3. </span><span class="content">Firewall</span><a class="self-link" href="#firewall"></a></h4>
-    For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler.
+    For at kontrollere trafikken mellem internettet og de to netværk, samt mellem de foskellige funktioner, anvendes følgende firewall regler. 
    <ol>
     <li data-md>
      <p>Tillad forbindelse fra internettet til gateway for http og https, så applikationer kan anvendes af kunder, borger og virksomheder <code>188.64.157.76:80,443 -> 10.aaa.xxx.3</code></p>
@@ -3205,14 +3204,14 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
      <p>Tillad forbindelse fra MapR til enkelte applikationsnoder, der kører en proxy, så der kan hentes opdateringer og måske noget med at tjekke licenser. <code>10.bbb.zzz.0/24 -> 10.aaa.xxx.16/??</code></p>
    </ol>
    <h4 class="heading settled" data-level="5.3.4" id="remote-admin-access"><span class="secno">5.3.4. </span><span class="content">Remote admin access</span><a class="self-link" href="#remote-admin-access"></a></h4>
-    Beskytte med certifikater...
+    Beskytte med certifikater... 
    <p>admin på app cluster og admin på data cluster er to roller med hver deres certifikater.</p>
    <p>Eksterne professionel services skal anvende remote desktop med overvågning fra SIT medarbejder.</p>
    <h3 class="heading settled" data-level="5.4" id="hardware"><span class="secno">5.4. </span><span class="content">Hardware</span><a class="self-link" href="#hardware"></a></h3>
    <h2 class="no-num heading settled" id="appendix"><span class="content">Appendix</span><a class="self-link" href="#appendix"></a></h2>
    <h3 class="heading settled" id="inspiration-til-udarbejdelse-af-kontrakter"><span class="content">Inspiration til udarbejdelse af kontrakter</span><a class="self-link" href="#inspiration-til-udarbejdelse-af-kontrakter"></a></h3>
    <h4 class="heading settled" id="kundens-it-milj"><span class="content">Kundens It-miljø</span><a class="self-link" href="#kundens-it-milj"></a></h4>
-   <p>Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologi hos mange leverandører, men har til denne opgave valgt at gå 'cloud first'.</p>
+   <p>Kunden er en offentlig myndighed - som mange andre - med et mangeartet it-system-landskab fordelt på mange teknologier hos mange leverandører, men har til denne opgave valgt at gå 'cloud first'.</p>
    <p>De private cloud baserede miljøer, der tilbydes idag, har desværre en række begrænsninger. Særligt omkring omkostningssikkerhed og opbevaring af it-systemer og data på dansk grund.</p>
    <p>Derfor foretrækker kunden et fælles offentlige drifts- og udviklingsmiljø baseret på moderne cloud teknologi og leveret af Statens IT. Digitaliseringsstyrelsen har ansvaret for at beskrive den anvender-vendte del af platformen i form af platform services og en platform api. Statens IT har har til ansvar at realisere platformen og står for den daglige drift. Kunden har som platformsanvender ansvar for udvikling og drift af egne applikationer, applikationsservices og datasamlinger.</p>
    <p>Platformen understøtter DevOps og Continous Integration and Delivery og har 24/7 platform support samt overvågning af kundens applikationstjenester.</p>
@@ -3243,8 +3242,8 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
     <li data-md>
      <p><code>/log</code> samlet log services med adgang til applikationens egen log samt logning af anvendelsen af platformens service og data lag.</p>
    </ul>
-   <h4 class="heading settled" id="tekniske-kompetancer"><span class="content">Tekniske kompetancer</span><a class="self-link" href="#tekniske-kompetancer"></a></h4>
-    Udvikling og drift af applikationer på platformen forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om levetid og sikring af adskillelse af services, applikationer og datasæt.
+   <h4 class="heading settled" id="tekniske-kompetencer"><span class="content">Tekniske kompetencer</span><a class="self-link" href="#tekniske-kompetencer"></a></h4>
+    Udvikling og drift af applikationer på platformen forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om levetid og sikring af adskillelse af services, applikationer og datasæt. 
    <ul>
     <li data-md>
      <p>Udvikling af container baserede applikationer fx Docker.</p>
@@ -3414,7 +3413,7 @@ Så på sigt vil vi have per datasæt id (at rest), per service/anvendelse id (i
    <li><a href="#images①">Images</a><span>, in §3.2.2</span>
    <li><a href="#logs①">Logs</a><span>, in §3.1.5</span>
    <li><a href="#oplysning-om-applikationer①">Oplysning om applikationer</a><span>, in §3.3.2</span>
-   <li><a href="#oplysning-om-datastr①">Oplysning om datasætr</a><span>, in §3.3.3</span>
+   <li><a href="#oplysning-om-datast①">Oplysning om datasæt</a><span>, in §3.3.3</span>
    <li><a href="#oplysning-om-services①">Oplysning om services</a><span>, in §3.3.1</span>
    <li><a href="#platformsanvender①">Platformsanvender</a><span>, in §2.1.2</span>
    <li><a href="#platformsudbyder①">Platformsudbyder</a><span>, in §2.1.1</span>
