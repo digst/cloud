@@ -19,7 +19,7 @@ Dette dokument beskriver arbejdet med user stories til brug ved udviklingen af e
 
 Hver række i regnearket beskriver en user story. De første kolonner indeholder oplysning der identificere den enkelte story, de øvrige kolonner indeholder accept kritierier knytter til forskellige elementer af løsningen.
 
-Vigtigst er nok, at user stories *ikke* er en krav specifikation. Nogle kalder dem "et løfte om en samtale" - altså noget de forskellige parter skal huske hinanden på at tale om undervejs i forløbet. Acceptkriterier er *ikke* en detaljeret specfikation. Der er nærmere "noter om hvad arbejdet med en user story bør indeholde".
+Vigtigst er nok, at user stories <i>ikke</i> er en krav specifikation. Nogle kalder dem "et løfte om en samtale" - altså noget de forskellige parter skal huske hinanden på at tale om undervejs i forløbet. Acceptkriterier er <i>ikke</i> en detaljeret specfikation. Der er nærmere "noter om hvad arbejdet med en user story bør indeholde".
 
 ## Aktører og roller
 Beskrivelsen anvender tre roller til at beskrive ønsker og hensyn for hver af de nuværende aktører. DMI har rollen som <a href="https://digst.github.io/cloud/spec.html#platformsanvender">anvender</a> af platformen, SIT rollen som <a href="https://digst.github.io/cloud/spec.html">udbyder</a> af platformen og DIGST rollen som <a href="https://digst.github.io/cloud/spec.html">politik ansvarlig</a> for it-udvikling i staten. Når platformen tages i fuld drift vil alle kunder hos SIT også have rollen som anvender. På det tidspunkt vil det nok være relevant at anvende den konkrete aktør som ejer på en user stories, men da vi kun har en anvender nu, vælger vi at holde os til roller.
@@ -27,8 +27,9 @@ Beskrivelsen anvender tre roller til at beskrive ønsker og hensyn for hver af d
 Roller registreres i en særskilt kolonne for hver user story i regnearket. På den måde kan arket fokuseres på en enkelt rolles stories.
 
 ## User Stories
-Ifølge wikipedia er <a href="https://en.wikipedia.org/wiki/User_story">user stories</a> en uformel beskrivelse af en eller flere feature/funktion i en it-løsning. Her vælger vi en skabelon for user stories for at sikre ensartetheden, men det kan sagtens afviges for at sikre et mere naturligt sprog. `Som  <roller> ønsker jeg  <at kunne gøre>, så jeg <kan opnå>`
-. Hver user storie har én aktør som har ansvaret for beskrivelse og en vurdering af opfyldelsen i den aktuelle situation.
+Ifølge wikipedia er <a href="https://en.wikipedia.org/wiki/User_story">user stories</a> en uformel beskrivelse af en eller flere feature/funktion i en it-løsning. Her vælger vi en skabelon for user stories for at sikre ensartetheden, men det kan sagtens afviges for at sikre et mere naturligt sprog. <xmp>Som  <rolle> ønsker jeg  <at kunne gøre>, så jeg <kan opnå>.</xmp>
+
+Hver user storie har én aktør som har ansvaret for beskrivelse og en vurdering af opfyldelsen i den aktuelle situation.
 
 En user story er én række i regnearket. Og knyttes til én rolle i en særkilt kolonne.
 
@@ -51,7 +52,7 @@ De sidste (hvide) er fabrics (elementer af platformen) med ansvar for andre af p
 ## Accept kritierier
 Som sagt; accept kriterier er noter om hvad arbejdet med en user story bør omfatte.
 
-Den rolle (bruger) som er indgår i user storien har til opgave at forklare så tydeligt som muligt hvad de ønsker og med hvilket formål. Det indfanges i beskrivelsen af user story. Samtidig vurderer leverandøren/projektet hvilke elementer af løsningen der skal i spil for at løse behovet bedst muligt. Gradvist bør der opstå en fælles forståelse for hvordan behovet opfyldes. Formålet er *ikke* at indsamle alle detaljer om hvordan behovet opfyldes, men alene sikre projekt enighed om hvilke rammer der er for løsningen.
+Den rolle (bruger) som er indgår i user storien har til opgave at forklare så tydeligt som muligt hvad de ønsker og med hvilket formål. Det indfanges i beskrivelsen af user story. Samtidig vurderer leverandøren/projektet hvilke elementer af løsningen der skal i spil for at løse behovet bedst muligt. Gradvist bør der opstå en fælles forståelse for hvordan behovet opfyldes. Formålet er <i>ikke</i> at indsamle alle detaljer om hvordan behovet opfyldes, men alene sikre projekt enighed om hvilke rammer der er for løsningen. Behovet opfyldes først når løsningens elementer er leveret i en version der lever op til acceptkriterierne.
 
 Begrebet er tæt knyttet til samme term indenfor software test. Her indeholder en test case acceptance criterier. Bemærk at formålet med use cases er et andet.
 
@@ -65,11 +66,11 @@ Status er vurdering af hvilke opmærksomhed en user story bør have på et komme
 
 Betydningen af trafiklysets farver er som følger:
 
-* **Grøn** User storien er velforstået og accepteret af projektets parter. Den kræver ikke særlig opmærksomhed fra styregruppen. Det betyder *ikke* at elementet i løsninge er levet, klar til afprøvning eller godkendt.
+* <strong>Grøn</strong> User storien er velforstået og accepteret af projektets parter. Den kræver ikke særlig opmærksomhed fra styregruppen. Det betyder <i>ikke</i> at elementet i løsninge er leveret, klar til afprøvning eller godkendt.
 
-* **Gul** User storyen er identificeret og accepteret af projektet parter. Der er uklarhed om løsningen på behov og/eller om acceptkriterierne er tilstrækkeligt. Den kræver at styregruppen orienteres om hvad planen er for at bringe den til grøn. Orientering sker af user storys rolle dvs den part som har behovet, og dermed også størst incitament og mulighed for at afklare.
+* <strong>Gul</strong> User storyen er identificeret og accepteret af projektet parter. Der er uklarhed om løsningen på behov og/eller om acceptkriterierne er tilstrækkeligt. Den kræver at styregruppen orienteres om hvad planen er for at bringe den til grøn. Orientering sker af user storys rolle dvs den part som har behovet, og dermed også størst incitament og mulighed for at afklare.
 
-* **Rød** User storyen er identificeret men det vurderes at løsningen ikke kan tilvejebringes uden beslutning om ændringer fra styregruppens side. Styregruppen bør orienteres om årsagen til status og måske findes der en indstilling til hvordan problemet løses. Indstillinger foreslår typiske at:
+* <strong>Rød</strong> User storyen er identificeret men det vurderes at løsningen ikke kan tilvejebringes uden beslutning om ændringer fra styregruppens side. Styregruppen bør orienteres om årsagen til status og måske findes der en indstilling til hvordan problemet løses. Indstillinger foreslår typiske at:
   *  Flytte user story til en senere planlagt epic.
   *  Tilføje flere ressourcer til arbejdet.
-  *  Ændringer i den foreslåede løsning (reduktion af scope, foreslå nemmere løsning af behov), 
+  *  Ændringer i den foreslåede løsning (reduktion af scope, foreslå nemmere løsning af behov eller andet),
