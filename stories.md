@@ -71,6 +71,6 @@ Betydningen af trafiklysets farver er som følger:
 * <strong>Gul</strong> User storyen er identificeret og accepteret af projektet parter. Der er uklarhed om løsningen på behov og/eller om acceptkriterierne er tilstrækkeligt. Den kræver at styregruppen orienteres om hvad planen er for at bringe den til grøn. Orientering sker af user storys rolle dvs den part som har behovet, og dermed også størst incitament og mulighed for at afklare.
 
 * <strong>Rød</strong> User storyen er identificeret men det vurderes at løsningen ikke kan tilvejebringes uden beslutning om ændringer fra styregruppens side. Styregruppen bør orienteres om årsagen til status og måske findes der en indstilling til hvordan problemet løses. Indstillinger foreslår typiske at:
-  *  Flytte user story til en senere planlagt epic.
-  *  Tilføje flere ressourcer til arbejdet.
-  *  Ændringer i den foreslåede løsning (reduktion af scope, foreslå nemmere løsning af behov eller andet),
+    *  Flytte user story til en senere planlagt epic.
+    *  Tilføje flere ressourcer til arbejdet.
+    *  Ændringer i den foreslåede løsning (reduktion af scope, foreslå nemmere løsning af behov eller andet),
