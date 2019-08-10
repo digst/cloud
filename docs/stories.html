@@ -1,7 +1,7 @@
 <!doctype html><html lang="en">
  <head>
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <title>cloud.gov.dk start-arkitektur</title>
+  <title>cloud.gov.dk user stories</title>
   <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 <style data-fill-with="stylesheet">/******************************************************************************
  *                   Style sheet for the W3C specifications                   *
@@ -1364,7 +1364,7 @@ pre .property::before, pre .property::after {
  <body class="h-entry">
   <div class="head">
    <p data-fill-with="logo"></p>
-   <h1>Start-arkitektur <br> GovCloud PaaS <br> Statens IT</h1>
+   <h1>User Stories <br> GovCloud PaaS <br> Statens IT</h1>
    <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2018-10-29">29 October 2018</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
@@ -1379,63 +1379,57 @@ pre .property::before, pre .property::after {
   </div>
   <div data-fill-with="at-risk"></div>
   <main>
-   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
-   <p><i>I slutningen af oktober 2018 besluttede DMI, SIT og DIGST bl.a. at "Statens IT etablerer en GovCloud-platform baseret på afprøvningsprojektet, således at GovCloud-platformen er klar til service- og applikationsudvikling senest 1. januar 2019 og er klar til drift af applikationer senest 1. juli 2019." Som en del af beslutningsgrundlaget indgik nedenstående beskrivelse af en start-arkitektur for projektet.</i></p>
-   <p>Dette dokument beskriver arkitekturen for en cloud-baseret fælles udviklings- og driftsplatform hos Statens IT til brug for statslige institutioner.</p>
-   <p>Projektet er baseret på erfaringer fra DMI, SIT og DIGST, der i sommeren 2018 gennemførte et 'proof of concept' for distribution af frie DMI-data og applikationsudvikling. DMI og DIGST er de første anvendere af GovCloud-platformen.</p>
-   <p>Projektet skal bidrage til øget anvendelse af cloud-teknologier i den offentlige sektor baseret på anvendelse af flere forskellige cloud-løsninger indenfor en fælles ramme vedr. databeskyttelse, datadeling, sikkerhed samt effektivt indkøb og administration.</p>
-   <h3 class="heading settled" id="forretningsbehov"><span class="content">Forretningsbehov</span></h3>
-   <p>GovCloud Paas skal bl.a. understøtte følgende forretningsbehov:</p>
-   <ul>
-    <li data-md>
-     <p>Anvendere vil have højest mulig oppetid for sine applikationer.</p>
-    <li data-md>
-     <p>Anvendere vil have en fleksibel og økonomisk adgang til it-ressourcer.</p>
-    <li data-md>
-     <p>Anvendere vil kunne teste og idriftsætte nye versioner hurtigst muligt.</p>
-    <li data-md>
-     <p>Anvendere ønsker at fokusere på den forretningsnære del af it-udviklingen</p>
-    <li data-md>
-     <p>Platformen skal kunne udskifte produkter med mindst mulig påvirkning af kunderne.</p>
-    <li data-md>
-     <p>Platformen skal kunne udvides med flere applikationer, uden at udgifter til platformen stiger tilsvarende.</p>
-    <li data-md>
-     <p>Udvikling af offentlig IT skal ske økonomisk, hurtigt, agilt og sikkert</p>
-   </ul>
-   <h3 class="heading settled" id="principper"><span class="content">Principper</span></h3>
-   <p>Ovenstående behov omsættes til følgende principper, der anvendes til at styre GovCloud platformen på kort og lang sigt:</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="uafbrudte-services">Uafbrudte services<a class="self-link" href="#uafbrudte-services"></a></dfn> GovCloud platformen og dens applikationer er bygget med henblik på uafbrudt service både under opdatering af enkelte services og hele platformen.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="leverandruafhngighed">Leverandøruafhængighed<a class="self-link" href="#leverandruafhngighed"></a></dfn> Applikationer og data på GovCloud platformen skal effektivt kunne flyttes til en anden cloud platform. Dette sikres gennem anvendelse af standardiserede snitflader, der understøttes af open source implementeringer.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="skalrbar-platform">Skalérbar platform<a class="self-link" href="#skalrbar-platform"></a></dfn> Forvaltning, support og komponenter skal kunne håndtere mange applikationer med begrænset tilføjelse af ressourcer. Dette sikres blandt andet gennem anvendelse af enterprise grade komponenter, fokus på automatisering og selvbetjening for platformens anvendere.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="security-by-design">Security-by-design<a class="self-link" href="#security-by-design"></a></dfn> Platformen er designet på en måde der sikrer høj informationssikkerhed for applikationer og data, bl.a. ved kryptering af data, integreret brugerstyring og overvågning af netværkstrafik.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="gdpr-by-design">GDPR-by-design<a class="self-link" href="#gdpr-by-design"></a></dfn> Platformen er forberedt til behandling af persondata og andre følsomme data i hht. GDPR. Indledningsvis driftes applikationer og data alene hos og af SIT (on-premise), men senere kan udvalgte applikationer og data også driftes i eksterne drifsmiljøer (scale-out til public clouds).</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="omkostningssikker">Omkostningssikker<a class="self-link" href="#omkostningssikker"></a></dfn> Platformens driftsmodel sikrer, at kunders omkostninger til platform-services er forudsigelige.</p>
-   <p><dfn data-dfn-type="dfn" data-noexport id="agil-it-udvikling">Agil it-udvikling<a class="self-link" href="#agil-it-udvikling"></a></dfn> Platformen og dens driftsmodel skal understøtte applikationsudvikling baseret på DevOps og Continuous Delivery.</p>
-   <h3 class="heading settled" id="design"><span class="content">Design</span></h3>
-    Principperne understøttes af en række designbeslutninger der udgør projektets startarkitektur. I etableringsfasen kan beslutningerne ændres med deltagernes accept. 
-   <h4 class="heading settled" id="paas"><span class="content">PaaS</span></h4>
-    GovCloud platformen udbydes af SIT under 'Driftsmodel 2: Platformservice' med nedenstående tilpasninger (nummereringen henviser til <a href="driftsmodel2.pdf">vedlagte kopi af driftsmodel</a>. 
-   <h4 class="heading settled" id="service-lifecycle-1"><span class="content">Service Lifecycle (1)</span></h4>
-    GovCloud platformens middleware udvikles i henhold til anvendernes behov og fastlægges af SIT og DIGST i dialog med platformens anvendere. 
-   <p>Operativsystem, Server/Storage, Netværk og Fysisk lokation fastlægges af SIT under hensyn til anvendernes behov og økonomi.</p>
-   <p>SIT og DIGST i dialog med platformens anvendere er ansvarlig for udarbejdelse af retningslinjer for 'fair use'. Formålet med retningslinjerne er at sikre en effektiv anvendelsen af platformens samlede ressourcer uden at pålægge den enkelte kunde unødige administrative byrder.</p>
-   <h4 class="heading settled" id="service-operation-2"><span class="content">Service Operation (2)</span></h4>
-    Drift og overvågning af GovCloud platformen og kunders applikationer understøttes af en udvidet vagtordning hos SIT (24/7). 
-   <p>Applikationer på GovCloud platformen forventes at skulle understøtte virksomheder og borgeres aktiviteter uden for almindelige arbejdstid. For at undgå mangeartede driftsaftaler, er platformen og alle applikationer underlagt samme 24/7 service level agreement.</p>
-   <p>SIT har ansvar for at overvåge platformen og kundernes applikationer. Ved nedbrud af services er det SITs ansvar at drive arbejdet med at bringe applikationer i drift igen. Kunden har ansvar for at stille ressourcer tilrådighed for fejlfinding og eventuelle tilrettelser. Ved valg af middleware-komponenter lægges vægt på adgang til 24/7 professional services. Til at understøtte samarbejde i forbindelse med servicenedbrud etablerer SIT et samarbejdsværktøj til effektiv kommunikation mellem SIT, kunder, platforms- og applikations-leverandører.</p>
-   <h4 class="heading settled" id="middleware-3"><span class="content">Middleware (3)</span></h4>
-    GovCloud platformens middleware består indledningsvis af: Docker, Kubernetes, KrakenD og MapR. Derudover etablerer SIT platformservices til logning, brugerstyring, authentication og versionstyring af applikationer. 
-   <p>Implementeringen af platformservices og konfiguration af middlewarekomponenterne udføres af SIT efter retningslinjer aftalt med DIGST og beskrevet i <a href="spec.html">Specifikation af GovCloud PaaS middleware</a>. DIGST har til opgave at sikre, at specifikationen af GovCloud PaaS understøtter den Fællesoffentlige Digitale Arkitektur og fællesstatslige retningslinjer for bl.a. persondatabekyttelse og sikkerhed.</p>
-   <h4 class="heading settled" id="idriftsttelse-4"><span class="content">Idriftsættelse (4)</span></h4>
-    GovCloud platformen og kunders applikationer vil benytte 'rolling updates'. 
-   <p>SITs etablerer en ny idriftsættelseproces, der understøtter agil applikationsudvikling og hyppig idriftsættelse.</p>
-   <p><br> Udover ovenstående beslutninger vedrørende driften af platformen, er der også besluttet følgende:</p>
-   <h4 class="heading settled" id="govdev"><span class="content">GovDev</span></h4>
-    SIT tilbyder en samling integrerede værktøjer til applikationsudvikling ("DevOps-toolchain")  på 'Driftsmodel 1: Applikationsservice' bestående indledningsvis af Jira, Confluence, Git, Jenkins, Soap UI. DIGST sikrer, at der tilgængelige kurser i anvendelse af de valgte værktøjer og tilbyder rådgivning om design af applikationer på GovCloud platformen. 
-   <p>DIGST vil sammen med SIT arbejde for, at fastlæggelsen af samlingen af værktøjer til applikationsudvikling sker i regi af den fællesoffentlige digitaliseringsstrategi eller fællesstatsligt.</p>
-   <h4 class="heading settled" id="sandbox"><span class="content">Sandbox</span></h4>
-    SIT tilbyder eksisterende og potentielle kunder et gratis miljø til afprøvning af GovCloud platformen samt tilhørende udviklingsværktøj. 
-   <div align="right" class="font-style: italic; ">/DIGST 2018-4947</div>
+   <p><small> Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem SIT, DIGST og DMI, som startede med en aftale om <a href="https://digst.github.io/cloud/start.html">GovCloud</a>. Serien består desuden af en <a href="https://digst.github.io/cloud/intro.html">introduktion</a>, en række <a href="https://digst.github.io/cloud/stories.html">users  stories</a>, en detaljeret <a href="https://digst.github.io/cloud/spec.html"> specifikation</a> samt en <a href="https://digst.github.io/cloud/guide.html">guide</a> til applikationsudviklere.</small></p>
+   <p>Dette dokument beskriver arbejdet med user stories til brug ved udviklingen af en cloud-baseret fælles udviklings- og driftsplatform hos Statens IT til brug for statslige institutioner. De konkrete user stories registreres i et <a href="https://digst.github.io/cloud/userstories.xlsx">vedlagt excel ark</a>. Herunder beskrives arkets struktur og anvendte begreber.</p>
+   <p>Hver række i regnearket beskriver en user story. De første kolonner indeholder oplysning der identificere den enkelte story, de øvrige kolonner indeholder accept kritierier knytter til forskellige elementer af løsningen.</p>
+   <p>Vigtigst er nok, at user stories *ikke* er en krav specifikation. Nogle kalder dem "et løfte om en samtale" - altså noget de forskellige parter skal huske hinanden på at tale om undervejs i forløbet. Acceptkriterier er *ikke* en detaljeret specfikation. Der er nærmere "noter om hvad arbejdet med en user story bør indeholde".</p>
+   <h3 class="heading settled" id="aktrer-og-roller"><span class="content">Aktører og roller</span></h3>
+    Beskrivelsen anvender tre roller til at beskrive ønsker og hensyn for hver af de nuværende aktører. DMI har rollen som <a href="https://digst.github.io/cloud/spec.html#platformsanvender">anvender</a> af platformen, SIT rollen som <a href="https://digst.github.io/cloud/spec.html">udbyder</a> af platformen og DIGST rollen som <a href="https://digst.github.io/cloud/spec.html">politik ansvarlig</a> for it-udvikling i staten. Når platformen tages i fuld drift vil alle kunder hos SIT også have rollen som anvender. På det tidspunkt vil det nok være relevant at anvende den konkrete aktør som ejer på en user stories, men da vi kun har en anvender nu, vælger vi at holde os til roller. 
+   <p>Roller registreres i en særskilt kolonne for hver user story i regnearket. På den måde kan arket fokuseres på en enkelt rolles stories.</p>
+   <h3 class="heading settled" id="user-stories"><span class="content">User Stories</span></h3>
+    Ifølge wikipedia er <a href="https://en.wikipedia.org/wiki/User_story">user stories</a> en uformel beskrivelse af en eller flere feature/funktion i en it-løsning. Her vælger vi en skabelon for user stories for at sikre ensartetheden, men det kan sagtens afviges for at sikre et mere naturligt sprog. `Som 
+   <roller>
+     ønsker jeg 
+    <at gøre kunne>
+     , så jeg 
+     <kan opnå>
+      `
+. Hver user storie har én aktør som har ansvaret for beskrivelse og en vurdering af opfyldelsen i den aktuelle situation. 
+      <p>En user story er én række i regnearket. Og knyttes til én rolle i en særkilt kolonne.</p>
+      <h3 class="heading settled" id="epics"><span class="content">Epics</span></h3>
+       Der er brug for at organisere de mange user stories. Epics er en gruppe af user stories som har noget til fælles. Der er ingen udbredt enighed om betydning af et epic. Her har vi forsøgt at gruppere dem i forhold til hvilke <a href="./spec.html#roller-og-omrder-for-samarbejde">områder for samarbejde</a> de knytter sig til. En ambition kan være at lade en epic indeholde alle de nødvendige features så færdiggørelsen vil give en konkret værdi for alle aktører. 
+      <p>Epics registreres i en særskilt kolonne per user story.</p>
+      <h3 class="heading settled" id="elementer-af-lsningen"><span class="content">Elementer af løsningen</span></h3>
+       Kollonerne til højre repræsentere elementer af løsningen som beskrevet i <a href="spec.html"> specifikationen</a>. 
+      <p>De første (lyserøde) er papirprodukter, altså leverenace fra projektet i form af godkendte dokumenter. (er ikke beskrevet i spec.html lige nu men bruge måske? paperbased SBB!)</p>
+      <p>De næste (grønne) er platformen services som anvendes af mennesker og er tilgængelig i en browser på en internetadresse. Eller platform api’en som er services der anvendes af applikationer.</p>
+      <p>De sidste (hvide) er fabrics (elementer af platformen) med ansvar for andre af platformens funktioner.</p>
+      <h3 class="heading settled" id="accept-kritierier"><span class="content">Accept kritierier</span></h3>
+       Som sagt; accept kriterier er noter om hvad arbejdet med en user story bør omfatte. 
+      <p>Den rolle (bruger) som er indgår i user storien har til opgave at forklare så tydeligt som muligt hvad de ønsker og med hvilket formål. Det indfanges i beskrivelsen af user story. Samtidig vurderer leverandøren/projektet hvilke elementer af løsningen der skal i spil for at løse behovet bedst muligt. Gradvist bør der opstå en fælles forståelse for hvordan behovet opfyldes. Formålet er *ikke* at indsamle alle detaljer om hvordan behovet opfyldes, men alene sikre projekt enighed om hvilke rammer der er for løsningen.</p>
+      <p>Begrebet er tæt knyttet til samme term indenfor software test. Her indeholder en test case acceptance criterier. Bemærk at formålet med use cases er et andet.</p>
+      <p>Acceptkritierier skrives i kollonen for løsningens element og i den række hvor den er mest relevant. Det er ikke nødvendigt at kopiere kriterier på tværs af flere stories. Regnearket kan fokuseres så man kun ser de user stories som er relevante for et enkelt løsningselement.</p>
+      <h3 class="heading settled" id="status--vurdering-til-styregruppe"><span class="content">Status (-vurdering til styregruppe)</span></h3>
+       Agile udviklingen betyder ikke fravær af styring - tværtimod. Projektet har brug for at rapporter fremdrift og bringe uklarheder eller problemer til styregrupper. Et traiklys-status felt anvendes til dette. 
+      <p>Status er vurdering af hvilke opmærksomhed en user story bør have på et kommende styregruppemøde.</p>
+      <p>Betydningen af trafiklysets farver er som følger:</p>
+      <ul>
+       <li data-md>
+        <p>**Grøn** User storien er velforstået og accepteret af projektets parter. Den kræver ikke særlig opmærksomhed fra styregruppen. Det betyder *ikke* at elementet i løsninge er levet, klar til afprøvning eller godkendt.</p>
+       <li data-md>
+        <p>**Gul** User storyen er identificeret og accepteret af projektet parter. Der er uklarhed om løsningen på behov og/eller om acceptkriterierne er tilstrækkeligt. Den kræver at styregruppen orienteres om hvad planen er for at bringe den til grøn. Orientering sker af user storys rolle dvs den part som har behovet, og dermed også størst incitament og mulighed for at afklare.</p>
+       <li data-md>
+        <p>**Rød** User storyen er identificeret men det vurderes at løsningen ikke kan tilvejebringes uden beslutning om ændringer fra styregruppens side. Styregruppen bør orienteres om årsagen til status og måske findes der en indstilling til hvordan problemet løses. Indstillinger foreslår typiske at:</p>
+       <li data-md>
+        <p>Flytte user story til en senere planlagt epic.</p>
+       <li data-md>
+        <p>Tilføje flere ressourcer til arbejdet.</p>
+       <li data-md>
+        <p>Ændringer i den foreslåede løsning (reduktion af scope, foreslå nemmere løsning af behov),</p>
+      </ul>
+     </kan>
+    </at>
+   </roller>
   </main>
 <script>
 (function() {
