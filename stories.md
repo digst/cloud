@@ -62,7 +62,7 @@ Acceptkritierier skrives i kollonen for løsningens element og i den række hvor
 ## Status (-vurdering til styregruppe)
 Agile udviklingen betyder ikke fravær af styring - tværtimod. Projektet har brug for at rapporter fremdrift og bringe uklarheder eller problemer til styregrupper. Et traiklys-status felt anvendes til dette.
 
-Status er vurdering af hvilke opmærksomhed en user story bør have på et kommende styregruppemøde.
+Status er en vurdering af hvilke opmærksomhed en user story bør have på et kommende styregruppemøde.
 
 Betydningen af trafiklysets farver er som følger:
 
