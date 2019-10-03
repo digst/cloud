@@ -15,18 +15,58 @@ Dette dokument er del af serie af dokumenter der beskriver et samarbejde mellem 
 
 
 
-# Developer skillset
-Udvikling og drift af applikationer på GovCloud PaaS forudsætter fortrolighed med nogle få teknologier. Disse teknologier er nøje udvalgt udfra kriterier om udbredt anvendelse, forventning om lifetime og sikring af adskillelse af services, applikationer og datasæt (da disse ofte forvaltes gennem forkellige processer).
+# Velkommen!
 
-* Udvikling af container baserede applikationer fx <a href="https://www.docker.com/">Docker</a>.
+GovCloud vision: Fremtidens foretrukne udviklings- og drifts-miljø for Statens ITs kunder.
 
-* Anvendelse af asynkrone meddelelser som integration mellem applikationskomponenter fx <a href="https://kafka.apache.org/">Apace Kafka</a>.
+I opgave beskrivelsen har der formentlig stået noget om .. .Udvikling af container baserede applikationer, Anvendelse af asynkrone meddelelser som integration mellem applikationskomponenter,  Anvendelse af NoSQL dokumentdatabaser, Udvikling af HTTP services der følger REST, Token baseret adgangskontrol.
 
-* Anvendelse af NoSQL dokumentdatabaser  fx <a href="http://www.ojai.io">OJAI</a>.
+Dette dokument forsøger at gøre det meget konkret hvordan vi har tænkt at applikationer bedst udvikles på netop vores platform.
 
-* Udvikling af HTTP services der følger REST.
+Så velkommen til fremtiden! Og håb om at I finder jeg godt tilpas på platformen...
 
-* Token baseret adgangskontrol fx <a href="http://jwt.io">JWT</a>.
+
+# Hvad er GovCloud
+
+3 linjer om cloud.
+
+3 linjer om Gov+Cloud
+
+PaaS... med mulighed for SaaS
+
+CloudBroker
+
+
+# Hvad tilbyder GovCloud
+
+5 + 5 services...
+
+GovCloud er en selvbetjent og i høj grad automatiseret service leveret af Statens IT. Den samlede service består dels af en selvbetjenings-løsning der anvendes af ansatte og konsulenter hos Statens ITs kunder, dels af en række tekniske services der anvendes af kundes applikationer. [Sætning om at den samlede lifecycle management for den samlede GovCloud service foretages i fæøllesoffentligt regi].
+
+| Til udviklere | Til applikationer |
+|---            |---                |
+| git -- opbevaring og versionsstyring af applikationskode      | /id -- billetudsteder og omveksler              |
+| reg  -- opbevaring og versionsstyring af applikations images  | /log -- opsamling og søgning i hændelser             |
+| kub -- selvbetjening til deployment af applikationer          | /stream -- data i meddelelsstrømme          |
+| stat -- overvågning af platform og applikationer              | /table -- data på tabelform            |
+| coll -- online samarbejdsværktøj                              | /file -- data i filer og foldere            |
+
+Mere detaljerede beskrivelser nedenfor.
+
+
+
+
+# Før du går i gang
+
+Advarsel.... Cloud Native og DevOps er et meget stor skift i den måde vi tænker applikationer på. Bla.
+
+* Services, Apllikationer og Data forvaltes særskilt... siloen er væltet..og rejst igen.
+
+* Platformen skalerer... så ok at svine lidt med pladsen...vente med at optimere. Forudsætning er bla. REST. Stateless! Det er vigtigt hvad der ryger i hvilke container.
+
+* Service kan implementeres meget simpelt. ... ex Go uden midleware... så pas på med bloaded midleware
+
+Noget af det kan læses på microservices / 12 factor apps
 
 
 
@@ -69,7 +109,7 @@ All data stored in the platform MUST have a registered data controller.
 
 <img src="highlevel.svg" width="100%" align="center">
 
-GovCloud er en selvbetjent og i høj grad automatiseret service leveret af Statens IT. Den samlede service består dels af en selvbetjenings-løsning der anvendes af ansatte og konsulenter hos Statens ITs kunder, dels af en række tekniske services der anvendes af kundes applikationer. [Sætning om at den samlede lifecycle management for den samlede GovCloud service foretages i fæøllesoffentligt regi].
+
 
 ## Selvbetjeningsløsning(er)
 
@@ -86,7 +126,12 @@ Det er planen at udvikle en simple og mere målrettet selvbetjening, der skal si
 ## Tekniske services til applikationer  (GovCloud API?)
 I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases.
 
-Følgende service er tilgængelig i første version af GovCloud.
+Følgende services er tilgængelig i GovCloud Platform API 1.0.
+
+### ID
+Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Kald til applikationsservice der er kræver en genkendt bruger vil få tilknyttet et <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. Hvis der er brug for omveksling af identitetet mellem forskellige idp'er eller føderationer kan den interne secure token service anvendes.
+
+* <code>sts.govcloud.dk</code> <small>version 1 - 20190201</small>
 
 ### Dataservice
 Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller:
@@ -106,6 +151,12 @@ Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves
 * <code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small>
 <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
 
+### Log
+Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via
+
+* <code>log.govcloud.dk</code> <small>TBD</small>
+<!-- * `data.govcloud.dk/log` <small>Endnu ikke planlagt</small>-->
+
 
 ### Directory
 Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP.
@@ -113,16 +164,8 @@ Oplysninger om kundens services, applikationer, datasæt og deres rettigheder ge
 * <code>ldap.govcloud.dk:349</code> <small>TBD</small>
 <!-- * `data.govcloud.dk/directory` <small>Endnu ikke planlagt</small>-->
 
-### Log
-Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via
 
-* <code>log.govcloud.dk</code> <small>TBD</small>
-<!-- * `data.govcloud.dk/log` <small>Endnu ikke planlagt</small>-->
 
-### ID
-Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Servicen returnerer en <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet.
-
-* <code>sts.govcloud.dk</code> <small>version 1 - 20190201</small>
 
 ### External keys
 Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug.
@@ -142,6 +185,9 @@ Kunder kan bringe deres applikationskode under versionskontrol i det fælles rep
 Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
 * <a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
+
+
 
 
 
