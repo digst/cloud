@@ -485,7 +485,7 @@ der hvor der er oplysninger om hvad der kører og hvem der har adgang til det...
 ### <dfn export="true">Oplysning om applikationer</dfn>
 
 ### <dfn export="true">Oplysning om datasæt</dfn>
-Default til følsommes. Beskrive udfordringen mellem Open By Default og Privacy By Design... afhænger om indhold af persondata. 
+Default til følsommes. Beskrive udfordringen mellem Open By Default og Privacy By Design... afhænger om indhold af persondata.
 
 
 ### <dfn export="true">Users</dfn> (Personer, Brugere?)
@@ -846,6 +846,81 @@ Udvikling og drift af applikationer på platformen forudsætter fortrolighed med
 * Anvendelse af NoSQL dokumentdatabaser fx OJAI.
 * Udvikling af HTTP services der følger REST.
 * Token baseret adgangskontrol fx JWT.
+
+## Regulatory Compliance
+
+
+### EU udbud
+<blockquote cite="https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=celex%3A32014L0024">
+Tildeling af offentlige kontrakter af eller på vegne af medlemsstaternes myndigheder skal ske i overensstemmelse med principperne i traktaten om Den Europæiske Unions funktionsmåde (TEUF), og navnlig fri bevægelighed for varer, fri etableringsret og fri udveksling af tjenesteydelser, samt de principper, der er afledt heraf, såsom ligebehandling, ikkeforskelsbehandling, gensidig anerkendelse, proportionalitet og gennemsigtighed. For offentlige kontrakter over en bestemt værdi bør der imidlertid fastsættes bestemmelser til samordning af de nationale udbudsprocedurer, så det sikres, at disse principper udmøntes i praksis, og offentlige indkøb åbnes for konkurrence.
+</blockquote>
+
+Et middel til at sikre dette er tekniske specifikationer anerkendt af udpegede standardiseringsorganer. Vi har at gøre med flere typer af udbud.
+
+- udbud af bistand til applikationsudvikling. (hos platform anvender og måske policy owner)
+
+- udbud af platformsdrift og udvikling.  (hos platform udbyder)
+
+Forklaring på standarder vs tekniske specifikationer. Mange specifikationer er udgiver af organisationer som ikke er anerkendte standardiseringsorganisationer. Derfor har vi MSP for ICT standardisation.
+
+<blockquote cite="https://eur-lex.europa.eu/legal-content/DA/TXT/?uri=CELEX%3A32012R1025">Kommissionen kan enten efter anmodning fra en medlemsstat eller på eget initiativ beslutte at udpege IKT-tekniske specifikationer, som ikke er nationale, europæiske eller internationale standarder, men som opfylder kravene i bilag II, og som der kan henvises til for primært at sikre interoperabilitet ved offentlige indkøb.
+</blockquote>
+
+- Efter beslutning 21. januar 2017.
+
+<blockquote cite="">
+Artikel 1
+De IETF-tekniske specifikationer i bilaget kan anvendes som reference i forbindelse med offentlige udbud.
+Artikel 2
+Denne afgørelse træder i kraft på tyvendedagen efter offentliggørelsen i Den Europæiske Unions Tidende.
+Udfærdiget i Bruxelles, den 31. januar 2017.
+På Kommissionens vegne
+Jean-Claude JUNCKER
+Formand
+</blockquote>
+
+1. Transmission Control Protocol/Internet protocol (TCP/IP)
+2. User Datagram Protocol (UDP)
+3. Domain Name System (DNS)
+4. Dynamic Host Configuration Protocol (DHCP) [kun udbyder]
+5. Simple Network Management Protocol (SNMP) [kun udbyder]
+6. Security Architecture for the Internet Protocol (IPsec) ??
+7. Network Time Protocol (NTP) [kun udbyder (men også id-provider)]
+8. Secure Shell-2 Protocol (SSH-2) ??
+9. Transport Layer Security Protocol (TLS) [kun udbyder men også slutbruger]
+10. Internet X.509 Public Key Infrastructure Certificate and Certificate Revocation List (CRL) Profile (PKIX)
+11. Hypertext Transfer Protocol (HTTP) [kun 1.1?]
+12. Upgrading to TLS Within HTTP/1.1 (HTTPS)
+13. Uniform Resource Identifiers (URI)
+14. Uniform Resource Locator (URL)
+15. Uniform Resource Names (URN)
+16. File Transfer Protocol (FTP) [??, SFTP]
+17. 8-bit Unicode Transformation Format (UTF-8)
+18. Simple Mail Transfer Protocol (SMTP) [??] [Erstat med AS4]
+19. Internet Message Access Protocol (IMAP) [JMAP til Digital Post]
+20. Post Office Protocol — version 3 (POP3) [Jo sgu, fordi Digital Post skal hentes for myndigheder]
+21. Multipurpose Internet Mail Extensions (MIME) [Ja sgu, MeMo sikre Digital Post kan omdannes til email]
+22. Network News Transfer Protocol (NNTP)
+23. Internet Calendaring and Scheduling Core Object Specification (iCalendar) [MeMo]
+24. File format standard for electronic business cardS (vCard) [MeMo]
+25. Common Format and MIME Type for Comma-Separated Values (CSV) [PSI data]
+26. Real-time Transport Protocol (RTP) [kommer med nemvideo]
+27. Session Initiation Protocol (SIP) [kommer med nemvideo]
+
+
+
+#### Hypertext Transfer Protocol -- HTTP/1.1
+Offentlig tilgængelig via https://tools.ietf.org/html/rfc2616. Udgivet og vedligeholdt af The Internet Society,
+
+
+
+
+
+
+
+
+
+
 
 
 
