@@ -1454,7 +1454,7 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
   <div class="head">
    <p data-fill-with="logo"></p>
    <h1>Developers Guide<img align="right" src="cloud.svg"> <br> GovCloud PaaS <br> Statens IT</h1>
-   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-10-24">24 October 2019</time></span></h2>
+   <h2 class="no-num no-toc no-ref heading settled" id="subtitle"><span class="content">Living Document, <time class="dt-updated" datetime="2019-10-25">25 October 2019</time></span></h2>
    <div data-fill-with="spec-metadata">
     <dl>
      <dt>This version:
@@ -1478,38 +1478,40 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
       <li><a href="#hvad-er-govcloud"><span class="secno"></span> <span class="content">Hvad er GovCloud</span></a>
       <li><a href="#hvad-tilbyder-govcloud"><span class="secno"></span> <span class="content"> Hvad tilbyder GovCloud</span></a>
      </ol>
-    <li><a href="#fr-du-gr-i-gang"><span class="secno">1</span> <span class="content"> Før du går i gang</span></a>
-    <li><a href="#et-eksempel-forthebirds"><span class="secno">2</span> <span class="content">Et eksempel <code>ForTheBirds</code></span></a>
-    <li><a href="#centrale-begreber"><span class="secno">3</span> <span class="content">Centrale begreber</span></a>
-    <li><a href="#code-build-and-containerize"><span class="secno">4</span> <span class="content">Code, Build and Containerize</span></a>
-    <li><a href="#deploy"><span class="secno">5</span> <span class="content">Deploy</span></a>
     <li>
-     <a href="#user-and-application-interfaces"><span class="secno">6</span> <span class="content">User and application interfaces</span></a>
+     <a href="#fr-du-gr-i-gang"><span class="secno">1</span> <span class="content"> Før du går i gang</span></a>
      <ol class="toc">
-      <li>
-       <a href="#tekniske-services-til-applikationer-govcloud-api"><span class="secno">6.1</span> <span class="content">Tekniske services til applikationer  (GovCloud API?)</span></a>
-       <ol class="toc">
-        <li><a href="#id"><span class="secno">6.1.1</span> <span class="content">ID</span></a>
-        <li><a href="#dataservice"><span class="secno">6.1.2</span> <span class="content">Dataservice</span></a>
-        <li><a href="#log"><span class="secno">6.1.3</span> <span class="content">Log</span></a>
-        <li><a href="#directory"><span class="secno">6.1.4</span> <span class="content">Directory</span></a>
-        <li><a href="#external-keys"><span class="secno">6.1.5</span> <span class="content">External keys</span></a>
-       </ol>
-      <li>
-       <a href="#devtools-saas"><span class="secno">6.2</span> <span class="content">DevTools (SaaS)</span></a>
-       <ol class="toc">
-        <li><a href="#code-repository"><span class="secno">6.2.1</span> <span class="content">Code repository</span></a>
-        <li><a href="#container-image-repository"><span class="secno">6.2.2</span> <span class="content">Container Image Repository</span></a>
-       </ol>
+      <li><a href="#services"><span class="secno">1.1</span> <span class="content">Services</span></a>
+      <li><a href="#applikationer"><span class="secno">1.2</span> <span class="content">Applikationer</span></a>
+      <li><a href="#data"><span class="secno">1.3</span> <span class="content">Data</span></a>
      </ol>
     <li>
-     <a href="#examples-of-usage-govcloud-paas"><span class="secno">7</span> <span class="content">Examples of usage GovCloud PaaS</span></a>
+     <a href="#en-eksemplarisk-applikation--forthebirds"><span class="secno">2</span> <span class="content">En eksemplarisk applikation – <code>ForTheBirds</code></span></a>
      <ol class="toc">
-      <li><a href="#datadistribution"><span class="secno">7.1</span> <span class="content">Datadistribution</span></a>
-      <li><a href="#trusted-messaging"><span class="secno">7.2</span> <span class="content">Trusted Messaging</span></a>
-      <li><a href="#datascience-bi-analytics"><span class="secno">7.3</span> <span class="content">Datascience/BI/Analytics</span></a>
-      <li><a href="#static-website"><span class="secno">7.4</span> <span class="content">Static Website</span></a>
-      <li><a href="#rpa-robot-proces-automation"><span class="secno">7.5</span> <span class="content">RPA Robot Proces Automation</span></a>
+      <li><a href="#code"><span class="secno">2.1</span> <span class="content">Code</span></a>
+      <li><a href="#build"><span class="secno">2.2</span> <span class="content">Build</span></a>
+      <li><a href="#test"><span class="secno">2.3</span> <span class="content">Test</span></a>
+      <li><a href="#deploy"><span class="secno">2.4</span> <span class="content">Deploy</span></a>
+      <li><a href="#"><span class="secno">2.5</span> <span class="content">...</span></a>
+     </ol>
+    <li>
+     <a href="#de-enkelte-platformsservices"><span class="secno">3</span> <span class="content">De enkelte platformsservices</span></a>
+     <ol class="toc">
+      <li><a href="#id"><span class="secno">3.1</span> <span class="content">ID</span></a>
+      <li><a href="#dataservice"><span class="secno">3.2</span> <span class="content">Dataservice</span></a>
+      <li><a href="#log"><span class="secno">3.3</span> <span class="content">Log</span></a>
+      <li><a href="#directory"><span class="secno">3.4</span> <span class="content">Directory</span></a>
+      <li><a href="#code-repository"><span class="secno">3.5</span> <span class="content">Code repository</span></a>
+      <li><a href="#①"><span class="secno">3.6</span> <span class="content">...</span></a>
+     </ol>
+    <li>
+     <a href="#examples-of-usage-govcloud-paas"><span class="secno">4</span> <span class="content">Examples of usage GovCloud PaaS</span></a>
+     <ol class="toc">
+      <li><a href="#datadistribution"><span class="secno">4.1</span> <span class="content">Datadistribution</span></a>
+      <li><a href="#trusted-messaging"><span class="secno">4.2</span> <span class="content">Trusted Messaging</span></a>
+      <li><a href="#datascience-bi-analytics"><span class="secno">4.3</span> <span class="content">Datascience/BI/Analytics</span></a>
+      <li><a href="#static-website"><span class="secno">4.4</span> <span class="content">Static Website</span></a>
+      <li><a href="#rpa-robot-proces-automation"><span class="secno">4.5</span> <span class="content">RPA Robot Proces Automation</span></a>
      </ol>
    </ol>
   </nav>
@@ -1561,30 +1563,33 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
      <p>Service kan implementeres meget simpelt. ... ex Go uden midleware... så pas på med bloaded midleware</p>
    </ul>
    <p>Noget af det kan læses på microservices / 12 factor apps</p>
-   <h2 class="heading settled" data-level="2" id="et-eksempel-forthebirds"><span class="secno">2. </span><span class="content">Et eksempel <code>ForTheBirds</code></span><a class="self-link" href="#et-eksempel-forthebirds"></a></h2>
+   <p>Centrale begreber Som sagt, er det et skift. Og vi skal lige være enige om nogle centrale begreber for ikke at få forbi hinanden.</p>
+   <h3 class="heading settled" data-level="1.1" id="services"><span class="secno">1.1. </span><span class="content">Services</span><a class="self-link" href="#services"></a></h3>
+    Der er services (SOA). Og forskellige slags. Applikations Service er dem som en myndigheds <a class="property" data-link-type="propdesc">kunder</a> (borgere og virksomheder) kan se. Platform services er dem SIT tilbyder myndigheder i rollen som platformsanvender 'kunder hos statens it'. To slags platform services. Dem mod mennesker og dem mod applikationer. 
+   <h3 class="heading settled" data-level="1.2" id="applikationer"><span class="secno">1.2. </span><span class="content">Applikationer</span><a class="self-link" href="#applikationer"></a></h3>
+    Der er applikationer. Og de består af komponenter. Er lavet af kode og pakket ind i images der kan kører i containere. 
+   <h3 class="heading settled" data-level="1.3" id="data"><span class="secno">1.3. </span><span class="content">Data</span><a class="self-link" href="#data"></a></h3>
+    Der er data. GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. All data stored in the platform MUST have a registered data controller. 
+   <p>Så hvad er en 'løsning'... Det er de dele der skal fungere for at en applikationsservice virker, nogle dele kontrolleres af udbyderen af servicen, andre af platformsudbydere og andre igen måske af andre udbydere.</p>
+   <h2 class="heading settled" data-level="2" id="en-eksemplarisk-applikation--forthebirds"><span class="secno">2. </span><span class="content">En eksemplarisk applikation – <code>ForTheBirds</code></span><a class="self-link" href="#en-eksemplarisk-applikation--forthebirds"></a></h2>
     Vi vil anvende et gennemgående eksempel <code>ForTheBirds</code> der gradvist udvides og tager de forskellige dele af platformen i anvendelse, og vi prøver at følge en <a class="property" data-link-type="propdesc">naturlig</a> rækkefølge. 
+   <p>Applikationer løser problemer og her er vores...</p>
    <p><i>Vi ønsker at overvåge platformens tilstand og rapporterer det til en extern status service</i></p>
    <p>Verden er ikke sort/hvid og platforme er ikke rød eller grøn. Så vi har brug for detaljerede granulerede statusser, så anvender selv kan vurdere om de dele der er nødvendige for deres applikationer er i status hvor anvender skal til at gøre noget... "Sætte et skilt op i vinduet"...</p>
    <p>For at gøre det nemmere (og lidt sjovere) bruger vi en analogi/en fælles reference. Pixars For The Birds. En lang række små fugle med hver sin personlighed, ser forskellige dele af verden. Og der kan være mange fugle på samme tråd.</p>
-   <h2 class="heading settled" data-level="3" id="centrale-begreber"><span class="secno">3. </span><span class="content">Centrale begreber</span><a class="self-link" href="#centrale-begreber"></a></h2>
-    Som sagt, er det et skift. Og vi skal lige være enige om nogle centrale begreber for ikke at få forbi hinanden. 
-   <p>Der er services (SOA). Og forskellige slags. Applikations Service er dem som en myndigheds <a class="property" data-link-type="propdesc">kunder</a> (borgere og virksomheder) kan se. Platform services er dem SIT tilbyder myndigheder i rollen som platformsanvender 'kunder hos statens it'. To slags platform services. Dem mod mennesker og dem mod applikationer.</p>
-   <p>Der er applikationer. Og de består af komponenter. Er lavet af kode og pakket ind i images der kan kører i containere.</p>
-   <p>Der er data. GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. All data stored in the platform MUST have a registered data controller.</p>
-   <p>Så hvad er en 'løsning'... Det er de dele der skal fungere for at en applikationsservice virker, nogle dele kontrolleres af udbyderen af servicen, andre af platformsudbydere og andre igen måske af andre udbydere.</p>
-   <h2 class="heading settled" data-level="4" id="code-build-and-containerize"><span class="secno">4. </span><span class="content">Code, Build and Containerize</span><a class="self-link" href="#code-build-and-containerize"></a></h2>
+   <h3 class="heading settled" data-level="2.1" id="code"><span class="secno">2.1. </span><span class="content">Code</span><a class="self-link" href="#code"></a></h3>
    <p>Vi starter på en din egen bærbare. Men jeg har jo en cloud.... jo men du skal da ikke stoppe med at udvikle bare fordi nettet ryger eller du sidder på et fly.</p>
    <p>https://www.docker.com/blog/docker-golang/</p>
-   <ol>
+   <p>Can we lave runde store bullets til steps. Måske to niveauer. Måske passe med DevOps Cycle...</p>
+   <ul>
     <li data-md>
-     <p>Installer Docker</p>
-    <li data-md>
-     <p>Find a git repository to place your code in.</p>
+     <p>Find a git repository to place your code in. Lets use github, because we  move it later.</p>
     <li data-md>
      <p>Write some code <code>ForTheBirds.go</code></p>
-   </ol>
+   </ul>
 <pre class="highlight line-numbered"><span class="line-no" data-line="1"></span><span class="line"><c- kn>import</c-> <c- p>(</c-></span><span class="line-no" data-line="2"></span><span class="line">    <c- s>"net/http"</c-></span><span class="line-no" data-line="3"></span><span class="line"><c- p>)</c-></span><span class="line-no" data-line="4"></span><span class="line"></span><span class="line-no" data-line="5"></span><span class="line"><c- a>func</c-> root<c- p>(</c->w http<c- p>.</c->ResponseWriter<c- p>,</c-> _ <c- o>*</c->http<c- p>.</c->Request<c- p>)</c-> <c- p>{</c-></span><span class="line-no" data-line="6"></span><span class="line">    w<c- p>.</c->WriteHeader<c- p>(</c->http<c- p>.</c->StatusOK<c- p>)</c-></span><span class="line-no" data-line="7"></span><span class="line">    w<c- p>.</c->write<c- p>(</c-><c- s>"For The Birds - Pixar"</c-><c- p>)</c-></span><span class="line-no" data-line="8"></span><span class="line"><c- p>}</c-></span><span class="line-no" data-line="9"></span><span class="line"></span><span class="line-no" data-line="10"></span><span class="line"><c- a>func</c-> main<c- p>()</c-> <c- p>{</c-></span><span class="line-no" data-line="11"></span><span class="line">    http<c- p>.</c->HandleFunc<c- p>(</c-><c- s>"/"</c-><c- p>,</c-> root<c- p>)</c-></span><span class="line-no" data-line="12"></span><span class="line">    http<c- p>.</c->ListenAndServe<c- p>(</c-><c- s>":8080"</c-><c- p>,</c-> <c- kc>nil</c-><c- p>)</c-></span><span class="line-no" data-line="13"></span><span class="line"><c- p>}</c-></span></pre>
-   <ol start="3">
+   <h3 class="heading settled" data-level="2.2" id="build"><span class="secno">2.2. </span><span class="content">Build</span><a class="self-link" href="#build"></a></h3>
+   <ul>
     <li data-md>
      <p>Build your Code</p>
 <pre class="highlight">docker run -v <c- k>$(</c->pwd<c- k>)</c->:/go/bin --rm <c- se>\</c->
@@ -1592,29 +1597,32 @@ c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
 </pre>
     <li data-md>
      <p>Write a docker build script</p>
-   </ol>
+   </ul>
 <pre class="highlight"><c- k>FROM</c-><c- s> scratch</c->
  COPY ./hello /hello
 &lt;/pre>
 Lets leave the entrypoint out.
 
-<c- m>4</c->. Create an image
+- Create an image
 
 &lt;xmp <c- g>highlight</c-><c- o>=</c-><c- u>"bash"</c->>
 docker build
 </pre>
-   <ol start="5">
+   <h3 class="heading settled" data-level="2.3" id="test"><span class="secno">2.3. </span><span class="content">Test</span><a class="self-link" href="#test"></a></h3>
+   <ul>
     <li data-md>
      <p>Run your image</p>
-   </ol>
+   </ul>
 <pre>docker run </pre>
-   <ol start="6">
+   <ul>
     <li data-md>
      <p>Test your service</p>
-   </ol>
+   </ul>
 <pre>curl localhost:8080</pre>
    <p>og du bør se teksten "For The Birds - Pixar".</p>
-   <h2 class="heading settled" data-level="5" id="deploy"><span class="secno">5. </span><span class="content">Deploy</span><a class="self-link" href="#deploy"></a></h2>
+   <h3 class="heading settled" data-level="2.4" id="deploy"><span class="secno">2.4. </span><span class="content">Deploy</span><a class="self-link" href="#deploy"></a></h3>
+   <h3 class="heading settled" data-level="2.5" id><span class="secno">2.5. </span><span class="content">...</span><a class="self-link" href="#"></a></h3>
+   <h2 class="heading settled" data-level="3" id="de-enkelte-platformsservices"><span class="secno">3. </span><span class="content">De enkelte platformsservices</span><a class="self-link" href="#de-enkelte-platformsservices"></a></h2>
    <p>For at kunne komme hurtigt igang og for at hurtigt at kunne efterprøve kunders behov, er der etableret en midlertidig selvbetjeningsløsninger på `k8s.govcloud.dk`. Løsningen er realiseret ved anvendelse af <a href="https://rancher.com/">Rancher</a>.</p>
    <ul>
     <li data-md>
@@ -1626,17 +1634,15 @@ docker build
     <li data-md>
      <p><a href="http://cloud.gov.dk"><code>cloud.gov.dk</code></a>  <small>Endnu ikke planlagt</small></p>
    </ul>
-   <h2 class="heading settled" data-level="6" id="user-and-application-interfaces"><span class="secno">6. </span><span class="content">User and application interfaces</span><a class="self-link" href="#user-and-application-interfaces"></a></h2>
-   <h3 class="heading settled" data-level="6.1" id="tekniske-services-til-applikationer-govcloud-api"><span class="secno">6.1. </span><span class="content">Tekniske services til applikationer  (GovCloud API?)</span><a class="self-link" href="#tekniske-services-til-applikationer-govcloud-api"></a></h3>
    <p>I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases.</p>
    <p>Følgende services er tilgængelig i GovCloud Platform API 1.0.</p>
-   <h4 class="heading settled" data-level="6.1.1" id="id"><span class="secno">6.1.1. </span><span class="content">ID</span><a class="self-link" href="#id"></a></h4>
+   <h3 class="heading settled" data-level="3.1" id="id"><span class="secno">3.1. </span><span class="content">ID</span><a class="self-link" href="#id"></a></h3>
    <p>Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Kald til applikationsservice der er kræver en genkendt bruger vil få tilknyttet et <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. Hvis der er brug for omveksling af identitetet mellem forskellige idp’er eller føderationer kan den interne secure token service anvendes.</p>
    <ul>
     <li data-md>
      <p><code>sts.govcloud.dk</code> <small>version 1 - 20190201</small></p>
    </ul>
-   <h4 class="heading settled" data-level="6.1.2" id="dataservice"><span class="secno">6.1.2. </span><span class="content">Dataservice</span><a class="self-link" href="#dataservice"></a></h4>
+   <h3 class="heading settled" data-level="3.2" id="dataservice"><span class="secno">3.2. </span><span class="content">Dataservice</span><a class="self-link" href="#dataservice"></a></h3>
    <p>Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller:</p>
    <p><a href="https://tools.ietf.org/html/rfc7530">Network Files System (NFS)</a> lader applikationer skrive og læse binære filer fra en lang række operativsystemer og programmeringssprog. Et datasæt repræsenteres af et NFS Directory.</p>
    <ul>
@@ -1653,44 +1659,44 @@ docker build
     <li data-md>
      <p><code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small></p>
    </ul>
-   <h4 class="heading settled" data-level="6.1.3" id="log"><span class="secno">6.1.3. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h4>
+   <h3 class="heading settled" data-level="3.3" id="log"><span class="secno">3.3. </span><span class="content">Log</span><a class="self-link" href="#log"></a></h3>
    <p>Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via</p>
    <ul>
     <li data-md>
      <p><code>log.govcloud.dk</code> <small>TBD</small></p>
    </ul>
-   <h4 class="heading settled" data-level="6.1.4" id="directory"><span class="secno">6.1.4. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h4>
+   <h3 class="heading settled" data-level="3.4" id="directory"><span class="secno">3.4. </span><span class="content">Directory</span><a class="self-link" href="#directory"></a></h3>
    <p>Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP.</p>
    <ul>
     <li data-md>
      <p><code>ldap.govcloud.dk:349</code> <small>TBD</small></p>
    </ul>
-   <h4 class="heading settled" data-level="6.1.5" id="external-keys"><span class="secno">6.1.5. </span><span class="content">External keys</span><a class="self-link" href="#external-keys"></a></h4>
+   <p>External keys</p>
    <p>Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug.</p>
    <ul>
     <li data-md>
      <p><code>services.govcloud.dk/keyman</code> <small>version 1 - TBD</small></p>
    </ul>
-   <h3 class="heading settled" data-level="6.2" id="devtools-saas"><span class="secno">6.2. </span><span class="content">DevTools (SaaS)</span><a class="self-link" href="#devtools-saas"></a></h3>
    <p>Statens IT tilbyder - som supplement til GovCloud - en række sammenhængende services til brug for applikationsudvikling. På sigt vil en fuld DevOps proces kunne understøttes hos SIT, men indledningsvis tilbydes services til opbevaring af kildekode og docker container images.</p>
-   <h4 class="heading settled" data-level="6.2.1" id="code-repository"><span class="secno">6.2.1. </span><span class="content">Code repository</span><a class="self-link" href="#code-repository"></a></h4>
+   <h3 class="heading settled" data-level="3.5" id="code-repository"><span class="secno">3.5. </span><span class="content">Code repository</span><a class="self-link" href="#code-repository"></a></h3>
    <p>Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring.</p>
    <ul>
     <li data-md>
      <p><a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
    </ul>
-   <h4 class="heading settled" data-level="6.2.2" id="container-image-repository"><span class="secno">6.2.2. </span><span class="content">Container Image Repository</span><a class="self-link" href="#container-image-repository"></a></h4>
+    Container Image Repository 
    <p>Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.</p>
    <ul>
     <li data-md>
      <p><a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small></p>
    </ul>
-   <h2 class="heading settled" data-level="7" id="examples-of-usage-govcloud-paas"><span class="secno">7. </span><span class="content">Examples of usage GovCloud PaaS</span><a class="self-link" href="#examples-of-usage-govcloud-paas"></a></h2>
-   <h3 class="heading settled" data-level="7.1" id="datadistribution"><span class="secno">7.1. </span><span class="content">Datadistribution</span><a class="self-link" href="#datadistribution"></a></h3>
-   <h3 class="heading settled" data-level="7.2" id="trusted-messaging"><span class="secno">7.2. </span><span class="content">Trusted Messaging</span><a class="self-link" href="#trusted-messaging"></a></h3>
-   <h3 class="heading settled" data-level="7.3" id="datascience-bi-analytics"><span class="secno">7.3. </span><span class="content">Datascience/BI/Analytics</span><a class="self-link" href="#datascience-bi-analytics"></a></h3>
-   <h3 class="heading settled" data-level="7.4" id="static-website"><span class="secno">7.4. </span><span class="content">Static Website</span><a class="self-link" href="#static-website"></a></h3>
-   <h3 class="heading settled" data-level="7.5" id="rpa-robot-proces-automation"><span class="secno">7.5. </span><span class="content">RPA Robot Proces Automation</span><a class="self-link" href="#rpa-robot-proces-automation"></a></h3>
+   <h3 class="heading settled" data-level="3.6" id="①"><span class="secno">3.6. </span><span class="content">...</span><a class="self-link" href="#①"></a></h3>
+   <h2 class="heading settled" data-level="4" id="examples-of-usage-govcloud-paas"><span class="secno">4. </span><span class="content">Examples of usage GovCloud PaaS</span><a class="self-link" href="#examples-of-usage-govcloud-paas"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="datadistribution"><span class="secno">4.1. </span><span class="content">Datadistribution</span><a class="self-link" href="#datadistribution"></a></h3>
+   <h3 class="heading settled" data-level="4.2" id="trusted-messaging"><span class="secno">4.2. </span><span class="content">Trusted Messaging</span><a class="self-link" href="#trusted-messaging"></a></h3>
+   <h3 class="heading settled" data-level="4.3" id="datascience-bi-analytics"><span class="secno">4.3. </span><span class="content">Datascience/BI/Analytics</span><a class="self-link" href="#datascience-bi-analytics"></a></h3>
+   <h3 class="heading settled" data-level="4.4" id="static-website"><span class="secno">4.4. </span><span class="content">Static Website</span><a class="self-link" href="#static-website"></a></h3>
+   <h3 class="heading settled" data-level="4.5" id="rpa-robot-proces-automation"><span class="secno">4.5. </span><span class="content">RPA Robot Proces Automation</span><a class="self-link" href="#rpa-robot-proces-automation"></a></h3>
    <p><img src="highlevel.svg" width="66%"></p>
   </main>
 <script>

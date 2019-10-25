@@ -73,8 +73,6 @@ Mere detaljerede beskrivelser nedenfor.
 
 <h2> Før du går i gang</h2>
 
-
-
 Advarsel.... Cloud Native og DevOps er et meget stor skift i den måde vi tænker applikationer på. Bla.
 
 -   Services, Apllikationer og Data forvaltes særskilt... siloen er væltet..og rejst igen.
@@ -85,9 +83,24 @@ Advarsel.... Cloud Native og DevOps er et meget stor skift i den måde vi tænke
 
 Noget af det kan læses på microservices / 12 factor apps
 
+Centrale begreber Som sagt, er det et skift. Og vi skal lige være enige om nogle centrale begreber for ikke at få forbi hinanden.
 
-<h2>Et eksempel <code>ForTheBirds</code></h2>
+<h3>Services</h3>
+Der er services (SOA). Og forskellige slags. Applikations Service er dem som en myndigheds 'kunder' (borgere og virksomheder) kan se. Platform services er dem SIT tilbyder myndigheder i rollen som platformsanvender 'kunder hos statens it'. To slags platform services. Dem mod mennesker og dem mod applikationer.
+
+<h3>Applikationer</h3>
+Der er applikationer. Og de består af komponenter. Er lavet af kode og pakket ind i images der kan kører i containere.
+
+<h3>Data</h3>
+Der er data. GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. All data stored in the platform MUST have a registered data controller.
+
+Så hvad er en 'løsning'... Det er de dele der skal fungere for at en applikationsservice virker, nogle dele kontrolleres af udbyderen af servicen, andre af platformsudbydere og andre igen måske af andre udbydere.
+
+
+<h2>En eksemplarisk applikation – <code>ForTheBirds</code></h2>
 Vi vil anvende et gennemgående eksempel <code>ForTheBirds</code> der gradvist udvides og tager de forskellige dele af platformen i anvendelse, og vi prøver at følge en 'naturlig' rækkefølge.
+
+Applikationer løser problemer og her er vores...
 
 <i>Vi ønsker at overvåge platformens tilstand og rapporterer det til en extern status service</i>
 
@@ -96,19 +109,7 @@ Verden er ikke sort/hvid og platforme er ikke rød eller grøn. Så vi har brug 
 For at gøre det nemmere (og lidt sjovere) bruger vi en analogi/en fælles reference. Pixars For The Birds. En lang række små fugle med hver sin personlighed, ser forskellige dele af verden. Og der kan være mange fugle på samme tråd.
 
 
-<h2>Centrale begreber</h2>
-Som sagt, er det et skift. Og vi skal lige være enige om nogle centrale begreber for ikke at få forbi hinanden.
-
-Der er services (SOA). Og forskellige slags. Applikations Service er dem som en myndigheds 'kunder' (borgere og virksomheder) kan se. Platform services er dem SIT tilbyder myndigheder i rollen som platformsanvender 'kunder hos statens it'. To slags platform services. Dem mod mennesker og dem mod applikationer.
-
-Der er applikationer. Og de består af komponenter. Er lavet af kode og pakket ind i images der kan kører i containere.
-
-Der er data. GDPR Principle of "accountability" (ref art 5, stk 2) extends to all data. All data stored in the platform MUST have a registered data controller.
-
-Så hvad er en 'løsning'... Det er de dele der skal fungere for at en applikationsservice virker, nogle dele kontrolleres af udbyderen af servicen, andre af platformsudbydere og andre igen måske af andre udbydere.
-
-
-<h2>Code, Build and Containerize</h2>
+<h3>Code</h3>
 
 Vi starter på en din egen bærbare. Men jeg har jo en cloud.... jo men du skal da ikke stoppe med at udvikle bare fordi nettet ryger eller du sidder på et fly.
 
@@ -116,9 +117,8 @@ https://www.docker.com/blog/docker-golang/
 
 Can we lave runde store bullets til steps. Måske to niveauer. Måske passe med DevOps Cycle...
 
-1. Installer Docker
-2. Find a git repository to place your code in. Lets use github, because we  move it later.
-2. Write some code
+- Find a git repository to place your code in. Lets use github, because we  move it later.
+- Write some code
  <code>ForTheBirds.go</code>
 
 
@@ -145,13 +145,14 @@ func main() {
 }
 </xmp>
 
-3. Build your Code
+<h3>Build</h3>
+- Build your Code
 <xmp highlight="bash">
 docker run -v $(pwd):/go/bin --rm \
  golang go get github.com/golang/example/hello/...
 </xmp>
 
-3. Write a docker build script
+- Write a docker build script
 
 <xmp highlight="docker">
 FROM scratch
@@ -159,26 +160,36 @@ FROM scratch
 </pre>
 Lets leave the entrypoint out.
 
-4. Create an image
+- Create an image
 
 <xmp highlight="bash">
 docker build
 </xmp>
 
-5. Run your image
+<h3>Test</h3>
+- Run your image
 
 <xmp>docker run </xmp>
 
-6. Test your service
+- Test your service
 
 <xmp>curl localhost:8080</xmp>
-
-
 og du bør se teksten "For The Birds - Pixar".
 
 
 
-<h2>Deploy</h2>
+<h3>Deploy</h3>
+
+
+<h3>...</h3>
+
+
+
+
+
+
+<h2>De enkelte platformsservices</h2>
+
 
 For at kunne komme hurtigt igang og for at hurtigt at kunne efterprøve kunders behov, er der etableret en midlertidig selvbetjeningsløsninger på `k8s.govcloud.dk`. Løsningen er realiseret ved anvendelse af <a href="https://rancher.com/">Rancher</a>.
 
@@ -191,28 +202,17 @@ Det er planen at udvikle en simple og mere målrettet selvbetjening, der skal si
 -   <a href="http://cloud.gov.dk"><code>cloud.gov.dk</code></a>  <small>Endnu ikke planlagt</small>
 
 
-
-
-
-
-
-# User and application interfaces
-
-
-
-## Tekniske services til applikationer  (GovCloud API?)
-
 I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services styres i fælles regi. Det vi sige at der løbende tages stilling til hvilke services der tilføjes og eventuelt udfases.
 
 Følgende services er tilgængelig i GovCloud Platform API 1.0.
 
-### ID
+<h3>ID</h3>
 
 Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Kald til applikationsservice der er kræver en genkendt bruger vil få tilknyttet et <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. Hvis der er brug for omveksling af identitetet mellem forskellige idp'er eller føderationer kan den interne secure token service anvendes.
 
 -   <code>sts.govcloud.dk</code> <small>version 1 - 20190201</small>
 
-### Dataservice
+<h3>Dataservice</h3>
 
 Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller:
 
@@ -231,41 +231,43 @@ Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves
 -   <code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small>
     <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
 
-### Log
+<h3>Log</h3>
 
 Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via
 
 -   <code>log.govcloud.dk</code> <small>TBD</small>
     <!-- * `data.govcloud.dk/log` <small>Endnu ikke planlagt</small>-->
 
-### Directory
+<h3>Directory</h3>
 
 Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP.
 
 -   <code>ldap.govcloud.dk:349</code> <small>TBD</small>
     <!-- * `data.govcloud.dk/directory` <small>Endnu ikke planlagt</small>-->
 
-### External keys
+External keys
 
 Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug.
 
 -   <code>services.govcloud.dk/keyman</code> <small>version 1 - TBD</small>
 
-## DevTools (SaaS)
 
 Statens IT tilbyder - som supplement til GovCloud - en række sammenhængende services til brug for applikationsudvikling. På sigt vil en fuld DevOps proces kunne understøttes hos SIT, men indledningsvis tilbydes services til opbevaring af kildekode og docker container images.
 
-### Code repository
+<h3>Code repository</h3>
 
 Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
 -   <a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small>
 
-### Container Image Repository
+</h3>Container Image Repository</h3>
 
 Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
 -   <a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
+
+<h3>...</h3>
 
 # Examples of usage GovCloud PaaS
 
