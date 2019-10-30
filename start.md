@@ -1,6 +1,6 @@
 <pre class='metadata'>
 Title: cloud.gov.dk start-arkitektur
-Date: 2018-10-29
+Date: 2018-10-29c
 Shortname: start
 Status: LD
 Group: govcloud

@@ -83,6 +83,12 @@ Advarsel.... Cloud Native og DevOps er et meget stor skift i den måde vi tænke
 
 Noget af det kan læses på microservices / 12 factor apps
 
+
+<img src="devops.png" width="65%"></img>
+
+[redraw in neutral colors. maybe archimate yellow?]
+
+
 Centrale begreber Som sagt, er det et skift. Og vi skal lige være enige om nogle centrale begreber for ikke at få forbi hinanden.
 
 <h3>Services</h3>
@@ -100,6 +106,8 @@ Så hvad er en 'løsning'... Det er de dele der skal fungere for at en applikati
 <h2>En eksemplarisk applikation – <code>ForTheBirds</code></h2>
 Vi vil anvende et gennemgående eksempel <code>ForTheBirds</code> der gradvist udvides og tager de forskellige dele af platformen i anvendelse, og vi prøver at følge en 'naturlig' rækkefølge.
 
+
+<h3>Plan</h3>
 Applikationer løser problemer og her er vores...
 
 <i>Vi ønsker at overvåge platformens tilstand og rapporterer det til en extern status service</i>
@@ -122,12 +130,12 @@ Can we lave runde store bullets til steps. Måske to niveauer. Måske passe med 
  <code>ForTheBirds.go</code>
 
 
-<pre class=include-code>
-path: someFile.cpp
-highlight: c++
+<xmp class=include-code>
+path: code/ForTheBirds_1.go
+highlight: go
 line-numbers:
 line-highlight: 2-5, 10, 12
-</pre>
+</xmp>
 
 <xmp highlight="Go" line-numbers="">
 import (
@@ -146,21 +154,21 @@ func main() {
 </xmp>
 
 <h3>Build</h3>
-- Build your Code
+Build your Code
+
 <xmp highlight="bash">
-docker run -v $(pwd):/go/bin --rm \
- golang go get github.com/golang/example/hello/...
+docker run -v $(pwd):/go/bin --rm golang go get github.com/digst/cloud/code/...
 </xmp>
 
-- Write a docker build script
+Write a docker build script
 
 <xmp highlight="docker">
 FROM scratch
  COPY ./hello /hello
-</pre>
+</xmp>
 Lets leave the entrypoint out.
 
-- Create an image
+Create an image
 
 <xmp highlight="bash">
 docker build
@@ -177,16 +185,30 @@ docker build
 og du bør se teksten "For The Birds - Pixar".
 
 
+<h3>Release</h3>
 
 <h3>Deploy</h3>
 
+<h3>Operate</h3>
 
-<h3>...</h3>
-
-
-
+<h3>Monitor</h3>
 
 
+
+
+
+<h2>Iterate</h2>
+Based on use stories....
+
+<h3>User story 1</h3>
+
+<h3>User story 2</h3>
+
+<h3>User story 3</h3>
+
+<h3>User story 4</h3>
+
+<h3>User story 5</h3>
 
 <h2>De enkelte platformsservices</h2>
 
@@ -206,79 +228,106 @@ I henhold til aftalen om GovCloud, skal den fulde lifecycle af tekniske services
 
 Følgende services er tilgængelig i GovCloud Platform API 1.0.
 
-<h3>ID</h3>
+<h3>Identitetsservicen (<code>/id</code>)</h3>
 
 Applikationer der ønsker at genkende brugere der allerede kendes af Statens IT, kan anvende platformens secure token service / billetomveksler. Kald til applikationsservice der er kræver en genkendt bruger vil få tilknyttet et <a href="https://jwt.io/">JSON Web Token</a> med oplysninger om brugerens identitet. Hvis der er brug for omveksling af identitetet mellem forskellige idp'er eller føderationer kan den interne secure token service anvendes.
 
 -   <code>sts.govcloud.dk</code> <small>version 1 - 20190201</small>
 
-<h3>Dataservice</h3>
-
-Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller:
-
-<a href="https://tools.ietf.org/html/rfc7530">Network Files System (NFS)</a> lader applikationer skrive og læse binære filer fra en lang række operativsystemer og programmeringssprog. Et datasæt repræsenteres af et NFS Directory.
-
--   <code>data.govcloud.dk:2049</code> <small>version 1 - 20190201</small>
-    <!-- * `data.govcloud.dk/nfs` <small>Endnu ikke planlagt</small>-->
-
-<a href="https://kafka.apache.org/">Apace Kafka</a> lader applikationer skrive og læse meddelelser til streams og topics. Et datasæt repræsenteres af en Kafka Stream.
-
--   <code>data.govcloud.dk:8082</code> <small>version 1 - 20190201</small>
-    <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
-
-<a href="http://www.ojai.io">OJAI</a> lader applikationer at skrive og læse JSON dokumenter til dokumentsamlinger. Et datasæt repræsenteres af en OJAI Document Store.
-
--   <code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small>
-    <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
-
-<h3>Log</h3>
+<h3>Logservicen (<code>/log</code>)</h3>
 
 Applikationers stdout/stderr, Service Fabric og Data Fabric sender loghændelser til en fælles log service. Log filer er tilgængelig i selvbetjeningsløsninger og for kundens applikationer via
 
 -   <code>log.govcloud.dk</code> <small>TBD</small>
     <!-- * `data.govcloud.dk/log` <small>Endnu ikke planlagt</small>-->
 
+
+
+De tre data services... Adgangskontrol til kunders datasæt styres på applikationsniveau og håndhæves af platformen. Dataservice lader applikationer skrive og læse datasæt gennem tre forskellige protokoller:
+
+
+<h3>Filservicen (<code>/file</code>)</h3>
+<a href="https://tools.ietf.org/html/rfc7530">Network Files System (NFS)</a> lader applikationer skrive og læse binære filer fra en lang række operativsystemer og programmeringssprog. Et datasæt repræsenteres af et NFS Directory.
+
+-   <code>data.govcloud.dk:2049</code> <small>version 1 - 20190201</small>
+    <!-- * `data.govcloud.dk/nfs` <small>Endnu ikke planlagt</small>-->
+
+
+
+<h3>Meddelsesservicen (<code>/stream</code>)</h3>
+
+<a href="https://kafka.apache.org/">Apace Kafka</a> lader applikationer skrive og læse meddelelser til streams og topics. Et datasæt repræsenteres af en Kafka Stream.
+
+-   <code>data.govcloud.dk:8082</code> <small>version 1 - 20190201</small>
+    <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
+
+<h3>Tabelservicen (<code>/table</code>)</h3>
+
+
+<a href="http://www.ojai.io">OJAI</a> lader applikationer at skrive og læse JSON dokumenter til dokumentsamlinger. Et datasæt repræsenteres af en OJAI Document Store.
+
+-   <code>data.govcloud.dk:8243</code> <small>version 1 - 20190201</small>
+    <!-- * `data.govcloud.dk/kafka` <small>Endnu ikke planlagt</small>-->
+
+
+<h3>Opbevaring af kildekode (<code>git.</code>)</h3>
+<i>Code Reposity</i>
+
+Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
+
+-   <a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
+<h3>Opbevaring af images (<code>reg.</code>)</h3>
+<i>Docker Container Image Registry</i>
+
+Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
+
+-   <a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
+<h3>Selvbetjening (<code>kub.</code>)</h3>
+
+<h3>Overvågning (<code>stat.</code>)</h3>
+
+<h3>Online samarbejde (<code>coll.</code>)</h3>
+
+
+<h2>Services udenfor platformen</h2>
+
 <h3>Directory</h3>
+
 
 Oplysninger om kundens services, applikationer, datasæt og deres rettigheder gemmes af selvbetjeningsløsningen i Directory servicen. Oplysningerne er tilgængelige for kundens applikationer via LDAP.
 
 -   <code>ldap.govcloud.dk:349</code> <small>TBD</small>
     <!-- * `data.govcloud.dk/directory` <small>Endnu ikke planlagt</small>-->
 
-External keys
+<h3>External keys</h3>
 
 Kunder der ønsker at begrænse anvendelsen af applikations services kan anvende eksterne nøgler (API keys). Eksterne nøgler giver ingen ekstra sikkerhed, men en mulighed for at begrænse eller identificere adgang ved fx misbrug.
 
 -   <code>services.govcloud.dk/keyman</code> <small>version 1 - TBD</small>
 
 
-Statens IT tilbyder - som supplement til GovCloud - en række sammenhængende services til brug for applikationsudvikling. På sigt vil en fuld DevOps proces kunne understøttes hos SIT, men indledningsvis tilbydes services til opbevaring af kildekode og docker container images.
+<h3>MapR</h3>
 
-<h3>Code repository</h3>
 
-Kunder kan bringe deres applikationskode under versionskontrol i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
--   <a href="http://git.govcloud.dk"><code>git.govcloud.dk</code></a> <small>version 1 - 20190201</small>
 
-</h3>Container Image Repository</h3>
 
-Kunder kan opbevare container images til deployment på GovCloud i det fælles repository med authentication fra Statens ITs centrale brugerstyring.
 
--   <a href="http://gitlab.govcloud.dk"><code>gitlab.govcloud.dk</code></a> <small>version 1 - 20190201</small>
+
 
 
 <h3>...</h3>
 
-# Examples of usage GovCloud PaaS
+# Sammenhæng til FDA...?
 
-## Datadistribution
+## Brugerstyring
 
-## Trusted Messaging
+## Deling af data og dokumenter
 
-## Datascience/BI/Analytics
+## Selvbetjening
 
-## Static Website
-
-## RPA Robot Proces Automation
+## Datasæt
 
 <img src="highlevel.svg" width="66%">
